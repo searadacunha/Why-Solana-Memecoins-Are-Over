@@ -1,0 +1,26 @@
+{
+ "floor_capture": {
+  "n_fichiers": 645,
+  "n_avec_snipers": 282,
+  "n_avec_swaps": 293,
+  "n_swaps_total": 511508,
+  "fenetre_created_min_max": [
+   1782591657,
+   1783260153
+  ],
+  "fenetre_jours": 7.74,
+  "fenetre_snipers_jours": 6.22,
+  "n_wallets_snipeurs_distincts": 1616,
+  "n_occurrences_snipe": 2894
+ },
+ "snipe_cache_onchain": {
+  "n_tokens": 282,
+  "n_avec_rows": 282,
+  "recouvrement_avec_floor_snipers": 282
+ },
+ "socle_dataset": {
+  "A": 103,
+  "B": 1701,
+  "C": 293
+ }
+}

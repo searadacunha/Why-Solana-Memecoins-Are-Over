@@ -1,0 +1,56 @@
+[
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47.jpeg",
+    "symbole": "Mooni",
+    "mint_fragment": null,
+    "gain_pct": 350.47,
+    "duree": "1h 58m",
+    "date": "2024-12-13",
+    "notes": "Capture Trojan valide. Contexte Telegram : '10 sur 256', heure ecran 00:11, date sous le message 12/13/24. Un reflink est visible en bas mais la seconde ligne est coupee par le bord de l'ecran et le code n'est pas du base58 valide (contient 0 et 1) : ce n'est pas un mint exploitable, non reporte (donnee personnelle). Aucun fragment de mint utilisable."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.48.jpeg",
+    "symbole": "symx",
+    "mint_fragment": null,
+    "gain_pct": 635.92,
+    "duree": "8h",
+    "date": null,
+    "notes": "Capture Trojan valide, image recadree sur la carte seule : pas de chrome Telegram, donc ni date ni compteur 'X sur 256'. Habillage de Noel (bonnet sur le logo TROJAN, pingouin, guirlande) => trade probablement de decembre 2024. Symbole affiche en minuscules 'symx/SOL' : peut etre un vrai ticker ou un debut de mint, a verifier on-chain."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.17 (1).jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter (onglet Reposts, 204 posts) : post du 03 juin sur les regles de resolution de Polymarket (marche Khamenei). Hors sujet pour l'extraction de tokens."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.17 (2).jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter du 04 juin sur le litige Polymarket / MicroStrategy. Hors sujet."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.17.jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Meme post X que 21.26.17 (1), scrolle plus bas (16 reponses, 17 reposts, 206 likes, 7,8K vues). Doublon, hors sujet."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.18 (1).jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter du 09 juin : plainte d'un parieur Polymarket (marche MicroStrategy). Hors sujet."
+  }
+]

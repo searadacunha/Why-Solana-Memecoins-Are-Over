@@ -1,0 +1,310 @@
+{
+ "n_tokens": 196,
+ "n_clusters": 20,
+ "n_jours": 6,
+ "n_fichiers": 645,
+ "n_captures_exploitables": 289,
+ "rejets": {
+  "aucun_buy": 1,
+  "capture_vide": 352,
+  "span_swaps_lt_2min": 3
+ },
+ "flags_entree": {
+  "X_prix_entree_indefini": 62,
+  "X_aucune_offre_absorbable": 25,
+  "X_volume_entree_insuffisant": 5,
+  "ok": 196,
+  "X_entree_apres_fin_capture": 1
+ },
+ "drag_aller_retour_pct": 5.8241,
+ "politiques": {
+  "time_1m": {
+   "n": 196,
+   "mediane_pct": -5.4384500000000005,
+   "moyenne_pct": -8.574042857142858,
+   "mediane_ic95_pct": [
+    -8.586,
+    -2.5699
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -12.190842443729903,
+    -1.4130826086956523
+   ],
+   "S_cluster_pct": 0.15252152668032412,
+   "pct_gagnants": 35.714285714285715,
+   "pct_non_remplies": 3.5714285714285716,
+   "mediane_excl_pct": -5.1551,
+   "clusters_positifs": "8/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "time_3m": {
+   "n": 196,
+   "mediane_pct": -8.69315,
+   "moyenne_pct": -9.453454081632653,
+   "mediane_ic95_pct": [
+    -13.4823,
+    -3.1897
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -13.54357813765182,
+    -2.2357135922330102
+   ],
+   "S_cluster_pct": -5.606688905600084,
+   "pct_gagnants": 40.816326530612244,
+   "pct_non_remplies": 5.612244897959184,
+   "mediane_excl_pct": -6.157,
+   "clusters_positifs": "10/20",
+   "jours_mediane_positive": "0/6"
+  },
+  "time_5m": {
+   "n": 196,
+   "mediane_pct": -11.72335,
+   "moyenne_pct": -10.08462551020408,
+   "mediane_ic95_pct": [
+    -21.0281,
+    -5.5733
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -17.599433823529413,
+    -4.0058758169934645
+   ],
+   "S_cluster_pct": -8.953015824466377,
+   "pct_gagnants": 40.30612244897959,
+   "pct_non_remplies": 10.204081632653061,
+   "mediane_excl_pct": -8.04105,
+   "clusters_positifs": "8/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "time_10m": {
+   "n": 196,
+   "mediane_pct": -13.303799999999999,
+   "moyenne_pct": -10.323233673469389,
+   "mediane_ic95_pct": [
+    -25.994649999999996,
+    -4.3881000000000006
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -20.71919275362319,
+    8.241756589147286
+   ],
+   "S_cluster_pct": -5.87280076667658,
+   "pct_gagnants": 38.775510204081634,
+   "pct_non_remplies": 17.346938775510203,
+   "mediane_excl_pct": -1.9134000000000002,
+   "clusters_positifs": "8/20",
+   "jours_mediane_positive": "0/6"
+  },
+  "time_20m": {
+   "n": 196,
+   "mediane_pct": -23.8123,
+   "moyenne_pct": -10.237276530612244,
+   "mediane_ic95_pct": [
+    -42.13875,
+    -12.6551
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -20.665643150684932,
+    10.170894776119404
+   ],
+   "S_cluster_pct": -2.6604040081494795,
+   "pct_gagnants": 37.755102040816325,
+   "pct_non_remplies": 19.387755102040817,
+   "mediane_excl_pct": -5.73215,
+   "clusters_positifs": "7/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "trail_20": {
+   "n": 196,
+   "mediane_pct": -17.8217,
+   "moyenne_pct": -12.093333163265306,
+   "mediane_ic95_pct": [
+    -22.6143,
+    -14.3123
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -19.838590909090907,
+    -1.4435612068965522
+   ],
+   "S_cluster_pct": -12.031270273652295,
+   "pct_gagnants": 32.6530612244898,
+   "pct_non_remplies": 6.122448979591836,
+   "mediane_excl_pct": -16.319450000000003,
+   "clusters_positifs": "9/20",
+   "jours_mediane_positive": "0/6"
+  },
+  "trail_30": {
+   "n": 196,
+   "mediane_pct": -24.221500000000002,
+   "moyenne_pct": -10.896529591836735,
+   "mediane_ic95_pct": [
+    -29.527099999999994,
+    -14.7879
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -16.434848734177216,
+    -4.49927453416149
+   ],
+   "S_cluster_pct": -13.281827588254568,
+   "pct_gagnants": 33.673469387755105,
+   "pct_non_remplies": 5.612244897959184,
+   "mediane_excl_pct": -18.6762,
+   "clusters_positifs": "6/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "trail_40": {
+   "n": 196,
+   "mediane_pct": -26.84845,
+   "moyenne_pct": -11.95476836734694,
+   "mediane_ic95_pct": [
+    -36.551899999999996,
+    -17.4298
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -18.737128113879002,
+    -1.6773545454545453
+   ],
+   "S_cluster_pct": -6.2988712330524015,
+   "pct_gagnants": 31.632653061224488,
+   "pct_non_remplies": 6.122448979591836,
+   "mediane_excl_pct": -21.2991,
+   "clusters_positifs": "6/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "tp30": {
+   "n": 196,
+   "mediane_pct": 22.4287,
+   "moyenne_pct": -16.422833163265306,
+   "mediane_ic95_pct": [
+    0.49185,
+    22.4287
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -22.617971875000002,
+    -6.314102898550726
+   ],
+   "S_cluster_pct": -12.894982488228528,
+   "pct_gagnants": 56.63265306122449,
+   "pct_non_remplies": 15.306122448979592,
+   "mediane_excl_pct": 22.4287,
+   "clusters_positifs": "9/20",
+   "jours_mediane_positive": "5/6"
+  },
+  "tp30_sl35": {
+   "n": 196,
+   "mediane_pct": 11.202300000000001,
+   "moyenne_pct": -14.224681122448981,
+   "mediane_ic95_pct": [
+    -17.4298,
+    22.4287
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -18.387021025641026,
+    -5.563181481481482
+   ],
+   "S_cluster_pct": -9.197743840384181,
+   "pct_gagnants": 53.06122448979592,
+   "pct_non_remplies": 6.63265306122449,
+   "mediane_excl_pct": 22.4287,
+   "clusters_positifs": "10/20",
+   "jours_mediane_positive": "5/6"
+  },
+  "tp50": {
+   "n": 196,
+   "mediane_pct": 3.32775,
+   "moyenne_pct": -12.915117857142858,
+   "mediane_ic95_pct": [
+    -17.477899999999998,
+    27.0735
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -19.939168652037615,
+    0.516335051546392
+   ],
+   "S_cluster_pct": -8.209941234030275,
+   "pct_gagnants": 51.53061224489796,
+   "pct_non_remplies": 16.836734693877553,
+   "mediane_excl_pct": 31.533499999999997,
+   "clusters_positifs": "9/20",
+   "jours_mediane_positive": "4/6"
+  },
+  "tp50_sl35": {
+   "n": 196,
+   "mediane_pct": -15.695500000000001,
+   "moyenne_pct": -11.340233673469388,
+   "mediane_ic95_pct": [
+    -29.8804,
+    12.2897
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -16.28153137254902,
+    0.05483793103448272
+   ],
+   "S_cluster_pct": -4.855910046510411,
+   "pct_gagnants": 46.93877551020408,
+   "pct_non_remplies": 6.63265306122449,
+   "mediane_excl_pct": 0.21889999999999998,
+   "clusters_positifs": "9/20",
+   "jours_mediane_positive": "2/6"
+  },
+  "tp2x": {
+   "n": 196,
+   "mediane_pct": -17.4298,
+   "moyenne_pct": -10.900038265306122,
+   "mediane_ic95_pct": [
+    -30.48595,
+    -0.7279000000000001
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -19.492009693877552,
+    5.188685057471265
+   ],
+   "S_cluster_pct": -0.036979168618088525,
+   "pct_gagnants": 42.857142857142854,
+   "pct_non_remplies": 19.387755102040817,
+   "mediane_excl_pct": 5.351350000000001,
+   "clusters_positifs": "8/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "tp2x_sl35": {
+   "n": 196,
+   "mediane_pct": -29.46975,
+   "moyenne_pct": -10.105139285714285,
+   "mediane_ic95_pct": [
+    -37.3526,
+    -16.992400000000004
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -16.2027,
+    1.7997728813559328
+   ],
+   "S_cluster_pct": 2.1247078875345764,
+   "pct_gagnants": 37.755102040816325,
+   "pct_non_remplies": 6.63265306122449,
+   "mediane_excl_pct": -18.6762,
+   "clusters_positifs": "9/20",
+   "jours_mediane_positive": "1/6"
+  },
+  "hold_t_safe": {
+   "n": 196,
+   "mediane_pct": -23.8123,
+   "moyenne_pct": -10.2173,
+   "mediane_ic95_pct": [
+    -42.13875,
+    -12.6551
+   ],
+   "moyenne_ic95_cluster_pct": [
+    -20.58736875,
+    10.182184496124032
+   ],
+   "S_cluster_pct": -2.5625190081494797,
+   "pct_gagnants": 37.755102040816325,
+   "pct_non_remplies": 18.877551020408163,
+   "mediane_excl_pct": -7.9264,
+   "clusters_positifs": "7/20",
+   "jours_mediane_positive": "1/6"
+  }
+ },
+ "controle_vs_canonique": {},
+ "n_politiques_mediane_negative": 12,
+ "n_politiques": 15
+}

@@ -1,0 +1,139 @@
+{
+ "entry_offset_s": 120,
+ "gate": {
+  "X_pas_de_place_aller_retour_verifiable": 9,
+  "X_prix_entree_indefini": 4,
+  "ok": 5
+ },
+ "matrice": {
+  "time_10m": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "time_1m": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "time_3m": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "time_5m": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "tp2x": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "tp2x_sl35": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "tp50": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "tp50_sl35": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "trail_30": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  },
+  "trail_40": {
+   "med": 5.2749999999999995,
+   "moy": 2.5683,
+   "moy_grappe": 2.5683,
+   "moy_grappe_ic95": [
+    -7.464920000000001,
+    11.7736
+   ],
+   "n": 5,
+   "pct_grappe_pos": 80.0,
+   "pct_pos": 80.0
+  }
+ },
+ "n_entrables": 5,
+ "n_grappes": 5,
+ "niveau": "MESURE",
+ "politiques_mediane_negative": 0,
+ "politiques_moyenne_grappe_negative": 0,
+ "rejets_chargement": {
+  "aucun_swap_exploitable": 2
+ },
+ "traine_aller_retour_pct": 5.824111822947009
+}

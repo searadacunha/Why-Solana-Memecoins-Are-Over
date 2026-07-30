@@ -1,0 +1,141 @@
+{
+ "temoins": [
+  {
+   "label": "faith",
+   "symbole": "faith",
+   "mint": "3TpKKNDBqgZAFkTQmsRxwcHQZTJKyYnRgsBs3tcjpump",
+   "bonding_curve": "ByjUW6qUk74qmDDsDGZ1aWPVq3KqMHASYMF2DB3YQDKH",
+   "date_creation_utc": "2024-10-10T05:24:14.015000Z",
+   "fenetre_ancre": "OPTIMUS",
+   "acheteurs_distincts_attendus": 7,
+   "analysable_financement": false,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 37
+  },
+  {
+   "label": "Calm",
+   "symbole": "Calm",
+   "mint": "B6Znej2JwW2mEsXeoEGmQwwZ9E3tvNDPWRVw74njpump",
+   "bonding_curve": "8imLYaSbKRmogwcQ3J3cMXtEWpRS6JSW8CSqn6cWb57Z",
+   "date_creation_utc": "2024-10-10T05:24:09.657000Z",
+   "fenetre_ancre": "OPTIMUS",
+   "acheteurs_distincts_attendus": 60,
+   "analysable_financement": true,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 214
+  },
+  {
+   "label": "DONGOE",
+   "symbole": "₫øⒼё",
+   "mint": "F4j6sMuUUTNqNQrLoHDmKZ4umrhhT2vRf5zMKBE1pump",
+   "bonding_curve": "7tDKdknjB5Pm1BWr2fPKzxdc3xgN1JvDPA5P27z6GQp3",
+   "date_creation_utc": "2024-10-10T05:24:52.097000Z",
+   "fenetre_ancre": "OPTIMUS",
+   "acheteurs_distincts_attendus": 18,
+   "analysable_financement": true,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 119
+  },
+  {
+   "label": "HLGOOFY",
+   "symbole": "HLGOOFY",
+   "mint": "7FotfzGpzLFfhS6nJqaypYem3GfdXeDoyTJfPNVvpump",
+   "bonding_curve": "9We47e73hGMcRkrmEz1odFnJKt7DgysEYa4dy1ShnTo7",
+   "date_creation_utc": "2024-12-13T14:50:37.188000Z",
+   "fenetre_ancre": "h2w6gm6jz",
+   "acheteurs_distincts_attendus": 51,
+   "analysable_financement": true,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 156
+  },
+  {
+   "label": "CREEKS",
+   "symbole": "CREEKS",
+   "mint": "AvWysij3HMUoZ5G5FdxuDJEVqUUVFc7MkVXeUUkhpump",
+   "bonding_curve": "8eE9vCbrZoD5JYPJG9qg3YxM28UV4jXjHAkHRn5iKK9q",
+   "date_creation_utc": "2024-12-13T14:50:37.208000Z",
+   "fenetre_ancre": "h2w6gm6jz",
+   "acheteurs_distincts_attendus": 4,
+   "analysable_financement": false,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 49
+  },
+  {
+   "label": "BandD",
+   "symbole": "B&D",
+   "mint": "GADdBMDWU6aQp9XJumRrk443sjjSzbPULGAsZKF4pump",
+   "bonding_curve": "94ojzN2Geb5Zv9SmhaUKy5415dMEhQHWotZkpArczvVv",
+   "date_creation_utc": "2024-12-13T14:50:39.845000Z",
+   "fenetre_ancre": "h2w6gm6jz",
+   "acheteurs_distincts_attendus": 2,
+   "analysable_financement": false,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 32
+  },
+  {
+   "label": "GOOREUREKA",
+   "symbole": "GOOREUREKA",
+   "mint": "4DswCdTzmDmG32VWthsLkpR5CG9aY5iqELuu47nFpump",
+   "bonding_curve": "5XQmRKGxVQ1aqF794KZu4BcFigX7HsDG4kKrHfWDvhDE",
+   "date_creation_utc": "2024-12-15T17:04:55.609000Z",
+   "fenetre_ancre": "POLMRKTBOT",
+   "acheteurs_distincts_attendus": 6,
+   "analysable_financement": false,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 80
+  },
+  {
+   "label": "PORTAL",
+   "symbole": "PORTAL",
+   "mint": "7oDRbzM3QuXB6snVotAjpsQomTdHoR8xMxCMEVMnpump",
+   "bonding_curve": "CW3VVFXDXWAtzAbuTgfHsdbpLm8xE1QnWehPBufw2dXD",
+   "date_creation_utc": "2024-12-15T17:04:53.936000Z",
+   "fenetre_ancre": "POLMRKTBOT",
+   "acheteurs_distincts_attendus": 12,
+   "analysable_financement": true,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 85
+  },
+  {
+   "label": "QUEENAI",
+   "symbole": "QUEENAI",
+   "mint": "FaqgPactBmqwRt1ji18bgD7Beo7irnYwBQnNuBfwpump",
+   "bonding_curve": "51ELiedFHAK6PcFLiAxkyrL2QxaRdu2TC9ZaB9tm7Y76",
+   "date_creation_utc": "2024-12-15T17:04:48.251000Z",
+   "fenetre_ancre": "POLMRKTBOT",
+   "acheteurs_distincts_attendus": 9,
+   "analysable_financement": false,
+   "gradue": false,
+   "king_of_the_hill": false,
+   "tx_totales_bonding_curve": 92
+  }
+ ],
+ "cibles_pour_memoire": [
+  {
+   "label": "OPTIMUS",
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "bonding_curve": "4KRWrCZTrvbC9ycw8qdw68FCYMbNv9n8fnxLLbRdkFic",
+   "acheteurs_distincts": 230
+  },
+  {
+   "label": "h2w6gm6jz",
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "bonding_curve": "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg",
+   "acheteurs_distincts": 184
+  },
+  {
+   "label": "POLMRKTBOT",
+   "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+   "bonding_curve": "4jrF9GSFj8gMFNEFDd2TzM52F2Y4pg8uKCpQbrLoKYE3",
+   "acheteurs_distincts": 295
+  }
+ ]
+}

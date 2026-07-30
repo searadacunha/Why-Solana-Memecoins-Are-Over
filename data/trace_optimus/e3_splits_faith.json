@@ -1,0 +1,25 @@
+{
+ "label": "faith",
+ "mint": "3TpKKNDBqgZAFkTQmsRxwcHQZTJKyYnRgsBs3tcjpump",
+ "n_wallets": 7,
+ "n_inflows_total": 28,
+ "n_rentrees_ecartees_produit_de_vente": 115,
+ "n_genesis_reached": 4,
+ "n_genesis_NOT_reached": 3,
+ "n_prebuy_reached": 6,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "GMufXkDZdgpCRpbJJ5XDUKaQLSbFQw36DGXnCyv73cBy",
+  "G7ZPVrix1kmzgSo9W7cr3gHmWokD568RvzSyDqUQoyg"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/7 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": []
+}

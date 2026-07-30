@@ -1,0 +1,134 @@
+{
+ "label": "ODIN_POSITIF",
+ "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+ "n_wallets": 35,
+ "n_inflows_total": 78,
+ "n_rentrees_ecartees_produit_de_vente": 88,
+ "n_genesis_reached": 12,
+ "n_genesis_NOT_reached": 23,
+ "n_prebuy_reached": 25,
+ "n_prebuy_NOT_reached": 10,
+ "n_hyperactifs_non_mesurables": 10,
+ "wallets_without_genesis": [
+  "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+  "UCeqvwQPYWXhbN4444b5dzDYaoUhqYvrax1R7p9NodE",
+  "5iywveQKkidqPDKt2CExJcWKex2EXz9kbGcYiZvhuXWs",
+  "66ZC9U8y1uYaAxt4WFYVW11YZeZohvi8ev6wBHsAxykh",
+  "CZY9M9BywshFAFjPw7uLgXw9yGtNL26YypLCJdewiHo",
+  "ATomG2gRJcB2jNvwcjo2zBMoyLsHZzLgwqy651zzYoCq",
+  "8mEFEL31Cmrm4poDpfxJsabPEFZWe4qhCsGmLmmTTDQ",
+  "CGBBoCgaEYuQwQkNJmirx1Qis7LVzcsjmkz3LVy2qHMy",
+  "F1M6SgP9Vt8uxjHDPWZntpgKwuSg6vh8ek98RpY9J9FP",
+  "2a8YExNAdKgYZGyBwub59dBSsdjqaBPm26k6PuuEp8FR",
+  "7dcwC8yNaHgGNNkDxhb2pRLVTqXafCRd3m6XeU9Rt3BU",
+  "4e5EFPoyZrsyRZGSPUwVZBpDu4CXWdU3SdBtWWPsUnqe",
+  "bruhN4UiWXuC1DbNp5MHg9jdiizJvrbdbVT2tPBQd4c",
+  "H4dWNS7ydys4Je2G4WgsmJDSmqGtNmf8CT99r9rDnacf",
+  "66fgxqQNunDacDYgJKAwHpt9nsP9zFuXm9449Ha6Y4vF",
+  "9gxBDddAvsVUmcLAwJWhnKr5dMN8rWkdqn8ZZ4V272bo",
+  "9zeovoot5GNYgUFyzA86HRHZQTK6Ko8SRccm712W5iiF",
+  "8a5euaqMDanuRK8Hci435zvs5BYa44efZdjJ7echJamD",
+  "87yvPRERangvDR7nbiiPdLjFb56kLjXJMC4sQyGR5WH8",
+  "2UshwwBuxFu9nDGuqTs3kKQsPgEoLp27JNC2JRAoQnYF",
+  "J3SMgVCx6T59FUMq5jY7MJUT4CxjgNUB1qYs3kSwED1W",
+  "wormnduySVDzdS97MrtCqMNq2AJZom4LayknB8R1HNS",
+  "A1euvBCBnDFXJKkxVxedC7woacCQAzjfvAKdHZtwS27B"
+ ],
+ "wallets_without_prebuy": [
+  "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+  "5iywveQKkidqPDKt2CExJcWKex2EXz9kbGcYiZvhuXWs",
+  "66ZC9U8y1uYaAxt4WFYVW11YZeZohvi8ev6wBHsAxykh",
+  "CZY9M9BywshFAFjPw7uLgXw9yGtNL26YypLCJdewiHo",
+  "ATomG2gRJcB2jNvwcjo2zBMoyLsHZzLgwqy651zzYoCq",
+  "8mEFEL31Cmrm4poDpfxJsabPEFZWe4qhCsGmLmmTTDQ",
+  "7dcwC8yNaHgGNNkDxhb2pRLVTqXafCRd3m6XeU9Rt3BU",
+  "bruhN4UiWXuC1DbNp5MHg9jdiizJvrbdbVT2tPBQd4c",
+  "H4dWNS7ydys4Je2G4WgsmJDSmqGtNmf8CT99r9rDnacf",
+  "wormnduySVDzdS97MrtCqMNq2AJZom4LayknB8R1HNS"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [
+  {
+   "signature": "4UCCqzATnd1qgL4sEW2HehHQKtWfw4rzFwkGBt1MnHpgzoDYjodLeH7BPm4dQ1DYCtMNDAx9dzeT2b78voR5DnRe",
+   "n_wallets": 4,
+   "utc": "2024-11-17 23:55:52",
+   "source": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+   "source_known": null,
+   "amounts_sol": [
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "calibres": [
+    "rond_SOL"
+   ],
+   "wallets": [
+    "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+    "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+    "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+    "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y"
+   ]
+  }
+ ],
+ "B_meme_montant_meme_moment": [
+  {
+   "amount_sol": 3.0,
+   "calibre": "rond_SOL",
+   "n_wallets": 4,
+   "wallets": [
+    "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+    "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+    "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+    "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y"
+   ],
+   "sources": [
+    "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR"
+   ],
+   "span_seconds": 0,
+   "utc_first": "2024-11-17 23:55:52"
+  }
+ ],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+   "n_early_buyers_funded": 4,
+   "n_transfers": 4,
+   "total_sol": 12.0,
+   "first_utc": "2024-11-17 23:55:52",
+   "known": null,
+   "amounts_sol": [
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "wallets": [
+    "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+    "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+    "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+    "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y"
+   ]
+  },
+  {
+   "funder": "B6p9CkSyE8fYNYd5JTQATcy4DekwzttKqBk689SpD39m",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 5.3,
+   "first_utc": "2024-11-22 21:24:21",
+   "known": null,
+   "amounts_sol": [
+    0.1,
+    0.2,
+    1.0,
+    1.0,
+    3.0
+   ],
+   "wallets": [
+    "3CEhdQTZu7KQdk2gFoSbHWmEMbb4xqzCLNdXmMfbcg7F",
+    "3qVmZRQ1bsTTCb73B8cgo6pzMBNrvmPD4vHkWK4EYjzB"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": []
+}

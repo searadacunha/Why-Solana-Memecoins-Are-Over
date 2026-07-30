@@ -1,0 +1,28 @@
+{
+ "label": "QUEENAI",
+ "mint": "FaqgPactBmqwRt1ji18bgD7Beo7irnYwBQnNuBfwpump",
+ "n_wallets": 8,
+ "n_inflows_total": 11,
+ "n_rentrees_ecartees_produit_de_vente": 44,
+ "n_genesis_reached": 4,
+ "n_genesis_NOT_reached": 4,
+ "n_prebuy_reached": 5,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+  "zerowfY91rbHy5bqcMToo2HaHMYFPB6UhZdTQw3av7C",
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "Yuri3FWxWxXD1c3UVRmgW7y7fSQAuJVnqSTmxW2LZnB"
+ ],
+ "wallets_without_prebuy": [
+  "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+  "zerowfY91rbHy5bqcMToo2HaHMYFPB6UhZdTQw3av7C",
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 3/8 portefeuilles dont la fenetre pre-achat n'est pas couverte (3 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": []
+}

@@ -1,0 +1,114 @@
+[
+ {
+  "adresse": "12hHGUFAC2o3QaoNqgfr9tFe16v2dRNGLtzffoFScKcW",
+  "n_signatures_vues": 53,
+  "pages_signatures": 1,
+  "genese_atteinte": true,
+  "plus_ancienne_utc": "2024-11-29 08:51:19",
+  "plus_recente_utc": "2024-12-16 02:13:09",
+  "n_tx_parsees_inspectees": 50,
+  "n_destinataires_distincts_sur_echantillon": 4,
+  "n_sources_distinctes_sur_echantillon": 4,
+  "montants_de_sortie_les_plus_repetes": [
+   [
+    0.1,
+    3
+   ],
+   [
+    3.992572708,
+    1
+   ],
+   [
+    4.219686809,
+    1
+   ],
+   [
+    0.8999717,
+    1
+   ],
+   [
+    1.0,
+    1
+   ]
+  ],
+  "etiquette_connue": null,
+  "lecture": "ACTEUR PRIVE probable (volume et eventail compatibles avec un distributeur)",
+  "contexte": "HLGOOFY (TEMOIN)"
+ },
+ {
+  "adresse": "A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR",
+  "n_signatures_vues": 120000,
+  "pages_signatures": 120,
+  "genese_atteinte": false,
+  "plus_ancienne_utc": "2026-07-02 00:53:10",
+  "plus_recente_utc": "2026-07-30 11:06:32",
+  "n_tx_parsees_inspectees": 600,
+  "n_destinataires_distincts_sur_echantillon": 361,
+  "n_sources_distinctes_sur_echantillon": 108,
+  "montants_de_sortie_les_plus_repetes": [
+   [
+    0.0036,
+    186
+   ],
+   [
+    0.00203928,
+    29
+   ],
+   [
+    2.954141,
+    4
+   ],
+   [
+    0.134,
+    3
+   ],
+   [
+    1.998935,
+    3
+   ],
+   [
+    1.982218,
+    2
+   ],
+   [
+    2.976827,
+    2
+   ],
+   [
+    0.13,
+    2
+   ]
+  ],
+  "etiquette_connue": null,
+  "lecture": "INFRASTRUCTURE probable (volume et eventail de destinataires trop larges)",
+  "contexte": "OPTIMUS (CIBLE)"
+ },
+ {
+  "adresse": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+  "n_signatures_vues": 120000,
+  "pages_signatures": 120,
+  "genese_atteinte": false,
+  "plus_ancienne_utc": "2025-01-03 20:11:19",
+  "plus_recente_utc": "2026-07-29 05:34:43",
+  "n_tx_parsees_inspectees": 600,
+  "n_destinataires_distincts_sur_echantillon": 2931,
+  "n_sources_distinctes_sur_echantillon": 1,
+  "montants_de_sortie_les_plus_repetes": [
+   [
+    0.0021576,
+    2962
+   ],
+   [
+    0.014244239,
+    1
+   ],
+   [
+    4.22104594,
+    1
+   ]
+  ],
+  "etiquette_connue": null,
+  "lecture": "INFRASTRUCTURE probable (volume et eventail de destinataires trop larges)",
+  "contexte": "ODIN (CAS PROUVE)"
+ }
+]

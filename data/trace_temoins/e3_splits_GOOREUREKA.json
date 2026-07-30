@@ -1,0 +1,46 @@
+{
+ "label": "GOOREUREKA",
+ "mint": "4DswCdTzmDmG32VWthsLkpR5CG9aY5iqELuu47nFpump",
+ "n_wallets": 6,
+ "n_inflows_total": 7,
+ "n_rentrees_ecartees_produit_de_vente": 61,
+ "n_genesis_reached": 3,
+ "n_genesis_NOT_reached": 3,
+ "n_prebuy_reached": 5,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "5NChXDivwhdsxEXmw7ZZUDf82TYeNbncYnHL9Bwh5wE1",
+  "8ng21RPJaRtNp9p7YGB5DzccXYjtcQr9wE7m2MzUJicg"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/6 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 5,
+   "total_sol": 13.847035,
+   "first_utc": "2024-11-25 23:09:07",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.10022792,
+    0.19516403,
+    0.212,
+    1.347643,
+    11.992
+   ],
+   "wallets": [
+    "28AiDpdhozT3f6Dmeo3wPYk8PPmJyzQWfRnCPrqLiLez",
+    "5NChXDivwhdsxEXmw7ZZUDf82TYeNbncYnHL9Bwh5wE1",
+    "AvxPfAe6MMYqSGwV2dycjkJpD6oxDg8qCRbSt8h1LAhQ"
+   ]
+  }
+ ]
+}

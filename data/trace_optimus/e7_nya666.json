@@ -1,0 +1,89 @@
+{
+ "label": "OPTIMUS",
+ "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+ "n_reprises": 1,
+ "n_geneses_nouvellement_atteintes": 1,
+ "n_toujours_hors_atteinte": 0,
+ "toujours_hors_atteinte": [],
+ "wallets": [
+  {
+   "wallet": "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+   "buy_rank": 28,
+   "n_signatures_total": 2332569,
+   "pages_added": 257,
+   "stop_reason": "page_incomplete_GENESE",
+   "genesis_reached": true,
+   "oldest_seen_ts": 1724177737,
+   "oldest_seen_utc": "2024-08-20 18:15:37",
+   "days_alive_before_first_buy": 51.21,
+   "M1_tested": true,
+   "M1_inflows": [
+    {
+     "phase": "M1_naissance",
+     "nature": "financement",
+     "rank_in_wallet_history": 1,
+     "ts": 1724177737,
+     "utc": "2024-08-20 18:15:37",
+     "amount_sol": 1.0,
+     "calibre": "rond_SOL",
+     "source": "3F2uT3Yo4AqRi3KnDDjSRq4uSS5xo1DKfurYrLPkXd7G",
+     "source_amount_sol": 1.000015,
+     "source_known": null,
+     "n_debited_accounts": 1,
+     "tx_type": "TRANSFER",
+     "tx_source": "SYSTEM_PROGRAM",
+     "signature": "24SQHPh3D2VyMFSbV6JsQkpf7NnxhPHU1UDPMpE8UNFhDwvZRcX7er9dA9u8EFByLbK4REL684HxTxy4wofWR1Pv"
+    },
+    {
+     "phase": "M1_naissance",
+     "nature": "produit_de_vente",
+     "rank_in_wallet_history": 1,
+     "ts": 1724196924,
+     "utc": "2024-08-20 23:35:24",
+     "amount_sol": 0.062234028,
+     "calibre": "precis_swap",
+     "source": "ATQdceHkiDHsSoinJUWP2ccYLGZijuhjoonEQ4Fr7Swf",
+     "source_amount_sol": 0.093439028,
+     "source_known": null,
+     "n_debited_accounts": 1,
+     "tx_type": "SWAP",
+     "tx_source": "RAYDIUM",
+     "signature": "2izmzeLmztJRF8VnsW9yf1wXs1i3CfaVL5HCJNH5vCqfezcSKPiWGTACt3o4LpAjeCvCPEn2sU1QLFQPpd4724jr"
+    },
+    {
+     "phase": "M1_naissance",
+     "nature": "produit_de_vente",
+     "rank_in_wallet_history": 1,
+     "ts": 1724207727,
+     "utc": "2024-08-21 02:35:27",
+     "amount_sol": 0.178535321,
+     "calibre": "precis_swap",
+     "source": "ESWj3ow3hn7YZCn5vCmGLjP3gmPDrcDx1QfZ8gzpvSUZ",
+     "source_amount_sol": 0.184586182,
+     "source_known": null,
+     "n_debited_accounts": 1,
+     "tx_type": "SWAP",
+     "tx_source": "PUMP_FUN",
+     "signature": "21MoX4HczuchvpmibvJfsF7APpPLoKrfEmZ1qnji3gCB5Ed4PTp49H5rGRMnxwWpBMzeCn3PMmXHAVJfLH1S7xUn"
+    },
+    {
+     "phase": "M1_naissance",
+     "nature": "produit_de_vente",
+     "rank_in_wallet_history": 1,
+     "ts": 1724208252,
+     "utc": "2024-08-21 02:44:12",
+     "amount_sol": 0.073121694,
+     "calibre": "precis_swap",
+     "source": "6knQsFrZJgToNeWeYaVooFKpibgxXVgYVCMyctsm35Ni",
+     "source_amount_sol": 0.078107771,
+     "source_known": null,
+     "n_debited_accounts": 1,
+     "tx_type": "SWAP",
+     "tx_source": "PUMP_FUN",
+     "signature": "2pB3vzaFh6mu3KJyEs22G3RTr4ZN8Hbp8WupyqY9XcoGhiGxVM6c6YthicWMDzFBQZrt2L2MftNL6S5xqws4nv81"
+    }
+   ],
+   "n_tx_fetched": 60
+  }
+ ]
+}

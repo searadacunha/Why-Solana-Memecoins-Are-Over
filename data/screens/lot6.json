@@ -1,0 +1,60 @@
+[
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.18 (7).jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter (onglet Reposts, 204 posts, heure ecran 21:23) : fil sur la resolution du marche Polymarket 'MicroStrategy sells any Bitcoin by May 31'. Aucun token Solana, aucun mint."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.18 (8).jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Meme fil X/Twitter que (7), vue plus haute (post @liwikruk du 03 juin). Heure ecran 21:23. Aucun token Solana."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.18.jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter en francais (Reposts, 204 posts, heure ecran 21:24) sur le meme litige Polymarket/UMA. Aucun token Solana."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 21.26.19.jpeg",
+    "symbole": null,
+    "mint_fragment": null,
+    "gain_pct": null,
+    "duree": null,
+    "date": null,
+    "notes": "PAS une capture de trade. Capture X/Twitter (Reposts, heure ecran 21:22), post @JohnsonOnchain du 03 juin + JSON API Polymarket (conditionId 0x3733a1b647e7364095736ab0966465d896a84cf3b6bc1695ca1f2..., endDate 2026-07-01). Aucun token Solana."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.46 (2).jpeg",
+    "symbole": "RAO",
+    "mint_fragment": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+    "gain_pct": 687.41,
+    "duree": "12d 13h 42m",
+    "date": null,
+    "notes": "CAPTURE DE TRADE. Paire RAO/SOL. Contexte : Telegram 'Trojan on Solana - Nestor', heure ecran 10:54. Au-dessus de la carte, log de vente Trojan : Fetched Quote (Jupiter) 3M RAO (~5147 USD) <-> 19.075 SOL (~4846 USD), Price Impact 5.86%, 'Sell Success!' + lien View on Solscan, mention 'Renounced'. Mint COMPLET (44 chars, suffixe 'pump' => token pump.fun) recupere via le lien de partage. Aucune date MM/JJ/AA affichee. Montants investi/gain notes hors depot public.",
+    "interne_invested_sol": 3.063,
+    "interne_gain_sol": 21.057
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (2).jpeg",
+    "symbole": "bender",
+    "mint_fragment": null,
+    "gain_pct": 707.67,
+    "duree": "8h 28m",
+    "date": null,
+    "notes": "CAPTURE DE TRADE. Paire bender/SOL. Image recadree sur la seule carte Trojan : pas de barre de statut, pas d'heure, pas de lien de partage, donc AUCUN fragment de mint et AUCUNE date. Le mint devra etre retrouve par recherche du symbole 'bender' sur Solana (probable homonymie => a desambiguiser par la date/duree une fois le lot complet recoupe). Montants notes hors depot public.",
+    "interne_invested_sol": 1.021,
+    "interne_gain_sol": 7.225
+  }
+]

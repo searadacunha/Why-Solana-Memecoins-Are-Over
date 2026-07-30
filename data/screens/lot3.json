@@ -1,0 +1,62 @@
+[
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.46.jpeg",
+    "symbole": "VISUALIZE",
+    "mint_fragment": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
+    "gain_pct": 1613.53,
+    "duree": "1d 59m",
+    "date": null,
+    "notes": "Capture d'ecran Telegram complete (bot Trojan on Solana - Odysseus, 22779 utilisateurs mensuels). Heure telephone 16:10, message Sell Success a 16:01. Contexte de vente visible: 30m -4.40%, 24h +61.44%, Renounced OK, Not Rugged OK. Quote RaydiumAMM: 8.35M VISUALIZE (~1894 USD) contre 11.237 SOL (~1743 USD), price impact 7.94%, Liquidity SOL 176.059, supply cote SOL: 122.11M. MINT COMPLET recupere depuis le lien de partage (suffixe 'pump' => token pump.fun). Aucune date MM/JJ/AA affichee.",
+    "interne_montants": {"sortie_sol": 11.237, "sortie_usd": 1743.67, "valeur_token_usd": 1894.03}
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (1).jpeg",
+    "symbole": "FS",
+    "mint_fragment": null,
+    "gain_pct": 852.89,
+    "duree": "4h 30m",
+    "date": null,
+    "notes": "Carte PnL Trojan seule (pas de contexte Telegram, pas d'heure, pas de date). Theme spartiate/poele a frire. Symbole tres court (FS) donc ambigu: plusieurs mints possibles, a desambiguiser on-chain via le montant et la duree.",
+    "interne_montants": {"invested_sol": 1.326, "invested_usd": 314.70, "gain_sol": 11.315, "gain_usd": 2637.34}
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (3).jpeg",
+    "symbole": "sumiko",
+    "mint_fragment": null,
+    "gain_pct": 28465.63,
+    "duree": "2h 50m",
+    "date": null,
+    "notes": "Carte PnL Trojan seule. Pas de date explicite MAIS theme visuel de Noel (Elf / flocons / guirlande) et l'icone de duree est un flocon: indice fort d'un trade en periode de Noel (fin decembre). Plus gros multiple du lot (~285x) sur 2h50 => candidat prioritaire pour l'analyse de decoupage des funders. Symbole en minuscules.",
+    "interne_montants": {"invested_sol": 0.254, "invested_usd": 48.01, "gain_sol": 72.516, "gain_usd": 13699.81}
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (5).jpeg",
+    "symbole": "LEXICON",
+    "mint_fragment": null,
+    "gain_pct": 129.50,
+    "duree": "2h 51m",
+    "date": null,
+    "notes": "Carte PnL Trojan seule, theme bibliotheque. Icone de duree = horloge classique (pas de theme saisonnier). Aucune date ni fragment de mint.",
+    "interne_montants": {"invested_sol": 7.063, "invested_usd": 1338.00, "gain_sol": 9.146, "gain_usd": 1765.37}
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (7).jpeg",
+    "symbole": "HOMELESCAT",
+    "mint_fragment": null,
+    "gain_pct": 1084.63,
+    "duree": "11h 26m",
+    "date": null,
+    "notes": "Carte PnL Trojan seule. Pas de date affichee MAIS panneau '2025' + feux d'artifice + icone flocon pour la duree: indice fort d'un trade au passage a la nouvelle annee (fin decembre 2024 / debut janvier 2025). Orthographe du symbole a conserver telle quelle (HOMELESCAT, un seul S).",
+    "interne_montants": {"invested_sol": 0.509, "invested_usd": 108.75, "gain_sol": 5.526, "gain_usd": 1189.66}
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.47 (8).jpeg",
+    "symbole": "ACID",
+    "mint_fragment": null,
+    "gain_pct": 233.75,
+    "duree": "26m 56s",
+    "date": null,
+    "notes": "Carte PnL Trojan seule, theme doge muscle. Pas d'icone d'horloge, duree affichee brute. Aucune date ni fragment de mint. Duree tres courte (<30 min) => trade de sniping.",
+    "interne_montants": {"invested_sol": 2.052, "invested_usd": 493.65, "gain_sol": 4.798, "gain_usd": 1136.43}
+  }
+]

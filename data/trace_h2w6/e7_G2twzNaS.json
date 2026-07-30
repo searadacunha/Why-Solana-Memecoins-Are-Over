@@ -1,0 +1,30 @@
+{
+ "addr": "G2twzNaSnSnveK4Zys6usTNwG3pY8RruGaKvZycd7k2S",
+ "n_sigs_total": 63,
+ "genesis_reached": true,
+ "premiere_utc": "2024-12-02 20:15:54",
+ "derniere_utc": "2025-05-06 06:21:18",
+ "entrees": {
+  "B7SBBPKvxhn8mpBo9y84einXkxxjb8JZWhyMaCHEhqQv": 12.250342072,
+  "D5F1Ut43zde27u9FaM1anDAithNXeEKStK7xAZEWDnjH": 11.998485867,
+  "6xd5PxL3DVvVjaeLVXkLAamZLvrV3LQsmXkNy8B5u3x6": 8.149353789,
+  "CtP3DR7CN6uz9brLLf24SvsCab84xBvNteS4PzgnGh66": 7.000105,
+  "6rCiCUWzVfQ3hjow75v7TA9UphQsZpgp3CdzHmv3oqvv": 5.053310969,
+  "5e7btJuwgMpLQvkWNAuEQw1koB2HAW4nVeMHJy2o2bAp": 5.000003,
+  "GKazAWhGbs9etRiS83XSmszTKZTMuMW6SWzgJrgRnMaa": 4.791165699,
+  "Ap8LLSAU9Cq2naCjGKpnLyJbtgcMtwETvmATYVd53yQK": 1.883198647,
+  "G5VXP2coPb7baKDvb82wFjZ1Wt1XZtYRq3SkKWDHukZ5": 1.48005199,
+  "3EKpkEAsdezGwETRuKxvnPZX3VJf9iWLu9eRgM4BizhP": 1.292008363,
+  "EHRxYHcQtV1rzNZQjVXyBYwyRUpgcVqqXVepJzVj2YVG": 0.999999202,
+  "GZmHZWGxWJJTeBcH3ZKnrvUED7GmqoeU8TysAgHLicmK": 0.51995151,
+  "AJC4QxeuvLD3hjT8SHA9LACAfSsT6SsBCp8TcrGbzRFc": 0.138813044
+ },
+ "sorties": {
+  "sE48Z37YiRQ7nTR2NkRWQYz7Xp5Ca3VPsUxjFEN2Xmw": 21.0,
+  "v6BFsgbJ5YaYZxEgapUXi5F2AoAZFDPaZdsspvfJBhq": 15.0,
+  "AwzntLkaND9bq6CBrB4gAyUb41KBePj4TofdTeMXbKyL": 11.0,
+  "DqikwUtR2yo9iMWPv4SxvVAt41XqTTQ3pUij6AtxHA3P": 6.99992,
+  "8RGiA1jvA1JXw19Sy63c2yzqrfyQX6AVgdSiNdYfcXxp": 6.528577694
+ },
+ "croisements_G2Y_HRS6": []
+}

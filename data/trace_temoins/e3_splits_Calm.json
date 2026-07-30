@@ -1,0 +1,136 @@
+{
+ "label": "Calm",
+ "mint": "B6Znej2JwW2mEsXeoEGmQwwZ9E3tvNDPWRVw74njpump",
+ "n_wallets": 40,
+ "n_inflows_total": 113,
+ "n_rentrees_ecartees_produit_de_vente": 1222,
+ "n_genesis_reached": 21,
+ "n_genesis_NOT_reached": 19,
+ "n_prebuy_reached": 37,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "Fc5tH9o5fPiWrLEaP46m4S6yWCfq6bRBobjVcVw4KYAs",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "CoHQxKQFt39FxH9f33ryZiqnLbbbfHRX4ubmpnqfm42i",
+  "8F7yMq8tyGwnupcmGAX93LeaVkiy3ETz6VfazCaqRT8r",
+  "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr",
+  "ESamwEmETkdxUpoQwEtvb7kAnopiXjQk7vrJAZF422Sv",
+  "2xEjnrKGuoEKbKP7QaVDo1usR4isTc7tuzbCtzgRVdb9",
+  "DHMdjMMs6bLHCkcKmw593bmU9X9YzdHDHUxdyikq32ps",
+  "3cz4tF3AN4bNU44trWBADnAoTdXq2Ce4xuBMeH2717QG",
+  "4H2Q3W4u5cxcQbEUA3nxm1WacyL5aqzwBiV3pP88WS34",
+  "AQbi7geEKEu7ya1UnXEGhsyNneLUQEvLpH6GEUZWScaY",
+  "8eUmJvANsdEaxZDi1NTspb27KDGEL7tm7Byq4V7gmJWY",
+  "98JrNXaQWC3SMeMYidy36jCQyXYuUkiR4UyD5DvStnfv",
+  "Bs94ZVhwa5vdVDPKMjaoFKmVDdwPSFaZ6M43cXe1v6VT",
+  "AwjaJatooPoKNA4f3bEKGvsCNShZV1MAQ7RPhfjngNvq",
+  "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+  "2Ad11SScwrddQSYN15tPpWtLEj1SxFEZU8NHD2hWXvpW",
+  "ABvFVH233gaqbCNRh5bG6xHDQCJLD1huYUP47XtBNK7J"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 3/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (3 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "n_early_buyers_funded": 6,
+   "n_transfers": 10,
+   "total_sol": 10.349957,
+   "first_utc": "2024-09-13 05:19:42",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.108874413,
+    0.318633956,
+    0.386172069,
+    0.9999,
+    0.9999,
+    1.0,
+    1.0,
+    1.036476853,
+    2.0,
+    2.5
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "AAVKpG2Sbu1hiT9MwNke7KSGNvydhqoLviZRauimrg4e",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "B3P2xshhXLJQhD63LKFsNMR732uN6y8CNX7qCnQmSonz",
+    "D3K7bKAMLhBPMuhUNe6moQkCaJd7YW1cKD1ahGfhG1Vs",
+    "GgdoaXKDiBA1mku2SqVhXeuLYbBaZNTJ5SjfS1DCUHec"
+   ]
+  },
+  {
+   "funder": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "n_early_buyers_funded": 5,
+   "n_transfers": 7,
+   "total_sol": 7.792476,
+   "first_utc": "2024-09-18 01:08:02",
+   "known": "Coinbase 2",
+   "amounts_sol": [
+    0.0723975,
+    0.082007071,
+    0.698473422,
+    0.915368459,
+    1.958110458,
+    1.999701,
+    2.06641823
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "CVyer9gNPwsejuqQhPdNgbNL6LvhjqSgQT67F7MsuSx9",
+    "D3K7bKAMLhBPMuhUNe6moQkCaJd7YW1cKD1ahGfhG1Vs",
+    "GgdoaXKDiBA1mku2SqVhXeuLYbBaZNTJ5SjfS1DCUHec"
+   ]
+  },
+  {
+   "funder": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+   "n_early_buyers_funded": 4,
+   "n_transfers": 5,
+   "total_sol": 3.981494,
+   "first_utc": "2024-09-11 07:30:30",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.1,
+    0.348491549,
+    0.97412481,
+    1.046190425,
+    1.512687668
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "8eUmJvANsdEaxZDi1NTspb27KDGEL7tm7Byq4V7gmJWY",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "B3P2xshhXLJQhD63LKFsNMR732uN6y8CNX7qCnQmSonz"
+   ]
+  },
+  {
+   "funder": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 4.238224,
+   "first_utc": "2024-09-27 01:08:37",
+   "known": "Bybit hot wallet",
+   "amounts_sol": [
+    0.31186756,
+    0.90862374,
+    0.91622867,
+    0.97382556,
+    1.12767813
+   ],
+   "wallets": [
+    "5RaTm5NFnY7keXnnmZinXFa1o5nrFioP5g3ZgYDfYJQL",
+    "AQbi7geEKEu7ya1UnXEGhsyNneLUQEvLpH6GEUZWScaY"
+   ]
+  }
+ ]
+}

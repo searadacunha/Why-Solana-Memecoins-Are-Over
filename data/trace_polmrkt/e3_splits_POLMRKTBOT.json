@@ -1,0 +1,140 @@
+{
+ "label": "POLMRKTBOT",
+ "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+ "n_wallets": 40,
+ "n_inflows_total": 61,
+ "n_rentrees_ecartees_produit_de_vente": 1213,
+ "n_genesis_reached": 21,
+ "n_genesis_NOT_reached": 19,
+ "n_prebuy_reached": 37,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "ATFmqm2iJekCz1Pey8vq7xPvsdw4TmvqtptGrDZaxBkU",
+  "BHrEssDoHBGibjGDnsUaVf7RnK6vfbHstLLq9gAPxajy",
+  "G4fRodduhR42WM2TzrVqSKm95pSeznZD5cA3JyvGdaGR",
+  "EB69qjrp5qdALYZMzpoqHvNLP2kGiPDUQ9QxXCaxUVR4",
+  "Fic3kRBNnAtYZoctyZ28pZKvsC5T2DVoishJHQwtDbBg",
+  "7T3oGHRTz5W3CPqzWnRRQESPWEnG2tAzeMRNsSotN1tE",
+  "AGp1R6yfPb8bURH6Bh1bTC4LxUhyRHabmFmvq6yWUyT6",
+  "GSWUadTE8kGPtreGEJjSeautLtaPXde5QJ1sh4CJ96Re",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "94XpvcVfTvHAQ7GzhzdGVG4WY6B9arph99fnUNhSdYPw",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+  "GHhE3wsMGwyf8TBWy1TgZn6LsW4V3Mi2xSGfdQQwgQPy",
+  "8HN9SnDQQPqD5GQRCprmTGc8tnaBy39aBLa7GCFXpd6M",
+  "Dnd4F6edmkekGPbbFc6ntJzyCepBRU5E8WJoyjkd4v4P",
+  "uLex1aZegf9cc7JWtHhX3xs9PRLEk68tDnZ52GrnyV5",
+  "38pG31XebEUhBkCdtdLVi18TzHbxQ1EEKfVjfcmHNBo1",
+  "8P1cYYRBqevhBXY4yLurGAQqrCRJZ6BeFjvp3ANHejCn",
+  "FvJhLtDaMYvUoHESsTqNQkym99Ka2RYj4bScbvi6LxZ5"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "FasqsdrS5RuJoXvturgfCUGfZQ2iEVwAohQsGrf8hJwH",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 1.786399,
+   "first_utc": "2025-02-12 13:49:34",
+   "known": null,
+   "amounts_sol": [
+    0.20727842,
+    1.579121001
+   ],
+   "wallets": [
+    "BYJTEHeAqmSePCaE9jG4K5spDC1ZyADgikbYSQReuqWD",
+    "C1j22yCnK7frKkWc8374rWo8fii4wJXGJhTaypQeZn2k"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 7,
+   "n_transfers": 8,
+   "total_sol": 151.598719,
+   "first_utc": "2024-11-23 05:48:15",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.18500332,
+    0.692,
+    0.992,
+    4.76171607,
+    4.992,
+    9.992,
+    49.992,
+    79.992
+   ],
+   "wallets": [
+    "2vz9SyXVHDxEX3weSFVEhGARZa8TD3o5WDh7WiG4MWZs",
+    "3uz3uB7oXzHW1kqY6L5MkQXUBECrr829bbvQCyy1183k",
+    "5i8Ed4SDzvSDxL4YouhmWzwU8fEh2H77CxZvuEkZQDV2",
+    "Ajbtz7noZnAHMKzgPdyuMaF9W1oxCi7S3Ti1UACkq9Zf",
+    "BYJTEHeAqmSePCaE9jG4K5spDC1ZyADgikbYSQReuqWD",
+    "E5tg8KmZPHtcpUMczpEHbevxwk9WnBh2XcX1WuyCSTDF",
+    "G4fRodduhR42WM2TzrVqSKm95pSeznZD5cA3JyvGdaGR"
+   ]
+  },
+  {
+   "funder": "5VCwKtCXgCJ6kit5FybXjvriW3xELsFDhYrPSqtJNmcD",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 37.597376,
+   "first_utc": "2024-06-10 05:57:27",
+   "known": "OKX hot wallet",
+   "amounts_sol": [
+    0.83926251,
+    1.64464216,
+    2.9936,
+    6.29898431,
+    25.82088685
+   ],
+   "wallets": [
+    "E5tg8KmZPHtcpUMczpEHbevxwk9WnBh2XcX1WuyCSTDF",
+    "GxF8KnupyWCDFX3hqz2RZhQPo7NYArLxcEBza13wFuKP"
+   ]
+  },
+  {
+   "funder": "ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 13.167927,
+   "first_utc": "2024-11-19 18:00:59",
+   "known": "MEXC hot wallet",
+   "amounts_sol": [
+    5.9936,
+    7.17432685
+   ],
+   "wallets": [
+    "DQFkJN3GRSvAsZQZin7kMLxGjw2xdt99esAgA3AfUSf9",
+    "Ght8SiEptkaxfw4ZykcWBeMMrf3GEd2dtRkwL5sUNxeA"
+   ]
+  },
+  {
+   "funder": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 3,
+   "total_sol": 2.245769,
+   "first_utc": "2024-12-10 12:36:10",
+   "known": "Coinbase 2",
+   "amounts_sol": [
+    0.1999,
+    0.267013895,
+    1.778854846
+   ],
+   "wallets": [
+    "AKLojVMSwRQ9nSAMQB52hBQtv598CrMrWYXAC9qNDdW4",
+    "DQFkJN3GRSvAsZQZin7kMLxGjw2xdt99esAgA3AfUSf9"
+   ]
+  }
+ ]
+}

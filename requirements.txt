@@ -1,0 +1,17 @@
+# Every measurement runs on the Python 3.9+ standard library alone:
+#   json, gzip, bisect, statistics, math, itertools, collections, urllib,
+#   hashlib, argparse, datetime, random, subprocess, re, os, sys
+#
+# That is a deliberate constraint, not an accident:
+#   - a reviewer runs the whole dossier with `python3 code/<script>.py`, with
+#     nothing to install and no environment to resolve;
+#   - the bootstraps, the Fisher exact test, the permutation tests and the
+#     log-log fit are written out in this repository and can be read, rather
+#     than delegated to a library whose defaults would then need auditing too.
+#
+# Verify:  python3 code/run_all.py --deps
+#
+# ---------------------------------------------------------------------------
+# OPTIONAL, and only to redraw the PNGs in figures/ (code/f_*.py). No number
+# depends on it: the figures are drawn from the same JSON the tables are.
+matplotlib>=3.5

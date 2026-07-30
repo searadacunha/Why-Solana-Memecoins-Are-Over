@@ -1,0 +1,389 @@
+{
+ "addr": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+ "n_sigs": 217615,
+ "genesis_reached": true,
+ "events": [
+  {
+   "sig": "67RUL7hK7yDE9YwtMKVNnVGzJRh7RyTEovfVDX35FCeF8Ek33mCkRxkK7ps9TvQAJDHQYSK6Bi9h5HhkLL7UEhjr",
+   "t": "2024-10-22 20:26",
+   "delta": 0.01,
+   "contreparties": [
+    [
+     "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+     -0.01
+    ]
+   ]
+  },
+  {
+   "sig": "hfPau6JHuSH1QM2Ru1L2XW2qouHqPGaMv6hTr8UCd5nCRb6QinxqUZs7AJiiwXKobgPzTp9Q7bXPUZJ1qNUL6j5",
+   "t": "2024-11-06 14:08",
+   "delta": 0.0101,
+   "contreparties": [
+    [
+     "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+     -0.0111
+    ]
+   ]
+  },
+  {
+   "sig": "3vHkqc1bfuWhgu6hppXHD1YMBn6vmyaeL2NQ9eBt48UaPA8ERAfA9c2ebdTz3bpvuU2GRsNAXftMUjYEHD7Tdb6Y",
+   "t": "2024-11-06 14:09",
+   "delta": -0.0101,
+   "contreparties": []
+  },
+  {
+   "sig": "r9uZMbirxU142RtMyQS6V5bigFZatfCB4QAb3ysopfyQbqxLX3icnLXGYnWnmYDNYeNvNwriVcFFqc54aj4mEAM",
+   "t": "2024-11-06 14:12",
+   "delta": 0.0121,
+   "contreparties": [
+    [
+     "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+     -0.0132
+    ]
+   ]
+  },
+  {
+   "sig": "4kofzHWYfJsNcxwUD9u5ng4zc76pueR9hs8e9teVZn3Wik15NkW5Rr1MXjMcy4xzMbDLZijWM3dvNJZrbefoy3vb",
+   "t": "2024-11-06 14:12",
+   "delta": -0.0101,
+   "contreparties": []
+  },
+  {
+   "sig": "3qg1rQsjeBYfmWVmTr5e8Msi6ZPbrdsWYDy8h1BXdD9ZN5GVZc6bcFFLGc2DS4QHN25Uxn2iTWtuAHNEGfQ43BD4",
+   "t": "2024-11-06 15:15",
+   "delta": 1.5001,
+   "contreparties": [
+    [
+     "3KhoVLJXbcvEdSMYu7XihT4rajuRVa8euKeCRLfmh9WS",
+     -1.5151
+    ],
+    [
+     "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+     0.015
+    ]
+   ]
+  },
+  {
+   "sig": "5258gBJjPJqeGgWaySq73JitgRpio2e2xFtRnpz1znLnqQvZLLTgceZihy6sScpQ8eLPJvrJD7DGDbHj1Nbpappo",
+   "t": "2024-11-06 15:16",
+   "delta": -1.5001,
+   "contreparties": [
+    [
+     "H1tvjmjnSxjgDkPkDgpvCgwPZAHeswwXJzpER9XZsYTv",
+     0.1
+    ],
+    [
+     "2rLp6qbuzXxaKU1Bnu6xXWYccBbhSYg2RaPPurLhwnaf",
+     0.2
+    ],
+    [
+     "7wdcV2MX6yaCYYPaiaSG6PzRT2L7RMSdpT9uzRUzm91K",
+     0.1
+    ],
+    [
+     "14q12RCFX8qBqEBDzuBt78pRGaz3ocDK7rjP4VFTuxSj",
+     0.3
+    ],
+    [
+     "AhkC5LzVnJWxkYj576SGC1UmEFnLwC5S7zbsyqtxXV3S",
+     0.1
+    ],
+    [
+     "BmSwjj1Frz2D5358d8MH8bvcUaYw4ANAYx1TRRqKYsX5",
+     0.1
+    ],
+    [
+     "ErQZefPKvfYc25iPzSQkgYk7zZ9F5vjw2zNps4TMFJvY",
+     0.1
+    ],
+    [
+     "ETPyuvTTFC4AiK5VrvEn9Sg53MGYTKkKtwx9iiUMhCrM",
+     0.1
+    ]
+   ]
+  },
+  {
+   "sig": "3WH1JzH3SHm77SRkgCmVFdbLS8rxfzqeeR6MS4LK7HNyNZ9arXjV33Y8M3ZttbBD3y6ftVhMsSj575NSje477QsA",
+   "t": "2024-11-06 16:13",
+   "delta": 0.2455,
+   "contreparties": [
+    [
+     "EXUcqVP61F51sxZGCHxhFv56owopfb4rYKD5qpMbCU58",
+     -0.3676
+    ],
+    [
+     "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+     0.12
+    ]
+   ]
+  },
+  {
+   "sig": "5EcXuPvYuLoi3jD7Tc5JH5Hj1dva3dRc24C43nRyvxr8bPchMXuw5a5c5N5DycTjhWRcxYz1H5QyA3r2hEQSp1oQ",
+   "t": "2024-11-06 16:13",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3YJwSiGvGseUDYEhQkNFbxLhubcTrvEG5xj41NcEWT3si24d6JGpVFgq9m1cHYaGZdrETgvhSpe2dTc2sWah5yEr",
+   "t": "2024-11-06 16:13",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "4T1CLeWerj8gu7puWHLky1NpETqjEeTvVwp9FPGFBZw3R1pLPFGDwY54LevgyoZpMTeAfmEYgXq9iK35zrcSQ5jg",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "5vFseEyo5yu1Ljg684KvTXM6PFaX75JiRvbB7AAV2pkVXshDCAHkHFJwPxmrrHmCH1KRPRWME9YFXDcqqQCv7qGA",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "4RswAshzGmy1qaf8qHtj2qSB2YR7pq5UhAEzS6rW6fKaRm2P6Gt8on3Z3g4MiQX67z4L1S4GCkHf5fXsmYsWy3Px",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3B9Jz3aQLKAJLQ4zEAUa15QWT9TdaT9JCe5Ya5nwq2ifVtiyVWke5BYs9VCJxDiBuAtzw1XCzTpf3xyCsDrqhrnQ",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "2fUseehKusTjnZFiU1CBey5zJyQkYNVtLNUBEt3ssWRhDG1iTzTPiJPdSfibmNf7VQYhNnYeJeB138BnsPBLkmrG",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "5hPpycoxfYvMtuU4ifqfKK54HcTT98thhMtnwF37MJtXWizgqBKnjeu7QXAa2HEAkK8taZav27pmRg5oW7QvLXUG",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "wDC5mLz5m3YtohMV8M1a75NjFkxRpMgomDP8XHAJRXTU57GgMxT8FLDZZRaERK7SCehBkwGdQmigy61dVv8S6bk",
+   "t": "2024-11-06 16:14",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3JBzN3uqxvHVJ2jmZueKuURupSbdVSywjFgqzPqA478W9CBWrxrbYNBrd5y3uTnrYabkbMN9KMLVqs9tC7cgw3uu",
+   "t": "2024-11-06 16:15",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "41GaWSzRjqsBsxCSw5WVMERs4FENLkgKxBTCyPS9HPf3XZmYrKfQ95ZMfgwAkLxbJYaoynS3tCdBbKghDovX8VRF",
+   "t": "2024-11-06 16:15",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "2FAwfP7DhYxVG2hANacD8oWHDcRF2NT8VEB8kLwNaGyXjvVs7PE3Ce447Nis5q3P7Pgqv9gpZ9V9kwwKmu8tfu23",
+   "t": "2024-11-06 16:15",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "7dwbXGteGr7M86ZQNKFt7ncBpo6uakRS22U819GqvPMP8fmeq7n9C7TUhttRG4iX469A7N9JvK65cMGH6ZJVPdP",
+   "t": "2024-11-06 16:15",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "4BLBNVUNb9PdtbEuvkrvRZ1F1tk4Woo9YQGWQ4rdBFi4oDnFBfDfFMDvUwHF4Uu2CAtum6RC9CW3kRb4dNeRMsJa",
+   "t": "2024-11-06 16:15",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "TaRFYQ2uYxerUpshLZmK6vvvG5AnvmDgXVQ3t4pam6wSZYRXeoxRX2Mn6cQqN6VRWFbur2LNFJbkeV6RP2xNhxP",
+   "t": "2024-11-06 16:16",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3JK7WFWBFugXbZ8rBiVkaVwJDA4eEhxJZcR6M4aSSwERS3j5KyX1WLKMnP5V6m3tWMvGTp827zKy75qiFhTtzBQD",
+   "t": "2024-11-06 17:10",
+   "delta": 0.041,
+   "contreparties": [
+    [
+     "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd",
+     -0.063
+    ],
+    [
+     "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+     0.02
+    ]
+   ]
+  },
+  {
+   "sig": "oSco7Q1UVRt9PFKtitWNe8Dw4um5vbe9zM2igcxmg5jAXoKDtuanW6kqanTqsSgQ1xnF6fEFddfAH1PgBqR1hXX",
+   "t": "2024-11-06 17:12",
+   "delta": 15.0001,
+   "contreparties": [
+    [
+     "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd",
+     -15.0151
+    ],
+    [
+     "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+     0.015
+    ]
+   ]
+  },
+  {
+   "sig": "3V2yxy1b25BZUUps7j6JhtvDvhSDesYDKKMB9XAx7N641R194ZYSSutgTZJ3t6JVW5rhPwru7jjwNkLgy3Qu99ed",
+   "t": "2024-11-06 17:12",
+   "delta": -15.0001,
+   "contreparties": [
+    [
+     "2NN5VR5UVtRY7mAM18cnxcJ8qXwqWFxLrF2J5bJXBJoz",
+     5.0
+    ],
+    [
+     "7QVn639AYygGAm2wSg4raUQbw4hBYSkF7pevonR42iMn",
+     2.0
+    ],
+    [
+     "9iLxw9MhKn9GNB6vxLUTJ9zGkRz5nrz4LTFk2gxYrMuw",
+     1.0
+    ],
+    [
+     "Cn45Agj4heY3GZLfpkPaFo6oGejwBYtGmaDarBHiMvex",
+     3.0
+    ],
+    [
+     "3Y9H5YNtqo1MDKHTWj6yQQutXuy3XxjGYHKa9zUS9GmE",
+     1.0
+    ],
+    [
+     "71nE9wiHkazGpb4MJWcth3ASSXep2zi74i2Cs3RQhTTB",
+     3.0
+    ]
+   ]
+  },
+  {
+   "sig": "4DrRnDnotZ2j9z7QPY4g3iBcB3bsRYgusawhJ3kiKpYXvmRg6DNLJb18uLEiAnnQvnSNa6V7H6DpBV6kA9epSvmf",
+   "t": "2024-11-06 17:13",
+   "delta": 16.0001,
+   "contreparties": [
+    [
+     "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd",
+     -16.0081
+    ]
+   ]
+  },
+  {
+   "sig": "5ZHxmWAp7Jyt9pn47sJTaU3r36cVcw2d3LPDFB6FhpmbREkzqrZiAT7Y1XTgFuePZDHYAVBHyJsHZiLQ147k3Sm7",
+   "t": "2024-11-06 17:14",
+   "delta": -16.0001,
+   "contreparties": [
+    [
+     "2NN5VR5UVtRY7mAM18cnxcJ8qXwqWFxLrF2J5bJXBJoz",
+     6.0
+    ],
+    [
+     "71nE9wiHkazGpb4MJWcth3ASSXep2zi74i2Cs3RQhTTB",
+     8.0
+    ],
+    [
+     "GfzQFhxNW9xEXBT23MkM2sHG38PDqHupniG6mbjc3wuC",
+     2.0
+    ]
+   ]
+  },
+  {
+   "sig": "5m2NKJNaso2dZYvAGoo7Dh5a3YBwc3VofKZox6dGemyHjLqdFZNecy5FhgRnKjzE8yTyBJyZ25aCWSbgTHW58xX",
+   "t": "2024-11-06 17:14",
+   "delta": 15.0001,
+   "contreparties": [
+    [
+     "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd",
+     -15.0031
+    ]
+   ]
+  },
+  {
+   "sig": "2cfWaUS9YEKqft1Kk1TFdaLyCLjURDTYFJrMb2JNwdbxcvtaFcyTYF6ccLfEtRdBmd35WUztnwwGBk9WfP2cf4Qc",
+   "t": "2024-11-06 17:15",
+   "delta": -15.0001,
+   "contreparties": [
+    [
+     "71nE9wiHkazGpb4MJWcth3ASSXep2zi74i2Cs3RQhTTB",
+     5.0
+    ],
+    [
+     "3P6MpcFKs39dzYruEt7xecueN1oJhnnyTkBKjWdfAmFe",
+     5.0
+    ],
+    [
+     "GfzQFhxNW9xEXBT23MkM2sHG38PDqHupniG6mbjc3wuC",
+     5.0
+    ]
+   ]
+  },
+  {
+   "sig": "5fF4U5DpVej1KfoquwwtBzCzfBtbeAaJ951pXcZDEUZ8KhWRWVZPpxzCzmt8mHMnQkUvQhhfZBfkRyqeENcEBLZQ",
+   "t": "2024-11-06 17:49",
+   "delta": 0.3376,
+   "contreparties": [
+    [
+     "HopEoSu9NMiCZP1kJztJzCMrwvREZbes1Ekwg57GXjvB",
+     -0.5047
+    ],
+    [
+     "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+     0.165
+    ]
+   ]
+  },
+  {
+   "sig": "4H6u5qUhn2PZFjRAHHYpv6XW1eRwed1HCCQRzUxqahVMF7tETbxjXiforCFWjApbbictmsCLp9ghofbNVmJR1f7t",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3ddcpJLgTQEZF1GLjyoeXtNxGFKV1jyFuFjc9gWbAKsW2dFeBXnA8wMX4bqvkf2XG9TVxUNTn86oVsKrmERxVDi1",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0143,
+   "contreparties": []
+  },
+  {
+   "sig": "39Pqpf6PP9u5WxkYsXeLL3hJUwFi3QVw4hftfZWuvH8NoUbuxsu2X7yD1cZ5u526R4Jbx9HVwHm161yzrbgwvooP",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "3cQuJ2tyffqSyN3KN7hHk6pS7tocKn4oCebYEKCKKuwvYeMW4Wdi1DaWn6U7dHQpwuVAN8Z7iJtc9eQJutpXay5Y",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0164,
+   "contreparties": []
+  },
+  {
+   "sig": "5jS3HU9MY7zUBUfa1QVPQipFiAPdypx4WW36NcNJEsEKP3Be11x9eQUxtnSdEvbNP6hpEkkEtuPe565mM3WBfz92",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0143,
+   "contreparties": []
+  },
+  {
+   "sig": "f8HynoApKuVETQsNrdmsekEthHhqChzoagVdiTucjrQM8yR1oUdjTtjUNWyatXM2iLBLVzZVqcqp48cGWh19UdP",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0143,
+   "contreparties": []
+  },
+  {
+   "sig": "M8nQTQ2JqScwFFaiGaQi66EkGT62vm7BL1z9NEKQYLZxCEmTyQognQPtK7Pcxcy1bVUDGbeZL4Eo7s8Eoj3p5jx",
+   "t": "2024-11-06 17:50",
+   "delta": -0.0143,
+   "contreparties": []
+  }
+ ]
+}

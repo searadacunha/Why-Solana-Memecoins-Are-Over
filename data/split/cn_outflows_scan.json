@@ -1,0 +1,11 @@
+{
+ "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+ "n_sigs": 60000,
+ "per_month": {
+  "2026-04": 59966,
+  "2026-05": 21,
+  "2026-06": 11,
+  "2026-07": 2
+ },
+ "oldest_ts": 1775403698
+}

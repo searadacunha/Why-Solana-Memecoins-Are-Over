@@ -1,0 +1,188 @@
+{
+ "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd": {
+  "role": "bailleur principal (15/16 SOL repetes)",
+  "n_signatures": 219104,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2022-03-14 02:45",
+  "premiers_flux": [
+   {
+    "t": "2022-03-14 02:45",
+    "delta": 574.0,
+    "contreparties": [
+     [
+      "84RNKV2kRrRKPjqXnv4SUAJSS7fre7AzqrMaNyoKm3Xm",
+      -574.0
+     ]
+    ]
+   },
+   {
+    "t": "2022-03-14 06:37",
+    "delta": -6.0,
+    "contreparties": [
+     [
+      "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+      6.0
+     ]
+    ]
+   },
+   {
+    "t": "2022-03-15 11:17",
+    "delta": -0.1,
+    "contreparties": [
+     [
+      "EeCtsTrfJPk5zFcWL2aKuVaDpqLFKgwzmJ4tjKJZjVHu",
+      0.1
+     ]
+    ]
+   },
+   {
+    "t": "2022-03-15 11:21",
+    "delta": -6.2,
+    "contreparties": [
+     [
+      "EeCtsTrfJPk5zFcWL2aKuVaDpqLFKgwzmJ4tjKJZjVHu",
+      6.2
+     ]
+    ]
+   },
+   {
+    "t": "2022-03-16 16:37",
+    "delta": -8.0,
+    "contreparties": [
+     [
+      "D7Rzr6YnbKvHsmvrDbr8bbYecDcAZEeE5sJNMn1XQhDX",
+      8.0
+     ]
+    ]
+   }
+  ]
+ },
+ "3KhoVLJXbcvEdSMYu7XihT4rajuRVa8euKeCRLfmh9WS": {
+  "role": "premier versement notable (1.5 SOL)",
+  "n_signatures": 14798,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2023-01-01 14:15",
+  "premiers_flux": [
+   {
+    "t": "2023-01-01 14:15",
+    "delta": 0.1,
+    "contreparties": [
+     [
+      "GgPR2wwTFxguXyTeMmtrhipfv4A8Y3vdPX7RLQNa1zJ3",
+      -0.1
+     ]
+    ]
+   },
+   {
+    "t": "2023-01-01 16:22",
+    "delta": 0.5,
+    "contreparties": [
+     [
+      "2RVY82MAkkaE28JpA9eqYsX6dC6bLh5aVE8wKRWRyp4U",
+      -0.5
+     ]
+    ]
+   }
+  ]
+ },
+ "EXUcqVP61F51sxZGCHxhFv56owopfb4rYKD5qpMbCU58": {
+  "role": "bailleur secondaire",
+  "n_signatures": 109,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-11-06 13:33",
+  "premiers_flux": [
+   {
+    "t": "2024-11-06 13:33",
+    "delta": 53.9143,
+    "contreparties": [
+     [
+      "7FfB2zQRYUQwpPzkRxAeg2mCBGeCRKp4PCEeULJA9xTo",
+      0.1586
+     ],
+     [
+      "6Nij2pGdpgd6EutLAtdRwQoHaKKxhdNBi4zoLgd9Yuaq",
+      -54.0782
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-06 15:03",
+    "delta": -53.9066,
+    "contreparties": [
+     [
+      "5wCKsWhRzhYbiEvxYUkVMkkfaF67SJPapq1NXztnvJt5",
+      53.9043
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-06 16:08",
+    "delta": 0.5,
+    "contreparties": [
+     [
+      "J54RsQ7oVDBgoGySbZ5Cig9WDV5JyhvaeMrudcLSKqDK",
+      -0.5001
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-06 16:13",
+    "delta": -0.3676,
+    "contreparties": [
+     [
+      "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+      0.2455
+     ],
+     [
+      "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD",
+      0.12
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-09 16:34",
+    "delta": 58.9726,
+    "contreparties": [
+     [
+      "5wCKsWhRzhYbiEvxYUkVMkkfaF67SJPapq1NXztnvJt5",
+      -58.9729
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-11 09:52",
+    "delta": -59.1049,
+    "contreparties": [
+     [
+      "6P4tvbzRY6Bh3MiWDHuLqyHywovsRwRpfskPvyeSoHsz",
+      59.1026
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-17 17:17",
+    "delta": 0.08,
+    "contreparties": [
+     [
+      "C36fwXd1dmMFsxoAh7hwmhq7kpTSYY2o98MYMZoWmGdR",
+      -0.08
+     ]
+    ]
+   }
+  ]
+ },
+ "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD": {
+  "role": "beneficiaire de commissions (0.015-0.12 SOL)",
+  "n_signatures": 400000,
+  "genese_atteinte": false,
+  "premiere_activite_utc": "2024-02-01 20:59",
+  "premiers_flux": []
+ },
+ "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA": {
+  "role": "activateur du compte (0.01 SOL, 2024-10-22)",
+  "n_signatures": 400000,
+  "genese_atteinte": false,
+  "premiere_activite_utc": "2023-10-22 06:57",
+  "premiers_flux": []
+ }
+}

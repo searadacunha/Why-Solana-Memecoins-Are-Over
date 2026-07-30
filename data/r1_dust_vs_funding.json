@@ -1,0 +1,85 @@
+{
+ "_seuils": {
+  "rente_min_compte_systeme_SOL": 0.00089088,
+  "frais_base_tx_SOL": 5e-06,
+  "seuil_financement_SOL": 0.01
+ },
+ "profils": [
+  {
+   "adresse": "4KHPw3QDsXe6HFJPNA4SiBi6Qe3mrziDFgyYToeEWGu4",
+   "claim_note": "note price_movers : dispatcher A, aurait mass-funde 194 wallets en 7 s",
+   "n_tx_parsees": 1725,
+   "vie_s": 2393,
+   "ts_premier_envoi": 1770174197,
+   "ts_dernier_envoi": 1770176590,
+   "n_transferts_sortants": 28925,
+   "n_destinataires_distincts": 23226,
+   "sol_sortant_total": 3.586107732,
+   "ticket_median_SOL": 1e-09,
+   "ticket_p99_SOL": 1e-09,
+   "ticket_max_SOL": 3.56607881,
+   "n_destinataires_POUSSIERE_lt_rente": 23224,
+   "n_destinataires_entre_rente_et_0.01": 1,
+   "n_destinataires_FINANCES_ge_0.01": 1,
+   "part_destinataires_poussiere": 0.9999,
+   "sol_vers_poussiere": 2.8922e-05,
+   "sol_vers_finances": 3.58495825,
+   "destinataires_finances": [
+    {
+     "dest": "Mihso7kXXNPb7GUZ71H7MedYrpW88MTQFdLKrtAnDvj",
+     "sol": 3.58495825,
+     "ts": 1770176590
+    }
+   ],
+   "sources_entrantes": [
+    {
+     "src": "Mihso7kXXNPb7GUZ71H7MedYrpW88MTQFdLKrtAnDvj",
+     "sol": 3.59555242
+    }
+   ],
+   "n_destinataires_dans_fenetre_7s_de_la_note": 95,
+   "recu_max_par_un_destinataire_dans_fenetre_SOL": 3.0000000000000004e-09
+  },
+  {
+   "adresse": "4NyVM3epZLVRnUbHp5H7NrSP53nMU2kLMymhHm6TyUwS",
+   "claim_note": "note price_movers : dispatcher B, aurait mass-funde 194 wallets en 7 s",
+   "n_tx_parsees": 1701,
+   "vie_s": 2389,
+   "ts_premier_envoi": 1770174201,
+   "ts_dernier_envoi": 1770176590,
+   "n_transferts_sortants": 28566,
+   "n_destinataires_distincts": 23096,
+   "sol_sortant_total": 3.586182556,
+   "ticket_median_SOL": 1e-09,
+   "ticket_p99_SOL": 1e-09,
+   "ticket_max_SOL": 3.566153993,
+   "n_destinataires_POUSSIERE_lt_rente": 23094,
+   "n_destinataires_entre_rente_et_0.01": 1,
+   "n_destinataires_FINANCES_ge_0.01": 1,
+   "part_destinataires_poussiere": 0.9999,
+   "sol_vers_poussiere": 2.8563e-05,
+   "sol_vers_finances": 3.585033433,
+   "destinataires_finances": [
+    {
+     "dest": "Mihso7kXXNPb7GUZ71H7MedYrpW88MTQFdLKrtAnDvj",
+     "sol": 3.585033433,
+     "ts": 1770176590
+    }
+   ],
+   "sources_entrantes": [
+    {
+     "src": "Mihso7kXXNPb7GUZ71H7MedYrpW88MTQFdLKrtAnDvj",
+     "sol": 3.59555242
+    }
+   ],
+   "n_destinataires_dans_fenetre_7s_de_la_note": 95,
+   "recu_max_par_un_destinataire_dans_fenetre_SOL": 3.0000000000000004e-09
+  }
+ ],
+ "recoupement_listes_diffusion": {
+  "n_a": 23226,
+  "n_b": 23096,
+  "n_commun": 22964,
+  "jaccard": 0.9831
+ }
+}

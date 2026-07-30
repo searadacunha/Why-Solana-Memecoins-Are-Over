@@ -1,0 +1,259 @@
+{
+ "label": "OPTIMUS",
+ "trace": [
+  {
+   "addr": "FrEiiKbDETmAQTxZvoQFNiAHj5vGbR198G9d7titCoDH",
+   "n_signatures_total": 60000,
+   "pages_paginated": 60,
+   "genesis_reached": false,
+   "known": null,
+   "oldest_seen_utc": "2024-10-14 09:10:26",
+   "newest_seen_utc": "2026-06-28 16:54:18",
+   "sources": [
+    {
+     "addr": "F1vonrRFUrrxKaPAHxaP6ReSi9d5FxBjNdhuV6pTEyFC",
+     "total_sol": 33.019501,
+     "n": 1,
+     "first_utc": "2024-10-14 09:11:09",
+     "known": null,
+     "amounts_sol": [
+      33.019500889
+     ]
+    },
+    {
+     "addr": "5TEnGE5ZksjvGmFe4txA3DwnprRMcMM6CADnXewu5YeS",
+     "total_sol": 1.702471,
+     "n": 1,
+     "first_utc": "2024-10-14 09:11:09",
+     "known": null,
+     "amounts_sol": [
+      1.702470554
+     ]
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 100,
+   "level": 0
+  },
+  {
+   "addr": "EjtCjDWj3HyL1a4dRritZLTtZrwvD3E1AAzp6evMUmVB",
+   "n_signatures_total": 60000,
+   "pages_paginated": 60,
+   "genesis_reached": false,
+   "known": null,
+   "oldest_seen_utc": "2026-02-28 15:44:16",
+   "newest_seen_utc": "2026-07-30 08:39:02",
+   "sources": [],
+   "known_counterparties": [],
+   "n_tx_inspected": 100,
+   "level": 0
+  },
+  {
+   "addr": "9zqLjpSvvvreWyhQBSPquwo7LTotH5eoJWhWLCm6qcde",
+   "n_signatures_total": 2328,
+   "pages_paginated": 3,
+   "genesis_reached": true,
+   "known": null,
+   "oldest_seen_utc": "2023-12-27 22:03:05",
+   "newest_seen_utc": "2026-03-10 15:43:13",
+   "sources": [
+    {
+     "addr": "CLcWPcRq7UfSeAZBsN2dPXpdcJaBzfyMu1n9U9Nthrh2",
+     "total_sol": 401.164898,
+     "n": 20,
+     "first_utc": "2024-08-23 19:52:08",
+     "known": null,
+     "amounts_sol": [
+      0.981005,
+      1.981005,
+      1.981005,
+      2.981005,
+      3.981005,
+      5.981005,
+      6.77061146,
+      7.981005,
+      8.371433153,
+      11.876176184,
+      14.707576513,
+      16.464548046
+     ]
+    },
+    {
+     "addr": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+     "total_sol": 58.760057,
+     "n": 1,
+     "first_utc": "2024-09-01 02:19:59",
+     "known": "Bybit hot wallet",
+     "amounts_sol": [
+      58.76005657
+     ]
+    },
+    {
+     "addr": "H3QB7Jh6hgAEZsjZmnvTpaq8Dat7NGvVfdfmGmNrCg6g",
+     "total_sol": 16.236639,
+     "n": 12,
+     "first_utc": "2024-01-23 21:24:15",
+     "known": null,
+     "amounts_sol": [
+      0.478235425,
+      0.523693849,
+      0.550329227,
+      0.697247094,
+      1.091289462,
+      1.135556412,
+      1.334158141,
+      1.624962166,
+      1.821425446,
+      1.861535489,
+      1.970195597,
+      3.148010969
+     ]
+    },
+    {
+     "addr": "Hm6op6PAh7uTvRt1QNTEzNKMeZV6TBzv2poAvHStxPGh",
+     "total_sol": 10.56935,
+     "n": 2,
+     "first_utc": "2024-01-02 05:00:29",
+     "known": null,
+     "amounts_sol": [
+      2.384737446,
+      8.184612604
+     ]
+    },
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "total_sol": 7.000007,
+     "n": 1,
+     "first_utc": "2024-01-24 05:36:04",
+     "known": "Coinbase 2",
+     "amounts_sol": [
+      7.000007
+     ]
+    },
+    {
+     "addr": "GviiXg2Xc1xCpyNY36r7h1EAy7uvse5UMkiiyHjRDU6Z",
+     "total_sol": 4.145342,
+     "n": 1,
+     "first_utc": "2024-09-28 23:00:12",
+     "known": null,
+     "amounts_sol": [
+      4.145341749
+     ]
+    },
+    {
+     "addr": "G7WLuYusrRUDRsEYJ2ceN5qoVU9JT8DBB2n9KmcoKCpn",
+     "total_sol": 1.993083,
+     "n": 1,
+     "first_utc": "2023-12-27 22:03:05",
+     "known": null,
+     "amounts_sol": [
+      1.993082813
+     ]
+    },
+    {
+     "addr": "F9bp2XtSP9nn1A1kVPKUQds2GrLoqJkht9Z2Tv24SVfD",
+     "total_sol": 1.453262,
+     "n": 1,
+     "first_utc": "2024-01-23 21:02:39",
+     "known": null,
+     "amounts_sol": [
+      1.453261977
+     ]
+    },
+    {
+     "addr": "DHNXrNc2iF7WCw42UH7JWceBX92HckWEjBjTPskP7Vuw",
+     "total_sol": 1.116637,
+     "n": 1,
+     "first_utc": "2024-08-23 21:06:36",
+     "known": null,
+     "amounts_sol": [
+      1.116636659
+     ]
+    },
+    {
+     "addr": "2ykSTAAPGJUoWkvXvkUshKTAdzdFLFmvQjgDkYX2YP4Q",
+     "total_sol": 1.000002,
+     "n": 1,
+     "first_utc": "2024-08-23 21:07:52",
+     "known": null,
+     "amounts_sol": [
+      1.000002
+     ]
+    },
+    {
+     "addr": "FFbvD9HyrMkrkR9wWKFnCfL9rwQ6qmNi8S8bD8N9hmGo",
+     "total_sol": 0.901999,
+     "n": 1,
+     "first_utc": "2024-01-24 06:16:22",
+     "known": null,
+     "amounts_sol": [
+      0.901999349
+     ]
+    },
+    {
+     "addr": "HZ5JFB1ZoZs6NQLr7bb4MMEXDgty4Vs1ZghoyX35mNnV",
+     "total_sol": 0.493653,
+     "n": 1,
+     "first_utc": "2024-10-04 19:16:43",
+     "known": null,
+     "amounts_sol": [
+      0.493652842
+     ]
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "label": "Coinbase 2",
+     "utc": "2024-01-24 05:36:04",
+     "signature": "4N5Ew1KNL82qjjpUj3wpddGjVJa6cNPVDwLFQ7tBZXNQ8nKYCy5kt9Q5w6sQCdureVku1StPweyUC68DKWQqUfuQ",
+     "delta_sol": -7.000007
+    },
+    {
+     "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+     "label": "service de swap G2Y (cible de l'enquete)",
+     "utc": "2024-01-23 21:34:08",
+     "signature": "zZXh1hyXkiEbYnUEoGnBLE5Fp2NLDRuuWFn5x94rLDPzfSaR4LbRQ6FVgcjQoMc1JFmM1f9BrjwPTxNFFFbKdSP",
+     "delta_sol": 0.0
+    },
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-01-23 21:34:08",
+     "signature": "zZXh1hyXkiEbYnUEoGnBLE5Fp2NLDRuuWFn5x94rLDPzfSaR4LbRQ6FVgcjQoMc1JFmM1f9BrjwPTxNFFFbKdSP",
+     "delta_sol": 0.0
+    },
+    {
+     "addr": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+     "label": "service de swap",
+     "utc": "2024-01-23 21:34:08",
+     "signature": "zZXh1hyXkiEbYnUEoGnBLE5Fp2NLDRuuWFn5x94rLDPzfSaR4LbRQ6FVgcjQoMc1JFmM1f9BrjwPTxNFFFbKdSP",
+     "delta_sol": 0.0
+    },
+    {
+     "addr": "AobVSwdW9BbpMdJvTqeCN4hPAmh4rHm7vwLnQ5ATSyrS",
+     "label": "Robinhood",
+     "utc": "2024-01-23 21:33:09",
+     "signature": "FTydjQgYkLoVaiPD1ZDdARp3TBES5wGHhy8s8fjMP82PJqXxtCSkT5zM2xppcVagshjJgQouSgxRTmPeBWoovQf",
+     "delta_sol": 0.0
+    },
+    {
+     "addr": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+     "label": "Binance hot wallet",
+     "utc": "2024-01-23 21:31:16",
+     "signature": "22ZAgkJMQs7qfHeX93kkfHavisDmbDS1mELvRu7N7t22RVu1hnpb4E7jeKZFyMupCXGLaHCTMEVYyCXDQPNWNAsq",
+     "delta_sol": 0.0
+    },
+    {
+     "addr": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+     "label": "Bybit hot wallet",
+     "utc": "2024-09-01 02:19:59",
+     "signature": "4McKYUGKbFrggfjoQptXh7XqW5wDboymfMJtdhQYheHQLo4zgcKY3wrcFyt9dLrbuMkC3g9QsGcUxNVanrmwQS2R",
+     "delta_sol": -58.76005657
+    }
+   ],
+   "n_tx_inspected": 200,
+   "level": 0
+  }
+ ]
+}

@@ -1,0 +1,450 @@
+{
+ "label": "AaZkwhki",
+ "addr": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+ "anchor": "58a68PqiUveqr1ygxCKCDpgNbXVXx9SwEp7FUrJGbPCpMtgFmqMTHUA4hcLjj2TMMNYFBRngGnPZrj8QaNiizE2e",
+ "n_tx_lues": 2499,
+ "pages": 25,
+ "fenetre_utc": [
+  "2024-12-10 21:00:33",
+  "2024-12-12 13:21:08"
+ ],
+ "duree_heures": 40.34,
+ "tx_par_jour_estime": 1487.0,
+ "n_destinataires_distincts": 2005,
+ "n_payeurs_distincts": 682,
+ "montants_de_sortie_les_plus_repetes": [
+  {
+   "montant_sol": 1.37832286,
+   "n": 4,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 2.05159185,
+   "n": 4,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.082402248,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 2.18360129,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 0.5,
+   "n": 2,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.4,
+   "n": 2,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 1.07197902,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 2.15724516,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.07396838,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.37590678,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.37862058,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.0,
+   "n": 2,
+   "calibre": "rond_SOL"
+  },
+  {
+   "montant_sol": 0.263392867,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.83468,
+   "n": 2,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 0.155633485,
+   "n": 2,
+   "calibre": "precis_swap"
+  }
+ ],
+ "top_destinataires": [
+  {
+   "addr": "52Y47mQowVnSMVW8sbHmi6YpaqaMUhaKqe9oxCh6vneH",
+   "total_sol": 1741.0,
+   "n": 4,
+   "amounts_sol": [
+    277.0,
+    372.0,
+    492.0,
+    600.0
+   ]
+  },
+  {
+   "addr": "8RC6XNjh5mwoSx8cLgb77B2RjnnkDmNgfVovRbTCwRXB",
+   "total_sol": 1072.93265,
+   "n": 1,
+   "amounts_sol": [
+    1072.93264991
+   ]
+  },
+  {
+   "addr": "B6RTtzd8iG2r7uWREb3hkTtSqv9XhA3gw6SzBussd32R",
+   "total_sol": 640.294843,
+   "n": 1,
+   "amounts_sol": [
+    640.29484346
+   ]
+  },
+  {
+   "addr": "5gwq9Y3X8wWKfMhdYXgtTBPZr5QsVW8dbuoE1CuPyzSK",
+   "total_sol": 407.932938,
+   "n": 2,
+   "amounts_sol": [
+    196.214307729,
+    211.718630129
+   ]
+  },
+  {
+   "addr": "FD2y6L5Ny6Fq8oBQWQYJU37JpU5Ji1Esnr5CBMLMDcaH",
+   "total_sol": 392.6839,
+   "n": 1,
+   "amounts_sol": [
+    392.6839
+   ]
+  },
+  {
+   "addr": "8nYstq4qqcTDHWeiisqq2STGS4LW89F98gxYEoyCZ1d9",
+   "total_sol": 389.729736,
+   "n": 2,
+   "amounts_sol": [
+    194.457428516,
+    195.272307907
+   ]
+  },
+  {
+   "addr": "68zExC95zyJFQkSgt6M38fSS2gpE4dX85PnW5cfxHo5g",
+   "total_sol": 270.833277,
+   "n": 3,
+   "amounts_sol": [
+    88.82484797,
+    88.95991877,
+    93.04851037
+   ]
+  },
+  {
+   "addr": "RFSqPtn1JfavGiUD4HJsZyYXvZsycxf31hnYfbyG6iB",
+   "total_sol": 211.2237,
+   "n": 3,
+   "amounts_sol": [
+    62.8269,
+    66.1569,
+    82.2399
+   ]
+  },
+  {
+   "addr": "2j7LwVcCyBJhRPxC6enTzJ163Zd9zVF1e5xfxzgyQUqb",
+   "total_sol": 200.23409,
+   "n": 2,
+   "amounts_sol": [
+    99.7509,
+    100.483189637
+   ]
+  },
+  {
+   "addr": "3ayK5N2Ca5PkeRPFZB1p2pYtDkxSfjZcFLqjrhmczY8m",
+   "total_sol": 195.8979,
+   "n": 1,
+   "amounts_sol": [
+    195.8979
+   ]
+  },
+  {
+   "addr": "GTizyzZsk2MjKYu9c4qtn9PcZm5Qh5QtqkpsNFYJjo2h",
+   "total_sol": 195.874932,
+   "n": 1,
+   "amounts_sol": [
+    195.874932
+   ]
+  },
+  {
+   "addr": "FGRwpDrvk2GW1T4RkbfcwjnFjHDExszq7z8ATJJJ2BxU",
+   "total_sol": 172.424759,
+   "n": 1,
+   "amounts_sol": [
+    172.42475931
+   ]
+  },
+  {
+   "addr": "99i7MzGNhsGAxpF52Y8k8cYXW2kE7sFPTERYCQQgSAGd",
+   "total_sol": 123.931889,
+   "n": 2,
+   "amounts_sol": [
+    28.739638159,
+    95.19225056
+   ]
+  },
+  {
+   "addr": "GWGeMpiuXyk7sVvddBmEL1CvYsWL67UGfYw1tVqWovV8",
+   "total_sol": 121.97479,
+   "n": 3,
+   "amounts_sol": [
+    17.436655018,
+    34.795457236,
+    69.742678063
+   ]
+  },
+  {
+   "addr": "3Fj9zJkwuJaTQFVqPnU9RjYrs3DPDAW8at1Y6A9VbHvu",
+   "total_sol": 113.111282,
+   "n": 1,
+   "amounts_sol": [
+    113.111281652
+   ]
+  }
+ ],
+ "top_payeurs": [
+  {
+   "addr": "HJ31DnmcQHjR1hHxRa85sgGLFWiGMXT12dHDcAwbYH9F",
+   "total_sol": 4321.587773,
+   "n": 5,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    359.5230147,
+    473.81126772,
+    792.62203714,
+    1200.38044172,
+    1495.2510113
+   ]
+  },
+  {
+   "addr": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "total_sol": 1665.754685,
+   "n": 20,
+   "known": "Binance hot wallet",
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    1.94935393,
+    2.367229,
+    2.4393326,
+    2.47226298,
+    3.41881912,
+    4.3949182,
+    4.8865502,
+    6.6258158
+   ]
+  },
+  {
+   "addr": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+   "total_sol": 600.65271,
+   "n": 7,
+   "known": "service de swap",
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    2.58599777,
+    39.99198,
+    79.99198,
+    82.23188,
+    99.99198,
+    99.99198,
+    195.866912
+   ]
+  },
+  {
+   "addr": "CEyjMvMmqPctc9GebJYepGf1czGz5vBWatCBKro8nzWo",
+   "total_sol": 532.14904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    532.14904
+   ]
+  },
+  {
+   "addr": "3RpZXVCrKsXEmYipwAmc1hayfSwRU9YnRgy2pyQwYotZ",
+   "total_sol": 499.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    499.99904
+   ]
+  },
+  {
+   "addr": "EGhAij7zqEGrSL2Vdzrb9H3xSH2VBwSPQcgBVuNt9q15",
+   "total_sol": 342.865097,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    342.865097
+   ]
+  },
+  {
+   "addr": "3BwDyynULwALCFYP6dw6612fUfFePxtfaMepzb26bt6u",
+   "total_sol": 214.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    214.99904
+   ]
+  },
+  {
+   "addr": "GreCFCXKGRn7usa3ragUN3i3p3R19A6Mgd4tdWG9JvhW",
+   "total_sol": 212.37504,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    212.37504
+   ]
+  },
+  {
+   "addr": "ByGWSJJRZatE4c5W5wNQWirw4xrJcXJ36aRorPBJ9jcu",
+   "total_sol": 209.38373,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    209.38373
+   ]
+  },
+  {
+   "addr": "3A37ZKDD4xqgfWJTYouVg8yvs6v2umKcYpadS1atK7g1",
+   "total_sol": 176.371226,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    176.371226
+   ]
+  },
+  {
+   "addr": "BX32MgU4oiGauvGX7pQnYfvoKcEyySCEPEVJDqy7krxV",
+   "total_sol": 175.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    175.99904
+   ]
+  },
+  {
+   "addr": "GDmYeAwt2Y5EkcEkK9UusYScyM1v594joydvsGXVaCzT",
+   "total_sol": 163.43184,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    163.43184
+   ]
+  },
+  {
+   "addr": "8fRMZnrDWEv7Pzdetcejka984DhtwgaAKBBn4wQwCEsF",
+   "total_sol": 161.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    161.99904
+   ]
+  },
+  {
+   "addr": "EPp4jeRnQMN6Z6jHadwKjEN2VvVjrXLqrz2MgpdMSt1N",
+   "total_sol": 147.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    147.99904
+   ]
+  },
+  {
+   "addr": "AAm7FdXQ3g4Zf51AAjL9WY5ZJ5K36kafUxHud7WBKjJZ",
+   "total_sol": 128.99904,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    128.99904
+   ]
+  }
+ ],
+ "types_de_tx": [
+  [
+   "TRANSFER/SYSTEM_PROGRAM",
+   1809
+  ],
+  [
+   "TRANSFER/SOLANA_PROGRAM_LIBRARY",
+   689
+  ],
+  [
+   "COMPRESSED_NFT_MINT/BUBBLEGUM",
+   1
+  ]
+ ],
+ "terminaux_connus_croises": [
+  [
+   "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "Binance hot wallet"
+  ],
+  [
+   "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+   "service de swap"
+  ]
+ ]
+}

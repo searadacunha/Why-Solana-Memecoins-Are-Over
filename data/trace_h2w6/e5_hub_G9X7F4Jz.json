@@ -1,0 +1,464 @@
+{
+ "label": "G9X7F4Jz",
+ "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+ "anchor": "3XcX6c1UJMGai3arRjh7HJX7vEBTgfPhf8SRZ9MF6QVaT6aXV5g7uu5RKyjmKsqwechGxeb8GUhyyf6KxNRdw7N6",
+ "n_tx_lues": 2990,
+ "pages": 30,
+ "fenetre_utc": [
+  "2024-12-03 05:04:12",
+  "2024-12-03 15:49:17"
+ ],
+ "duree_heures": 10.75,
+ "tx_par_jour_estime": 6674.0,
+ "n_destinataires_distincts": 759,
+ "n_payeurs_distincts": 711,
+ "montants_de_sortie_les_plus_repetes": [
+  {
+   "montant_sol": 1.0,
+   "n": 10,
+   "calibre": "rond_SOL"
+  },
+  {
+   "montant_sol": 0.3,
+   "n": 9,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.5,
+   "n": 6,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.25,
+   "n": 6,
+   "calibre": "rond_0.01"
+  },
+  {
+   "montant_sol": 0.2,
+   "n": 5,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.1,
+   "n": 5,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.8,
+   "n": 5,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.7,
+   "n": 5,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.09,
+   "n": 4,
+   "calibre": "rond_0.01"
+  },
+  {
+   "montant_sol": 0.44730002,
+   "n": 4,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 1.5,
+   "n": 3,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.6,
+   "n": 3,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.08876,
+   "n": 3,
+   "calibre": "precis_swap"
+  },
+  {
+   "montant_sol": 2.2,
+   "n": 3,
+   "calibre": "rond_0.1"
+  },
+  {
+   "montant_sol": 0.235,
+   "n": 2,
+   "calibre": "rond_0.001"
+  }
+ ],
+ "top_destinataires": [
+  {
+   "addr": "ALPrpnmz8Lzbx9pWwEcvB72bxS6aiNXB5jxyWkLjDnMq",
+   "total_sol": 350.00027,
+   "n": 1,
+   "amounts_sol": [
+    350.00027
+   ]
+  },
+  {
+   "addr": "2a21SiV8kALDPKw4ZzSo1TiBWfDgGqw8RycwTksNARAu",
+   "total_sol": 200.213173,
+   "n": 4,
+   "amounts_sol": [
+    20.015533,
+    30.00107,
+    75.01141,
+    75.18516
+   ]
+  },
+  {
+   "addr": "HjMns92KzDPRSGpDbw4JSvjz1iKa1zcUzB6mAzz1PiBr",
+   "total_sol": 179.53015,
+   "n": 1,
+   "amounts_sol": [
+    179.53015
+   ]
+  },
+  {
+   "addr": "HFjEyosfgotWoWJeuut9hiHimdBfWdSsi4twF7JHeoft",
+   "total_sol": 149.24405,
+   "n": 1,
+   "amounts_sol": [
+    149.24405
+   ]
+  },
+  {
+   "addr": "6xGJa1S5HYkAnxcfbsvvTJ2UcjHjZ8E9j7Q1YdSy8Zg6",
+   "total_sol": 141.504,
+   "n": 1,
+   "amounts_sol": [
+    141.504
+   ]
+  },
+  {
+   "addr": "i5CLj5fzq69sKq2wxT322bSmFvNUtNJaaviXt2ZNu5H",
+   "total_sol": 128.38,
+   "n": 1,
+   "amounts_sol": [
+    128.38
+   ]
+  },
+  {
+   "addr": "5qMuANVV53LRDGCrG72yDmLswehioUz8MfJ8htA1FCsG",
+   "total_sol": 109.5918,
+   "n": 1,
+   "amounts_sol": [
+    109.5918
+   ]
+  },
+  {
+   "addr": "56khAaGXbv96CNBb2KcFtUGBAS1UzrgXuiWUkqwnf1hM",
+   "total_sol": 98.25,
+   "n": 2,
+   "amounts_sol": [
+    46.0,
+    52.25
+   ]
+  },
+  {
+   "addr": "54MjFvBvGYgLyRW43LnaahoMZSn28VUgCVZJWaUJ9H3o",
+   "total_sol": 92.715004,
+   "n": 1,
+   "amounts_sol": [
+    92.715004
+   ]
+  },
+  {
+   "addr": "65pW4QqQ9rSLcRK6aVzQYmwVJGUeggLy15wTFV9H4Ar8",
+   "total_sol": 91.102,
+   "n": 1,
+   "amounts_sol": [
+    91.102
+   ]
+  },
+  {
+   "addr": "CT4Pd5uSkpmZXXEb9CGkXgabnmfLRUS8EdehT7xGQKqk",
+   "total_sol": 85.184906,
+   "n": 3,
+   "amounts_sol": [
+    6.7272906,
+    33.799618,
+    44.657997
+   ]
+  },
+  {
+   "addr": "9eseN1mzkRg4sUjQkdL5Wj7u6oKCY1K9GDB77QdZAGHN",
+   "total_sol": 69.15293,
+   "n": 1,
+   "amounts_sol": [
+    69.15293
+   ]
+  },
+  {
+   "addr": "CgVRRjfxQt4BuAeZukdhk4JUV8Le62qV3QQwzB9BozUY",
+   "total_sol": 66.735,
+   "n": 1,
+   "amounts_sol": [
+    66.735
+   ]
+  },
+  {
+   "addr": "F3MCN7rMquNyPNuynUxC5Q1R8XSnc6GzFmPJ5vD1F7Ww",
+   "total_sol": 57.251,
+   "n": 3,
+   "amounts_sol": [
+    13.191,
+    21.895,
+    22.165
+   ]
+  },
+  {
+   "addr": "CKKTvYJajtHhBS96gvFbyQeNPft77DBVup7iojzGBQcY",
+   "total_sol": 54.54,
+   "n": 1,
+   "amounts_sol": [
+    54.54
+   ]
+  }
+ ],
+ "top_payeurs": [
+  {
+   "addr": "5qJykRaR4FjqWdXDeVoX3LhTqzryK1nX9EfgyUaxQSTs",
+   "total_sol": 333.50022,
+   "n": 7,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    20.00001,
+    20.000030002,
+    20.50001,
+    30.00001,
+    30.00003,
+    50.00003,
+    163.0001
+   ]
+  },
+  {
+   "addr": "C7UFm1ABmFeqimNEB7s4PMpWtTRZfw2YaRbfJN2Amc1J",
+   "total_sol": 185.00007,
+   "n": 5,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    15.00001,
+    25.00001,
+    40.00002,
+    45.00001,
+    60.00002
+   ]
+  },
+  {
+   "addr": "9Cx4ttWvHULb6fX4K7uJPahbwricSUJEu7zTdmDKPgFB",
+   "total_sol": 176.509625,
+   "n": 6,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    5.00001,
+    5.00001,
+    10.00001,
+    22.283391378,
+    45.026680042,
+    89.199523316
+   ]
+  },
+  {
+   "addr": "C9xvi8h6U8vr5U2EJwxUbyoGV3yTggSDUEwQp7iviSYZ",
+   "total_sol": 172.99001,
+   "n": 2,
+   "known": null,
+   "calibres": [
+    "precis_swap",
+    "rond_0.01"
+   ],
+   "amounts_sol": [
+    22.99,
+    150.0000104
+   ]
+  },
+  {
+   "addr": "Dzyt51N1KcTSvi9pHCataE4bjPfsoPSMJHzrV1uz9DmP",
+   "total_sol": 150.00012,
+   "n": 8,
+   "known": null,
+   "calibres": [
+    "precis_swap",
+    "rond_SOL"
+   ],
+   "amounts_sol": [
+    10.0,
+    10.00001,
+    10.00001,
+    10.00001,
+    10.00001,
+    10.00002,
+    30.00002,
+    60.0000404
+   ]
+  },
+  {
+   "addr": "6Z7FJ6XA1QeJUyuvyK4GHHAY1HocuhkUVp3V1FyR85cg",
+   "total_sol": 111.287054,
+   "n": 1,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    111.28705407
+   ]
+  },
+  {
+   "addr": "3uwJ6RTqyz4Ym98f6KYMaXQcdSdUCPvMVnoDWMGyehF8",
+   "total_sol": 96.600093,
+   "n": 6,
+   "known": null,
+   "calibres": [
+    "precis_swap",
+    "rond_0.1"
+   ],
+   "amounts_sol": [
+    4.6,
+    5.000012,
+    10.000011,
+    10.00002,
+    20.000020302,
+    47.00003
+   ]
+  },
+  {
+   "addr": "HjjbrpUSkGeJ5tFZj2i96gBq7WtNjbPq13kLPkDhZ6Q9",
+   "total_sol": 94.520051,
+   "n": 3,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    4.40001,
+    6.12002,
+    84.000021
+   ]
+  },
+  {
+   "addr": "EpDQFJ66d4us7WbEyAe1rqJbxULMT19i5beqncWkBDAP",
+   "total_sol": 89.942542,
+   "n": 2,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    9.166911581,
+    80.7756306
+   ]
+  },
+  {
+   "addr": "55jakZLsgyn4fWZD9Zi8h9qdwzss29s9PBrqAMEuji52",
+   "total_sol": 89.89998,
+   "n": 3,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    21.99997,
+    21.99998,
+    45.90003
+   ]
+  },
+  {
+   "addr": "5Gdd4PTzEqxDr5rzcvoETWWpoKtRKzCAzSaEZ2fZkJ5c",
+   "total_sol": 89.00002,
+   "n": 2,
+   "known": null,
+   "calibres": [
+    "precis_swap",
+    "rond_SOL"
+   ],
+   "amounts_sol": [
+    44.0,
+    45.00002
+   ]
+  },
+  {
+   "addr": "64ec4Kyzfdp64XZ54XqLM6jpZHbtK7ph78pZp2TDRtRx",
+   "total_sol": 79.252156,
+   "n": 2,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    9.25213551,
+    70.00002
+   ]
+  },
+  {
+   "addr": "7JnfXu6ax884LjUotsiZxUZZvDFD4bP1NoSL8xGYkUn1",
+   "total_sol": 76.099451,
+   "n": 17,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    1.400112674,
+    2.350628213,
+    2.36198381,
+    2.79480237,
+    2.813796985,
+    3.256312308,
+    3.712048605,
+    3.74067753
+   ]
+  },
+  {
+   "addr": "5CLQWPHEtsKnZq7Hi1HEQ7wLXePWdL7tfSS8wPvF9XyM",
+   "total_sol": 75.00002,
+   "n": 2,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    25.00001,
+    50.00001
+   ]
+  },
+  {
+   "addr": "AMPe84xYW2cBwvT9rA9GQSbDnxaQeg8UdVRJhqNDa5c",
+   "total_sol": 70.616981,
+   "n": 3,
+   "known": null,
+   "calibres": [
+    "precis_swap"
+   ],
+   "amounts_sol": [
+    4.647579124,
+    13.867025561,
+    52.102376402
+   ]
+  }
+ ],
+ "types_de_tx": [
+  [
+   "TRANSFER/SYSTEM_PROGRAM",
+   2757
+  ],
+  [
+   "TRANSFER/SOLANA_PROGRAM_LIBRARY",
+   233
+  ]
+ ],
+ "terminaux_connus_croises": []
+}

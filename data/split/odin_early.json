@@ -1,0 +1,100 @@
+{
+ "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+ "first_tx_ts": 1732310685,
+ "n_early_buyers": 35,
+ "n_clusters": 0,
+ "clusters": [],
+ "funding": {
+  "3CEhdQTZu7KQdk2gFoSbHWmEMbb4xqzCLNdXmMfbcg7F": [
+   [
+    3.0,
+    1732318147
+   ],
+   [
+    30.0,
+    1732318876
+   ],
+   [
+    1.0,
+    1732777742
+   ]
+  ],
+  "3qVmZRQ1bsTTCb73B8cgo6pzMBNrvmPD4vHkWK4EYjzB": [
+   [
+    1.0,
+    1732314844
+   ]
+  ],
+  "HotHEz7TuTMF9GcDdapdPKc9NRW1aFiWPBpdZBmhLBCj": [],
+  "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW": [],
+  "UCeqvwQPYWXhbN4444b5dzDYaoUhqYvrax1R7p9NodE": [],
+  "5iywveQKkidqPDKt2CExJcWKex2EXz9kbGcYiZvhuXWs": [],
+  "Fa8VN5Ar5HfaJfUNppaSdmvS7SnfQxcf5aLbbVNodydF": [
+   [
+    3.0,
+    1732278487
+   ],
+   [
+    0.786807717,
+    1733223483
+   ],
+   [
+    1.310521845,
+    1733852176
+   ]
+  ],
+  "66ZC9U8y1uYaAxt4WFYVW11YZeZohvi8ev6wBHsAxykh": [],
+  "CZY9M9BywshFAFjPw7uLgXw9yGtNL26YypLCJdewiHo": [],
+  "ATomG2gRJcB2jNvwcjo2zBMoyLsHZzLgwqy651zzYoCq": [],
+  "8mEFEL31Cmrm4poDpfxJsabPEFZWe4qhCsGmLmmTTDQ": [],
+  "CGBBoCgaEYuQwQkNJmirx1Qis7LVzcsjmkz3LVy2qHMy": [],
+  "F1M6SgP9Vt8uxjHDPWZntpgKwuSg6vh8ek98RpY9J9FP": [],
+  "2a8YExNAdKgYZGyBwub59dBSsdjqaBPm26k6PuuEp8FR": [],
+  "7dcwC8yNaHgGNNkDxhb2pRLVTqXafCRd3m6XeU9Rt3BU": [],
+  "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa": [],
+  "4e5EFPoyZrsyRZGSPUwVZBpDu4CXWdU3SdBtWWPsUnqe": [],
+  "bruhN4UiWXuC1DbNp5MHg9jdiizJvrbdbVT2tPBQd4c": [],
+  "ByuQUknQ1CphVA59iGDiJVNLanP7o4S3pc2utrKBxvqn": [],
+  "H4dWNS7ydys4Je2G4WgsmJDSmqGtNmf8CT99r9rDnacf": [],
+  "66fgxqQNunDacDYgJKAwHpt9nsP9zFuXm9449Ha6Y4vF": [],
+  "9gxBDddAvsVUmcLAwJWhnKr5dMN8rWkdqn8ZZ4V272bo": [],
+  "9SHjio44prKMCuj3EW3Vy7zGYjE2cKWUN7z1RESaH7g8": [
+   [
+    1.0,
+    1731945456
+   ]
+  ],
+  "9zeovoot5GNYgUFyzA86HRHZQTK6Ko8SRccm712W5iiF": [],
+  "8a5euaqMDanuRK8Hci435zvs5BYa44efZdjJ7echJamD": [],
+  "87yvPRERangvDR7nbiiPdLjFb56kLjXJMC4sQyGR5WH8": [],
+  "2UshwwBuxFu9nDGuqTs3kKQsPgEoLp27JNC2JRAoQnYF": [],
+  "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X": [],
+  "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58": [
+   [
+    0.990126743,
+    1733343686
+   ]
+  ],
+  "J3SMgVCx6T59FUMq5jY7MJUT4CxjgNUB1qYs3kSwED1W": [],
+  "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y": [],
+  "wormnduySVDzdS97MrtCqMNq2AJZom4LayknB8R1HNS": [],
+  "A1euvBCBnDFXJKkxVxedC7woacCQAzjfvAKdHZtwS27B": [
+   [
+    1.0,
+    1712714996
+   ]
+  ],
+  "2HW2aFZmUkyJsgXcx9bEfvontBzXKun5V5xPV94V1hKY": [
+   [
+    0.508685822,
+    1731467631
+   ]
+  ],
+  "G98yaQ21SS8QwtUzHQGKYV1Z5JvdX8Qvbg1mizrR3gpp": [
+   [
+    1.0,
+    1733272887
+   ]
+  ]
+ }
+}

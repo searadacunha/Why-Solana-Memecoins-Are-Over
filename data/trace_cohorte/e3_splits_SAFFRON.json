@@ -1,0 +1,124 @@
+{
+ "label": "SAFFRON",
+ "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+ "n_wallets": 40,
+ "n_inflows_total": 105,
+ "n_rentrees_ecartees_produit_de_vente": 1042,
+ "n_genesis_reached": 25,
+ "n_genesis_NOT_reached": 15,
+ "n_prebuy_reached": 39,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "DyscwTKYy3ctqgmzCvRDwRngr83SVZP5WzfrbrkfigRN",
+  "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+  "fuBEE3u9YSijQ6uT5pJaoTUGvW1PF9D28e4dDapoqi9",
+  "EXTcmYJ5rWgUSEJJEwo4Ab6DQ3n1JNCXrqzYRmMqs2Lq",
+  "Gp8LNqJLqDC7udKjateiAw82tM3859m95s454GzZqvKX",
+  "6Xg1A29H5isVUGegCnnyBszPkWdLZhXAAF9CJDAmUyB2",
+  "3h7cxUJ23G7ZUmE91oPVrD1oifzfmC4kDgXfthNSjXVP",
+  "6Tf5fHeFW3AJRNcQmTYTw8btV8ruFJKNQqdAdGmwRhix",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "D3zetbZm7s9XMCBqKgurhZ5Qu1tGgJUg9wKKnPennHet",
+  "Di89gZcggH9JHsFgufu8DYoJ4tcUf9YMmDDJVbG9wAXm",
+  "HxSJaptNFrDssQzsAvQbHCgfNRXvvDgewwJMxKuK7e8U",
+  "EgrCTcPb3pkxxDBqHugAjTu6tVkX5r71AWBmHFWh8xiE",
+  "4RKgYRizrTxqEqH9xLaPJfgrvd3X8cGxik6TCgZqwMKN",
+  "RarhWrg1wrNQKHFeHbYKae9h7PJGRYfjuWecooz3vCL"
+ ],
+ "wallets_without_prebuy": [
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "2QSs3RegoPFW366GuGm1tgjhTgakMnwV8xjMTe3nPC87",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 2.675106,
+   "first_utc": "2024-11-06 17:54:05",
+   "known": null,
+   "amounts_sol": [
+    1.0,
+    1.675105678
+   ],
+   "wallets": [
+    "2JT4swftvnwD8T4pqYHzrMybH4uFtW9ekzBW2C2gZRUz",
+    "fBQKQys2yxDZFTuyTwrRV4uG31bayGvnANkG8vnwLTT"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+   "n_early_buyers_funded": 9,
+   "n_transfers": 15,
+   "total_sol": 206.867685,
+   "first_utc": "2024-05-08 17:37:16",
+   "known": "service de swap G2Y (cible de l'enquete)",
+   "amounts_sol": [
+    1.04770125,
+    1.41340107,
+    1.4138858,
+    1.9828156,
+    2.32048155,
+    2.43910102,
+    3.04982234,
+    3.05505785,
+    3.15060036,
+    7.12323775,
+    10.40138436,
+    11.874826,
+    14.05571761,
+    42.564826,
+    100.974826
+   ],
+   "wallets": [
+    "2JT4swftvnwD8T4pqYHzrMybH4uFtW9ekzBW2C2gZRUz",
+    "49hTR19ddwH2YAQVNrZecgCsFQdKXzmxG4JbVaNcJ5rn",
+    "67UopZGpThFd83mzrbQpCBxhHWrJ5TpEBND7mMSxdHSa",
+    "6TG2djFpHzGf2Ed2GVvRTnFoLJWrnWpiDRBas4v64s98",
+    "8xdBMpe6DRm932baChyvWXKBL8gEAC73AUeb7VTzBnDo",
+    "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+    "EqFkYx9j5rZjYPb3wujLVQ8agew7DirA2MXQ8gyX6kwh",
+    "FMVDDVg6APEfxyCYFozgouZo88mDARKsLt5PtenYcJyi",
+    "HXMQCALms5HERAdeaRzo4Pyd2DMkhACzr9wLUdwHwGon"
+   ]
+  },
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 6,
+   "n_transfers": 15,
+   "total_sol": 124.420756,
+   "first_utc": "2024-10-23 19:13:07",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.14,
+    0.36796372,
+    0.384605,
+    0.49,
+    0.722267,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    1.990457,
+    3.07998343,
+    40.99,
+    70.3154799
+   ],
+   "wallets": [
+    "45Zc638xSyyEUFuRrkEG6YbQtqiyTPhq8EYq9GgWLnXz",
+    "4RKgYRizrTxqEqH9xLaPJfgrvd3X8cGxik6TCgZqwMKN",
+    "ArisggznLZKzaSbhXbuquDYQeKyodaX6wccfeXyyt6Qy",
+    "C6VJc2pAqr27FYr3mBGp9HngHuS813HpKNoXaY51aYFL",
+    "D8zyssc7WzRzjE9LXVpvuZ12cViP5iaKh6jgptWomVhN",
+    "EgrCTcPb3pkxxDBqHugAjTu6tVkX5r71AWBmHFWh8xiE"
+   ]
+  }
+ ]
+}

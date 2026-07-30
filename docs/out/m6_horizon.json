@@ -1,0 +1,35 @@
+{
+ "apparie": {
+  "n": 66,
+  "niveau_relatif": {
+   "1h": 1.0,
+   "24h": 0.17778342170507916,
+   "2h": 1.0607374427883514,
+   "4h": 0.7129445324181153
+  }
+ },
+ "multiple_absolu": null,
+ "n_instrumentes": 193,
+ "n_sans_bougie": 97,
+ "niveau": "MESURE (relatif) / NON ETABLI (absolu)",
+ "non_apparie": {
+  "1h": {
+   "n": 94,
+   "niveau_relatif": 1.0
+  },
+  "24h": {
+   "n": 69,
+   "niveau_relatif": 0.2290300561803339
+  },
+  "2h": {
+   "n": 92,
+   "niveau_relatif": 0.7865839106338364
+  },
+  "4h": {
+   "n": 86,
+   "niveau_relatif": 0.6487669988291577
+  }
+ },
+ "part_sans_bougie": 0.5025906735751295,
+ "sol_usd_fourni": null
+}
