@@ -1,0 +1,164 @@
+{
+ "label": "Calm",
+ "mint": "B6Znej2JwW2mEsXeoEGmQwwZ9E3tvNDPWRVw74njpump",
+ "n_wallets": 40,
+ "n_inflows_total": 158,
+ "n_rentrees_ecartees_produit_de_vente": 1444,
+ "n_genesis_reached": 38,
+ "n_genesis_NOT_reached": 2,
+ "n_prebuy_reached": 37,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "GfMFq3wtBBcvYX7J2aQ72MARfGaDu2DCeS9t1jteUupf",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 1.29,
+   "first_utc": "2024-06-11 04:03:36",
+   "known": null,
+   "amounts_sol": [
+    0.29,
+    1.0
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "ABvFVH233gaqbCNRh5bG6xHDQCJLD1huYUP47XtBNK7J"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "n_early_buyers_funded": 7,
+   "n_transfers": 13,
+   "total_sol": 10.843054,
+   "first_utc": "2024-04-08 03:12:00",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.057297217,
+    0.108874413,
+    0.181205025,
+    0.254594512,
+    0.318633956,
+    0.386172069,
+    0.9999,
+    0.9999,
+    1.0,
+    1.0,
+    1.036476853,
+    2.0,
+    2.5
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "AAVKpG2Sbu1hiT9MwNke7KSGNvydhqoLviZRauimrg4e",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "B3P2xshhXLJQhD63LKFsNMR732uN6y8CNX7qCnQmSonz",
+    "D3K7bKAMLhBPMuhUNe6moQkCaJd7YW1cKD1ahGfhG1Vs",
+    "Fc5tH9o5fPiWrLEaP46m4S6yWCfq6bRBobjVcVw4KYAs",
+    "GgdoaXKDiBA1mku2SqVhXeuLYbBaZNTJ5SjfS1DCUHec"
+   ]
+  },
+  {
+   "funder": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+   "n_early_buyers_funded": 5,
+   "n_transfers": 8,
+   "total_sol": 11.337444,
+   "first_utc": "2024-02-12 20:22:21",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.1,
+    0.255949724,
+    0.348491549,
+    0.97412481,
+    1.046190425,
+    1.5,
+    1.512687668,
+    5.6
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "8eUmJvANsdEaxZDi1NTspb27KDGEL7tm7Byq4V7gmJWY",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "B3P2xshhXLJQhD63LKFsNMR732uN6y8CNX7qCnQmSonz",
+    "CoHQxKQFt39FxH9f33ryZiqnLbbbfHRX4ubmpnqfm42i"
+   ]
+  },
+  {
+   "funder": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "n_early_buyers_funded": 5,
+   "n_transfers": 7,
+   "total_sol": 7.792476,
+   "first_utc": "2024-09-18 01:08:02",
+   "known": "Coinbase 2",
+   "amounts_sol": [
+    0.0723975,
+    0.082007071,
+    0.698473422,
+    0.915368459,
+    1.958110458,
+    1.999701,
+    2.06641823
+   ],
+   "wallets": [
+    "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+    "AAYrGGKhHJuq8iBjXXJD1qFfyQznyxuvfCWCJkc8MFAu",
+    "CVyer9gNPwsejuqQhPdNgbNL6LvhjqSgQT67F7MsuSx9",
+    "D3K7bKAMLhBPMuhUNe6moQkCaJd7YW1cKD1ahGfhG1Vs",
+    "GgdoaXKDiBA1mku2SqVhXeuLYbBaZNTJ5SjfS1DCUHec"
+   ]
+  },
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 5,
+   "total_sol": 6.029959,
+   "first_utc": "2024-06-14 11:28:50",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.107882,
+    0.164825,
+    0.3896,
+    2.35000153,
+    3.01765085
+   ],
+   "wallets": [
+    "2Ad11SScwrddQSYN15tPpWtLEj1SxFEZU8NHD2hWXvpW",
+    "2qWrBU7gcNHvGuctBrgGZMFo13ZiWbH8BCWajrTxtod4",
+    "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr"
+   ]
+  },
+  {
+   "funder": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 4.238224,
+   "first_utc": "2024-09-27 01:08:37",
+   "known": "Bybit hot wallet",
+   "amounts_sol": [
+    0.31186756,
+    0.90862374,
+    0.91622867,
+    0.97382556,
+    1.12767813
+   ],
+   "wallets": [
+    "5RaTm5NFnY7keXnnmZinXFa1o5nrFioP5g3ZgYDfYJQL",
+    "AQbi7geEKEu7ya1UnXEGhsyNneLUQEvLpH6GEUZWScaY"
+   ]
+  }
+ ]
+}

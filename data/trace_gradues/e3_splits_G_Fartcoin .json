@@ -1,0 +1,86 @@
+{
+ "label": "G_Fartcoin ",
+ "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+ "n_wallets": 40,
+ "n_inflows_total": 86,
+ "n_rentrees_ecartees_produit_de_vente": 1418,
+ "n_genesis_reached": 19,
+ "n_genesis_NOT_reached": 21,
+ "n_prebuy_reached": 36,
+ "n_prebuy_NOT_reached": 4,
+ "n_hyperactifs_non_mesurables": 4,
+ "wallets_without_genesis": [
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ",
+  "HyYNVYmnFmi87NsQqWzLJhUTPBKQUfgfhdbBa554nMFF",
+  "EJUK9nLNRQeyFx4kCbUR4fckbM1UV6ovT32RGjomxHoM",
+  "4W9m1keLdQbsRSFxPc9vZvMKK53ecJeqxXti6fZr4ve7",
+  "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr",
+  "EPCwxro6Nf3PEtMxR638qwyyccH7F7dbH2RuXY6HVN8s",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "CyZ98pEvTfgzgNXETBNXRV5fS7BGfL4ph2Z3kHhrYSCn",
+  "EoX1bZYxq9BPmRJA6PoQdsQ3qMtPtqJk8JW6cCo99RR7",
+  "DZ177gAddzVaLfwGogvn6Lv5efqxkJN8iPX6J9CUN3ej",
+  "3b7HqD1YAFgXeqqYmSaMU6tMr2DLMWZXZb5NgajCjpre",
+  "8zibY9AAcrntUdjMeVBpkEQHnuK4YSfJcBrRdvXeVH4r",
+  "938a2ucjo3XWr2A5YxteX2GqPW7H33qf3ixd8jQVNzA2",
+  "7JHPMAepVo4UWotWNFuXP5848qq15qr4udSzNVxxwfrM",
+  "HUHDCtBJMFk8btZfRtyGzxVEJ1fN9UQpRnSyaGRbecjk",
+  "9hEMeCTSVVpKccVSYbcGARymgmwsXGeXjGawH9QfFMHf",
+  "GayGHyaR2nbNjK14s9VRVFu4JELFqQAp38ZJeQaJQsiu",
+  "GhqrMrC4tY8zTDvWHiHG7ag4MWPqQ7qLZmeochY6aosY",
+  "7eUonoTpBUfjVrvWaRNGHCK2Hrnp4T8WyiXPj2GPtStM",
+  "9MYSRd6QxDaogdFtCbDGsxVJ6jgVCgXymNoaroRdUf8",
+  "E3PNawBkU4rUbMj4sYa4mED2iW2Z1rHjcbQ4hMj5Wg9S"
+ ],
+ "wallets_without_prebuy": [
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ",
+  "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr",
+  "EPCwxro6Nf3PEtMxR638qwyyccH7F7dbH2RuXY6HVN8s",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "HQ7sAtQieMBLZzHkiyYJF8QmS9AkLpq3f9RZr1EwkJHE",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 69.385803,
+   "first_utc": "2024-10-14 02:09:12",
+   "known": null,
+   "amounts_sol": [
+    0.960454367,
+    14.0,
+    14.42534879,
+    20.0,
+    20.0
+   ],
+   "wallets": [
+    "3YAgn9kmtkkLMJUj8yPQQre7pVf1DhTM4a3Hc7D6ArZg",
+    "Ad6v6JyFxhiNrhiq98EcZ42TtQTHP69HjqWV3DEhyqTT"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 4,
+   "total_sol": 10.981531,
+   "first_utc": "2024-09-27 03:56:30",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.91925423,
+    1.49,
+    2.49,
+    6.0822764
+   ],
+   "wallets": [
+    "23A2he8U8etTJb1oqaghQ4wJu9DQACNettr7Wm4pzGAh",
+    "4UMtqZAdYuxjRVJwXqwecoEsmAL8EfHuhTyfzKznPNUs",
+    "GTw71i3qhkGgfJk9jPMFWVHuNww597Y9SfSvzL2Wpbfb"
+   ]
+  }
+ ]
+}

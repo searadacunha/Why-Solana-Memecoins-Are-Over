@@ -1,0 +1,102 @@
+{
+ "question": "les premiers acheteurs sont-ils finances depuis G2Y en quelques sauts ?",
+ "verdict": "G2Y NON SPECIFIQUE A LA CIBLE : un flux de valeur G2Y apparait aussi dans la chaine de financement des premiers acheteurs des temoins, mesures avec le meme code et la meme profondeur. L'apparition de G2Y ne distingue donc pas la cible.",
+ "avertissement": "Aboutir a un service de conversion est un fait de routage. Un service traitant ~200 000 transactions par mois apparait mecaniquement dans de nombreuses chaines : seul l'ecart cible/temoins informe.",
+ "tokens": [
+  {
+   "label": "OPTIMUS",
+   "role": "cible",
+   "n_bailleurs_prives_directs": 45,
+   "n_noeuds_remontes": 105,
+   "n_geneses_atteintes": 75,
+   "n_plafond_pagination": 30,
+   "par_niveau": {
+    "0": {
+     "n": 45,
+     "genese": 34
+    },
+    "1": {
+     "n": 60,
+     "genese": 41
+    }
+   },
+   "n_G2Y_flux_de_valeur": 1,
+   "n_G2Y_mentions_delta_nul": 1,
+   "G2Y_flux": [
+    {
+     "noeud": "9vdSRpxtEWaYTSWQjDyzEZXv8qhJQcwcoisdEZ5SK53j",
+     "niveau": 0,
+     "utc": "2024-06-24 19:44:01",
+     "delta_G2Y_sol": -2.31287887,
+     "signature": "ZS32JFqkqrxdURBNKJJkMik28KMvHRZDQakvuGHmJNRRZniTZpQKNxyHrzNNCePzGQLgsSWPoe2jMXkzbLQkmHh",
+     "genese_du_noeud_atteinte": true
+    }
+   ],
+   "G2Y_mentions": [
+    {
+     "noeud": "BKajTk7E8x3da6FJFaPxuSGJNjxVpp5icv4X2Et4LPqo",
+     "niveau": 1,
+     "utc": "2024-02-09 20:36:59",
+     "delta_G2Y_sol": 0.0,
+     "signature": "26nYszC8X3jwAdKrdyixFMR9PCBXgYMqek9v3pvV5zFbjZiAXThiL6uVkL4FYM6UpZJSzCJTc1uzvKAERSzuf7En",
+     "genese_du_noeud_atteinte": true
+    }
+   ],
+   "terminaux_par_type_nb_noeuds": {
+    "Binance hot wallet": 27,
+    "Coinbase hot wallet": 6,
+    "OKX hot wallet": 13,
+    "Bybit hot wallet": 4,
+    "service de swap G2Y (cible de l'enquete)": 2,
+    "Robinhood": 2,
+    "echange hot wallet": 2,
+    "Coinbase 2": 2,
+    "MEXC hot wallet": 1,
+    "Kraken hot wallet": 2
+   }
+  },
+  {
+   "label": "Calm",
+   "role": "temoin",
+   "n_bailleurs_prives_directs": 60,
+   "n_noeuds_remontes": 133,
+   "n_geneses_atteintes": 103,
+   "n_plafond_pagination": 30,
+   "par_niveau": {
+    "0": {
+     "n": 60,
+     "genese": 51
+    },
+    "1": {
+     "n": 73,
+     "genese": 52
+    }
+   },
+   "n_G2Y_flux_de_valeur": 1,
+   "n_G2Y_mentions_delta_nul": 0,
+   "G2Y_flux": [
+    {
+     "noeud": "jAQHDKp2itJy7WKFeFtwkYyrHgjDzpavJ6maW1YnoJX",
+     "niveau": 0,
+     "utc": "2024-07-10 22:08:58",
+     "delta_G2Y_sol": -0.2045496,
+     "signature": "2PG1ngfc9bYm4HTfv6taz3XLbHgkKLBQQrkT3iR3wNSTiypxTAgjUCAGmrUcoqX4B2rcbjqjHUf8yk2qXfg4z8Eg",
+     "genese_du_noeud_atteinte": true
+    }
+   ],
+   "G2Y_mentions": [],
+   "terminaux_par_type_nb_noeuds": {
+    "Coinbase 2": 13,
+    "Bybit hot wallet": 14,
+    "Coinbase hot wallet": 14,
+    "service de swap G2Y (cible de l'enquete)": 1,
+    "echange hot wallet": 2,
+    "MEXC hot wallet": 4,
+    "Binance hot wallet": 7,
+    "Robinhood": 1,
+    "Kraken hot wallet": 3,
+    "OKX hot wallet": 2
+   }
+  }
+ ]
+}

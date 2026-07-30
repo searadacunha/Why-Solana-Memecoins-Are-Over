@@ -1,0 +1,420 @@
+{
+ "cooccurrence": {
+  "F002": [
+   {
+    "a": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "attendu": 0.5957446808510638,
+    "b": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "lift": 20.142857142857142,
+    "obs": 12,
+    "p": 2.1849572689084974e-19
+   },
+   {
+    "a": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "attendu": 0.5531914893617021,
+    "b": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "lift": 21.69230769230769,
+    "obs": 12,
+    "p": 3.121367527012139e-20
+   },
+   {
+    "a": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "attendu": 0.5957446808510638,
+    "b": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "lift": 20.142857142857142,
+    "obs": 12,
+    "p": 2.1849572689084974e-19
+   },
+   {
+    "a": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "attendu": 0.6453900709219859,
+    "b": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "lift": 20.142857142857142,
+    "obs": 13,
+    "p": 1.618486865858146e-21
+   },
+   {
+    "a": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "attendu": 0.04964539007092199,
+    "b": "46ojZjmvYCzgikVQ4NZ1rSMz2vURDhW74U1CQm5p6HSM",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   },
+   {
+    "a": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "attendu": 0.6950354609929078,
+    "b": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "lift": 20.142857142857142,
+    "obs": 14,
+    "p": 6.0166797987291675e-24
+   },
+   {
+    "a": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "attendu": 0.04964539007092199,
+    "b": "C4v2WTmWmYpYZA6JBU7Mh1rdRq1pmCpY5RaYNkkh4AZL",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   },
+   {
+    "a": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "attendu": 0.04964539007092199,
+    "b": "HgUpqjurhgkSkPK3JsfjZZ9JknxY9fLRLNKKGyUSMLfQ",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   },
+   {
+    "a": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "attendu": 0.6453900709219859,
+    "b": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "lift": 20.142857142857142,
+    "obs": 13,
+    "p": 1.618486865858146e-21
+   },
+   {
+    "a": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "attendu": 0.04609929078014184,
+    "b": "C4v2WTmWmYpYZA6JBU7Mh1rdRq1pmCpY5RaYNkkh4AZL",
+    "lift": 21.692307692307693,
+    "obs": 1,
+    "p": 0.04609929078014184
+   },
+   {
+    "a": "46ojZjmvYCzgikVQ4NZ1rSMz2vURDhW74U1CQm5p6HSM",
+    "attendu": 0.04964539007092199,
+    "b": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   },
+   {
+    "a": "46ojZjmvYCzgikVQ4NZ1rSMz2vURDhW74U1CQm5p6HSM",
+    "attendu": 0.0035460992907801418,
+    "b": "HgUpqjurhgkSkPK3JsfjZZ9JknxY9fLRLNKKGyUSMLfQ",
+    "lift": 282.0,
+    "obs": 1,
+    "p": 0.0035460992907801418
+   },
+   {
+    "a": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "attendu": 0.04964539007092199,
+    "b": "C4v2WTmWmYpYZA6JBU7Mh1rdRq1pmCpY5RaYNkkh4AZL",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   },
+   {
+    "a": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "attendu": 0.04964539007092199,
+    "b": "HgUpqjurhgkSkPK3JsfjZZ9JknxY9fLRLNKKGyUSMLfQ",
+    "lift": 20.142857142857142,
+    "obs": 1,
+    "p": 0.04964539007092199
+   }
+  ],
+  "F003": [
+   {
+    "a": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "attendu": 0.5106382978723404,
+    "b": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   },
+   {
+    "a": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "attendu": 0.5106382978723404,
+    "b": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   },
+   {
+    "a": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "attendu": 0.5106382978723404,
+    "b": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   },
+   {
+    "a": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "attendu": 0.5106382978723404,
+    "b": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   },
+   {
+    "a": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "attendu": 0.5106382978723404,
+    "b": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   },
+   {
+    "a": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "attendu": 0.5106382978723404,
+    "b": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "lift": 23.500000000000004,
+    "obs": 12,
+    "p": 2.4010519438554916e-21
+   }
+  ],
+  "F004": [
+   {
+    "a": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "attendu": 0.3546099290780142,
+    "b": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   },
+   {
+    "a": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "attendu": 0.3546099290780142,
+    "b": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   },
+   {
+    "a": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "attendu": 0.3546099290780142,
+    "b": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   },
+   {
+    "a": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "attendu": 0.3546099290780142,
+    "b": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   },
+   {
+    "a": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "attendu": 0.3546099290780142,
+    "b": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   },
+   {
+    "a": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "attendu": 0.3546099290780142,
+    "b": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "lift": 28.2,
+    "obs": 10,
+    "p": 1.3408056127687575e-18
+   }
+  ],
+  "F006": [
+   {
+    "a": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "attendu": 0.1276595744680851,
+    "b": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   },
+   {
+    "a": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "attendu": 0.1276595744680851,
+    "b": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   },
+   {
+    "a": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "attendu": 0.1276595744680851,
+    "b": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   },
+   {
+    "a": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "attendu": 0.1276595744680851,
+    "b": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   },
+   {
+    "a": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "attendu": 0.1276595744680851,
+    "b": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   },
+   {
+    "a": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "attendu": 0.1276595744680851,
+    "b": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "lift": 47.00000000000001,
+    "obs": 6,
+    "p": 1.5103940586857819e-12
+   }
+  ]
+ },
+ "flottes": {
+  "F002": {
+   "adresses_par_lancement": {
+    "4": 14
+   },
+   "n_adresses": 7,
+   "n_tokens": 14,
+   "presences_dans_le_flux_AMM": 20,
+   "tokens": [
+    "5AuHKxmuoXsxzbf8nbVzTWGuzHrGecmigfjgEBLkpump",
+    "5CCnqQy9cyzerWNs29KA27wEweq6UZbR7Q8ewxG7pump",
+    "6Fzphy2B4JTUteQ8jGtj9Tc9anpttVXY3CRgGuJTpump",
+    "7V6C6GN1YbtYP6TJ6Kzke9TUwLgjy7gCMEMmbn8Jpump",
+    "7vJ2jdLwkjPSWkQVKv7SGuJ3BLXF7fn18wj2EF8npump",
+    "87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump",
+    "AidtkezbfEF8wR3GNxGYFerGKbtBHkabfqVP3XvKpump",
+    "ApANnyv1KP6uZaPmqhaCruMqZHHxQCACKDGCcjU5pump",
+    "B1a7zhim82AGr12iBSnH1m4sXCSyt3wudZD2MVYHpump",
+    "DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump",
+    "Em6ajM2xwou6y2YkfqAxsr5zMjmLepbJUtBaEzCypump",
+    "FAwimgWuNJBMj5Sk8WtJCvNEztBS3AhgqFm42pWVpump",
+    "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+    "H2HmTSxj5mTm4kYe4kJbJuG1HitVoXZ929n1RyrXpump"
+   ]
+  },
+  "F003": {
+   "adresses_par_lancement": {
+    "4": 12
+   },
+   "n_adresses": 4,
+   "n_tokens": 12,
+   "presences_dans_le_flux_AMM": 2,
+   "tokens": [
+    "3cH1aqzTqNuEZpDVgJ7MvQbKJWZrqkmYyRwbvS5hpump",
+    "6qPhG9X1YUWHekKro42H6nZLRNRU5HMbnAXSgNqepump",
+    "7EKtAJTruNL5qURjXrEzfdHzmqucxkQNh1922hz8pump",
+    "7adT6gecxwX5C1sT1eynLVhLgpFoEAHfn4REk92Rpump",
+    "9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump",
+    "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+    "BULBzU2i5k9hp4Vh8JgDW8L1fGfskgmoTzMM1Kx7mAho",
+    "CmFiPswdJEEo3njREo3FKrBUyY9TsmFBQZss2LmZpump",
+    "GUA59wrxfgzdLx1qZTwX9wDaZFvVteTQLPUc9R1ppump",
+    "GkgtsQCLdV4rPVcz6YaCRowSK8XUeD99xjFcUyCwpump",
+    "HvM3WrbuWuEJTrxDMAPiPwR8oSjHUcbcTDuati9vpump",
+    "UNB8FtHiZ9N9LEyrQy8surmRjbFxR9fKHTKDe93xzPr"
+   ]
+  },
+  "F004": {
+   "adresses_par_lancement": {
+    "4": 10
+   },
+   "n_adresses": 4,
+   "n_tokens": 10,
+   "presences_dans_le_flux_AMM": 0,
+   "tokens": [
+    "48pZaxQf5dHvg2K6cfz9Zz4LmXBLv96VRDV84kvgpump",
+    "8Xa1jqBhrxEFX4HgMd9NNRVjK5ap7tBrr5aebCGKpump",
+    "9NKToDBF9tiYxoGSjyhcBi2NqVyJjFJyCW98UPVrpump",
+    "CBvxtHtM9W4UXT1m7pwkPkaVDPpKQj8WGMJe7tQpump",
+    "Czv6T6sF5SMTDDYns5tEeSsKb7MNK4QWAnvZwsMxpump",
+    "ETGVz4jeuZbKqFd1GoBQeJ5nS5pB5Nah9FLvDxTcpump",
+    "EmP6i382zAaURiidLi4qphFvuAhsfQmTcV1F8iz6pump",
+    "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+    "hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump",
+    "tT2Ss23K4WmE9pvQwA5rfaVJD3kmExNpxYUx6xKpump"
+   ]
+  },
+  "F006": {
+   "adresses_par_lancement": {
+    "4": 6
+   },
+   "n_adresses": 4,
+   "n_tokens": 6,
+   "presences_dans_le_flux_AMM": 8,
+   "tokens": [
+    "4faz9H9B5FJc6uEMoLT6C1Lg2j5iZ1DEsK535Ekupump",
+    "7vAgNEgE27vqRaU1ti3oMi8Qbb6khDRRcCexYWnupump",
+    "ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump",
+    "HSAuwh7kJ9sS71vYu2pR3wddJRppUE553vTTMm93pump",
+    "HmqYG1uryHg33JDrky5oAhCxTkXXDbc4qV8NqWXApump",
+    "fCM1RmVwhkVd8o7NrhAyWXmtVPqPZkaiWdgCcgLpump"
+   ]
+  },
+  "OP1": {
+   "adresses_par_lancement": {
+    "1": 24
+   },
+   "n_adresses": 1,
+   "n_tokens": 24,
+   "presences_dans_le_flux_AMM": 15,
+   "tokens": [
+    "2b27LMa8FbkWbHt8C5JzHciFyeKejFkCRyZ434Axpump",
+    "4rkXb5TrdxzgZJTsH1coZnPgFVk3RjWaAEAL81uDpump",
+    "4xJne2mQKm3jncwtdxway3iTbprPWrxUzr4wBffGpump",
+    "6m6eJKxsQrFWrXV7x9Bgp5DG4vdzzvqenWYh5ihxpump",
+    "6mwLvVyftKR2Tj1hN5ebuC52RV3f5Vaj51DdDwPqpump",
+    "7EYYwH9iKzLRxZYD2ruMQXYVB2fx8rYzWVjFfQEtpump",
+    "8ombvryFv2kHq8sVvGsocsbQijCFR9eYQGdDa1xWpump",
+    "9CFJtzL3ZiD6uVHC6TEdBi1NzTJvSAuVkxA2EdRppump",
+    "9P81yPJzLkjeEPVsLrnYzGJy8EEDJc7zCG1FsTzHpump",
+    "A8xZNyd3AsrSHZcg5ZpkVCWFnzANB5GBVdVoBxwnpump",
+    "AAFQKNczq9ZngmXAqVNBwjmfTQYNf1bNQxraxNKXpump",
+    "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+    "D3564orpzkWJWfk84uen2P6kwfpZX88FkGkQDxuWpump",
+    "DANmUJyQt7KG6pd38b2J3Ran162VrNK6J9GJP7akpump",
+    "Dc6GW8TmGquTsLBwtrYgGMwGMY3HckT79iVCn8jmpump",
+    "EnL9nUs2LV2aCkkd3gE22x6KtiQmvw9MMSqeJicKpump",
+    "GXmQ9zfriV73rCtkASj3aEPzvk63k7JWadGKXRUpump",
+    "GyWeCQcS8tRDU1CAp2x7PwCbpq2d9UvLMjdwygSupump",
+    "HdPwxMu9R2sD8ZU8CoP3JuqUBRX3UpPb2oTc8TZkpump",
+    "HrnmUfiwT7uCpPBMrDh2VGk1MgwHcfpJ4bPJGCY2pump",
+    "J5p7z5dZew83HwpFnUqr1HL2S29sn8i7S8eFNwDUpump",
+    "J9cVhAi7qp4sLDwGbeTLUze1aLs5N4AZmQfBvDYFpump",
+    "dUaSdZm38CStjhp1VSJWGFQqSxf6DQB2hfjMXmVpump",
+    "yvTDmFNMr3jdERy8QJaFSSQU1v7bvbLRjtUxSwNpump"
+   ]
+  },
+  "OP2": {
+   "adresses_par_lancement": {
+    "1": 10
+   },
+   "n_adresses": 1,
+   "n_tokens": 10,
+   "presences_dans_le_flux_AMM": 9,
+   "tokens": [
+    "5jZstBmRqfHFwcJgZXTJCDCCgRHbYXXNjr6wcjs8pump",
+    "7DSxWGUC57xFENrJtzcTCV114g6wnqvuDRnYZMx6pump",
+    "7MYBjwLwcCv3Jiu2aQD6wdTE4mYnDjtB8gGof95dpump",
+    "84eYhZRCr8ZWaocYvCw7NUsPh8f4VeYEohfozeFwpump",
+    "8kQpKbiYHzYhyoD68JyLEcrr9gunUySec1GLkFTRpump",
+    "CJCwvkg29VJNgz2nQxuS5Uzo6ZKNRfqMxTayU4TNpump",
+    "CaXeXp5o9RfaDjs2KfAUHgYASnqfUM89gaXtgWEXpump",
+    "D1BHW3Tz4ygwwfCGzje9tMAMHz5ScAWm1EZhSTmgpump",
+    "H5WDK5c1iKMoPGKizdoMT85LqBM4FXRHUEx8Edd4pump",
+    "HXgjv3D9MoCvLNfbtNwvv7ss8fgQtxzJwiKQEmDxpump"
+   ]
+  }
+ },
+ "n_tokens_corpus": 282,
+ "niveau": "MESURE",
+ "paires_partageant_un_token": 0,
+ "paires_partageant_une_adresse": 0,
+ "reutilisation": {
+  "F002": 0.9038461538461539,
+  "F003": 1.0,
+  "F004": 1.0,
+  "F006": 1.0,
+  "OP1": 1.0,
+  "OP2": 1.0
+ },
+ "reutilisation_base": 0.019101404906648353,
+ "tokens_couverts_union": 76
+}

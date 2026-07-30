@@ -1,0 +1,81 @@
+{
+ "composante_geante_brute": 180,
+ "composante_geante_nettoyee": 57,
+ "k": 3,
+ "n_tokens": 282,
+ "niveau": "MESURE",
+ "top_ubiquite": [
+  {
+   "adresse": "RDCT-d4fb6b1f86",
+   "classee_infra": true,
+   "part": 0.5851063829787234,
+   "tokens": 165
+  },
+  {
+   "adresse": "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
+   "classee_infra": true,
+   "part": 0.35106382978723405,
+   "tokens": 99
+  },
+  {
+   "adresse": "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+   "classee_infra": true,
+   "part": 0.32269503546099293,
+   "tokens": 91
+  },
+  {
+   "adresse": "BnnNJJgy9w2MLQ9XBKJKG9FQa2r9qdW7u5VpzEkwUcc3",
+   "classee_infra": true,
+   "part": 0.24822695035460993,
+   "tokens": 70
+  },
+  {
+   "adresse": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+   "classee_infra": true,
+   "part": 0.15602836879432624,
+   "tokens": 44
+  },
+  {
+   "adresse": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "classee_infra": false,
+   "part": 0.0851063829787234,
+   "tokens": 24
+  },
+  {
+   "adresse": "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc",
+   "classee_infra": true,
+   "part": 0.08156028368794327,
+   "tokens": 23
+  },
+  {
+   "adresse": "Anubis512ho5t7S6LNSwoxUWdeQmX2kf3RvZ8ApHHF5w",
+   "classee_infra": true,
+   "part": 0.07446808510638298,
+   "tokens": 21
+  },
+  {
+   "adresse": "EEHcVr9tk4wU58ctyKkDbmRhRv9aH4S1RH41TEB3zsA5",
+   "classee_infra": false,
+   "part": 0.07092198581560284,
+   "tokens": 20
+  },
+  {
+   "adresse": "GVQWqWtncZnqkmobXJUvqn158NNEGC5BzqKCR3uw9Bg4",
+   "classee_infra": true,
+   "part": 0.05319148936170213,
+   "tokens": 15
+  },
+  {
+   "adresse": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+   "classee_infra": false,
+   "part": 0.04964539007092199,
+   "tokens": 14
+  },
+  {
+   "adresse": "6ED9YuJXMRjUCEYWQGbbsy8fXW9ae9WtpDHYGEoKstjV",
+   "classee_infra": false,
+   "part": 0.04964539007092199,
+   "tokens": 14
+  }
+ ]
+}

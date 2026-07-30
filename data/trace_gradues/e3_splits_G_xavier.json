@@ -1,0 +1,87 @@
+{
+ "label": "G_xavier",
+ "mint": "69G8CpUVZAxbPMiEBrfCCCH445NwFxH6PzVL693Xpump",
+ "n_wallets": 40,
+ "n_inflows_total": 108,
+ "n_rentrees_ecartees_produit_de_vente": 1006,
+ "n_genesis_reached": 21,
+ "n_genesis_NOT_reached": 19,
+ "n_prebuy_reached": 37,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "9xHxgDbeQDX51Vof7ruAaYjSYgR87BXRp3ZC62jrmJV1",
+  "3gEJhJ8yVEsCbf5Y6JGiS1e5Pu3bJHwYFbd5KBoLNvo6",
+  "3XVd9XDaYEFsJsgBHukNpzE8fgRUKmYkV5BTZnvci6Ab",
+  "KwtcCzqogKoGhCpcnrMaaxMKJHfMUXafvS66Jk1HzUp",
+  "2kWkxtzHdadA36vC2Hn9BekLpvywMKDCDM6fL7oomjHr",
+  "HbFh6SDjEBpk4Fq9GNeyauqLZ9rf7FjCYFmt3anbyFzv",
+  "GnPjvYcc2eRdGqRSN4u73MSR7FvwCjCs6HymoiFcWcRW",
+  "GbASb8VsCMeRaEqssCrtsDgbEZJZXYyQnyZPGCW2ji8i",
+  "58YHxodnzZKxVBE5EsATs38ywEFV7M8ijjBoBkYAJY8J",
+  "9b9hvsWFQ1tR3hiHjGNF6RiT5LaakVUxrU5NYWdAZyya",
+  "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+  "Gf9T3bwF1DKNF8eQ9qAd3i3qcoiF4aGqCFmHN6NdcYPX",
+  "CBtkV6hq5tgbsQU8H4f4Dz1dvhUhG5nPZjSVDCwkeR8D",
+  "8EGHvmGAXLN5NbacKFZhazg7Be3E1dVPtMM1cEhk2Unc",
+  "GgUwKuD4wQRP3ytRR4C66VwZ5SBCu2B7EXVZSAxDZoeV",
+  "ASxMiMb1AJGTU4AduPNB2CGqT1TiDqWkLvy7oCUnzw5x",
+  "A4uN5oSKnr6HhX7R1f1k9md6fVSPmfSrvdrhiYTtLxDH",
+  "BvU617Vu4D3XrPCPaDL42vcHpseojNUVbLADzdaSuFvQ",
+  "4cAf3MZqKNdDiwJiuYBdHy4AkeqUbrkyEhpk3a8y2vhm"
+ ],
+ "wallets_without_prebuy": [
+  "9xHxgDbeQDX51Vof7ruAaYjSYgR87BXRp3ZC62jrmJV1",
+  "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+  "ASxMiMb1AJGTU4AduPNB2CGqT1TiDqWkLvy7oCUnzw5x"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "BM6y2ajVVj3BKHa38ntTC1LqytLR94rLZzxKYMt6q2A2",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 4,
+   "total_sol": 2.483701,
+   "first_utc": "2024-10-07 19:45:30",
+   "known": null,
+   "amounts_sol": [
+    0.35,
+    0.499846957,
+    0.68,
+    0.953854376
+   ],
+   "wallets": [
+    "3gEJhJ8yVEsCbf5Y6JGiS1e5Pu3bJHwYFbd5KBoLNvo6",
+    "GbASb8VsCMeRaEqssCrtsDgbEZJZXYyQnyZPGCW2ji8i"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 5,
+   "n_transfers": 7,
+   "total_sol": 79.12,
+   "first_utc": "2024-10-17 05:41:47",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.55,
+    0.59,
+    1.01,
+    16.99,
+    19.99,
+    19.99,
+    20.0
+   ],
+   "wallets": [
+    "2baupWrF3hnf4NxNWFd8yjgetKhSyLMfDHsEbBiWikYG",
+    "4rmZX44kQKWeL6aU1eoVayVdbmcgm2PDhj38ddwv6GX3",
+    "ES47EKqre12mruop1WDiTgP1LyNmnqZjJoVKGZ5s3o1r",
+    "Fq6BQYtfTVXJ7UnUPM5B1ZShkGS3T4wVKEVPBWxcRB8f",
+    "GnPjvYcc2eRdGqRSN4u73MSR7FvwCjCs6HymoiFcWcRW"
+   ]
+  }
+ ]
+}

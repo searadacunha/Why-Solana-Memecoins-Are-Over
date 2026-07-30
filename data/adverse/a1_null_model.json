@@ -1,0 +1,106 @@
+{
+ "objet": "Taux de faux positifs du detecteur de decoupage sur des groupes de portefeuilles tires au hasard dans la population temoin.",
+ "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de taille k sont tires sans remise. Les criteres A/B/C sont ceux de t3_decoupage.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : toute detection dans un groupe tire est donc une coincidence.",
+ "population": {
+  "n_portefeuilles": 136,
+  "n_tokens": 9,
+  "n_evenements_financement": 264,
+  "par_token": {
+   "BandD": 2,
+   "CREEKS": 4,
+   "Calm": 40,
+   "DONGOE": 17,
+   "GOOREUREKA": 6,
+   "HLGOOFY": 40,
+   "PORTAL": 12,
+   "QUEENAI": 8,
+   "faith": 7
+  }
+ },
+ "graine": 12345,
+ "par_taille_de_groupe": {
+  "10": {
+   "n_draws": 5000,
+   "P_A_meme_transaction": 0.0,
+   "P_B_meme_montant_1h": 0.0,
+   "P_C_bailleur_prive_commun": 0.1506,
+   "P_au_moins_un_critere": 0.1506
+  },
+  "20": {
+   "n_draws": 5000,
+   "P_A_meme_transaction": 0.0,
+   "P_B_meme_montant_1h": 0.0,
+   "P_C_bailleur_prive_commun": 0.461,
+   "P_au_moins_un_critere": 0.461
+  },
+  "40": {
+   "n_draws": 5000,
+   "P_A_meme_transaction": 0.0,
+   "P_B_meme_montant_1h": 0.0,
+   "P_C_bailleur_prive_commun": 0.8886,
+   "P_au_moins_un_critere": 0.8886
+  }
+ },
+ "genese_atteinte_seulement": {
+  "n_portefeuilles": 70,
+  "P_au_moins_un_critere": 0.995
+ },
+ "ubiquite_des_bailleurs": {
+  "n_bailleurs_prives_distincts": 114,
+  "n_bailleurs_finançant_2_portefeuilles_ou_plus": 7,
+  "top_bailleurs": [
+   {
+    "funder": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+    "n_wallets_finances": 6,
+    "part_de_la_population": 0.0441
+   },
+   {
+    "funder": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+    "n_wallets_finances": 5,
+    "part_de_la_population": 0.0368
+   },
+   {
+    "funder": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+    "n_wallets_finances": 5,
+    "part_de_la_population": 0.0368
+   },
+   {
+    "funder": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+    "n_wallets_finances": 5,
+    "part_de_la_population": 0.0368
+   },
+   {
+    "funder": "Goe18MT8BdTq9zxLDKQo7gMgKbgS5sp9RJmpcEf14qqJ",
+    "n_wallets_finances": 2,
+    "part_de_la_population": 0.0147
+   },
+   {
+    "funder": "FRBPS12hytf1qhBGDxBX9Tmfzn1PBwJk6yNccoWgpS69",
+    "n_wallets_finances": 2,
+    "part_de_la_population": 0.0147
+   },
+   {
+    "funder": "12hHGUFAC2o3QaoNqgfr9tFe16v2dRNGLtzffoFScKcW",
+    "n_wallets_finances": 2,
+    "part_de_la_population": 0.0147
+   },
+   {
+    "funder": "HBxZShcE86UMmF93KUM8eWJKqeEXi5cqWCLYLMMhqMYm",
+    "n_wallets_finances": 1,
+    "part_de_la_population": 0.0074
+   },
+   {
+    "funder": "DZXHvioXNauk7J1kKmGKJmjW6LuHupPLsKtBZDTZLKeC",
+    "n_wallets_finances": 1,
+    "part_de_la_population": 0.0074
+   },
+   {
+    "funder": "XAHog5FrDaz8uYKnfJw1MdDWis6HqM45Rzc2i1ytWu9",
+    "n_wallets_finances": 1,
+    "part_de_la_population": 0.0074
+   }
+  ],
+  "lecture": "Si le premier bailleur ne couvre qu'une part marginale de la population, le taux de declenchement de C ne vient pas d'une poignee d'adresses d'infrastructure oubliees : il vient du nombre de PAIRES que forment 40 portefeuilles. C'est alors un probleme d'anniversaire, et allonger la liste des terminaux connus n'y changerait rien."
+ },
+ "portee": "Ce taux mesure la propension du detecteur a se declencher par hasard sur la population de portefeuilles de l'epoque. Il ne corrige pas le biais de selection de la cohorte de cibles, qui est un defaut distinct."
+}

@@ -1,0 +1,215 @@
+{
+ "root": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+ "strategy": "sample",
+ "trace": [
+  {
+   "level": 0,
+   "addr": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+   "n_sigs": 7560,
+   "genesis_reached": false,
+   "oldest_seen": "2025-01-03",
+   "n_inflows": 6,
+   "sources": [
+    {
+     "addr": "EHjz6SXRfBvYcaKphygVqtxNv5gYeFEZDDzCAP3GPTZH",
+     "total_sol": 14.7521,
+     "n": 3,
+     "first": "2025-01-04",
+     "known": null
+    },
+    {
+     "addr": "GKAFKCyRvnwidn6XVmka3fwaoPwFBRdSHyH53Rf3WCU",
+     "total_sol": 8.4082,
+     "n": 2,
+     "first": "2025-01-03",
+     "known": null
+    },
+    {
+     "addr": "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+     "total_sol": 1.0,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    }
+   ]
+  },
+  {
+   "level": 1,
+   "addr": "EHjz6SXRfBvYcaKphygVqtxNv5gYeFEZDDzCAP3GPTZH",
+   "n_sigs": 3593,
+   "genesis_reached": false,
+   "oldest_seen": "2024-12-22",
+   "n_inflows": 2,
+   "sources": [
+    {
+     "addr": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+     "total_sol": 5.0836,
+     "n": 2,
+     "first": "2025-01-03",
+     "known": null
+    }
+   ]
+  },
+  {
+   "level": 1,
+   "addr": "GKAFKCyRvnwidn6XVmka3fwaoPwFBRdSHyH53Rf3WCU",
+   "n_sigs": 126,
+   "genesis_reached": false,
+   "oldest_seen": "2023-11-25",
+   "n_inflows": 4,
+   "sources": [
+    {
+     "addr": "2uJ7auoRpmTKuzeBNHg886AqtgS5d2dCgnvyr11hPX1w",
+     "total_sol": 3.1927,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "9FRkvFqwVcJ7ukcHhBnYbifqdAZmRdMYKse3BfEejB12",
+     "total_sol": 1.0957,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    },
+    {
+     "addr": "3fuCGdRMWKmeg2UVKMvezag98yGoMEhayhaPvUr4CJv4",
+     "total_sol": 1.0632,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    },
+    {
+     "addr": "7WJ1Jw37Jg5XyfJh7JbvH6qwiU1Pe4YEn2HTfFSKKzKe",
+     "total_sol": 1.0055,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    }
+   ]
+  },
+  {
+   "level": 1,
+   "addr": "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+   "n_sigs": 7560,
+   "genesis_reached": false,
+   "oldest_seen": "2024-09-16",
+   "n_inflows": 0,
+   "sources": []
+  },
+  {
+   "level": 2,
+   "addr": "2uJ7auoRpmTKuzeBNHg886AqtgS5d2dCgnvyr11hPX1w",
+   "n_sigs": 97,
+   "genesis_reached": false,
+   "oldest_seen": "2025-01-19",
+   "n_inflows": 14,
+   "sources": [
+    {
+     "addr": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+     "total_sol": 4.5006,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "6Gre9emgcZKNEEmK5UUgnJftuUNjEPrjpUFmUiQjpxWv",
+     "total_sol": 4.3882,
+     "n": 3,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "4VpR13fxTDnJDBoGkJh4qZVyGtVtvZBbwz498tDY9Emz",
+     "total_sol": 2.0,
+     "n": 1,
+     "first": "2025-01-21",
+     "known": null
+    },
+    {
+     "addr": "CvMYSJPBFvR9dj8kFNsG3UsgGhJKNFrEuWJvjvzQN7Mz",
+     "total_sol": 1.8007,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "YnMMqGMJrV13ej7vcA6G4q24M88cn3PADuPV5UmDLqr",
+     "total_sol": 1.7567,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "FYEWTRJwa6U8ntMjmXU2fi1ktj4gX3MLAsDXmdgqvyRE",
+     "total_sol": 1.75,
+     "n": 1,
+     "first": "2025-01-21",
+     "known": null
+    },
+    {
+     "addr": "4QE6eNHQc4GbVo6Ss5kE8kwjmmUAecevMSCHhpai4RPo",
+     "total_sol": 1.6562,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    },
+    {
+     "addr": "HcpdC8Gt7CBFRLn5QCRuRpGHww7QD4d952H7ifF62Mtc",
+     "total_sol": 1.6208,
+     "n": 1,
+     "first": "2025-01-19",
+     "known": null
+    }
+   ]
+  },
+  {
+   "level": 2,
+   "addr": "9FRkvFqwVcJ7ukcHhBnYbifqdAZmRdMYKse3BfEejB12",
+   "n_sigs": 21,
+   "genesis_reached": false,
+   "oldest_seen": "2025-01-04",
+   "n_inflows": 2,
+   "sources": [
+    {
+     "addr": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+     "total_sol": 4.4001,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    },
+    {
+     "addr": "BogModuifs2mZVxT9zjB1griuUSU7qKXSXmtoV8khJo8",
+     "total_sol": 1.0398,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    }
+   ]
+  },
+  {
+   "level": 2,
+   "addr": "3fuCGdRMWKmeg2UVKMvezag98yGoMEhayhaPvUr4CJv4",
+   "n_sigs": 15,
+   "genesis_reached": false,
+   "oldest_seen": "2025-01-04",
+   "n_inflows": 2,
+   "sources": [
+    {
+     "addr": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+     "total_sol": 5.0001,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    },
+    {
+     "addr": "3uFP3ui3fGjSgjSRVdg9HMAEGckfAXfLE6peHwdxF9Gr",
+     "total_sol": 1.0267,
+     "n": 1,
+     "first": "2025-01-04",
+     "known": null
+    }
+   ]
+  }
+ ]
+}

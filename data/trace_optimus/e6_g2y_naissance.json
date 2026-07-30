@@ -1,0 +1,9 @@
+{
+ "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+ "n_signatures": 4000000,
+ "pages": 4000,
+ "genesis_reached": false,
+ "oldest_seen_utc": "2024-06-20 07:31:01",
+ "newest_seen_utc": "2026-07-07 22:08:24",
+ "conclusion": "Plafond de pagination atteint : la premiere transaction de G2Y n'est PAS etablie. Aucune conclusion chronologique possible."
+}

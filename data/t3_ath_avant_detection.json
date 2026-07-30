@@ -1,0 +1,117 @@
+{
+ "n": 1243,
+ "n_clusters": 123,
+ "n_jours": 20,
+ "bandes": {
+  "5k-20k": {
+   "n": 16,
+   "ath_avant_detection_pct": 43.8,
+   "ath_avant_60s_pct": 62.5,
+   "ath_avant_60s_ic95": [
+    38.6,
+    81.5
+   ],
+   "ath_avant_120s_pct": 62.5,
+   "delai_ath_median_min": 0.1
+  },
+  "20k-30k": {
+   "n": 108,
+   "ath_avant_detection_pct": 23.1,
+   "ath_avant_60s_pct": 55.6,
+   "ath_avant_60s_ic95": [
+    46.2,
+    64.6
+   ],
+   "ath_avant_120s_pct": 60.2,
+   "delai_ath_median_min": 0.5
+  },
+  "30k-40k": {
+   "n": 137,
+   "ath_avant_detection_pct": 27.7,
+   "ath_avant_60s_pct": 60.6,
+   "ath_avant_60s_ic95": [
+    52.2,
+    68.4
+   ],
+   "ath_avant_120s_pct": 65.7,
+   "delai_ath_median_min": 0.3
+  },
+  "40k-50k": {
+   "n": 296,
+   "ath_avant_detection_pct": 18.9,
+   "ath_avant_60s_pct": 44.6,
+   "ath_avant_60s_ic95": [
+    39.0,
+    50.3
+   ],
+   "ath_avant_120s_pct": 54.4,
+   "delai_ath_median_min": 1.7
+  },
+  "50k-65k": {
+   "n": 277,
+   "ath_avant_detection_pct": 26.4,
+   "ath_avant_60s_pct": 46.6,
+   "ath_avant_60s_ic95": [
+    40.8,
+    52.5
+   ],
+   "ath_avant_120s_pct": 51.6,
+   "delai_ath_median_min": 1.6
+  },
+  "65k-85k": {
+   "n": 121,
+   "ath_avant_detection_pct": 26.4,
+   "ath_avant_60s_pct": 52.1,
+   "ath_avant_60s_ic95": [
+    43.2,
+    60.8
+   ],
+   "ath_avant_120s_pct": 58.7,
+   "delai_ath_median_min": 0.9
+  },
+  "85k-120k": {
+   "n": 123,
+   "ath_avant_detection_pct": 14.6,
+   "ath_avant_60s_pct": 31.7,
+   "ath_avant_60s_ic95": [
+    24.1,
+    40.4
+   ],
+   "ath_avant_120s_pct": 35.8,
+   "delai_ath_median_min": 6.7
+  },
+  "120k-300k": {
+   "n": 165,
+   "ath_avant_detection_pct": 9.7,
+   "ath_avant_60s_pct": 17.6,
+   "ath_avant_60s_ic95": [
+    12.5,
+    24.1
+   ],
+   "ath_avant_120s_pct": 23.0,
+   "delai_ath_median_min": 36.1
+  },
+  "_sous_20k": {
+   "n": 16,
+   "ath_avant_detection_pct": 43.8,
+   "ath_avant_60s_pct": 62.5,
+   "ath_avant_60s_ic95": [
+    38.6,
+    81.5
+   ],
+   "ath_avant_120s_pct": 62.5,
+   "delai_ath_median_min": 0.1
+  },
+  "_toutes_bandes": {
+   "n": 1243,
+   "ath_avant_detection_pct": 21.3,
+   "ath_avant_60s_pct": 43.8,
+   "ath_avant_60s_ic95": [
+    41.1,
+    46.6
+   ],
+   "ath_avant_120s_pct": 50.0,
+   "delai_ath_median_min": 2.0
+  }
+ }
+}

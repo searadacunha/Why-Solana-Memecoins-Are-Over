@@ -1,0 +1,2 @@
+fichiers=645  exploitables=289  rejets={'capture_vide': 352, 'span_swaps_lt_2min': 3, 'aucun_buy': 1}
+289 captures ; 289 a (re)traiter

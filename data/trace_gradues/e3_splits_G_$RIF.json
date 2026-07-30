@@ -1,0 +1,153 @@
+{
+ "label": "G_$RIF",
+ "mint": "GJtJuWD9qYcCkrwMBmtY1tpapV1sKfB2zUv9Q4aqpump",
+ "n_wallets": 40,
+ "n_inflows_total": 94,
+ "n_rentrees_ecartees_produit_de_vente": 1240,
+ "n_genesis_reached": 15,
+ "n_genesis_NOT_reached": 25,
+ "n_prebuy_reached": 39,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "BLDRZQiqt4ESPz12L9mt4XTBjeEfjoBopGPDMA36KtuZ",
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ",
+  "6KALzz7weNQ9TDEsp4DBW2atTnF48wmpLGKB16qY1WWH",
+  "73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B",
+  "9LeJwKBLHtipUr3na6yJ75tK3XvBAqABV49S8kCDWCQP",
+  "3e8MXaMRnRMWRD8g1MQsE8LS1YZhoMmfAM5qEfb3EYXC",
+  "8hVb3kunjQTrz3fPw89JqEgaBN7FRRSkg2LNvkxv8AR4",
+  "8hdqC3ofrWaG4v5X1voL5ba5QmRK3JVvRyNC8izuknze",
+  "ECC6rWQ4vpCh5QcM8S5K2myzrqyyarfamk2FMoBZZg14",
+  "5eRnHvrmoKcL532q7BjH22cyWu38GvSVGefp6PLWsg88",
+  "4hSXPtxZgXFpo6Vxq9yqxNjcBoqWN3VoaPJWonUtupzD",
+  "Et6Jg6WGfKere89bNWKSopqDUCMXy9jjQjZDGLNfusf4",
+  "3QweLtv6E1NTkzwELDRr7uj73RyP9pE6azkQrp5USb3F",
+  "GxaeXcakf96MGvenQZssRNjHaNDGLSu2REq2xpKoTYr",
+  "GFBnxHfX9vHuo26CWX9WXjrsLf1NdJFDqNN6z4X5o9pH",
+  "CjsXU4LYTYymnurpMW9aiVcCk6sZSzHCC9aTuzFVtMpK",
+  "5jMW1hzAKZSYbLvpHf6UviQ8PoSMmdh8LY8ZYPyb94ve",
+  "6qkKWHqnLPYRaGEA9iJGEi6LDATnQLB9HuP7egD35Pyx",
+  "6VaGhgP5aqY5BTdtuyGeziSKXgAYdnumk1w2xHAydwVp",
+  "9bEFANiLATqdMkGaWipYGhxQs7cNX3ap9osbAggGYJw9",
+  "2oB425698SSnjDu7cZboKsGjybSvB4jTgMLmmBjc9bwt",
+  "Ezm9crQCQsCE74RY1LhcU9ovaky53bzarEo3iN1dxQiL",
+  "6h8QFJXVwMpoyQ1R6VVR16KUa4r9ov4aWoFgvQ6cxGuv",
+  "7d6PaAijry2nXGJTVqAPeEUhUKoSp1V9QPSzmCPu83MW",
+  "B8jm98NBx4eMduQWvQq2xJ25DegWQbzPzF4Sbs2Jk71m"
+ ],
+ "wallets_without_prebuy": [
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 5,
+   "n_transfers": 12,
+   "total_sol": 41.427691,
+   "first_utc": "2024-04-05 18:46:49",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.508,
+    0.989,
+    0.989,
+    0.989,
+    1.0889,
+    1.0889,
+    3.24,
+    4.86,
+    5.77,
+    5.77330894,
+    6.14158174,
+    9.99
+   ],
+   "wallets": [
+    "2mZjT5QfmuTeTsLdBY5y8r5rggz8j7Xbc828SLMWe72N",
+    "2ri9kpb13iNa8EQjhCNvcaE5PVAQPFuhcZsRAC6Pi4v3",
+    "56oLHmkM8USkreZfwciKK34EyxrykHyx7TRcCvbFPyxm",
+    "B8jm98NBx4eMduQWvQq2xJ25DegWQbzPzF4Sbs2Jk71m",
+    "FihLkKuX4gZL1bExfp1E4MiQvv2XTMgotsmQwdRC57cT"
+   ]
+  },
+  {
+   "funder": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 4,
+   "total_sol": 9.960357,
+   "first_utc": "2024-07-11 23:49:39",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.106318533,
+    0.278884865,
+    4.575153675,
+    5.0
+   ],
+   "wallets": [
+    "67r5HCFgPxpnR8XLebDXSb1m2HgbJvZFsHR6cmXJgV1j",
+    "6h8QFJXVwMpoyQ1R6VVR16KUa4r9ov4aWoFgvQ6cxGuv",
+    "CjsXU4LYTYymnurpMW9aiVcCk6sZSzHCC9aTuzFVtMpK"
+   ]
+  },
+  {
+   "funder": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 3,
+   "total_sol": 4.217625,
+   "first_utc": "2024-07-13 06:44:17",
+   "known": "Coinbase hot wallet",
+   "amounts_sol": [
+    0.100934144,
+    0.11669122,
+    4.0
+   ],
+   "wallets": [
+    "67r5HCFgPxpnR8XLebDXSb1m2HgbJvZFsHR6cmXJgV1j",
+    "6KALzz7weNQ9TDEsp4DBW2atTnF48wmpLGKB16qY1WWH",
+    "6h8QFJXVwMpoyQ1R6VVR16KUa4r9ov4aWoFgvQ6cxGuv"
+   ]
+  },
+  {
+   "funder": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 4,
+   "total_sol": 2.265334,
+   "first_utc": "2024-09-01 05:45:11",
+   "known": "Coinbase 2",
+   "amounts_sol": [
+    0.063456135,
+    0.275367048,
+    0.68101115,
+    1.24549925
+   ],
+   "wallets": [
+    "6KALzz7weNQ9TDEsp4DBW2atTnF48wmpLGKB16qY1WWH",
+    "6h8QFJXVwMpoyQ1R6VVR16KUa4r9ov4aWoFgvQ6cxGuv",
+    "CjsXU4LYTYymnurpMW9aiVcCk6sZSzHCC9aTuzFVtMpK"
+   ]
+  },
+  {
+   "funder": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 6,
+   "total_sol": 43.252248,
+   "first_utc": "2024-09-02 19:22:08",
+   "known": "service de swap G2Y (cible de l'enquete)",
+   "amounts_sol": [
+    2.74225836,
+    4.27815158,
+    4.350826,
+    4.54882599,
+    6.42982599,
+    20.90236032
+   ],
+   "wallets": [
+    "67r5HCFgPxpnR8XLebDXSb1m2HgbJvZFsHR6cmXJgV1j",
+    "73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B"
+   ]
+  }
+ ]
+}

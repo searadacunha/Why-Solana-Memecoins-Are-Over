@@ -1,0 +1,23 @@
+{
+ "label": "BandD",
+ "mint": "GADdBMDWU6aQp9XJumRrk443sjjSzbPULGAsZKF4pump",
+ "n_wallets": 2,
+ "n_inflows_total": 12,
+ "n_rentrees_ecartees_produit_de_vente": 5,
+ "n_genesis_reached": 1,
+ "n_genesis_NOT_reached": 1,
+ "n_prebuy_reached": 1,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ"
+ ],
+ "wallets_without_prebuy": [
+  "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/2 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": []
+}

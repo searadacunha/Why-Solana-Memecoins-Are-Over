@@ -1,0 +1,99 @@
+{
+ "label": "symx",
+ "mint": "Fu4jQQpUnECSVQrVfeeVPpQpXQffM75LL328EJPtpump",
+ "n_wallets": 40,
+ "n_inflows_total": 55,
+ "n_rentrees_ecartees_produit_de_vente": 940,
+ "n_genesis_reached": 16,
+ "n_genesis_NOT_reached": 24,
+ "n_prebuy_reached": 32,
+ "n_prebuy_NOT_reached": 8,
+ "n_hyperactifs_non_mesurables": 8,
+ "wallets_without_genesis": [
+  "5PHWHGqCZxc6C3KSCkEFmRRJatNBDSv1negW6SBfoGbZ",
+  "9ez7cWy3QmM77J9oKXawhS3acQeaJdVdMxUpTsQGGCKh",
+  "ASxMiMb1AJGTU4AduPNB2CGqT1TiDqWkLvy7oCUnzw5x",
+  "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+  "GBuYB5v51KwtrBNpXE8hDf8xJowCAHmwcGGsj2mZ8grH",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+  "dc5euoW1in5oV5FBv4hRe9v7MqpEQ4M3nrqGySJiMUe",
+  "HLBxUvLRmyiKUkmDqoD4YfoaBtGXwnYDfKFwmiSWc4Rw",
+  "3NTdybcppynjjgapNgEf2GDHsE7zrxCXGZsZkkKkVoyg",
+  "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+  "C5roKcxZvYTyVRfQhXFTProfv688ePUdwLnmKcCYjdAE",
+  "2toDneK6fDxDBx4yqdrdSYdtiPoUpU2VoFZ6cRYEvtWt",
+  "dc5Lj8UMqurRTbgEmq7VuS8mHSbWfGfc8f4veQrzM1t",
+  "dc5djqFbA9MmV8QJF4xJ3dAermM69AeQuXFMiBu6X2K",
+  "H4uBGraDrW64CPNY9xcbnvYk8T3q8EMtGm9jw92tLUQf",
+  "7LS5JoAsbqFQVLnW51f5535DB4uu5edaiy5mR9nc842z",
+  "HXzYoKXc22Ks9vXSoSxES9Z8y6svSepved5uR5e6gGRY",
+  "7Fbg5c5pvW8zn2npFJk2SuWMowQDFjVPV8jLSa2vn98t",
+  "34kTxeC2oZE49tfWtmJS3r64EErf8UDMt8J7ZLANRFxa",
+  "AVKVdcYwcyDqYu3AJ8LacMvpk5BNV9GKsB6qVTaEvM2M",
+  "7DkYsg1uyNCp7HeSy6wdN8wcGoV5x7VAGMur2Aa7wtVY",
+  "QvPPwsV6ri3ydYLQRhnjWQt6US3qVEUhKss9J45uPFL",
+  "52EAaCW1LkxLTrFBXqLBLHS8EZHRKqmFi9npboEj5wbr",
+  "yf1H5qUPguxJTFtFNmtTjEZXWg9AowMP5RP2rNwrgYo"
+ ],
+ "wallets_without_prebuy": [
+  "5PHWHGqCZxc6C3KSCkEFmRRJatNBDSv1negW6SBfoGbZ",
+  "ASxMiMb1AJGTU4AduPNB2CGqT1TiDqWkLvy7oCUnzw5x",
+  "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+  "dc5euoW1in5oV5FBv4hRe9v7MqpEQ4M3nrqGySJiMUe",
+  "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+  "dc5Lj8UMqurRTbgEmq7VuS8mHSbWfGfc8f4veQrzM1t",
+  "dc5djqFbA9MmV8QJF4xJ3dAermM69AeQuXFMiBu6X2K"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 8/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (8 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 6,
+   "n_transfers": 8,
+   "total_sol": 151.50285,
+   "first_utc": "2024-12-10 12:55:53",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.2568496,
+    2.092,
+    3.886,
+    4.992,
+    10.092,
+    10.192,
+    19.992,
+    100.0
+   ],
+   "wallets": [
+    "3NTdybcppynjjgapNgEf2GDHsE7zrxCXGZsZkkKkVoyg",
+    "3NX4eWimjMAyeHumftgVYD1yArKvN95EGk581JvwfURP",
+    "AsgEuCq7CrxrtJPtNqE1Snoqe9q2xhYoiqNVsWaGvNqw",
+    "BU26Wt35YD415xppkA8BZ3HdotR9u7YhX2S2CgHnAGL5",
+    "CqHADvyHJmvwhteMQ89ETPP2LXwaBQACHDJdS195qewN",
+    "EAmX1AJ4ixXQmXHRyd7k8pesJwM88hKYt9jrs9bKrDLp"
+   ]
+  },
+  {
+   "funder": "5VCwKtCXgCJ6kit5FybXjvriW3xELsFDhYrPSqtJNmcD",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 5,
+   "total_sol": 410.339487,
+   "first_utc": "2024-11-29 19:00:43",
+   "known": "OKX hot wallet",
+   "amounts_sol": [
+    0.10627022,
+    0.1136,
+    0.13241704,
+    9.9936,
+    399.9936
+   ],
+   "wallets": [
+    "HLBxUvLRmyiKUkmDqoD4YfoaBtGXwnYDfKFwmiSWc4Rw",
+    "PUUtn16xcagsiLa86iDD4P4rpkUHimZFpgudyFMv24n"
+   ]
+  }
+ ]
+}

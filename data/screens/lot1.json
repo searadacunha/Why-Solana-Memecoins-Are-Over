@@ -1,0 +1,56 @@
+[
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.43 (1).jpeg",
+    "symbole": "BLT",
+    "mint_fragment": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+    "gain_pct": 133.21,
+    "duree": "4h 2m",
+    "date": null,
+    "notes": "Bot Trojan 'Agamemnon'. Heure ecran 07:36, message a 02:26. Mint pump.fun complet lisible dans le reflink. Message 'Transaction reussie' au-dessus. Pas de date MM/JJ/AA visible."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.43.jpeg",
+    "symbole": "QAMI",
+    "mint_fragment": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+    "gain_pct": 100.06,
+    "duree": "4h 47m",
+    "date": null,
+    "notes": "Bot Trojan 'Nestor' (10 804 utilisateurs mensuels). Heure ecran 17:43, vente a 17:42 via RaydiumAMM (202116 QAMI -> 4.148 SOL, price impact 1.25%). Mint pump.fun complet lisible. Pas de date MM/JJ/AA."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.44 (1).jpeg",
+    "symbole": "OPTIMUS",
+    "mint_fragment": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+    "gain_pct": 307.26,
+    "duree": "14d 1h 43m",
+    "date": null,
+    "notes": "Bot Trojan 'Nestor'. Heure ecran 10:54, vente a 10:54 via RaydiumAMM (4M OPTIMUS -> 6.943 SOL, price impact 0.24%), mention 'Renounced'. Detention tres longue (14 jours) contrairement aux autres. Mint pump.fun complet lisible."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.44 (2).jpeg",
+    "symbole": "LEXICON",
+    "mint_fragment": null,
+    "gain_pct": 129.5,
+    "duree": "2h 51m",
+    "date": "12/30/24",
+    "notes": "Vue image plein ecran Telegram, contexte '130 sur 256', heure ecran 00:10. Chat source 'Trojan on Solana - Agame...' date 12/30/24. Reflink tronque en bas de l'ecran, mint non lisible."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.44 (3).jpeg",
+    "symbole": "HOMELESCAT",
+    "mint_fragment": null,
+    "gain_pct": 1084.63,
+    "duree": "11h 26m",
+    "date": "01/06/25",
+    "notes": "Vue image plein ecran Telegram, contexte '175 sur 221', heure ecran 00:08. Chat source 'Trojan on Solana - Nestor' date 01/06/25. Visuel de Nouvel An avec '2025' sur le cheval. Reflink tronque, mint non lisible. Plus fort gain du lot (x11.8)."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.44.jpeg",
+    "symbole": "CHOCO",
+    "mint_fragment": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+    "gain_pct": 639.81,
+    "duree": "3h 44m",
+    "date": null,
+    "notes": "Bot Trojan 'Achilles'. Heure ecran 20:16, vente a 19:35 via RaydiumAMM (5.61M CHOCO -> 7.645 SOL, price impact 5.37%, liquidite SOL 156.245 / supply 108.85M), mentions 'Renounced' et 'Not Rugged'. Notification visible d'un canal de raid Twitter organise pour ce token (indice de promotion coordonnee). Mint pump.fun lisible."
+  }
+]

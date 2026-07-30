@@ -1,0 +1,1615 @@
+{
+ "label": "RAO",
+ "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+ "curve": "ApNvFayMW1XQLcWZ2JnUdTZQ22yRCNeXKbucf6x4XX9y",
+ "curve_signatures_total": 391,
+ "curve_genesis_reached": true,
+ "first_curve_tx_ts": 1730202703,
+ "first_curve_tx_utc": "2024-10-29 11:51:43",
+ "n_curve_tx_inspected": 230,
+ "n_distinct_early_buyers": 40,
+ "buyers": [
+  {
+   "wallet": "EmjgfmDPuZBLZxZoTkVfBz37bxsAVe7DXTaH8LdVbeLc",
+   "rank": 1,
+   "first_buy_ts": 1730202703,
+   "first_buy_utc": "2024-10-29 11:51:43",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": 2.04592268,
+   "tokens_first_buy": 67062499.999999,
+   "first_buy_sig": "J2Tx8QNDW4LaN5S3aidEE3Ac4aJfQ9HcaJRoeFDGqkapDqtHCzetuH8eJiYNSkhwJgrMKRYLuaWG7nXhoeCR6da"
+  },
+  {
+   "wallet": "5hiiMugYNkYGmx8jR7RGLGJtgvTVxLteJtYbg6UbyJ2p",
+   "rank": 2,
+   "first_buy_ts": 1730202725,
+   "first_buy_utc": "2024-10-29 11:52:05",
+   "seconds_after_first_curve_tx": 22,
+   "sol_spent_first_buy": 0.11913328,
+   "tokens_first_buy": 3411720.543213,
+   "first_buy_sig": "2gaXMWNcCrt3h6JVStZgzXz4MjhjPznQC5GWNmzXvKvM4Kw3WBEKyjcxWNtPtgHb5hxYwDPSVqnRmEmMoQnFxMg5"
+  },
+  {
+   "wallet": "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+   "rank": 3,
+   "first_buy_ts": 1730202728,
+   "first_buy_utc": "2024-10-29 11:52:08",
+   "seconds_after_first_curve_tx": 25,
+   "sol_spent_first_buy": 0.307544279,
+   "tokens_first_buy": 9280096.943649,
+   "first_buy_sig": "24zUdn8w3hmHSg5Wu6LXmDbtXhGyR4mPuS7XaMEtQZosqChSxk375RXcx18uYwu4K43thcPxxNEqmKR7JyK8NBvj"
+  },
+  {
+   "wallet": "A5RuNzKZFc4mJg82Kiua156JvsnCNJi1kxkhg4aMgKGP",
+   "rank": 4,
+   "first_buy_ts": 1730202728,
+   "first_buy_utc": "2024-10-29 11:52:08",
+   "seconds_after_first_curve_tx": 25,
+   "sol_spent_first_buy": 0.315450346,
+   "tokens_first_buy": 9366802.0,
+   "first_buy_sig": "2gRvXUWJHDJwctxsA1vF2kTqCy4jdcGtsZgEa3Ag1UcVoWA5YqrmwNC2PTzxKCDiWJXc71pwLZHgb4v1Tmw1CDuL"
+  },
+  {
+   "wallet": "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+   "rank": 5,
+   "first_buy_ts": 1730202728,
+   "first_buy_utc": "2024-10-29 11:52:08",
+   "seconds_after_first_curve_tx": 25,
+   "sol_spent_first_buy": 0.317794007,
+   "tokens_first_buy": 9280096.943649,
+   "first_buy_sig": "Gcz5soGAhWebkhq6tS9oT6TpzqNSzi1x9EKAEGKRXgRe1WFfHuArBKmiR89M7gFzbTFK5acTsvCJg8dyVc7bouu"
+  },
+  {
+   "wallet": "CuYiK66SuWqke38jHoybSt9UJb2fwMxyRE5DyPqqwxxc",
+   "rank": 6,
+   "first_buy_ts": 1730202731,
+   "first_buy_utc": "2024-10-29 11:52:11",
+   "seconds_after_first_curve_tx": 28,
+   "sol_spent_first_buy": 0.05259428,
+   "tokens_first_buy": 1473139.281083,
+   "first_buy_sig": "3h3M5NJVzvbE2K4EZo6nkgh3Axbibe6xNPicXmt7GC72KR5hLiYAhcoktKUzGeQiSGsvwiRJzYkRYiJwJNurus82"
+  },
+  {
+   "wallet": "2i44T2vK4AXredRdoBq4upLpXEK5hyhBDBSkeN7WWYkx",
+   "rank": 7,
+   "first_buy_ts": 1730202732,
+   "first_buy_utc": "2024-10-29 11:52:12",
+   "seconds_after_first_curve_tx": 29,
+   "sol_spent_first_buy": 0.050220115,
+   "tokens_first_buy": 1302491.694449,
+   "first_buy_sig": "2qywgUFyX1JGDpt9CRStBD874j2Xg8vFUwDeNmbJMnMq21L1DGanaHnx2g4uTL2hhgbjt73mS8ryasSA8jXYFHNi"
+  },
+  {
+   "wallet": "FTQCeMwD6vMWyfNAGSERnKALJ5x5M81riRFg2kaUbSVf",
+   "rank": 8,
+   "first_buy_ts": 1730202746,
+   "first_buy_utc": "2024-10-29 11:52:26",
+   "seconds_after_first_curve_tx": 43,
+   "sol_spent_first_buy": 0.02538996,
+   "tokens_first_buy": 586436.984676,
+   "first_buy_sig": "51LneGQXY1RUcQ7h8omHwLfwCzNCSzns7Nc9BMfY1R7QMvus4XezcYRc6i1d4huNFh6k8gbfUicbAgsPiY2LaeW6"
+  },
+  {
+   "wallet": "7Vc5Cax5WYoEBXaViD8rMTmQN1byzLwiNqEyynRgUasU",
+   "rank": 9,
+   "first_buy_ts": 1730202764,
+   "first_buy_utc": "2024-10-29 11:52:44",
+   "seconds_after_first_curve_tx": 61,
+   "sol_spent_first_buy": 0.052144279,
+   "tokens_first_buy": 1442275.420777,
+   "first_buy_sig": "4eKC2Bwe2g1VX62td66MpKW4M4cQDevCCkPn4m9SVr1cBLL2Jwow66JgnCFk9UgR9PQdXbaY3TNUiVFQiVcsSGVf"
+  },
+  {
+   "wallet": "6RGc9YHaU1o5waaHKfDysxWjxzCRcq6DWJtrN5QDdr1s",
+   "rank": 10,
+   "first_buy_ts": 1730202858,
+   "first_buy_utc": "2024-10-29 11:54:18",
+   "seconds_after_first_curve_tx": 155,
+   "sol_spent_first_buy": 2.025457282,
+   "tokens_first_buy": 55420457.554146,
+   "first_buy_sig": "5Bs1Feur7Ks82SVzXEAJF7rcNU2XDPFC1KDxbhw3skXrSaUv5fSLQG5CQovKZiLe6j942XxRR4Uyomfx7qEMurHC"
+  },
+  {
+   "wallet": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "rank": 11,
+   "first_buy_ts": 1730202993,
+   "first_buy_utc": "2024-10-29 11:56:33",
+   "seconds_after_first_curve_tx": 290,
+   "sol_spent_first_buy": 1.01505428,
+   "tokens_first_buy": 26955416.692161,
+   "first_buy_sig": "atk9AaaymSDghLztLutPnDciPfgMsxvCakvuvqNGapBe423KwMQ4zmSM1rcnYEikrc7YXcMNu3owFG8EknnATyQ"
+  },
+  {
+   "wallet": "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+   "rank": 12,
+   "first_buy_ts": 1730203010,
+   "first_buy_utc": "2024-10-29 11:56:50",
+   "seconds_after_first_curve_tx": 307,
+   "sol_spent_first_buy": 0.41385954,
+   "tokens_first_buy": 10254075.422835,
+   "first_buy_sig": "4uXqBDeiUnS8UKygMKsfKfRcFFD5avxXW3282Buvnei13Dx8iuPVJPXyKrDC7L6P9CsbSjwPMuWqWCuQWFfyHj2d"
+  },
+  {
+   "wallet": "k9fX9L9QXqSJQ6rvyF3VByoxySqxYeKbpEGtEy5yq4Z",
+   "rank": 13,
+   "first_buy_ts": 1730203105,
+   "first_buy_utc": "2024-10-29 11:58:25",
+   "seconds_after_first_curve_tx": 402,
+   "sol_spent_first_buy": 1.122738552,
+   "tokens_first_buy": 26557924.593518,
+   "first_buy_sig": "5EJguNdZGhbkhmkemrz37dLBRyXegszVubm1myMA8c9KFsdTd2iziXc3cukdmTxLLCtA7UeF1ACVerNxKzZfmwz9"
+  },
+  {
+   "wallet": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "rank": 14,
+   "first_buy_ts": 1730203112,
+   "first_buy_utc": "2024-10-29 11:58:32",
+   "seconds_after_first_curve_tx": 409,
+   "sol_spent_first_buy": 0.510457282,
+   "tokens_first_buy": 11492139.343105,
+   "first_buy_sig": "36oS3VjpjypDL4xozX7TPyX36MX5kyhDViHJPk2fMbNqXwsKZc37vf2gWRL5Vr341SzjsEYe8EuyFg3TCbsX9ig9"
+  },
+  {
+   "wallet": "7f97KcfbDGhSZyHqSELKtYh8SxobV8R4dvZY7MoxMy8i",
+   "rank": 15,
+   "first_buy_ts": 1730203121,
+   "first_buy_utc": "2024-10-29 11:58:41",
+   "seconds_after_first_curve_tx": 418,
+   "sol_spent_first_buy": 0.302544279,
+   "tokens_first_buy": 6445835.922337,
+   "first_buy_sig": "4ATJ9A9SDrB5r14JU2Yt88ddyMFUHygRXUs5EQnwbQBfBzAs871JsS2pHKJkaGAJ463HujD8zRYXwLBsb4nxP6Go"
+  },
+  {
+   "wallet": "2wb6Sz33473SrYkAzofhCH4y8ZzkTtfCkaV2qbSWc9Zw",
+   "rank": 16,
+   "first_buy_ts": 1730203122,
+   "first_buy_utc": "2024-10-29 11:58:42",
+   "seconds_after_first_curve_tx": 419,
+   "sol_spent_first_buy": 0.463913583,
+   "tokens_first_buy": 9675496.575811,
+   "first_buy_sig": "4b9rLjAyoE3Sfxk6Hd5EkvwpGmMZj6a7AY2qiZQn4Retvtc1DFcSyzKkoW4kgMACx3AdWwyAtmW1vQdurzwStDQY"
+  },
+  {
+   "wallet": "GS6GEdXguSgCfFZ9HbX2pxhsUrcx7H7gTeq1pW7qAx4c",
+   "rank": 17,
+   "first_buy_ts": 1730203123,
+   "first_buy_utc": "2024-10-29 11:58:43",
+   "seconds_after_first_curve_tx": 420,
+   "sol_spent_first_buy": 0.39371497,
+   "tokens_first_buy": 7995188.0,
+   "first_buy_sig": "3M8mkeLby5DAzH3F5cHxqjFzZR1Bv6pi2zAkBAxyTaanU5kRwy6TFfsiZN21jjcDhKt498TWEaAiPDzk82vXBiur"
+  },
+  {
+   "wallet": "BNBx8JBvxrmM699C92bZQ7VKngdfcdudFcQrH7oLnFvw",
+   "rank": 18,
+   "first_buy_ts": 1730203137,
+   "first_buy_utc": "2024-10-29 11:58:57",
+   "seconds_after_first_curve_tx": 434,
+   "sol_spent_first_buy": 1.538044279,
+   "tokens_first_buy": 28816508.259513,
+   "first_buy_sig": "4gnRegm9X2dStPW6SGLrckdAiLNBh17JLvs3mstKMC7KSUopQGCfhFUjHQoVmMzwPDrCewYf1g5sugXV6kkALyGS"
+  },
+  {
+   "wallet": "H3cbDxVqrxtKzwD3da7vwFJcrpdFqV1tUA46cUYa5iG1",
+   "rank": 19,
+   "first_buy_ts": 1730203142,
+   "first_buy_utc": "2024-10-29 11:59:02",
+   "seconds_after_first_curve_tx": 439,
+   "sol_spent_first_buy": 0.256899282,
+   "tokens_first_buy": 4696757.594623,
+   "first_buy_sig": "CgrGT4bdM8M8TPkecDYDhFvafg1Wycd5APm2BMQ6nkmofJjTD2zPd9yQrokuK5WQRggMiezDP5FwtqvtgYA9saS"
+  },
+  {
+   "wallet": "F5gZqCJWVg2pD9mzHsRxn3v38me7Gny7oLcJPXxYaVLz",
+   "rank": 20,
+   "first_buy_ts": 1730203145,
+   "first_buy_utc": "2024-10-29 11:59:05",
+   "seconds_after_first_curve_tx": 442,
+   "sol_spent_first_buy": 0.100405328,
+   "tokens_first_buy": 1625830.4917,
+   "first_buy_sig": "3q29nGtAedXeYkoRhHBvUyvznneNnC4MWbiX9uVwPfUUrDPJLN9Xe5jqpYa9DdhDcrB9ftnRaWw1sK4CAcefxNpG"
+  },
+  {
+   "wallet": "ACq2wA8gifTVu66j2oF2wxeekE7RU8HhKzd4sbzFEjgV",
+   "rank": 21,
+   "first_buy_ts": 1730203145,
+   "first_buy_utc": "2024-10-29 11:59:05",
+   "seconds_after_first_curve_tx": 442,
+   "sol_spent_first_buy": 0.277559434,
+   "tokens_first_buy": 4696757.613297,
+   "first_buy_sig": "98kysx4s6XZ8X8rnkhFwMkQ3vkZdFUqEsJhPZbBvW14AnqmuMfVXs4UxzQuMYvpVbs88wszQ7qSeNiopk9cKb5P"
+  },
+  {
+   "wallet": "2La56oUHV7wTcHUDH4yFwrmnwdZDH2G43ipumaZUKDQS",
+   "rank": 22,
+   "first_buy_ts": 1730203145,
+   "first_buy_utc": "2024-10-29 11:59:05",
+   "seconds_after_first_curve_tx": 442,
+   "sol_spent_first_buy": 1.419016601,
+   "tokens_first_buy": 25289946.0,
+   "first_buy_sig": "bQFXpmZcoojTE6DxgXuZK3n9Ga3F8JoH5LfbcXR3J96ZRcUyT1nShvfQGDcQ8iXJnW3o4WMfXWyhg7H34xxxoFy"
+  },
+  {
+   "wallet": "4hqAnhn3n2C75PERuLXn4TTy8oKYREVf4qTZCxzdmLD4",
+   "rank": 23,
+   "first_buy_ts": 1730203154,
+   "first_buy_utc": "2024-10-29 11:59:14",
+   "seconds_after_first_curve_tx": 451,
+   "sol_spent_first_buy": 0.053654115,
+   "tokens_first_buy": 849544.334637,
+   "first_buy_sig": "4SfByJiz4MsgVXQkPpjELLUtk8zVjJxxcdQuKxhMeLGLkDt8u8R7o3XGH6ykjhzRcx1Ncz5gcCk3Poxdfe312Jum"
+  },
+  {
+   "wallet": "2reZ3u5XXGyN2cC6eVrxwxkdf56mCwuec7JQ2uB1Mf5e",
+   "rank": 24,
+   "first_buy_ts": 1730203200,
+   "first_buy_utc": "2024-10-29 12:00:00",
+   "seconds_after_first_curve_tx": 497,
+   "sol_spent_first_buy": 0.51403928,
+   "tokens_first_buy": 7737938.949644,
+   "first_buy_sig": "AtS9UsbC369CByiG61WCnpDL2G4oRKtzchiAohippyDeCcRiiU2drTCCfqsRBCaonXqHaUZ3yrRmeuZaCXkJkWB"
+  },
+  {
+   "wallet": "24Z2aSHY2d5y5DbX66JW47kYH8G4hhFKba5ESXB4N5s2",
+   "rank": 25,
+   "first_buy_ts": 1730203221,
+   "first_buy_utc": "2024-10-29 12:00:21",
+   "seconds_after_first_curve_tx": 518,
+   "sol_spent_first_buy": 0.10605428,
+   "tokens_first_buy": 1496134.912592,
+   "first_buy_sig": "2hXBKj9kWenRYCAWh4wDoymFLPtgABqcCbFuexpfTM95aYQT4bRYXSmbhZhb9ZrogYitZDERJpj7buZheAo9cB6E"
+  },
+  {
+   "wallet": "B2LZMMBohXhT8z3M7AGoanYbYWzgEqZbmgJ9fqmAoCTN",
+   "rank": 26,
+   "first_buy_ts": 1730203225,
+   "first_buy_utc": "2024-10-29 12:00:25",
+   "seconds_after_first_curve_tx": 522,
+   "sol_spent_first_buy": 2.073044279,
+   "tokens_first_buy": 27495705.579851,
+   "first_buy_sig": "3ZHqWiKHTsp5bDuw6JXxH9zzL69pyRf6y7yufUmM7iE1y4i6S6J34Eksg2DqiicnSBdPpSK7Z83VAMM9N4mxULkp"
+  },
+  {
+   "wallet": "WkHMyocY4trzWbYZ5bN9wAqYTQmB7fQw6QRkVphYZVg",
+   "rank": 27,
+   "first_buy_ts": 1730203274,
+   "first_buy_utc": "2024-10-29 12:01:14",
+   "seconds_after_first_curve_tx": 571,
+   "sol_spent_first_buy": 0.522044279,
+   "tokens_first_buy": 6454437.830203,
+   "first_buy_sig": "2LG4KwMMuLPEQaG2DyTEjyN882JyomYmPRmFLJjXjyMA9wWwskiKraG2pqHXpgm3Aewj3fNzwkZFVC3hhqESz6fX"
+  },
+  {
+   "wallet": "5NBYcKDSs9EHfDJ3bcevWW3iJ1LqXyem1uHAtitYrsKa",
+   "rank": 28,
+   "first_buy_ts": 1730203284,
+   "first_buy_utc": "2024-10-29 12:01:24",
+   "seconds_after_first_curve_tx": 581,
+   "sol_spent_first_buy": 1.02205428,
+   "tokens_first_buy": 12782483.839845,
+   "first_buy_sig": "2PuQJ25EKbSea8Po255i3tVnAbttqBymKC5ZNy6ARTbPq2VrCQ8WyeCRow699Kx93gvBNYwb5tYtDy3a8rHVk6K5"
+  },
+  {
+   "wallet": "2vT8rG8x2oMRgtZ4XC3d2gP5GVA4tTgz3WhBz4YoHMpo",
+   "rank": 29,
+   "first_buy_ts": 1730203288,
+   "first_buy_utc": "2024-10-29 12:01:28",
+   "seconds_after_first_curve_tx": 585,
+   "sol_spent_first_buy": 0.103959282,
+   "tokens_first_buy": 1250561.632864,
+   "first_buy_sig": "4tfJUknp7c8p6NsfpSM1S3DV2hQz82576GXfQrsQ5jppEbdM9X6sKvT6UZNdhvwQDHyujjCzabxQEThPUSJpbhN9"
+  },
+  {
+   "wallet": "B3reAewM3gFzRcvDFRWwhWMKQYCZusY4tYLkm3S4V6hb",
+   "rank": 30,
+   "first_buy_ts": 1730203316,
+   "first_buy_utc": "2024-10-29 12:01:56",
+   "seconds_after_first_curve_tx": 613,
+   "sol_spent_first_buy": 4.65105428,
+   "tokens_first_buy": 52644167.713717,
+   "first_buy_sig": "4a7GTFP3RLd2w3xaPjSKn5xqVTJxEdUCWQp5cBh5S1hkskJB8eag8eUdFCinSPZAPntnepJwY4d3GSVMCtuJvwiL"
+  },
+  {
+   "wallet": "2Y9C43srtrabfhofRjopw3Wnwh2eaxLPVqhU3VCCGiix",
+   "rank": 31,
+   "first_buy_ts": 1730203316,
+   "first_buy_utc": "2024-10-29 12:01:56",
+   "seconds_after_first_curve_tx": 613,
+   "sol_spent_first_buy": 0.742843014,
+   "tokens_first_buy": 7272253.0,
+   "first_buy_sig": "njBaUs4MWC8PvBptE5PAt7zmi9E26XCsGFdGxtrsujWa9yQfp1VQE5eXujYR6nMfDpe8cbaNpxfHryMt1ZFdQft"
+  },
+  {
+   "wallet": "FcDgJqJh5p4b6Fda5PqpRxqYn7c5uSQPKVjc2yERbRWm",
+   "rank": 32,
+   "first_buy_ts": 1730203317,
+   "first_buy_utc": "2024-10-29 12:01:57",
+   "seconds_after_first_curve_tx": 614,
+   "sol_spent_first_buy": 0.288406858,
+   "tokens_first_buy": 2836562.0,
+   "first_buy_sig": "37j4onKmxVXcVAE5G8rwGowbtwmSXp3XrVu9a77GP2Bzhv9Gn6AuSfpkTHhVUar8jePdkH73F247ua7fB8xcs7mP"
+  },
+  {
+   "wallet": "6q6jMAFF2ob9wh4kZwvstRSCJGkETzxgHmQ7hZaFdMMN",
+   "rank": 33,
+   "first_buy_ts": 1730203321,
+   "first_buy_utc": "2024-10-29 12:02:01",
+   "seconds_after_first_curve_tx": 618,
+   "sol_spent_first_buy": 0.511769282,
+   "tokens_first_buy": 5021460.718766,
+   "first_buy_sig": "5srXeTo8vcS2ReA7cZwLkyKNtE1zVTiBeGfABg5bd9twdM8WG5TjRm5wUhDqrVGC5agRTEqaHe4BXdSBQPKFEdN9"
+  },
+  {
+   "wallet": "CA5kkLQcBSZQFoNRs3JCVNuCzechAy8WqfaPojkKQpcm",
+   "rank": 34,
+   "first_buy_ts": 1730203322,
+   "first_buy_utc": "2024-10-29 12:02:02",
+   "seconds_after_first_curve_tx": 619,
+   "sol_spent_first_buy": 0.132480161,
+   "tokens_first_buy": 1244403.190766,
+   "first_buy_sig": "4sshyTdP5qpDWrfcG2GHSNEvCjZH62aJjgokkd2Mg8SUyymN1ihQMUdBNdSUkjNZH7dqAjsEUvjyzMgKDBpxhyGj"
+  },
+  {
+   "wallet": "EVBBEP4NHgKm1YaaeQV2UajbHZqvArBHpNfpdiJz5bbZ",
+   "rank": 35,
+   "first_buy_ts": 1730203333,
+   "first_buy_utc": "2024-10-29 12:02:13",
+   "seconds_after_first_curve_tx": 630,
+   "sol_spent_first_buy": 0.531543626,
+   "tokens_first_buy": 4956679.886053,
+   "first_buy_sig": "2w5h6JW5HbZ8sdLBvkxrqZmaaexKpYQKSD4J4UJDTdszR3PXt6FcewSgrJZSL7hqNwuuNkSNRJY2TBRNvHKHRDbg"
+  },
+  {
+   "wallet": "GdfXrQ1GG4L89fdGqNGbfbXEuHtgbUMm5mq9ensPQt2a",
+   "rank": 36,
+   "first_buy_ts": 1730203334,
+   "first_buy_utc": "2024-10-29 12:02:14",
+   "seconds_after_first_curve_tx": 631,
+   "sol_spent_first_buy": 0.112371669,
+   "tokens_first_buy": 983893.006205,
+   "first_buy_sig": "3WANvnhviEsGCqgKCjPMBbks4MecwoShM9PtjSC375oWMtGs3EJcCthFX1na2xJ1VDZpkTj2pQpjmJP8LbRztTNV"
+  },
+  {
+   "wallet": "5JWiU4ZFeFtbj3QpwUwqF2VYHuD4bQxhPT6SBh9sT3Bp",
+   "rank": 37,
+   "first_buy_ts": 1730203334,
+   "first_buy_utc": "2024-10-29 12:02:14",
+   "seconds_after_first_curve_tx": 631,
+   "sol_spent_first_buy": 0.218816268,
+   "tokens_first_buy": 1967786.01241,
+   "first_buy_sig": "5EayvrptsYgPQz48RoaERPDxHb2PTaDafEEjnXCUgn7KMY9KebjudB4rxWjaNFm24CiDgiJwcDe3cw16Cwwn77xv"
+  },
+  {
+   "wallet": "8BLLmRgeEm2HmgHZprcKr2SyfwhQATjDTESrfH4LmVe",
+   "rank": 38,
+   "first_buy_ts": 1730203339,
+   "first_buy_utc": "2024-10-29 12:02:19",
+   "seconds_after_first_curve_tx": 636,
+   "sol_spent_first_buy": 1.069700457,
+   "tokens_first_buy": 9443982.624067,
+   "first_buy_sig": "3N3JoPYqMTUf98qJN2M7fWruREkKuWP4xvqj3nxUtbEcRzUrWjdBZm4CxXhcdGKQSFnGhawCj69Jt9Bm4AhzuunF"
+  },
+  {
+   "wallet": "CzFS2wiLBFTgfDCN8QKeBYoAB4cyXYE61AvbhfeuFjse",
+   "rank": 39,
+   "first_buy_ts": 1730203366,
+   "first_buy_utc": "2024-10-29 12:02:46",
+   "seconds_after_first_curve_tx": 663,
+   "sol_spent_first_buy": 4.037044279,
+   "tokens_first_buy": 32484462.096996,
+   "first_buy_sig": "2o1jEJqCKPWiKTCsKrisMhWYSn8BYUpzRS6dihkVzs9o5hquZ84qxPE7AFM7irkRMTpS7yePSPhBZMAxEiED4RGh"
+  },
+  {
+   "wallet": "5fhUPGgBHzxzxfgP7282DmjquUYxGAbzw9dL3f9n6dHw",
+   "rank": 40,
+   "first_buy_ts": 1730203374,
+   "first_buy_utc": "2024-10-29 12:02:54",
+   "seconds_after_first_curve_tx": 671,
+   "sol_spent_first_buy": 0.51703928,
+   "tokens_first_buy": 3872575.573674,
+   "first_buy_sig": "5qKZuruE7njz1dQ4HMovLwGUAs15MuNj8Mpr2JetcRfwP2nLLZnzxKFSsBTvcNrtZANuC1rRphj8MGSqWeufV6ZQ"
+  }
+ ],
+ "curve_events_head": [
+  {
+   "sig": "J2Tx8QNDW4LaN5S3aidEE3Ac4aJfQ9HcaJRoeFDGqkapDqtHCzetuH8eJiYNSkhwJgrMKRYLuaWG7nXhoeCR6da",
+   "ts": 1730202703,
+   "utc": "2024-10-29 11:51:43",
+   "signer": "EmjgfmDPuZBLZxZoTkVfBz37bxsAVe7DXTaH8LdVbeLc",
+   "kind": "achat",
+   "token_delta": 67062499.999999,
+   "sol_delta": -2.04592268,
+   "rank_tx": 1
+  },
+  {
+   "sig": "2gaXMWNcCrt3h6JVStZgzXz4MjhjPznQC5GWNmzXvKvM4Kw3WBEKyjcxWNtPtgHb5hxYwDPSVqnRmEmMoQnFxMg5",
+   "ts": 1730202725,
+   "utc": "2024-10-29 11:52:05",
+   "signer": "5hiiMugYNkYGmx8jR7RGLGJtgvTVxLteJtYbg6UbyJ2p",
+   "kind": "achat",
+   "token_delta": 3411720.543213,
+   "sol_delta": -0.11913328,
+   "rank_tx": 2
+  },
+  {
+   "sig": "24zUdn8w3hmHSg5Wu6LXmDbtXhGyR4mPuS7XaMEtQZosqChSxk375RXcx18uYwu4K43thcPxxNEqmKR7JyK8NBvj",
+   "ts": 1730202728,
+   "utc": "2024-10-29 11:52:08",
+   "signer": "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+   "kind": "achat",
+   "token_delta": 9280096.943649,
+   "sol_delta": -0.307544279,
+   "rank_tx": 3
+  },
+  {
+   "sig": "2gRvXUWJHDJwctxsA1vF2kTqCy4jdcGtsZgEa3Ag1UcVoWA5YqrmwNC2PTzxKCDiWJXc71pwLZHgb4v1Tmw1CDuL",
+   "ts": 1730202728,
+   "utc": "2024-10-29 11:52:08",
+   "signer": "A5RuNzKZFc4mJg82Kiua156JvsnCNJi1kxkhg4aMgKGP",
+   "kind": "achat",
+   "token_delta": 9366802.0,
+   "sol_delta": -0.315450346,
+   "rank_tx": 4
+  },
+  {
+   "sig": "Gcz5soGAhWebkhq6tS9oT6TpzqNSzi1x9EKAEGKRXgRe1WFfHuArBKmiR89M7gFzbTFK5acTsvCJg8dyVc7bouu",
+   "ts": 1730202728,
+   "utc": "2024-10-29 11:52:08",
+   "signer": "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+   "kind": "achat",
+   "token_delta": 9280096.943649,
+   "sol_delta": -0.317794007,
+   "rank_tx": 5
+  },
+  {
+   "sig": "3h3M5NJVzvbE2K4EZo6nkgh3Axbibe6xNPicXmt7GC72KR5hLiYAhcoktKUzGeQiSGsvwiRJzYkRYiJwJNurus82",
+   "ts": 1730202731,
+   "utc": "2024-10-29 11:52:11",
+   "signer": "CuYiK66SuWqke38jHoybSt9UJb2fwMxyRE5DyPqqwxxc",
+   "kind": "achat",
+   "token_delta": 1473139.281083,
+   "sol_delta": -0.05259428,
+   "rank_tx": 6
+  },
+  {
+   "sig": "2qywgUFyX1JGDpt9CRStBD874j2Xg8vFUwDeNmbJMnMq21L1DGanaHnx2g4uTL2hhgbjt73mS8ryasSA8jXYFHNi",
+   "ts": 1730202732,
+   "utc": "2024-10-29 11:52:12",
+   "signer": "2i44T2vK4AXredRdoBq4upLpXEK5hyhBDBSkeN7WWYkx",
+   "kind": "achat",
+   "token_delta": 1302491.694449,
+   "sol_delta": -0.050220115,
+   "rank_tx": 7
+  },
+  {
+   "sig": "2mkG8RP9NSGeS46uCE9iBobLRm18k2NMatxEDhcP4QYi5q4j4HANiDt4C22sQSuty2wCaC1Hx6WYGNoJQJowGkSN",
+   "ts": 1730202738,
+   "utc": "2024-10-29 11:52:18",
+   "signer": "CuYiK66SuWqke38jHoybSt9UJb2fwMxyRE5DyPqqwxxc",
+   "kind": "vente",
+   "token_delta": -1473139.0,
+   "sol_delta": 0.049597664,
+   "rank_tx": 8
+  },
+  {
+   "sig": "51LneGQXY1RUcQ7h8omHwLfwCzNCSzns7Nc9BMfY1R7QMvus4XezcYRc6i1d4huNFh6k8gbfUicbAgsPiY2LaeW6",
+   "ts": 1730202746,
+   "utc": "2024-10-29 11:52:26",
+   "signer": "FTQCeMwD6vMWyfNAGSERnKALJ5x5M81riRFg2kaUbSVf",
+   "kind": "achat",
+   "token_delta": 586436.984676,
+   "sol_delta": -0.02538996,
+   "rank_tx": 9
+  },
+  {
+   "sig": "4sKBBBTuztEdTNNS89JFM2LKQqPBm8L4ve3PNr24XaVeuaFrvMzT8EYR67mEiuhdenfMTt9DmmeNK8KapD3xJFYm",
+   "ts": 1730202752,
+   "utc": "2024-10-29 11:52:32",
+   "signer": "a8fZdgPDXoKSs7BCKH6kfFkayE3gW2rRKtbW3Ec6Bv3",
+   "kind": "autre",
+   "token_delta": 0.0,
+   "sol_delta": -7.851e-06,
+   "rank_tx": 10
+  },
+  {
+   "sig": "2nCXTTfU6u91XQt9wdzgpjZPYpXG5LaFqRhDcUiccGofwzmxoP5kfu4SoKzj3nDCxN32VkMhUgeLsPG4oXRytQfy",
+   "ts": 1730202754,
+   "utc": "2024-10-29 11:52:34",
+   "signer": "2i44T2vK4AXredRdoBq4upLpXEK5hyhBDBSkeN7WWYkx",
+   "kind": "vente",
+   "token_delta": -1302491.694449,
+   "sol_delta": 0.040411192,
+   "rank_tx": 11
+  },
+  {
+   "sig": "4eKC2Bwe2g1VX62td66MpKW4M4cQDevCCkPn4m9SVr1cBLL2Jwow66JgnCFk9UgR9PQdXbaY3TNUiVFQiVcsSGVf",
+   "ts": 1730202764,
+   "utc": "2024-10-29 11:52:44",
+   "signer": "7Vc5Cax5WYoEBXaViD8rMTmQN1byzLwiNqEyynRgUasU",
+   "kind": "achat",
+   "token_delta": 1442275.420777,
+   "sol_delta": -0.052144279,
+   "rank_tx": 12
+  },
+  {
+   "sig": "5Bs1Feur7Ks82SVzXEAJF7rcNU2XDPFC1KDxbhw3skXrSaUv5fSLQG5CQovKZiLe6j942XxRR4Uyomfx7qEMurHC",
+   "ts": 1730202858,
+   "utc": "2024-10-29 11:54:18",
+   "signer": "6RGc9YHaU1o5waaHKfDysxWjxzCRcq6DWJtrN5QDdr1s",
+   "kind": "achat",
+   "token_delta": 55420457.554146,
+   "sol_delta": -2.025457282,
+   "rank_tx": 13
+  },
+  {
+   "sig": "3KzEf4nFsy6SJuswnq7ciU3iUkjoW9XaRKbCk295P3CLg3qtZSGqDe4zLFqDmWb7zQEeoYLBwN92SVy8GnbahJnd",
+   "ts": 1730202982,
+   "utc": "2024-10-29 11:56:22",
+   "signer": "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+   "kind": "vente",
+   "token_delta": -9280096.943649,
+   "sol_delta": 0.347337922,
+   "rank_tx": 14
+  },
+  {
+   "sig": "3TaUMaXN9GYUJyiidq8haKvHi6Gfxzjyd9sgP2QdrYkzuG1qn2AEgvKrk3rHFd32KF8KLzYVXcM1PyhhArCRRZWF",
+   "ts": 1730202983,
+   "utc": "2024-10-29 11:56:23",
+   "signer": "A5RuNzKZFc4mJg82Kiua156JvsnCNJi1kxkhg4aMgKGP",
+   "kind": "vente",
+   "token_delta": -9366802.0,
+   "sol_delta": 0.343069674,
+   "rank_tx": 15
+  },
+  {
+   "sig": "5y4AL2jSd7YYykeM5sS6PGyfmEjQgGw2P6YzFF6ACHKiZeph2E6nFrUt9zn5okvvWvTr4iMzLamwYJRqodjJcRyo",
+   "ts": 1730202983,
+   "utc": "2024-10-29 11:56:23",
+   "signer": "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+   "kind": "vente",
+   "token_delta": -9280096.943649,
+   "sol_delta": 0.334170364,
+   "rank_tx": 16
+  },
+  {
+   "sig": "atk9AaaymSDghLztLutPnDciPfgMsxvCakvuvqNGapBe423KwMQ4zmSM1rcnYEikrc7YXcMNu3owFG8EknnATyQ",
+   "ts": 1730202993,
+   "utc": "2024-10-29 11:56:33",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 26955416.692161,
+   "sol_delta": -1.01505428,
+   "rank_tx": 17
+  },
+  {
+   "sig": "5K4QYu1Ny1A9bHNcu4nU3dXtD79NA7KJcNeNWggwUwmQ2ysLFKXTvuyVpXLvbZnVGPBMX3Tq9pDpV2jsfGGSUwxG",
+   "ts": 1730203009,
+   "utc": "2024-10-29 11:56:49",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 12909200.274287,
+   "sol_delta": -0.508015,
+   "rank_tx": 18
+  },
+  {
+   "sig": "4uXqBDeiUnS8UKygMKsfKfRcFFD5avxXW3282Buvnei13Dx8iuPVJPXyKrDC7L6P9CsbSjwPMuWqWCuQWFfyHj2d",
+   "ts": 1730203010,
+   "utc": "2024-10-29 11:56:50",
+   "signer": "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+   "kind": "achat",
+   "token_delta": 10254075.422835,
+   "sol_delta": -0.41385954,
+   "rank_tx": 19
+  },
+  {
+   "sig": "5feTY24dBVt4WNs8Hk9jm9acmAPAC7hMdBL4cZTc9hcLN2WNnpbP4guS5oRADuF7Kd1KiKr4hZwnd91MmyiyZF5D",
+   "ts": 1730203098,
+   "utc": "2024-10-29 11:58:18",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 2481295.488355,
+   "sol_delta": -0.104029002,
+   "rank_tx": 20
+  },
+  {
+   "sig": "5EJguNdZGhbkhmkemrz37dLBRyXegszVubm1myMA8c9KFsdTd2iziXc3cukdmTxLLCtA7UeF1ACVerNxKzZfmwz9",
+   "ts": 1730203105,
+   "utc": "2024-10-29 11:58:25",
+   "signer": "k9fX9L9QXqSJQ6rvyF3VByoxySqxYeKbpEGtEy5yq4Z",
+   "kind": "achat",
+   "token_delta": 26557924.593518,
+   "sol_delta": -1.122738552,
+   "rank_tx": 21
+  },
+  {
+   "sig": "36oS3VjpjypDL4xozX7TPyX36MX5kyhDViHJPk2fMbNqXwsKZc37vf2gWRL5Vr341SzjsEYe8EuyFg3TCbsX9ig9",
+   "ts": 1730203112,
+   "utc": "2024-10-29 11:58:32",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 11492139.343105,
+   "sol_delta": -0.510457282,
+   "rank_tx": 22
+  },
+  {
+   "sig": "3wLCCZ3Di3C2FivdpbLrG3TmUHf5SHdrecj6HuwW8mxbswyT17CaHt9gbeEYKcKDxPkUUJ516Fq9pie8DmcSyDKR",
+   "ts": 1730203121,
+   "utc": "2024-10-29 11:58:41",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 11191096.180087,
+   "sol_delta": -0.508418002,
+   "rank_tx": 23
+  },
+  {
+   "sig": "4ATJ9A9SDrB5r14JU2Yt88ddyMFUHygRXUs5EQnwbQBfBzAs871JsS2pHKJkaGAJ463HujD8zRYXwLBsb4nxP6Go",
+   "ts": 1730203121,
+   "utc": "2024-10-29 11:58:41",
+   "signer": "7f97KcfbDGhSZyHqSELKtYh8SxobV8R4dvZY7MoxMy8i",
+   "kind": "achat",
+   "token_delta": 6445835.922337,
+   "sol_delta": -0.302544279,
+   "rank_tx": 24
+  },
+  {
+   "sig": "4b9rLjAyoE3Sfxk6Hd5EkvwpGmMZj6a7AY2qiZQn4Retvtc1DFcSyzKkoW4kgMACx3AdWwyAtmW1vQdurzwStDQY",
+   "ts": 1730203122,
+   "utc": "2024-10-29 11:58:42",
+   "signer": "2wb6Sz33473SrYkAzofhCH4y8ZzkTtfCkaV2qbSWc9Zw",
+   "kind": "achat",
+   "token_delta": 9675496.575811,
+   "sol_delta": -0.463913583,
+   "rank_tx": 25
+  },
+  {
+   "sig": "3M8mkeLby5DAzH3F5cHxqjFzZR1Bv6pi2zAkBAxyTaanU5kRwy6TFfsiZN21jjcDhKt498TWEaAiPDzk82vXBiur",
+   "ts": 1730203123,
+   "utc": "2024-10-29 11:58:43",
+   "signer": "GS6GEdXguSgCfFZ9HbX2pxhsUrcx7H7gTeq1pW7qAx4c",
+   "kind": "achat",
+   "token_delta": 7995188.0,
+   "sol_delta": -0.39371497,
+   "rank_tx": 26
+  },
+  {
+   "sig": "5ZmVyrer1VK7BPjkkAGUn8cv397kALYfStSBpW8mjqWrv7dqD7teiRSftXhegEsqqngwpaaiNJDZPsaGDK9SyoWh",
+   "ts": 1730203133,
+   "utc": "2024-10-29 11:58:53",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 10290872.788051,
+   "sol_delta": -0.508418002,
+   "rank_tx": 27
+  },
+  {
+   "sig": "4gnRegm9X2dStPW6SGLrckdAiLNBh17JLvs3mstKMC7KSUopQGCfhFUjHQoVmMzwPDrCewYf1g5sugXV6kkALyGS",
+   "ts": 1730203137,
+   "utc": "2024-10-29 11:58:57",
+   "signer": "BNBx8JBvxrmM699C92bZQ7VKngdfcdudFcQrH7oLnFvw",
+   "kind": "achat",
+   "token_delta": 28816508.259513,
+   "sol_delta": -1.538044279,
+   "rank_tx": 28
+  },
+  {
+   "sig": "CgrGT4bdM8M8TPkecDYDhFvafg1Wycd5APm2BMQ6nkmofJjTD2zPd9yQrokuK5WQRggMiezDP5FwtqvtgYA9saS",
+   "ts": 1730203142,
+   "utc": "2024-10-29 11:59:02",
+   "signer": "H3cbDxVqrxtKzwD3da7vwFJcrpdFqV1tUA46cUYa5iG1",
+   "kind": "achat",
+   "token_delta": 4696757.594623,
+   "sol_delta": -0.256899282,
+   "rank_tx": 29
+  },
+  {
+   "sig": "3q29nGtAedXeYkoRhHBvUyvznneNnC4MWbiX9uVwPfUUrDPJLN9Xe5jqpYa9DdhDcrB9ftnRaWw1sK4CAcefxNpG",
+   "ts": 1730203145,
+   "utc": "2024-10-29 11:59:05",
+   "signer": "F5gZqCJWVg2pD9mzHsRxn3v38me7Gny7oLcJPXxYaVLz",
+   "kind": "achat",
+   "token_delta": 1625830.4917,
+   "sol_delta": -0.100405328,
+   "rank_tx": 30
+  },
+  {
+   "sig": "98kysx4s6XZ8X8rnkhFwMkQ3vkZdFUqEsJhPZbBvW14AnqmuMfVXs4UxzQuMYvpVbs88wszQ7qSeNiopk9cKb5P",
+   "ts": 1730203145,
+   "utc": "2024-10-29 11:59:05",
+   "signer": "ACq2wA8gifTVu66j2oF2wxeekE7RU8HhKzd4sbzFEjgV",
+   "kind": "achat",
+   "token_delta": 4696757.613297,
+   "sol_delta": -0.277559434,
+   "rank_tx": 31
+  },
+  {
+   "sig": "bQFXpmZcoojTE6DxgXuZK3n9Ga3F8JoH5LfbcXR3J96ZRcUyT1nShvfQGDcQ8iXJnW3o4WMfXWyhg7H34xxxoFy",
+   "ts": 1730203145,
+   "utc": "2024-10-29 11:59:05",
+   "signer": "2La56oUHV7wTcHUDH4yFwrmnwdZDH2G43ipumaZUKDQS",
+   "kind": "achat",
+   "token_delta": 25289946.0,
+   "sol_delta": -1.419016601,
+   "rank_tx": 32
+  },
+  {
+   "sig": "4SfByJiz4MsgVXQkPpjELLUtk8zVjJxxcdQuKxhMeLGLkDt8u8R7o3XGH6ykjhzRcx1Ncz5gcCk3Poxdfe312Jum",
+   "ts": 1730203154,
+   "utc": "2024-10-29 11:59:14",
+   "signer": "4hqAnhn3n2C75PERuLXn4TTy8oKYREVf4qTZCxzdmLD4",
+   "kind": "achat",
+   "token_delta": 849544.334637,
+   "sol_delta": -0.053654115,
+   "rank_tx": 33
+  },
+  {
+   "sig": "4xDi3PFyHwrTyQWV13rNsTzq5R13EaTF8fgwWcd4qZvbU9edcDNqPGqZFch2kMGVXSsVEtTioR14fsaKZWddYm5R",
+   "ts": 1730203154,
+   "utc": "2024-10-29 11:59:14",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 16794135.646907,
+   "sol_delta": -1.015367192,
+   "rank_tx": 34
+  },
+  {
+   "sig": "5Dcuwa8b3rdKrYx1siwYPQTxPAazMGzAu4bZrtBioNEjcwWikxx6eyeBpJpgQMHpgYCYWYS4k6YQwpZM1xB1VBKk",
+   "ts": 1730203177,
+   "utc": "2024-10-29 11:59:37",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 8096958.785085,
+   "sol_delta": -0.508029002,
+   "rank_tx": 35
+  },
+  {
+   "sig": "5rJAQJcncb8tqQjyKESGbpM6TMfhrKEfuAJswajqiBDatgL9eAMbZzK1tXJhHanb9mZ2xAxT9azj9TsXcxuDGZb3",
+   "ts": 1730203191,
+   "utc": "2024-10-29 11:59:51",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 7918357.010965,
+   "sol_delta": -0.508019501,
+   "rank_tx": 36
+  },
+  {
+   "sig": "AtS9UsbC369CByiG61WCnpDL2G4oRKtzchiAohippyDeCcRiiU2drTCCfqsRBCaonXqHaUZ3yrRmeuZaCXkJkWB",
+   "ts": 1730203200,
+   "utc": "2024-10-29 12:00:00",
+   "signer": "2reZ3u5XXGyN2cC6eVrxwxkdf56mCwuec7JQ2uB1Mf5e",
+   "kind": "achat",
+   "token_delta": 7737938.949644,
+   "sol_delta": -0.51403928,
+   "rank_tx": 37
+  },
+  {
+   "sig": "2h8EndTQm2DsjnfVsKjLK3xNDs3FFWo7QHpYRH8cybfbRmY2CLGMtrwpTvXV9nK7K1anKbYnSVFHKadSRv8bAUzo",
+   "ts": 1730203205,
+   "utc": "2024-10-29 12:00:05",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 7578600.33445,
+   "sol_delta": -0.508029002,
+   "rank_tx": 38
+  },
+  {
+   "sig": "2hXBKj9kWenRYCAWh4wDoymFLPtgABqcCbFuexpfTM95aYQT4bRYXSmbhZhb9ZrogYitZDERJpj7buZheAo9cB6E",
+   "ts": 1730203221,
+   "utc": "2024-10-29 12:00:21",
+   "signer": "24Z2aSHY2d5y5DbX66JW47kYH8G4hhFKba5ESXB4N5s2",
+   "kind": "achat",
+   "token_delta": 1496134.912592,
+   "sol_delta": -0.10605428,
+   "rank_tx": 39
+  },
+  {
+   "sig": "4hxbsBwzTmQC2jSs5wbDshQZciJpPN6aqqqfMjL3vR6u8Lf78bVaYW9bv58423cGLvHk2gyar12YKXyuhTYkMBqK",
+   "ts": 1730203223,
+   "utc": "2024-10-29 12:00:23",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 7416784.633849,
+   "sol_delta": -0.510208953,
+   "rank_tx": 40
+  },
+  {
+   "sig": "3ZHqWiKHTsp5bDuw6JXxH9zzL69pyRf6y7yufUmM7iE1y4i6S6J34Eksg2DqiicnSBdPpSK7Z83VAMM9N4mxULkp",
+   "ts": 1730203225,
+   "utc": "2024-10-29 12:00:25",
+   "signer": "B2LZMMBohXhT8z3M7AGoanYbYWzgEqZbmgJ9fqmAoCTN",
+   "kind": "achat",
+   "token_delta": 27495705.579851,
+   "sol_delta": -2.073044279,
+   "rank_tx": 41
+  },
+  {
+   "sig": "5Nv7reERyM2ZnzSu2pdW9H5ELfCNT5Cj54t6atc2pYMn52gG9fDVL1cWkoscQUY5Lg71SZQs3wSWUHJuVPCatGGS",
+   "ts": 1730203230,
+   "utc": "2024-10-29 12:00:30",
+   "signer": "2wb6Sz33473SrYkAzofhCH4y8ZzkTtfCkaV2qbSWc9Zw",
+   "kind": "vente",
+   "token_delta": -96754.965758,
+   "sol_delta": 0.003908581,
+   "rank_tx": 42
+  },
+  {
+   "sig": "2kDQDgGpxuvQCSFspbNFppkiWPtSQjWQ9RjLtR6kTQjvCADtMd1bXXnCyCmkzURQSGMGm5N5dqCiZG7WGE6STtiJ",
+   "ts": 1730203233,
+   "utc": "2024-10-29 12:00:33",
+   "signer": "B2LZMMBohXhT8z3M7AGoanYbYWzgEqZbmgJ9fqmAoCTN",
+   "kind": "vente",
+   "token_delta": -27495705.579851,
+   "sol_delta": 1.868629834,
+   "rank_tx": 43
+  },
+  {
+   "sig": "2feW7bt3QDW2mnADTz93ySyqvFhzgrP14E12BmMqrrogapQzywbFcXwBtr7F3oDtC6aknHc1HgM1t5r4T7onJpWX",
+   "ts": 1730203236,
+   "utc": "2024-10-29 12:00:36",
+   "signer": "4hqAnhn3n2C75PERuLXn4TTy8oKYREVf4qTZCxzdmLD4",
+   "kind": "achat",
+   "token_delta": 1443889.714541,
+   "sol_delta": -0.102343132,
+   "rank_tx": 44
+  },
+  {
+   "sig": "3MJmadScKDhgFeuwar2jNM3HPjfJrYH1bq3kwmMeXknLXSaG7ibd8VZbUx1u3BGYuoSwctQLVYz3MBF2t71eMkVq",
+   "ts": 1730203238,
+   "utc": "2024-10-29 12:00:38",
+   "signer": "3FxohNVADYcKkwevn5A3Nw5uKL4kag6731SoNzn5nvFV",
+   "kind": "achat",
+   "token_delta": 4680026.601507,
+   "sol_delta": -0.330028535,
+   "rank_tx": 45
+  },
+  {
+   "sig": "5qABEqPtFFkakjt6pAFhTtjMQSvNkiXKQeRNQTKvFU8qP4yCkmwJhPumSLQqCrv6ThpS7HDEMYWs1sfbKzESbJ75",
+   "ts": 1730203242,
+   "utc": "2024-10-29 12:00:42",
+   "signer": "5hiiMugYNkYGmx8jR7RGLGJtgvTVxLteJtYbg6UbyJ2p",
+   "kind": "vente",
+   "token_delta": -1705860.271606,
+   "sol_delta": 0.110510641,
+   "rank_tx": 46
+  },
+  {
+   "sig": "3JErV91qpyQgK65zLYCont9XtUNt82CoT2rBoiBf5C36Rg48CqnniUzjen4drdAcBtfzFMntDfLwrwqUdRyDgaGh",
+   "ts": 1730203257,
+   "utc": "2024-10-29 12:00:57",
+   "signer": "B2LZMMBohXhT8z3M7AGoanYbYWzgEqZbmgJ9fqmAoCTN",
+   "kind": "achat",
+   "token_delta": 27157157.714435,
+   "sol_delta": -2.071004999,
+   "rank_tx": 47
+  },
+  {
+   "sig": "2LG4KwMMuLPEQaG2DyTEjyN882JyomYmPRmFLJjXjyMA9wWwskiKraG2pqHXpgm3Aewj3fNzwkZFVC3hhqESz6fX",
+   "ts": 1730203274,
+   "utc": "2024-10-29 12:01:14",
+   "signer": "WkHMyocY4trzWbYZ5bN9wAqYTQmB7fQw6QRkVphYZVg",
+   "kind": "achat",
+   "token_delta": 6454437.830203,
+   "sol_delta": -0.522044279,
+   "rank_tx": 48
+  },
+  {
+   "sig": "2PuQJ25EKbSea8Po255i3tVnAbttqBymKC5ZNy6ARTbPq2VrCQ8WyeCRow699Kx93gvBNYwb5tYtDy3a8rHVk6K5",
+   "ts": 1730203284,
+   "utc": "2024-10-29 12:01:24",
+   "signer": "5NBYcKDSs9EHfDJ3bcevWW3iJ1LqXyem1uHAtitYrsKa",
+   "kind": "achat",
+   "token_delta": 12782483.839845,
+   "sol_delta": -1.02205428,
+   "rank_tx": 49
+  },
+  {
+   "sig": "4tfJUknp7c8p6NsfpSM1S3DV2hQz82576GXfQrsQ5jppEbdM9X6sKvT6UZNdhvwQDHyujjCzabxQEThPUSJpbhN9",
+   "ts": 1730203288,
+   "utc": "2024-10-29 12:01:28",
+   "signer": "2vT8rG8x2oMRgtZ4XC3d2gP5GVA4tTgz3WhBz4YoHMpo",
+   "kind": "achat",
+   "token_delta": 1250561.632864,
+   "sol_delta": -0.103959282,
+   "rank_tx": 50
+  },
+  {
+   "sig": "4a7GTFP3RLd2w3xaPjSKn5xqVTJxEdUCWQp5cBh5S1hkskJB8eag8eUdFCinSPZAPntnepJwY4d3GSVMCtuJvwiL",
+   "ts": 1730203316,
+   "utc": "2024-10-29 12:01:56",
+   "signer": "B3reAewM3gFzRcvDFRWwhWMKQYCZusY4tYLkm3S4V6hb",
+   "kind": "achat",
+   "token_delta": 52644167.713717,
+   "sol_delta": -4.65105428,
+   "rank_tx": 51
+  },
+  {
+   "sig": "njBaUs4MWC8PvBptE5PAt7zmi9E26XCsGFdGxtrsujWa9yQfp1VQE5eXujYR6nMfDpe8cbaNpxfHryMt1ZFdQft",
+   "ts": 1730203316,
+   "utc": "2024-10-29 12:01:56",
+   "signer": "2Y9C43srtrabfhofRjopw3Wnwh2eaxLPVqhU3VCCGiix",
+   "kind": "achat",
+   "token_delta": 7272253.0,
+   "sol_delta": -0.742843014,
+   "rank_tx": 52
+  },
+  {
+   "sig": "37j4onKmxVXcVAE5G8rwGowbtwmSXp3XrVu9a77GP2Bzhv9Gn6AuSfpkTHhVUar8jePdkH73F247ua7fB8xcs7mP",
+   "ts": 1730203317,
+   "utc": "2024-10-29 12:01:57",
+   "signer": "FcDgJqJh5p4b6Fda5PqpRxqYn7c5uSQPKVjc2yERbRWm",
+   "kind": "achat",
+   "token_delta": 2836562.0,
+   "sol_delta": -0.288406858,
+   "rank_tx": 53
+  },
+  {
+   "sig": "5srXeTo8vcS2ReA7cZwLkyKNtE1zVTiBeGfABg5bd9twdM8WG5TjRm5wUhDqrVGC5agRTEqaHe4BXdSBQPKFEdN9",
+   "ts": 1730203321,
+   "utc": "2024-10-29 12:02:01",
+   "signer": "6q6jMAFF2ob9wh4kZwvstRSCJGkETzxgHmQ7hZaFdMMN",
+   "kind": "achat",
+   "token_delta": 5021460.718766,
+   "sol_delta": -0.511769282,
+   "rank_tx": 54
+  },
+  {
+   "sig": "4sshyTdP5qpDWrfcG2GHSNEvCjZH62aJjgokkd2Mg8SUyymN1ihQMUdBNdSUkjNZH7dqAjsEUvjyzMgKDBpxhyGj",
+   "ts": 1730203322,
+   "utc": "2024-10-29 12:02:02",
+   "signer": "CA5kkLQcBSZQFoNRs3JCVNuCzechAy8WqfaPojkKQpcm",
+   "kind": "achat",
+   "token_delta": 1244403.190766,
+   "sol_delta": -0.132480161,
+   "rank_tx": 55
+  },
+  {
+   "sig": "5xKFg1NdwZnP2F9x1FikKXVRX4gQwnGDWWLKsEF1f9TohEHNNktM5pjuBWoZ82AcGEbqs83hbiifYsY7XB8maGrF",
+   "ts": 1730203328,
+   "utc": "2024-10-29 12:02:08",
+   "signer": "FcDgJqJh5p4b6Fda5PqpRxqYn7c5uSQPKVjc2yERbRWm",
+   "kind": "vente",
+   "token_delta": -2836562.0,
+   "sol_delta": 0.279923435,
+   "rank_tx": 56
+  },
+  {
+   "sig": "2p15MHUmqfFj6dRtK789KAmToW9XtFn1JxjbejtSWpjAYwzYW2GHYKBtx9cfuULrVH8VmMFdHPvWu7rcTocfJcMi",
+   "ts": 1730203330,
+   "utc": "2024-10-29 12:02:10",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 9739993.657888,
+   "sol_delta": -1.002858837,
+   "rank_tx": 57
+  },
+  {
+   "sig": "3yLZ4p3Q6VFpdf3Uxqeq1juBScGHd1DTmgayMPLUdoNtpEssLWKqjDwo9a9jZv64cQS9teLm2rngGUJKchiPFPdK",
+   "ts": 1730203331,
+   "utc": "2024-10-29 12:02:11",
+   "signer": "2vT8rG8x2oMRgtZ4XC3d2gP5GVA4tTgz3WhBz4YoHMpo",
+   "kind": "vente",
+   "token_delta": -1250561.632864,
+   "sol_delta": 0.126589658,
+   "rank_tx": 58
+  },
+  {
+   "sig": "2w5h6JW5HbZ8sdLBvkxrqZmaaexKpYQKSD4J4UJDTdszR3PXt6FcewSgrJZSL7hqNwuuNkSNRJY2TBRNvHKHRDbg",
+   "ts": 1730203333,
+   "utc": "2024-10-29 12:02:13",
+   "signer": "EVBBEP4NHgKm1YaaeQV2UajbHZqvArBHpNfpdiJz5bbZ",
+   "kind": "achat",
+   "token_delta": 4956679.886053,
+   "sol_delta": -0.531543626,
+   "rank_tx": 59
+  },
+  {
+   "sig": "3WANvnhviEsGCqgKCjPMBbks4MecwoShM9PtjSC375oWMtGs3EJcCthFX1na2xJ1VDZpkTj2pQpjmJP8LbRztTNV",
+   "ts": 1730203334,
+   "utc": "2024-10-29 12:02:14",
+   "signer": "GdfXrQ1GG4L89fdGqNGbfbXEuHtgbUMm5mq9ensPQt2a",
+   "kind": "achat",
+   "token_delta": 983893.006205,
+   "sol_delta": -0.112371669,
+   "rank_tx": 60
+  },
+  {
+   "sig": "5EayvrptsYgPQz48RoaERPDxHb2PTaDafEEjnXCUgn7KMY9KebjudB4rxWjaNFm24CiDgiJwcDe3cw16Cwwn77xv",
+   "ts": 1730203334,
+   "utc": "2024-10-29 12:02:14",
+   "signer": "5JWiU4ZFeFtbj3QpwUwqF2VYHuD4bQxhPT6SBh9sT3Bp",
+   "kind": "achat",
+   "token_delta": 1967786.01241,
+   "sol_delta": -0.218816268,
+   "rank_tx": 61
+  },
+  {
+   "sig": "5QL8NRgQtLAVBkVQZ81xyzgDcguYn4DRkym4f2Q4YbQhHnGJ3ctvsbwa7X6Jmqef7Ly5Ljef88D9n9g2E7B7iMYd",
+   "ts": 1730203335,
+   "utc": "2024-10-29 12:02:15",
+   "signer": "2wb6Sz33473SrYkAzofhCH4y8ZzkTtfCkaV2qbSWc9Zw",
+   "kind": "vente",
+   "token_delta": -95787.4161,
+   "sol_delta": 0.006837863,
+   "rank_tx": 62
+  },
+  {
+   "sig": "3N3JoPYqMTUf98qJN2M7fWruREkKuWP4xvqj3nxUtbEcRzUrWjdBZm4CxXhcdGKQSFnGhawCj69Jt9Bm4AhzuunF",
+   "ts": 1730203339,
+   "utc": "2024-10-29 12:02:19",
+   "signer": "8BLLmRgeEm2HmgHZprcKr2SyfwhQATjDTESrfH4LmVe",
+   "kind": "achat",
+   "token_delta": 9443982.624067,
+   "sol_delta": -1.069700457,
+   "rank_tx": 63
+  },
+  {
+   "sig": "21svDJEH9Zm62dUsjA8wgWUXzgkQR7Zp2thjJT9dyjtJspRsbkkqFGExZHRACVxXfFM9X9TjnGxGsWU9rHhi6QzF",
+   "ts": 1730203344,
+   "utc": "2024-10-29 12:02:24",
+   "signer": "CA5kkLQcBSZQFoNRs3JCVNuCzechAy8WqfaPojkKQpcm",
+   "kind": "achat",
+   "token_delta": 909880.668967,
+   "sol_delta": -0.104804,
+   "rank_tx": 64
+  },
+  {
+   "sig": "4KmzY9JhTEaN8ESnq6Vmo6R6CkJqq3qYbCGfwkaCEVKYW3bB4KvPojJXkmxUb45c1QZ6KwZkDRMWoaX7GuNQMqr1",
+   "ts": 1730203356,
+   "utc": "2024-10-29 12:02:36",
+   "signer": "24Z2aSHY2d5y5DbX66JW47kYH8G4hhFKba5ESXB4N5s2",
+   "kind": "achat",
+   "token_delta": 1812432.266876,
+   "sol_delta": -0.205029002,
+   "rank_tx": 65
+  },
+  {
+   "sig": "4gpSUhtXW1Q2Avw8UocQn8zErK25za8m4jaZvoxBgP91nLTTBnDeRGQQWWrAyK3KjC5JXcDEn9igMUncoibLgvSa",
+   "ts": 1730203363,
+   "utc": "2024-10-29 12:02:43",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 4478393.555997,
+   "sol_delta": -0.508029002,
+   "rank_tx": 66
+  },
+  {
+   "sig": "4w5snXZo8BL18vefNNPr5vhPFs9PXLg534SWpFN6mGw6PqQgpqxMfHr9W73bBM5AhvTKD4QiMNMwuwnVNgs9aYsp",
+   "ts": 1730203365,
+   "utc": "2024-10-29 12:02:45",
+   "signer": "5JWiU4ZFeFtbj3QpwUwqF2VYHuD4bQxhPT6SBh9sT3Bp",
+   "kind": "achat",
+   "token_delta": 1791357.422398,
+   "sol_delta": -0.211381476,
+   "rank_tx": 67
+  },
+  {
+   "sig": "2o1jEJqCKPWiKTCsKrisMhWYSn8BYUpzRS6dihkVzs9o5hquZ84qxPE7AFM7irkRMTpS7yePSPhBZMAxEiED4RGh",
+   "ts": 1730203366,
+   "utc": "2024-10-29 12:02:46",
+   "signer": "CzFS2wiLBFTgfDCN8QKeBYoAB4cyXYE61AvbhfeuFjse",
+   "kind": "achat",
+   "token_delta": 32484462.096996,
+   "sol_delta": -4.037044279,
+   "rank_tx": 68
+  },
+  {
+   "sig": "AkpPWQN4h2RrgrvdXmEQN36z3s3yb7V4gfppEcdrHjSbNzK6TgS4rGxnxRj5AHV1j74CCKyKUFPTUcuWfq94QXA",
+   "ts": 1730203367,
+   "utc": "2024-10-29 12:02:47",
+   "signer": "F5gZqCJWVg2pD9mzHsRxn3v38me7Gny7oLcJPXxYaVLz",
+   "kind": "vente",
+   "token_delta": -812915.24585,
+   "sol_delta": 0.100268092,
+   "rank_tx": 69
+  },
+  {
+   "sig": "5qKZuruE7njz1dQ4HMovLwGUAs15MuNj8Mpr2JetcRfwP2nLLZnzxKFSsBTvcNrtZANuC1rRphj8MGSqWeufV6ZQ",
+   "ts": 1730203374,
+   "utc": "2024-10-29 12:02:54",
+   "signer": "5fhUPGgBHzxzxfgP7282DmjquUYxGAbzw9dL3f9n6dHw",
+   "kind": "achat",
+   "token_delta": 3872575.573674,
+   "sol_delta": -0.51703928,
+   "rank_tx": 70
+  },
+  {
+   "sig": "4zwWUMoVQHR4P1xMY5vCqa5AbNZ3PbmymV96Zgu6spB3TpH4Su2XgE2gpr9PPfA6GN3a9cJYFZtJb4GS13vg7G9T",
+   "ts": 1730203379,
+   "utc": "2024-10-29 12:02:59",
+   "signer": "8sEaWqikU6n6rht8v9ouPxHdBS5KCw8EM4eAtnAaq6Ed",
+   "kind": "achat",
+   "token_delta": 22300390.914306,
+   "sol_delta": -3.073535907,
+   "rank_tx": 71
+  },
+  {
+   "sig": "3Tbvr9cNMKDRU5a5pAAVt6KwMBunYeq1312bRz5bUfhQsWiLGTqHAJxQvh3A3511PwNqtLXTXDvdEjcZ1RxgTYtx",
+   "ts": 1730203383,
+   "utc": "2024-10-29 12:03:03",
+   "signer": "AQ1KpRUxroiNstLiWQUaSfukSnfysv3dWHJt1h4GZp8Z",
+   "kind": "achat",
+   "token_delta": 3480126.286679,
+   "sol_delta": -0.51454428,
+   "rank_tx": 72
+  },
+  {
+   "sig": "5f37tzmnGURR15TbzB5rc2NTz4gSzuoPQtnNNf2mdnX9tZ8tqVrCfQrnDjTB3o4JJZkkdDCkBbJXnHVp7WBX4ZtZ",
+   "ts": 1730203393,
+   "utc": "2024-10-29 12:03:13",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 3429511.105151,
+   "sol_delta": -0.508029002,
+   "rank_tx": 73
+  },
+  {
+   "sig": "2MVLt7FypTXnKQCmrfTVVVmHUTgPCr1vnJx3yY1Ea5G9F5n7BdwHAPMqkWv818Lwj16STNGZewKT1RFZNM2bgnwX",
+   "ts": 1730203396,
+   "utc": "2024-10-29 12:03:16",
+   "signer": "2vT8rG8x2oMRgtZ4XC3d2gP5GVA4tTgz3WhBz4YoHMpo",
+   "kind": "achat",
+   "token_delta": 340209.757643,
+   "sol_delta": -0.050970002,
+   "rank_tx": 74
+  },
+  {
+   "sig": "5XPtn9j79cBQ4gdBGRyq2gpM3bybkYqecpGojUB7fakK3L74ACNAz8UCTyDMqH3uVL22tzvS9Aja1cMR8VPLnCqa",
+   "ts": 1730203397,
+   "utc": "2024-10-29 12:03:17",
+   "signer": "5JWiU4ZFeFtbj3QpwUwqF2VYHuD4bQxhPT6SBh9sT3Bp",
+   "kind": "achat",
+   "token_delta": 1371804.44206,
+   "sol_delta": -0.21138004,
+   "rank_tx": 75
+  },
+  {
+   "sig": "4AX8tuGGX3uzwGrsS1CYf99cEdV9qfEB641Dc1rBdeC3CUZRHQDuRH2vJwT7Zr3b9DB5XZYSk1R1F3tsfjJyxF4c",
+   "ts": 1730203401,
+   "utc": "2024-10-29 12:03:21",
+   "signer": "7XEKTRHM8A19j4ey6jwru2FNoFGZj5SvtsWUVEdWGPfz",
+   "kind": "achat",
+   "token_delta": 6662883.913506,
+   "sol_delta": -1.021074282,
+   "rank_tx": 76
+  },
+  {
+   "sig": "3vSG9oz6JZhyo82jJ2v3H3FRGdAyLqrGoQB1mBBsMBXBAiTxqdFqLdBdbZ5DVHe5k8buZrWziqQSSDHkCqaUoszW",
+   "ts": 1730203402,
+   "utc": "2024-10-29 12:03:22",
+   "signer": "FZoErJ9cg541p7WWd5q5jveH6tgQtWwW4EptSUNjQMs8",
+   "kind": "achat",
+   "token_delta": 1347980.306935,
+   "sol_delta": -0.210912845,
+   "rank_tx": 77
+  },
+  {
+   "sig": "67SSzcU185asaJvFwgjaiazs1YYZEhCeGBsmioRPqnmFA95eigs1Yp2j5NsKjurHHbPyL2SqH155p1KxYkLBUhGJ",
+   "ts": 1730203402,
+   "utc": "2024-10-29 12:03:22",
+   "signer": "GS6GEdXguSgCfFZ9HbX2pxhsUrcx7H7gTeq1pW7qAx4c",
+   "kind": "vente",
+   "token_delta": -1199278.0,
+   "sol_delta": 0.171395793,
+   "rank_tx": 78
+  },
+  {
+   "sig": "2UbPgiwqJDx1kbpVzS68bu4ffJuBdSCKtUxcsfuCXaHSnbjGwaRfF6JE5DUE9EXLxUW5UVuFHEfU32pZNv3MtcXS",
+   "ts": 1730203403,
+   "utc": "2024-10-29 12:03:23",
+   "signer": "AQ1KpRUxroiNstLiWQUaSfukSnfysv3dWHJt1h4GZp8Z",
+   "kind": "vente",
+   "token_delta": -3445325.0,
+   "sol_delta": 0.51279423,
+   "rank_tx": 79
+  },
+  {
+   "sig": "s1CZuwvbU1pEjiuxUdkiWpW1p9G2eHHX2rwstGizixdtXPyqQGCcvBHFz4eVc63AaYpJK2yx52GkWQNBByNhYRf",
+   "ts": 1730203405,
+   "utc": "2024-10-29 12:03:25",
+   "signer": "7Vc5Cax5WYoEBXaViD8rMTmQN1byzLwiNqEyynRgUasU",
+   "kind": "vente",
+   "token_delta": -937479.023505,
+   "sol_delta": 0.137517657,
+   "rank_tx": 80
+  },
+  {
+   "sig": "4USzWyh1KpgmpxswUaMZtd2tJV97LUnqpxb9vu8ofCLvcAiDhSCsrHScMYU2pnpJ8Y1gpohkXoW6veQegcj9MaB2",
+   "ts": 1730203410,
+   "utc": "2024-10-29 12:03:30",
+   "signer": "WkHMyocY4trzWbYZ5bN9wAqYTQmB7fQw6QRkVphYZVg",
+   "kind": "achat",
+   "token_delta": 3255384.683787,
+   "sol_delta": -0.520004999,
+   "rank_tx": 81
+  },
+  {
+   "sig": "5m4iqnszR24cPYd5rqPVm1bKuJdTqmukLCvnTomkYB5N2DMXr1RtJzUrXLg9Dq7PG18sqcAqEoAYe5mUuxqmtX73",
+   "ts": 1730203421,
+   "utc": "2024-10-29 12:03:41",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 3320679.411356,
+   "sol_delta": -0.515201924,
+   "rank_tx": 82
+  },
+  {
+   "sig": "4wUSaoa4MhnarnT2KCgNe9kekSd1bqsnAFJdK9SMiL8GGZWJqWzAfiVUFz2PJ6bBsiytpfFZytX3WxV5K2GyBznT",
+   "ts": 1730203434,
+   "utc": "2024-10-29 12:03:54",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 6409885.937927,
+   "sol_delta": -1.013015,
+   "rank_tx": 83
+  },
+  {
+   "sig": "48KbhCT2zXR2ikRgC2u4FaRR9LgqyEB844GCNv2PVcCTExotS63puhG8wZSM8QpjbhkGXF3iEErqfoyeiUtSMGU4",
+   "ts": 1730203438,
+   "utc": "2024-10-29 12:03:58",
+   "signer": "5fhUPGgBHzxzxfgP7282DmjquUYxGAbzw9dL3f9n6dHw",
+   "kind": "vente",
+   "token_delta": -3872575.573674,
+   "sol_delta": 0.593345892,
+   "rank_tx": 84
+  },
+  {
+   "sig": "3Baf1CnyVG6hUSFbXbPamuTn9UPwoNPFzEEBSQBGs6Pow93bFfrr6sWMSrexjYJHcTHQAWarZnDjpejwi7BfGoCP",
+   "ts": 1730203448,
+   "utc": "2024-10-29 12:04:08",
+   "signer": "DJJqCSuRDmZQbaAqKr59L4TFb7hcHNBN7gDmSaWMJTwA",
+   "kind": "achat",
+   "token_delta": 6276950.200117,
+   "sol_delta": -1.029994281,
+   "rank_tx": 85
+  },
+  {
+   "sig": "qLDrh6KnhhuvG8rtKFxJUp8BFD4ZQBhj4tYao11jqBrRWyTJ7dEKh6PY7jucZmUwJAY9xdqwXbXuEM7B5ofpQUp",
+   "ts": 1730203450,
+   "utc": "2024-10-29 12:04:10",
+   "signer": "8CxV9UuxnEBus2HbTYJxS7MEws5oRrsUnt8TSex3xcPD",
+   "kind": "achat",
+   "token_delta": 429229.580008,
+   "sol_delta": -0.072437339,
+   "rank_tx": 86
+  },
+  {
+   "sig": "2sMAg46iM4FuKkMUBUYF23mVTTmeruPzi9JQmn1qCWSWjabETyZWNj7hdxfhUi5yS32picth8dtM8uN9AjW2JjdR",
+   "ts": 1730203458,
+   "utc": "2024-10-29 12:04:18",
+   "signer": "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+   "kind": "achat",
+   "token_delta": 623223.324065,
+   "sol_delta": -0.104019501,
+   "rank_tx": 87
+  },
+  {
+   "sig": "3FqSE4mQSUfDcvPQ2TA9bXbRKkHFJjQPCuHpQaPbNNnunkebWpBMapNdatA7cvTYr9W4Epa1j2C483vA2UqER8Kc",
+   "ts": 1730203464,
+   "utc": "2024-10-29 12:04:24",
+   "signer": "2x11A6xhgbAGgVgWTZahBqpaF2AWSmdKVkCG9JFpNh7K",
+   "kind": "achat",
+   "token_delta": 9878699.416358,
+   "sol_delta": -0.00227889,
+   "rank_tx": 88
+  },
+  {
+   "sig": "4b2yjy6kQv4X6ofF46adu1Qu3MiNjvuWT1Snze1qt6BHKzFh17SuR5UVMPLYizTW5K2TH7Ky81qUnojaAc6nGf1g",
+   "ts": 1730203469,
+   "utc": "2024-10-29 12:04:29",
+   "signer": "5yn4Ybw2GvLz72tm8qTx6umNiFZvkurQb5xXTrGvkrsF",
+   "kind": "achat",
+   "token_delta": 5869776.860732,
+   "sol_delta": -1.032144283,
+   "rank_tx": 89
+  },
+  {
+   "sig": "av2xTPkb35J9WHb2oMzAL4g7nCkLMJGXkdi1PA5hKP4AazBGsH7Son7qqUCMieXJqJaaf4TSFjfhTpvDmjctyWn",
+   "ts": 1730203527,
+   "utc": "2024-10-29 12:05:27",
+   "signer": "DJJqCSuRDmZQbaAqKr59L4TFb7hcHNBN7gDmSaWMJTwA",
+   "kind": "vente",
+   "token_delta": -4707712.650087,
+   "sol_delta": 0.772435441,
+   "rank_tx": 90
+  },
+  {
+   "sig": "4f7ARhS74BMb8UWVzWcN82bqqLjYb4tXMaBcRGyLJJhnQsNG5QG1r3TWrgwvypCFfMGkp3gc67Gvn5QpBPYDTDH8",
+   "ts": 1730203532,
+   "utc": "2024-10-29 12:05:32",
+   "signer": "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+   "kind": "vente",
+   "token_delta": -10254075.422835,
+   "sol_delta": 1.675679577,
+   "rank_tx": 91
+  },
+  {
+   "sig": "2GyTjabs3pX66HPFHuK7MVfM4Jfj3X7Jr62nbLPQWcQpGSJB7uHqV6L3wWzp1M3ofuuWzYBefu7nvj3EmNXRFCbM",
+   "ts": 1730203538,
+   "utc": "2024-10-29 12:05:38",
+   "signer": "ARSCioNhrcg7nFr1xk5Whfn4AfNvhYhU3fxXpHi2gmwX",
+   "kind": "autre",
+   "token_delta": 0.0,
+   "sol_delta": -0.004007,
+   "rank_tx": 92
+  },
+  {
+   "sig": "2fLgy6qmFc614gygatgtLFjMkpAXobFCTUnWqVHd8Jsu5bYt7b8C48fNZBb5XoT5k1wm65Lt1kPuLswiM2eAeYDx",
+   "ts": 1730203538,
+   "utc": "2024-10-29 12:05:38",
+   "signer": "7XEKTRHM8A19j4ey6jwru2FNoFGZj5SvtsWUVEdWGPfz",
+   "kind": "achat",
+   "token_delta": 12063883.250798,
+   "sol_delta": -2.33886667,
+   "rank_tx": 93
+  },
+  {
+   "sig": "41WquL7ZZNUNjGKmDew9A1ehHEiPYraMiY8VTrVCedWhFyxbUzKgivrr2Z4ZToGDjUSXdttWyE7J9wQMuZTXS8mD",
+   "ts": 1730203538,
+   "utc": "2024-10-29 12:05:38",
+   "signer": "ARSCioNhrcg7nFr1xk5Whfn4AfNvhYhU3fxXpHi2gmwX",
+   "kind": "autre",
+   "token_delta": 0.0,
+   "sol_delta": 0.00524392,
+   "rank_tx": 94
+  },
+  {
+   "sig": "25eRgqdWCdgkPoSCpGtjjUvuEhqsymTJ9D8jUb1ME7aTcsAwwcvwA1eGgPg5QLtYiqjzCNKBu5xhQoqxemB9D2DK",
+   "ts": 1730203548,
+   "utc": "2024-10-29 12:05:48",
+   "signer": "2reZ3u5XXGyN2cC6eVrxwxkdf56mCwuec7JQ2uB1Mf5e",
+   "kind": "achat",
+   "token_delta": 2904506.448744,
+   "sol_delta": -0.512,
+   "rank_tx": 95
+  },
+  {
+   "sig": "3UwQHyhaZgWPJh23mSk6xB1WBZiQNpB488C3cqGeGJHQG6DFHuvQhbuQYb1ZkMunH19eM3KVmqpVjjeAqr3F7MSw",
+   "ts": 1730203564,
+   "utc": "2024-10-29 12:06:04",
+   "signer": "8HV4irp6GUWcqAjFYrbVXeG45iLK5xAQuRymwMv9b5SY",
+   "kind": "achat",
+   "token_delta": 115487.484301,
+   "sol_delta": -0.023411705,
+   "rank_tx": 96
+  },
+  {
+   "sig": "5DA7sTpBqPXPFh6wPPSAg1wRFAwLGtFMMnnb5jJcR7BrbjX6C6vmvKL8kbNnPx4A4SbJpKwbCVnPtdcFP3kNFec1",
+   "ts": 1730203581,
+   "utc": "2024-10-29 12:06:21",
+   "signer": "A29rGuwwPmxSDwDLswaA6oo7DEv3YDkYM9hnW8R7bCwB",
+   "kind": "achat",
+   "token_delta": 11244490.918564,
+   "sol_delta": -2.02505428,
+   "rank_tx": 97
+  },
+  {
+   "sig": "4PzhqPGY7UQRNzKHf1HzoZfwV9DKSEmmrdMCj3MUDnMDJjw4MKPuF6pLH239mdhYekorAdKhg2DqCFTimXRZAPvB",
+   "ts": 1730203607,
+   "utc": "2024-10-29 12:06:47",
+   "signer": "5yn4Ybw2GvLz72tm8qTx6umNiFZvkurQb5xXTrGvkrsF",
+   "kind": "vente",
+   "token_delta": -5869776.860732,
+   "sol_delta": 1.028204361,
+   "rank_tx": 98
+  },
+  {
+   "sig": "3CEVZTWZhe783dmHqpTearTgoFxuQtdAGQF2nhFN16Rj56xzNJAKKr9WH2UpEdJKyHjpfAQpgG7Sr9RvqvmsFnGz",
+   "ts": 1730203608,
+   "utc": "2024-10-29 12:06:48",
+   "signer": "J4UycaukLz9WwqmZRtHH7hb7umEFcF9W5eXv2N87SCU4",
+   "kind": "achat",
+   "token_delta": 54748.771029,
+   "sol_delta": -0.015280658,
+   "rank_tx": 99
+  },
+  {
+   "sig": "61z2V8dbQnudmPk64p2okhjgPedQCv5ussSNPUstVKCWp8bxafpkvb28XFQWg2pC9gXW6YYJcn5PwV8zy6wNADH8",
+   "ts": 1730203611,
+   "utc": "2024-10-29 12:06:51",
+   "signer": "3Nt8hsh591yiNPDPbQu9v8XRoN966Xn7BWYh4iuc4iCp",
+   "kind": "achat",
+   "token_delta": 2720057.639256,
+   "sol_delta": -0.496709547,
+   "rank_tx": 100
+  },
+  {
+   "sig": "Ahz4f19e9mLBTxYAGZmZoCJCk792iL6C8fMjqsXhxBXViQAFpo34PqKJLzf5gxXBLLppmdwYQMK4Pos8TCfCzmU",
+   "ts": 1730203618,
+   "utc": "2024-10-29 12:06:58",
+   "signer": "4hqAnhn3n2C75PERuLXn4TTy8oKYREVf4qTZCxzdmLD4",
+   "kind": "achat",
+   "token_delta": 350422.654453,
+   "sol_delta": -0.005117853,
+   "rank_tx": 101
+  },
+  {
+   "sig": "5SbLqBVQzgVDyVrgLtLp4eJUFudYY6iQpZkoXBAztryzyWeBoJBP4BH7gsMgQ8mgzoH5WrDSwHVEs1T52UmEVa7J",
+   "ts": 1730203621,
+   "utc": "2024-10-29 12:07:01",
+   "signer": "3Nt8hsh591yiNPDPbQu9v8XRoN966Xn7BWYh4iuc4iCp",
+   "kind": "achat",
+   "token_delta": 2760177.714809,
+   "sol_delta": -0.509265523,
+   "rank_tx": 102
+  },
+  {
+   "sig": "4Tft2pkxaw4B5X44QfaEsd2M4HGPc7xX6jBTuNfxD2zp2KY1wEH9gbWRvUuDdyqREimaoeU8RiL5XdoLGiEE542G",
+   "ts": 1730203624,
+   "utc": "2024-10-29 12:07:04",
+   "signer": "7PckUUMhM9fbrnPrDRE4sBTvfai7bcoVsVVdT6okAtMq",
+   "kind": "achat",
+   "token_delta": 1106562.838693,
+   "sol_delta": -0.210125752,
+   "rank_tx": 103
+  },
+  {
+   "sig": "Tt2Qmfkg6yxnYVh5aBUWJvP6ogjDWsVMuX4SbeEFUDZcwHeEbFsfiKGZ36hZmKg39gXNTFdWKhTeisUcia9n2zL",
+   "ts": 1730203633,
+   "utc": "2024-10-29 12:07:13",
+   "signer": "3Nt8hsh591yiNPDPbQu9v8XRoN966Xn7BWYh4iuc4iCp",
+   "kind": "achat",
+   "token_delta": 2436565.726312,
+   "sol_delta": -0.457918002,
+   "rank_tx": 104
+  },
+  {
+   "sig": "4SaBBLWWKfjwtR3i9EgYUg76o7FD1dvDAyoJfRbaSXEg6gieRodHFUu5iCdUL2XTXrmFqqeoxz5phh8rPQGhsXiH",
+   "ts": 1730203706,
+   "utc": "2024-10-29 12:08:26",
+   "signer": "7PckUUMhM9fbrnPrDRE4sBTvfai7bcoVsVVdT6okAtMq",
+   "kind": "achat",
+   "token_delta": 1073839.013504,
+   "sol_delta": -0.205015,
+   "rank_tx": 105
+  },
+  {
+   "sig": "3rSckumneR6N2DH1849ccSebQoWk8wmuNDLvgAp3SmWAwcFM9ihrkeKDutXcRRaEGdSQ3vWTwaem8zvezz2CXS4R",
+   "ts": 1730203713,
+   "utc": "2024-10-29 12:08:33",
+   "signer": "G8tV3EbRjnwpR6q3d97iaKa91N6A2fogPskzuf7krw3a",
+   "kind": "achat",
+   "token_delta": 534844.574872,
+   "sol_delta": -0.10505428,
+   "rank_tx": 106
+  },
+  {
+   "sig": "3nChvhoyrA6K88JeK7PFKE9ikVmUnq8oVhRvJjWfHvkoUKKWjEzYQGAjRMyKAxKcJigdr8bbWCPmjmrW5tt74rpC",
+   "ts": 1730203777,
+   "utc": "2024-10-29 12:09:37",
+   "signer": "8BLLmRgeEm2HmgHZprcKr2SyfwhQATjDTESrfH4LmVe",
+   "kind": "vente",
+   "token_delta": -6138588.705644,
+   "sol_delta": 1.089627363,
+   "rank_tx": 107
+  },
+  {
+   "sig": "2nekZvD37qYBY73avDFbosxzYdPUbirT6EwovvJNP58KUUNzDv6aHQX1G85gUrSdHLpbXBtiD91BmUqocZC8YRux",
+   "ts": 1730203781,
+   "utc": "2024-10-29 12:09:41",
+   "signer": "2vT8rG8x2oMRgtZ4XC3d2gP5GVA4tTgz3WhBz4YoHMpo",
+   "kind": "vente",
+   "token_delta": -340209.757643,
+   "sol_delta": 0.060602356,
+   "rank_tx": 108
+  },
+  {
+   "sig": "5SmkmFEfieCmzcvvamCuLF4Qd12aZv41axGGjvQ88XwmsvyjKiTKJmdgc9oaSMwQrWB9MMtoarXq78uAJe3iJSB6",
+   "ts": 1730203803,
+   "utc": "2024-10-29 12:10:03",
+   "signer": "FTQCeMwD6vMWyfNAGSERnKALJ5x5M81riRFg2kaUbSVf",
+   "kind": "vente",
+   "token_delta": -586436.0,
+   "sol_delta": 0.102209663,
+   "rank_tx": 109
+  },
+  {
+   "sig": "61XMYYvdkSnoM9yrewd6JeuMtQHHaky4adPsEGfrHmKj4SP1YJKf52yhGdS6GyA3yw9GfYNHfG9SiKCBeG1Rk6kQ",
+   "ts": 1730203825,
+   "utc": "2024-10-29 12:10:25",
+   "signer": "2reZ3u5XXGyN2cC6eVrxwxkdf56mCwuec7JQ2uB1Mf5e",
+   "kind": "vente",
+   "token_delta": -2660611.349597,
+   "sol_delta": 0.466947344,
+   "rank_tx": 110
+  },
+  {
+   "sig": "4JzBdGqU19DR3jBFKNLuPvYVTw2CUswE9ajoxZVv1b5vn8BnVWAMb72WxU52Kwx2urStgCDLQaKPfDfHwNZzDEj1",
+   "ts": 1730203840,
+   "utc": "2024-10-29 12:10:40",
+   "signer": "G8tV3EbRjnwpR6q3d97iaKa91N6A2fogPskzuf7krw3a",
+   "kind": "vente",
+   "token_delta": -534844.0,
+   "sol_delta": 0.09250205,
+   "rank_tx": 111
+  },
+  {
+   "sig": "49G6vYiWH9UAV3Eg2kP83rhw3VpctCEoiUy99Sn66AQwjvEG8actsfMAR3AqkPrp6NCQQFoAHDtG6Gdp3ys9Xrjh",
+   "ts": 1730203843,
+   "utc": "2024-10-29 12:10:43",
+   "signer": "3d16ZRrFg9R21JZAbNy6sK4cgERQERF6fQC28sWpn893",
+   "kind": "achat",
+   "token_delta": 2513600.464043,
+   "sol_delta": -0.535683692,
+   "rank_tx": 112
+  },
+  {
+   "sig": "5cHnxADGt6hNGMHvCYyyuw3Af1MkVbXeWtG8AWQzJDhdtiS7HNYQaiTY6fb545fviHudzbTzC54MXX9NPaMNeiLU",
+   "ts": 1730203843,
+   "utc": "2024-10-29 12:10:43",
+   "signer": "DkXVRZyX5J4unCYj4uiisMGsQV84rqNQjbnvPxEzJL4n",
+   "kind": "achat",
+   "token_delta": 2303651.419632,
+   "sol_delta": -0.487146962,
+   "rank_tx": 113
+  },
+  {
+   "sig": "5vw3b5LnKo4wUzoycKQxbSg8BqsDt1EWfDAHZEAf5nbVDpu4aZMXbgGkUqZeUe7boLGQVbkeQVoBop63WE3p4WGn",
+   "ts": 1730203843,
+   "utc": "2024-10-29 12:10:43",
+   "signer": "HF2Lw2tYs4B3y1iqz6iw2f4wTjrn14KppvAezcm7TAT3",
+   "kind": "achat",
+   "token_delta": 26309404.066841,
+   "sol_delta": -5.097269282,
+   "rank_tx": 114
+  },
+  {
+   "sig": "41dew9kpgj33D4YMF5BiM7R1ZHw4HPYF4igrYN2N9BM1rY2MzKExVVN2cesA1mPJbweswQ6k3uXJua1qxHCrHbna",
+   "ts": 1730203845,
+   "utc": "2024-10-29 12:10:45",
+   "signer": "EHKPJM8SHS7mEJiEYEpSdN98tRNnccaVpod8Hr4kX4hG",
+   "kind": "achat",
+   "token_delta": 2452856.789438,
+   "sol_delta": -0.525688928,
+   "rank_tx": 115
+  },
+  {
+   "sig": "4Z73xRLHhwCNCjwxYtRbZxXf7Z4u4baPHqiDjjocoXhBBhNgdDGpp7WJg8ALvDRFV64TGxy7yWGTfag229sE1Jzb",
+   "ts": 1730203846,
+   "utc": "2024-10-29 12:10:46",
+   "signer": "24Z2aSHY2d5y5DbX66JW47kYH8G4hhFKba5ESXB4N5s2",
+   "kind": "vente",
+   "token_delta": -1654283.0,
+   "sol_delta": 0.339767121,
+   "rank_tx": 116
+  },
+  {
+   "sig": "4J3SnqK6Tk3ahmFAPFysZ1nBdafyL41HuZmSSi46NBdxY14mKGef2cc9bWGwCf7c2FRHnTo6QqG7sHszUNnuAeB7",
+   "ts": 1730203848,
+   "utc": "2024-10-29 12:10:48",
+   "signer": "dc5djqFbA9MmV8QJF4xJ3dAermM69AeQuXFMiBu6X2K",
+   "kind": "achat",
+   "token_delta": 5571648.513517,
+   "sol_delta": -1.193271668,
+   "rank_tx": 117
+  },
+  {
+   "sig": "4Q78qEuhRwQZWM4yLwnzvYpTHFrG4bm8DtUjn8p3kVExeg6St8Q1D7wSw1gQoy6oXDNKt7dvAVknBcYnLp5PzFTi",
+   "ts": 1730203849,
+   "utc": "2024-10-29 12:10:49",
+   "signer": "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+   "kind": "achat",
+   "token_delta": 1890860.126336,
+   "sol_delta": -0.411880142,
+   "rank_tx": 118
+  },
+  {
+   "sig": "5qegb3YFok7yMGRJBNfTFAYC2LL2ANwcaPw3APfQUJawEFtVokM8iqPP4wJyczprqCanzNDBKHWWtfzWfGvsJjLb",
+   "ts": 1730203851,
+   "utc": "2024-10-29 12:10:51",
+   "signer": "5JWiU4ZFeFtbj3QpwUwqF2VYHuD4bQxhPT6SBh9sT3Bp",
+   "kind": "vente",
+   "token_delta": -983893.006205,
+   "sol_delta": 0.203330753,
+   "rank_tx": 119
+  },
+  {
+   "sig": "vuaW8XPXJFBgjBHFQFmEG3rLXEdWtPbjMZM1KHPGW5By6mLpjRRxPfqnwk4t9SDaj1NYZD9JJVKoVP72y6U4sn2",
+   "ts": 1730203854,
+   "utc": "2024-10-29 12:10:54",
+   "signer": "2Y9C43srtrabfhofRjopw3Wnwh2eaxLPVqhU3VCCGiix",
+   "kind": "vente",
+   "token_delta": -2545288.0,
+   "sol_delta": 0.530465245,
+   "rank_tx": 120
+  }
+ ]
+}

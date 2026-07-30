@@ -1,0 +1,80 @@
+{
+ "label": "sumiko",
+ "mint": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+ "n_wallets": 40,
+ "n_inflows_total": 37,
+ "n_rentrees_ecartees_produit_de_vente": 1077,
+ "n_genesis_reached": 20,
+ "n_genesis_NOT_reached": 20,
+ "n_prebuy_reached": 35,
+ "n_prebuy_NOT_reached": 5,
+ "n_hyperactifs_non_mesurables": 5,
+ "wallets_without_genesis": [
+  "C3e7f9SS332vanENgoGcpiDgPAxUVhcxde5y26Y1FZXs",
+  "ZDLFG5UNPzeNsEkacw9TdKHT1fBZCACfAQymjWnpcvg",
+  "EQ3iykiT6Jg1ReuaaLc2bnxFXwxBkiXgZifYJxaULAEC",
+  "24pJk1doYF5rooUHDBWZdJgNN7NQJQLPxRiUEmpo4L3r",
+  "AaGtCZJmePQvModrH7tZnKXipAyWexLJzGPd24wX7VTq",
+  "E7zEAEuqTfNb4XYAXk2uhGZWtCtfaZGiqaqAUjyCsN1N",
+  "5sSXftrP6ZE6U3fwdubFmAYFVVA5otBQnvR2eYv3T8SP",
+  "6NXcnTc8JwBMHhxgT32C7Z1qHYE3obfyptYcLHqaQSWt",
+  "BHrEssDoHBGibjGDnsUaVf7RnK6vfbHstLLq9gAPxajy",
+  "EPCwxro6Nf3PEtMxR638qwyyccH7F7dbH2RuXY6HVN8s",
+  "E4xCXAA8d4rjt91xyfQYBdNkdXhLbJyigFatNPceHvUa",
+  "FVAuTbyvbaUb197dkLCzjb4RAwVTduDwrUw9DyrNvay4",
+  "AowTUid5daQr9EqwazF7hDm3jBTQSisv6LaHGhQL8k92",
+  "4X4SiffbmUcWn9pt88AEz5bRshjo3NNrm4WMdcaDST3d",
+  "7XDYGmg8Rq8485EcAuQZ5Fi9RBGhofZZUeQWhqhkMAyn",
+  "3ePPuDZ4AsSDDNydCV3REB7QzyxFY1SUvuEvy9wkS8J9",
+  "2JWBKUHnR7kXKasyVZ6sXerCih15Zj6uLGkkbQVK3ayE",
+  "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+  "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+  "C5ApZQhkXHTo3guW8YRmjsvQJnZ2VEMH1dJTtFHo77ar"
+ ],
+ "wallets_without_prebuy": [
+  "C3e7f9SS332vanENgoGcpiDgPAxUVhcxde5y26Y1FZXs",
+  "ZDLFG5UNPzeNsEkacw9TdKHT1fBZCACfAQymjWnpcvg",
+  "E4xCXAA8d4rjt91xyfQYBdNkdXhLbJyigFatNPceHvUa",
+  "AowTUid5daQr9EqwazF7hDm3jBTQSisv6LaHGhQL8k92",
+  "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX"
+ ],
+ "verdict": "DECOUPAGE DETECTE",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [
+  {
+   "funder": "9s6sZx3q869DnTnEKfscxDt1cv98CQLNs2wgmSxAGW9y",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 20.0,
+   "first_utc": "2024-12-19 17:04:18",
+   "known": null,
+   "amounts_sol": [
+    10.0,
+    10.0
+   ],
+   "wallets": [
+    "3uCz3fpChKFSwMoVYJxvDgS5JDRvcb3amtwwuASDkEmy",
+    "8n1f7u1VvZT9Dswe9BuTECBWcqhDe6iDisWrhHJnuDW8"
+   ]
+  }
+ ],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 2.185871,
+   "first_utc": "2024-12-26 12:55:43",
+   "known": "service de swap G2Y (cible de l'enquete)",
+   "amounts_sol": [
+    0.739785,
+    1.44608649
+   ],
+   "wallets": [
+    "AJq5My8GFG6Jo7PqS7HGeUc6j3iPvUGGhMFhSNmdKkS2",
+    "FYG2cyAmhKGyRnH5v3WvM6t2DnpxE3ZgoC3LCMaJ4cAB"
+   ]
+  }
+ ]
+}
