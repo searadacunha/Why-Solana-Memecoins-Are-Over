@@ -1,0 +1,52 @@
+{
+ "label": "DONGOE",
+ "mint": "F4j6sMuUUTNqNQrLoHDmKZ4umrhhT2vRf5zMKBE1pump",
+ "n_wallets": 17,
+ "n_inflows_total": 35,
+ "n_rentrees_ecartees_produit_de_vente": 238,
+ "n_genesis_reached": 10,
+ "n_genesis_NOT_reached": 7,
+ "n_prebuy_reached": 16,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "xUwUxxg5eLEVfowp1ki2we8JWJjukkriVLY39c55nqa",
+  "7r5qHnFGMc3PX3JymBGeYk3C5yvbwnfM6tozk9mhVN9g",
+  "Cj1Bse7vGSqGZY1TugjhsohnygCTqXEBarJKMZH1qPYF",
+  "FxSiLBD8Y3t326nifVhgK6cjUSGrCLynMiKXqKmtbVRY",
+  "GFTKc3o9YK7Zxj4pb8YRZd2By3TbgRmfZeUbU7D6Qjsh",
+  "4fr3tuTFp3rYvUyafV1CvGYxcqvmfE4B5pStj5mPbhvk",
+  "EfD8i5a2fc8j53D1RXAmXKAVjYDZQaVhwPcXN2H6D5Dw"
+ ],
+ "wallets_without_prebuy": [
+  "xUwUxxg5eLEVfowp1ki2we8JWJjukkriVLY39c55nqa"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/17 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 8,
+   "total_sol": 14.403582,
+   "first_utc": "2024-07-20 04:07:28",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.62066631,
+    0.93,
+    1.01897,
+    1.044,
+    2.15671591,
+    2.31044553,
+    2.77643812,
+    3.54634584
+   ],
+   "wallets": [
+    "4fr3tuTFp3rYvUyafV1CvGYxcqvmfE4B5pStj5mPbhvk",
+    "D1UsWRa1VQ6tnKeseyEFmg14v2ecwXyEFdHP1VLyUiSM"
+   ]
+  }
+ ]
+}

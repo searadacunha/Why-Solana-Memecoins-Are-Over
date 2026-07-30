@@ -1,0 +1,1788 @@
+{
+ "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+ "token": "h2w6gm6jz",
+ "n_nodes": 12,
+ "n_genesis_reached": 10,
+ "noeuds_sans_genese": [
+  "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+  "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy"
+ ],
+ "terminaux_rencontres": [
+  {
+   "noeud": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+   "addr": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "label": "Binance hot wallet",
+   "utc": "2024-07-26 10:42:20",
+   "delta_sol": -99.994005,
+   "signature": "2uUv1RhQzQ4aDU9Bc34chJz2L9Xk9TqY1HvfhLr58g527U57H3BipsEVkeFDat3c3ELbwhjjDWPimy4aUa1yHHTi"
+  },
+  {
+   "noeud": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+   "addr": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+   "label": "service de swap",
+   "utc": "2024-12-12 12:23:07",
+   "delta_sol": -99.99198,
+   "signature": "38aX8SSdHCzLdCPgm9Ri3dk2zmrdiwL6pDrdYFk7aqsMXMxgeGePU27A9bBT1nou2vcyLovFTbmYGRmdaWPyvNbW"
+  },
+  {
+   "noeud": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v",
+   "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+   "label": "service de swap G2Y (cible de l'enquete)",
+   "utc": "2024-12-13 13:56:45",
+   "delta_sol": -10.587826,
+   "signature": "5Yef1gQAUDb6yubfLKVR2VkHH9DSBRCAS559GHje4mPBqwXfmnesPTAtobXv5aamNXY5GMvsJYrKVkyEoBk3iZjW"
+  },
+  {
+   "noeud": "CAjprFFubteH7cmoXJu8gzAMcq6jof5aNfL64DT1scAm",
+   "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "label": "Coinbase hot wallet",
+   "utc": "2024-12-01 12:49:35",
+   "delta_sol": -44.291854969,
+   "signature": "3eewF21wt83dsFWhKZnNLK3M9vvSespkV4gP6vcK4zTP5pt1pH1YTjukeC4PxNhqUH93tGM7Ddeh54BAZBx7AZXR"
+  },
+  {
+   "noeud": "CAjprFFubteH7cmoXJu8gzAMcq6jof5aNfL64DT1scAm",
+   "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+   "label": "Coinbase hot wallet",
+   "utc": "2024-11-30 00:44:10",
+   "delta_sol": -83.054958846,
+   "signature": "nB6SqpdaZi8eFzdF9dgjFVNj2bjLBCgBA9YQFk83rGmJ5Gncs38e41pNpvjg1hkFMkcfW5Kuyp5d8JxPdiaM2h6"
+  },
+  {
+   "noeud": "CAjprFFubteH7cmoXJu8gzAMcq6jof5aNfL64DT1scAm",
+   "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "label": "Coinbase 2",
+   "utc": "2024-11-29 21:17:30",
+   "delta_sol": -82.13741521,
+   "signature": "4iK1L7HMJTxwGEgYLRWjR26FLbXZ7aFSRRfVBnbYmqS9XpTgrf9JvTJpzKDUQEhxTWmsxz9EnM88vmTEqWrooPzG"
+  },
+  {
+   "noeud": "6xGJa1S5HYkAnxcfbsvvTJ2UcjHjZ8E9j7Q1YdSy8Zg6",
+   "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "label": "Coinbase hot wallet",
+   "utc": "2024-11-29 01:43:24",
+   "delta_sol": -3.998836872,
+   "signature": "5PBKMQN9iPuRuRGsxHniw1zwK3uyhwSmpBJrL4vz7ZxS1NxBFvRivg4J8tUHa2DYXZDchmeNjkG662JjmDRVVmjn"
+  },
+  {
+   "noeud": "32TcDrFkQ7aAgNKGKS3xeCqgSkUDnmC1Hr5BD5EWdmEa",
+   "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+   "label": "Coinbase hot wallet",
+   "utc": "2024-10-01 01:59:41",
+   "delta_sol": -6.152229221,
+   "signature": "2rnhn1cD3JChstqkqEJ2bKSewsEoeoZjDSvU2uRwbRNXd5rurUHRqh2jf3ocHbZtrAxGx3fQEEfRaQ9Jzws33dFS"
+  },
+  {
+   "noeud": "3k7jqrPt5zzx2N9myZnMLXQRZBK81gVxEc5cA7dF4Tsk",
+   "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+   "label": "Coinbase hot wallet",
+   "utc": "2024-11-13 20:03:22",
+   "delta_sol": -23.553278429,
+   "signature": "2wNNfNDjcwGcFtw19GnvYVAeFnPZ3KyWLkMcQqontkP4JDcDHjT1TZsZxGGjXoopzR9bG6XJRWVp2m4W1FpsNNDE"
+  },
+  {
+   "noeud": "3k7jqrPt5zzx2N9myZnMLXQRZBK81gVxEc5cA7dF4Tsk",
+   "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+   "label": "Coinbase 2",
+   "utc": "2024-11-13 20:02:00",
+   "delta_sol": -0.474194809,
+   "signature": "672oJ5ewyNW9zDG3Lzbp7iT758aK2VF57wWCGZHncZVwvUTzcjCrGDexdJgRgnGrqsfXjj8jvfR6jhW6sT7eo8Kq"
+  }
+ ],
+ "G2Y_rencontree": true,
+ "note": "Aboutir a un terminal (echange, service de swap, pont) est un FAIT DE ROUTAGE, pas une preuve d'implication du service. G2Y n'est mesuree active que de decembre 2025 a avril 2026 ; son absence sur des chaines de decembre 2024 est attendue et soutient l'hypothese d'une AUTRE adresse a l'epoque.",
+ "trace": [
+  {
+   "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+   "anchor_sig": "3XcX6c1UJMGai3arRjh7HJX7vEBTgfPhf8SRZ9MF6QVaT6aXV5g7uu5RKyjmKsqwechGxeb8GUhyyf6KxNRdw7N6",
+   "known": null,
+   "n_sigs_before_anchor": 150000,
+   "pages_paginated": 150,
+   "genesis_reached": false,
+   "pagination_capped": true,
+   "oldest_seen_utc": "2024-11-12 10:57:45",
+   "newest_seen_utc": "2024-12-03 15:49:17",
+   "sources": [
+    {
+     "addr": "HjjbrpUSkGeJ5tFZj2i96gBq7WtNjbPq13kLPkDhZ6Q9",
+     "total_sol": 84.000021,
+     "n": 1,
+     "first_utc": "2024-12-03 15:35:49",
+     "last_utc": "2024-12-03 15:35:49",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      84.000021
+     ],
+     "anchor_sig": "256t4BRTVZEkMGyyHjkyj7G8Zststf7t4C8zBtcdHC5AN2jFdowUft4uEH9cxFnuCEscfkTvRxRJszxbatvy5QUr"
+    },
+    {
+     "addr": "CAjprFFubteH7cmoXJu8gzAMcq6jof5aNfL64DT1scAm",
+     "total_sol": 44.70003,
+     "n": 1,
+     "first_utc": "2024-12-03 15:43:39",
+     "last_utc": "2024-12-03 15:43:39",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      44.70003
+     ],
+     "anchor_sig": "2ApK4nTRXf8eJ2sKELAGEhTuAKLBbN2s3hMBgu2id1us8efE8imCNjcx6VbhJ3nJSsDqr7gGHRvjgGxwfzuXUL3D"
+    },
+    {
+     "addr": "DoP2YuFMM3q9QtayKEivyJFSyVj6QYuamGkgEaTd7sT7",
+     "total_sol": 17.0,
+     "n": 1,
+     "first_utc": "2024-12-03 15:35:49",
+     "last_utc": "2024-12-03 15:35:49",
+     "known": null,
+     "calibres": [
+      "rond_SOL"
+     ],
+     "amounts_sol": [
+      17.0
+     ],
+     "anchor_sig": "3XipAu1GchNXiE2fstCrDJryGYq8Cysx1ja5LsLBoUDC5iN5zXahsGtCUELtaDwgUy3EzBAexyvpP8mKQq1gXYh1"
+    },
+    {
+     "addr": "FFmsvm4QZEgajVBTN6iojsTbKz4gZWwCFtuhCpMmQMFU",
+     "total_sol": 15.000005,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:43",
+     "last_utc": "2024-11-12 11:17:43",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      15.000005
+     ],
+     "anchor_sig": "5DakGGCcdagGHcmUSdQ1xS4cCWGb7MAN7DNp84Szc8ttRvbJSs4G7k2h6iCspW1iJBNCikJjZS6hnD92mkPh82N5"
+    },
+    {
+     "addr": "BfVk3wu1WLuLXoWKmVKaNMVmhuJABMpUsBZ9W12FwM7w",
+     "total_sol": 12.0,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:48",
+     "last_utc": "2024-11-12 11:17:48",
+     "known": null,
+     "calibres": [
+      "rond_SOL"
+     ],
+     "amounts_sol": [
+      12.0
+     ],
+     "anchor_sig": "2ftjHtfN6rpPsvzDV52Li4Ta7hSHWNvU1eJ4dUD9aJ2Mhc23CXGCzXzCSPCdNZ9m1aHL3agAj3KfmhdSNQKCVMxk"
+    },
+    {
+     "addr": "32KHDoc7XUVt9tF6SRBBGDvDogQEnhBG9ZntnwS3XgVJ",
+     "total_sol": 11.42001,
+     "n": 1,
+     "first_utc": "2024-12-03 15:43:39",
+     "last_utc": "2024-12-03 15:43:39",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      11.42001
+     ],
+     "anchor_sig": "5hbpytkng986uoK7dq1hqwiCyVRmhG9LJWcc8RN8j741iT9nbcfRjgzBNe1SvPKT3knAWFcHzc1op9HHdSctPW6Q"
+    },
+    {
+     "addr": "7MRop19xbVCFejaPSM2rcCTfdwQxaBbuhs6YqCdjJ1uL",
+     "total_sol": 10.1,
+     "n": 1,
+     "first_utc": "2024-12-03 15:43:39",
+     "last_utc": "2024-12-03 15:43:39",
+     "known": null,
+     "calibres": [
+      "rond_0.1"
+     ],
+     "amounts_sol": [
+      10.1
+     ],
+     "anchor_sig": "2y8i2duYs4Dq7gDeVK36nQLegvnKHKuh7nUYjhpDjcvXnWybPMFX1AYZwvPqkRhuwTufWrJ1GKWWK6TTmQ8LuKA8"
+    },
+    {
+     "addr": "43Y3tWqY1dhVayr4zJP8iRLreDBZj2qNJfaSNo72XFfM",
+     "total_sol": 10.000005,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:41",
+     "last_utc": "2024-11-12 11:17:41",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      10.000005
+     ],
+     "anchor_sig": "4DzV1DXYvGib2EC8Qq19o9X78tpVADE7nVMmifaQVFo4KdbLus4wBDR3kBK7JE1owXw6mcMxyNFdSHApVBU2M2wK"
+    },
+    {
+     "addr": "Chp7a7VExKYK1mQM4BpM8x7X5uMVbzfBjtW1Adss2ex5",
+     "total_sol": 10.000004,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:41",
+     "last_utc": "2024-11-12 11:17:41",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      10.000004
+     ],
+     "anchor_sig": "2UiERSBuBhc6y5rj8CgfMWs4kYzWWicZopka72Z7Hhf1dqniWB315y7haNiWTcGLByTJjnG9KVYJEdzofjo6yKrL"
+    },
+    {
+     "addr": "CP3Xv4WZrxDqmuPpzTZUNgYgqAcSLXrE222PmArkTS3s",
+     "total_sol": 8.876285,
+     "n": 2,
+     "first_utc": "2024-12-03 15:33:02",
+     "last_utc": "2024-12-03 15:43:39",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.219076217,
+      6.657208651
+     ],
+     "anchor_sig": "5PvksEdG8hsVyVDCc73ZsFCArLtihKSzq7rN632CGZjRrMTJKQJhjQ1zHv8m8zf9Ce1Wc1CjVcmaq6riYUBVjUQs"
+    },
+    {
+     "addr": "EyyvT3g3ZTrAyNW3sCqimUJJiG4QsAxDviApXcqF9HVY",
+     "total_sol": 8.791913,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:42",
+     "last_utc": "2024-11-12 11:17:42",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      8.791913196
+     ],
+     "anchor_sig": "44VXLUiCRsdGNQbotUL32h5A4nW7jDERxj3PfSVU5XSgtTtfiyop8zPZd1rtXB7ZWaReTdMCB2koQpdsHUoWTeGL"
+    },
+    {
+     "addr": "bNCMqf4Du2oysTvtt8WMiJaAqkX6QEkQBWVckkNntka",
+     "total_sol": 8.000022,
+     "n": 2,
+     "first_utc": "2024-12-03 15:35:49",
+     "last_utc": "2024-12-03 15:43:43",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      4.000011,
+      4.000011
+     ],
+     "anchor_sig": "2Wts3vhYfoGMTvmW9G2L8NKGugMA55rsyZQgq1yj3HnPSXq1QNH65HQFqiM7nzBq6pStxSZpL7jNByoAmd3yG1TD"
+    },
+    {
+     "addr": "4Pax5sTW2J4bN5bUf6Z7XFuTp3J33p3tz9n1wKCCfhhR",
+     "total_sol": 7.50774,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:42",
+     "last_utc": "2024-11-12 11:17:42",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      7.50773952
+     ],
+     "anchor_sig": "2jgKiXUqAqHepzQfHuvzASdeYKhrzMZQv15C7qKKpmktsuyNDTD2921fLxYETrC5XMU74j8nR7Qrw8o4jBLaHiLA"
+    },
+    {
+     "addr": "AsFZ9g9y9YjwFrXRKrZ98oizWerBunnjiNSRKDHWnok7",
+     "total_sol": 7.360019,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:43",
+     "last_utc": "2024-11-12 11:17:43",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      7.360019
+     ],
+     "anchor_sig": "2ttH213TjgvgwdoztL9VyF5YYhKmL1LUGw5WBoUMwsAuGhsvHbJnjvK5y81rGSAkT3nxfrMrJNFshvbkD4W766nZ"
+    },
+    {
+     "addr": "HW3QFtDuaGvfU8WvHhDcJj5Uzc9WhpaVoE5nvb26Vtxh",
+     "total_sol": 6.498034,
+     "n": 1,
+     "first_utc": "2024-11-12 11:17:45",
+     "last_utc": "2024-11-12 11:17:45",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      6.498034018
+     ],
+     "anchor_sig": "4iMuZ2V7jmJtcDEU9vyUWCZqtajpxkxdCqGuKsfmvhLGscZmJFS275rEY3L67XaUHXiEzNfWUV852xaQx8K2vxo"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 200,
+   "measurement_failure": "genese non atteinte : un negatif sur cette adresse est un echec de mesure",
+   "n_tx_requested": 200,
+   "level": 0
+  },
+  {
+   "addr": "v6BFsgbJ5YaYZxEgapUXi5F2AoAZFDPaZdsspvfJBhq",
+   "anchor_sig": "5yteBazFE9ZZUiVdB724Yb8SUHtrg4vftcRPiSQWYvPmC92eNWU23u9kafQfZpimtGrUPSS6SiqXUWCWgDR8YWPm",
+   "known": null,
+   "n_sigs_before_anchor": 8,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-12-13 12:18:36",
+   "newest_seen_utc": "2024-12-13 12:20:54",
+   "sources": [
+    {
+     "addr": "G2twzNaSnSnveK4Zys6usTNwG3pY8RruGaKvZycd7k2S",
+     "total_sol": 15.000015,
+     "n": 1,
+     "first_utc": "2024-12-13 12:18:36",
+     "last_utc": "2024-12-13 12:18:36",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      15.000015
+     ],
+     "anchor_sig": "2ndKVK8aCJaJL7J8a7Z3kTqqFwxQrAPxiTYPHP2u6pi9CpfkmVXQG2DkgWZybAoX7PSjrkaUjkHF58afxceHUCDt"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 8,
+   "measurement_failure": null,
+   "n_tx_requested": 8,
+   "level": 0
+  },
+  {
+   "addr": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+   "anchor_sig": "58a68PqiUveqr1ygxCKCDpgNbXVXx9SwEp7FUrJGbPCpMtgFmqMTHUA4hcLjj2TMMNYFBRngGnPZrj8QaNiizE2e",
+   "known": null,
+   "n_sigs_before_anchor": 150000,
+   "pages_paginated": 150,
+   "genesis_reached": false,
+   "pagination_capped": true,
+   "oldest_seen_utc": "2024-07-26 08:12:44",
+   "newest_seen_utc": "2024-12-12 13:21:08",
+   "sources": [
+    {
+     "addr": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+     "total_sol": 99.994005,
+     "n": 1,
+     "first_utc": "2024-07-26 10:42:20",
+     "last_utc": "2024-07-26 10:42:20",
+     "known": "Binance hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      99.994005
+     ],
+     "anchor_sig": "2uUv1RhQzQ4aDU9Bc34chJz2L9Xk9TqY1HvfhLr58g527U57H3BipsEVkeFDat3c3ELbwhjjDWPimy4aUa1yHHTi"
+    },
+    {
+     "addr": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+     "total_sol": 99.99198,
+     "n": 1,
+     "first_utc": "2024-12-12 12:23:07",
+     "last_utc": "2024-12-12 12:23:07",
+     "known": "service de swap",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      99.99198
+     ],
+     "anchor_sig": "38aX8SSdHCzLdCPgm9Ri3dk2zmrdiwL6pDrdYFk7aqsMXMxgeGePU27A9bBT1nou2vcyLovFTbmYGRmdaWPyvNbW"
+    },
+    {
+     "addr": "FG99G4f9a8VnYSxj6PPCSzStnvXZQ4ReWvzLzd1uyFk5",
+     "total_sol": 31.999083,
+     "n": 1,
+     "first_utc": "2024-12-12 11:41:09",
+     "last_utc": "2024-12-12 11:41:09",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      31.999083
+     ],
+     "anchor_sig": "4K6D2F6whQU2UiSogvb3U2YTzoDbz4HX9kp8SVvbvyj8J7c6C5d8MwaPnyqcCwsdAe7SbpVUj14qQFUtUrhJ4stf"
+    },
+    {
+     "addr": "94EeVHJVg8fpjF7DrHpJoWgNxYPKDQ57pLRzg5YJ3dep",
+     "total_sol": 19.999005,
+     "n": 1,
+     "first_utc": "2024-07-26 09:48:47",
+     "last_utc": "2024-07-26 09:48:47",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      19.999005
+     ],
+     "anchor_sig": "3h2TFLrAawoM4rkmiGiE9qsnTRy4aLs4rP3Fmw29T9JbtrrSESrcrcj8sMBagXCJZpSuhFWpRm2tvyTkqdtkepmX"
+    },
+    {
+     "addr": "5MspUFG6UR4NySqDGXk1XMo2s3gW5M9nnLDTYSWe9iXP",
+     "total_sol": 17.99904,
+     "n": 1,
+     "first_utc": "2024-12-12 12:11:08",
+     "last_utc": "2024-12-12 12:11:08",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      17.99904
+     ],
+     "anchor_sig": "4GTMSvUVC96kAJE1M3eDHsEPc1yfiBU8pdXk8rcMQQQjpx66DH5tHpHEFXLR2rfGDKDTA3uD26RWxrSZF1Va5DEt"
+    },
+    {
+     "addr": "BZJgBSQeoHwYvNWMHE1jDNBUGV5P65hWib9tJFCPRq98",
+     "total_sol": 12.835758,
+     "n": 1,
+     "first_utc": "2024-07-26 09:44:43",
+     "last_utc": "2024-07-26 09:44:43",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      12.8357584
+     ],
+     "anchor_sig": "3Xmhmh92XBkohG8kgviaBPjoLsYPhaH91JF2xCrcYqrcxGpUxTKsiTvXW1dvuRopKeYAcz3qvpbLLg7Bo4WqBqDW"
+    },
+    {
+     "addr": "2D8cmWDmF6ECsYWVcaRgvQDxG1z163FbkiR1haxPYDkd",
+     "total_sol": 9.99904,
+     "n": 1,
+     "first_utc": "2024-12-12 11:49:08",
+     "last_utc": "2024-12-12 11:49:08",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      9.99904
+     ],
+     "anchor_sig": "3vtjhdXmB7dh7343YhgTPBoUeFmomCmcP64UCbdk6fo4kr3h7JEQG2SpEpnEB89nR1Rs4eSzvF6CUcwkJvz5a4X1"
+    },
+    {
+     "addr": "D1qyTf9ZWxzaVRdc9igjBJwDRn7kMy89VtXRfAAY8YgM",
+     "total_sol": 9.350485,
+     "n": 1,
+     "first_utc": "2024-12-12 11:47:14",
+     "last_utc": "2024-12-12 11:47:14",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      9.35048507
+     ],
+     "anchor_sig": "3M8g2jEz34JDvnzG1JUpc2Pt9javeHBXHWra2G8BrTDUJ1z9SrWd7nUo4yaZMZXd1y3R6rVC28h1GB5ZLnXFPi2x"
+    },
+    {
+     "addr": "BQSrDTrFGrBPnbXypQaHJZ36JF925uwBUGe5DfNJUTk3",
+     "total_sol": 9.130959,
+     "n": 1,
+     "first_utc": "2024-12-12 11:47:12",
+     "last_utc": "2024-12-12 11:47:12",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      9.13095894
+     ],
+     "anchor_sig": "JrWrGKqdZDNYNKe2iVPUgeJ9ycjYR958dSfupKXKMyGffYKFugsG3TDVf3mBtuoaXkiEq34hCTmv8xqEsAeAS68"
+    },
+    {
+     "addr": "B2yPQ8LerLLSyiUbLqr1iiPAykUB5qw15748SH4gpRxf",
+     "total_sol": 8.99904,
+     "n": 1,
+     "first_utc": "2024-12-12 12:25:07",
+     "last_utc": "2024-12-12 12:25:07",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      8.99904
+     ],
+     "anchor_sig": "2oF78yoUawFaXw3xhy7cjMqbAPgUTtkpkfcRDLvU1ohZHUp8oXBmLHypHm6TdmfXCA2KkSPFDf76hZL32JHJjGM5"
+    },
+    {
+     "addr": "5S4BUs37pUd7YhoRMx35VEKK4z5g4TpjFwVDkmT97H8p",
+     "total_sol": 7.89904,
+     "n": 1,
+     "first_utc": "2024-12-12 12:31:08",
+     "last_utc": "2024-12-12 12:31:08",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      7.89904
+     ],
+     "anchor_sig": "5E41geztgZLfcCN45nrVhxEq3ZmNo2Q26ygdLq3Fe4YwW7kwL1rwhVkA5TZPU97cYADVQYKpYiXwMYqQrH9v7o94"
+    },
+    {
+     "addr": "3g8ohGGjMtMERu56UUXMgiS7zZb5bZAsUJZwACFYZ1Vu",
+     "total_sol": 7.349005,
+     "n": 1,
+     "first_utc": "2024-07-26 10:58:46",
+     "last_utc": "2024-07-26 10:58:46",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      7.349005
+     ],
+     "anchor_sig": "2ZGTKYkkCXRmg3z2FmBKsJ6xCpKRBmphnJjiR64N1rwmZURw9chobHxmjyBePfw3MbteEJeH2GgjUU3UQdWwSJ8b"
+    },
+    {
+     "addr": "72fQKggcyLjkPiLYPM11v8ZCUNn6Da1x35QrZrto3vhv",
+     "total_sol": 5.99904,
+     "n": 1,
+     "first_utc": "2024-12-12 11:45:13",
+     "last_utc": "2024-12-12 11:45:13",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      5.99904
+     ],
+     "anchor_sig": "5UP172oTsCsKmqt4H488fogeLzXjJuNs1GCnFwURezPRfWaQnQRByrZtCAA6e7UdfHM91CKiVFTW9Sh3kAFJcmSh"
+    },
+    {
+     "addr": "FoCh7hNqfnkdCSWuK9fYbT1UQ57Xd1h2475Y5uLFCUSc",
+     "total_sol": 4.999005,
+     "n": 1,
+     "first_utc": "2024-07-26 09:42:44",
+     "last_utc": "2024-07-26 09:42:44",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      4.999005
+     ],
+     "anchor_sig": "64UpJuUEXFoULbeSQr1sz2Fj3wfmz8E9P9pidv9bSLJRUbAamQEo1KXkJovr2CLKr9oN1BtLwEChfKqwiKQqiFri"
+    },
+    {
+     "addr": "D7spUpJDBez6av2bckT9t8RFGEYPv7UmQQQEZf3d86X2",
+     "total_sol": 3.887555,
+     "n": 1,
+     "first_utc": "2024-12-12 11:53:09",
+     "last_utc": "2024-12-12 11:53:09",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      3.88755499
+     ],
+     "anchor_sig": "25RUHwsDX45qV5NRFAMmbbsmhCkjM4TFMuLVruqRfi4DFqKSKiX6DQF8nGkawYCQuvX9Bcr2FgdJAmYjxs3JxqVE"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+     "label": "Binance hot wallet",
+     "utc": "2024-07-26 10:42:20",
+     "delta_sol": -99.994005,
+     "signature": "2uUv1RhQzQ4aDU9Bc34chJz2L9Xk9TqY1HvfhLr58g527U57H3BipsEVkeFDat3c3ELbwhjjDWPimy4aUa1yHHTi"
+    },
+    {
+     "addr": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+     "label": "service de swap",
+     "utc": "2024-12-12 12:23:07",
+     "delta_sol": -99.99198,
+     "signature": "38aX8SSdHCzLdCPgm9Ri3dk2zmrdiwL6pDrdYFk7aqsMXMxgeGePU27A9bBT1nou2vcyLovFTbmYGRmdaWPyvNbW"
+    }
+   ],
+   "n_tx_inspected": 200,
+   "measurement_failure": "genese non atteinte : un negatif sur cette adresse est un echec de mesure",
+   "n_tx_requested": 200,
+   "level": 0
+  },
+  {
+   "addr": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v",
+   "anchor_sig": "DzvXawfafGCVf3EeiPvAyrebUo78KNcwNvSYRfttr2o8dSwBxjZXPbDzAHnbzraTnR1nF17KYsjp5iDsMYJZeV5",
+   "known": null,
+   "n_sigs_before_anchor": 2,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-12-13 13:56:45",
+   "newest_seen_utc": "2024-12-13 14:01:19",
+   "sources": [
+    {
+     "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+     "total_sol": 10.587826,
+     "n": 1,
+     "first_utc": "2024-12-13 13:56:45",
+     "last_utc": "2024-12-13 13:56:45",
+     "known": "service de swap G2Y (cible de l'enquete)",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      10.587826
+     ],
+     "anchor_sig": "5Yef1gQAUDb6yubfLKVR2VkHH9DSBRCAS559GHje4mPBqwXfmnesPTAtobXv5aamNXY5GMvsJYrKVkyEoBk3iZjW"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+     "label": "service de swap G2Y (cible de l'enquete)",
+     "utc": "2024-12-13 13:56:45",
+     "delta_sol": -10.587826,
+     "signature": "5Yef1gQAUDb6yubfLKVR2VkHH9DSBRCAS559GHje4mPBqwXfmnesPTAtobXv5aamNXY5GMvsJYrKVkyEoBk3iZjW"
+    }
+   ],
+   "n_tx_inspected": 2,
+   "measurement_failure": null,
+   "n_tx_requested": 2,
+   "level": 0
+  },
+  {
+   "addr": "HjjbrpUSkGeJ5tFZj2i96gBq7WtNjbPq13kLPkDhZ6Q9",
+   "anchor_sig": "256t4BRTVZEkMGyyHjkyj7G8Zststf7t4C8zBtcdHC5AN2jFdowUft4uEH9cxFnuCEscfkTvRxRJszxbatvy5QUr",
+   "known": null,
+   "n_sigs_before_anchor": 922,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-09-16 20:04:43",
+   "newest_seen_utc": "2024-12-03 15:29:45",
+   "sources": [
+    {
+     "addr": "6xGJa1S5HYkAnxcfbsvvTJ2UcjHjZ8E9j7Q1YdSy8Zg6",
+     "total_sol": 192.380923,
+     "n": 34,
+     "first_utc": "2024-11-29 19:28:49",
+     "last_utc": "2024-12-03 15:14:42",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.220015,
+      0.240015,
+      0.350015,
+      0.484015,
+      0.500015,
+      0.550015,
+      0.560015,
+      0.650015,
+      0.700015,
+      0.720015,
+      0.840015,
+      1.000015
+     ],
+     "anchor_sig": "5t1t9L5M3qraLrDcrfbCY1Lm7frZiwmvjmZYoVPyeSMKFosKo1sSXhGy7SDDUvmzmm2XUoG9XkvAtGbDTBkxLXmF"
+    },
+    {
+     "addr": "32TcDrFkQ7aAgNKGKS3xeCqgSkUDnmC1Hr5BD5EWdmEa",
+     "total_sol": 125.824665,
+     "n": 16,
+     "first_utc": "2024-10-01 02:00:32",
+     "last_utc": "2024-10-02 09:28:53",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.880015,
+      5.074439899,
+      6.060015,
+      6.150015,
+      6.170015,
+      6.170015,
+      6.175015,
+      6.180015,
+      6.190015,
+      6.195015,
+      6.740015,
+      7.730015
+     ],
+     "anchor_sig": "4oXHtfyFU42Mb9gubpmqMZtaYKnStAXmiMzGmHY4TDjTiMDq3kmuYwhDUcbyWDxFPAYBRr8f7oPfhQhtQqx2KcFo"
+    },
+    {
+     "addr": "3YUE3bMFFXFrbU2VRRe9H53JE64myQt9z3MmJMroK97C",
+     "total_sol": 84.000015,
+     "n": 1,
+     "first_utc": "2024-12-03 15:27:48",
+     "last_utc": "2024-12-03 15:27:48",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      84.000015
+     ],
+     "anchor_sig": "2EJn4PhRn2t7AgnjWFei761tUcsyg7QPMjgMtXd5gMEffoA1uvsCEuqV7MbFdMDfEGVbxzse4Zbni5TmANhtVC6D"
+    },
+    {
+     "addr": "7Uis1s25i2HP4Qm1gEY7gv2fannshgB5mFXtnY8euguL",
+     "total_sol": 78.220105,
+     "n": 7,
+     "first_utc": "2024-10-03 07:07:02",
+     "last_utc": "2024-10-03 09:28:11",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      10.000015,
+      10.000015,
+      10.200015,
+      10.320015,
+      10.800015,
+      10.900015,
+      16.000015
+     ],
+     "anchor_sig": "4sY4t2s43wqnPiFbmZ6PNTWCyU4P5t5QBUjrReSHkt8ScEVBvLPb111WoqUbiAkEChqFQZbVsiNBJEhQoS1xUHDi"
+    },
+    {
+     "addr": "Fo1Drx1ix2QVVsRwnPqiKmsTyJCLq5qUbjojMQv6fFTt",
+     "total_sol": 25.08006,
+     "n": 4,
+     "first_utc": "2024-10-02 08:20:16",
+     "last_utc": "2024-12-01 20:31:15",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.150015,
+      6.400015,
+      7.250015,
+      10.280015
+     ],
+     "anchor_sig": "22KJw1dzqnZHXHhStzBXV6PSrzjmWfBiRQxb88BjcJiJ3dTsji8FYt57W9EYmWS2JBDYN269Q2h7kMiJeWFQtDLf"
+    },
+    {
+     "addr": "E5MMARfNNFpmvBbyskRxhryXsZY2F4XZBBvWJuZiZE6P",
+     "total_sol": 13.287881,
+     "n": 5,
+     "first_utc": "2024-09-16 20:04:43",
+     "last_utc": "2024-09-23 09:57:37",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.500015,
+      0.537820819,
+      1.200015,
+      3.730015,
+      7.320015
+     ],
+     "anchor_sig": "3wvsFKsbjKKtN3Z1SMH2nEtwWLFcjhbJhBgsfhpJUX3GnbmC2jskzN7xqxGACb4JJzrqmDbBJvmwPUYThQononhb"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 200,
+   "measurement_failure": null,
+   "n_tx_requested": 200,
+   "level": 1
+  },
+  {
+   "addr": "CAjprFFubteH7cmoXJu8gzAMcq6jof5aNfL64DT1scAm",
+   "anchor_sig": "2ApK4nTRXf8eJ2sKELAGEhTuAKLBbN2s3hMBgu2id1us8efE8imCNjcx6VbhJ3nJSsDqr7gGHRvjgGxwfzuXUL3D",
+   "known": null,
+   "n_sigs_before_anchor": 46,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-11-25 00:01:42",
+   "newest_seen_utc": "2024-12-03 15:29:40",
+   "sources": [
+    {
+     "addr": "3k7jqrPt5zzx2N9myZnMLXQRZBK81gVxEc5cA7dF4Tsk",
+     "total_sol": 132.490105,
+     "n": 7,
+     "first_utc": "2024-11-25 20:55:39",
+     "last_utc": "2024-12-03 15:28:29",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      4.500015,
+      5.000015,
+      8.700015,
+      21.590015,
+      22.000015,
+      26.000015,
+      44.700015
+     ],
+     "anchor_sig": "488T4nK1YfQb5StkGxAvcKAhvSfVaU8J6xJrsQkeKT9TnMsnN9eqHPCJkc6cjUi5YcYi5XkWVyzZfHwECpp69gwg"
+    },
+    {
+     "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+     "total_sol": 106.418725,
+     "n": 2,
+     "first_utc": "2024-11-25 00:02:54",
+     "last_utc": "2024-11-30 00:44:10",
+     "known": "Coinbase hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      23.363765765,
+      83.054958846
+     ],
+     "anchor_sig": "3bHQzBZmz83596FCMTrP8LhTax4u4RsgNwUGKw1hu1swZ8P5ERhADPTkLx5c3k4cqwJPCRMhFJaMsykERdkfmY7t"
+    },
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "total_sol": 82.137415,
+     "n": 1,
+     "first_utc": "2024-11-29 21:17:30",
+     "last_utc": "2024-11-29 21:17:30",
+     "known": "Coinbase 2",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      82.13741521
+     ],
+     "anchor_sig": "4iK1L7HMJTxwGEgYLRWjR26FLbXZ7aFSRRfVBnbYmqS9XpTgrf9JvTJpzKDUQEhxTWmsxz9EnM88vmTEqWrooPzG"
+    },
+    {
+     "addr": "rJgbYDTANCYRXueCUrSc7TDD7B71dmAo3FNfBcWTHhL",
+     "total_sol": 81.100045,
+     "n": 3,
+     "first_utc": "2024-11-26 23:20:07",
+     "last_utc": "2024-12-03 04:01:16",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      13.100015,
+      23.000015,
+      45.000015
+     ],
+     "anchor_sig": "4JVoB1ZTqKUJBcQ4m3J7aGf6r2K1UNjSzBrXfwiDcJHrogoxhfCGBHGwzrkdyigmwhNGfRPJ88JtCN2Wkfohojb3"
+    },
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "total_sol": 44.702291,
+     "n": 2,
+     "first_utc": "2024-11-29 21:15:07",
+     "last_utc": "2024-12-01 12:49:35",
+     "known": "Coinbase hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.410436165,
+      44.291854969
+     ],
+     "anchor_sig": "H9yXpuySSaK1osFfCHiS8q1UFeUuxnWxbPzZ5UFXpM1p9Tb5rchQHZR7y8UbDSuNyD1aKGenFdvQ2TzAVvdwZmy"
+    },
+    {
+     "addr": "D89hHJT5Aqyx1trP6EnGY9jJUB3whgnq3aUvvCqedvzf",
+     "total_sol": 0.395876,
+     "n": 1,
+     "first_utc": "2024-11-25 00:01:42",
+     "last_utc": "2024-11-25 00:01:42",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.395876355
+     ],
+     "anchor_sig": "FuGha2JZFwUHvR2z5nBnPhixDvUqAPJ2P5DziQoFeNWHSC3awPdSNgA1n1UKZp2PfiJnuFBUtz5aemgZaqFQcwd"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-12-01 12:49:35",
+     "delta_sol": -44.291854969,
+     "signature": "3eewF21wt83dsFWhKZnNLK3M9vvSespkV4gP6vcK4zTP5pt1pH1YTjukeC4PxNhqUH93tGM7Ddeh54BAZBx7AZXR"
+    },
+    {
+     "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-11-30 00:44:10",
+     "delta_sol": -83.054958846,
+     "signature": "nB6SqpdaZi8eFzdF9dgjFVNj2bjLBCgBA9YQFk83rGmJ5Gncs38e41pNpvjg1hkFMkcfW5Kuyp5d8JxPdiaM2h6"
+    },
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "label": "Coinbase 2",
+     "utc": "2024-11-29 21:17:30",
+     "delta_sol": -82.13741521,
+     "signature": "4iK1L7HMJTxwGEgYLRWjR26FLbXZ7aFSRRfVBnbYmqS9XpTgrf9JvTJpzKDUQEhxTWmsxz9EnM88vmTEqWrooPzG"
+    }
+   ],
+   "n_tx_inspected": 46,
+   "measurement_failure": null,
+   "n_tx_requested": 46,
+   "level": 1
+  },
+  {
+   "addr": "G2twzNaSnSnveK4Zys6usTNwG3pY8RruGaKvZycd7k2S",
+   "anchor_sig": "2ndKVK8aCJaJL7J8a7Z3kTqqFwxQrAPxiTYPHP2u6pi9CpfkmVXQG2DkgWZybAoX7PSjrkaUjkHF58afxceHUCDt",
+   "known": null,
+   "n_sigs_before_anchor": 35,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-12-02 20:15:54",
+   "newest_seen_utc": "2024-12-04 04:02:12",
+   "sources": [
+    {
+     "addr": "B7SBBPKvxhn8mpBo9y84einXkxxjb8JZWhyMaCHEhqQv",
+     "total_sol": 12.250342,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      12.250342072
+     ],
+     "anchor_sig": "43VMYiENQPSkmD2KRdK2PnacRgndKtVwJHZD6s5iZxqskEthY8NUwreiR9qRSwesm1qazgHiEoBngo9fqCfEtpvT"
+    },
+    {
+     "addr": "D5F1Ut43zde27u9FaM1anDAithNXeEKStK7xAZEWDnjH",
+     "total_sol": 11.998486,
+     "n": 2,
+     "first_utc": "2024-12-02 20:16:50",
+     "last_utc": "2024-12-02 20:24:23",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.068475867,
+      9.93001
+     ],
+     "anchor_sig": "66xrF84KV8msjwbaAsbixEHTC4QyoqQSom48GbNEA5gN6SnDRZ7T6SfCPesLcvXCnAFP26fLCPVfcTok9mhMbzsZ"
+    },
+    {
+     "addr": "6xd5PxL3DVvVjaeLVXkLAamZLvrV3LQsmXkNy8B5u3x6",
+     "total_sol": 8.149354,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      8.149353789
+     ],
+     "anchor_sig": "34ZAbPnXXMvNescbrseAj4LL4jLefoccx2aBYV9spmPqvEvQFx5otZiXwiWBA6bJHQ1Ya676WegVQaTFWKYCmtDv"
+    },
+    {
+     "addr": "6rCiCUWzVfQ3hjow75v7TA9UphQsZpgp3CdzHmv3oqvv",
+     "total_sol": 5.053311,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      5.053310969
+     ],
+     "anchor_sig": "ErGxNePn7P4mnMLvoXdKXsA66wWn9zySZWDWPzA7JW15juWFTZaJUjiRC9WVmeUKUuqCEewScEFDwruCRVuy1gk"
+    },
+    {
+     "addr": "5e7btJuwgMpLQvkWNAuEQw1koB2HAW4nVeMHJy2o2bAp",
+     "total_sol": 5.000003,
+     "n": 1,
+     "first_utc": "2024-12-02 20:17:25",
+     "last_utc": "2024-12-02 20:17:25",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      5.000003
+     ],
+     "anchor_sig": "5avVTWaE2qgdJCkrsd7wPMAvSJdpjgYiEif3TBVicaT1vuwatNVkMgD9ober7Rpjfkq4sxAWxw2QYFXXWAVFADuA"
+    },
+    {
+     "addr": "GKazAWhGbs9etRiS83XSmszTKZTMuMW6SWzgJrgRnMaa",
+     "total_sol": 4.791166,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      4.791165699
+     ],
+     "anchor_sig": "31ETmkvG2EYf833A6vmCHKk9teyS7CEbYrDh2auKMfzk7rY4DZ6AkeVJsdCSc5LnPJLCM1X8xGyjrSjhUgannouQ"
+    },
+    {
+     "addr": "Ap8LLSAU9Cq2naCjGKpnLyJbtgcMtwETvmATYVd53yQK",
+     "total_sol": 1.883199,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.883198647
+     ],
+     "anchor_sig": "5ERqBuyGpkDSCHk9jzGgLTLiJqsZuPBqkmBbHRmvdaXw4UfrF2upKWbEpiui9juMWpNb29bvBJpH9Z6Emdss4Gze"
+    },
+    {
+     "addr": "G5VXP2coPb7baKDvb82wFjZ1Wt1XZtYRq3SkKWDHukZ5",
+     "total_sol": 1.480052,
+     "n": 1,
+     "first_utc": "2024-12-02 20:15:54",
+     "last_utc": "2024-12-02 20:15:54",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.48005199
+     ],
+     "anchor_sig": "2ctTgBy6Ga6q46EWPVXxh5G2gvMTXE1Xr3QeAqAeppNxtzRYHWWLWZh19aU9KF9VQYvRKkFrtG4kigUnVqpHTc8U"
+    },
+    {
+     "addr": "3EKpkEAsdezGwETRuKxvnPZX3VJf9iWLu9eRgM4BizhP",
+     "total_sol": 1.292008,
+     "n": 1,
+     "first_utc": "2024-12-02 20:22:44",
+     "last_utc": "2024-12-02 20:22:44",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.292008363
+     ],
+     "anchor_sig": "26Hscw9hGj2XJZFwwe6AaxLtdzgeEautn1CPiCJ9F1ANS4sdqohSBFqUk13DGvxqsjGnxKSYbMQRCA9cp6Qa6sPK"
+    },
+    {
+     "addr": "EHRxYHcQtV1rzNZQjVXyBYwyRUpgcVqqXVepJzVj2YVG",
+     "total_sol": 0.999999,
+     "n": 1,
+     "first_utc": "2024-12-02 20:17:08",
+     "last_utc": "2024-12-02 20:17:08",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.999999202
+     ],
+     "anchor_sig": "5RtTgaBM6xMPz9B8ou4ceumZonkwLaRNaHy2vx6J5qQqwbwU3xFwDTiTUWg7MRsCBJWe7wZZgpCWLskNpmfUvK2D"
+    },
+    {
+     "addr": "GZmHZWGxWJJTeBcH3ZKnrvUED7GmqoeU8TysAgHLicmK",
+     "total_sol": 0.519952,
+     "n": 1,
+     "first_utc": "2024-12-02 20:36:10",
+     "last_utc": "2024-12-02 20:36:10",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.51995151
+     ],
+     "anchor_sig": "5gJHy7PFJBY4Ry7QpJhLKULVnCJxWg3BqfDkjt1iqiS6H6z9yjy9bu6qEfH7vmDjJXzXQBx34TGjB5t7AbwbyrVm"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 35,
+   "measurement_failure": null,
+   "n_tx_requested": 35,
+   "level": 1
+  },
+  {
+   "addr": "6xGJa1S5HYkAnxcfbsvvTJ2UcjHjZ8E9j7Q1YdSy8Zg6",
+   "anchor_sig": "5t1t9L5M3qraLrDcrfbCY1Lm7frZiwmvjmZYoVPyeSMKFosKo1sSXhGy7SDDUvmzmm2XUoG9XkvAtGbDTBkxLXmF",
+   "known": null,
+   "n_sigs_before_anchor": 1999,
+   "pages_paginated": 2,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2021-09-09 17:36:22",
+   "newest_seen_utc": "2024-11-29 19:28:36",
+   "sources": [
+    {
+     "addr": "DQyrAcCrDXQ7NeoqGgDCZwBvWDcYmFCjSb9JtteuvPpz",
+     "total_sol": 516.230108,
+     "n": 2,
+     "first_utc": "2021-09-10 08:17:01",
+     "last_utc": "2021-09-10 19:36:59",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      11.816763031,
+      504.413344601
+     ],
+     "anchor_sig": "35XMutDLpfWZPjE6ZVHk7oeYSJjUe6ZY3gChH6gTbeaemt5hvULz2tJVMBSn3aj5fxMyzTE9jv611xsQHY7UetJ9"
+    },
+    {
+     "addr": "2ojv9BAiHUrvsm9gxDe7fJSzbNZSJcxZvf8dqmWGHG8S",
+     "total_sol": 319.841698,
+     "n": 1,
+     "first_utc": "2021-09-09 17:36:22",
+     "last_utc": "2021-09-09 17:36:22",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      319.84169823
+     ],
+     "anchor_sig": "5MD2pe8rf28q131u8YefMaTvbkGEhqJwgVh8Z7NCLXoKRjQxKwSSNjQRUmg5nqpoMvP8GMSBVMn6oo3qovqL7e2s"
+    },
+    {
+     "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+     "total_sol": 119.000941,
+     "n": 3,
+     "first_utc": "2024-11-28 23:48:19",
+     "last_utc": "2024-11-29 17:19:33",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.180831,
+      5.391105,
+      111.429005
+     ],
+     "anchor_sig": "623GaLfvVX1wZ6wqSgZSzirmTyQKVbQrx3Qcu9bNGtR4H153VMaZ4XmRGsafXVsiQN1wdQuGFsNZ35q4phC85T9Z"
+    },
+    {
+     "addr": "6wK3dgKvCbNoYQuXMzNnMJgth9SkxnMMyk1Y4hHYL1We",
+     "total_sol": 30.420005,
+     "n": 1,
+     "first_utc": "2021-10-31 07:57:26",
+     "last_utc": "2021-10-31 07:57:26",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      30.420005
+     ],
+     "anchor_sig": "3xjUtWwhS7YjtFsqTB8dpUYjDEx2So6yPLTKJqPC72NrtNcgK4QBJT2MNvKsh8RVxqDQTaC3Ny5SXUtkfyww7MYb"
+    },
+    {
+     "addr": "FGwxtBiPwAA6Q8okJyPTTA93j45u9CRDcsA4ASAJCTR7",
+     "total_sol": 9.718072,
+     "n": 7,
+     "first_utc": "2024-11-29 02:39:35",
+     "last_utc": "2024-11-29 18:27:38",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.274168177,
+      0.481875719,
+      0.596279009,
+      0.98001434,
+      1.183637947,
+      2.030884859,
+      4.171211579
+     ],
+     "anchor_sig": "eC2CZHNoB2RBkH6ver5XDGWWrZBQoyohqf5jNHR6HuQbNyEa5szQbuxfzQPUhsCCzbUcW8rTwxqCUV7hwYvVtde"
+    },
+    {
+     "addr": "97yfAMrSRhvShvYtTuZNqU6taQELaiY44hsLc2ey4XgW",
+     "total_sol": 6.291369,
+     "n": 3,
+     "first_utc": "2024-11-29 18:27:01",
+     "last_utc": "2024-11-29 19:28:36",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.335347302,
+      2.706570917,
+      3.249450637
+     ],
+     "anchor_sig": "2Lpwg2jVk24TPAZFdKPRNgAVAs3kPsHhEfU7pjbEgUsatjNTnzKGi7E5zqzxa8PnB1F9uQeYC1mSuiwBpcqazkSX"
+    },
+    {
+     "addr": "4zsXU6HHuD4qcGQjuweeo9cPNNRWTHt6fzqoUV8KbpbJ",
+     "total_sol": 4.848471,
+     "n": 3,
+     "first_utc": "2024-11-29 07:49:02",
+     "last_utc": "2024-11-29 08:09:20",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.895114437,
+      1.31287477,
+      2.640481395
+     ],
+     "anchor_sig": "4dhEwcFBN2JiEWCmVXqoW9px2iySHhEfe2hNNjHtoxWLMDJCNjafPT6xzBByujtHceWcAv857PpoXuP1GzcmpY9a"
+    },
+    {
+     "addr": "FqxnSEGKpj7mQ7P3B3riAvDKd4sBNtHAmEsux7r5K6C9",
+     "total_sol": 4.0,
+     "n": 1,
+     "first_utc": "2021-10-10 04:59:23",
+     "last_utc": "2021-10-10 04:59:23",
+     "known": null,
+     "calibres": [
+      "rond_SOL"
+     ],
+     "amounts_sol": [
+      4.0
+     ],
+     "anchor_sig": "62tA6MScu1nhKDcjZUKdr5B4rmsWzVcrnpQtX2MkWiJrF7sQZVFxwsSGRx4yavBZBRkBYsKLCozep8nD2sZXnyB2"
+    },
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "total_sol": 3.998837,
+     "n": 1,
+     "first_utc": "2024-11-29 01:43:24",
+     "last_utc": "2024-11-29 01:43:24",
+     "known": "Coinbase hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      3.998836872
+     ],
+     "anchor_sig": "5PBKMQN9iPuRuRGsxHniw1zwK3uyhwSmpBJrL4vz7ZxS1NxBFvRivg4J8tUHa2DYXZDchmeNjkG662JjmDRVVmjn"
+    },
+    {
+     "addr": "9obNtb5GyUegcs3a1CbBkLuc5hEWynWfJC6gjz5uWQkE",
+     "total_sol": 1.735206,
+     "n": 1,
+     "first_utc": "2024-11-29 19:02:18",
+     "last_utc": "2024-11-29 19:02:18",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.735205535
+     ],
+     "anchor_sig": "M7Mp1PFAMcCgQhZUm9BD4Ds6ZExiFCnQbU5ihrvdXGMzWN5F547xcnibCD6JhLx6eXkqYp475u5xjqeX7qMZo4Y"
+    },
+    {
+     "addr": "Ci6XLtHFXDnmjqAqk6gKnvcphTx3Qhy55QUVkCwVm2Gt",
+     "total_sol": 0.80093,
+     "n": 1,
+     "first_utc": "2024-11-29 02:22:49",
+     "last_utc": "2024-11-29 02:22:49",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.80093005
+     ],
+     "anchor_sig": "2sn3FgvPhhuf9yeQbGcCPFT8XffH5L3SYZLreRQ6p53AxsWsicH8yd4DnPioVBwi7g3Gsi2idTEqTnkAxHN3Mzzy"
+    },
+    {
+     "addr": "6sUQ9re5qTSet7MivmGiqeBH1fz6viBxDu2KnP8GHfmd",
+     "total_sol": 0.343031,
+     "n": 1,
+     "first_utc": "2024-11-29 18:26:48",
+     "last_utc": "2024-11-29 18:26:48",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.343031194
+     ],
+     "anchor_sig": "vXGQpQoSqxBfQ4dKSuR1tQeec7hcUNdcy56w9yCG1tWsovbnJBNAHkTGJFGbQNuXQ9nkqfR8xtJksFCEkEK1vvL"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-11-29 01:43:24",
+     "delta_sol": -3.998836872,
+     "signature": "5PBKMQN9iPuRuRGsxHniw1zwK3uyhwSmpBJrL4vz7ZxS1NxBFvRivg4J8tUHa2DYXZDchmeNjkG662JjmDRVVmjn"
+    }
+   ],
+   "n_tx_inspected": 200,
+   "measurement_failure": null,
+   "n_tx_requested": 200,
+   "level": 2
+  },
+  {
+   "addr": "32TcDrFkQ7aAgNKGKS3xeCqgSkUDnmC1Hr5BD5EWdmEa",
+   "anchor_sig": "4oXHtfyFU42Mb9gubpmqMZtaYKnStAXmiMzGmHY4TDjTiMDq3kmuYwhDUcbyWDxFPAYBRr8f7oPfhQhtQqx2KcFo",
+   "known": null,
+   "n_sigs_before_anchor": 1,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-10-01 01:59:41",
+   "newest_seen_utc": "2024-10-01 01:59:41",
+   "sources": [
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "total_sol": 6.152229,
+     "n": 1,
+     "first_utc": "2024-10-01 01:59:41",
+     "last_utc": "2024-10-01 01:59:41",
+     "known": "Coinbase hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      6.152229221
+     ],
+     "anchor_sig": "2rnhn1cD3JChstqkqEJ2bKSewsEoeoZjDSvU2uRwbRNXd5rurUHRqh2jf3ocHbZtrAxGx3fQEEfRaQ9Jzws33dFS"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-10-01 01:59:41",
+     "delta_sol": -6.152229221,
+     "signature": "2rnhn1cD3JChstqkqEJ2bKSewsEoeoZjDSvU2uRwbRNXd5rurUHRqh2jf3ocHbZtrAxGx3fQEEfRaQ9Jzws33dFS"
+    }
+   ],
+   "n_tx_inspected": 1,
+   "measurement_failure": null,
+   "n_tx_requested": 1,
+   "level": 2
+  },
+  {
+   "addr": "3k7jqrPt5zzx2N9myZnMLXQRZBK81gVxEc5cA7dF4Tsk",
+   "anchor_sig": "488T4nK1YfQb5StkGxAvcKAhvSfVaU8J6xJrsQkeKT9TnMsnN9eqHPCJkc6cjUi5YcYi5XkWVyzZfHwECpp69gwg",
+   "known": null,
+   "n_sigs_before_anchor": 100,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-11-13 20:02:00",
+   "newest_seen_utc": "2024-11-25 12:20:57",
+   "sources": [
+    {
+     "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+     "total_sol": 47.83161,
+     "n": 2,
+     "first_utc": "2024-11-25 00:13:12",
+     "last_utc": "2024-11-25 05:12:53",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.395605,
+      47.436005
+     ],
+     "anchor_sig": "5PaxURx8g65Am1gk7QkKpxLahjfd3XwX9inKXmN2zmaMNB9LzjCdtUaC5tCC2HX1FkvAmvBw6svcfbgA1LuXDTnq"
+    },
+    {
+     "addr": "D89hHJT5Aqyx1trP6EnGY9jJUB3whgnq3aUvvCqedvzf",
+     "total_sol": 29.797583,
+     "n": 1,
+     "first_utc": "2024-11-20 07:03:17",
+     "last_utc": "2024-11-20 07:03:17",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      29.797582831
+     ],
+     "anchor_sig": "3nXobqQP5czC1okCuSE9dUScoCxqWnb5xZ4XRsS6L4JUQhDiaMPavHeWNJoifMxUcRcVRSfiddQw1tFsfuobWVS4"
+    },
+    {
+     "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+     "total_sol": 23.553278,
+     "n": 1,
+     "first_utc": "2024-11-13 20:03:22",
+     "last_utc": "2024-11-13 20:03:22",
+     "known": "Coinbase hot wallet",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      23.553278429
+     ],
+     "anchor_sig": "2wNNfNDjcwGcFtw19GnvYVAeFnPZ3KyWLkMcQqontkP4JDcDHjT1TZsZxGGjXoopzR9bG6XJRWVp2m4W1FpsNNDE"
+    },
+    {
+     "addr": "GP6zsX71TqMyprJeZJyUoSxJwcatdgXVqxJirGtHQMCm",
+     "total_sol": 3.197844,
+     "n": 1,
+     "first_utc": "2024-11-21 04:40:14",
+     "last_utc": "2024-11-21 04:40:14",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      3.197843672
+     ],
+     "anchor_sig": "25shfy7qJxp64nUSN4jHMfAMnyN8A4q8kRfLEjiWEcYTajeR7bbt8ob9aN6rr91cE8uxRBxmxo9Ve6aaCfg7P6Ek"
+    },
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "total_sol": 0.474195,
+     "n": 1,
+     "first_utc": "2024-11-13 20:02:00",
+     "last_utc": "2024-11-13 20:02:00",
+     "known": "Coinbase 2",
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.474194809
+     ],
+     "anchor_sig": "672oJ5ewyNW9zDG3Lzbp7iT758aK2VF57wWCGZHncZVwvUTzcjCrGDexdJgRgnGrqsfXjj8jvfR6jhW6sT7eo8Kq"
+    },
+    {
+     "addr": "37PmLbYVdBmh3zttWmTvRH9fVpqg5frRzDwRViCKwc8p",
+     "total_sol": 0.266359,
+     "n": 1,
+     "first_utc": "2024-11-25 05:09:50",
+     "last_utc": "2024-11-25 05:09:50",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.26635912
+     ],
+     "anchor_sig": "4Q26SuedM6YmBCWojSnVv4xqLxARmonwAUUtNRLS6S9EsnrxCfjFpD1TBbzwe4UY4FQsqq3xVZ4pFnBaE8zETJuV"
+    },
+    {
+     "addr": "958hjyoKpbem2M6snUXtsn5uiw1hwi1RBcGaHE5xGqKS",
+     "total_sol": 0.229777,
+     "n": 1,
+     "first_utc": "2024-11-25 04:16:45",
+     "last_utc": "2024-11-25 04:16:45",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.22977718
+     ],
+     "anchor_sig": "qfhBZCNn4aMbBasHJenB5sULnP2GJGEaDedBQCZiS25JM19gL6ybfNxVxFcwvhx6RNKXA6s3sec1CWEePyRH1Ji"
+    }
+   ],
+   "known_counterparties": [
+    {
+     "addr": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm",
+     "label": "Coinbase hot wallet",
+     "utc": "2024-11-13 20:03:22",
+     "delta_sol": -23.553278429,
+     "signature": "2wNNfNDjcwGcFtw19GnvYVAeFnPZ3KyWLkMcQqontkP4JDcDHjT1TZsZxGGjXoopzR9bG6XJRWVp2m4W1FpsNNDE"
+    },
+    {
+     "addr": "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE",
+     "label": "Coinbase 2",
+     "utc": "2024-11-13 20:02:00",
+     "delta_sol": -0.474194809,
+     "signature": "672oJ5ewyNW9zDG3Lzbp7iT758aK2VF57wWCGZHncZVwvUTzcjCrGDexdJgRgnGrqsfXjj8jvfR6jhW6sT7eo8Kq"
+    }
+   ],
+   "n_tx_inspected": 100,
+   "measurement_failure": null,
+   "n_tx_requested": 100,
+   "level": 2
+  },
+  {
+   "addr": "B7SBBPKvxhn8mpBo9y84einXkxxjb8JZWhyMaCHEhqQv",
+   "anchor_sig": "43VMYiENQPSkmD2KRdK2PnacRgndKtVwJHZD6s5iZxqskEthY8NUwreiR9qRSwesm1qazgHiEoBngo9fqCfEtpvT",
+   "known": null,
+   "n_sigs_before_anchor": 129,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-11-20 11:11:22",
+   "newest_seen_utc": "2024-12-02 19:56:53",
+   "sources": [
+    {
+     "addr": "FSL7sh6efB9vEC1LaesNHNY6byLBj3PuDACi3zUvfkB9",
+     "total_sol": 4.10457,
+     "n": 5,
+     "first_utc": "2024-12-02 19:26:09",
+     "last_utc": "2024-12-02 19:49:08",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.55420005,
+      0.564045757,
+      0.632437635,
+      1.097667422,
+      1.256218695
+     ],
+     "anchor_sig": "5Q3uZfUy8Ym8ERAwtfKsBSSVhCHA2iVawawV95iyTNG8vBtZtJccquewLmVYJazgKTEdjzuhE7R9sQe8NNEh8ZPK"
+    },
+    {
+     "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+     "total_sol": 4.00001,
+     "n": 2,
+     "first_utc": "2024-11-20 11:11:22",
+     "last_utc": "2024-11-22 13:54:28",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.000005,
+      2.000005
+     ],
+     "anchor_sig": "2XcpeKT45TGgmY51BhuGxbaQtCmtxJiHfsHQA9CCSrzSy6QqZ9n9xRmuPqV8qLTfMnpKWMLDXrqghmqtyCwiBuhC"
+    },
+    {
+     "addr": "JtE2T5Ghcga1sAAS1ya78cqYfs62zTTRFA9PBCyDM5C",
+     "total_sol": 3.742627,
+     "n": 3,
+     "first_utc": "2024-12-01 19:48:43",
+     "last_utc": "2024-12-01 19:55:34",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.848548209,
+      1.077320845,
+      1.816757787
+     ],
+     "anchor_sig": "3kGx6AUaC5z1jRiNey23RKgKNd7RnLCFcXiwrA8UB4sh7rYKsQARPDFJ3MUDd1xC3xqXT5V9V1guAmwZjXtc7ggs"
+    },
+    {
+     "addr": "wbDRtn61hpvS5dzXYSBdE1KR84dRbVmH9SeNn5Ego9o",
+     "total_sol": 3.626512,
+     "n": 9,
+     "first_utc": "2024-11-26 15:41:03",
+     "last_utc": "2024-11-26 15:46:04",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.218857983,
+      0.25497948,
+      0.298788844,
+      0.312881605,
+      0.324344651,
+      0.413469442,
+      0.481142168,
+      0.582428159,
+      0.739619631
+     ],
+     "anchor_sig": "5k73aKjq6M3ZBty2wxxBJU5x8cykxaQVSJmexZ5j3yvRjGW6r6WbK6oans3gwSpUYbtp1KJhBiyE1irKrNoqCFSm"
+    },
+    {
+     "addr": "BTsSp4TpMT1rMpic7CXfVQefCv1hqsEb1uRU1G68L3Wi",
+     "total_sol": 2.376115,
+     "n": 3,
+     "first_utc": "2024-11-22 14:21:30",
+     "last_utc": "2024-11-22 14:39:59",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.558207424,
+      0.770355371,
+      1.047552261
+     ],
+     "anchor_sig": "4mru5xR8i8Cg3gZXF1qA4wHX1ZDzbR3V9STJM6ov2gTkwd2FS4w8STMjafXSwfrDMLETMdssQa4gFgTU3RcUt5Dv"
+    },
+    {
+     "addr": "CSVHnsk8fj7FE1DRXpVejc5nmjh3DCx1KX3oBVSq7VXt",
+     "total_sol": 1.559089,
+     "n": 1,
+     "first_utc": "2024-12-01 18:32:43",
+     "last_utc": "2024-12-01 18:32:43",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.55908856
+     ],
+     "anchor_sig": "5jQCL3vPiAxh81M6uHpivXDuwoaz9aQ2E3MqcJ2KAk9Pxix9Zix8ShsfmCDJoy9AZckqY2WeHmDUwbyPA1Gv9WBz"
+    },
+    {
+     "addr": "C2vVSUDZWeQM6HLTa2HgyRdVsbN86R67XW2ZEbzZN55M",
+     "total_sol": 1.031983,
+     "n": 1,
+     "first_utc": "2024-12-02 19:56:53",
+     "last_utc": "2024-12-02 19:56:53",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.031982971
+     ],
+     "anchor_sig": "3SuLTYPZ24pmK867THyXAoei8JH51hAoRUBvmbLisTuUUYf4kZuer8c6uDX9bWgDPsfuq7SGF7r5d2z44NQi3H4U"
+    },
+    {
+     "addr": "B9JzDkdGRBumkweSHrXaFGAFdKsSqPWu5cke2p46FuYS",
+     "total_sol": 0.650001,
+     "n": 1,
+     "first_utc": "2024-11-29 15:32:09",
+     "last_utc": "2024-11-29 15:32:09",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.650001176
+     ],
+     "anchor_sig": "Mevmr1DQD8QE23oD4eMSpmiowdgAg8r3Bd7WPHKitxAkwvqmjoWEnoez56Kc49kPXT1CM6jjjvb67xnstAkZyEn"
+    },
+    {
+     "addr": "7dk3BeWtWvY4s2AhTTiUYCFrjYh98ATsuGm88MSeHw2n",
+     "total_sol": 0.639403,
+     "n": 1,
+     "first_utc": "2024-11-20 11:57:47",
+     "last_utc": "2024-11-20 11:57:47",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.639403319
+     ],
+     "anchor_sig": "pivvJbw4cT136CetYbJHx2f8qXZCiAai86svjDSEVArnQjbNwK9iKDc1pyG9hWTgXW3vDbE7kfBT3ac5pQ3XKeh"
+    },
+    {
+     "addr": "CuDy52ZSpKGztSDpjeVBwPuDZGgeJfENLMRzRjm5M6xW",
+     "total_sol": 0.429409,
+     "n": 1,
+     "first_utc": "2024-11-21 12:50:32",
+     "last_utc": "2024-11-21 12:50:32",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      0.429409036
+     ],
+     "anchor_sig": "2QPjdVxKixE1mcaKPHttT3eyUUDek2QB3X1M4Z9QtjvUfSk3QNwA6uzGFEuffEajRGtFBt4r2QDYB5TzGMJaDwLQ"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 129,
+   "measurement_failure": null,
+   "n_tx_requested": 129,
+   "level": 2
+  },
+  {
+   "addr": "D5F1Ut43zde27u9FaM1anDAithNXeEKStK7xAZEWDnjH",
+   "anchor_sig": "66xrF84KV8msjwbaAsbixEHTC4QyoqQSom48GbNEA5gN6SnDRZ7T6SfCPesLcvXCnAFP26fLCPVfcTok9mhMbzsZ",
+   "known": null,
+   "n_sigs_before_anchor": 37,
+   "pages_paginated": 1,
+   "genesis_reached": true,
+   "pagination_capped": false,
+   "oldest_seen_utc": "2024-11-19 20:37:53",
+   "newest_seen_utc": "2024-11-24 00:27:56",
+   "sources": [
+    {
+     "addr": "9nmKBB1cVYExYWQao7k53PuTZDxvaXt1BGCs7B6yZNJh",
+     "total_sol": 22.30021,
+     "n": 2,
+     "first_utc": "2024-11-22 13:34:09",
+     "last_utc": "2024-11-23 14:14:06",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.300105,
+      20.000105
+     ],
+     "anchor_sig": "4oS34pd2gbwbekqNzzuvyXQqMi8rSJE4BTzVSKW6o9PCN8qpPthoPa4adifN31obatK8w4fTj6XcdtmaCkU6UYzQ"
+    },
+    {
+     "addr": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+     "total_sol": 2.000005,
+     "n": 1,
+     "first_utc": "2024-11-19 20:37:53",
+     "last_utc": "2024-11-19 20:37:53",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      2.000005
+     ],
+     "anchor_sig": "5e5eowaQBJ12aFq3zhZyqDhw4XwdiENeJ5qCzC83Eys69zwgNvtBJK29pzurAQgsQJYwni99TTBMGXD1gdFRRP2u"
+    },
+    {
+     "addr": "3Jvx6NFtYyq4Q1N2Btw8rwM1CVMiPDGaRRVSKjme1r8q",
+     "total_sol": 1.124082,
+     "n": 1,
+     "first_utc": "2024-11-23 11:39:59",
+     "last_utc": "2024-11-23 11:39:59",
+     "known": null,
+     "calibres": [
+      "precis_swap"
+     ],
+     "amounts_sol": [
+      1.124082215
+     ],
+     "anchor_sig": "4dub2SV9mRioUGevjuc3LFmCW2tKhgXwsGG6uXAmi9wozyRgXfvd8nQnpSu3Vk1BnTrJm8AJvSKnctNRSNAu5PHQ"
+    }
+   ],
+   "known_counterparties": [],
+   "n_tx_inspected": 37,
+   "measurement_failure": null,
+   "n_tx_requested": 37,
+   "level": 2
+  }
+ ]
+}

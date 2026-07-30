@@ -1,0 +1,25 @@
+{
+ "fenetre_utc": [
+  1782591657,
+  1783111195
+ ],
+ "jours": [
+  "2026-06-27",
+  "2026-06-28",
+  "2026-06-29",
+  "2026-06-30",
+  "2026-07-02",
+  "2026-07-03"
+ ],
+ "n_adresses_distinctes": 3518,
+ "n_avec_snipers": 19,
+ "n_grappes": 20,
+ "n_swaps": 10994,
+ "n_tokens": 20,
+ "niveau": "MESURE",
+ "swaps_par_token": {
+  "max": 1953,
+  "med": 444,
+  "min": 0
+ }
+}

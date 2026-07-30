@@ -1,0 +1,2720 @@
+{
+ "agregats": {
+  "n_lancements": 42,
+  "n_slot_unique": 42,
+  "n_slot_egal_creation": 42,
+  "sol_total_med": 83.01,
+  "sol_total_min_max": [
+   42.89,
+   86.02
+  ],
+  "part_supply_med": 0.78221,
+  "part_supply_min_max": [
+   0.34088,
+   0.79254
+  ],
+  "part_supply_q1_q3": [
+   0.77675,
+   0.79074
+  ]
+ },
+ "lancements": [
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump",
+   "created": 1782591657,
+   "creation_sig": "4ziGdYrysFAXNkxgsjwPh9nhevDgoNZKm3T2q9j7D14YWZ1mbb7zCYGyBTkthrmKtLshxFgQ63MqpBxJ7Ecbj48x",
+   "creation_slot": 429307208,
+   "creation_dev_buy_tokens": 10623764.27,
+   "n_membres": 4,
+   "slots_achats": [
+    429307208
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.9415,
+   "tokens_total": 780464208.09,
+   "part_supply_1e9": 0.78046,
+   "prix_moyen_sol_par_token": 1.0883452965495232e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "3tKPXxhiH4MDxXnQaXEsq8nJnh6R81bHPnNiQQFbndTTDgffDhkSbTMhh82ZpiQrh7LVFUNaZpV2LVqAJftC8CSk",
+     "slot": 429307208,
+     "ts": 1782591657,
+     "sol_net": 20.813336,
+     "sol_cache": 20.8133,
+     "tokens": 61887172.26,
+     "prix_sol_par_token": 3.363109919462388e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "Zspqx61MdabA2r5g78i1c1u66ofFBoU5Tz549A2NyACinC79oJ2NxFSgiEdcZZ4731Bpykcyyt2Bi4K7FhuJySS",
+     "slot": 429307208,
+     "ts": 1782591657,
+     "sol_net": 21.827137,
+     "sol_cache": 21.8271,
+     "tokens": 441614045.62,
+     "prix_sol_par_token": 4.942582228183182e-08,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "5sPKJDzbhAAzhmyeC7BkWGM1eJjezyUHBDcCvEwe4t8eaWGG37ksFqzEJn1jckq15jV3cAL4cC2dCLrHZ3SCsqMZ",
+     "slot": 429307208,
+     "ts": 1782591657,
+     "sol_net": 21.15019,
+     "sol_cache": 21.1502,
+     "tokens": 98716276.95,
+     "prix_sol_par_token": 2.1425230819563884e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "55ZLsiuEKNqNUqhi5mDaTkynAacPG5LwRs7YxG97SNYxSf6N3MCNW8LHm3T8CrAhjW76BUY996QdunvkuhoiP58Y",
+     "slot": 429307208,
+     "ts": 1782591657,
+     "sol_net": 21.150792,
+     "sol_cache": 21.1508,
+     "tokens": 178246713.26,
+     "prix_sol_par_token": 1.1866021014722311e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+   "created": 1782598001,
+   "creation_sig": "zMhC9qK8xmEmk5xWnMmqSpsS1N1K56TpDbfKn6H18tQCNV4PtBspQ5iVsbbD32hJ2LFk8n7y7jFt1x6ytRufQDc",
+   "creation_slot": 429323042,
+   "creation_dev_buy_tokens": 1785358.05,
+   "n_membres": 4,
+   "slots_achats": [
+    429323042
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 81.5314,
+   "tokens_total": 780077773.08,
+   "part_supply_1e9": 0.78008,
+   "prix_moyen_sol_par_token": 1.0451695307006092e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "3rZvT9Bym3GBG6CvjvRkYNrhdbpYNvDW3tDasrjUfWRuGe1eC1LpD8CQ3zJYMR8DWKUCRRrEVVBKw6pLPvKt6jaq",
+     "slot": 429323042,
+     "ts": 1782598001,
+     "sol_net": 19.701812,
+     "sol_cache": 19.7018,
+     "tokens": 62172189.72,
+     "prix_sol_par_token": 3.168910728076329e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "2r2ixNb9fq6jRJb61Z7ZX7Zd6cKxEZ3REKzU4KSK8Bqy26G4oWK9V6m4strwvFmoXykpL32At1LX9K93YAb2ZK2u",
+     "slot": 429323042,
+     "ts": 1782598001,
+     "sol_net": 20.808972,
+     "sol_cache": 20.809,
+     "tokens": 183152715.47,
+     "prix_sol_par_token": 1.1361541584987212e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "45HWA6JjNDCctePQ3Z1GZgqu9UqndHAfiDTShNwpfbCCuazjiyc5mgPy2qyQsQ7mprkBfdqQh4m66D1PGE8tWkUE",
+     "slot": 429323042,
+     "ts": 1782598001,
+     "sol_net": 20.115414,
+     "sol_cache": 20.1154,
+     "tokens": 98512011.27,
+     "prix_sol_par_token": 2.0419250015573672e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "fQEfHC2orS1M7PYeEKRi66u5xWWGFZby3wJLPUw8SoMfWWbn7zxy9czwSSPwQiYC77XqgMFXrYJoEfCDX1znoC2",
+     "slot": 429323042,
+     "ts": 1782598001,
+     "sol_net": 20.905154,
+     "sol_cache": 20.9051,
+     "tokens": 436240856.62,
+     "prix_sol_par_token": 4.792112902528659e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "6Fzphy2B4JTUteQ8jGtj9Tc9anpttVXY3CRgGuJTpump",
+   "created": 1782611393,
+   "creation_sig": "3BUi1jEoiUM4rrE8stvkw63eAsHxwsRJg7oK9UjUzL3KDFZQsASGHkS8AtLJhRd6pfJrdK9RPwpKyezczY5ySd94",
+   "creation_slot": 429356376,
+   "creation_dev_buy_tokens": 1785358.05,
+   "n_membres": 4,
+   "slots_achats": [
+    429356376
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.4742,
+   "tokens_total": 787534964.34,
+   "part_supply_1e9": 0.78753,
+   "prix_moyen_sol_par_token": 1.0726404518533887e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "5WrjGtG84s3Qh1TCxkdTFkpdpXS7EsaZrdbfbwtbHo7khU8v4brmVEdyoNFmymwvfjCe5sTBegYeTDiHXGWY1WhT",
+     "slot": 429356376,
+     "ts": 1782611393,
+     "sol_net": 20.952757,
+     "sol_cache": 20.9527,
+     "tokens": 63266227.36,
+     "prix_sol_par_token": 3.3118392489530755e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "3eUEmUWDxgQK4RhVeHoHMzvhYprxQhasRFBzEzJwWXQzDjBSUVdKYCoKVTCe8oprFznLXTVRgJnFscRNhKJoE4CP",
+     "slot": 429356376,
+     "ts": 1782611393,
+     "sol_net": 21.365842,
+     "sol_cache": 21.3658,
+     "tokens": 441889207.73,
+     "prix_sol_par_token": 4.835112896735262e-08,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "2mZwzWigxQtiAiiAvqnvUrbXJFfT9XPFM4imstWmmdYiB6f2JhphsBqTnrQ83ccJM45v9hf5prfpPER1P7aRUYHw",
+     "slot": 429356376,
+     "ts": 1782611393,
+     "sol_net": 21.038815,
+     "sol_cache": 21.0388,
+     "tokens": 100112480.36,
+     "prix_sol_par_token": 2.101517695905636e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "5oPGjsnfoDGVmKnmYx92xdoQ9dSKuqHp2S6qM9PsfoqhUtciFCTicr6DwgKqisNBnuKZ22LqJV9LhjRx1QJGqRpj",
+     "slot": 429356376,
+     "ts": 1782611393,
+     "sol_net": 21.116772,
+     "sol_cache": 21.1168,
+     "tokens": 182267048.89,
+     "prix_sol_par_token": 1.1585622514602701e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "FAwimgWuNJBMj5Sk8WtJCvNEztBS3AhgqFm42pWVpump",
+   "created": 1782655287,
+   "creation_sig": "uaFGx5jJMCtgGB5FxjT1AGXXzQtDWsrwHAKkkxzZJMaBPquLwHFSUGGALNRcFAicTb8f9SRWCoFkRcGB4ptCEn1",
+   "creation_slot": 429465430,
+   "creation_dev_buy_tokens": 17590167.07,
+   "n_membres": 4,
+   "slots_achats": [
+    429465430
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.4289,
+   "tokens_total": 767750124.48,
+   "part_supply_1e9": 0.76775,
+   "prix_moyen_sol_par_token": 1.0736427305150803e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "2ScgL3yJfDX2WxPNsKa6Txeh2YnsZjBtCKUwkppHW6s4cByBypir75j6NRuzeV9e1FoMj5stja3RJ7Q6vkvHYEcG",
+     "slot": 429465430,
+     "ts": 1782655287,
+     "sol_net": 20.724934,
+     "sol_cache": 20.7249,
+     "tokens": 180352591.79,
+     "prix_sol_par_token": 1.1491342742993725e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "323eswK5w3Czy8shZELvVby4gAmGH9gLtvozK3y5gDsG4tr1gH8u3DVKtqJua2FXMmdoLJvuja49WJxgjatqWtn4",
+     "slot": 429465430,
+     "ts": 1782655287,
+     "sol_net": 20.388794,
+     "sol_cache": 20.3888,
+     "tokens": 63116032.56,
+     "prix_sol_par_token": 3.2303668758568507e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "2CyrLKnopEk4NYqcHzfJ9QX6UPAkdibpQzAhqZ3httDcC6ykTV5uXu26UpEvoQME1Ct2xn5KEmSpBX1yRsWLRkVT",
+     "slot": 429465430,
+     "ts": 1782655287,
+     "sol_net": 20.826179,
+     "sol_cache": 20.8262,
+     "tokens": 425061545.86,
+     "prix_sol_par_token": 4.899567993390218e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "2ZZLe82FiCH5xnuk1vNWRAxGjXHvTzxaB8jgW4R36ZWNpw3YkwxCfrcRK1FXr5xirb78pjAM2CpmmF25F7EPCDf8",
+     "slot": 429465430,
+     "ts": 1782655287,
+     "sol_net": 20.489027,
+     "sol_cache": 20.489,
+     "tokens": 99219954.27,
+     "prix_sol_par_token": 2.0650107065904028e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "Em6ajM2xwou6y2YkfqAxsr5zMjmLepbJUtBaEzCypump",
+   "created": 1782748479,
+   "creation_sig": "2GcBBWnxLY1XWj9fqUhSTF7FLektv46fjFmh8bquD4fBjaBkd7dkMGwHxTiwgoVAo11srYeoPwGSo8LPXD2BBiVc",
+   "creation_slot": 429695254,
+   "creation_dev_buy_tokens": 35765.48,
+   "n_membres": 4,
+   "slots_achats": [
+    429695254
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.193,
+   "tokens_total": 790927224.21,
+   "part_supply_1e9": 0.79093,
+   "prix_moyen_sol_par_token": 1.0771276976221558e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "5ZrmCEMVPrg5K4WYkmbhVY4UUaHu4xVS3eF9ke2yg3iLcieL86qfqAjQ64JxfieQ58qdKTTkn2h1s9tnaXZMkbrn",
+     "slot": 429695254,
+     "ts": 1782748479,
+     "sol_net": 19.809644,
+     "sol_cache": 19.8096,
+     "tokens": 58342405.21,
+     "prix_sol_par_token": 3.3954109388865416e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "3CQDa4WFSkA7bmsTTSKziBCaYZGtq7gzfivEubctBdNz3E49E5fwbA6TXfuVZ7EvhD5dkqeetqtn8Ydn8eZbZRfn",
+     "slot": 429695254,
+     "ts": 1782748479,
+     "sol_net": 23.000018,
+     "sol_cache": 23.0,
+     "tokens": 462322184.6,
+     "prix_sol_par_token": 4.974889490940092e-08,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "2i1QP99T2YGBppuL4TuxHixR1uKrdqMFWjaVqXetLQxa1syLWgTix5g4tE2pF1psfoF6Xd1vhyMJMfMp9gjWKevr",
+     "slot": 429695254,
+     "ts": 1782748479,
+     "sol_net": 21.693392,
+     "sol_cache": 21.6934,
+     "tokens": 176454798.09,
+     "prix_sol_par_token": 1.229402205642812e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "52tK5ivwUibPqjK3ZmByYvkT7mZHAbsXMtWam9uYRNtX4sc4DgbedeLTmrtTVAcCx3XEev5VV54gRPcQpvq15bNd",
+     "slot": 429695254,
+     "ts": 1782748479,
+     "sol_net": 20.689908,
+     "sol_cache": 20.6899,
+     "tokens": 93807836.31,
+     "prix_sol_par_token": 2.2055628210858798e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump",
+   "created": 1782759473,
+   "creation_sig": "8FrFw6QDRjtMThzChj2RzbHrySypEXQdTmHVsbZtSxMJMJ2AQCWuL4NttAFosJ8pGF22MnEcPbyhPrYdcZfrXTg",
+   "creation_slot": 429722432,
+   "creation_dev_buy_tokens": 35765.48,
+   "n_membres": 4,
+   "slots_achats": [
+    429722432
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.2326,
+   "tokens_total": 791023811.45,
+   "part_supply_1e9": 0.79102,
+   "prix_moyen_sol_par_token": 1.0774966539093557e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "5GMpMvu78NLA1wnV4Li81oumMEcuBZXwDkTdFaYgVRHSnc5YADp7XbEy8zzmJ6hi2Gz3uDoBXibE1h46rzk2cmWb",
+     "slot": 429722432,
+     "ts": 1782759473,
+     "sol_net": 21.733391,
+     "sol_cache": 21.7334,
+     "tokens": 99763728.27,
+     "prix_sol_par_token": 2.1784862322672675e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "4MfFhXuuNBeigKoSEGSHE5v7vvmeaqqL2AG95wrpSXDQMtSmhhJx1dD7GsvNPBiedGjgfW44eBB98V2ZPF6R48sR",
+     "slot": 429722432,
+     "ts": 1782759473,
+     "sol_net": 21.803248,
+     "sol_cache": 21.8032,
+     "tokens": 183407413.64,
+     "prix_sol_par_token": 1.1887877057713745e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "4jjcnbsiX6PviMP3Yc9wJ6GTP9DAJFxGCtBoQ6hUCe66S6V9Gg3a6GLGzcQbKFhHy4ZdawsPmtvbcJszfE9TkHFB",
+     "slot": 429722432,
+     "ts": 1782759473,
+     "sol_net": 21.91563,
+     "sol_cache": 21.9156,
+     "tokens": 449658606.26,
+     "prix_sol_par_token": 4.8738375051801775e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "49rdAZyjqw5YbCk7vaEofTktbbsarUEqkZ1Nu6btQSgJzR3ZEhXG3FJhjr5hyXviaN5nh9UbrsnkKjfJZHKS8Qkn",
+     "slot": 429722432,
+     "ts": 1782759473,
+     "sol_net": 19.780282,
+     "sol_cache": 19.7803,
+     "tokens": 58194063.28,
+     "prix_sol_par_token": 3.399020527095431e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "H2HmTSxj5mTm4kYe4kJbJuG1HitVoXZ929n1RyrXpump",
+   "created": 1782760235,
+   "creation_sig": "pA9ZEzr5CYy3ZuV7VKXXh41x8GbGKGyNK1BuGiDTjdEouCkDJD8SBaeBJQrFQmY2TbHG5NcrbRUFncbBTNFJ2bG",
+   "creation_slot": 429724313,
+   "creation_dev_buy_tokens": 48354.36,
+   "n_membres": 4,
+   "slots_achats": [
+    429724313
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.0053,
+   "tokens_total": 790456762.93,
+   "part_supply_1e9": 0.79046,
+   "prix_moyen_sol_par_token": 1.0753947083064905e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "5o9bDwAgaAtQnW2vH6Yfzm2rnpeyuv1izj31G8ALzjhwoEaHrpDWtf4wjmLMCtntHPZdqX963toHUwn3FjqXAX5g",
+     "slot": 429724313,
+     "ts": 1782760235,
+     "sol_net": 21.502797,
+     "sol_cache": 21.5028,
+     "tokens": 98431370.73,
+     "prix_sol_par_token": 2.1845471309564918e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "2viJUYdZ31CzKZhnABdsyYGtWZ9bZuvW5EFNNYcmPwMHAmwbGUMZfjrq8KnhJaLtJad3B9iQMa3T8RtiKCsf2XKn",
+     "slot": 429724313,
+     "ts": 1782760235,
+     "sol_net": 21.803673,
+     "sol_cache": 21.8037,
+     "tokens": 182122404.82,
+     "prix_sol_par_token": 1.1971988385867117e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "48j1KAdVo6Z7jTCM9SC5QRdt59A1xC9vXAAXQDmUC14sQrJDFWz6xAHPJ7uKCynRymdCKvxM4mE9Esj4AwRCyNMV",
+     "slot": 429724313,
+     "ts": 1782760235,
+     "sol_net": 22.131621,
+     "sol_cache": 22.1316,
+     "tokens": 452214318.26,
+     "prix_sol_par_token": 4.894055884686876e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "4FAK4gpW7AJtGdEpd5GStN5Y9tWgHh3oCDHgy8KCPr9umyBVSZr95LQ3r8pcZVNs4j4o6SBPh5uBUiZustqwTYZz",
+     "slot": 429724313,
+     "ts": 1782760235,
+     "sol_net": 19.567211,
+     "sol_cache": 19.5672,
+     "tokens": 57688669.12,
+     "prix_sol_par_token": 3.3918637942536205e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "5CCnqQy9cyzerWNs29KA27wEweq6UZbR7Q8ewxG7pump",
+   "created": 1782761489,
+   "creation_sig": "2tRE2wmbpuiXNFWv5zKnRFKA8U28QDV6JuNnVD6WxexWicon9KrMpvMv4zNnpUxi2H9mKWb6futBZxLGcAfNvzJP",
+   "creation_slot": 429727425,
+   "creation_dev_buy_tokens": 89409.23,
+   "n_membres": 3,
+   "slots_achats": [
+    429727425
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 63.6036,
+   "tokens_total": 340878706.7,
+   "part_supply_1e9": 0.34088,
+   "prix_moyen_sol_par_token": 1.865870696815807e-07,
+   "buys": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "Bkeid3erbYKVrVpDUTcYoZwanwPnrnhDLwzowwm8JhyvcnP3au7Fuks25ipctkHHJS6Qnu7WMfPbXipVLis4Urk",
+     "slot": 429727425,
+     "ts": 1782761489,
+     "sol_net": 21.693397,
+     "sol_cache": 21.6934,
+     "tokens": 99322745.41,
+     "prix_sol_par_token": 2.1841318427122132e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "4Apwit4Cxghrdif64uA5UWa74xQJzWtmXu4VXoB6muBtkrjWcFPWxSgry7iwDfPPSn6Cd4tYknm51ngVG12gVMKs",
+     "slot": 429727425,
+     "ts": 1782761489,
+     "sol_net": 21.803855,
+     "sol_cache": 21.8038,
+     "tokens": 182665179.3,
+     "prix_sol_par_token": 1.1936514372085932e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "2KZrzMLEwXjKwuGbBcuB4egG55PooRbtWkbWE2223iArhfxSCAktfQ2uzbN7pT2AyhiELn41bYEtQ441X8Z8XX51",
+     "slot": 429727425,
+     "ts": 1782761489,
+     "sol_net": 20.106307,
+     "sol_cache": 20.1063,
+     "tokens": 58890781.99,
+     "prix_sol_par_token": 3.414168787188259e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "B1a7zhim82AGr12iBSnH1m4sXCSyt3wudZD2MVYHpump",
+   "created": 1782762860,
+   "creation_sig": "53S8fxpv8VP7k8wfiXUxi17LZ7nkWZS5dgV5pqsBXKpU5F1JzZ57Lc2341WvdnQdD3DkBEXJUYU7goepiyt262Cm",
+   "creation_slot": 429730832,
+   "creation_dev_buy_tokens": 286057.1,
+   "n_membres": 2,
+   "slots_achats": [
+    429730832
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 42.8883,
+   "tokens_total": 627871615.17,
+   "part_supply_1e9": 0.62787,
+   "prix_moyen_sol_par_token": 6.830747395450855e-08,
+   "buys": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "5f1AWD8SWgXPfsF9KCHp7Le5BiYuto7kPJy58vKF2orS99SuHptMNRce5hRT3Fjs5zLmuzAQwgasBpxk6ox88g3x",
+     "slot": 429730832,
+     "ts": 1782762860,
+     "sol_net": 21.62403,
+     "sol_cache": 21.624,
+     "tokens": 445998293.12,
+     "prix_sol_par_token": 4.84845570167077e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "2vWWnXC5wikokUfYnAMMCdA9dnVB6e3GEqvh3kCe8gkADd6CXG7d2E8QxqPY7ibE3xVTKgMvWQo38UxTrf1o3rzJ",
+     "slot": 429730832,
+     "ts": 1782762860,
+     "sol_net": 21.264294,
+     "sol_cache": 21.2643,
+     "tokens": 181873322.05,
+     "prix_sol_par_token": 1.1691815718826902e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "7V6C6GN1YbtYP6TJ6Kzke9TUwLgjy7gCMEMmbn8Jpump",
+   "created": 1782765019,
+   "creation_sig": "3Q3iAXW1F6EtNy4GuChwHcx4L7Aq3MFqB3n1UMudWZm3CqurTXgrXtUUyiN6MbVDF3nYgocPWKk3eRzeXkLzDQk6",
+   "creation_slot": 429736173,
+   "creation_dev_buy_tokens": 151986.83,
+   "n_membres": 4,
+   "slots_achats": [
+    429736173
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.0301,
+   "tokens_total": 790420893.84,
+   "part_supply_1e9": 0.79042,
+   "prix_moyen_sol_par_token": 1.0757566084432492e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "DijKvxFKrJndHyXaULzNfNUX7HsZiFRUR1f5QzaVvyesiwCTp6nenEnKkg8omPXPx7t93LhVUSFapWE2NbJAjxn",
+     "slot": 429736173,
+     "ts": 1782765019,
+     "sol_net": 21.520766,
+     "sol_cache": 21.5208,
+     "tokens": 99189470.06,
+     "prix_sol_par_token": 2.169662326153061e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "e5Vkk7uYYAaidt8LtV1VWQhjfgJ1nH7s3H4Tjk6wHmGQMAYCNvPKs5y2rryW7Je4kQStkXceyB9xzM5yxsx2jVo",
+     "slot": 429736173,
+     "ts": 1782765019,
+     "sol_net": 21.610873,
+     "sol_cache": 21.6109,
+     "tokens": 181575698.44,
+     "prix_sol_par_token": 1.1901853018247999e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "65nVcn1SWGXuPeZxW7FrotyVGzN1U84nRqxMjkz887pf6f1hcMfsGt7vU5QUMJ9heAximdTMQbCPtoz7pz9TtX2z",
+     "slot": 429736173,
+     "ts": 1782765019,
+     "sol_net": 22.028017,
+     "sol_cache": 22.028,
+     "tokens": 450918256.19,
+     "prix_sol_par_token": 4.885146485981231e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "sxtYNE3s7hkssQjFqbVeUwUJGqVQF4nGkx6bCqC2cdSqXxX8mKXFoHE8QYttJidauFNgC9LarepibYna9tjjUWL",
+     "slot": 429736173,
+     "ts": 1782765019,
+     "sol_net": 19.870394,
+     "sol_cache": 19.8704,
+     "tokens": 58737469.15,
+     "prix_sol_par_token": 3.3829162874433684e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "7vJ2jdLwkjPSWkQVKv7SGuJ3BLXF7fn18wj2EF8npump",
+   "created": 1782766031,
+   "creation_sig": "5mnh3kyy8YbbZkQvRVvkcKBEfvGL5cu6R5FE1ac2HyZ3rETvA2p2CKqm97SVUPVUgijMkqxHmGkbtpPQY26jACjN",
+   "creation_slot": 429738688,
+   "creation_dev_buy_tokens": 46494.66,
+   "n_membres": 4,
+   "slots_achats": [
+    429738688
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.3571,
+   "tokens_total": 791317232.78,
+   "part_supply_1e9": 0.79132,
+   "prix_moyen_sol_par_token": 1.0786709105288848e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "3wGmpvEHqWNAGbfWzZDn6GuNi2ZKL3focSQ35sALwgWEzTpxoRjAsRZpS1aSYkCsBE5TzY4R4UiQue3qhXTRC6iG",
+     "slot": 429738688,
+     "ts": 1782766031,
+     "sol_net": 20.126557,
+     "sol_cache": 20.1265,
+     "tokens": 59286047.07,
+     "prix_sol_par_token": 3.394821871127925e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "4Xt2ivqPPvCvJMqjMt3361GsQgjAmcDJjhwgvfQtRgDRvPYarviKf1PDL8hXWFq6YPw8UWrL5vQC1DZYVvRjJECk",
+     "slot": 429738688,
+     "ts": 1782766031,
+     "sol_net": 21.794135,
+     "sol_cache": 21.7941,
+     "tokens": 183351486.5,
+     "prix_sol_par_token": 1.1886533214332095e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "3hZg1J4joz8KuD4DDTfV3F9iWpFYiejWVhLBTr8dQ9222VJxWs9DL3orDNR2tbJJ5aKk1FCKP8ix1RRJYf8JQKim",
+     "slot": 429738688,
+     "ts": 1782766031,
+     "sol_net": 21.91563,
+     "sol_cache": 21.9156,
+     "tokens": 449651497.84,
+     "prix_sol_par_token": 4.873914554336231e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "dFkqV1fEkqCYbEjJLYEefpQcVZeckL7vW9bd1JCU18oRfXz8TCN4izczuvsmReo71u6MgVF9RVSy6zUYPiLLKy8",
+     "slot": 429738688,
+     "ts": 1782766031,
+     "sol_net": 21.520766,
+     "sol_cache": 21.5208,
+     "tokens": 99028201.37,
+     "prix_sol_par_token": 2.1731956504928837e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "AidtkezbfEF8wR3GNxGYFerGKbtBHkabfqVP3XvKpump",
+   "created": 1782767711,
+   "creation_sig": "fygjmEhWpTu49WJ1vnUpbWjv8x55auzEa2Ydbc47vqooXF19tqmwQx4Vf5ZQ4b7M1fXVtt548HhnrckGgRYUBKc",
+   "creation_slot": 429742840,
+   "creation_dev_buy_tokens": 35765.48,
+   "n_membres": 4,
+   "slots_achats": [
+    429742840
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.3881,
+   "tokens_total": 788949163.96,
+   "part_supply_1e9": 0.78895,
+   "prix_moyen_sol_par_token": 1.0696268892209449e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "NC2wyj6ryQccbLc1vAZqCQv8S2pmqcSD2VV9mbg3NZeyYm1XLqCP3ihDyob1QBRrPvU2B8145TcEjr2ZyjhixUC",
+     "slot": 429742840,
+     "ts": 1782767711,
+     "sol_net": 19.495769,
+     "sol_cache": 19.4958,
+     "tokens": 58118591.83,
+     "prix_sol_par_token": 3.354480552688076e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "xqxkSoCTkcGNbuv53RTwdiU2y2b1uaLJ5Fmo3U1NEbVTNS832Nb7pR8Xf9GDpthuYD67G895tLTCNt25S9eLdR1",
+     "slot": 429742840,
+     "ts": 1782767711,
+     "sol_net": 21.857917,
+     "sol_cache": 21.8579,
+     "tokens": 448969897.25,
+     "prix_sol_par_token": 4.868459423683405e-08,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "4Vvymcjz2pfRmqxagVx8SQV9SwpDqLJD5HpgjPBACnKQqN9JG4XjhGyi86oB3Ze5TRWgtkfjLU2ohV5VSRTMCMoU",
+     "slot": 429742840,
+     "ts": 1782767711,
+     "sol_net": 21.614923,
+     "sol_cache": 21.6149,
+     "tokens": 182630458.1,
+     "prix_sol_par_token": 1.1835332905602578e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "1raqCVKnboQGjLG69jAuKM951ts3Bck88CKhAgKFk5eKjJKVF1uVhfnU83dQwT16r6J6iqZMn6JqcEKa6m8o5Gn",
+     "slot": 429742840,
+     "ts": 1782767711,
+     "sol_net": 21.419515,
+     "sol_cache": 21.4195,
+     "tokens": 99230216.78,
+     "prix_sol_par_token": 2.158567842445397e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "5AuHKxmuoXsxzbf8nbVzTWGuzHrGecmigfjgEBLkpump",
+   "created": 1782769999,
+   "creation_sig": "3Qvn7A2mLwrr4J8b7Juak8UEFN6yAEWHELyJBt6fLxkUYo5beHkyhfMBRHqoqtUtU94A4LZPSUXj8NUTV9QsFPdR",
+   "creation_slot": 429748537,
+   "creation_dev_buy_tokens": 286057.1,
+   "n_membres": 4,
+   "slots_achats": [
+    429748537
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.4264,
+   "tokens_total": 791262848.13,
+   "part_supply_1e9": 0.79126,
+   "prix_moyen_sol_par_token": 1.0796215720463716e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "5Hc4E5BFvqpPYwUBdhipvMLCdaJrdvXFStHxaEdbkdXVaH4rwFtUdWsFC4yxCatv3q1eUbr6ctHQf3cyJa5FkC89",
+     "slot": 429748537,
+     "ts": 1782769999,
+     "sol_net": 19.901782,
+     "sol_cache": 19.9018,
+     "tokens": 58401494.66,
+     "prix_sol_par_token": 3.407752120712626e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "FdFQLt6F3XjBYFqtzXwwJqDjKqS8ELARZExoKy3CMzXyiKbNTZrczPHuBtNRY8o1EM9HFE5NVaxg2J3V31CaRnU",
+     "slot": 429748537,
+     "ts": 1782769999,
+     "sol_net": 21.803248,
+     "sol_cache": 21.8032,
+     "tokens": 182694701.8,
+     "prix_sol_par_token": 1.1934252971190348e-07,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "46Wh9xNEfUvMpvMxSLyHLbrsUzCvxnpBjo5CX1pf62y47WJ1FuZ4gWKBtbRVvwkkdNKwSev9qF4EjYBbvGNA61db",
+     "slot": 429748537,
+     "ts": 1782769999,
+     "sol_net": 22.028017,
+     "sol_cache": 22.028,
+     "tokens": 450829242.86,
+     "prix_sol_par_token": 4.886111026951445e-08,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "xHJnHAKBUPomo4P8iFrNeQRhRkQ9Z7B6btmdMKmPRcJZtev7x7KsN3h6PJrmBrLu7BAvnrEfyfGY8oY8KYVXem9",
+     "slot": 429748537,
+     "ts": 1782769999,
+     "sol_net": 21.693397,
+     "sol_cache": 21.6934,
+     "tokens": 99337408.81,
+     "prix_sol_par_token": 2.183809438404639e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "mint": "ApANnyv1KP6uZaPmqhaCruMqZHHxQCACKDGCcjU5pump",
+   "created": 1782772257,
+   "creation_sig": "5LB1mNP89ZwLSTX4g9QA4cX7ayFBv8v63D7e9eEibNnkNFTGhMhQMTwjXfY5MN1c5GmDBipXf6UJCEgR8NozRiG7",
+   "creation_slot": 429754129,
+   "creation_dev_buy_tokens": 1785358.05,
+   "n_membres": 4,
+   "slots_achats": [
+    429754129
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.279,
+   "tokens_total": 789508371.82,
+   "part_supply_1e9": 0.78951,
+   "prix_moyen_sol_par_token": 1.080153511271984e-07,
+   "buys": [
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "sig": "2kGe72jNZJNahjUnijszUtuzKyf6nrB4jKCWAVJfz9jJNmcsNnsrG6h3Hb8D6sWFtpqLj6w5aBEu1Y324Dm1pEq1",
+     "slot": 429754129,
+     "ts": 1782772257,
+     "sol_net": 20.926939,
+     "sol_cache": 20.9269,
+     "tokens": 62198712.62,
+     "prix_sol_par_token": 3.36452927015433e-07,
+     "err": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "sig": "5enuw7wpU6LF5rymqa87MAWaA3dtBiy11NkPhgjs4V8CwKPRkA6gsy17VjbLbSBMwkcHpv7EzxBeNvQVELb1RZ2M",
+     "slot": 429754129,
+     "ts": 1782772257,
+     "sol_net": 22.16268,
+     "sol_cache": 22.1627,
+     "tokens": 451425362.43,
+     "prix_sol_par_token": 4.909489311492135e-08,
+     "err": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "sig": "518vNuBEkqhu2hqqN8TJXDfJzPcMMMZhruRMB39LJbY65DcpX9AEnFrJXETCnYAvGWE3Q8JuW9JH9HjcBEa8vXhm",
+     "slot": 429754129,
+     "ts": 1782772257,
+     "sol_net": 21.150792,
+     "sol_cache": 21.1508,
+     "tokens": 177768426.39,
+     "prix_sol_par_token": 1.1897946616761327e-07,
+     "err": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "sig": "51tAKy8fTvQvni5oy9GZ4bBJgFUDkgF8va9No3wQDyn3YiPjfVPB7CfMNBc6xRKyVU8PDs2a2pTqj1Th8CeU6Liu",
+     "slot": 429754129,
+     "ts": 1782772257,
+     "sol_net": 21.038613,
+     "sol_cache": 21.0386,
+     "tokens": 98115870.38,
+     "prix_sol_par_token": 2.1442619353006004e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "UNB8FtHiZ9N9LEyrQy8surmRjbFxR9fKHTKDe93xzPr",
+   "created": 1782595967,
+   "creation_sig": "2GHfF6NTQXrsyHibPpogxTTzVKpMnrvCywigw2iowBnTQSBdZppahX8ZjLJxTMb3Qnqj3MsF24sumXYcBATAhQLp",
+   "creation_slot": 429317947,
+   "creation_dev_buy_tokens": 3564784.69,
+   "n_membres": 4,
+   "slots_achats": [
+    429317947
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.0816,
+   "tokens_total": 779852771.1,
+   "part_supply_1e9": 0.77985,
+   "prix_moyen_sol_par_token": 1.0525274646933932e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "5okbgEAfAWamq7ASdtzBUwWoyKhqzRoX9xsYFVV3L8NhwiXCoRrix7Bx3tbiEUbS3m3DBe7rDEnYDkr9hHba3uPP",
+     "slot": 429317947,
+     "ts": 1782595967,
+     "sol_net": 21.129929,
+     "sol_cache": 21.1299,
+     "tokens": 437850150.56,
+     "prix_sol_par_token": 4.825835838138774e-08,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "3QeRNUNmDEfqZB7vLaCvmbUr5T8FmZyT8kTk8kX6oaEo1rex5y1vP28saGawEfT8b4dHyrcifXnzovgix543x4iy",
+     "slot": 429317947,
+     "ts": 1782595967,
+     "sol_net": 20.814035,
+     "sol_cache": 20.814,
+     "tokens": 181513868.91,
+     "prix_sol_par_token": 1.1466911387130428e-07,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "2prXH1gd13emFsCrdTTUZKWWV3sexZdEF7VbMnazd4Jnqs5XsYRwkcHVUvCQXy2FAAtTnRiNE2etufm65JywsT9U",
+     "slot": 429317947,
+     "ts": 1782595967,
+     "sol_net": 20.467764,
+     "sol_cache": 20.4678,
+     "tokens": 99169269.55,
+     "prix_sol_par_token": 2.063922055243636e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "2C5wDPgwvk2fbpHxGpsDh54sNTYuJWc8XpuQhD6kwRDJ887m6RARwsYUDtz3rmHd12XFFu2h3TP6F8PQw58jYBtw",
+     "slot": 429317947,
+     "ts": 1782595967,
+     "sol_net": 19.669918,
+     "sol_cache": 19.6699,
+     "tokens": 61319482.08,
+     "prix_sol_par_token": 3.207776320109067e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "7EKtAJTruNL5qURjXrEzfdHzmqucxkQNh1922hz8pump",
+   "created": 1782601760,
+   "creation_sig": "4j4Q76EMwUp31wWkyJVphFCYpPZ7wfTNf2Ft6PQBQL2mGYqyA2LPeXKrfZdpUUNwS3uY7JVtVSgoRVX6rExffeZb",
+   "creation_slot": 429332416,
+   "creation_dev_buy_tokens": 3564784.69,
+   "n_membres": 4,
+   "slots_achats": [
+    429332416
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.0816,
+   "tokens_total": 779852771.1,
+   "part_supply_1e9": 0.77985,
+   "prix_moyen_sol_par_token": 1.0525274646933932e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "2egVv6gPq41i8ahhQoGWrAQW2WMyEHDxS486jM8AGjAv3RnkGeWgNKCJceUSdk4ndf3MENwwmuRSZpJ19EmmiNmr",
+     "slot": 429332416,
+     "ts": 1782601760,
+     "sol_net": 21.129929,
+     "sol_cache": 21.1299,
+     "tokens": 437850150.56,
+     "prix_sol_par_token": 4.825835838138774e-08,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "3TNWuPdMZDdwBRnkv5GaCbKtCoc7r7mms5TTQyCeoFcpNKvXu6baXLsJSmFd6VJoYwh5yNkGtnyUw1d5AN1VXaPx",
+     "slot": 429332416,
+     "ts": 1782601760,
+     "sol_net": 20.814035,
+     "sol_cache": 20.814,
+     "tokens": 181513868.91,
+     "prix_sol_par_token": 1.1466911387130428e-07,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "zXJL6kMeydowUFcvMyJgfstGDzBzjb27rqC7mwLhodjaJyEinp8tBntKoLX8RNKeCPH39b1wxFouyxuSmtN1QAB",
+     "slot": 429332416,
+     "ts": 1782601760,
+     "sol_net": 20.467764,
+     "sol_cache": 20.4678,
+     "tokens": 99169269.55,
+     "prix_sol_par_token": 2.063922055243636e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "5kiVJDmv2iuBqmxLdibrG9iog8qBT3wcdKW9FxDkVoRKpQUVGXop62zkw9tRYRBjbpc9JWNvx7tskwk8V9M3hxBc",
+     "slot": 429332416,
+     "ts": 1782601760,
+     "sol_net": 19.669918,
+     "sol_cache": 19.6699,
+     "tokens": 61319482.08,
+     "prix_sol_par_token": 3.207776320109067e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "7adT6gecxwX5C1sT1eynLVhLgpFoEAHfn4REk92Rpump",
+   "created": 1782603156,
+   "creation_sig": "SY3Co2ewVh9heNHdNR9BXNbUfDMSroUzcZwSToowpyEeoShVMRgqA9tE8vwENMqPyE5y8hoPUnLd92qZPU1Do2F",
+   "creation_slot": 429335921,
+   "creation_dev_buy_tokens": 3564784.69,
+   "n_membres": 4,
+   "slots_achats": [
+    429335921
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.0816,
+   "tokens_total": 779852771.1,
+   "part_supply_1e9": 0.77985,
+   "prix_moyen_sol_par_token": 1.0525274646933932e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "cBdcdGuu6ZhCFQjbVkAZnzgN35rYRxR5Z1L5w6UkXuLyDUWKsKFKxvb4ePCRpSE1iidHd7wp6xo47SjYABDbRCN",
+     "slot": 429335921,
+     "ts": 1782603156,
+     "sol_net": 19.669918,
+     "sol_cache": 19.6699,
+     "tokens": 61319482.08,
+     "prix_sol_par_token": 3.207776320109067e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "5FzFRZXRCNNFT3r56aW1eVdGi7gVdtXNtc5TXugq7q9aN7eWGxGWe8psspGDbuHkPg8hYFyzkej8jacLYbMheRJD",
+     "slot": 429335921,
+     "ts": 1782603156,
+     "sol_net": 20.467764,
+     "sol_cache": 20.4678,
+     "tokens": 99169269.55,
+     "prix_sol_par_token": 2.063922055243636e-07,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "rNLZMRxtwoLb2evBvbHHuXL2VY5WLfrHTKiqgGynXtcL9b6B1ng54VSpsjfYc8VFwv7u8us3btWXE1zAVUZPe5Q",
+     "slot": 429335921,
+     "ts": 1782603156,
+     "sol_net": 21.129929,
+     "sol_cache": 21.1299,
+     "tokens": 437850150.56,
+     "prix_sol_par_token": 4.825835838138774e-08,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "2dMFCbfYWp7Qtk5v6FCrjMg1KpfDdxTb59pV861Xcc8AWy5kFsn4pch7adwbiUf5msHDZSv5enTtz1jTEeueXSKk",
+     "slot": 429335921,
+     "ts": 1782603156,
+     "sol_net": 20.814035,
+     "sol_cache": 20.814,
+     "tokens": 181513868.91,
+     "prix_sol_par_token": 1.1466911387130428e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump",
+   "created": 1782604218,
+   "creation_sig": "s87JQHoiLvqwFzUsX6AdLEev3ctWbRKD9uKvFqwnUAXaCVVbbap3JXLVvnWNdqvwWGgyQNwWTXNodeDTEtXMxcy",
+   "creation_slot": 429338545,
+   "creation_dev_buy_tokens": 3564784.69,
+   "n_membres": 4,
+   "slots_achats": [
+    429338545
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.0816,
+   "tokens_total": 779852771.1,
+   "part_supply_1e9": 0.77985,
+   "prix_moyen_sol_par_token": 1.0525274646933932e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "5VPPNxREpjhkWh1ajsZPzJ6LjDDb4pxvVKaG8KzTPzRbcS2DqebpBSWGGrw4sAVmeuhwgZdi4tivZbUHZqQfFJtY",
+     "slot": 429338545,
+     "ts": 1782604218,
+     "sol_net": 19.669918,
+     "sol_cache": 19.6699,
+     "tokens": 61319482.08,
+     "prix_sol_par_token": 3.207776320109067e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "2SY65XTCctuPpeejYd1115pfdzJxfRUXwbfqe5wzF5aoEHZSyfbJacUzRX7aG7MF2AEtYShEfxBYwF8etmRp2h4U",
+     "slot": 429338545,
+     "ts": 1782604218,
+     "sol_net": 20.467764,
+     "sol_cache": 20.4678,
+     "tokens": 99169269.55,
+     "prix_sol_par_token": 2.063922055243636e-07,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "54SDg5oWYinMnfRhcpdBEvZUjY9K6fxAEnR67GDFdf8eKvSykAG73DKjxL6TZLPwVxAoWKVXwH1jzAxPVuaPY2qq",
+     "slot": 429338545,
+     "ts": 1782604218,
+     "sol_net": 21.129929,
+     "sol_cache": 21.1299,
+     "tokens": 437850150.56,
+     "prix_sol_par_token": 4.825835838138774e-08,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "iufBjw9Eab7yAsZbKTUHYB4eXJijAArV6CXoyqaws1XyF4gq54oSTATGJFA3zpQQ2qiAh7UryPciV1qrDTmCYih",
+     "slot": 429338545,
+     "ts": 1782604218,
+     "sol_net": 20.814035,
+     "sol_cache": 20.814,
+     "tokens": 181513868.91,
+     "prix_sol_par_token": 1.1466911387130428e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "GkgtsQCLdV4rPVcz6YaCRowSK8XUeD99xjFcUyCwpump",
+   "created": 1782605168,
+   "creation_sig": "ktfhrRNpp5VZifjxmMkFBh7twPXkM4hgM5aAUGgvdqvG2o9ZPspUqJg3cbh26F2pBLZn1dRPy7kRS4WMcF8iudr",
+   "creation_slot": 429340912,
+   "creation_dev_buy_tokens": 3564784.69,
+   "n_membres": 4,
+   "slots_achats": [
+    429340912
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.0816,
+   "tokens_total": 779852771.1,
+   "part_supply_1e9": 0.77985,
+   "prix_moyen_sol_par_token": 1.0525274646933932e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "4Ba8EPQgygaR9kjqChSv4ebD31twHdaeeZubpu5uU69G1A1Ut3qR9zXiDn3W4ebre3Fx3beSyGdk9UxNa9zx1Y5v",
+     "slot": 429340912,
+     "ts": 1782605168,
+     "sol_net": 19.669918,
+     "sol_cache": 19.6699,
+     "tokens": 61319482.08,
+     "prix_sol_par_token": 3.207776320109067e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "3jdWmDiSEVinVQShc1VBiBDmjXTLqaLwuzBCKGVmrzbyUPBS3Auyg4KMm7hioiSePdmWk4DfWFbr1GWGVnXeUCXn",
+     "slot": 429340912,
+     "ts": 1782605168,
+     "sol_net": 20.467764,
+     "sol_cache": 20.4678,
+     "tokens": 99169269.55,
+     "prix_sol_par_token": 2.063922055243636e-07,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "VyyRFjWMYicktWjrCJLzfTHMQNxBoyiqKdjWhKKSg2dLPsdgRbxDiZzPCwxusspjeSxhY6TfpYUEQRHW84jJWst",
+     "slot": 429340912,
+     "ts": 1782605168,
+     "sol_net": 20.814035,
+     "sol_cache": 20.814,
+     "tokens": 181513868.91,
+     "prix_sol_par_token": 1.1466911387130428e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "hHokAY3s4bhtJx4vEhtKgnm7USmrmxMEeYehzzzDFCysRrfntN91HReXdCfqi2mbCvvKiaSAxVUJeyfiMhVGWds",
+     "slot": 429340912,
+     "ts": 1782605168,
+     "sol_net": 21.129929,
+     "sol_cache": 21.1299,
+     "tokens": 437850150.56,
+     "prix_sol_par_token": 4.825835838138774e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "GUA59wrxfgzdLx1qZTwX9wDaZFvVteTQLPUc9R1ppump",
+   "created": 1783034271,
+   "creation_sig": "2hw2vG19c6kd3rrkWmg6PYdahc3ciWoW31ywsqdJMhaxfQUSRxGsujpV4wKmjkE3sWjeeQuFh6xzLemnFueEpXRK",
+   "creation_slot": 430403220,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430403220
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.8978,
+   "tokens_total": 776784001.7,
+   "part_supply_1e9": 0.77678,
+   "prix_moyen_sol_par_token": 1.0414450712547416e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "85U6J49YDUfouuCx9rgHW1oQQ2XKUxN4TAum4TAn1okD4qR6uQW7Ni6qTuP8tipNzKfwtdnyv3YiQXtfJQw6oHo",
+     "slot": 430403220,
+     "ts": 1783034271,
+     "sol_net": 20.753062,
+     "sol_cache": 20.7531,
+     "tokens": 192547885.92,
+     "prix_sol_par_token": 1.0778130250851402e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "2B59v9VrDKnzkHMTHDcp6TVt5Je6wVEZDQSpi7Q2pcE1gdkFPhDkyKAfJgXZFKHsFqXn1tfbJpdTGVb8TSyPnFQq",
+     "slot": 430403220,
+     "ts": 1783034271,
+     "sol_net": 19.331265,
+     "sol_cache": 19.3313,
+     "tokens": 414911335.87,
+     "prix_sol_par_token": 4.6591315808949434e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "2YrEx4s5B8d5G1HCzngKQvZksgQ19T8yvD4wDK2Bfnam8R6nVxzXutmZ96LA1mbXqmSt6mcdNffKqUi52DBLKKHg",
+     "slot": 430403220,
+     "ts": 1783034271,
+     "sol_net": 20.367815,
+     "sol_cache": 20.3678,
+     "tokens": 103503468.77,
+     "prix_sol_par_token": 1.9678388788285128e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "51UBbTMWZvnRMwo8bmRRjeLxcVBLXTMsCwSsaSLyYt4vQQhaEaLm56AckbWH8yGJTkC26o7ZLGUFXucuL2iLbJ4K",
+     "slot": 430403220,
+     "ts": 1783034271,
+     "sol_net": 20.445645,
+     "sol_cache": 20.4456,
+     "tokens": 65821311.14,
+     "prix_sol_par_token": 3.106234879551647e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "HvM3WrbuWuEJTrxDMAPiPwR8oSjHUcbcTDuati9vpump",
+   "created": 1783036454,
+   "creation_sig": "2cSvgq15jPosw1WExZHXb4dgNCueKrHXywixHQfthfaGsJAz3kDA82qQv22jfxmoDasTWJCQvPYB12wfQkfaEWHv",
+   "creation_slot": 430408646,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430408646
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.8978,
+   "tokens_total": 776784001.7,
+   "part_supply_1e9": 0.77678,
+   "prix_moyen_sol_par_token": 1.0414450712547416e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "pqj5ZEqzN7pz59B8xGMwhyk8hg8sBtafc5EXo38vaDs6pNrnXNeTKareRNrgJ55DG9Z3YbNhHHuq1mYZuHHPLgN",
+     "slot": 430408646,
+     "ts": 1783036454,
+     "sol_net": 20.753062,
+     "sol_cache": 20.7531,
+     "tokens": 192547885.92,
+     "prix_sol_par_token": 1.0778130250851402e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "2g2tE25LeCVP655jJt4UhuRNLmxN24bsiphoGjjuTzukjhRsDWcQGCAZ6FgSwSxvZNc323AUrRJcWLU9VCphT8V6",
+     "slot": 430408646,
+     "ts": 1783036454,
+     "sol_net": 19.331265,
+     "sol_cache": 19.3313,
+     "tokens": 414911335.87,
+     "prix_sol_par_token": 4.6591315808949434e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "63Zy2jp6nbXdKQghwrEqW7TK7jzyeudCpGkLjRZCHFgnjPgHRFvgZEDgU7zoEG2b4pfMMwLXpoWkR5Be8wEpz3fk",
+     "slot": 430408646,
+     "ts": 1783036454,
+     "sol_net": 20.367815,
+     "sol_cache": 20.3678,
+     "tokens": 103503468.77,
+     "prix_sol_par_token": 1.9678388788285128e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "3RvaQ1H23kJDa9i2s7eWBvSQceTgs6URxHiaLfKsr1tfBstU3GJU3M6Qc5T2LteGMFmXDXUgZhiQoNwzUXcbzTis",
+     "slot": 430408646,
+     "ts": 1783036454,
+     "sol_net": 20.445645,
+     "sol_cache": 20.4456,
+     "tokens": 65821311.14,
+     "prix_sol_par_token": 3.106234879551647e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "CmFiPswdJEEo3njREo3FKrBUyY9TsmFBQZss2LmZpump",
+   "created": 1783037782,
+   "creation_sig": "4nVoY179ckPWB6shGomTDZ3BPz8eP6gAAaYbuJnHLfCLvxDBTaKfeJ5yZXmWtuQAZthvryxeKjTsXVRyqZogHUeb",
+   "creation_slot": 430411945,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430411945
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.8978,
+   "tokens_total": 776784001.7,
+   "part_supply_1e9": 0.77678,
+   "prix_moyen_sol_par_token": 1.0414450712547416e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "2HA7kBAnGBhkeUko6vGgFq3UWYDWUFnbk6rkV7HVV3MKk2ejzwcCbALwuFSFqezHyS3HhinD6UhECqgrECGJynnP",
+     "slot": 430411945,
+     "ts": 1783037782,
+     "sol_net": 20.753062,
+     "sol_cache": 20.7531,
+     "tokens": 192547885.92,
+     "prix_sol_par_token": 1.0778130250851402e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "3BU1xRWortyS8SRDtAE3RtYHdGB4TeGDqeoYiyTAGnsgN3LkvZkgbLLyWYhFsrxpqyjQ3QAziYQZSaAkB4b372Hn",
+     "slot": 430411945,
+     "ts": 1783037782,
+     "sol_net": 19.331265,
+     "sol_cache": 19.3313,
+     "tokens": 414911335.87,
+     "prix_sol_par_token": 4.6591315808949434e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "4pjYy1ecsbj1EZCUbjVLJW6rkXf27vcEPSDxKSKroSvWufi9x11TQCzRFkrbhUwYaKY2fPFTGUiEW6ajSQfA3ByF",
+     "slot": 430411945,
+     "ts": 1783037782,
+     "sol_net": 20.367815,
+     "sol_cache": 20.3678,
+     "tokens": 103503468.77,
+     "prix_sol_par_token": 1.9678388788285128e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "559XXpVS5E9AftjMjH3RZUzVWtcSamFRUMiiJC16qLx8uYxTQNB4ZqCy7fNuKQAhTbb9rpfCKYagQdXnCH7DW7fB",
+     "slot": 430411945,
+     "ts": 1783037782,
+     "sol_net": 20.445645,
+     "sol_cache": 20.4456,
+     "tokens": 65821311.14,
+     "prix_sol_par_token": 3.106234879551647e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "BULBzU2i5k9hp4Vh8JgDW8L1fGfskgmoTzMM1Kx7mAho",
+   "created": 1783038404,
+   "creation_sig": "4dmDYK2eB4iUARq7scooW1Ab4m3XWihsD65WfkDcia52Rji29MdRmohprsDFRUK1dSSSwNL28QdqRqdWyWtL7oi4",
+   "creation_slot": 430413504,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430413504
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.8978,
+   "tokens_total": 776784001.7,
+   "part_supply_1e9": 0.77678,
+   "prix_moyen_sol_par_token": 1.0414450712547416e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "5eVdqhLGbA48jNqpvbnD7qFoyBSPFdXYpbGBLQ7tGry3kgy2hh7p5poBDCJqV212hwP4ojzA34vS3hoSY627NqB1",
+     "slot": 430413504,
+     "ts": 1783038404,
+     "sol_net": 20.753062,
+     "sol_cache": 20.7531,
+     "tokens": 192547885.92,
+     "prix_sol_par_token": 1.0778130250851402e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "2vZDKEfXkUG6NPLRsBbMNAUgPRtBcuPUPEpGLKqaG7uwa9SzELLrqYw6R5AE5CKdiodgzh1pxYnsd81xZFiowQwe",
+     "slot": 430413504,
+     "ts": 1783038404,
+     "sol_net": 19.331265,
+     "sol_cache": 19.3313,
+     "tokens": 414911335.87,
+     "prix_sol_par_token": 4.6591315808949434e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "5rfUKT3A5S2rtnyiyaTetykB6yGyMzhsP2zPLB5VEyMdv4yAiuDogrpcWbMrRiJcmmwyhJvGmjRsyQ3faSVJMVfC",
+     "slot": 430413504,
+     "ts": 1783038404,
+     "sol_net": 20.367815,
+     "sol_cache": 20.3678,
+     "tokens": 103503468.77,
+     "prix_sol_par_token": 1.9678388788285128e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "4jCYuebKT3uk2x9NAxb4ubmAXe8bbjXZ8D8DJroT4da5mnE5j41VvzjuPGQdj7yu4FPs9wA4qhnfdGTiRi7oL5os",
+     "slot": 430413504,
+     "ts": 1783038404,
+     "sol_net": 20.445645,
+     "sol_cache": 20.4456,
+     "tokens": 65821311.14,
+     "prix_sol_par_token": 3.106234879551647e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+   "created": 1783114682,
+   "creation_sig": "3mmfECVfqdM8yj2QmErQNStY38z9aZDYfHWtr97dVvg3tKYdxtdKgAVaUxBtXswGQzAwHi3dkZRRYcDBGj28APVf",
+   "creation_slot": 430602477,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430602477
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.8551,
+   "tokens_total": 776671721.91,
+   "part_supply_1e9": 0.77667,
+   "prix_moyen_sol_par_token": 1.0410458720083208e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "4QwVJfKWnswExnD8XWLt6NjpZt6BMmtALLxgz7gC7YDksNxFY9NLx9WcWctNfUg6RuFUx9MuViUrWWE8VWHC464y",
+     "slot": 430602477,
+     "ts": 1783114682,
+     "sol_net": 20.744457,
+     "sol_cache": 20.7445,
+     "tokens": 191166552.08,
+     "prix_sol_par_token": 1.085150954853116e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "4EzDh9W3naATFm9iC1kaM8hKmJAX5APmF8sMCRvYp3t2T9tm6C89KGTvVQ41W83tdWcgEk1Nc5JpHoKxkryFtCg7",
+     "slot": 430602477,
+     "ts": 1783114682,
+     "sol_net": 19.533225,
+     "sol_cache": 19.5332,
+     "tokens": 417555580.33,
+     "prix_sol_par_token": 4.6779940525489175e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "RcypJcoA2YW8rU2mF7aZn8JUW4Nt1WiR6Q1AQCkHHthvtx1YZsjM3wLMRJV45JeaHgS71GNx4cbCxU7dLVAiPfP",
+     "slot": 430602477,
+     "ts": 1783114682,
+     "sol_net": 20.13845,
+     "sol_cache": 20.1384,
+     "tokens": 102098487.68,
+     "prix_sol_par_token": 1.9724532821344192e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "4dfeH1LZDAaHDVALHpBiLBQ1tVi2a98EGxhSNSDvTzfGH5HpcsjqQhG69d54pZeyTaWHAoDua5s7UCkVNX4VtyMA",
+     "slot": 430602477,
+     "ts": 1783114682,
+     "sol_net": 20.438957,
+     "sol_cache": 20.439,
+     "tokens": 65851101.82,
+     "prix_sol_par_token": 3.1038139132932294e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "6qPhG9X1YUWHekKro42H6nZLRNRU5HMbnAXSgNqepump",
+   "created": 1783125200,
+   "creation_sig": "5SgC9PdAnhdoBoANPtegNYp7JNNbb8PUuAPj4uFfc63B3oe1tYReQGmEL2vXMDbTLujFrKfiJdKLixogxnBt9aTD",
+   "creation_slot": 430628545,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430628545
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.7352,
+   "tokens_total": 776355932.21,
+   "part_supply_1e9": 0.77636,
+   "prix_moyen_sol_par_token": 1.0399247001330515e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "2jybJhdN9MVaRmea3RRWxkxpgnR7KKWoLCuogYsBqantLCxWit9QRXFd78gEj5NizftjQgGYcyoxmLwqByuKza4n",
+     "slot": 430628545,
+     "ts": 1783125200,
+     "sol_net": 20.758727,
+     "sol_cache": 20.7587,
+     "tokens": 191959878.58,
+     "prix_sol_par_token": 1.0814096646703135e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "gyfL2qxYjadLPUsZz2vNqDztPUfqscNiziJ6RKxFtPaRYRNy9eEukxgsveG5JrDJN1v9TRbraL666WqrpvMqHHD",
+     "slot": 430628545,
+     "ts": 1783125200,
+     "sol_net": 19.426246,
+     "sol_cache": 19.4262,
+     "tokens": 416157582.94,
+     "prix_sol_par_token": 4.6680024897888295e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "65mR6YcQByu9mceWLe1XxwUPFbrtkuBmBpiEgyjV7dv6eHUyHpDhKYBy8PrqdcfjMBgH9onHXgXk8b8TdKgJCq86",
+     "slot": 430628545,
+     "ts": 1783125200,
+     "sol_net": 20.393375,
+     "sol_cache": 20.3934,
+     "tokens": 103342256.47,
+     "prix_sol_par_token": 1.9733819875748674e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "5UAr3f8jJx94Hv1S7JkGR8miicHJLyPKdeUdr4RvyuNeDUEFWSaQcd1cAjv3tdLPmry9ASRMK8z129XUa9gMY8mV",
+     "slot": 430628545,
+     "ts": 1783125200,
+     "sol_net": 20.156823,
+     "sol_cache": 20.1568,
+     "tokens": 64896214.22,
+     "prix_sol_par_token": 3.1060091396538025e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "mint": "3cH1aqzTqNuEZpDVgJ7MvQbKJWZrqkmYyRwbvS5hpump",
+   "created": 1783128306,
+   "creation_sig": "61LocsDmikKQNtE1zW4c5p9Vs9RtE1w1EvqMEvwzp5YNXTa7wFPnypD1dpPqTMFdWUB8Ks22iS8nCMKWJrBf38Fw",
+   "creation_slot": 430636256,
+   "creation_dev_buy_tokens": 3520371.07,
+   "n_membres": 4,
+   "slots_achats": [
+    430636256
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 80.7352,
+   "tokens_total": 776355932.21,
+   "part_supply_1e9": 0.77636,
+   "prix_moyen_sol_par_token": 1.0399247001330515e-07,
+   "buys": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "sig": "3L8RMCurEzNgBzeR91R4baS3rqp6V6fQu3pc5CBrt59drQy4epfi9MhN7xjKUBBkokfxWFhyoF1VZy6aCFmF8nYw",
+     "slot": 430636256,
+     "ts": 1783128306,
+     "sol_net": 20.758727,
+     "sol_cache": 20.7587,
+     "tokens": 191959878.58,
+     "prix_sol_par_token": 1.0814096646703135e-07,
+     "err": null
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "sig": "3eoefGc978vaYNmkYqZJnHjT9ZyKnMWZ3YyxVnzDweVnjz7XP4UKPK5UmzAX7X4rdav8saUAoLTbZAkXQNw1hzdN",
+     "slot": 430636256,
+     "ts": 1783128306,
+     "sol_net": 19.426246,
+     "sol_cache": 19.4262,
+     "tokens": 416157582.94,
+     "prix_sol_par_token": 4.6680024897888295e-08,
+     "err": null
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "sig": "4kg63zw3jhSDPuVynYUorVbbnEvAqqnzyg2JtmnyeunFMpCKECQpxJnxuoBF34aYDkSrzhoKYTPQArgoCrcraZHC",
+     "slot": 430636256,
+     "ts": 1783128306,
+     "sol_net": 20.393375,
+     "sol_cache": 20.3934,
+     "tokens": 103342256.47,
+     "prix_sol_par_token": 1.9733819875748674e-07,
+     "err": null
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "sig": "3wpi9KYLwEp8o7NTvsa5Mi41b8TRqzDcNPuMce6cxFZuvhqMbsW3q2njheHbgLTD8J3YficU2kB4m6gZYWK9Jhrm",
+     "slot": 430636256,
+     "ts": 1783128306,
+     "sol_net": 20.156823,
+     "sol_cache": 20.1568,
+     "tokens": 64896214.22,
+     "prix_sol_par_token": 3.1060091396538025e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump",
+   "created": 1782634955,
+   "creation_sig": "2RkzuPY7ytfhdv6KMPfHbcBV8RZ3x6wjKGGXvw942gxAwkGxBA8CFtN8VwYSSEu8E3qBxQ87A6ex1NT8WW4GUmA2",
+   "creation_slot": 429414857,
+   "creation_dev_buy_tokens": 1785358.05,
+   "n_membres": 4,
+   "slots_achats": [
+    429414857
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.8083,
+   "tokens_total": 788357564.43,
+   "part_supply_1e9": 0.78836,
+   "prix_moyen_sol_par_token": 1.0757594754775808e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "3roAqo3oFDPBU172rrBLFSktuHvi9e5eStaVkBC1F3PJhE2M9AzWKvgjsh5PQc6dxm2vCsoWBz7eDSnnY6HYDsG9",
+     "slot": 429414857,
+     "ts": 1782634955,
+     "sol_net": 21.365842,
+     "sol_cache": 21.3658,
+     "tokens": 441889207.73,
+     "prix_sol_par_token": 4.835112896735262e-08,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "3DQ9xNDyvNdrvE1Htp2fqQgnjBKs7xr8216M6Zvk6k7ABMTtMe857iU2qjNHA7KL3LVgQQhu2FJxQJ6jPag2ArzX",
+     "slot": 429414857,
+     "ts": 1782634955,
+     "sol_net": 21.02667,
+     "sol_cache": 21.0267,
+     "tokens": 63130454.02,
+     "prix_sol_par_token": 3.3306698757450415e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "2QGeRFXB7ShzpK8woSuP6Pq6r2xMv1dRMjqkMs9RxcCynFVM2zzYagRvCxg8TRZ25cN5PkDqsCYu66UiPb39baNQ",
+     "slot": 429414857,
+     "ts": 1782634955,
+     "sol_net": 21.264597,
+     "sol_cache": 21.2646,
+     "tokens": 183171699.65,
+     "prix_sol_par_token": 1.1609106315461993e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "3WRUtic6wnFaoNrAqSrUtvcmaMabfMU1A6bjELazmD1bKjrkbxYXfsjMz2auvhqfJcvCtGLbHo3WQUWoxEdcfN8Y",
+     "slot": 429414857,
+     "ts": 1782634955,
+     "sol_net": 21.151203,
+     "sol_cache": 21.1512,
+     "tokens": 100166203.03,
+     "prix_sol_par_token": 2.1116106937821046e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "EmP6i382zAaURiidLi4qphFvuAhsfQmTcV1F8iz6pump",
+   "created": 1782638510,
+   "creation_sig": "5VjmjA4Vw6hW3BUPQxkdqMwKmaGzw14AEGQVKZZ7jjSdGxZKYoAPg99RBG7VZXXRBCRaD1NnLqP36ZMDBGCiv4Pd",
+   "creation_slot": 429423688,
+   "creation_dev_buy_tokens": 1785358.05,
+   "n_membres": 4,
+   "slots_achats": [
+    429423688
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.7972,
+   "tokens_total": 788330221.29,
+   "part_supply_1e9": 0.78833,
+   "prix_moyen_sol_par_token": 1.075655514782123e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "5rjVZrBLcyLk4H3zvZqaLoWtQkrMaa3HcVTuiqbpzwH61B12d7ATTyWB8YbEkakhs5avhYnBLVahamdR7SXW8fHZ",
+     "slot": 429423688,
+     "ts": 1782638510,
+     "sol_net": 21.151203,
+     "sol_cache": 21.1512,
+     "tokens": 100166203.03,
+     "prix_sol_par_token": 2.1116106937821046e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "2UrSGoVB6et9wzn3YT5WsbvadvyDCBUZMfSvidadVJ5uJ2DEYx1EYcpxUDiXPF6TxK7PAbsJTbViBwyjePPGrhmJ",
+     "slot": 429423688,
+     "ts": 1782638510,
+     "sol_net": 21.015533,
+     "sol_cache": 21.0155,
+     "tokens": 63103110.88,
+     "prix_sol_par_token": 3.3303481137028653e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "2DshMG7emwVVkyZmwUx5yhgQxbWqS1iBiGgNtyis9tqrqgoCu7LdLjnrWSNVHGgKf8CBoR3KYtgkEZxM7cHPSyzo",
+     "slot": 429423688,
+     "ts": 1782638510,
+     "sol_net": 21.264597,
+     "sol_cache": 21.2646,
+     "tokens": 183171699.65,
+     "prix_sol_par_token": 1.1609106315461993e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "2MSder5eQj91vz3D36EyvMEADiqCVND2PawJfRxMyR4miT8EkSf3RXFjWmQQKpoFJp72gebpGfM6nh8FUeCw6pf8",
+     "slot": 429423688,
+     "ts": 1782638510,
+     "sol_net": 21.365842,
+     "sol_cache": 21.3658,
+     "tokens": 441889207.73,
+     "prix_sol_par_token": 4.835112896735262e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "tT2Ss23K4WmE9pvQwA5rfaVJD3kmExNpxYUx6xKpump",
+   "created": 1782640983,
+   "creation_sig": "5yUh8VrDZJY3KacCQ5979FTbAwdUdzFLrn16p5dRwLWuu8EWetVDSZEA7isSQg6EeKuYEvviumq8ynGhjkiAxqpN",
+   "creation_slot": 429429857,
+   "creation_dev_buy_tokens": 2141716.95,
+   "n_membres": 4,
+   "slots_achats": [
+    429429857
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 84.8073,
+   "tokens_total": 788023573.25,
+   "part_supply_1e9": 0.78802,
+   "prix_moyen_sol_par_token": 1.0762025766594032e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "5ouBi6TUjnH2Rjc5JGVH9HgDkcjgS49fPWFhvhZWSFGUZ76kvSa3G9cx8QE5tjuregiAGF1kGJYGw49Mvo2VvsFe",
+     "slot": 429429857,
+     "ts": 1782640983,
+     "sol_net": 21.365842,
+     "sol_cache": 21.3658,
+     "tokens": 441655860.1,
+     "prix_sol_par_token": 4.837667515465847e-08,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "54oQQgC7NHDapdzRxNzfeTV84twR4vYHgM5XWhcRvQPv4E2AhzWiBxWqFtgguyD87jmknj1ctHntHj4qg9aUdzW3",
+     "slot": 429429857,
+     "ts": 1782640983,
+     "sol_net": 21.025658,
+     "sol_cache": 21.0256,
+     "tokens": 63115637.95,
+     "prix_sol_par_token": 3.331291313366804e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "3YHtxnQTEKypbvzfFCJfEhtWsG42Z3hpfi72fNQ2d248f5zMcCDRWdaMw47ajStGoqhJdM1D7Xs8xgeWpe3dzdg2",
+     "slot": 429429857,
+     "ts": 1782640983,
+     "sol_net": 21.264597,
+     "sol_cache": 21.2646,
+     "tokens": 183110516.81,
+     "prix_sol_par_token": 1.1612985275417312e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "2HS7QPAHFe2gq1tCGxAU77VrXQ2KGsRRK3Eyqf7f5crdJpaUPK2yWYjo2r4X3xoPLXCRTrgtrEDJU2QeNq95Vw6h",
+     "slot": 429429857,
+     "ts": 1782640983,
+     "sol_net": 21.151203,
+     "sol_cache": 21.1512,
+     "tokens": 100141558.39,
+     "prix_sol_par_token": 2.1121303572495892e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "9NKToDBF9tiYxoGSjyhcBi2NqVyJjFJyCW98UPVrpump",
+   "created": 1782647923,
+   "creation_sig": "4pvJ5hKRSspqGqUFQYY1y7RyuicDYMHyx23WdqfwGmhUrE1kkfeM2qpW9dCgMu6sWu1p9mKoYDm7t87BCFDuadgv",
+   "creation_slot": 429447123,
+   "creation_dev_buy_tokens": 714856.89,
+   "n_membres": 4,
+   "slots_achats": [
+    429447123
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.4047,
+   "tokens_total": 790810668.31,
+   "part_supply_1e9": 0.79081,
+   "prix_moyen_sol_par_token": 1.0799636300116416e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "pdPSFAEPxmJiRUEAJenbqUmMcN15Bnuo8z7Xxww7J2qN9HCcQAh6co8yRaXQQqTjavqixDLnECDZBXi7Pv81XHX",
+     "slot": 429447123,
+     "ts": 1782647923,
+     "sol_net": 20.758358,
+     "sol_cache": 20.7583,
+     "tokens": 61475683.97,
+     "prix_sol_par_token": 3.3766777677306586e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "T9Bft5Hm1RXYZEjN3p3MS3nCkN7XQPCHpq6cPZKRSNQqsVh9LsCt9drfRSkQxMdUjs17HKoky9yPqd3osgmmB1V",
+     "slot": 429447123,
+     "ts": 1782647923,
+     "sol_net": 22.005742,
+     "sol_cache": 22.0057,
+     "tokens": 450280276.72,
+     "prix_sol_par_token": 4.8871210842775464e-08,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "268BRQTLn1PtRoZCd4vV3fHFyjcCNB96PmzcD3u3XEuRTu4jxYE5nBsEHb2G7dQG3wMh3Yi2inAjryuC9swP8ngc",
+     "slot": 429447123,
+     "ts": 1782647923,
+     "sol_net": 21.137028,
+     "sol_cache": 21.137,
+     "tokens": 98081131.16,
+     "prix_sol_par_token": 2.1550554621574974e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "p9WFVhyespqJbWzub6mpJR9zrjX9py8eR5CZVKYbGz2Yy5EmzyNvh1p6pjbPXQACTZ2uHpB229fWCUPNn3YWQLA",
+     "slot": 429447123,
+     "ts": 1782647923,
+     "sol_net": 21.503548,
+     "sol_cache": 21.5035,
+     "tokens": 180973576.46,
+     "prix_sol_par_token": 1.1882147708822021e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "48pZaxQf5dHvg2K6cfz9Zz4LmXBLv96VRDV84kvgpump",
+   "created": 1782662500,
+   "creation_sig": "3pobGnhH6R9puKmu6PPhR6nYwKTksm6yYcYB2zVmJjEi9ZjMyod9KPbg6V5BBi1KkebHGBJFDbxa8zxxJy6m3TtZ",
+   "creation_slot": 429483283,
+   "creation_dev_buy_tokens": 536231.98,
+   "n_membres": 4,
+   "slots_achats": [
+    429483283
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 83.2339,
+   "tokens_total": 785598749.73,
+   "part_supply_1e9": 0.7856,
+   "prix_moyen_sol_par_token": 1.0594959962526213e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "5Veu9CLF2BpPeXtVf8aSiHKio2BrUp6Fgy7M1JaWBmmBCqHiyJeiDbNjFqdrReXRXsa89zQ57E1qk1SHwnAA4m9Z",
+     "slot": 429483283,
+     "ts": 1782662500,
+     "sol_net": 20.914272,
+     "sol_cache": 20.9143,
+     "tokens": 182610354.6,
+     "prix_sol_par_token": 1.1452949695557677e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "6343wfKk5chqN5PLoQaWGzK8qrsnd6Ja3QHc9SNaVwo89T6wkqkiwS1iVaSUYDKmerg185aVn2v7vzUtHkH5Q5uW",
+     "slot": 429483283,
+     "ts": 1782662500,
+     "sol_net": 20.408032,
+     "sol_cache": 20.408,
+     "tokens": 62801914.29,
+     "prix_sol_par_token": 3.2495875183614216e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "wXv8gM3wpZ4u7aZHWHRncvCeDCHqE9kRpftq5pADCD8d8xQZrYNrkmvtNPorYsKwXPGDvGQWbtAeKWBKBJkjV4J",
+     "slot": 429483283,
+     "ts": 1782662500,
+     "sol_net": 21.137624,
+     "sol_cache": 21.1376,
+     "tokens": 439918100.34,
+     "prix_sol_par_token": 4.804899923133763e-08,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "2aFF94K3sFFrxQXD9srMBy9Js3A69usS3gg9YPGHyaUER1BLJFdLn3UvyRBZJ93YbdQ4V3cQKRc3UVbzigKgTgsq",
+     "slot": 429483283,
+     "ts": 1782662500,
+     "sol_net": 20.773945,
+     "sol_cache": 20.7739,
+     "tokens": 100268380.5,
+     "prix_sol_par_token": 2.0718340561918304e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+   "created": 1782663501,
+   "creation_sig": "2Q5LGekdBwEXQtDrHbwyQmg1VdwmeboDq8p2GuqwEEkh4j8Qj6rcT4ijh7cdNMxnLj5eF5ycoapT2csTYo97rFvD",
+   "creation_slot": 429485775,
+   "creation_dev_buy_tokens": 1071928.26,
+   "n_membres": 4,
+   "slots_achats": [
+    429485775
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 82.7863,
+   "tokens_total": 783967286.13,
+   "part_supply_1e9": 0.78397,
+   "prix_moyen_sol_par_token": 1.0559923668329204e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "1JJb445suzxFtndgYMhBKvkCrv8tyGkf8aeDLjyT5u43UkKDKWbbhgdA6hnuP9prHv3UkcnddcTW5hsJaAqmq9s",
+     "slot": 429485775,
+     "ts": 1782663501,
+     "sol_net": 20.875184,
+     "sol_cache": 20.8752,
+     "tokens": 436332419.28,
+     "prix_sol_par_token": 4.78423867569337e-08,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "2zN7UeDF1TuD7BVcCsZt2n9sZjSUiRDHftagQLAL1bAkr4buEU5DuUAduP4jh52KT6EMbtVFf68dw5164gPY2tfp",
+     "slot": 429485775,
+     "ts": 1782663501,
+     "sol_net": 20.711772,
+     "sol_cache": 20.7118,
+     "tokens": 182849326.18,
+     "prix_sol_par_token": 1.132723444401708e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "43rNFn4ugDgeiSJ2CZzwun588vaf5i9MjkXHhAyrroeTomVeboTaz4Gf6peDYKjaSeAH9QSwLb6TXQV56t95fUkJ",
+     "slot": 429485775,
+     "ts": 1782663501,
+     "sol_net": 20.530139,
+     "sol_cache": 20.5301,
+     "tokens": 63798538.94,
+     "prix_sol_par_token": 3.217963848838565e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "2YZPh892Zq4XzYJyJHe5jxGR4aezoEkfskxDEwErs6EqRmUjnjBmsrTsZYRU5KekXrA2XPYvQnjfK2hfye7Cr5ct",
+     "slot": 429485775,
+     "ts": 1782663501,
+     "sol_net": 20.669252,
+     "sol_cache": 20.6692,
+     "tokens": 100987001.73,
+     "prix_sol_par_token": 2.0467239832862158e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "8Xa1jqBhrxEFX4HgMd9NNRVjK5ap7tBrr5aebCGKpump",
+   "created": 1783078818,
+   "creation_sig": "4sBf8Av1crxwdpqEE44t2EqKLpzPA1HWAsJDsUz7r9KUV2Gv7g925k8sWkNo2rPuqByWade3BBX7nb5Zb7PdHu8c",
+   "creation_slot": 430513779,
+   "creation_dev_buy_tokens": 714856.89,
+   "n_membres": 4,
+   "slots_achats": [
+    430513779
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.4867,
+   "tokens_total": 791009889.3,
+   "part_supply_1e9": 0.79101,
+   "prix_moyen_sol_par_token": 1.080728435337907e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "zUjxg8B2ZgVEc29KrFUpTaxPfPMxCNAAcuM4AsYsW3Fa7dEctHwkUK3E5KapKDWEuT3f2EYP5tq7AZjVL4SgtW1",
+     "slot": 430513779,
+     "ts": 1783078818,
+     "sol_net": 20.757345,
+     "sol_cache": 20.7573,
+     "tokens": 61375557.17,
+     "prix_sol_par_token": 3.3820214442018805e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "3ufSUvV4LJayejytHYDxnmXMtbECTqRDaCV17uLxdkEu8Adsr4CF8tsDhJpj8g2DzMkiVmWER1iu7mKdNeSvngyj",
+     "slot": 430513779,
+     "ts": 1783078818,
+     "sol_net": 21.015528,
+     "sol_cache": 21.0155,
+     "tokens": 97163258.57,
+     "prix_sol_par_token": 2.1629089007773207e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "k58R6NG4AWwZ339gbDJkVeD1FBpyHxRoWVXsTPX136SRPHrcVEALobubRs54i6bmBgfH2624ZhPuXzUmjS4qQcG",
+     "slot": 430513779,
+     "ts": 1783078818,
+     "sol_net": 21.799198,
+     "sol_cache": 21.7992,
+     "tokens": 183274387.39,
+     "prix_sol_par_token": 1.1894295848273063e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "2pVKLg1WKZLHAhSZVRJGo6H6dAk2AgE5S3GzfSm3FfSyrGE7LXg1NCeqP1CtjvprgHaTRCPBU4dVTcS5cHDHY8mu",
+     "slot": 430513779,
+     "ts": 1783078818,
+     "sol_net": 21.914617,
+     "sol_cache": 21.9146,
+     "tokens": 449196686.17,
+     "prix_sol_par_token": 4.87862399162808e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "ETGVz4jeuZbKqFd1GoBQeJ5nS5pB5Nah9FLvDxTcpump",
+   "created": 1783092865,
+   "creation_sig": "4pLktMXxghefqBpdJkSo9LKMBkAxSDDMLqarr5GT1ATC57iTFoLYwUbFqVxMpTydNaAsMfGUkghhDrqVN3AwUQxa",
+   "creation_slot": 430548593,
+   "creation_dev_buy_tokens": 714856.89,
+   "n_membres": 4,
+   "slots_achats": [
+    430548593
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.3864,
+   "tokens_total": 790766358.65,
+   "part_supply_1e9": 0.79077,
+   "prix_moyen_sol_par_token": 1.0797936592266283e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "d54tLc4uF6sFj2vJdmtVAvKfafCX4eq1NSseHbSbpq8Gyp6d3Pj29BoJncuXEAtaCxS8cuzFPBL8kbBB12dawVH",
+     "slot": 430548593,
+     "ts": 1783092865,
+     "sol_net": 21.900442,
+     "sol_cache": 21.9004,
+     "tokens": 449027788.22,
+     "prix_sol_par_token": 4.8773022223563087e-08,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "T32StyD9RdXxS9y2MYeVqoSmBBvDQM5LvrrYSpivC1VCPxYfpN3trjre9wXoRA96jRzrQWFBCceaSoyx8JnLuqk",
+     "slot": 430548593,
+     "ts": 1783092865,
+     "sol_net": 21.795148,
+     "sol_cache": 21.7951,
+     "tokens": 183335092.9,
+     "prix_sol_par_token": 1.1888148362234403e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "C63LD8qCM2GSkdm6DKmb8kxhHZkqWeZpPEEFsvB1Ma7w468CkauZ4jh922zFcRifSgFT8cZij2bGa1QEjfDPCod",
+     "slot": 430548593,
+     "ts": 1783092865,
+     "sol_net": 21.015528,
+     "sol_cache": 21.0155,
+     "tokens": 97205785.29,
+     "prix_sol_par_token": 2.1619626458393794e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "HsGUePexubnsMA7hdcuCDed5fAysVcik8ex7QLFpihXWLXLxePdjbPuKBXcQp3GsGwdYMrEkgcb8fQPfuM3TBNi",
+     "slot": 430548593,
+     "ts": 1783092865,
+     "sol_net": 20.675332,
+     "sol_cache": 20.6753,
+     "tokens": 61197692.24,
+     "prix_sol_par_token": 3.3784496922410113e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "Czv6T6sF5SMTDDYns5tEeSsKb7MNK4QWAnvZwsMxpump",
+   "created": 1783095352,
+   "creation_sig": "4XspWuMSzrZEAMyrWmHiWjdoz7GJSwjbS38F85BtVwFjgPWKfVrGD8hBfUL9MQVJPui38sKFmNW7Zjzng2Mgu1Kc",
+   "creation_slot": 430554759,
+   "creation_dev_buy_tokens": 714856.89,
+   "n_membres": 4,
+   "slots_achats": [
+    430554759
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.6831,
+   "tokens_total": 791485891.26,
+   "part_supply_1e9": 0.79149,
+   "prix_moyen_sol_par_token": 1.0825601940117647e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "4Z95ijt3LY51ZxsWP8zQw6nSVWzXF84LYfyPKfVh9tfZhY9AZXE4GbQpKuJ1vTvA7zy6FGt5tLTj2F1zGD7qYVP2",
+     "slot": 430554759,
+     "ts": 1783095352,
+     "sol_net": 20.959845,
+     "sol_cache": 20.9598,
+     "tokens": 61873444.91,
+     "prix_sol_par_token": 3.387534881876985e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "3wrR6xff7uMm41RgEHuHyZ786NG4D2iZpsWF65K2Q6WGC4cwJh7aNhP8UT7DwWEvRYWYL8YVtqZXsyBWbnabntNP",
+     "slot": 430554759,
+     "ts": 1783095352,
+     "sol_net": 21.900442,
+     "sol_cache": 21.9004,
+     "tokens": 449027788.22,
+     "prix_sol_par_token": 4.8773022223563087e-08,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "3a5watgNS81mTmcW8bRQvQ1xnHkApZKnEbg7ejgB7JMUH6P7gp8zt1CATXVC3pJ6SUeKMEZe9yptyUGppSF9yuNt",
+     "slot": 430554759,
+     "ts": 1783095352,
+     "sol_net": 21.82046,
+     "sol_cache": 21.8204,
+     "tokens": 183485345.8,
+     "prix_sol_par_token": 1.1892208757148439e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "5Zu4sLKFuakuXCegPLvqcMYUZhEwNWwD6rfysEcoZ9yw3hxqGeyPjS3VMAZH5BQ9ZkCTDkXjffdRsEpknFJAJopP",
+     "slot": 430554759,
+     "ts": 1783095352,
+     "sol_net": 21.002365,
+     "sol_cache": 21.0024,
+     "tokens": 97099312.33,
+     "prix_sol_par_token": 2.1629777456782817e-07,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "mint": "CBvxtHtM9W4UXT1m7pwkPkaVDPpKQj8WGMJe7tQpump",
+   "created": 1783096039,
+   "creation_sig": "3X6d89Suqfmfq6oLCaPorsa6sYFT9y9ef9gbBUkbJw2sunzoDv1uhPpcPg6hC86qKDxT4pH3SaRu9ACVh9tykvoL",
+   "creation_slot": 430556455,
+   "creation_dev_buy_tokens": 714856.89,
+   "n_membres": 4,
+   "slots_achats": [
+    430556455
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 86.0203,
+   "tokens_total": 792299200.95,
+   "part_supply_1e9": 0.7923,
+   "prix_moyen_sol_par_token": 1.0857044396467656e-07,
+   "buys": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "sig": "42J7bsVFAqZuzV2wBh7o2PFFCAd6xciVjE2ZV7ZpyQnd76LRhKpo5Z8A9LyhUXAD7UuYTkAqx98rk6BU2z51uB6e",
+     "slot": 430556455,
+     "ts": 1783096039,
+     "sol_net": 21.260553,
+     "sol_cache": 21.2605,
+     "tokens": 97910487.14,
+     "prix_sol_par_token": 2.1714275503901332e-07,
+     "err": null
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "sig": "64wAFpMASxfEa2k58Z9PkuE5K5AtqaVWPvySbNb93Lq7BXZVGnt6BKfqwwnCbLsgzKDPgzAYzoK2WxxGm7ohvRH6",
+     "slot": 430556455,
+     "ts": 1783096039,
+     "sol_net": 21.855898,
+     "sol_cache": 21.8559,
+     "tokens": 183610646.0,
+     "prix_sol_par_token": 1.1903393602001136e-07,
+     "err": null
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "sig": "NGon1UeR9Y3fw6UPZKV6ig1By3kvRZhSyHDVghqtSkfN5Ej4Lyfk4Tm4L6JghXmwLk7j4pQvxzLLBmpH8mRtFL7",
+     "slot": 430556455,
+     "ts": 1783096039,
+     "sol_net": 20.989208,
+     "sol_cache": 20.9892,
+     "tokens": 61581381.64,
+     "prix_sol_par_token": 3.408369111085347e-07,
+     "err": null
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "sig": "4gd7dt7U3Ukm6fHufN93e5Er3fXh97biEGjvQubPxpHaNAzivgWTGCn2ncefigJEGBwLLVaNLFF7YhegypuRohio",
+     "slot": 430556455,
+     "ts": 1783096039,
+     "sol_net": 21.914617,
+     "sol_cache": 21.9146,
+     "tokens": 449196686.17,
+     "prix_sol_par_token": 4.87862399162808e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump",
+   "created": 1783064195,
+   "creation_sig": "24N65UpAR2rpCnLYQPk2jp9LwWJHoQoyUHEFP5pkX8S9oVe37ZuLg9ZUk65mepy6V48wjs6aWxjbhid6bjwMX2fU",
+   "creation_slot": 430477517,
+   "creation_dev_buy_tokens": 1974257.8,
+   "n_membres": 4,
+   "slots_achats": [
+    430477517
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 79.4884,
+   "tokens_total": 774459255.2,
+   "part_supply_1e9": 0.77446,
+   "prix_moyen_sol_par_token": 1.0263726653957095e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "5BMRmWTx3KQJN8nPNFE2yVKBWMTqHx8qmqBxj8MrYSGa5YzUoEznCzipe6BL67DsXDuAg9viMnqH72X9t4PdtAVs",
+     "slot": 430477517,
+     "ts": 1783064195,
+     "sol_net": 19.133136,
+     "sol_cache": 19.1331,
+     "tokens": 62506943.16,
+     "prix_sol_par_token": 3.0609616902753285e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "221DuXf2NYNZs8dN9rq1L35cqkFUkZR35gosCXPipSrSGttgM9MfEs9CbKg91TD2Yh9PHdvR8CvPXNpTTBzNHNYP",
+     "slot": 430477517,
+     "ts": 1783064195,
+     "sol_net": 19.526184,
+     "sol_cache": 19.5262,
+     "tokens": 98402638.59,
+     "prix_sol_par_token": 1.9843150932697015e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "3ZmH1ZDD3Vz83PetprGQ1qnDSDDanUE4J2h4Brb9JCWhQdkgvKpRmj1F7QqDJRTeSGnUs7cuAMcANSUq4sZXbCi3",
+     "slot": 430477517,
+     "ts": 1783064195,
+     "sol_net": 20.449631,
+     "sol_cache": 20.4496,
+     "tokens": 184152339.36,
+     "prix_sol_par_token": 1.1104735845631905e-07,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "31Ve7mFvuDraDv3KPNYpSbmwiwg52MuFhmEmqqaLyWJ71v7Kij1gupqMErVZpXySmjYr8gFzgfzyWH7ofyLRBL79",
+     "slot": 430477517,
+     "ts": 1783064195,
+     "sol_net": 20.37943,
+     "sol_cache": 20.3794,
+     "tokens": 429397334.09,
+     "prix_sol_par_token": 4.7460540760211736e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "fCM1RmVwhkVd8o7NrhAyWXmtVPqPZkaiWdgCcgLpump",
+   "created": 1783065268,
+   "creation_sig": "5xesCzBEU4fL4AvPars4jiKwQMBj42YzjGqV2ZjNZzbrhmGiRJhSQNcWUzdcRJpFDzxPkczQ9DvjQUsX9xba5Xr8",
+   "creation_slot": 430480176,
+   "creation_dev_buy_tokens": 1974257.8,
+   "n_membres": 4,
+   "slots_achats": [
+    430480176
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 79.4884,
+   "tokens_total": 774459255.2,
+   "part_supply_1e9": 0.77446,
+   "prix_moyen_sol_par_token": 1.0263726653957095e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "3ikJ18czvLfAXh1cQNyyDNYbuQDMqCdqkE33bd31ZCi7LQHAgrsSGbkFV1pPfKTVKDjNk8JB7giHaqW879DL6Mjx",
+     "slot": 430480176,
+     "ts": 1783065268,
+     "sol_net": 19.133136,
+     "sol_cache": 19.1331,
+     "tokens": 62506943.16,
+     "prix_sol_par_token": 3.0609616902753285e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "5GSm5DrnUQX2HNLLPMDgbc3XbYBRG1m4eesdvWbdYrDrnxXxCaC8fLwbwbcr6c9mPJmXiXcefGp66HSZFDQmskcR",
+     "slot": 430480176,
+     "ts": 1783065268,
+     "sol_net": 19.526184,
+     "sol_cache": 19.5262,
+     "tokens": 98402638.59,
+     "prix_sol_par_token": 1.9843150932697015e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "2hM3VMGPammW8DvfayaLVboZRiFiNmRVCpHqhR3qH1rBfApGkUM4WjaHXaUV2jYh9UvpHJ7L4hMNvcLZ9bxop89Z",
+     "slot": 430480176,
+     "ts": 1783065268,
+     "sol_net": 20.449631,
+     "sol_cache": 20.4496,
+     "tokens": 184152339.36,
+     "prix_sol_par_token": 1.1104735845631905e-07,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "LD7vFigWDnkjv3gzY7LpH91EBRWqpuJnV6f7FFqXHpLVVm9pvZ2QAjCpbutJy5AZS813uLCgmqe8cv93c7XdFPM",
+     "slot": 430480176,
+     "ts": 1783065268,
+     "sol_net": 20.37943,
+     "sol_cache": 20.3794,
+     "tokens": 429397334.09,
+     "prix_sol_par_token": 4.7460540760211736e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "4faz9H9B5FJc6uEMoLT6C1Lg2j5iZ1DEsK535Ekupump",
+   "created": 1783066100,
+   "creation_sig": "DxdBpoZm66bYtnvcADMcnu3s9mooDYYv8e8tzwf4DBiZkWULrpxevnJgHhjme1fKdVdh3L3FdbkLwpJ6eTYyFdv",
+   "creation_slot": 430482245,
+   "creation_dev_buy_tokens": 1974257.8,
+   "n_membres": 4,
+   "slots_achats": [
+    430482245
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 79.4884,
+   "tokens_total": 774459255.2,
+   "part_supply_1e9": 0.77446,
+   "prix_moyen_sol_par_token": 1.0263726653957095e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "4uc437SitSeBbkAWtJBJWFeAR2LRj1Btcjsn7WinnmAkLviqd1rLdTzoTwZWDMAG9V8pLumsRtqbgiofiMtTs3zE",
+     "slot": 430482245,
+     "ts": 1783066100,
+     "sol_net": 19.133136,
+     "sol_cache": 19.1331,
+     "tokens": 62506943.16,
+     "prix_sol_par_token": 3.0609616902753285e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "2NLTQCCKHcT9WEQ5eR2FG7JxdxPgBu3oeSuug2b7NNmarWXEJSdJKdpWtnnxsiDYy8G8NeaK48baEB1NzueJzT8n",
+     "slot": 430482245,
+     "ts": 1783066100,
+     "sol_net": 19.526184,
+     "sol_cache": 19.5262,
+     "tokens": 98402638.59,
+     "prix_sol_par_token": 1.9843150932697015e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "4iik14ZTDWwNNCCqobs6g4f4QNsgjzsHezqds7VGjkfGfTgPzNdw42GGV5MSCEN6pSPCnuhrtvumHENV3LD8pinE",
+     "slot": 430482245,
+     "ts": 1783066100,
+     "sol_net": 20.449631,
+     "sol_cache": 20.4496,
+     "tokens": 184152339.36,
+     "prix_sol_par_token": 1.1104735845631905e-07,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "AHuimT9sFJ31CYoSikos62chnimGNfgeGNV2oWWa4wjtyhCH5fRtZTLcf5WS2ZwUn655PGz7gSvS1Yis7ezBtYJ",
+     "slot": 430482245,
+     "ts": 1783066100,
+     "sol_net": 20.37943,
+     "sol_cache": 20.3794,
+     "tokens": 429397334.09,
+     "prix_sol_par_token": 4.7460540760211736e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "HSAuwh7kJ9sS71vYu2pR3wddJRppUE553vTTMm93pump",
+   "created": 1783067547,
+   "creation_sig": "3ryrvKcPhoxw55U7M4kNwfSwi4BHK4eJZuh2AritSQbhcJezu7n5JydDFJRAG2RxvCfve66PVFk2AHrXh222WTgP",
+   "creation_slot": 430485810,
+   "creation_dev_buy_tokens": 1763077.75,
+   "n_membres": 4,
+   "slots_achats": [
+    430485810
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 79.7553,
+   "tokens_total": 775372916.29,
+   "part_supply_1e9": 0.77537,
+   "prix_moyen_sol_par_token": 1.0286059046479569e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "5qtY4VmJtbZ77AF6r8ChbLiJdAuvo9ELmpmekngMALree3v5MzTCgNVDt5j3eJzSaJikT37mSdfEyHhBM15WdRjr",
+     "slot": 430485810,
+     "ts": 1783067547,
+     "sol_net": 19.233603,
+     "sol_cache": 19.2336,
+     "tokens": 62575733.63,
+     "prix_sol_par_token": 3.0736520655484973e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "CAuBJtjGSc5b6drA7QgEnBhUncG5NRDAVKVNucKvJacLLfGi6oUZkU5GkfLcTqChJySy2trnb994eNxSNKcew35",
+     "slot": 430485810,
+     "ts": 1783067547,
+     "sol_net": 20.367609,
+     "sol_cache": 20.3676,
+     "tokens": 103451120.56,
+     "prix_sol_par_token": 1.9688147436847987e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "2YZ5cXwMJT4sw2exog5soveTdfXdLbPGePUDe8xZPGEpEd1UMc96cggSvFM1KQGpRUyanfNh69u8BApFSN39oWB3",
+     "slot": 430485810,
+     "ts": 1783067547,
+     "sol_net": 19.585657,
+     "sol_cache": 19.5857,
+     "tokens": 177434071.89,
+     "prix_sol_par_token": 1.1038273139354257e-07,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "5ixprLguC14mqNtMmH8b8UXQptvYCGpsdZD71G1EF8pfwtgzBEzyTNDaYAYBHQ6TZRyLUoVDm4FmNSR7u8owTsEW",
+     "slot": 430485810,
+     "ts": 1783067547,
+     "sol_net": 20.568447,
+     "sol_cache": 20.5684,
+     "tokens": 431911990.21,
+     "prix_sol_par_token": 4.7621847723731475e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "HmqYG1uryHg33JDrky5oAhCxTkXXDbc4qV8NqWXApump",
+   "created": 1783102716,
+   "creation_sig": "RmrAtFYhodo1hAFQGPoC9A431zMd1cxe7dG54B57XfLdeZ7hwJdVTJD1CKjDkvTDjtYDg2P6nsng9fZJ8WsdXy4",
+   "creation_slot": 430572931,
+   "creation_dev_buy_tokens": 178803.56,
+   "n_membres": 4,
+   "slots_achats": [
+    430572931
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.1685,
+   "tokens_total": 790734260.91,
+   "part_supply_1e9": 0.79073,
+   "prix_moyen_sol_par_token": 1.0770806731200145e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "3doo2aznFkewxBpLc44AdDTFVtAt2oJBMhZRwtynntvaLxjCyFSrkV763nnuxCJ7KnGWxswDu3ozjeR3AFnV33ev",
+     "slot": 430572931,
+     "ts": 1783102716,
+     "sol_net": 21.837673,
+     "sol_cache": 21.8377,
+     "tokens": 182117275.92,
+     "prix_sol_par_token": 1.199099471755358e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "4fKZggS76GjTAiHVqEG5Fee82dgR8G25GQ9Za6UJbPmtuxXMECHqygcYfR4K7PLapSHWroTY9SyuXvkfjo6JXW3",
+     "slot": 430572931,
+     "ts": 1783102716,
+     "sol_net": 21.253162,
+     "sol_cache": 21.2532,
+     "tokens": 97382452.12,
+     "prix_sol_par_token": 2.182442653411679e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "2NCuAKVMgDA5397m5k6uHeoBUmcZaHiny9F8vJyffbPZDDVjC9hxroT38GTNvvpa2YyiM4EieDujvhjHmmkFcb1E",
+     "slot": 430572931,
+     "ts": 1783102716,
+     "sol_net": 19.914944,
+     "sol_cache": 19.9149,
+     "tokens": 58740088.51,
+     "prix_sol_par_token": 3.390349705736266e-07,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "aM159ABuyPorbbKXt1uXJ3UkBN51bRKbEbpjdx5YgKvkdKcrksnk5J9cnWd7bpTazzorgEuQhJb2S6AHdHRHG9R",
+     "slot": 430572931,
+     "ts": 1783102716,
+     "sol_net": 22.16268,
+     "sol_cache": 22.1627,
+     "tokens": 452494444.36,
+     "prix_sol_par_token": 4.897889948081103e-08,
+     "err": null
+    }
+   ]
+  },
+  {
+   "fleet_lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "mint": "7vAgNEgE27vqRaU1ti3oMi8Qbb6khDRRcCexYWnupump",
+   "created": 1783107556,
+   "creation_sig": "4Z5GDe8WCuFDBRdpuK33iaGdTuSvUSyGL67fsqUe8ybM7qMp1oGA5my24Bxnhbgd8TdTwd3dyykRPX5fsaKbwV1F",
+   "creation_slot": 430584885,
+   "creation_dev_buy_tokens": 0.0,
+   "n_membres": 4,
+   "slots_achats": [
+    430584885
+   ],
+   "slot_unique": true,
+   "slot_egal_creation": true,
+   "span_slots": 0,
+   "sol_total_net": 85.8448,
+   "tokens_total": 792540225.16,
+   "part_supply_1e9": 0.79254,
+   "prix_moyen_sol_par_token": 1.0831595327879977e-07,
+   "buys": [
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "sig": "2sYUWU5EDdaZUZhFtFkKP4ErAffqT6x1Y1sx8Md484gi6RqaagR6k664pdwdaXQFohXA18HdkHjsYaCu8babEtqv",
+     "slot": 430584885,
+     "ts": 1783107556,
+     "sol_net": 22.051311,
+     "sol_cache": 22.0513,
+     "tokens": 183402497.79,
+     "prix_sol_par_token": 1.2023451615485484e-07,
+     "err": null
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "sig": "GscqexjuGuPgTVYZgpXgQfe7xT6rmN6AkmUxT2VPBmYzGrL1H7zfmdnkmM8XjwA3Exgeb6oQQhw8wFuJsZiwv83",
+     "slot": 430584885,
+     "ts": 1783107556,
+     "sol_net": 20.250852,
+     "sol_cache": 20.2508,
+     "tokens": 59179458.59,
+     "prix_sol_par_token": 3.4219393243891595e-07,
+     "err": null
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "sig": "3BfmvaQ8sgPrF22JVvmudBHWFykmebL254TYTxMu2FuCCPnBkgbrdwPGXp8j2AMw73Hc9yQ5yCdDHJq5amkhadNm",
+     "slot": 430584885,
+     "ts": 1783107556,
+     "sol_net": 22.163571,
+     "sol_cache": 22.1636,
+     "tokens": 452613471.21,
+     "prix_sol_par_token": 4.896798746619403e-08,
+     "err": null
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "sig": "2tE7UC9zNSjgEU9KcUHM6X9LNGj7whX2NLJDSJkHndmUPyj1eYkL65sy31w9GNBe1tCM4XY6Auj3yUzYKU8KoEHh",
+     "slot": 430584885,
+     "ts": 1783107556,
+     "sol_net": 21.379016,
+     "sol_cache": 21.379,
+     "tokens": 97344797.57,
+     "prix_sol_par_token": 2.1962155323925128e-07,
+     "err": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,457 @@
+{
+ "note": "G9X7F4Jz est un service a fort debit (759 destinataires / 11 h). Ce controle mesure la part de ses sorties captee par la flotte dans la fenetre de naissance, et compte les versements du meme montant vers des tiers : c'est le taux de base local.",
+ "flotte_A": {
+  "nom": "FLOTTE A : 2.000000000 SOL x5, 73 s",
+  "fenetre": [
+   "2024-12-13 07:18:16",
+   "2024-12-13 07:23:29"
+  ],
+  "n_sorties": 12,
+  "n_destinataires_distincts": 12,
+  "n_vers_flotte": 4,
+  "montants_flotte": [
+   2.0
+  ],
+  "n_meme_montant_hors_flotte": 0,
+  "part_flotte_dans_les_sorties": 0.3333,
+  "detail": [
+   {
+    "utc": "2024-12-13 07:18:33",
+    "dest": "EmJK5gacfUd7RhL1VpsvTmrfAqpo7nQSnhqMbEjQTevZ",
+    "sol": 2.6813846,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:18:50",
+    "dest": "BGzz6PYuUj3TWXwH6oWuMW23pRENhZoW2GHWaWTe4ewk",
+    "sol": 0.08926,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:19:02",
+    "dest": "4ryWvDenQsKpaJJPT1rj2esYHu8J3pWFWrXh54og15tH",
+    "sol": 0.8639029,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:19:21",
+    "dest": "7P3m4CvPM25zFRS4psxtwxRwF922ACLKYybcAEsMwvH6",
+    "sol": 1.3389,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:20:16",
+    "dest": "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+    "sol": 2.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-13 07:20:18",
+    "dest": "5jWTqpbHmT9oX4YVGWnT7JAGi1Az4K7zpXzBE3Rn6L8L",
+    "sol": 4.7031355,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:20:26",
+    "dest": "BUjbhNukgr7RWbCrg277QJwQ4PLKgtwVMGrZR8CjhWou",
+    "sol": 0.44627452,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:20:38",
+    "dest": "BVJeJSAfptfTgxnJqDGXJqYjUrPbqRGtk9f2YJbdVPjY",
+    "sol": 5.5787306,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:20:41",
+    "dest": "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+    "sol": 2.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-13 07:20:58",
+    "dest": "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp",
+    "sol": 2.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-13 07:21:04",
+    "dest": "3w6V7JkU3CcmZ6cGFQx3H7KJ8NhGshAVYGNUvZr8NTqC",
+    "sol": 0.9385418,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-13 07:21:11",
+    "dest": "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+    "sol": 2.0,
+    "flotte": true
+   }
+  ]
+ },
+ "flotte_C": {
+  "nom": "FLOTTE C : 1.000000000 SOL x4, 1368 s",
+  "fenetre": [
+   "2024-12-03 15:47:28",
+   "2024-12-03 16:14:16"
+  ],
+  "n_sorties": 58,
+  "n_destinataires_distincts": 56,
+  "n_vers_flotte": 3,
+  "montants_flotte": [
+   1.0
+  ],
+  "n_meme_montant_hors_flotte": 2,
+  "part_flotte_dans_les_sorties": 0.0517,
+  "detail": [
+   {
+    "utc": "2024-12-03 15:48:30",
+    "dest": "BT1jTYGPJzhh7iCTmiVLHbbLobwQoZxn4WNYg2yos1AT",
+    "sol": 11.298197,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:48:30",
+    "dest": "adTLCyVftGQ4wq35AQhyhRkaBJ5E2Yqf3kqPUJWD3rr",
+    "sol": 0.9865809,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:49:17",
+    "dest": "4ZsvWkdEKVGyGdeUkW6HLN9xDweK9oiVCQYNxuC2zRQt",
+    "sol": 0.08952,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:49:28",
+    "dest": "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+    "sol": 1.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-03 15:49:40",
+    "dest": "7nMB7HJHqihTs7BHhHHPtF7pRbN4V5XjgBrHXPeJu459",
+    "sol": 0.31332,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:49:51",
+    "dest": "8f3aXVDfsjxCRPbqUF561mATpwegwJnuvLibXu29zeRP",
+    "sol": 0.44799364,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:49:59",
+    "dest": "E4ohmuaBm6vkMywKzqxmCdkkizrbuAn3XzMmxKCCapmu",
+    "sol": 1.0,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:50:03",
+    "dest": "14dWmcYy1Bu1m5JPcGMTCxmenpuRimvTV3sd9dEnp1wX",
+    "sol": 0.2215475,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:50:03",
+    "dest": "FCeV1yRtKuWKbDK9oFTLVCzncqv6L5As3WuGDWNKr7PL",
+    "sol": 0.0549179,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:50:07",
+    "dest": "HLWDAQ5Sa3dgRVTkoGgZGgu7Nkgyq9g3unB2S7mxdEAA",
+    "sol": 0.20142,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:50:56",
+    "dest": "CCYeJj2rC7WBv7AX1oMqGWoLuhbQ4EACdSzrYs24ekMQ",
+    "sol": 0.1783007,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:50:58",
+    "dest": "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH",
+    "sol": 1.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-03 15:51:35",
+    "dest": "2gAzUrRShhzPWAEdnkgxPtzkJDpWictYeGCKURaWx2qu",
+    "sol": 1.0,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:51:55",
+    "dest": "AzQCGkM3UKfyJVEDPJE51udWAMoGCLXsMJmQbCQXXVhZ",
+    "sol": 0.53712,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:52:36",
+    "dest": "GFW2buwquRjHWkiU1dvijVGiFCUbeub7b2DY2p9rfGyd",
+    "sol": 0.12189721,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:52:45",
+    "dest": "135Pcf3WF5YYEZBpEYbgmNQKnwpwaopffAgGzWx6vt6P",
+    "sol": 0.29,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:53:36",
+    "dest": "8cLJJu8fXQa3gHegdyMVkXRrguGpqUeXdLU4v9iLFgD5",
+    "sol": 0.00203928,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:54:42",
+    "dest": "CgVRRjfxQt4BuAeZukdhk4JUV8Le62qV3QQwzB9BozUY",
+    "sol": 134.28,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:55:01",
+    "dest": "DqTZV36EpXG2LgYgtHFfUbPRBwveGubTzZW8gQBnJmY2",
+    "sol": 3.1262,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:55:21",
+    "dest": "45MKY4spd4TMsMqzT5R4qJ25adrkxKWQeACWSHqM84Eu",
+    "sol": 0.11116041,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:55:34",
+    "dest": "6tMayQx6BJVuihVkp9uEKZwPe2hcz4b3mKZuC9pvjCcr",
+    "sol": 1.40679,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:55:58",
+    "dest": "D9Xbr8Rw4CwuGi9NzjtGrsuM9SvCEhZpthokFYGX7Ttt",
+    "sol": 2.0,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:56:35",
+    "dest": "FVFy8w19oCnEcZ89n6PmDcNmKaNNeZsqRubudNzwXaxS",
+    "sol": 0.01,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:56:37",
+    "dest": "GJ4V5tNgGQM8wqtxfyu8bd2edDYtGxDG84qZ5uWe1rSs",
+    "sol": 0.01,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:57:11",
+    "dest": "6gvFeBkMaxpHdVKpzVt2tv2iWJRvrPZjno3UJJTpNdNt",
+    "sol": 0.33655775,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:57:22",
+    "dest": "12uyt6sEY2d4m8BUP3EFNDFmYtN7Fbco5XusDjK39eGk",
+    "sol": 0.142912,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:58:24",
+    "dest": "GiVoQzrc2rSWDiuwiGUrHQjh1NDpdKzg5FB5X1uXDfV1",
+    "sol": 8.214952,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:58:29",
+    "dest": "H3DZUEogxLdXvhgw8KsqCDpM9QEojYoMhfHze5Bcxf4E",
+    "sol": 12.21658,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:59:08",
+    "dest": "CgVRRjfxQt4BuAeZukdhk4JUV8Le62qV3QQwzB9BozUY",
+    "sol": 151.22322,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 15:59:40",
+    "dest": "3J8pVMnVoB2mwiN8zXzbpbkVJBM9vp12rHnG6YDytyf1",
+    "sol": 16.429905,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:00:08",
+    "dest": "EQmU2jNefjTCpP5tengWjw91GGgdF3cEFRghqLQMEJvg",
+    "sol": 0.4466,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:01:18",
+    "dest": "5pRP41YvFdz5uQCMhrjMzjXpEzDybRz6APDJ7nf35XMT",
+    "sol": 0.82264423,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:01:40",
+    "dest": "AxiT9UXArnEggFVuZTQGrdQxRkoqxbv5fqfcpUS5F4uW",
+    "sol": 0.05,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:02:47",
+    "dest": "56YbVxCQHpocu8Dr1ehwYGuZEUahJec1ydghfG6YZD7a",
+    "sol": 0.1134314,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:04:02",
+    "dest": "CLq3JZPXJZzLPGmx59c8fsYxiFjyjcr6LvXfv9VsGDKw",
+    "sol": 20.204525,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:04:17",
+    "dest": "3kqMgfQczaMr3KbgNFtpL6jUAfq2fvYNsgHrnkwcWeLS",
+    "sol": 8.041631,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:04:24",
+    "dest": "GxEARHUXQVn3R8kArzj4zz451MiSsSYr7kDZokhiPgfj",
+    "sol": 1.831275,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:04:48",
+    "dest": "GSdvMnasBGaaBLvyQ5rPbAGhXVL3PQ1RTPpwKjrpLhHx",
+    "sol": 2.1286783,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:05:56",
+    "dest": "4VkdFSeepnYs56vAxGfH8zB3PimTKqeinDwyA1PeS9of",
+    "sol": 4.7454686,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:06:23",
+    "dest": "8VHRMcwDzFuBfQk7neC2nz64hrDrt3m7LzAZWE6VBdF3",
+    "sol": 1.0142374,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:06:47",
+    "dest": "RB219hQVUBqWM5KkjCGdDHXPqfWq1gNWP5An7xRsBgV",
+    "sol": 0.31919122,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:06:53",
+    "dest": "GN2KeW2ALRGTiwCkED1JYYSK9qYR2U5xyFiuqMRLnJ1u",
+    "sol": 0.00203928,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:07:08",
+    "dest": "CLq3JZPXJZzLPGmx59c8fsYxiFjyjcr6LvXfv9VsGDKw",
+    "sol": 0.09343562,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:08:00",
+    "dest": "8wT4aQmbLD1LkTbNyTTxYbptEMFPhmunu6nGQsmnGwKU",
+    "sol": 0.278256,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:08:20",
+    "dest": "AgRM8wYA6sDo6RE58xKzP5FDyYtsnDN9rTgqHxU4oFcr",
+    "sol": 0.05,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:08:50",
+    "dest": "56khAaGXbv96CNBb2KcFtUGBAS1UzrgXuiWUkqwnf1hM",
+    "sol": 47.22,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:09:20",
+    "dest": "4Np7VJUa5u4kAK5tTHsMcNqMFvTnqEkHisCRnFXCggnk",
+    "sol": 0.2393939,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:09:28",
+    "dest": "Est4BnkD2ghtxBf4hjDKxySRJWRxLpFV191Gndus4FnL",
+    "sol": 0.062832,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:09:49",
+    "dest": "6DnAqcpvXufSpCLmh9KdiVxgWFiTJ3P3HHKe86QTyAUB",
+    "sol": 0.82440174,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:10:09",
+    "dest": "8h3x3MiukY6EFCR9s7BHtpioVq4znAFd5R4EjzuMBhTF",
+    "sol": 0.30675063,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:10:37",
+    "dest": "CtyVaMHYzRw39ovUjsaCmQS95y9TSHncvUQSesvkcBeb",
+    "sol": 0.5797076,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:10:49",
+    "dest": "RBFnBpYHsoXjy6YDfGqF31KMVEvkPnuyqevqzicjdPn",
+    "sol": 0.52732223,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:10:52",
+    "dest": "2RAugvrCZq2Bx3ScmKZMZAJYfpW1dQDi8LTB19n4oCDa",
+    "sol": 5.087094,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:11:25",
+    "dest": "7KwRUoZTnPYcw6FWFERf3tXeWJfcmyF6HSMynnhhSML3",
+    "sol": 0.15,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:11:26",
+    "dest": "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1",
+    "sol": 1.0,
+    "flotte": true
+   },
+   {
+    "utc": "2024-12-03 16:11:57",
+    "dest": "38KXEFWTK73HnWhaaMx1vysRqBw3XxejFFDq2Ebn73sZ",
+    "sol": 0.059931,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:12:01",
+    "dest": "8egA8PL2tFaSBuG8jKNHvSuSwrrJPCFn4zhCFjbF4dZV",
+    "sol": 1.3198512,
+    "flotte": false
+   },
+   {
+    "utc": "2024-12-03 16:12:04",
+    "dest": "8onPsPSBqJ4d5m8LJoRSj28XcJbZNEMqxaKgdrFC14XF",
+    "sol": 1.0072107,
+    "flotte": false
+   }
+  ]
+ }
+}

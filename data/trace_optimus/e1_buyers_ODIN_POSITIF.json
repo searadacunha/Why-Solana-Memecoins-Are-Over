@@ -1,0 +1,326 @@
+{
+ "label": "ODIN_POSITIF",
+ "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+ "curve": "(non pump.fun \u2014 liste d acheteurs reprise du travail anterieur)",
+ "curve_signatures_total": null,
+ "curve_genesis_reached": null,
+ "first_curve_tx_ts": 1732310685,
+ "n_distinct_early_buyers": 35,
+ "buyers": [
+  {
+   "wallet": "3CEhdQTZu7KQdk2gFoSbHWmEMbb4xqzCLNdXmMfbcg7F",
+   "rank": 1,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "3qVmZRQ1bsTTCb73B8cgo6pzMBNrvmPD4vHkWK4EYjzB",
+   "rank": 2,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "HotHEz7TuTMF9GcDdapdPKc9NRW1aFiWPBpdZBmhLBCj",
+   "rank": 3,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+   "rank": 4,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "UCeqvwQPYWXhbN4444b5dzDYaoUhqYvrax1R7p9NodE",
+   "rank": 5,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "5iywveQKkidqPDKt2CExJcWKex2EXz9kbGcYiZvhuXWs",
+   "rank": 6,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "Fa8VN5Ar5HfaJfUNppaSdmvS7SnfQxcf5aLbbVNodydF",
+   "rank": 7,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "66ZC9U8y1uYaAxt4WFYVW11YZeZohvi8ev6wBHsAxykh",
+   "rank": 8,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "CZY9M9BywshFAFjPw7uLgXw9yGtNL26YypLCJdewiHo",
+   "rank": 9,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "ATomG2gRJcB2jNvwcjo2zBMoyLsHZzLgwqy651zzYoCq",
+   "rank": 10,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "8mEFEL31Cmrm4poDpfxJsabPEFZWe4qhCsGmLmmTTDQ",
+   "rank": 11,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "CGBBoCgaEYuQwQkNJmirx1Qis7LVzcsjmkz3LVy2qHMy",
+   "rank": 12,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "F1M6SgP9Vt8uxjHDPWZntpgKwuSg6vh8ek98RpY9J9FP",
+   "rank": 13,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "2a8YExNAdKgYZGyBwub59dBSsdjqaBPm26k6PuuEp8FR",
+   "rank": 14,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "7dcwC8yNaHgGNNkDxhb2pRLVTqXafCRd3m6XeU9Rt3BU",
+   "rank": 15,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+   "rank": 16,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "4e5EFPoyZrsyRZGSPUwVZBpDu4CXWdU3SdBtWWPsUnqe",
+   "rank": 17,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "bruhN4UiWXuC1DbNp5MHg9jdiizJvrbdbVT2tPBQd4c",
+   "rank": 18,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "ByuQUknQ1CphVA59iGDiJVNLanP7o4S3pc2utrKBxvqn",
+   "rank": 19,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "H4dWNS7ydys4Je2G4WgsmJDSmqGtNmf8CT99r9rDnacf",
+   "rank": 20,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "66fgxqQNunDacDYgJKAwHpt9nsP9zFuXm9449Ha6Y4vF",
+   "rank": 21,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "9gxBDddAvsVUmcLAwJWhnKr5dMN8rWkdqn8ZZ4V272bo",
+   "rank": 22,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "9SHjio44prKMCuj3EW3Vy7zGYjE2cKWUN7z1RESaH7g8",
+   "rank": 23,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "9zeovoot5GNYgUFyzA86HRHZQTK6Ko8SRccm712W5iiF",
+   "rank": 24,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "8a5euaqMDanuRK8Hci435zvs5BYa44efZdjJ7echJamD",
+   "rank": 25,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "87yvPRERangvDR7nbiiPdLjFb56kLjXJMC4sQyGR5WH8",
+   "rank": 26,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "2UshwwBuxFu9nDGuqTs3kKQsPgEoLp27JNC2JRAoQnYF",
+   "rank": 27,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+   "rank": 28,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+   "rank": 29,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "J3SMgVCx6T59FUMq5jY7MJUT4CxjgNUB1qYs3kSwED1W",
+   "rank": 30,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y",
+   "rank": 31,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "wormnduySVDzdS97MrtCqMNq2AJZom4LayknB8R1HNS",
+   "rank": 32,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "A1euvBCBnDFXJKkxVxedC7woacCQAzjfvAKdHZtwS27B",
+   "rank": 33,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "2HW2aFZmUkyJsgXcx9bEfvontBzXKun5V5xPV94V1hKY",
+   "rank": 34,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  },
+  {
+   "wallet": "G98yaQ21SS8QwtUzHQGKYV1Z5JvdX8Qvbg1mizrR3gpp",
+   "rank": 35,
+   "first_buy_ts": 1732310685,
+   "first_buy_utc": "2024-11-22 21:24:45",
+   "seconds_after_first_curve_tx": 0,
+   "sol_spent_first_buy": null,
+   "first_buy_sig": null
+  }
+ ]
+}

@@ -1,0 +1,894 @@
+{
+ "token": "h2w6gm6jz",
+ "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+ "curve": "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg",
+ "creation_utc": "2024-12-13 14:50:34",
+ "courbe": {
+  "n_signatures": 451,
+  "genese_atteinte": true,
+  "n_acheteurs_distincts_sur_toute_la_courbe": 183,
+  "n_premiers_acheteurs_analyses": 40
+ },
+ "couverture": {
+  "n_portefeuilles": 40,
+  "n_genese_atteinte": 21,
+  "n_genese_NON_atteinte": 19,
+  "n_fenetre_prebuy_21j_couverte": 34,
+  "n_hyperactifs_non_mesurables": 5,
+  "portefeuilles_sans_genese": [
+   "FgmdE6RuS3kUxtkY2nkYFuJRym6VtJYnzBVzRJ5QRTyS",
+   "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+   "BHrEssDoHBGibjGDnsUaVf7RnK6vfbHstLLq9gAPxajy",
+   "2N62h2FGtoQCov1QjfJhdS98U3h8bFWS2p7aCYewP6Nr",
+   "Auc5JgZbCSBwxWwCnyh8gA1cfWXX3Fixn8zGhmgdAKx2",
+   "7m6dSzdhFpZMke5fWo4he6tPQzCAoS5UKjtVJpKdDmLA",
+   "EPCwxro6Nf3PEtMxR638qwyyccH7F7dbH2RuXY6HVN8s",
+   "8MqRTAQnjhDYH7TWS1b1DjFog4CLZfySWE5cZeotG2VW",
+   "7RQmzvftF8vhweUKdASvN4PsB1qeokKkUbkWKBLbSJxi",
+   "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+   "C44XTZs6hnpGTMGnLyNLM3dmekvhb5r7TkvDYJQ5g6fv",
+   "7KiNrHFUk2GRif6sQJiTrTDMikxo4jNxCotvqq1fTCdJ",
+   "BY6L98CXaQxzFAYt16qBPUuqyeCRXf5iWSr8SghzRTw9",
+   "6KZVzjfP6t51fwVR3RZwHpu9kZ99ZYWMkX1PC3BDV6Jh",
+   "86AEJExyjeNNgcp7GrAvCXTDicf5aGWgoERbXFiG1EdD",
+   "6CGRZTWr9JScMUcS5D9cDy6XEM1DzbUHMWJWy6TXhTkR",
+   "ECbJQ4fqAq4BggKg4swdQcdGzetrJem11np8Ev31y71M",
+   "2QbWhRJxU24zSNqdZUR6r82QdnuQrJStw2EU7TgwrF9v",
+   "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX"
+  ],
+  "regle": "Un negatif ne vaut que sur la portee couverte. Pour les 19 portefeuilles sans genese, l'absence de financement de naissance est un ECHEC DE MESURE, pas un resultat."
+ },
+ "flottes_de_naissance": [
+  {
+   "nom": "A",
+   "bailleur": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+   "montant_recu_sol": 2.0,
+   "calibre": "rond_SOL",
+   "naissance_utc": [
+    "2024-12-13 07:20:16",
+    "2024-12-13 07:21:29"
+   ],
+   "span_s": 73,
+   "rangs": [
+    11,
+    5,
+    9,
+    7,
+    6
+   ],
+   "recharge": {
+    "bailleur": "v6BFsgbJ5YaYZxEgapUXi5F2AoAZFDPaZdsspvfJBhq",
+    "utc": [
+     "2024-12-13 12:24:54",
+     "2024-12-13 12:25:37"
+    ],
+    "montants_sol": [
+     1.7,
+     1.88,
+     1.44,
+     1.97,
+     3.0
+    ]
+   },
+   "achat_groupe": {
+    "note": "5 achats en 1 seconde (+6 s et +7 s apres la 1re tx de courbe), montants distincts",
+    "utc": "2024-12-13 14:50:40 / 14:50:41"
+   }
+  },
+  {
+   "nom": "B",
+   "bailleur": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+   "montant_recu_sol": null,
+   "calibre": "precis_swap",
+   "montants_sol": [
+    4.88045181,
+    4.895794919,
+    4.901747259
+   ],
+   "naissance_utc": [
+    "2024-12-12 13:21:08",
+    "2024-12-12 13:25:09"
+   ],
+   "span_s": 241,
+   "rangs": [
+    12,
+    14,
+    8
+   ],
+   "achat_groupe": {
+    "montant_sol": 1.512044279,
+    "slot": 307237642,
+    "utc": "2024-12-13 14:50:41"
+   }
+  },
+  {
+   "nom": "C",
+   "bailleur": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+   "montant_recu_sol": 1.0,
+   "calibre": "rond_SOL",
+   "naissance_utc": [
+    "2024-12-03 15:49:28",
+    "2024-12-03 16:12:16"
+   ],
+   "span_s": 1368,
+   "rangs": [
+    24,
+    23,
+    22,
+    19
+   ],
+   "achat_groupe": {
+    "montant_sol": 0.563089281,
+    "slot": 307237659,
+    "utc": "2024-12-13 14:50:48",
+    "rangs": [
+     19,
+     22,
+     24
+    ]
+   }
+  }
+ ],
+ "achat_groupe_sans_genese": {
+  "nom": "achat groupe D",
+  "montant_sol": 2.07024016,
+  "slot": 307237685,
+  "utc": "2024-12-13 14:51:00",
+  "rangs": [
+   34,
+   35,
+   36
+  ],
+  "note": "3 achats au lamport pres dans le MEME slot, mais les 3 portefeuilles sont des bots anterieurs : genese non atteinte, financement de naissance non teste."
+ },
+ "decoupages": {
+  "A_meme_transaction": [],
+  "B_meme_montant_meme_moment": [
+   {
+    "amount_sol": 2.0,
+    "calibre": "rond_SOL",
+    "n_wallets": 5,
+    "wallets": [
+     "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+     "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+     "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+     "GLtrMWXMsLSSdFHKsnUmnGUBmLbkxYqn9DVjAT3vJWTa",
+     "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp"
+    ],
+    "sources": [
+     "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+    ],
+    "span_seconds": 73,
+    "utc_first": "2024-12-13 07:20:16"
+   },
+   {
+    "amount_sol": 1.0,
+    "calibre": "rond_SOL",
+    "n_wallets": 4,
+    "wallets": [
+     "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+     "2ZMgF63xHvnQ3dC7iLgGtU9HAgmgdKQMc1RnaifypNK9",
+     "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH",
+     "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1"
+    ],
+    "sources": [
+     "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+    ],
+    "span_seconds": 1368,
+    "utc_first": "2024-12-03 15:49:28"
+   }
+  ],
+  "C_bailleurs_communs_PRIVES": [
+   {
+    "funder": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+    "n_early_buyers_funded": 9,
+    "n_transfers": 9,
+    "total_sol": 14.0,
+    "first_utc": "2024-12-03 15:49:28",
+    "known": null,
+    "amounts_sol": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0
+    ],
+    "wallets": [
+     "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+     "2ZMgF63xHvnQ3dC7iLgGtU9HAgmgdKQMc1RnaifypNK9",
+     "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+     "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH",
+     "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+     "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1",
+     "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+     "GLtrMWXMsLSSdFHKsnUmnGUBmLbkxYqn9DVjAT3vJWTa",
+     "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp"
+    ]
+   },
+   {
+    "funder": "v6BFsgbJ5YaYZxEgapUXi5F2AoAZFDPaZdsspvfJBhq",
+    "n_early_buyers_funded": 5,
+    "n_transfers": 5,
+    "total_sol": 9.99,
+    "first_utc": "2024-12-13 12:24:54",
+    "known": null,
+    "amounts_sol": [
+     1.44,
+     1.7,
+     1.88,
+     1.97,
+     3.0
+    ],
+    "wallets": [
+     "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+     "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+     "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+     "GLtrMWXMsLSSdFHKsnUmnGUBmLbkxYqn9DVjAT3vJWTa",
+     "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp"
+    ]
+   },
+   {
+    "funder": "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy",
+    "n_early_buyers_funded": 3,
+    "n_transfers": 3,
+    "total_sol": 14.677994,
+    "first_utc": "2024-12-12 13:21:08",
+    "known": null,
+    "amounts_sol": [
+     4.88045181,
+     4.895794919,
+     4.901747259
+    ],
+    "wallets": [
+     "7bHZJoPnThtBusNEqR8q696y3xq2RxRVco1SrRW1hZvj",
+     "9Zi9Snb7cTnwBWATg5nu3sE9QKTnPDa754CAFv8hHzoR",
+     "FsmD5QQCar94u7JVDm9xemh5w6Ht4vnQp1WgvQ5awJxT"
+    ]
+   },
+   {
+    "funder": "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1",
+    "n_early_buyers_funded": 2,
+    "n_transfers": 2,
+    "total_sol": 4.0,
+    "first_utc": "2024-12-22 05:35:37",
+    "known": null,
+    "amounts_sol": [
+     2.0,
+     2.0
+    ],
+    "wallets": [
+     "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+     "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH"
+    ]
+   },
+   {
+    "funder": "9Zi9Snb7cTnwBWATg5nu3sE9QKTnPDa754CAFv8hHzoR",
+    "n_early_buyers_funded": 2,
+    "n_transfers": 3,
+    "total_sol": 1.86,
+    "first_utc": "2024-12-13 07:08:06",
+    "known": null,
+    "amounts_sol": [
+     0.11,
+     0.5,
+     1.25
+    ],
+    "wallets": [
+     "7bHZJoPnThtBusNEqR8q696y3xq2RxRVco1SrRW1hZvj",
+     "FsmD5QQCar94u7JVDm9xemh5w6Ht4vnQp1WgvQ5awJxT"
+    ]
+   }
+  ],
+  "C_bailleurs_infrastructure": [
+   {
+    "funder": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+    "n_early_buyers_funded": 2,
+    "n_transfers": 2,
+    "total_sol": 3.9802,
+    "first_utc": "2024-12-12 07:40:13",
+    "known": "Bybit hot wallet",
+    "amounts_sol": [
+     0.9802,
+     3.0
+    ],
+    "wallets": [
+     "CiEKyJ7ABepzgG22tH3ZRfDDPq1dUT1DwY1sRhe77tKB",
+     "DEmkDYA2KBKJa5y2jNvg761mgHzFys3vbSbpw3BFeDC1"
+    ]
+   }
+  ]
+ },
+ "controle_taux_de_base": {
+  "note": "G9X7F4Jz est un service a fort debit (759 destinataires / 11 h). Ce controle mesure la part de ses sorties captee par la flotte dans la fenetre de naissance, et compte les versements du meme montant vers des tiers : c'est le taux de base local.",
+  "flotte_A": {
+   "nom": "FLOTTE A : 2.000000000 SOL x5, 73 s",
+   "fenetre": [
+    "2024-12-13 07:18:16",
+    "2024-12-13 07:23:29"
+   ],
+   "n_sorties": 12,
+   "n_destinataires_distincts": 12,
+   "n_vers_flotte": 4,
+   "montants_flotte": [
+    2.0
+   ],
+   "n_meme_montant_hors_flotte": 0,
+   "part_flotte_dans_les_sorties": 0.3333,
+   "detail": [
+    {
+     "utc": "2024-12-13 07:18:33",
+     "dest": "EmJK5gacfUd7RhL1VpsvTmrfAqpo7nQSnhqMbEjQTevZ",
+     "sol": 2.6813846,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:18:50",
+     "dest": "BGzz6PYuUj3TWXwH6oWuMW23pRENhZoW2GHWaWTe4ewk",
+     "sol": 0.08926,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:19:02",
+     "dest": "4ryWvDenQsKpaJJPT1rj2esYHu8J3pWFWrXh54og15tH",
+     "sol": 0.8639029,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:19:21",
+     "dest": "7P3m4CvPM25zFRS4psxtwxRwF922ACLKYybcAEsMwvH6",
+     "sol": 1.3389,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:20:16",
+     "dest": "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+     "sol": 2.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-13 07:20:18",
+     "dest": "5jWTqpbHmT9oX4YVGWnT7JAGi1Az4K7zpXzBE3Rn6L8L",
+     "sol": 4.7031355,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:20:26",
+     "dest": "BUjbhNukgr7RWbCrg277QJwQ4PLKgtwVMGrZR8CjhWou",
+     "sol": 0.44627452,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:20:38",
+     "dest": "BVJeJSAfptfTgxnJqDGXJqYjUrPbqRGtk9f2YJbdVPjY",
+     "sol": 5.5787306,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:20:41",
+     "dest": "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+     "sol": 2.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-13 07:20:58",
+     "dest": "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp",
+     "sol": 2.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-13 07:21:04",
+     "dest": "3w6V7JkU3CcmZ6cGFQx3H7KJ8NhGshAVYGNUvZr8NTqC",
+     "sol": 0.9385418,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-13 07:21:11",
+     "dest": "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+     "sol": 2.0,
+     "flotte": true
+    }
+   ]
+  },
+  "flotte_C": {
+   "nom": "FLOTTE C : 1.000000000 SOL x4, 1368 s",
+   "fenetre": [
+    "2024-12-03 15:47:28",
+    "2024-12-03 16:14:16"
+   ],
+   "n_sorties": 58,
+   "n_destinataires_distincts": 56,
+   "n_vers_flotte": 3,
+   "montants_flotte": [
+    1.0
+   ],
+   "n_meme_montant_hors_flotte": 2,
+   "part_flotte_dans_les_sorties": 0.0517,
+   "detail": [
+    {
+     "utc": "2024-12-03 15:48:30",
+     "dest": "BT1jTYGPJzhh7iCTmiVLHbbLobwQoZxn4WNYg2yos1AT",
+     "sol": 11.298197,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:48:30",
+     "dest": "adTLCyVftGQ4wq35AQhyhRkaBJ5E2Yqf3kqPUJWD3rr",
+     "sol": 0.9865809,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:49:17",
+     "dest": "4ZsvWkdEKVGyGdeUkW6HLN9xDweK9oiVCQYNxuC2zRQt",
+     "sol": 0.08952,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:49:28",
+     "dest": "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+     "sol": 1.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-03 15:49:40",
+     "dest": "7nMB7HJHqihTs7BHhHHPtF7pRbN4V5XjgBrHXPeJu459",
+     "sol": 0.31332,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:49:51",
+     "dest": "8f3aXVDfsjxCRPbqUF561mATpwegwJnuvLibXu29zeRP",
+     "sol": 0.44799364,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:49:59",
+     "dest": "E4ohmuaBm6vkMywKzqxmCdkkizrbuAn3XzMmxKCCapmu",
+     "sol": 1.0,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:50:03",
+     "dest": "14dWmcYy1Bu1m5JPcGMTCxmenpuRimvTV3sd9dEnp1wX",
+     "sol": 0.2215475,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:50:03",
+     "dest": "FCeV1yRtKuWKbDK9oFTLVCzncqv6L5As3WuGDWNKr7PL",
+     "sol": 0.0549179,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:50:07",
+     "dest": "HLWDAQ5Sa3dgRVTkoGgZGgu7Nkgyq9g3unB2S7mxdEAA",
+     "sol": 0.20142,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:50:56",
+     "dest": "CCYeJj2rC7WBv7AX1oMqGWoLuhbQ4EACdSzrYs24ekMQ",
+     "sol": 0.1783007,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:50:58",
+     "dest": "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH",
+     "sol": 1.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-03 15:51:35",
+     "dest": "2gAzUrRShhzPWAEdnkgxPtzkJDpWictYeGCKURaWx2qu",
+     "sol": 1.0,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:51:55",
+     "dest": "AzQCGkM3UKfyJVEDPJE51udWAMoGCLXsMJmQbCQXXVhZ",
+     "sol": 0.53712,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:52:36",
+     "dest": "GFW2buwquRjHWkiU1dvijVGiFCUbeub7b2DY2p9rfGyd",
+     "sol": 0.12189721,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:52:45",
+     "dest": "135Pcf3WF5YYEZBpEYbgmNQKnwpwaopffAgGzWx6vt6P",
+     "sol": 0.29,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:53:36",
+     "dest": "8cLJJu8fXQa3gHegdyMVkXRrguGpqUeXdLU4v9iLFgD5",
+     "sol": 0.00203928,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:54:42",
+     "dest": "CgVRRjfxQt4BuAeZukdhk4JUV8Le62qV3QQwzB9BozUY",
+     "sol": 134.28,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:55:01",
+     "dest": "DqTZV36EpXG2LgYgtHFfUbPRBwveGubTzZW8gQBnJmY2",
+     "sol": 3.1262,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:55:21",
+     "dest": "45MKY4spd4TMsMqzT5R4qJ25adrkxKWQeACWSHqM84Eu",
+     "sol": 0.11116041,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:55:34",
+     "dest": "6tMayQx6BJVuihVkp9uEKZwPe2hcz4b3mKZuC9pvjCcr",
+     "sol": 1.40679,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:55:58",
+     "dest": "D9Xbr8Rw4CwuGi9NzjtGrsuM9SvCEhZpthokFYGX7Ttt",
+     "sol": 2.0,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:56:35",
+     "dest": "FVFy8w19oCnEcZ89n6PmDcNmKaNNeZsqRubudNzwXaxS",
+     "sol": 0.01,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:56:37",
+     "dest": "GJ4V5tNgGQM8wqtxfyu8bd2edDYtGxDG84qZ5uWe1rSs",
+     "sol": 0.01,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:57:11",
+     "dest": "6gvFeBkMaxpHdVKpzVt2tv2iWJRvrPZjno3UJJTpNdNt",
+     "sol": 0.33655775,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:57:22",
+     "dest": "12uyt6sEY2d4m8BUP3EFNDFmYtN7Fbco5XusDjK39eGk",
+     "sol": 0.142912,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:58:24",
+     "dest": "GiVoQzrc2rSWDiuwiGUrHQjh1NDpdKzg5FB5X1uXDfV1",
+     "sol": 8.214952,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:58:29",
+     "dest": "H3DZUEogxLdXvhgw8KsqCDpM9QEojYoMhfHze5Bcxf4E",
+     "sol": 12.21658,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:59:08",
+     "dest": "CgVRRjfxQt4BuAeZukdhk4JUV8Le62qV3QQwzB9BozUY",
+     "sol": 151.22322,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 15:59:40",
+     "dest": "3J8pVMnVoB2mwiN8zXzbpbkVJBM9vp12rHnG6YDytyf1",
+     "sol": 16.429905,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:00:08",
+     "dest": "EQmU2jNefjTCpP5tengWjw91GGgdF3cEFRghqLQMEJvg",
+     "sol": 0.4466,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:01:18",
+     "dest": "5pRP41YvFdz5uQCMhrjMzjXpEzDybRz6APDJ7nf35XMT",
+     "sol": 0.82264423,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:01:40",
+     "dest": "AxiT9UXArnEggFVuZTQGrdQxRkoqxbv5fqfcpUS5F4uW",
+     "sol": 0.05,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:02:47",
+     "dest": "56YbVxCQHpocu8Dr1ehwYGuZEUahJec1ydghfG6YZD7a",
+     "sol": 0.1134314,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:04:02",
+     "dest": "CLq3JZPXJZzLPGmx59c8fsYxiFjyjcr6LvXfv9VsGDKw",
+     "sol": 20.204525,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:04:17",
+     "dest": "3kqMgfQczaMr3KbgNFtpL6jUAfq2fvYNsgHrnkwcWeLS",
+     "sol": 8.041631,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:04:24",
+     "dest": "GxEARHUXQVn3R8kArzj4zz451MiSsSYr7kDZokhiPgfj",
+     "sol": 1.831275,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:04:48",
+     "dest": "GSdvMnasBGaaBLvyQ5rPbAGhXVL3PQ1RTPpwKjrpLhHx",
+     "sol": 2.1286783,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:05:56",
+     "dest": "4VkdFSeepnYs56vAxGfH8zB3PimTKqeinDwyA1PeS9of",
+     "sol": 4.7454686,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:06:23",
+     "dest": "8VHRMcwDzFuBfQk7neC2nz64hrDrt3m7LzAZWE6VBdF3",
+     "sol": 1.0142374,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:06:47",
+     "dest": "RB219hQVUBqWM5KkjCGdDHXPqfWq1gNWP5An7xRsBgV",
+     "sol": 0.31919122,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:06:53",
+     "dest": "GN2KeW2ALRGTiwCkED1JYYSK9qYR2U5xyFiuqMRLnJ1u",
+     "sol": 0.00203928,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:07:08",
+     "dest": "CLq3JZPXJZzLPGmx59c8fsYxiFjyjcr6LvXfv9VsGDKw",
+     "sol": 0.09343562,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:08:00",
+     "dest": "8wT4aQmbLD1LkTbNyTTxYbptEMFPhmunu6nGQsmnGwKU",
+     "sol": 0.278256,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:08:20",
+     "dest": "AgRM8wYA6sDo6RE58xKzP5FDyYtsnDN9rTgqHxU4oFcr",
+     "sol": 0.05,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:08:50",
+     "dest": "56khAaGXbv96CNBb2KcFtUGBAS1UzrgXuiWUkqwnf1hM",
+     "sol": 47.22,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:09:20",
+     "dest": "4Np7VJUa5u4kAK5tTHsMcNqMFvTnqEkHisCRnFXCggnk",
+     "sol": 0.2393939,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:09:28",
+     "dest": "Est4BnkD2ghtxBf4hjDKxySRJWRxLpFV191Gndus4FnL",
+     "sol": 0.062832,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:09:49",
+     "dest": "6DnAqcpvXufSpCLmh9KdiVxgWFiTJ3P3HHKe86QTyAUB",
+     "sol": 0.82440174,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:10:09",
+     "dest": "8h3x3MiukY6EFCR9s7BHtpioVq4znAFd5R4EjzuMBhTF",
+     "sol": 0.30675063,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:10:37",
+     "dest": "CtyVaMHYzRw39ovUjsaCmQS95y9TSHncvUQSesvkcBeb",
+     "sol": 0.5797076,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:10:49",
+     "dest": "RBFnBpYHsoXjy6YDfGqF31KMVEvkPnuyqevqzicjdPn",
+     "sol": 0.52732223,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:10:52",
+     "dest": "2RAugvrCZq2Bx3ScmKZMZAJYfpW1dQDi8LTB19n4oCDa",
+     "sol": 5.087094,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:11:25",
+     "dest": "7KwRUoZTnPYcw6FWFERf3tXeWJfcmyF6HSMynnhhSML3",
+     "sol": 0.15,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:11:26",
+     "dest": "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1",
+     "sol": 1.0,
+     "flotte": true
+    },
+    {
+     "utc": "2024-12-03 16:11:57",
+     "dest": "38KXEFWTK73HnWhaaMx1vysRqBw3XxejFFDq2Ebn73sZ",
+     "sol": 0.059931,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:12:01",
+     "dest": "8egA8PL2tFaSBuG8jKNHvSuSwrrJPCFn4zhCFjbF4dZV",
+     "sol": 1.3198512,
+     "flotte": false
+    },
+    {
+     "utc": "2024-12-03 16:12:04",
+     "dest": "8onPsPSBqJ4d5m8LJoRSj28XcJbZNEMqxaKgdrFC14XF",
+     "sol": 1.0072107,
+     "flotte": false
+    }
+   ]
+  }
+ },
+ "chaine_vers_G2Y": {
+  "etabli": true,
+  "maillons": [
+   {
+    "n": 1,
+    "de": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+    "vers": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v",
+    "montant_sol": 10.587826,
+    "utc": "2024-12-13 13:56:45",
+    "signature": "5Yef1gQAUDb6yubfLKVR2VkHH9DSBRCAS559GHje4mPBqwXfmnesPTAtobXv5aamNXY5GMvsJYrKVkyEoBk3iZjW",
+    "note": "premiere transaction de la vie de 8RU58K ; genese atteinte, 22 signatures au total dans toute son existence"
+   },
+   {
+    "n": 2,
+    "de": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v",
+    "vers": "ApBXF9f1tgk8FTDbUonjTmGnWBCJRyedKKD26HP3Tp7X",
+    "montant_sol": 10.5878111,
+    "utc": "2024-12-13 14:04:15",
+    "signature": "DzvXawfafGCVf3EeiPvAyrebUo78KNcwNvSYRfttr2o8dSwBxjZXPbDzAHnbzraTnR1nF17KYsjp5iDsMYJZeV5",
+    "note": "ApBXF9f1 est le CREATEUR du token ; ne a cet instant"
+   },
+   {
+    "n": 3,
+    "de": "ApBXF9f1tgk8FTDbUonjTmGnWBCJRyedKKD26HP3Tp7X",
+    "vers": "mint + achat #1",
+    "utc": "2024-12-13 14:50:34",
+    "montant_sol": 1.332417321,
+    "note": "creation du mint et premier achat, 46 min apres avoir recu les fonds"
+   }
+  ],
+  "delai_G2Y_creation_minutes": 53.8,
+  "reserve": "Aboutir a G2Y est un fait de routage : tout capital entrant sur Solana franchit une telle porte. Ce qui est probant ici n'est pas le passage par un service de swap, c'est que le relais 8RU58K n'a servi qu'a CA (22 tx dans toute sa vie, une entree, une sortie, puis 11 mois de silence) et que la chaine tient en 54 minutes.",
+  "consequence_pour_l_enquete": "G2Y etait DEJA EN SERVICE le 13 decembre 2024. La question ouverte du brief (« on ignore si elle etait deja en service fin 2024 ») est tranchee par le positif : oui."
+ },
+ "profil_des_bailleurs": {
+  "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE": {
+   "role": "SERVICE a fort debit, pas un distributeur dedie",
+   "mesure_dec2024": {
+    "tx_par_jour": 6674,
+    "destinataires_distincts_en_11h": 759,
+    "payeurs_distincts_en_11h": 711,
+    "types": "100 % TRANSFER",
+    "montants_de_sortie_ronds": "1.0 SOL x10, 0.3 x9, 0.5 x6 …"
+   },
+   "consequence": "« Meme bailleur » ne vaut donc RIEN seul pour cette adresse : c'est un service a des centaines de clients par jour. Seul le controle de fenetre (e8) porte l'argument.",
+   "cadence_comparable_a_G2Y": "~6 700 tx/jour ici contre ~6 600/jour pour G2Y (200 000/mois). Hypothese a tester, NON etablie : meme operateur, deux adresses. Les deux sont actives simultanement, donc ce n'est pas une simple rotation."
+  },
+  "AaZkwhkiDStDcgrU37XAj9fpNLrD8Erz5PNkdm4k5hjy": {
+   "role": "SERVICE (routeur de retraits), alimente par un echange et un service de swap",
+   "mesure_dec2024": {
+    "tx_par_jour": 1487,
+    "destinataires_distincts_en_40h": 2005,
+    "payeurs_distincts_en_40h": 682,
+    "sorties": "toutes precises a la 9e decimale = sorties de conversion"
+   },
+   "payeurs_connus": [
+    "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9 (Binance) 1665 SOL",
+    "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w (service de swap) 600 SOL"
+   ],
+   "lecture": "Les 3 montants 4.880451810 / 4.895794919 / 4.901747259 SOL, ecartes de 0,43 %, livres en 4 minutes : signature de TROIS CONVERSIONS du meme montant nominal a quelques minutes d'intervalle, le taux ayant bouge. C'est un decoupage passe par un service de swap, pas un virement decoupe."
+  },
+  "v6BFsgbJ5YaYZxEgapUXi5F2AoAZFDPaZdsspvfJBhq": {
+   "role": "DECOUPEUR A USAGE UNIQUE — la piece maitresse",
+   "genese_atteinte": true,
+   "n_signatures_dans_toute_sa_vie": 24,
+   "vie": [
+    "2024-12-13 12:18:36 : recoit 15.000000000 SOL de G2twzNaSnSnveK4Zys6usTNwG3pY8RruGaKvZycd7k2S",
+    "12:24:54 → 1.700000000 SOL a 3vzEogg… (acheteur #11)",
+    "12:25:06 → 1.880000000 SOL a 4bybJyL… (acheteur #5)",
+    "12:25:16 → 1.440000000 SOL a bgF2ueq… (acheteur #9)",
+    "12:25:27 → 1.970000000 SOL a DAss7Hi… (acheteur #7)",
+    "12:25:37 → 3.000000000 SOL a GLtrMWX… (acheteur #6)",
+    "12:26:25 → 5.000000000 SOL a AdoQbzXCMHiXba5Xz9iFj5FgnK6AYZTFa24J3iYhz2M9 (6e destinataire, N'A PAS achete ce token)",
+    "puis silence jusqu'a une poussiere en avril 2025"
+   ],
+   "total_sorti_sol": 14.99,
+   "delai_dernier_versement_creation_token": "2 h 24 min",
+   "lecture": "15 SOL entres, 6 versements sortis en 92 secondes, 5 des 6 destinataires achetent le token 2 h plus tard dans la meme seconde. C'est la signature ODIN, en plus net : ODIN avait 4 x 3 SOL depuis un distributeur a 80 000 transactions ; ici le decoupeur n'a existe que pour cette operation."
+  },
+  "G2twzNaSnSnveK4Zys6usTNwG3pY8RruGaKvZycd7k2S": {
+   "role": "distributeur prive en amont du decoupeur",
+   "genese_atteinte": true,
+   "n_signatures_totales": 63,
+   "vie_utc": [
+    "2024-12-02 20:15:54",
+    "2025-05-06 06:21:18"
+   ],
+   "entrees": "~10 petites adresses, montants precis a la 9e decimale (sorties de swap)",
+   "sorties_rondes_sol": [
+    21.0,
+    15.0,
+    11.0
+   ],
+   "croisement_G2Y": "AUCUN sur son historique complet (genese atteinte)"
+  }
+ },
+ "achats_groupes_au_lamport_pres": [
+  {
+   "montant_sol": 1.512044279,
+   "slot": 307237642,
+   "n": 3,
+   "rangs": [
+    8,
+    12,
+    14
+   ],
+   "flotte": "B"
+  },
+  {
+   "montant_sol": 0.563089281,
+   "slot": 307237659,
+   "n": 3,
+   "rangs": [
+    19,
+    22,
+    24
+   ],
+   "flotte": "C"
+  },
+  {
+   "montant_sol": 2.07024016,
+   "slot": 307237685,
+   "n": 3,
+   "rangs": [
+    34,
+    35,
+    36
+   ],
+   "flotte": "aucune (genese non atteinte)"
+  }
+ ],
+ "verdict": "DECOUPAGE DETECTE"
+}

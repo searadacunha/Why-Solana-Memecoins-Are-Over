@@ -1,0 +1,708 @@
+{
+ "niveau": "MESURE",
+ "gele_le": "2026-07-29",
+ "source": "pump_bundle_detector/analysis_supervision/{gros_tokens_signature,gros_tokens_deep}.json",
+ "n": 70,
+ "tokens": [
+  {
+   "mint": "HubNT7S6vhaEh5Z9XTenHPK4EnGiy4a1HWCB9xpupump",
+   "created": 1782526833,
+   "ath_usd": 832850.25,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "BbydPty2qDLNjoeHtWiFjBfibBvBkXK84agHuU2rpump",
+   "created": 1782533146,
+   "ath_usd": 1564022.28,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 6,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "y4XpRmq8vCBKasQJy447SR1NEtXFpVQV8o4T7ZPpump",
+   "created": 1782533710,
+   "ath_usd": 555562.76,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "48MBbzvBUKjVFB97jyg1YnwC8VbfKik4ry6hKDezpump",
+   "created": 1782574712,
+   "ath_usd": 817855.49,
+   "gele_sol_first_slot": 84.74,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 8,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "562ve6KNpiCtzT2RcvJ9nuA8yBSZSV5GLkawEFGipump",
+   "created": 1782580252,
+   "ath_usd": 647173.46,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 4,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "7KXiuEzZ1GRKBM6zPPyzYcqenk48QHUaDLuhHFA8pump",
+   "created": 1782589237,
+   "ath_usd": 618187.32,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "BJb7vDusXmgMGLSYgLmhQNPNuHwVTBKxDcoYodk9pump",
+   "created": 1782591485,
+   "ath_usd": 2584995.26,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 12,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "DCLhVdZwKhBQprXv6kDwtqANjD5mqWDRZx8JAroHpump",
+   "created": 1782597007,
+   "ath_usd": 1006046.33,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+   "created": 1782598001,
+   "ath_usd": 1222071.41,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 6,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "EPD8jj7bVhNh3o7Wx1XZ39aaacSki8p2ABaN61yhUnBh",
+   "created": 1782628405,
+   "ath_usd": 2703223.0,
+   "gele_sol_first_slot": 5.04,
+   "gele_sol_window_30s": 48.92,
+   "gele_n_buyers": 9,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "HRJLkc6vDysVHdrUpCsQ5EBx6fPM15TZRKAhfUBnpump",
+   "created": 1782634862,
+   "ath_usd": 1563044.23,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 13,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "dUaSdZm38CStjhp1VSJWGFQqSxf6DQB2hfjMXmVpump",
+   "created": 1782643984,
+   "ath_usd": 1591068.14,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "DJ7YoBbUpTyL2gLHEBDVWpxpzSL3ANga25XrZM2Wpump",
+   "created": 1782648189,
+   "ath_usd": 906904.89,
+   "gele_sol_first_slot": 19.05,
+   "gele_sol_window_30s": 19.05,
+   "gele_n_buyers": 7,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "7yK2FtUHZQ4LHLRv6s9dPtbcZ7s2tqDkvZcYh2e6pump",
+   "created": 1782655991,
+   "ath_usd": 1922743.15,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 6,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "D1BHW3Tz4ygwwfCGzje9tMAMHz5ScAWm1EZhSTmgpump",
+   "created": 1782656492,
+   "ath_usd": 3175384.92,
+   "gele_sol_first_slot": 83.95,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "Dc6GW8TmGquTsLBwtrYgGMwGMY3HckT79iVCn8jmpump",
+   "created": 1782656994,
+   "ath_usd": 1994880.35,
+   "gele_sol_first_slot": 84.81,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 7,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "5RNsaRw3vDsZ9T1cHgNfGWGcK84GoAYRJcpW5Jpjpump",
+   "created": 1782657710,
+   "ath_usd": 674933.51,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+   "created": 1782663501,
+   "ath_usd": 2970992.14,
+   "gele_sol_first_slot": 81.79,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 6,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "BwAU6gsimrFhJrRcZqKxQJayfnkyyan63WNCJRWYpump",
+   "created": 1782664235,
+   "ath_usd": 4448020.18,
+   "gele_sol_first_slot": 56.0,
+   "gele_sol_window_30s": 56.0,
+   "gele_n_buyers": 4,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "5roz8AK6ewzM9te6ZE6XAoeTgTeQHtms7BMFWaEjpump",
+   "created": 1782669277,
+   "ath_usd": 1316506.42,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 4,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "2y89wGwswkxaBoGrZZQMPKGEzwQoxd7TCUaZ1tM4pump",
+   "created": 1782671108,
+   "ath_usd": 503627.38,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "CuGJf6cfDfMh4UxVgNJ5KFQ6v8Wv3qrqop6cFKsGpump",
+   "created": 1782673092,
+   "ath_usd": 3772663.21,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "G2JuzRYMVVyuVg3PTNZE88nuvykVtPqK9YfXYjZ9pump",
+   "created": 1782673100,
+   "ath_usd": 764112.24,
+   "gele_sol_first_slot": 83.95,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "7LVWaPUkAsRX7AGwhvX3Q9sYpTTSnafzq5ABFwAapump",
+   "created": 1782673703,
+   "ath_usd": 573704.29,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 7,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "49n34WGSx5XpnreuU9gBkS2dbEv6iL4eN5VeDMFmpump",
+   "created": 1782748441,
+   "ath_usd": 602860.71,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "Fugm7Zq3Sku9KK7AWgw7nr4A8K3ro2SHif6Ai3qLpump",
+   "created": 1782768724,
+   "ath_usd": 885343.64,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "CH2amwcGDKTDcNy29nk5dhykPtB1Ls2nNqrMm4LHpump",
+   "created": 1782770651,
+   "ath_usd": 645563.09,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump",
+   "created": 1782772282,
+   "ath_usd": 5053672.17,
+   "gele_sol_first_slot": 2.03,
+   "gele_sol_window_30s": 15.48,
+   "gele_n_buyers": 3,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da",
+   "created": 1782773474,
+   "ath_usd": 7005469.74,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "42cXQvAAr7hcPBPWAS4ocVtDyeJ4Fa6gRR2uG4gppump",
+   "created": 1782777991,
+   "ath_usd": 1955018.29,
+   "gele_sol_first_slot": 0.0,
+   "gele_sol_window_30s": 0.0,
+   "gele_n_buyers": 0,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "2838azpak6PsqVWC5UQYbSe675M2FkMS9e1Qa1ZMpump",
+   "created": 1782783540,
+   "ath_usd": 1703941.27,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "DbqbFSSBEDaX9F6hnySDHKmKSE9PU1KTyJ7jwcd3xViS",
+   "created": 1782786585,
+   "ath_usd": 980321.66,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 3,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "2b27LMa8FbkWbHt8C5JzHciFyeKejFkCRyZ434Axpump",
+   "created": 1782790697,
+   "ath_usd": 1195876.81,
+   "gele_sol_first_slot": 0.0,
+   "gele_sol_window_30s": 0.0,
+   "gele_n_buyers": 0,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "J2mNr7ivj7yHFBePR6uGeYsPCWHVJ7b9pBpZLqe6pump",
+   "created": 1782791124,
+   "ath_usd": 919730.77,
+   "gele_sol_first_slot": 57.21,
+   "gele_sol_window_30s": 59.42,
+   "gele_n_buyers": 9,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+   "created": 1782793040,
+   "ath_usd": 4545501.03,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 10,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump",
+   "created": 1782796790,
+   "ath_usd": 8763185.59,
+   "gele_sol_first_slot": 85.0,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "66PiKgkEPtDCzSnTJds8sf6JAUTnzqCnDAzRSaA1pump",
+   "created": 1782797936,
+   "ath_usd": 1144342.55,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 10,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "81H84f84mmTXcPZ4fVu5dz1LAVGhBtfCGrmxSmTQpump",
+   "created": 1782798580,
+   "ath_usd": 613569.31,
+   "gele_sol_first_slot": 84.94,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "Ds9wLyD9ktLiYh85LRWLBcw233Xryucu7R5uFSVxpump",
+   "created": 1782798703,
+   "ath_usd": 2313231.99,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "7Gc1mPtjdxNtPwQT4EMpR46CCmqPZRvRLA79gv2jpump",
+   "created": 1782800139,
+   "ath_usd": 645875.0,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "8HbaGmhYgrWKvgqTvfAKkmK9GerRTjBwYVnbvH1ipump",
+   "created": 1782800172,
+   "ath_usd": 1084826.49,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "C9VPkF8MeGc81mnFjLq1kfzn3KAeQgkKrG4iwE9hpump",
+   "created": 1782800307,
+   "ath_usd": 3031957.26,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump",
+   "created": 1782800309,
+   "ath_usd": 15702706.26,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "8pGWyByG8J42RrMuaG9tDYTjwDPcVwXeTo8dLfAjpump",
+   "created": 1782818600,
+   "ath_usd": 729401.72,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "51xtAhpY7QAULARF8dAs33r7xX95Ja6WFwaVEULKpump",
+   "created": 1782821411,
+   "ath_usd": 2892019.99,
+   "gele_sol_first_slot": 0.0,
+   "gele_sol_window_30s": 0.0,
+   "gele_n_buyers": 0,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "Ns6PhWqLDTexho3aiU42TZM7af5bsyEsqQffT4Bpump",
+   "created": 1782828305,
+   "ath_usd": 3707172.54,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 3,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "6XUkLa8fbTzRUkGotni7UtkG4EHtUFe8qPhJU5THpump",
+   "created": 1782838359,
+   "ath_usd": 537895.17,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 4,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "91aesm9QbLem54TK7tHytyBbaV2zPuQgWQc4NwXmpump",
+   "created": 1782991541,
+   "ath_usd": 998450.14,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "FpCGjj5k3amDWRCegpxGrhm5FThtj6ypiSJLRdcppump",
+   "created": 1782994718,
+   "ath_usd": 1115031.44,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 3,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "4MrsXQzaosYNyFd4wKDvgnC5xRtRqgXRrijFTGj9pump",
+   "created": 1782996600,
+   "ath_usd": 1097323.2,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "CGp3TrYCxF3xNhAPYnBYKAuBHxuDzL1zF62oxYD7pump",
+   "created": 1783007989,
+   "ath_usd": 1499957.57,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "DLvuaz18bKnh1hEaCZsZ5NgJi7wYFm5RvgZVA2M5pump",
+   "created": 1783063580,
+   "ath_usd": 1876689.13,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 10,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "hYhqiS8iEM5z5ZunyjbzzYTCdFeXeuJncBJ6Ln8pump",
+   "created": 1783065312,
+   "ath_usd": 1834279.5,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "HdPwxMu9R2sD8ZU8CoP3JuqUBRX3UpPb2oTc8TZkpump",
+   "created": 1783090091,
+   "ath_usd": 590592.16,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "Cc9ho4dcfkSp625QLcSxSd8jZR7oifhzn8sKbfQRpump",
+   "created": 1783097851,
+   "ath_usd": 727022.47,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 6,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "GaZb3DE2U3Jcjx7ddAVwobsBKnCaDoJWLbzTvJYhpump",
+   "created": 1783107762,
+   "ath_usd": 2173930.16,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 10,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "2QmeV9z32WYmKexeb3YbxQBCL72dxcQcc8wQNeYnpump",
+   "created": 1783113814,
+   "ath_usd": 596292.88,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 9,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+   "created": 1783114685,
+   "ath_usd": 527738.04,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 7,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "GErhUoWeQUxEJx3k5U2TD25RvjKPBCHEstZ8gwGtpump",
+   "created": 1783119944,
+   "ath_usd": 865487.46,
+   "gele_sol_first_slot": 0.0,
+   "gele_sol_window_30s": 0.0,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": false,
+   "gele_status": "ok_deep"
+  },
+  {
+   "mint": "3t2878UJxSMa3ezbWmFqs3zsg3LXfUJpVeEAyy13pump",
+   "created": 1783124504,
+   "ath_usd": 666297.59,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "BUkEFLzmyrhA8wtwG9Xk2VBxsvQx5H49ovahrV1Ppump",
+   "created": 1783127764,
+   "ath_usd": 579899.34,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 3,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "9MoGGUj79ZoSfumCpD7m7SnXVinR2sAp2FGAe5Atpump",
+   "created": 1783131260,
+   "ath_usd": 1948507.83,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "AqWoVsb3jPksi3DEaTrMHBzfGct25nWnqhntDf9vpump",
+   "created": 1783140784,
+   "ath_usd": 668219.63,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.34,
+   "gele_n_buyers": 9,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "5NgaVXHoikb9e326MSCwo44DXKGuPiKVt9q9Tm51pump",
+   "created": 1783141905,
+   "ath_usd": 1413056.97,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "nvocGEk1ecdSVsfPTUFWuTCPX6UCs6XHaT44iJjpump",
+   "created": 1783157554,
+   "ath_usd": 1626586.81,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "9vciqoMDquKyjEEtLkenQ4TxSjDEUNxcQdjhHXNHpump",
+   "created": 1783171037,
+   "ath_usd": 2508706.7,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "71HtXHfexjKgem92Y5sPLPb6qkmtqWmPUzdKAcU9pump",
+   "created": 1783172118,
+   "ath_usd": 1227148.58,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 5,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "D6sA8hKpreRfWEqLRo2fyx5UpmcHeEmGsQ1UndLWpump",
+   "created": 1783186138,
+   "ath_usd": 7937188.65,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "ASEY7D7YWXX6GDNyLYfRWQ9w9zxojCxpazy4aRfspump",
+   "created": 1783192571,
+   "ath_usd": 1063620.74,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 1,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  },
+  {
+   "mint": "G2aMQNmM5H2ru1WpDPgPgqsjNanzXDEYM4q7V9capump",
+   "created": 1783196423,
+   "ath_usd": 1214968.24,
+   "gele_sol_first_slot": 85.01,
+   "gele_sol_window_30s": 85.01,
+   "gele_n_buyers": 2,
+   "gele_snipe_in_first_slot": true,
+   "gele_status": "ok"
+  }
+ ]
+}

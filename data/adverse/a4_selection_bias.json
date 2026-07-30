@@ -1,0 +1,47 @@
+{
+ "objet": "Distance entre la cohorte de cibles de la phase 1 et un echantillon aleatoire de tokens de la meme epoque, et consequences sur ce qui peut etre affirme.",
+ "taux_de_graduation_de_l_epoque": {
+  "par_familles_de_termes_neutres": {
+   "n_mints_pump": 2740,
+   "n_gradues": 32,
+   "taux": 0.01168,
+   "familles": [
+    "lantern",
+    "pebble",
+    "marble",
+    "willow",
+    "compass"
+   ],
+   "note": "cinq familles de termes choisis sans rapport avec le sujet, mesurees avant toute analyse de financement"
+  },
+  "par_fenetres_de_creation_appariees": {
+   "n_mints": 171,
+   "n_gradues": 6,
+   "taux": 0.03509,
+   "note": "tous les tokens pump.fun crees a +/- 200 slots des ancres, lus bloc par bloc"
+  }
+ },
+ "cohorte": {
+  "n_tokens": 11,
+  "n_gradues": 11,
+  "taux": 1.0,
+  "confiance_de_resolution": {
+   "haute": 8,
+   "moyenne": 2,
+   "faible": 1
+  },
+  "n_symboles_non_resolus_laisses_ambigus": 6,
+  "probabilite_si_tirage_aleatoire": 5.513070808628306e-22,
+  "lecture": "Un tirage aleatoire de 11 tokens de l'epoque serait entierement gradue avec une probabilite de l'ordre de 5.5e-22. La cohorte n'est donc pas un echantillon : elle est selectionnee sur l'issue, et le facteur est enorme."
+ },
+ "ce_que_la_cohorte_permet": [
+  "Une comparaison CONDITIONNELLE : parmi les tokens gradues de la meme fenetre, ceux que l'auteur a tradés portent-ils la signature de decoupage plus souvent que les autres ? C'est a cette question, et a elle seule, que repond le groupe temoin gradue.",
+  "Un test de presence : la signature est-elle observable la ou l'auteur affirme l'avoir vue ? Un negatif y est informatif, un positif y est fragile."
+ ],
+ "ce_que_la_cohorte_interdit": [
+  "Toute prevalence. 'X % des tokens portent la signature' est indemontrable a partir d'un echantillon choisi sur l'issue, quelle que soit la prudence de la formulation.",
+  "Toute comparaison avec les 9 temoins MORTS prise isolement : ceux-ci different des cibles par l'issue autant que par l'exposition testee. Le p qui en sort est un majorant optimiste, et il est rapporte comme tel.",
+  "Toute inference de rentabilite. Les captures sont les trades gagnants ; les perdants ne sont pas dans le dossier et ne peuvent pas l'etre."
+ ],
+ "correctif_applique": "Un second groupe temoin, GRADUE et de la meme fenetre, a ete constitue avant toute mesure de financement (data/trace_gradues/t0_gradues.json). C'est la comparaison qui fait foi ; celle contre les tokens morts est conservee pour montrer de combien le confondant deplace le resultat."
+}

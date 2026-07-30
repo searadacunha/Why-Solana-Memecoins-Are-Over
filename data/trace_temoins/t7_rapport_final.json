@@ -1,0 +1,321 @@
+{
+ "objet": "TAUX DE BASE du decoupage de financement chez les premiers acheteurs de tokens pump.fun temoins de la meme periode (oct-dec 2024) que les cibles de l'auteur",
+ "procedure": "etape1/2/3 des cibles recopiees a l'identique (t1_/t2_/t3_). Aucun seuil modifie : N_BUYERS=40, MAX_TX=260, MIN_INFLOW=0.05 SOL, PREBUY_DAYS=21, MAX_PAGES=400, REL_TOL=1e-4, WINDOW_S=3600s, MIN_CLUSTER=3.",
+ "echantillon": {
+  "n_tokens_temoins": 9,
+  "n_premiers_acheteurs": 136,
+  "n_tokens_cibles_passes_par_la_meme_procedure": 2,
+  "cibles_presentes": [
+   "ODIN_POSITIF",
+   "OPTIMUS"
+  ]
+ },
+ "taux_de_base_par_signature": {
+  "A_meme_transaction": {
+   "description": "plusieurs premiers acheteurs finances dans UNE SEULE transaction — la signature du cas ODIN, la seule indiscutable",
+   "par_token": "0/9",
+   "par_portefeuille_genese_atteinte": "0/70",
+   "borne_sup_95_par_token": 0.2831,
+   "borne_sup_95_par_portefeuille_genese_atteinte": 0.0419,
+   "presente_sur_les_cibles": {
+    "ODIN_POSITIF": 1,
+    "OPTIMUS": 0
+   }
+  },
+  "B_meme_montant_meme_moment": {
+   "description": "montants egaux a 1e-4 pres vers >= 3 portefeuilles distincts en moins d'une heure",
+   "par_token": "0/9",
+   "par_portefeuille_prebuy_couvert": "0/122",
+   "borne_sup_95_par_token": 0.2831,
+   "borne_sup_95_par_portefeuille_prebuy_couvert": 0.0243,
+   "presente_sur_les_cibles": {
+    "ODIN_POSITIF": 1,
+    "OPTIMUS": 0
+   }
+  },
+  "C_bailleur_prive_commun": {
+   "description": "une source privee finance >= 2 des premiers acheteurs, montants quelconques",
+   "par_token": "1/9",
+   "taux_point_par_token": 0.1111,
+   "IC95_par_token": [
+    0.0028,
+    0.4825
+   ],
+   "par_portefeuille": "2/136",
+   "temoins_positifs": [
+    "HLGOOFY"
+   ],
+   "presente_sur_les_cibles": {
+    "ODIN_POSITIF": 2,
+    "OPTIMUS": 1
+   }
+  }
+ },
+ "verdict_global_du_detecteur": {
+  "temoins_DECOUPAGE_DETECTE": "1/9",
+  "cibles_DECOUPAGE_DETECTE": "2/2",
+  "lecture": "Le verdict global du detecteur declare « DECOUPAGE DETECTE » des qu'UNE des trois signatures est presente. Sur ce verdict global, un temoin sur neuf est positif. Un verdict positif sur un token isole n'est donc PAS distinctif."
+ },
+ "couverture": {
+  "n_genese_atteinte": 70,
+  "n_genese_NON_atteinte": 66,
+  "n_prebuy_atteinte": 122,
+  "n_prebuy_NON_atteinte": 14,
+  "n_hyperactifs_non_mesurables": 14,
+  "part_genese_atteinte": 0.515,
+  "part_prebuy_atteinte": 0.897
+ },
+ "rattrapage_de_couverture": null,
+ "rattrapage_detail": [],
+ "profil_des_bailleurs_communs_prives": {
+  "HLGOOFY (TEMOIN)": {
+   "adresse": "12hHGUFAC2o3QaoNqgfr9tFe16v2dRNGLtzffoFScKcW",
+   "n_signatures_vues": 53,
+   "pages_signatures": 1,
+   "genese_atteinte": true,
+   "plus_ancienne_utc": "2024-11-29 08:51:19",
+   "plus_recente_utc": "2024-12-16 02:13:09",
+   "n_tx_parsees_inspectees": 50,
+   "n_destinataires_distincts_sur_echantillon": 4,
+   "n_sources_distinctes_sur_echantillon": 4,
+   "montants_de_sortie_les_plus_repetes": [
+    [
+     0.1,
+     3
+    ],
+    [
+     3.992572708,
+     1
+    ],
+    [
+     4.219686809,
+     1
+    ],
+    [
+     0.8999717,
+     1
+    ],
+    [
+     1.0,
+     1
+    ]
+   ],
+   "etiquette_connue": null,
+   "lecture": "ACTEUR PRIVE probable (volume et eventail compatibles avec un distributeur)",
+   "contexte": "HLGOOFY (TEMOIN)"
+  },
+  "OPTIMUS (CIBLE)": {
+   "adresse": "A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR",
+   "n_signatures_vues": 120000,
+   "pages_signatures": 120,
+   "genese_atteinte": false,
+   "plus_ancienne_utc": "2026-07-02 00:53:10",
+   "plus_recente_utc": "2026-07-30 11:06:32",
+   "n_tx_parsees_inspectees": 600,
+   "n_destinataires_distincts_sur_echantillon": 361,
+   "n_sources_distinctes_sur_echantillon": 108,
+   "montants_de_sortie_les_plus_repetes": [
+    [
+     0.0036,
+     186
+    ],
+    [
+     0.00203928,
+     29
+    ],
+    [
+     2.954141,
+     4
+    ],
+    [
+     0.134,
+     3
+    ],
+    [
+     1.998935,
+     3
+    ],
+    [
+     1.982218,
+     2
+    ],
+    [
+     2.976827,
+     2
+    ],
+    [
+     0.13,
+     2
+    ]
+   ],
+   "etiquette_connue": null,
+   "lecture": "INFRASTRUCTURE probable (volume et eventail de destinataires trop larges)",
+   "contexte": "OPTIMUS (CIBLE)"
+  },
+  "ODIN (CAS PROUVE)": {
+   "adresse": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+   "n_signatures_vues": 120000,
+   "pages_signatures": 120,
+   "genese_atteinte": false,
+   "plus_ancienne_utc": "2025-01-03 20:11:19",
+   "plus_recente_utc": "2026-07-29 05:34:43",
+   "n_tx_parsees_inspectees": 600,
+   "n_destinataires_distincts_sur_echantillon": 2931,
+   "n_sources_distinctes_sur_echantillon": 1,
+   "montants_de_sortie_les_plus_repetes": [
+    [
+     0.0021576,
+     2962
+    ],
+    [
+     0.014244239,
+     1
+    ],
+    [
+     4.22104594,
+     1
+    ]
+   ],
+   "etiquette_connue": null,
+   "lecture": "INFRASTRUCTURE probable (volume et eventail de destinataires trop larges)",
+   "contexte": "ODIN (CAS PROUVE)"
+  }
+ },
+ "par_token_detail": [
+  {
+   "temoin": "faith",
+   "symbole": "faith",
+   "mint": "3TpKKNDBqgZAFkTQmsRxwcHQZTJKyYnRgsBs3tcjpump",
+   "n_premiers_acheteurs": 7,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 0,
+   "genese": "4/7",
+   "prebuy": "6/7",
+   "n_entrees_retenues": 28,
+   "n_ecartees_produit_de_vente": 115,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/7 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "Calm",
+   "symbole": "Calm",
+   "mint": "B6Znej2JwW2mEsXeoEGmQwwZ9E3tvNDPWRVw74njpump",
+   "n_premiers_acheteurs": 40,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 4,
+   "genese": "21/40",
+   "prebuy": "37/40",
+   "n_entrees_retenues": 113,
+   "n_ecartees_produit_de_vente": 1222,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 3/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (3 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "DONGOE",
+   "symbole": "₫øⒼё",
+   "mint": "F4j6sMuUUTNqNQrLoHDmKZ4umrhhT2vRf5zMKBE1pump",
+   "n_premiers_acheteurs": 17,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 1,
+   "genese": "10/17",
+   "prebuy": "16/17",
+   "n_entrees_retenues": 35,
+   "n_ecartees_produit_de_vente": 238,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/17 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "HLGOOFY",
+   "symbole": "HLGOOFY",
+   "mint": "7FotfzGpzLFfhS6nJqaypYem3GfdXeDoyTJfPNVvpump",
+   "n_premiers_acheteurs": 40,
+   "A": 0,
+   "B": 0,
+   "C_prive": 1,
+   "C_infra_sans_valeur": 1,
+   "genese": "16/40",
+   "prebuy": "38/40",
+   "n_entrees_retenues": 36,
+   "n_ecartees_produit_de_vente": 1339,
+   "verdict": "DECOUPAGE DETECTE"
+  },
+  {
+   "temoin": "CREEKS",
+   "symbole": "CREEKS",
+   "mint": "AvWysij3HMUoZ5G5FdxuDJEVqUUVFc7MkVXeUUkhpump",
+   "n_premiers_acheteurs": 4,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 0,
+   "genese": "3/4",
+   "prebuy": "3/4",
+   "n_entrees_retenues": 5,
+   "n_ecartees_produit_de_vente": 47,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/4 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "BandD",
+   "symbole": "B&D",
+   "mint": "GADdBMDWU6aQp9XJumRrk443sjjSzbPULGAsZKF4pump",
+   "n_premiers_acheteurs": 2,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 0,
+   "genese": "1/2",
+   "prebuy": "1/2",
+   "n_entrees_retenues": 12,
+   "n_ecartees_produit_de_vente": 5,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/2 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "GOOREUREKA",
+   "symbole": "GOOREUREKA",
+   "mint": "4DswCdTzmDmG32VWthsLkpR5CG9aY5iqELuu47nFpump",
+   "n_premiers_acheteurs": 6,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 1,
+   "genese": "3/6",
+   "prebuy": "5/6",
+   "n_entrees_retenues": 7,
+   "n_ecartees_produit_de_vente": 61,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/6 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "PORTAL",
+   "symbole": "PORTAL",
+   "mint": "7oDRbzM3QuXB6snVotAjpsQomTdHoR8xMxCMEVMnpump",
+   "n_premiers_acheteurs": 12,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 2,
+   "genese": "8/12",
+   "prebuy": "11/12",
+   "n_entrees_retenues": 17,
+   "n_ecartees_produit_de_vente": 375,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 1/12 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "temoin": "QUEENAI",
+   "symbole": "QUEENAI",
+   "mint": "FaqgPactBmqwRt1ji18bgD7Beo7irnYwBQnNuBfwpump",
+   "n_premiers_acheteurs": 8,
+   "A": 0,
+   "B": 0,
+   "C_prive": 0,
+   "C_infra_sans_valeur": 0,
+   "genese": "4/8",
+   "prebuy": "5/8",
+   "n_entrees_retenues": 11,
+   "n_ecartees_produit_de_vente": 44,
+   "verdict": "ECHEC DE MESURE — aucun decoupage vu, mais 3/8 portefeuilles dont la fenetre pre-achat n'est pas couverte (3 hyperactifs). Ce n'est PAS une absence de decoupage."
+  }
+ ]
+}

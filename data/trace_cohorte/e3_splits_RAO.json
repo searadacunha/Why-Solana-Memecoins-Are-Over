@@ -1,0 +1,76 @@
+{
+ "label": "RAO",
+ "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+ "n_wallets": 40,
+ "n_inflows_total": 89,
+ "n_rentrees_ecartees_produit_de_vente": 879,
+ "n_genesis_reached": 29,
+ "n_genesis_NOT_reached": 11,
+ "n_prebuy_reached": 37,
+ "n_prebuy_NOT_reached": 3,
+ "n_hyperactifs_non_mesurables": 3,
+ "wallets_without_genesis": [
+  "5hiiMugYNkYGmx8jR7RGLGJtgvTVxLteJtYbg6UbyJ2p",
+  "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+  "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+  "FTQCeMwD6vMWyfNAGSERnKALJ5x5M81riRFg2kaUbSVf",
+  "EMmCnjE6YsjVBbSiFkj6xLKcGVHsXxawRuMuztsS5FqM",
+  "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp",
+  "7f97KcfbDGhSZyHqSELKtYh8SxobV8R4dvZY7MoxMy8i",
+  "BNBx8JBvxrmM699C92bZQ7VKngdfcdudFcQrH7oLnFvw",
+  "ACq2wA8gifTVu66j2oF2wxeekE7RU8HhKzd4sbzFEjgV",
+  "WkHMyocY4trzWbYZ5bN9wAqYTQmB7fQw6QRkVphYZVg",
+  "6q6jMAFF2ob9wh4kZwvstRSCJGkETzxgHmQ7hZaFdMMN"
+ ],
+ "wallets_without_prebuy": [
+  "33GtNAQzmdq4jELpHxXYqW3vDy7fux89zevVU4hP7BTX",
+  "EJvGjsyRNYbtsdSKgMScDDJsmZcXKhWnSh19sSwK9wEn",
+  "dc5bDixc5FMfiX1gMbaPxQZY42pTVtcwa9mnXQDxnsp"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 3/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (3 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ",
+   "n_early_buyers_funded": 4,
+   "n_transfers": 4,
+   "total_sol": 15.412,
+   "first_utc": "2024-10-29 11:13:15",
+   "known": "MEXC hot wallet",
+   "amounts_sol": [
+    1.288,
+    2.988,
+    4.988,
+    6.148
+   ],
+   "wallets": [
+    "6RGc9YHaU1o5waaHKfDysxWjxzCRcq6DWJtrN5QDdr1s",
+    "B3reAewM3gFzRcvDFRWwhWMKQYCZusY4tYLkm3S4V6hb",
+    "EmjgfmDPuZBLZxZoTkVfBz37bxsAVe7DXTaH8LdVbeLc",
+    "k9fX9L9QXqSJQ6rvyF3VByoxySqxYeKbpEGtEy5yq4Z"
+   ]
+  },
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 5,
+   "total_sol": 28.900112,
+   "first_utc": "2024-03-09 09:53:13",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    0.92411175,
+    4.992,
+    4.992,
+    7.992,
+    10.0
+   ],
+   "wallets": [
+    "24Z2aSHY2d5y5DbX66JW47kYH8G4hhFKba5ESXB4N5s2",
+    "5hiiMugYNkYGmx8jR7RGLGJtgvTVxLteJtYbg6UbyJ2p",
+    "FcDgJqJh5p4b6Fda5PqpRxqYn7c5uSQPKVjc2yERbRWm"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+[
+ {
+  "token": "HLGOOFY",
+  "wallet": "DkTYkaraoT3PDiYkcjG2otv3VsM5x4M9GJxbZ1iUYPT7",
+  "pages": 446,
+  "sigs": 446000,
+  "prebuy_reached_apres": true,
+  "genesis_reached_apres": false,
+  "n_inflows_apres": 0
+ },
+ {
+  "token": "HLGOOFY",
+  "wallet": "5GjQkGJF1NtAsTt9P8Q3Ni6SD2QsSZ1sSnsi8GBqDnt5",
+  "pages": 444,
+  "sigs": 443164,
+  "prebuy_reached_apres": true,
+  "genesis_reached_apres": true,
+  "n_inflows_apres": 1
+ },
+ {
+  "token": "PORTAL",
+  "wallet": "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA",
+  "pages": 868,
+  "sigs": 868000,
+  "prebuy_reached_apres": false,
+  "genesis_reached_apres": false,
+  "n_inflows_apres": 0
+ },
+ {
+  "token": "QUEENAI",
+  "wallet": "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+  "pages": 537,
+  "sigs": 536099,
+  "prebuy_reached_apres": true,
+  "genesis_reached_apres": true,
+  "n_inflows_apres": 11
+ },
+ {
+  "token": "QUEENAI",
+  "wallet": "zerowfY91rbHy5bqcMToo2HaHMYFPB6UhZdTQw3av7C",
+  "pages": 467,
+  "sigs": 466471,
+  "prebuy_reached_apres": true,
+  "genesis_reached_apres": true,
+  "n_inflows_apres": 29
+ },
+ {
+  "token": "QUEENAI",
+  "wallet": "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+  "pages": 883,
+  "sigs": 883000,
+  "prebuy_reached_apres": false,
+  "genesis_reached_apres": false,
+  "n_inflows_apres": 14
+ }
+]
