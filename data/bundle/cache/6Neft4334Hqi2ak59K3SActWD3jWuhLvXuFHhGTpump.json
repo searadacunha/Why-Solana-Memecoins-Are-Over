@@ -1,0 +1,22 @@
+{
+ "mint": "6Neft4334Hqi2ak59K3SActWD3jWuhLvXuFHhGTpump",
+ "created": 1748334618,
+ "sample": "F_cadre",
+ "month": "2025-05",
+ "ath_api": 28958557.61110168,
+ "n_sigs_total": 127,
+ "pagination_complete": true,
+ "dt_created": -1,
+ "status": "ok",
+ "slot0": 342767496,
+ "n_sigs_window": 13,
+ "n_sigs_slot0": 5,
+ "n_tx_parsed": 13,
+ "n_buyers_window": 22,
+ "n_buyers_slot0": 21,
+ "sol_window_30s": 85.007,
+ "sol_first_slot": 83.393,
+ "top_buyer_sol": 13.893,
+ "full_snipe": true,
+ "snipe_in_first_slot": true
+}

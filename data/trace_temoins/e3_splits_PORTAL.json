@@ -1,0 +1,64 @@
+{
+ "label": "PORTAL",
+ "mint": "7oDRbzM3QuXB6snVotAjpsQomTdHoR8xMxCMEVMnpump",
+ "n_wallets": 12,
+ "n_inflows_total": 17,
+ "n_rentrees_ecartees_produit_de_vente": 375,
+ "n_genesis_reached": 8,
+ "n_genesis_NOT_reached": 4,
+ "n_prebuy_reached": 11,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "ATFmqm2iJekCz1Pey8vq7xPvsdw4TmvqtptGrDZaxBkU",
+  "EQ3iykiT6Jg1ReuaaLc2bnxFXwxBkiXgZifYJxaULAEC",
+  "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA",
+  "BHrEssDoHBGibjGDnsUaVf7RnK6vfbHstLLq9gAPxajy"
+ ],
+ "wallets_without_prebuy": [
+  "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/12 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   "n_early_buyers_funded": 3,
+   "n_transfers": 5,
+   "total_sol": 228.481447,
+   "first_utc": "2024-12-07 04:37:07",
+   "known": "Binance hot wallet",
+   "amounts_sol": [
+    29.954,
+    49.18624343,
+    49.27441468,
+    49.69172001,
+    50.37506936
+   ],
+   "wallets": [
+    "529gGyW4vgnGPeFaLUxEgbNGSGjzHbdW4MPNednen9Py",
+    "67wx6uSFKWnDbESJUGCbEuLrukgpjK3iSnZFKNPCkUhd",
+    "D7y2G7ui13ukckPvpJaDiSDQb8GXQn5yypPKFui8iAws"
+   ]
+  },
+  {
+   "funder": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 3,
+   "total_sol": 6.020714,
+   "first_utc": "2024-11-24 15:10:26",
+   "known": "Bybit hot wallet",
+   "amounts_sol": [
+    1.9864,
+    2.0,
+    2.0343136
+   ],
+   "wallets": [
+    "7ZKbiJFBgWT7pSCMYvgVbeqceJLjAEW3bpHmAryimPXx",
+    "AdNBzKP88BUfrqn8FhdwK8LMTtxwtT2gRcmWZdebZkYk"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1002 @@
+{
+ "parametres": {
+  "MIN_SOL": 5.0,
+  "INFRA_N": 25,
+  "MIN_CO": 3,
+  "MIN_JAC": 0.5,
+  "n_tokens_corpus": 282
+ },
+ "infra_exclue": [
+  {
+   "wallet": "RDCT-d4fb6b1f86",
+   "n_tokens": 38
+  }
+ ],
+ "n_flottes": 5,
+ "n_tokens_couverts": 51,
+ "flottes": [
+  {
+   "lead": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+   "n_wallets": 4,
+   "wallets": [
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9"
+   ],
+   "n_tokens": 14,
+   "n_membres_mode": [
+    4,
+    12
+   ],
+   "sol_flotte_med": 84.973,
+   "sol_flotte_min_max": [
+    42.8883,
+    85.4264
+   ],
+   "cv_inter_lancements": 0.1459,
+   "ticket_cv_intra_med": 0.035,
+   "ts_span_s_max": 0,
+   "part_sol_fenetre_med": 0.9807,
+   "span_h": 50.2,
+   "launches": [
+    {
+     "mint": "87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump",
+     "created": 1782591657,
+     "n_membres": 4,
+     "sol_flotte": 84.9414,
+     "sol_noyau_total": 84.9414,
+     "sol_fenetre_total": 89.2666,
+     "ticket_med": 21.1505,
+     "ticket_cv": 0.0173,
+     "ts_span_s": 0,
+     "tickets": [
+      21.8271,
+      21.1508,
+      21.1502,
+      20.8133
+     ]
+    },
+    {
+     "mint": "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+     "created": 1782598001,
+     "n_membres": 4,
+     "sol_flotte": 81.5313,
+     "sol_noyau_total": 81.5313,
+     "sol_fenetre_total": 83.1676,
+     "ticket_med": 20.4622,
+     "ticket_cv": 0.0244,
+     "ts_span_s": 0,
+     "tickets": [
+      20.9051,
+      20.809,
+      20.1154,
+      19.7018
+     ]
+    },
+    {
+     "mint": "6Fzphy2B4JTUteQ8jGtj9Tc9anpttVXY3CRgGuJTpump",
+     "created": 1782611393,
+     "n_membres": 4,
+     "sol_flotte": 84.4741,
+     "sol_noyau_total": 84.4741,
+     "sol_fenetre_total": 86.1091,
+     "ticket_med": 21.0778,
+     "ticket_cv": 0.0073,
+     "ts_span_s": 0,
+     "tickets": [
+      21.3658,
+      21.1168,
+      21.0388,
+      20.9527
+     ]
+    },
+    {
+     "mint": "FAwimgWuNJBMj5Sk8WtJCvNEztBS3AhgqFm42pWVpump",
+     "created": 1782655287,
+     "n_membres": 4,
+     "sol_flotte": 82.4289,
+     "sol_noyau_total": 82.4289,
+     "sol_fenetre_total": 84.5205,
+     "ticket_med": 20.607,
+     "ticket_cv": 0.0085,
+     "ts_span_s": 0,
+     "tickets": [
+      20.8262,
+      20.7249,
+      20.489,
+      20.3888
+     ]
+    },
+    {
+     "mint": "Em6ajM2xwou6y2YkfqAxsr5zMjmLepbJUtBaEzCypump",
+     "created": 1782748479,
+     "n_membres": 4,
+     "sol_flotte": 85.1929,
+     "sol_noyau_total": 85.1929,
+     "sol_fenetre_total": 88.8411,
+     "ticket_med": 21.1917,
+     "ticket_cv": 0.0557,
+     "ts_span_s": 0,
+     "tickets": [
+      23.0,
+      21.6934,
+      20.6899,
+      19.8096
+     ]
+    },
+    {
+     "mint": "DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump",
+     "created": 1782759473,
+     "n_membres": 4,
+     "sol_flotte": 85.2325,
+     "sol_noyau_total": 85.2325,
+     "sol_fenetre_total": 86.0233,
+     "ticket_med": 21.7683,
+     "ticket_cv": 0.0415,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9156,
+      21.8032,
+      21.7334,
+      19.7803
+     ]
+    },
+    {
+     "mint": "H2HmTSxj5mTm4kYe4kJbJuG1HitVoXZ929n1RyrXpump",
+     "created": 1782760235,
+     "n_membres": 4,
+     "sol_flotte": 85.0053,
+     "sol_noyau_total": 85.0053,
+     "sol_fenetre_total": 85.073,
+     "ticket_med": 21.6532,
+     "ticket_cv": 0.0469,
+     "ts_span_s": 0,
+     "tickets": [
+      22.1316,
+      21.8037,
+      21.5028,
+      19.5672
+     ]
+    },
+    {
+     "mint": "5CCnqQy9cyzerWNs29KA27wEweq6UZbR7Q8ewxG7pump",
+     "created": 1782761489,
+     "n_membres": 3,
+     "sol_flotte": 63.6035,
+     "sol_noyau_total": 85.6426,
+     "sol_fenetre_total": 85.7116,
+     "ticket_med": 21.6934,
+     "ticket_cv": 0.0366,
+     "ts_span_s": 0,
+     "tickets": [
+      21.8038,
+      21.6934,
+      20.1063
+     ]
+    },
+    {
+     "mint": "B1a7zhim82AGr12iBSnH1m4sXCSyt3wudZD2MVYHpump",
+     "created": 1782762860,
+     "n_membres": 2,
+     "sol_flotte": 42.8883,
+     "sol_noyau_total": 85.3046,
+     "sol_fenetre_total": 85.3444,
+     "ticket_med": 21.4442,
+     "ticket_cv": 0.0084,
+     "ts_span_s": 0,
+     "tickets": [
+      21.624,
+      21.2643
+     ]
+    },
+    {
+     "mint": "7V6C6GN1YbtYP6TJ6Kzke9TUwLgjy7gCMEMmbn8Jpump",
+     "created": 1782765019,
+     "n_membres": 4,
+     "sol_flotte": 85.0301,
+     "sol_noyau_total": 85.0301,
+     "sol_fenetre_total": 85.7193,
+     "ticket_med": 21.5659,
+     "ticket_cv": 0.0387,
+     "ts_span_s": 0,
+     "tickets": [
+      22.028,
+      21.6109,
+      21.5208,
+      19.8704
+     ]
+    },
+    {
+     "mint": "7vJ2jdLwkjPSWkQVKv7SGuJ3BLXF7fn18wj2EF8npump",
+     "created": 1782766031,
+     "n_membres": 4,
+     "sol_flotte": 85.357,
+     "sol_noyau_total": 85.357,
+     "sol_fenetre_total": 86.9186,
+     "ticket_med": 21.6575,
+     "ticket_cv": 0.0335,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9156,
+      21.7941,
+      21.5208,
+      20.1265
+     ]
+    },
+    {
+     "mint": "AidtkezbfEF8wR3GNxGYFerGKbtBHkabfqVP3XvKpump",
+     "created": 1782767711,
+     "n_membres": 4,
+     "sol_flotte": 84.3881,
+     "sol_noyau_total": 84.3881,
+     "sol_fenetre_total": 84.4207,
+     "ticket_med": 21.5172,
+     "ticket_cv": 0.0444,
+     "ts_span_s": 0,
+     "tickets": [
+      21.8579,
+      21.6149,
+      21.4195,
+      19.4958
+     ]
+    },
+    {
+     "mint": "5AuHKxmuoXsxzbf8nbVzTWGuzHrGecmigfjgEBLkpump",
+     "created": 1782769999,
+     "n_membres": 4,
+     "sol_flotte": 85.4264,
+     "sol_noyau_total": 85.4264,
+     "sol_fenetre_total": 87.5294,
+     "ticket_med": 21.7483,
+     "ticket_cv": 0.0397,
+     "ts_span_s": 0,
+     "tickets": [
+      22.028,
+      21.8032,
+      21.6934,
+      19.9018
+     ]
+    },
+    {
+     "mint": "ApANnyv1KP6uZaPmqhaCruMqZHHxQCACKDGCcjU5pump",
+     "created": 1782772257,
+     "n_membres": 4,
+     "sol_flotte": 85.279,
+     "sol_noyau_total": 85.279,
+     "sol_fenetre_total": 86.1857,
+     "ticket_med": 21.0947,
+     "ticket_cv": 0.0231,
+     "ts_span_s": 0,
+     "tickets": [
+      22.1627,
+      21.1508,
+      21.0386,
+      20.9269
+     ]
+    }
+   ]
+  },
+  {
+   "lead": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+   "n_wallets": 4,
+   "wallets": [
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX"
+   ],
+   "n_tokens": 12,
+   "n_membres_mode": [
+    4,
+    12
+   ],
+   "sol_flotte_med": 80.898,
+   "sol_flotte_min_max": [
+    80.7351,
+    82.0816
+   ],
+   "cv_inter_lancements": 0.0075,
+   "ticket_cv_intra_med": 0.0265,
+   "ts_span_s_max": 0,
+   "part_sol_fenetre_med": 0.9799,
+   "span_h": 147.9,
+   "launches": [
+    {
+     "mint": "UNB8FtHiZ9N9LEyrQy8surmRjbFxR9fKHTKDe93xzPr",
+     "created": 1782595967,
+     "n_membres": 4,
+     "sol_flotte": 82.0816,
+     "sol_noyau_total": 82.0816,
+     "sol_fenetre_total": 83.7672,
+     "ticket_med": 20.6409,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1299,
+      20.814,
+      20.4678,
+      19.6699
+     ]
+    },
+    {
+     "mint": "7EKtAJTruNL5qURjXrEzfdHzmqucxkQNh1922hz8pump",
+     "created": 1782601760,
+     "n_membres": 4,
+     "sol_flotte": 82.0816,
+     "sol_noyau_total": 82.0816,
+     "sol_fenetre_total": 83.7575,
+     "ticket_med": 20.6409,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1299,
+      20.814,
+      20.4678,
+      19.6699
+     ]
+    },
+    {
+     "mint": "7adT6gecxwX5C1sT1eynLVhLgpFoEAHfn4REk92Rpump",
+     "created": 1782603156,
+     "n_membres": 4,
+     "sol_flotte": 82.0816,
+     "sol_noyau_total": 82.0816,
+     "sol_fenetre_total": 88.2255,
+     "ticket_med": 20.6409,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1299,
+      20.814,
+      20.4678,
+      19.6699
+     ]
+    },
+    {
+     "mint": "9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump",
+     "created": 1782604218,
+     "n_membres": 4,
+     "sol_flotte": 82.0816,
+     "sol_noyau_total": 82.0816,
+     "sol_fenetre_total": 83.7662,
+     "ticket_med": 20.6409,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1299,
+      20.814,
+      20.4678,
+      19.6699
+     ]
+    },
+    {
+     "mint": "GkgtsQCLdV4rPVcz6YaCRowSK8XUeD99xjFcUyCwpump",
+     "created": 1782605168,
+     "n_membres": 4,
+     "sol_flotte": 82.0816,
+     "sol_noyau_total": 82.0816,
+     "sol_fenetre_total": 83.7662,
+     "ticket_med": 20.6409,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1299,
+      20.814,
+      20.4678,
+      19.6699
+     ]
+    },
+    {
+     "mint": "GUA59wrxfgzdLx1qZTwX9wDaZFvVteTQLPUc9R1ppump",
+     "created": 1783034271,
+     "n_membres": 4,
+     "sol_flotte": 80.8978,
+     "sol_noyau_total": 86.0904,
+     "sol_fenetre_total": 91.5832,
+     "ticket_med": 20.4067,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7531,
+      20.4456,
+      20.3678,
+      19.3313
+     ]
+    },
+    {
+     "mint": "HvM3WrbuWuEJTrxDMAPiPwR8oSjHUcbcTDuati9vpump",
+     "created": 1783036454,
+     "n_membres": 4,
+     "sol_flotte": 80.8978,
+     "sol_noyau_total": 80.8978,
+     "sol_fenetre_total": 81.0794,
+     "ticket_med": 20.4067,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7531,
+      20.4456,
+      20.3678,
+      19.3313
+     ]
+    },
+    {
+     "mint": "CmFiPswdJEEo3njREo3FKrBUyY9TsmFBQZss2LmZpump",
+     "created": 1783037782,
+     "n_membres": 4,
+     "sol_flotte": 80.8978,
+     "sol_noyau_total": 80.8978,
+     "sol_fenetre_total": 81.0394,
+     "ticket_med": 20.4067,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7531,
+      20.4456,
+      20.3678,
+      19.3313
+     ]
+    },
+    {
+     "mint": "BULBzU2i5k9hp4Vh8JgDW8L1fGfskgmoTzMM1Kx7mAho",
+     "created": 1783038404,
+     "n_membres": 4,
+     "sol_flotte": 80.8978,
+     "sol_noyau_total": 80.8978,
+     "sol_fenetre_total": 86.137,
+     "ticket_med": 20.4067,
+     "ticket_cv": 0.0265,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7531,
+      20.4456,
+      20.3678,
+      19.3313
+     ]
+    },
+    {
+     "mint": "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+     "created": 1783114682,
+     "n_membres": 4,
+     "sol_flotte": 80.8551,
+     "sol_noyau_total": 86.6551,
+     "sol_fenetre_total": 86.8298,
+     "ticket_med": 20.2887,
+     "ticket_cv": 0.0221,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7445,
+      20.439,
+      20.1384,
+      19.5332
+     ]
+    },
+    {
+     "mint": "6qPhG9X1YUWHekKro42H6nZLRNRU5HMbnAXSgNqepump",
+     "created": 1783125200,
+     "n_membres": 4,
+     "sol_flotte": 80.7351,
+     "sol_noyau_total": 80.7351,
+     "sol_fenetre_total": 80.9117,
+     "ticket_med": 20.2751,
+     "ticket_cv": 0.0241,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7587,
+      20.3934,
+      20.1568,
+      19.4262
+     ]
+    },
+    {
+     "mint": "3cH1aqzTqNuEZpDVgJ7MvQbKJWZrqkmYyRwbvS5hpump",
+     "created": 1783128306,
+     "n_membres": 4,
+     "sol_flotte": 80.7351,
+     "sol_noyau_total": 85.7851,
+     "sol_fenetre_total": 85.9618,
+     "ticket_med": 20.2751,
+     "ticket_cv": 0.0241,
+     "ts_span_s": 0,
+     "tickets": [
+      20.7587,
+      20.3934,
+      20.1568,
+      19.4262
+     ]
+    }
+   ]
+  },
+  {
+   "lead": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+   "n_wallets": 4,
+   "wallets": [
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs"
+   ],
+   "n_tokens": 10,
+   "n_membres_mode": [
+    4,
+    10
+   ],
+   "sol_flotte_med": 85.097,
+   "sol_flotte_min_max": [
+    82.7863,
+    86.0202
+   ],
+   "cv_inter_lancements": 0.0118,
+   "ticket_cv_intra_med": 0.0155,
+   "ts_span_s_max": 0,
+   "part_sol_fenetre_med": 0.9495,
+   "span_h": 128.1,
+   "launches": [
+    {
+     "mint": "hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump",
+     "created": 1782634955,
+     "n_membres": 4,
+     "sol_flotte": 84.8083,
+     "sol_noyau_total": 84.8083,
+     "sol_fenetre_total": 86.4095,
+     "ticket_med": 21.2079,
+     "ticket_cv": 0.006,
+     "ts_span_s": 0,
+     "tickets": [
+      21.3658,
+      21.2646,
+      21.1512,
+      21.0267
+     ]
+    },
+    {
+     "mint": "EmP6i382zAaURiidLi4qphFvuAhsfQmTcV1F8iz6pump",
+     "created": 1782638510,
+     "n_membres": 4,
+     "sol_flotte": 84.7971,
+     "sol_noyau_total": 84.7971,
+     "sol_fenetre_total": 87.6619,
+     "ticket_med": 21.2079,
+     "ticket_cv": 0.0062,
+     "ts_span_s": 0,
+     "tickets": [
+      21.3658,
+      21.2646,
+      21.1512,
+      21.0155
+     ]
+    },
+    {
+     "mint": "tT2Ss23K4WmE9pvQwA5rfaVJD3kmExNpxYUx6xKpump",
+     "created": 1782640983,
+     "n_membres": 4,
+     "sol_flotte": 84.8072,
+     "sol_noyau_total": 84.8072,
+     "sol_fenetre_total": 89.7761,
+     "ticket_med": 21.2079,
+     "ticket_cv": 0.006,
+     "ts_span_s": 0,
+     "tickets": [
+      21.3658,
+      21.2646,
+      21.1512,
+      21.0256
+     ]
+    },
+    {
+     "mint": "9NKToDBF9tiYxoGSjyhcBi2NqVyJjFJyCW98UPVrpump",
+     "created": 1782647923,
+     "n_membres": 4,
+     "sol_flotte": 85.4045,
+     "sol_noyau_total": 85.4045,
+     "sol_fenetre_total": 89.833,
+     "ticket_med": 21.3203,
+     "ticket_cv": 0.0216,
+     "ts_span_s": 0,
+     "tickets": [
+      22.0057,
+      21.5035,
+      21.137,
+      20.7583
+     ]
+    },
+    {
+     "mint": "48pZaxQf5dHvg2K6cfz9Zz4LmXBLv96VRDV84kvgpump",
+     "created": 1782662500,
+     "n_membres": 4,
+     "sol_flotte": 83.2338,
+     "sol_noyau_total": 83.2338,
+     "sol_fenetre_total": 84.8336,
+     "ticket_med": 20.8441,
+     "ticket_cv": 0.0127,
+     "ts_span_s": 0,
+     "tickets": [
+      21.1376,
+      20.9143,
+      20.7739,
+      20.408
+     ]
+    },
+    {
+     "mint": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+     "created": 1782663501,
+     "n_membres": 4,
+     "sol_flotte": 82.7863,
+     "sol_noyau_total": 82.7863,
+     "sol_fenetre_total": 92.3187,
+     "ticket_med": 20.6905,
+     "ticket_cv": 0.0059,
+     "ts_span_s": 0,
+     "tickets": [
+      20.8752,
+      20.7118,
+      20.6692,
+      20.5301
+     ]
+    },
+    {
+     "mint": "8Xa1jqBhrxEFX4HgMd9NNRVjK5ap7tBrr5aebCGKpump",
+     "created": 1783078818,
+     "n_membres": 4,
+     "sol_flotte": 85.4866,
+     "sol_noyau_total": 85.4866,
+     "sol_fenetre_total": 85.8076,
+     "ticket_med": 21.4074,
+     "ticket_cv": 0.0232,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9146,
+      21.7992,
+      21.0155,
+      20.7573
+     ]
+    },
+    {
+     "mint": "ETGVz4jeuZbKqFd1GoBQeJ5nS5pB5Nah9FLvDxTcpump",
+     "created": 1783092865,
+     "n_membres": 4,
+     "sol_flotte": 85.3863,
+     "sol_noyau_total": 85.3863,
+     "sol_fenetre_total": 95.8705,
+     "ticket_med": 21.4053,
+     "ticket_cv": 0.0242,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9004,
+      21.7951,
+      21.0155,
+      20.6753
+     ]
+    },
+    {
+     "mint": "Czv6T6sF5SMTDDYns5tEeSsKb7MNK4QWAnvZwsMxpump",
+     "created": 1783095352,
+     "n_membres": 4,
+     "sol_flotte": 85.683,
+     "sol_noyau_total": 85.683,
+     "sol_fenetre_total": 90.709,
+     "ticket_med": 21.4114,
+     "ticket_cv": 0.0206,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9004,
+      21.8204,
+      21.0024,
+      20.9598
+     ]
+    },
+    {
+     "mint": "CBvxtHtM9W4UXT1m7pwkPkaVDPpKQj8WGMJe7tQpump",
+     "created": 1783096039,
+     "n_membres": 4,
+     "sol_flotte": 86.0202,
+     "sol_noyau_total": 86.0202,
+     "sol_fenetre_total": 90.7144,
+     "ticket_med": 21.5582,
+     "ticket_cv": 0.0183,
+     "ts_span_s": 0,
+     "tickets": [
+      21.9146,
+      21.8559,
+      21.2605,
+      20.9892
+     ]
+    }
+   ]
+  },
+  {
+   "lead": "34qWhtTEmLYBwZnFWjU1qDHwgaGScDHwSfFbGF1oBX2Z",
+   "n_wallets": 3,
+   "wallets": [
+    "34qWhtTEmLYBwZnFWjU1qDHwgaGScDHwSfFbGF1oBX2Z",
+    "5xTa1Jk8D8qMKQdFz4Zf6bq2v3k3J3FErp3i8QDwUF6b",
+    "GuEFvJidK7zk2mCKbM1XTcX8NCqrMQR7YthHnsUPsBih"
+   ],
+   "n_tokens": 9,
+   "n_membres_mode": [
+    3,
+    5
+   ],
+   "sol_flotte_med": 16.014,
+   "sol_flotte_min_max": [
+    8.5071,
+    45.0276
+   ],
+   "cv_inter_lancements": 0.5392,
+   "ticket_cv_intra_med": 0.0,
+   "ts_span_s_max": 0,
+   "part_sol_fenetre_med": 0.176,
+   "span_h": 40.7,
+   "launches": [
+    {
+     "mint": "EnL9nUs2LV2aCkkd3gE22x6KtiQmvw9MMSqeJicKpump",
+     "created": 1782646466,
+     "n_membres": 1,
+     "sol_flotte": 8.5071,
+     "sol_noyau_total": 44.2805,
+     "sol_fenetre_total": 72.4772,
+     "ticket_med": 8.5071,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      8.5071
+     ]
+    },
+    {
+     "mint": "8ombvryFv2kHq8sVvGsocsbQijCFR9eYQGdDa1xWpump",
+     "created": 1782649883,
+     "n_membres": 1,
+     "sol_flotte": 8.5071,
+     "sol_noyau_total": 46.7263,
+     "sol_fenetre_total": 71.7441,
+     "ticket_med": 8.5071,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      8.5071
+     ]
+    },
+    {
+     "mint": "Dc6GW8TmGquTsLBwtrYgGMwGMY3HckT79iVCn8jmpump",
+     "created": 1782656994,
+     "n_membres": 3,
+     "sol_flotte": 15.6276,
+     "sol_noyau_total": 86.3821,
+     "sol_fenetre_total": 92.5133,
+     "ticket_med": 5.2092,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      5.2092,
+      5.2092,
+      5.2092
+     ]
+    },
+    {
+     "mint": "6m6eJKxsQrFWrXV7x9Bgp5DG4vdzzvqenWYh5ihxpump",
+     "created": 1782663304,
+     "n_membres": 3,
+     "sol_flotte": 45.0276,
+     "sol_noyau_total": 91.8559,
+     "sol_fenetre_total": 108.2615,
+     "ticket_med": 15.0092,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      15.0092,
+      15.0092,
+      15.0092
+     ]
+    },
+    {
+     "mint": "HrnmUfiwT7uCpPBMrDh2VGk1MgwHcfpJ4bPJGCY2pump",
+     "created": 1782664458,
+     "n_membres": 3,
+     "sol_flotte": 19.5876,
+     "sol_noyau_total": 76.7754,
+     "sol_fenetre_total": 93.3996,
+     "ticket_med": 6.5292,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      6.5292,
+      6.5292,
+      6.5292
+     ]
+    },
+    {
+     "mint": "GXmQ9zfriV73rCtkASj3aEPzvk63k7JWadGKXRUpump",
+     "created": 1782666463,
+     "n_membres": 3,
+     "sol_flotte": 19.5876,
+     "sol_noyau_total": 76.7754,
+     "sol_fenetre_total": 96.4443,
+     "ticket_med": 6.5292,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      6.5292,
+      6.5292,
+      6.5292
+     ]
+    },
+    {
+     "mint": "J9cVhAi7qp4sLDwGbeTLUze1aLs5N4AZmQfBvDYFpump",
+     "created": 1782668473,
+     "n_membres": 3,
+     "sol_flotte": 20.8634,
+     "sol_noyau_total": 77.7101,
+     "sol_fenetre_total": 79.2631,
+     "ticket_med": 7.9271,
+     "ticket_cv": 0.1978,
+     "ts_span_s": 0,
+     "tickets": [
+      7.9271,
+      7.9271,
+      5.0092
+     ]
+    },
+    {
+     "mint": "2b27LMa8FbkWbHt8C5JzHciFyeKejFkCRyZ434Axpump",
+     "created": 1782790697,
+     "n_membres": 2,
+     "sol_flotte": 16.0142,
+     "sol_noyau_total": 63.9422,
+     "sol_fenetre_total": 102.5518,
+     "ticket_med": 8.0071,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      8.0071,
+      8.0071
+     ]
+    },
+    {
+     "mint": "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+     "created": 1782793040,
+     "n_membres": 2,
+     "sol_flotte": 16.0142,
+     "sol_noyau_total": 47.9038,
+     "sol_fenetre_total": 90.9924,
+     "ticket_med": 8.0071,
+     "ticket_cv": 0.0,
+     "ts_span_s": 0,
+     "tickets": [
+      8.0071,
+      8.0071
+     ]
+    }
+   ]
+  },
+  {
+   "lead": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+   "n_wallets": 4,
+   "wallets": [
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH"
+   ],
+   "n_tokens": 6,
+   "n_membres_mode": [
+    4,
+    6
+   ],
+   "sol_flotte_med": 79.622,
+   "sol_flotte_min_max": [
+    79.4883,
+    85.8447
+   ],
+   "cv_inter_lancements": 0.0345,
+   "ticket_cv_intra_med": 0.0282,
+   "ts_span_s_max": 0,
+   "part_sol_fenetre_med": 0.8953,
+   "span_h": 12.0,
+   "launches": [
+    {
+     "mint": "ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump",
+     "created": 1783064195,
+     "n_membres": 4,
+     "sol_flotte": 79.4883,
+     "sol_noyau_total": 85.3104,
+     "sol_fenetre_total": 91.9727,
+     "ticket_med": 19.9528,
+     "ticket_cv": 0.0282,
+     "ts_span_s": 0,
+     "tickets": [
+      20.4496,
+      20.3794,
+      19.5262,
+      19.1331
+     ]
+    },
+    {
+     "mint": "fCM1RmVwhkVd8o7NrhAyWXmtVPqPZkaiWdgCcgLpump",
+     "created": 1783065268,
+     "n_membres": 4,
+     "sol_flotte": 79.4883,
+     "sol_noyau_total": 85.3683,
+     "sol_fenetre_total": 90.9572,
+     "ticket_med": 19.9528,
+     "ticket_cv": 0.0282,
+     "ts_span_s": 0,
+     "tickets": [
+      20.4496,
+      20.3794,
+      19.5262,
+      19.1331
+     ]
+    },
+    {
+     "mint": "4faz9H9B5FJc6uEMoLT6C1Lg2j5iZ1DEsK535Ekupump",
+     "created": 1783066100,
+     "n_membres": 4,
+     "sol_flotte": 79.4883,
+     "sol_noyau_total": 86.6104,
+     "sol_fenetre_total": 86.7106,
+     "ticket_med": 19.9528,
+     "ticket_cv": 0.0282,
+     "ts_span_s": 0,
+     "tickets": [
+      20.4496,
+      20.3794,
+      19.5262,
+      19.1331
+     ]
+    },
+    {
+     "mint": "HSAuwh7kJ9sS71vYu2pR3wddJRppUE553vTTMm93pump",
+     "created": 1783067547,
+     "n_membres": 4,
+     "sol_flotte": 79.7553,
+     "sol_noyau_total": 79.7553,
+     "sol_fenetre_total": 79.8803,
+     "ticket_med": 19.9766,
+     "ticket_cv": 0.0275,
+     "ts_span_s": 0,
+     "tickets": [
+      20.5684,
+      20.3676,
+      19.5857,
+      19.2336
+     ]
+    },
+    {
+     "mint": "HmqYG1uryHg33JDrky5oAhCxTkXXDbc4qV8NqWXApump",
+     "created": 1783102716,
+     "n_membres": 4,
+     "sol_flotte": 85.1685,
+     "sol_noyau_total": 85.1685,
+     "sol_fenetre_total": 85.272,
+     "ticket_med": 21.5455,
+     "ticket_cv": 0.0404,
+     "ts_span_s": 0,
+     "tickets": [
+      22.1627,
+      21.8377,
+      21.2532,
+      19.9149
+     ]
+    },
+    {
+     "mint": "7vAgNEgE27vqRaU1ti3oMi8Qbb6khDRRcCexYWnupump",
+     "created": 1783107556,
+     "n_membres": 4,
+     "sol_flotte": 85.8447,
+     "sol_noyau_total": 85.8447,
+     "sol_fenetre_total": 98.9043,
+     "ticket_med": 21.7152,
+     "ticket_cv": 0.0354,
+     "ts_span_s": 0,
+     "tickets": [
+      22.1636,
+      22.0513,
+      21.379,
+      20.2508
+     ]
+    }
+   ]
+  }
+ ]
+}

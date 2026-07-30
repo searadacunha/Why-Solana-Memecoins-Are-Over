@@ -1,0 +1,23 @@
+{
+ "label": "CREEKS",
+ "mint": "AvWysij3HMUoZ5G5FdxuDJEVqUUVFc7MkVXeUUkhpump",
+ "n_wallets": 4,
+ "n_inflows_total": 5,
+ "n_rentrees_ecartees_produit_de_vente": 47,
+ "n_genesis_reached": 3,
+ "n_genesis_NOT_reached": 1,
+ "n_prebuy_reached": 3,
+ "n_prebuy_NOT_reached": 1,
+ "n_hyperactifs_non_mesurables": 1,
+ "wallets_without_genesis": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8"
+ ],
+ "wallets_without_prebuy": [
+  "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/4 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": []
+}

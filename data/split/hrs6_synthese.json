@@ -1,0 +1,143 @@
+{
+ "objet": "Origine du hub de distribution de la phase 1, etablie par pagination non bornee.",
+ "hub": {
+  "adresse": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+  "n_signatures": 217615,
+  "genese_atteinte": true,
+  "premiere_operation": "2024-10-22 20:26",
+  "premiere_operation_montant_sol": 0.01,
+  "premiere_operation_source": "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA",
+  "n_credits_notables": 4,
+  "n_debits_notables": 4,
+  "n_eventails_observes": 4,
+  "eventails": [
+   {
+    "recu_sol": 1.5001,
+    "t_credit": "2024-11-06 15:15",
+    "t_debit": "2024-11-06 15:16",
+    "n_destinataires": 8,
+    "montants_verses": [
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.2,
+     0.3
+    ]
+   },
+   {
+    "recu_sol": 15.0001,
+    "t_credit": "2024-11-06 17:12",
+    "t_debit": "2024-11-06 17:12",
+    "n_destinataires": 6,
+    "montants_verses": [
+     1.0,
+     1.0,
+     2.0,
+     3.0,
+     3.0,
+     5.0
+    ]
+   },
+   {
+    "recu_sol": 16.0001,
+    "t_credit": "2024-11-06 17:13",
+    "t_debit": "2024-11-06 17:14",
+    "n_destinataires": 3,
+    "montants_verses": [
+     2.0,
+     6.0,
+     8.0
+    ]
+   },
+   {
+    "recu_sol": 15.0001,
+    "t_credit": "2024-11-06 17:14",
+    "t_debit": "2024-11-06 17:15",
+    "n_destinataires": 3,
+    "montants_verses": [
+     5.0,
+     5.0,
+     5.0
+    ]
+   }
+  ]
+ },
+ "amont_genese_atteinte": {
+  "Db9HLpQPKa92XqRkvVJ8YCbkmA7n9NeWe8rvkWn7qCQd": {
+   "role": "bailleur principal (15/16 SOL repetes)",
+   "n_signatures": 219104,
+   "premiere_activite_utc": "2022-03-14 02:45",
+   "premier_flux": {
+    "t": "2022-03-14 02:45",
+    "delta": 574.0,
+    "contreparties": [
+     [
+      "84RNKV2kRrRKPjqXnv4SUAJSS7fre7AzqrMaNyoKm3Xm",
+      -574.0
+     ]
+    ]
+   }
+  },
+  "3KhoVLJXbcvEdSMYu7XihT4rajuRVa8euKeCRLfmh9WS": {
+   "role": "premier versement notable (1.5 SOL)",
+   "n_signatures": 14798,
+   "premiere_activite_utc": "2023-01-01 14:15",
+   "premier_flux": {
+    "t": "2023-01-01 14:15",
+    "delta": 0.1,
+    "contreparties": [
+     [
+      "GgPR2wwTFxguXyTeMmtrhipfv4A8Y3vdPX7RLQNa1zJ3",
+      -0.1
+     ]
+    ]
+   }
+  },
+  "EXUcqVP61F51sxZGCHxhFv56owopfb4rYKD5qpMbCU58": {
+   "role": "bailleur secondaire",
+   "n_signatures": 109,
+   "premiere_activite_utc": "2024-11-06 13:33",
+   "premier_flux": {
+    "t": "2024-11-06 13:33",
+    "delta": 53.9143,
+    "contreparties": [
+     [
+      "7FfB2zQRYUQwpPzkRxAeg2mCBGeCRKp4PCEeULJA9xTo",
+      0.1586
+     ],
+     [
+      "6Nij2pGdpgd6EutLAtdRwQoHaKKxhdNBi4zoLgd9Yuaq",
+      -54.0782
+     ]
+    ]
+   }
+  }
+ },
+ "amont_hors_de_portee": {
+  "98Ni7vVRR1tggtWWruPVcfFXHTH11bPbNryJZGkCGvaD": {
+   "role": "beneficiaire de commissions (0.015-0.12 SOL)",
+   "n_signatures_lues": 400000,
+   "plus_ancienne_vue_utc": "2024-02-01 20:59",
+   "statut": "genese NON atteinte : au-dela du plafond de pagination. Aucune conclusion d'origine n'est tiree pour cette adresse."
+  },
+  "3pMvTLUA9NzZQd4gi725p89mvND1wRNQM3C8XEv1hTdA": {
+   "role": "activateur du compte (0.01 SOL, 2024-10-22)",
+   "n_signatures_lues": 400000,
+   "plus_ancienne_vue_utc": "2023-10-22 06:57",
+   "statut": "genese NON atteinte : au-dela du plafond de pagination. Aucune conclusion d'origine n'est tiree pour cette adresse."
+  }
+ },
+ "ce_qui_est_etabli": [
+  "Le compte du hub est neuf a l'ouverture de la fenetre etudiee : sa toute premiere operation est une activation de quelques centieme de SOL, et son activite reelle commence deux semaines plus tard.",
+  "Sa forme d'usage est un EVENTAIL : il recoit un montant, puis reverse ce meme montant dans la minute, decoupe en parts rondes entre plusieurs destinataires. Il ne conserve pas de solde.",
+  "Son bailleur principal n'est pas neuf : son propre compte remonte a 2022 et sa genese est atteinte, ce qui exclut que l'infrastructure ait ete montee pour la seule fenetre etudiee."
+ ],
+ "ce_qui_reste_ouvert": [
+  "2 adresses amont depassent le plafond de pagination et sont declarees hors de portee plutot que rapportees comme sans financement.",
+  "Aboutir a un service de routage ne dit rien de ce service : tout capital entrant sur cette chaine passe par un pont ou un echange. Aucun lien d'implication n'est etabli, ni suggere.",
+  "Un compte qui reverse ce qu'il recoit est compatible avec un distributeur d'operation comme avec un relais de service tiers. La forme est etablie, l'intention ne l'est pas."
+ ]
+}

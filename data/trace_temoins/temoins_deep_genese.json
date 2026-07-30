@@ -1,0 +1,856 @@
+{
+ "genere_le": "2026-07-30T08:24:07.574865+00:00",
+ "max_pages": 600,
+ "adresses": [
+  {
+   "wallet": "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-12-13T14:19:20+00:00",
+   "entrees": [
+    {
+     "sol": 1.644705958,
+     "ts": 1734099581,
+     "sig": "4tKkgFKGpHRZGoxZJ7KQptLomy9jEYnJhieEPPUNzuFWG9shNJuUX69v9F5Av9bfGqmyvF8AFfzWy6mBd1hvqEZd",
+     "source_probable": "3jDyoCbwyrYvm2SCrXfJCPN99p2WrveFMhcLMbK7sfea"
+    },
+    {
+     "sol": 1.691962972,
+     "ts": 1734099582,
+     "sig": "2xKXMmvAZF5go1SwkKP7s2WeD6hsJ9RrMgxWsFBUfEiQexYgwkZfjoGNPWRkfn8vRU44Pf8ngU4sSurG5nPng53Y",
+     "source_probable": "EupxUwv7qA2NCeerJ7mj8UvNDrhtLmTzBEyAyuppqJWZ"
+    },
+    {
+     "sol": 1.247444154,
+     "ts": 1734099583,
+     "sig": "3s71esxEM9i9Cok1Srd2z1beMP6hq2p7nyoA1cngutsxN4ufd3KCWxpxKqWdorh2sb6yWFEgMLLAhq3UnpPZKukp",
+     "source_probable": "Euxvs2jbE9VQu77oUySSM9jAarudoXgMDGg87tfjhcHS"
+    },
+    {
+     "sol": 2.037968329,
+     "ts": 1734099600,
+     "sig": "2ZjyWZVYu1G99yqkDyQH9XGV3ohb6tAK2NxMWJHsG6x8emeSMqGxyKdnuYXWAwBDihRp5HaUz4a1bXvacWiELygr",
+     "source_probable": "7fgWfcv9CpbfRHNERYDFx5w7BEeNdHNgKgEVssVQfaeV"
+    }
+   ],
+   "duree_s": 383.6,
+   "tokens_temoins": [
+    "faith",
+    "Calm",
+    "\u20ab\u00f8\u24bc\u0451",
+    "CREEKS",
+    "B&D",
+    "GOOREUREKA",
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "8i57XsS3E4iuw2qy2cPbKDWnW4pwx6yaBc7N7UQzG3MJ",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-12-08T22:29:24+00:00",
+   "entrees": [
+    {
+     "sol": 0.900229661,
+     "ts": 1733696969,
+     "sig": "3fGEENiU6xVw17HGXkRmJPUGtswxsg49mrrUCKqvg8v62UktoUQmWmgwikZSjLX9NEHPhJd33cqPDqG3sP8R8AUp",
+     "source_probable": "G5jumD3zp6wQB6njdHatSqn1cEVWfkP5mbRepFJ8DcCS"
+    },
+    {
+     "sol": 0.59576657,
+     "ts": 1733696977,
+     "sig": "cbCa9yxNgESo3DxG7ygmo1hEAyShBuZr9qn7YJhy6pUBDsjTSyq83corgv6GeZovsG8NZvTEmW6mbpqTG1fE2Wq",
+     "source_probable": "GSmoNcQYp6JuCpudUfyNF4vpWH4CJzQBgHTPjso3yVs7"
+    },
+    {
+     "sol": 0.628132937,
+     "ts": 1733696993,
+     "sig": "RVnKqpAzFoHKD1UbqpfCopSbp1QGeSQkErJJ5s5opQSTHuKijhmt2fRpL3CoEGGKB5Q7dJ9VkL145e93bKjhyix",
+     "source_probable": "GSmoNcQYp6JuCpudUfyNF4vpWH4CJzQBgHTPjso3yVs7"
+    },
+    {
+     "sol": 0.503471913,
+     "ts": 1733697009,
+     "sig": "3tXG5NwDYxpSCmM19hzHv8hLGHqcAEzi1Lu4sBCu4zjnT4b8g9kLe6wuLBH3F1G6eqSgoVAoqjamf8D1LXLyHQd",
+     "source_probable": "GSmoNcQYp6JuCpudUfyNF4vpWH4CJzQBgHTPjso3yVs7"
+    }
+   ],
+   "duree_s": 360.1,
+   "tokens_temoins": [
+    "faith",
+    "B&D"
+   ]
+  },
+  {
+   "wallet": "EYykLfeAjyXCH1QojDeRFgoXmv3MfS24gZa8AordnezX",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-10-01T01:46:09+00:00",
+   "entrees": [],
+   "duree_s": 402.2,
+   "tokens_temoins": [
+    "faith",
+    "Calm"
+   ]
+  },
+  {
+   "wallet": "AZ1wHjhG1v2r87HGKNPcH3sAouAPRVE7W3jpSMzP9Sje",
+   "genese_atteinte": true,
+   "pages_paginees": 558,
+   "n_sigs_vues": 557984,
+   "plus_ancienne_vue_utc": "2024-08-12T23:28:07+00:00",
+   "entrees": [],
+   "duree_s": 347.1,
+   "tokens_temoins": [
+    "faith",
+    "Calm",
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "8JjPHv4LsbGKwyPX54rzPRTAD93of7R9NGfFcxDmnX2w",
+   "genese_atteinte": true,
+   "pages_paginees": 332,
+   "n_sigs_vues": 331513,
+   "plus_ancienne_vue_utc": "2024-05-30T09:16:16+00:00",
+   "entrees": [
+    {
+     "sol": 35.643,
+     "ts": 1717060576,
+     "sig": "5UgvFoBRr8JsRZss9Ubf7MK7oxPTZiyS9eVHDFXdNgSevV2q55g4AvCbZh6NCkkJ4rpXAoQzVJY52pXKJqFxsXdo",
+     "source_probable": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9"
+    },
+    {
+     "sol": 25.749222539,
+     "ts": 1717490121,
+     "sig": "3UhH2oXSe1rKyD4he9J5tLf7w25ki2SSpwCSh1GHGC8ViX3C9A1QhJS23TVMWeJEuUhnc7ZSQEvr3G5FLVGuTLms",
+     "source_probable": "73iDwDdEKySTYq8zDKQgD5iNbFnSM5HWavvpCSmui26N"
+    },
+    {
+     "sol": 44.712846646,
+     "ts": 1717752263,
+     "sig": "2SCweM4rme7pEfGVtt2avaMiCu4ocZVzbPbS8yxQZWFWK3uCRnYu51SyhPaB9EFMFwP1qYsfHYVTCUwhwnLGchkU",
+     "source_probable": "7EpvE2LUY9S4av7g2boTy3EGhhg5Ea2kbF8zM4PdRBdA"
+    },
+    {
+     "sol": 1.20823631,
+     "ts": 1717990167,
+     "sig": "5gYVC8ENaX93PCbUjRDQueEgTRwQU7Gjhm8d4cW9Na6WQ4eU83DiSPXfZxZnQqKMo8e8hy47GGXiuyZ9FeFmSD3v",
+     "source_probable": "ADMaxy7JaRuj7RzJDBUr1Ud8kBQP5XXzKZzHg3QDgeXd"
+    },
+    {
+     "sol": 5.188430639,
+     "ts": 1717990209,
+     "sig": "3LorZhyith3ay5RK5dEXXpxXUmmctc1Jnk6TNLEiwNqGb4ZotiNHME6Fi3Y4KTh1QG9RPnuDFdxNPxcxRuptncoP",
+     "source_probable": "BX6MUcuwQKo8fBM28cZCvcRGgbtW4CnPskD8HToeQNND"
+    }
+   ],
+   "duree_s": 216.1,
+   "tokens_temoins": [
+    "Calm"
+   ]
+  },
+  {
+   "wallet": "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+   "genese_atteinte": true,
+   "pages_paginees": 143,
+   "n_sigs_vues": 142000,
+   "plus_ancienne_vue_utc": "2026-06-02T21:42:43+00:00",
+   "entrees": [
+    {
+     "sol": 0.576792977,
+     "ts": 1780437097,
+     "sig": "aDPrvi6fdbR9rPvmdoAjb1faXVLNHX9CRAUJJDAEa1icC156RjXLsL4kvWEVDeRxPujy1tMT3wWrxtiPdnT78e1",
+     "source_probable": "BrCqjYhdzvMibT49pvSSL1Miubn4bFk7jRsyFarAZETQ"
+    },
+    {
+     "sol": 0.743212216,
+     "ts": 1780437512,
+     "sig": "RdYjjWzyNyhdM5Ty1qiJk1VrChnsMui1fd9yWV2K3JqSpG7YtQppeEGWtjhXb2hptw1YYmGG97Fzmyc7rgNaAMV",
+     "source_probable": "FF2vd8UV33nrG52GzMFQymtE6UM9AVPcbfuhMYLyGrZh"
+    }
+   ],
+   "duree_s": 113.5,
+   "tokens_temoins": [
+    "Calm"
+   ]
+  },
+  {
+   "wallet": "5YET3YapxD6to6rqPqTWB3R9pSbURy6yduuUtoZkzoPX",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2025-04-11T17:30:30+00:00",
+   "entrees": [],
+   "duree_s": 378.7,
+   "tokens_temoins": [
+    "Calm",
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr",
+   "genese_atteinte": true,
+   "pages_paginees": 514,
+   "n_sigs_vues": 513099,
+   "plus_ancienne_vue_utc": "2024-09-22T10:00:07+00:00",
+   "entrees": [
+    {
+     "sol": 3.01765085,
+     "ts": 1726999207,
+     "sig": "39vMZWUE3uAsQqCv9xjSv5WskMWXcDL6YkukboAhnN5m54ZSomYKc7ke8yaCFLePrekom1erLsfhV3X6pQv24SMU",
+     "source_probable": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9"
+    },
+    {
+     "sol": 1.08455412,
+     "ts": 1726999518,
+     "sig": "HWjUgvv98TMJumWBfHdfm2Mc5JQ3xDFYQy3rcG4ktsfeNZ2ZUtBUqs1kKFoYJq7vyDcepe1WpZppQjBzYhY6yPx",
+     "source_probable": "3aqsjWdJjnLUoEzV3fzNwVpfhsfXuGjgQ4eGXrFWx4H3"
+    },
+    {
+     "sol": 1.714013469,
+     "ts": 1726999791,
+     "sig": "2DwA169Tr648WDWyejpJf2BZCqLWM66RFyPeDg5Q2PGDQxDryGZncCv4dsJwUTriWUzWRpvjsYcYbViB1CM8SUMU",
+     "source_probable": "Gk4fTCwjpuRoQQPHmiHYpQe7ennNXMXi7gaiKEs7tcHi"
+    },
+    {
+     "sol": 0.843813772,
+     "ts": 1727000058,
+     "sig": "3qJnL7eFmERUbDFxfJVw8Xv13E4PKrUJsZBWeW6stwRJ5CQmBd1hUMHGwWXoGyRt6P8uL1LjcmSNBPwsm2uERnQr",
+     "source_probable": "5HUqaATKZBb4jpHgeeHt4zf555bU2Fr1TUQSejCnRcs5"
+    },
+    {
+     "sol": 1.164784494,
+     "ts": 1727000164,
+     "sig": "4NxY6JfxMDbTGzFHzVqweYkVaafce6fRHWRg5uozAo2KNPvmc9CDedm4pZHHGFm5dJNRmncvd4qUadE2WsC82YAr",
+     "source_probable": "EekdqoA3Mvzks9X17UYpZ2XkTrtv5y4Rmc8npnTcacK9"
+    },
+    {
+     "sol": 0.940122319,
+     "ts": 1727000404,
+     "sig": "4u9Va1Bm61xGooqjumbLp88GqMYVnkwbNpuBKhbZK5aEMBgDPAimuDznHDdetmyihNTWm8XH7uKjGGy7sq1SVdcL",
+     "source_probable": "5HUqaATKZBb4jpHgeeHt4zf555bU2Fr1TUQSejCnRcs5"
+    },
+    {
+     "sol": 0.846089545,
+     "ts": 1727000461,
+     "sig": "3vTGRpxSwRv6f4AEvWaeMNaDqdUvZGsd7MEYsMmE88nDhZ9Bm2SBCfow3QjtcRBorGBGe6Y8yuPey6CJrLTsyDTU",
+     "source_probable": "Fz3VDpxjgA8VmofrwR9xiuUHUg9QFHPrm4PWy7iqeRQo"
+    },
+    {
+     "sol": 0.822275069,
+     "ts": 1727000589,
+     "sig": "2hoXh6agY6pL76DEkd5Rm8pz3neEbZuZ8SwG2wpYXYzZqVCGWzDESu5FZ537fx1ZNmGQbDJnFK8FiejrHRazEPfS",
+     "source_probable": "6BfEieRBu3kcu86MLMY6Gfgcam3QWR47cqnh2HCWmiX1"
+    },
+    {
+     "sol": 1.070781989,
+     "ts": 1727000898,
+     "sig": "nhjEu3aduPUkjpyJviCeCfkLrLtFLmQhm9hcfFPtDrUoYUGiJKWcWT1Q86BFTv7v7h5dsVbxJwpcEDTMPtrMNsn",
+     "source_probable": "9Wc7Z6f9vafzY99RXzzFiShZTbDHc5ovcQY8Pwj3iS3k"
+    },
+    {
+     "sol": 0.935228053,
+     "ts": 1727000948,
+     "sig": "5kAAjS1kXtdw4sukkV1M8EDLK8hvqaEdDFFnkpjs6NrXTCLgfqsNi8N3LrRv315XFHx64dwgiXAwTDDz4SxwgKyx",
+     "source_probable": "8CsUytpJYRi4zUTZMdXpHfWN7oMAf9441J2bGiwbWW3d"
+    },
+    {
+     "sol": 1.676476357,
+     "ts": 1727001008,
+     "sig": "2fVUhsnBTz9bDgyScDfumVLeWHpNSTqWGd39r9h22yU65Q2i8VhT6wj9mMzdeBHzG1aZnvxC3xwvYyiWVwRDs9g4",
+     "source_probable": "3HypFC7AnmkaBdtdh9dPYb9dzc69Rs9bngY6XJHF7NAW"
+    },
+    {
+     "sol": 0.93731902,
+     "ts": 1727001198,
+     "sig": "2rVawfdtJ4xVWM11QS5EAnVnJrS3jy7LMR3Pej8oJNzetTKxSvTNNaVCL14FghsXBi15DMJRK7cqnVEH1hK2Gk2T",
+     "source_probable": "GBfMgvz81YmikjaWdmzM9Fx4wRa57syaviRYnQYbLGyR"
+    },
+    {
+     "sol": 1.012764663,
+     "ts": 1727001628,
+     "sig": "24rhWdsqYWx2V9pWkApmrmBNbpKR7o4cmZPrm1zwcawarWvddW22EzV8QDnQhufDqUd5x14GiSkvwg5z68zPZ6zd",
+     "source_probable": "4V8zaYFad8JVkyBoKwg6UoLdGfU2xWGy99njsXumZ3iS"
+    },
+    {
+     "sol": 1.039134727,
+     "ts": 1727001681,
+     "sig": "5MozdZyrmQJqZMKpgWETPfwWAGBWzDJURnmPEmuPjG3RPvepj3w6bznT3uyfBwFxNx4p5haYxuHEPsieEb3bBhLd",
+     "source_probable": "5cqVHcJqZ3Yn9DNzV4FYmD8WgwywtEe6Y74gqW9z6sBn"
+    },
+    {
+     "sol": 0.897717851,
+     "ts": 1727001803,
+     "sig": "33eEGeTLfWCT9VMo53UkJ422mUcEfkKnanmfxC6MDk9QyTyvK6XWBViQSgTQPCgLGuDQPfK41JWtYEmgXWcYVqQ",
+     "source_probable": "3NELZnzkbWXbLMZY76VEixHCq12KGaeBwApnB2CW2Ukx"
+    },
+    {
+     "sol": 1.463958055,
+     "ts": 1727001955,
+     "sig": "5ZyeiidU54RcPw1bSppJFV3G3AP4jsaWJ9uABuS3eD9T9xrbupvJmuPuMY7fjurrxWedmsjmNiB2KfJyHTaBAvGA",
+     "source_probable": "94CngBM8KuwK6PP8V3mwYErcs7hk7xvo2ti7UyK8dVYP"
+    },
+    {
+     "sol": 0.87200042,
+     "ts": 1727002040,
+     "sig": "2iPuVbuzrdpRmVtiz2gPeCkhfv3fKLjV4dhA5HN4N6Ug1hepBkYc5mfTxvARv27BNtw7kjpL9XeJnUNXjwFxFm9h",
+     "source_probable": "JBSuVCGB9rGhE6duzLfT75D5F1mfuZjJ22Uz3UfWWL8f"
+    }
+   ],
+   "duree_s": 333.8,
+   "tokens_temoins": [
+    "Calm"
+   ]
+  },
+  {
+   "wallet": "8eUmJvANsdEaxZDi1NTspb27KDGEL7tm7Byq4V7gmJWY",
+   "genese_atteinte": true,
+   "pages_paginees": 95,
+   "n_sigs_vues": 94108,
+   "plus_ancienne_vue_utc": "2024-02-12T20:22:21+00:00",
+   "entrees": [
+    {
+     "sol": 1.5,
+     "ts": 1707769341,
+     "sig": "5mjH6PHhEQqmcr4LGjDVZamVi4GiFHqWsozHQUcPah1Eu71RzfsJDuRXPC6fhR7HotFNYm2Nk3Q1PVmzDDiSFpEP",
+     "source_probable": "2AQdpHJ2JpcEgPiATUXjQxA8QmafFegfQwSLWSprPicm"
+    },
+    {
+     "sol": 0.584585954,
+     "ts": 1707772345,
+     "sig": "3Y6vaoYbRDN614pN6ZTDSPVPBtPhMbXQEJnG19xjeB2bjuhJ3gbVb7s1nK7dRiFGsM39dNKDWAAvN7rr7an5hL3D",
+     "source_probable": "HjkpHezfKNP6NitRULjuAsMAWgSYyNpTqC4fSxPN6SQh"
+    }
+   ],
+   "duree_s": 71.7,
+   "tokens_temoins": [
+    "Calm"
+   ]
+  },
+  {
+   "wallet": "7r5qHnFGMc3PX3JymBGeYk3C5yvbwnfM6tozk9mhVN9g",
+   "genese_atteinte": true,
+   "pages_paginees": 326,
+   "n_sigs_vues": 325866,
+   "plus_ancienne_vue_utc": "2024-09-08T20:58:00+00:00",
+   "entrees": [
+    {
+     "sol": 30.0,
+     "ts": 1725829080,
+     "sig": "5QWRgXpaDnHjW4MdWZrXgxXVBjktk6VRKGn39QxjGZyEhNftNiXGDfSSCtReoZe7E72yHZLfGT5WFiGNNfLXm4gn",
+     "source_probable": "GspTyVTAjvYYnCUPxFuUEt5DvTqAshxF6CCgiQcmZL88"
+    }
+   ],
+   "duree_s": 198.3,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "B5e7SfpGKLMAEWWqTeNmayd9wwBB9b9VSJVAaN6SFjba",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-07-22T03:50:42+00:00",
+   "entrees": [],
+   "duree_s": 388.7,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451",
+    "B&D"
+   ]
+  },
+  {
+   "wallet": "xUwUxxg5eLEVfowp1ki2we8JWJjukkriVLY39c55nqa",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2026-02-06T19:42:56+00:00",
+   "entrees": [],
+   "duree_s": 384.8,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "MEVRVP9pgbLqa82bmHMoAy6X6SJUgiiqKKfhMdMsfnz",
+   "genese_atteinte": true,
+   "pages_paginees": 229,
+   "n_sigs_vues": 228615,
+   "plus_ancienne_vue_utc": "2024-08-13T09:44:25+00:00",
+   "entrees": [
+    {
+     "sol": 2.0,
+     "ts": 1723542265,
+     "sig": "4U3xF5iqZsaYw4UtDj7BNj4EBrFCGuhssYD2nmmmL6zPTJ7aibfHkk9aAAc6PhRt4psdVgjMzWi5dLpSFguhPsbP",
+     "source_probable": "DBNCMHVzLRWpn5syyz1hLQHTaxRQR5tfwgsntLEf9Ljc"
+    },
+    {
+     "sol": 1.00203528,
+     "ts": 1723811580,
+     "sig": "5k9Yc8GRR43133mpjWjpBSDGNyu7BtaBeHgE6K2S3esyknvULkfMpRoDpoPNvZwqJY4aob97qS92d1qR9desxGcZ",
+     "source_probable": "8g792Aq6KP52fqke4yQtF8fKd1npWWB6kMjitZaaq4tB"
+    },
+    {
+     "sol": 0.85,
+     "ts": 1723892024,
+     "sig": "5tEtrd2XxHBwpZkQhbtFSyBVik885nw182chixU4KXxwnLKFGTMWDm4T92yxbVSBAz3PaZttZqMkkfCXLueCVsiE",
+     "source_probable": "DBNCMHVzLRWpn5syyz1hLQHTaxRQR5tfwgsntLEf9Ljc"
+    }
+   ],
+   "duree_s": 158.7,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "2YqTcTMDFD2vvVHcc8Wd61zwLiWaDZvAKrzXFW1adZ3K",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2025-05-23T21:41:15+00:00",
+   "entrees": [
+    {
+     "sol": 1.422908514,
+     "ts": 1748036547,
+     "sig": "5VB5BrzDdC41ZeE7YsBYM5gcNrRXfE8LwxTctoLo9nrc5t64vCZ53R8dsDKsFeXbyJGXFEvA6T96wQPiCAG4q3uf",
+     "source_probable": "81wMYS62rL3tjN4XYgGPKYdxTtfyESVUdVKq4mP1mwQL"
+    },
+    {
+     "sol": 1.155147149,
+     "ts": 1748036563,
+     "sig": "2XUrvBFMW48Aeu1sjLDQqnpZFLHxuXv1FGqLpBmD3c8cwZjmtJogzSTXuDcjkXaF99VWggQwFGBQh9n6uaFetw63",
+     "source_probable": "Bh761KBCxiV3z1H2H46ot5umrCFDjyFPyYvFYqWBG5kv"
+    }
+   ],
+   "duree_s": 384.9,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "a8fZdgPDXoKSs7BCKH6kfFkayE3gW2rRKtbW3Ec6Bv3",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2025-06-14T15:58:17+00:00",
+   "entrees": [],
+   "duree_s": 408.1,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451",
+    "CREEKS",
+    "B&D",
+    "GOOREUREKA",
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "ARSCiosKDeBb7Rd7U2QbHVKcmjbsVa4RUFktnf37KTk7",
+   "genese_atteinte": true,
+   "pages_paginees": 69,
+   "n_sigs_vues": 68463,
+   "plus_ancienne_vue_utc": "2024-07-15T00:36:54+00:00",
+   "entrees": [],
+   "duree_s": 46.7,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "ARSCio7W9ukuWPNZerW6G7XfrUHDwiicBeS815UBjjvm",
+   "genese_atteinte": true,
+   "pages_paginees": 68,
+   "n_sigs_vues": 67923,
+   "plus_ancienne_vue_utc": "2024-07-15T00:36:48+00:00",
+   "entrees": [],
+   "duree_s": 56.3,
+   "tokens_temoins": [
+    "\u20ab\u00f8\u24bc\u0451"
+   ]
+  },
+  {
+   "wallet": "HMjLk1UD3jfcVLjJKGghRyuGUMpKSEkDwsPh9AubeNrH",
+   "genese_atteinte": true,
+   "pages_paginees": 66,
+   "n_sigs_vues": 65511,
+   "plus_ancienne_vue_utc": "2024-12-05T16:36:32+00:00",
+   "entrees": [
+    {
+     "sol": 1.228202749,
+     "ts": 1733416592,
+     "sig": "5Qm4oWpxL96D8yC3siS8BMTbC6QFD1KYF5UpbNnLb6pDtS9AcMbthow7deVRqrNBP9EdyLFZXQ9GoL7r5x3bJK4E",
+     "source_probable": "D66uCSbyz3M1GXQZjaUdq6mjSyRj8FcVWhYRwNmDA9WF"
+    }
+   ],
+   "duree_s": 35.9,
+   "tokens_temoins": [
+    "HLGOOFY"
+   ]
+  },
+  {
+   "wallet": "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-12-20T05:12:55+00:00",
+   "entrees": [],
+   "duree_s": 373.4,
+   "tokens_temoins": [
+    "HLGOOFY",
+    "CREEKS",
+    "B&D",
+    "GOOREUREKA",
+    "PORTAL"
+   ]
+  },
+  {
+   "wallet": "orcjSg5fs2VPZMGLfbweiLHdrTrV4UR7FkpznHF8V8S",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2024-11-18T17:50:13+00:00",
+   "entrees": [
+    {
+     "sol": 0.847299759,
+     "ts": 1731952227,
+     "sig": "5z6UCn8ZSi4g9L9WwR6kcBTRa2cWHdGNd9y2g6jqTTi6u3zWKdck83UiSWcd5iEMJgDRLRfabsJnu3VpqUvFuuQ",
+     "source_probable": "2xBEN8nS3ZHVMywK3Mi3ULwX5e8TewVa1kavpjdtLKrr"
+    },
+    {
+     "sol": 0.686174966,
+     "ts": 1731952234,
+     "sig": "5Ly74HpjFBeTrJj757yxTZSuFyB5rnbhsEpfjM5U5KUud6qvsqgWH2jGHsc7br8SiBuydCQ8rR7RUM2ChLqHV9DH",
+     "source_probable": "2TWv9NdnY6B4Bu4X1DLLu49AaTVJ4fKv64zSANtPktDx"
+    }
+   ],
+   "duree_s": 361.4,
+   "tokens_temoins": [
+    "HLGOOFY",
+    "B&D"
+   ]
+  },
+  {
+   "wallet": "DkTYkaraoT3PDiYkcjG2otv3VsM5x4M9GJxbZ1iUYPT7",
+   "genese_atteinte": true,
+   "pages_paginees": 454,
+   "n_sigs_vues": 453372,
+   "plus_ancienne_vue_utc": "2024-07-23T19:28:43+00:00",
+   "entrees": [],
+   "duree_s": 287.8,
+   "tokens_temoins": [
+    "HLGOOFY"
+   ]
+  },
+  {
+   "wallet": "L3Jnfr8n3ms3PQni5epTWgPW7kYAppgVcMNyACHQExd",
+   "genese_atteinte": true,
+   "pages_paginees": 233,
+   "n_sigs_vues": 232174,
+   "plus_ancienne_vue_utc": "2024-07-25T21:46:46+00:00",
+   "entrees": [
+    {
+     "sol": 0.808453306,
+     "ts": 1722109673,
+     "sig": "zZboK55BriMkpGM4i37Q3u3HdwcQaexEcW5ZwEbiuXR57kETa3QWcX9JAHLhxh4PnkjE6UeMDoABWamwrXXHtVf",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.839729139,
+     "ts": 1722109673,
+     "sig": "2SKg7jUVqTQvqghYuV8AUaJngyd8Nd8EVXi5xBijvd1uTFzpfKCNWx5kRQ3voitGTJ9AboSyvPeDKtyzhauJtJyr",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.872846683,
+     "ts": 1722109673,
+     "sig": "652vatfBCv7CAAmamX3bjCS6tnj5Aoa1Hc2TfMuyBi9htgBxrnvLxfDWZKboy9zNFAy3SZmrNwcnTM1a7jH8taR9",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.907953469,
+     "ts": 1722109673,
+     "sig": "4nPLisJoLtq7yiT48JybxdCfoDFaSQB5nrF7QM9AwBD4AtnsCfM5dhKiepynyT8ZzpuokXdUb78QmNd61BABnhjU",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.653211163,
+     "ts": 1722109674,
+     "sig": "121ry5L2GSyUDZt9T2qepwqandTJTuVYma7VQ7uaccXanMuzhs6qyJNuhFGQnjucXYmkbYjDe1Vu81PCsVD7G1DU",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.675874404,
+     "ts": 1722109674,
+     "sig": "55JWpUWsFQrXkzxMacCRjbAESEgVRAh51Ht1zRYYVwH6evzz4fVgFC7eYfsHt6Vxy4fSeLs6YSRekoAGWuMsE2pS",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.699731477,
+     "ts": 1722109674,
+     "sig": "32tFt22bsxymoVomvn1BvBpsbAfXTb8LTtJ34sYgvTqDVxAWw1RECqTTHJZeg47vwMYJot5q4TbLxqjg3bvLPcys",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.72486775,
+     "ts": 1722109674,
+     "sig": "2mU1bqxYAjPpGPRzrZGAu1yvg8F9Anc3Dr9KGB9DNUi7g1tzn1V6k7vfznmWvyJRDMdP754TWpj9Dy1GeaGTZPvk",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.750902362,
+     "ts": 1722109674,
+     "sig": "3GY2piTZygNmeu4AEPTBHkTVEGTRhU1pVtPeqHyBfoL5jPGKZdDvAsaUTRmRBbBM93b91dwko9WQcrAE85Psz5Ps",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    },
+    {
+     "sol": 0.778885085,
+     "ts": 1722109674,
+     "sig": "MRqqjBUnJLCY9J6q16kL55o66Z1n4i86SExAqT6ea4qs6kDcevxukEusZMCW9xiAVB5WxWg4cXTj1tWNLY3CHKu",
+     "source_probable": "5YyiDY1U856KrPpy5BAHnhHfcZdmRcjNKTvUZy8j2By8"
+    }
+   ],
+   "duree_s": 162.4,
+   "tokens_temoins": [
+    "HLGOOFY"
+   ]
+  },
+  {
+   "wallet": "5GjQkGJF1NtAsTt9P8Q3Ni6SD2QsSZ1sSnsi8GBqDnt5",
+   "genese_atteinte": true,
+   "pages_paginees": 444,
+   "n_sigs_vues": 443135,
+   "plus_ancienne_vue_utc": "2024-11-14T14:40:45+00:00",
+   "entrees": [],
+   "duree_s": 276.3,
+   "tokens_temoins": [
+    "HLGOOFY"
+   ]
+  },
+  {
+   "wallet": "DY86472bSTSpvre7L26tghxqNk5Cj1h8oWtW6BTizQuJ",
+   "genese_atteinte": true,
+   "pages_paginees": 160,
+   "n_sigs_vues": 159587,
+   "plus_ancienne_vue_utc": "2024-12-08T21:17:11+00:00",
+   "entrees": [
+    {
+     "sol": 10.0,
+     "ts": 1733692631,
+     "sig": "5hCd63ZrpLwmJTfbuRTDCaxn27kDd8NfPzb1N9DpcwQYwJtyZsHjmRdrKjiXVatxnrrpi1NQaeHZS3hegWcuXaHp",
+     "source_probable": "5Sk6EqoBWFtr52HbCjMWNdA1uyorXPsBafP1jSjtZjDq"
+    }
+   ],
+   "duree_s": 103.1,
+   "tokens_temoins": [
+    "CREEKS"
+   ]
+  },
+  {
+   "wallet": "BHrEssDoHBGibjGDnsUaVf7RnK6vfbHstLLq9gAPxajy",
+   "genese_atteinte": true,
+   "pages_paginees": 249,
+   "n_sigs_vues": 248938,
+   "plus_ancienne_vue_utc": "2024-03-15T10:13:50+00:00",
+   "entrees": [],
+   "duree_s": 160.6,
+   "tokens_temoins": [
+    "PORTAL"
+   ]
+  },
+  {
+   "wallet": "UktWMwLW6SNUuwo6cLhY4XgzgNBswkqK83DtFFEo2TC",
+   "genese_atteinte": true,
+   "pages_paginees": 66,
+   "n_sigs_vues": 65811,
+   "plus_ancienne_vue_utc": "2024-11-30T12:49:26+00:00",
+   "entrees": [
+    {
+     "sol": 1.0,
+     "ts": 1732970966,
+     "sig": "2aR6Nsu9e6Y4qv6j1nCdDJdVuAwP4Xix58P1mxKT3s6ybJB9rZsUvYiVLLEhfWhDAzGpm1sq7xSy3GmP8rYSP14x",
+     "source_probable": "3KgBLSSnv3dux5op9H34vR3CirvvsGRSuYcq1cQ9uZ4q"
+    },
+    {
+     "sol": 1.9,
+     "ts": 1732975610,
+     "sig": "5iVczHvNdhh9hXcuBHr4VSHS7BVhJafCUqPhsaECXHxfwvN9EtzABrKaEBxAQQyrEnPKK44r6WZuWXZvgrykZR1y",
+     "source_probable": "vRtajVLjwWcozqbm4keG2xG4p9ceeQGJ8QkfSR35FV3"
+    }
+   ],
+   "duree_s": 51.0,
+   "tokens_temoins": [
+    "PORTAL"
+   ]
+  },
+  {
+   "wallet": "ATFmqm2iJekCz1Pey8vq7xPvsdw4TmvqtptGrDZaxBkU",
+   "genese_atteinte": true,
+   "pages_paginees": 274,
+   "n_sigs_vues": 273653,
+   "plus_ancienne_vue_utc": "2024-07-10T07:42:09+00:00",
+   "entrees": [
+    {
+     "sol": 10.0,
+     "ts": 1720597329,
+     "sig": "4AtMe5iFtDKjwmDC6e4omVtAGXajZ3qiuncVCX5Xy2PLM3X5y2RG92HfKBcT9okx2pmiH4uQfUxZraKqAkJhmSrn",
+     "source_probable": "GohWBb7xXRBecSs5aH4CdbjJ1Mc1W1bJsCUEzUVT74d5"
+    }
+   ],
+   "duree_s": 184.5,
+   "tokens_temoins": [
+    "PORTAL"
+   ]
+  },
+  {
+   "wallet": "EQ3iykiT6Jg1ReuaaLc2bnxFXwxBkiXgZifYJxaULAEC",
+   "genese_atteinte": true,
+   "pages_paginees": 172,
+   "n_sigs_vues": 171772,
+   "plus_ancienne_vue_utc": "2024-03-16T06:48:27+00:00",
+   "entrees": [
+    {
+     "sol": 3.78470189,
+     "ts": 1710571707,
+     "sig": "2e3JWb4M24MzbgahhxFAeMgpRozZKjVysurEetV8vX5Y2p1F23mj3LBGZB3P6aVDkNbcdGpkix1Xk7F7EX4ZVVHx",
+     "source_probable": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w"
+    },
+    {
+     "sol": 2.274156745,
+     "ts": 1710672536,
+     "sig": "4dqDaZVaZ9wQc7d1H6HBWZBKRbVYRWX3yD9m4doFEzB9vaTG9Z6Hhw8uedKR1maLLgrcQdhPc18CKQMfYtG8tM1v",
+     "source_probable": "BnL2wav9yAL8XYi9FRRcB46UFoQNZLGUC6GRtZtSvRrQ"
+    },
+    {
+     "sol": 2.851945585,
+     "ts": 1711023876,
+     "sig": "3ZjFG3ysMrjAm2EJmG5DrS4gkHRFCaBYmao6WsVwmuqNf7dRSptLCRAZEzkt5h8ArvJW9cxriwGX6xSqhnFg127M",
+     "source_probable": "B6NaLQha8yVo657JuPRwswi337BP4bmfttnwrjhBmmqc"
+    },
+    {
+     "sol": 2.01883501,
+     "ts": 1711030070,
+     "sig": "4x5mKpo8j4kkMo26QgF1fV6ZoFSJraiFZegH84MrRxmLtTqAmjpUpJqjMx72TUisZfZ7hbNCjhiD6u3oZYgNxEKW",
+     "source_probable": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w"
+    },
+    {
+     "sol": 2.12119001,
+     "ts": 1711547023,
+     "sig": "x5wSHPUBwWRsb1tcAXmbtu78dXgVWKiYSk8EfkFe6dtYbAE3FwxsqZimJDVKrNsDZZJdCkApWz2ofYK5Kkezrsq",
+     "source_probable": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w"
+    }
+   ],
+   "duree_s": 116.8,
+   "tokens_temoins": [
+    "PORTAL"
+   ]
+  },
+  {
+   "wallet": "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8",
+   "genese_atteinte": true,
+   "pages_paginees": 537,
+   "n_sigs_vues": 536099,
+   "plus_ancienne_vue_utc": "2024-11-01T17:54:12+00:00",
+   "entrees": [
+    {
+     "sol": 1.0,
+     "ts": 1730483652,
+     "sig": "4dd1LnPWHn8a4q1gfrBRHga1hrtQK14q5uqC5BMdAVZXf28JXYT8hPHGDj7DUUKTgdbK3tBmiF6nbQyNspVpzKsJ",
+     "source_probable": "x6ZFLN5hCjh8ptS2eay9FL8Q331F2wQzF9JkYf9vap7"
+    }
+   ],
+   "duree_s": 363.1,
+   "tokens_temoins": [
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "zerowfY91rbHy5bqcMToo2HaHMYFPB6UhZdTQw3av7C",
+   "genese_atteinte": true,
+   "pages_paginees": 467,
+   "n_sigs_vues": 466471,
+   "plus_ancienne_vue_utc": "2024-12-14T19:53:59+00:00",
+   "entrees": [
+    {
+     "sol": 1.0,
+     "ts": 1734206039,
+     "sig": "v782qkynVpQo9E3wg6auWyEk4r5KnogNW39mGHYeXLeU7ajkp4xDFjhi8fFRD9cyQyGv8q5Vq6wGo6Dn9cBiAdx",
+     "source_probable": "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8"
+    },
+    {
+     "sol": 14.0,
+     "ts": 1734206186,
+     "sig": "3VgXNggoKPaBxA7k2tvsUqme12McS8416LNhLznKpG1R2HDh1TdmT1t5776kxyeUxQ197oFspEnYTLQrkarYs9k4",
+     "source_probable": "CkgRjE5ZoQe7tNC6DpWpxg8DfN4muZEPJ9yYbWjAwwt8"
+    }
+   ],
+   "duree_s": 269.5,
+   "tokens_temoins": [
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "HE3F6Pn22dQpK4sTDej88ixat1eT4EoD9CMN8pj4SLBk",
+   "genese_atteinte": false,
+   "pages_paginees": 600,
+   "n_sigs_vues": 600000,
+   "plus_ancienne_vue_utc": "2025-04-01T23:42:10+00:00",
+   "entrees": [],
+   "duree_s": 353.6,
+   "tokens_temoins": [
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "CPUvH6fYkpYBK5raccquTMNJAGc6eQ37VVqBgHq3hwjp",
+   "genese_atteinte": true,
+   "pages_paginees": 467,
+   "n_sigs_vues": 466129,
+   "plus_ancienne_vue_utc": "2024-07-08T12:25:25+00:00",
+   "entrees": [],
+   "duree_s": 296.2,
+   "tokens_temoins": [
+    "QUEENAI"
+   ]
+  },
+  {
+   "wallet": "HXhstJaUGz8si9BZRD2G3aeFark3CWkanHbKa7hELLjk",
+   "genese_atteinte": true,
+   "pages_paginees": 77,
+   "n_sigs_vues": 76644,
+   "plus_ancienne_vue_utc": "2024-09-11T03:21:29+00:00",
+   "entrees": [
+    {
+     "sol": 1.2,
+     "ts": 1726024889,
+     "sig": "3ZpZ9WsyTCJvjCDg3LqSq5d8rcc9Y95Db3KjQDeJ2TuxQ8EY7QimGbo74SNo5SzUr6whr3vXnBkKPhNWXTkXnK6J",
+     "source_probable": "GoqAfgLHyhNJdEVzvrXGrWxg6zgJb9LD9t4G5wFA3kzp"
+    },
+    {
+     "sol": 1.547446037,
+     "ts": 1730525708,
+     "sig": "pVK2TCwtUPjPHRCWPzZ7SysM23kYwtfgz6sv5Ng2NyFswE7AwgzwspPbNibPyfRNGgmcp8JNRsWGowMJpAbGF8a",
+     "source_probable": "CPdSKZ7m3KcV26tAvZ97uNBYxpTA9uWj65ccJ9SWETfg"
+    },
+    {
+     "sol": 1.068083439,
+     "ts": 1730526389,
+     "sig": "BW3ji37Qf4Q1myRQJnzoKj2fLhxuuFNaJ2y3WT75kwaQgbfpSFxDvXJUrJpSzniDFFMN5T5iRkjNbHVuPR9eSpF",
+     "source_probable": "CPdSKZ7m3KcV26tAvZ97uNBYxpTA9uWj65ccJ9SWETfg"
+    },
+    {
+     "sol": 0.989273274,
+     "ts": 1730526428,
+     "sig": "5VGeHn8C2Lxu6oxdrW7XBwyGAy8YVRarbzx1rU64eiqqfZAq8YCjCtDKjFUUUohKdKxwGuyvdr7gorHoVu94RyFL",
+     "source_probable": "G5uMMdPTeaafVVEnp3SLNLARarJXjHd5JaKuG3ojMPig"
+    }
+   ],
+   "duree_s": 48.6,
+   "tokens_temoins": [
+    "QUEENAI"
+   ]
+  }
+ ]
+}

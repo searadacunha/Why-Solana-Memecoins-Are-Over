@@ -1,0 +1,3409 @@
+{
+ "agregats": {
+  "n_lancements": 42,
+  "n_wallets_bloc": 177,
+  "n_wallets_avec_transfert": 162,
+  "n_wallets_avec_vente_directe": 46,
+  "part_supply_transferee_med": 0.9999,
+  "delai_transfert_s_med": 17.5,
+  "n_delais": 162,
+  "delai_transfert_s_q1q3": [
+   13.0,
+   26.2
+  ],
+  "delai_transfert_s_min_max": [
+   0,
+   80
+  ],
+  "n_collecteurs_distincts": 41
+ },
+ "lancements": [
+  {
+   "mint": "87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 780464208.09,
+   "tokens_vendus_directement": 18119267.3,
+   "part_transferee": 0.9773,
+   "delai_transfert_s_med": 23.5,
+   "delai_transfert_s_min_max": [
+    19,
+    35
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "G2F3MYP7aznMF1KoYKbWV3CkK4sB526X7fbJMXnofjhK",
+     "n_events": 6,
+     "buy_ts": 1782591657,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 441614045.62,
+     "tokens_vendus": 3406055.28,
+     "sol_vendu": 0.2466,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "6rByjVMZH8Ggy4Deh86cvDKtzHGqVayHKkFWrPcxZtHmp7S42vixbz1hWr9b13TrooURBu9sCnbf8C4u3rucyry",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "KjuFe9pEfwyewD2wj1cYmxuc6jgzfkoL6rBHDPCLTGH",
+     "n_events": 7,
+     "buy_ts": 1782591657,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 178246713.26,
+     "tokens_vendus": 6792216.31,
+     "sol_vendu": 1.0832,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "51hwM1aiSkVVDisq7GYGMANjx5LyQG4zVH36j91j44t3Dqcv5HKAHMxV8DxhQt7obfnZm7vfVPmRcVc32ngKmgwm",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "3XbWRXxsBE9nSQa67D39sVbe56N8j5mHRUSd3fdAEWcG",
+     "n_events": 6,
+     "buy_ts": 1782591657,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 98716276.95,
+     "tokens_vendus": 3028033.59,
+     "sol_vendu": 0.3401,
+     "premier_transfert_delai_s": 28,
+     "premier_transfert_sig": "4iRbhcbjxZiTcByXgnRpwZkM8W4t1nRn6L9WQCdBiPyeSzTk8C73Pg8fUyR1Tpwb9pf37VhYJs1DTwwXhUm92qZg",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "HxeoWYPx4csJ7ZrdBX1kCqoNLBNUjzrjfVmdEvQmAbBY",
+     "n_events": 6,
+     "buy_ts": 1782591657,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 61887172.26,
+     "tokens_vendus": 4892962.12,
+     "sol_vendu": 0.7901,
+     "premier_transfert_delai_s": 35,
+     "premier_transfert_sig": "LM6X8n4ZWaVuZk985Hr5AxrV288sUdPJHv83cXSvRkJrW4pZC1sqoB893SXmE5TWiQW4jDsSa86LNn6vATKdt1b",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    }
+   ]
+  },
+  {
+   "mint": "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 780077773.08,
+   "tokens_vendus_directement": 462627.3,
+   "part_transferee": 0.9994,
+   "delai_transfert_s_med": 25.0,
+   "delai_transfert_s_min_max": [
+    9,
+    43
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "793gN7FP73HFYxGwQEDc5yrbFV7cYH75xhopJrL4UyNQ",
+     "n_events": 3,
+     "buy_ts": 1782598001,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 436240856.62,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 31,
+     "premier_transfert_sig": "5JUq9imMgEcrsaX4EhtwcN6gCPo3wT8iyjS23w8VmKY4wc9w5KnLErt8NzjLuUJT3Uc3dpznbyHGz8eMYya17zgT",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "FitUG4EM91KcK7Qo66UkwLx79Z4EDGPTiwt3FnguY6gv",
+     "n_events": 4,
+     "buy_ts": 1782598001,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 183152715.47,
+     "tokens_vendus": 462627.3,
+     "sol_vendu": 0.7023,
+     "premier_transfert_delai_s": 9,
+     "premier_transfert_sig": "2qowpsAD5Kx978HdKvhf3XYnm8wWKFncNfbNhkB6ZZmEzcwPwcqUrCAiQNGjetqCZcYeoep2ezeHAS4aUjdUB3cR",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "3LYmf7Av3nXdZxuJ3wKdsfDQZ5t7EKX5YSDXY3rbSXdU",
+     "n_events": 3,
+     "buy_ts": 1782598001,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98512011.27,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "pBkWzBx3x8YBHkop3Yuf3BnQKygCVb1HvQ9fDKVBapbs2US7xL6Rz4NQuGpLD6TTBLdPu59ffTVHzQMQSSmjpWb",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "9BHaQ9couTTQroFR85oXzjnhs4gNnpjC5Lbx5SbnyYqz",
+     "n_events": 5,
+     "buy_ts": 1782598001,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62172189.72,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 43,
+     "premier_transfert_sig": "5LPrZY1cr2nFnfSwBLG7n9gQj3cGzdefb1JxJt9yjDz1fvitt6DPorexuaWvDuTvuAChg2YgjwRPPCFbB5QomEzc",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    }
+   ]
+  },
+  {
+   "mint": "6Fzphy2B4JTUteQ8jGtj9Tc9anpttVXY3CRgGuJTpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 0,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 0,
+   "tokens_vendus_directement": 787534964.34,
+   "part_transferee": 0.0,
+   "delai_transfert_s_med": null,
+   "delai_transfert_s_min_max": null,
+   "collecteurs": [],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "9S6w4hZJaAu89GkqrznnhnCbSAuFzzMvTF4TWRWzGs2V",
+     "n_events": 2,
+     "buy_ts": 1782611393,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 441889207.73,
+     "sol_vendu": 20.8986,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "4x3VMXcX69ndR74qM9UisfUXzR48WiWEvPknRg5gfwEp",
+     "n_events": 2,
+     "buy_ts": 1782611393,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 182267048.89,
+     "sol_vendu": 51.8722,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "HXAnhJ51jEie1QWcneR2M8DKQi3qjeA1D4CrYoTzKh7j",
+     "n_events": 2,
+     "buy_ts": 1782611393,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 100112480.36,
+     "sol_vendu": 11.6954,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "KgSb9oR6txjug9mtTLtgXtBYwsYuqayzaU3Az8CCaJ3",
+     "n_events": 2,
+     "buy_ts": 1782611393,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 63266227.36,
+     "sol_vendu": 1.2977,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "FAwimgWuNJBMj5Sk8WtJCvNEztBS3AhgqFm42pWVpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 0,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 0,
+   "tokens_vendus_directement": 767750124.48,
+   "part_transferee": 0.0,
+   "delai_transfert_s_med": null,
+   "delai_transfert_s_min_max": null,
+   "collecteurs": [],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "HGPfuRaDvNc9wNWWscsENiUqSTokAV1whLhpQxHFJR6S",
+     "n_events": 14,
+     "buy_ts": 1782655287,
+     "n_transferts": 0,
+     "n_ventes_directes": 12,
+     "tokens_transferes": 0,
+     "tokens_vendus": 425061545.86,
+     "sol_vendu": 106.0436,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "6UoFAuHyQHN6soZKA1uxBtXUWpAS3zrKYtqFsZhTrXZH",
+     "n_events": 7,
+     "buy_ts": 1782655287,
+     "n_transferts": 0,
+     "n_ventes_directes": 5,
+     "tokens_transferes": 0,
+     "tokens_vendus": 180352591.79,
+     "sol_vendu": 32.03,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "ByCL1ygkDgt8nzGqq2VBPq89j7u82uS9crxbkUGuEtCy",
+     "n_events": 3,
+     "buy_ts": 1782655287,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 99219954.27,
+     "sol_vendu": 2.5144,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "Ar9Y9XHq4HzNQM1NHq5Cze7vH6Kh9T84fQ8DkKmYZts7",
+     "n_events": 3,
+     "buy_ts": 1782655287,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 63116032.56,
+     "sol_vendu": 1.9604,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "Em6ajM2xwou6y2YkfqAxsr5zMjmLepbJUtBaEzCypump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 790927224.21,
+   "tokens_vendus_directement": 346175.92,
+   "part_transferee": 0.9996,
+   "delai_transfert_s_med": 17.0,
+   "delai_transfert_s_min_max": [
+    13,
+    21
+   ],
+   "collecteurs": [
+    "8JzkSxgpqraQ7m7xdSh6sA922oeHnMUAM2kbGXHoat7R",
+    "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE",
+    "EigzojfBQFJmdGkKhukwAzEWQNVUSgtbzzSdxyp4YgX3",
+    "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B"
+   ],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "7sq22KPvYkabtG5PoFzBYoQyhnuZGKqXpMZpYaKqMnAA",
+     "n_events": 3,
+     "buy_ts": 1782748479,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 462322184.6,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "5niEqFoTqr9dZHjmnLb4ai9eeBMvYgj4Ts9QVPWvpu42egUMuZAun414o8RgNRnk41RC6hSNoakFQmLveVUGuZPR",
+     "collecteur": "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B"
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "94JSCEChm1ZgbrxeGLjsCgAztcqQGvHyUA5XTyBAXd2T",
+     "n_events": 3,
+     "buy_ts": 1782748479,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 176454798.09,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "3W7nyJzHmjjP7rDDUvTiBHGac1uUDwK9HwyTRhNdDK8Vn1fTtZrYwtoGKz34YcwPVntsZZgELHXdtopMc7YvV2kM",
+     "collecteur": "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "FUyioqy3ZSM6FvN2KyF62MnjfuQKnB3U5tL5hf677ubZ",
+     "n_events": 4,
+     "buy_ts": 1782748479,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 93807836.31,
+     "tokens_vendus": 346175.92,
+     "sol_vendu": 0.2993,
+     "premier_transfert_delai_s": 21,
+     "premier_transfert_sig": "4hULu1vAfzRDsJe7hSJQy6BVm7mRWzMw2P2hvysjpwN8Wmgmb5K5crTpLnDAoNpYfjo5xyy6kVzKuXknrmA8D2x2",
+     "collecteur": "EigzojfBQFJmdGkKhukwAzEWQNVUSgtbzzSdxyp4YgX3"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "KraLABTqwvAy5rrKNnzS7icgN6t9JSJqVYDn6TXKiyk",
+     "n_events": 3,
+     "buy_ts": 1782748479,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58342405.21,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "yjYyzCfDnwhd33VJPRGyTwkxaZJmW741fjMFHB2PMPXYF22G37iPZ7nWDT6q5T2ccKcgb4FwfAaMUMP4GJAvSNF",
+     "collecteur": "8JzkSxgpqraQ7m7xdSh6sA922oeHnMUAM2kbGXHoat7R"
+    }
+   ]
+  },
+  {
+   "mint": "DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 791023811.45,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 14.0,
+   "delai_transfert_s_min_max": [
+    9,
+    18
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "7QeU8S4GrsFnDucuu5VS5Nq3a6H7pfFnz8hMUNiQMcS1",
+     "n_events": 3,
+     "buy_ts": 1782759473,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449658606.26,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "T5eVGnVe6x9Dnc1qWJgTTYoSwnGiwWy7KNLNHwFbKAVEHuenfJroVPcVBRVW44qHH9qNFWZ15TNVXhKMiVpRpqV",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "6icpyNQbiWWxiwUDrGUepb2n4ipCb9jYGrbLqQjqY9Fm",
+     "n_events": 3,
+     "buy_ts": 1782759473,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183407413.64,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 11,
+     "premier_transfert_sig": "3dLpCYTehR38gT8CNEffK16FUBGk2tTu3wvvsrWYQxhoLhHRLYscmh4WnrVyY1aESdNtUvJSTcggP5oY2jpX7Uqj",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "GfxV643Hkrbt8WWkLKBrQWUo7iUapEeU7NjFboTpDmbz",
+     "n_events": 3,
+     "buy_ts": 1782759473,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99763728.27,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "2HfZomzJy9ZGFPYuhasQR8QfVHowonUqWbnbofyKxKkCS4Zw7d1XR5dnB8T3Po2ggB8PsNhscJf3kZCeBsQXwoZc",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "BiC8WupQrniUw3UXpx9NYK64VeMkUt5Avcnit5u62e8U",
+     "n_events": 3,
+     "buy_ts": 1782759473,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58194063.28,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 9,
+     "premier_transfert_sig": "34o5KKfZLSXNh6o84Ai6ovsmZW3vKkndmeBaRKQCaYjcZ9QzaUMjpND8QW6QshsbF7P7yKKRWQ1xaSj8NxSEi3fH",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "H2HmTSxj5mTm4kYe4kJbJuG1HitVoXZ929n1RyrXpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 790456762.93,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 12.0,
+   "delai_transfert_s_min_max": [
+    5,
+    20
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "9es35wVZs3Y3ynvFe9hM71HZFFsWgJhTgbopqomJUTSG",
+     "n_events": 3,
+     "buy_ts": 1782760235,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 452214318.26,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 20,
+     "premier_transfert_sig": "auDK1yn2mt5r1cgDiswXP1iigNjcydZtaemcfE3m45S1oFn9dD6DDt23BGmi7xJgYkqb8a3uF6EPKD9AJVUmxsg",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "HC6ikK1BzdMbVicx5hsSYuMbJzjHFpgbq9ZHu8V8e2Ei",
+     "n_events": 3,
+     "buy_ts": 1782760235,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182122404.82,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "48verqy8tEfmV3iroy2hmcqMnS1Lgv4CW8SEdqCHCL1YeAFuizvWJS8AofGrUQzCg4PHhTZxjtvFQo3MZVN9Q7Ny",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "5HNSik73ymgBkWW1mvtzFL7CsW8ZftwKp7fmYLtk5p7Y",
+     "n_events": 3,
+     "buy_ts": 1782760235,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98431370.73,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 5,
+     "premier_transfert_sig": "pQNWfNbypcUKhmLYWed61um7HzDMmQagYr9QzXccazxefHjhgWVXxe4McVpZnzcvdZ4MLRZxcqk67vHDxXpFTDD",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "BpBudYLAqP3As5tE4MPrq5XK9UhgmFE5WjHHSNveZCjf",
+     "n_events": 3,
+     "buy_ts": 1782760235,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 57688669.12,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 11,
+     "premier_transfert_sig": "49W5SCHT58gL3xEv6WYp9Af7CxkukoKjZExWd23NYkrpbhAdkyu2Xm8E5CsUeyN4y77wPdneVz6jTvWmbRfGEvq4",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    }
+   ]
+  },
+  {
+   "mint": "5CCnqQy9cyzerWNs29KA27wEweq6UZbR7Q8ewxG7pump",
+   "n_wallets": 4,
+   "n_avec_transfert": 3,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 340878706.7,
+   "tokens_vendus_directement": 451091962.43,
+   "part_transferee": 0.4304,
+   "delai_transfert_s_med": 31,
+   "delai_transfert_s_min_max": [
+    9,
+    80
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+   ],
+   "wallets": [
+    {
+     "wallet": "C4v2WTmWmYpYZA6JBU7Mh1rdRq1pmCpY5RaYNkkh4AZL",
+     "ata": "8CUAVUyciotkVgY23Xn2ww8PKQe37fQfZrT5BLQ8Lejk",
+     "n_events": 83,
+     "buy_ts": 1782761489,
+     "n_transferts": 0,
+     "n_ventes_directes": 81,
+     "tokens_transferes": 0,
+     "tokens_vendus": 451091962.43,
+     "sol_vendu": 395.6832,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "HQ8JmyTdr3PmspnEZtsnt78sLoD1B4L4zHMpv7BXZdou",
+     "n_events": 3,
+     "buy_ts": 1782761489,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182665179.3,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 31,
+     "premier_transfert_sig": "4LK3RpkuuyPLL5MXxo2AoiLrbHVZfB2bYdPSPFKZYgL3zBH2SUpN68nf9j5ysnEBiLA5twz7P4fH43n3J1tRjYdS",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "Cmem81xjaR1GZVFncKDpwHmKpumfKomE3FMWP1KHrjLw",
+     "n_events": 4,
+     "buy_ts": 1782761489,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99322745.41,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 80,
+     "premier_transfert_sig": "4fFJUw8Ev91MLoD7bTXmpyGcritqhFmK9Z3H2dkSWqb5tobpo5FXAhaZfY83UsYiXPfPQorbCiPyqgYpFw4vNQSo",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "DAAjSHKvsXDnBFo6ywUBXaFMMAnT3acjeG3Zktr5ghSu",
+     "n_events": 3,
+     "buy_ts": 1782761489,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58890781.99,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 9,
+     "premier_transfert_sig": "4T67DKUAphuP2BPcgrrjkMw9ep6XXFM6zQTVyvJ9saPyWwtGfvmzVZkhndNnrHr5En9FVrZr2HeUxJ89C6ESGXEV",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "B1a7zhim82AGr12iBSnH1m4sXCSyt3wudZD2MVYHpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 2,
+   "n_avec_vente_directe": 3,
+   "tokens_transferes": 627871615.17,
+   "tokens_vendus_directement": 163698068.94,
+   "part_transferee": 0.7932,
+   "delai_transfert_s_med": 24.0,
+   "delai_transfert_s_min_max": [
+    14,
+    34
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+   ],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "BQEv3HF2Lf1Ue5h5uvRZeM1UjXAV8Dox939EoYi11X7Z",
+     "n_events": 3,
+     "buy_ts": 1782762860,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 445998293.12,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "4vZfJBgNp23GKq3SDjnmnpJ1TFCG2EXSpCieAkL7cUE9PdoPZe6MSuc1UdyVQy5DaQd3mP3LVBnrSVGJdvZp45bV",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "D9b7RB8L6ieoTWd4oeAXJJvkBPiJXU3xKXz6ZCFCoNG1",
+     "n_events": 4,
+     "buy_ts": 1782762860,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 181873322.05,
+     "tokens_vendus": 603188.14,
+     "sol_vendu": 0.8565,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "2RM41obaZCCMgQKSG9NKeio124KrnKJhc1oxBxRkF6Tpx9mnADukH2Nwb5TC73Ng7T52UncACGDn4ZWVfF8wvhXU",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    },
+    {
+     "wallet": "HgUpqjurhgkSkPK3JsfjZZ9JknxY9fLRLNKKGyUSMLfQ",
+     "ata": "8sYb4sEA9zQjSRQCjMdKoYTj7PFBujnpNEdVn1NKn8WE",
+     "n_events": 38,
+     "buy_ts": 1782762860,
+     "n_transferts": 0,
+     "n_ventes_directes": 36,
+     "tokens_transferes": 0,
+     "tokens_vendus": 100053283.24,
+     "sol_vendu": 79.7007,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    },
+    {
+     "wallet": "46ojZjmvYCzgikVQ4NZ1rSMz2vURDhW74U1CQm5p6HSM",
+     "ata": "nQzxYXWhawpJwuLadoL1FsNLFs3Am3b9dUhPxw4HDAj",
+     "n_events": 11,
+     "buy_ts": 1782762860,
+     "n_transferts": 0,
+     "n_ventes_directes": 10,
+     "tokens_transferes": 0,
+     "tokens_vendus": 63041597.56,
+     "sol_vendu": 42.2546,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "7V6C6GN1YbtYP6TJ6Kzke9TUwLgjy7gCMEMmbn8Jpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 790420893.84,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 17.0,
+   "delai_transfert_s_min_max": [
+    6,
+    27
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "64Y6tMHPrtBbRLYfn2A8RnZeiFRJHmYBnD8Uh8n25d1s",
+     "n_events": 3,
+     "buy_ts": 1782765019,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 450918256.19,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 20,
+     "premier_transfert_sig": "SURc1tp8GU2xqgWJwCtssnzHBab35pXwuG6Sfx2q3PSCxSdFdMnhhniakaUjFASLav2rfDjJ6N22Ye5S8anvWzL",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "FBQ1Q2YyseHtwphdzZu3C8qbnoFdHwbJbH3XpEY6YuWb",
+     "n_events": 3,
+     "buy_ts": 1782765019,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181575698.44,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 27,
+     "premier_transfert_sig": "271A2AjP3j1dTwq6My8Gq2NN5a4TcSXTQFLGyVKSJX3PetRZL5sCbQw7GnEKuZXRScp3Muyg3BPDwNadAtBKnHh9",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "6Muo7V76sWhrkTVLh98Dig6wk2Qnn7H8jZoYNf9SbCGS",
+     "n_events": 3,
+     "buy_ts": 1782765019,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99189470.06,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "uUmVanAnNjHD6Jz6mfqVjb2hDpYxtVLoQ81gYzqxHiypzpdzDqt32QFHXfkDNuE63ncyz3s6nFCyU4bUb4RNxtV",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "9hJDhHxPK8sfBEQQE4QswMH8bzBoS1QLWtpZMpTRk9zW",
+     "n_events": 3,
+     "buy_ts": 1782765019,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58737469.15,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "5ApMr2UQEQqQ8h5B8AbhFEGyQCeXY2DKqNtNoBhuPY9Q87xjeEJQWpjtP4fxDyHX8MSHUkCmhGbFkUntHBfTZuNN",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "7vJ2jdLwkjPSWkQVKv7SGuJ3BLXF7fn18wj2EF8npump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 791317232.78,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 11.0,
+   "delai_transfert_s_min_max": [
+    8,
+    14
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "HejVBPcKgLXf1v3okcPGwFudkxfsgt7gzqXZ4Er2fN7H",
+     "n_events": 3,
+     "buy_ts": 1782766031,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449651497.84,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "3GNswuGidfVAG4vZxmP53Z6eWz6EmfME3o9zMSrdtjg3vTqtqr8BPVE54Togd4AvW3BfjPoKj7PtCMoSKjCr29QR",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "9JmGDPSmRuGVc3wQ9XcRmTDVWvqycytXvhhdUFY2UsLf",
+     "n_events": 3,
+     "buy_ts": 1782766031,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183351486.5,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 8,
+     "premier_transfert_sig": "42KQhPBMToFKbuKx6HYB25NbxqbA7Wyf2pRwikLSip7futMjTiwF8PonqFkVNDJ5jyZiqjZ7Lm2PfLckjRHD7mzy",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "3P6CZeMA1DagDLvdf27TnwtmXPaB5PEZYjVCCh2T9zUK",
+     "n_events": 3,
+     "buy_ts": 1782766031,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99028201.37,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "DZfqBWkLfD321usWnDy5jJ721BHofvE8RdHQAqQnQM7zCToEWoWLH6oNaZ7iCXqVAEddkmmGDzZV14YouwQhsev",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "83e2YRJmjUC1ysWbJmoDqq7gzofEvJKVh84CY6GDJWtB",
+     "n_events": 3,
+     "buy_ts": 1782766031,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 59286047.07,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 8,
+     "premier_transfert_sig": "428piLat9VcuFzNkY2ApgJVGTKcCyRTKRz3ShyxP7cv9imsFK95aXgv9n2jn3KvDZ3WJ2eTmYxQERyTVdtaMvXXX",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "AidtkezbfEF8wR3GNxGYFerGKbtBHkabfqVP3XvKpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 788949163.96,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 43.5,
+   "delai_transfert_s_min_max": [
+    17,
+    73
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "BpVcCRvVTzkjpV65g5JFAbKQzMwDGLDBn5zg7QCyfmwH",
+     "n_events": 3,
+     "buy_ts": 1782767711,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 448969897.25,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "9FYFGm3HeRhjGbpwpNuQpSXSrdL1vXvrsFh7Hy8GqpQxPzTBxYY2CxJokvYRVo3CoB3idQEqD1A2zvc4LGBhMtr",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "5xzYvNP63jHdqUPJ22okGu1HuX9vrVo1gLQrXhCH7y9n",
+     "n_events": 3,
+     "buy_ts": 1782767711,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182630458.1,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 25,
+     "premier_transfert_sig": "31PpKmZcemDAbVV7J3fr2qXQLoynYbLFjKVqRHfgp5ki87ZhT2Vq42XNF2qXkNKoxam7HUFqaJFmRb1C7DT7qoZj",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "3R9GxtPHfkvxw4gjwmqJsjyhWLYeczd1hhMDoSYq85tw",
+     "n_events": 3,
+     "buy_ts": 1782767711,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99230216.78,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 73,
+     "premier_transfert_sig": "tFuvV22gF636X2rd1bNunMvxYZsgWMsGqPWwm87LgLCysHreMrs2NVKjrBoppsyqhAvN9j2X9vQwzF8VjrGZrcc",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "5mgPskZfKGZY7pMY2mSYf2vc3bagQkUnN1ksizafimug",
+     "n_events": 3,
+     "buy_ts": 1782767711,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58118591.83,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 62,
+     "premier_transfert_sig": "49eFsp4p2KJ7LRFwEoq5CbaedrVJGqoUTq5voH8xNGjBYodHdCmdbjoThigZ42shUFzpFsQjvdTxtmoRJKD2Ppww",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    }
+   ]
+  },
+  {
+   "mint": "5AuHKxmuoXsxzbf8nbVzTWGuzHrGecmigfjgEBLkpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 791262848.13,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 28.0,
+   "delai_transfert_s_min_max": [
+    18,
+    42
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "F8xjnAjEtznawFPQ7vBuNEWJGqpBMJbQXAHSAvTUkaUG",
+     "n_events": 3,
+     "buy_ts": 1782769999,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 450829242.86,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 24,
+     "premier_transfert_sig": "8ZjBooxjZjiJvXBCdBWvjAKNXDhqsC28NaarRCNsUE12oYqLqiegtoydSeVn1LTz9qCdGANArFFXn8bun8qKaJa",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "6TPouxQxTtjnh9q1dUAPfFdkxe5nukwAPCmQ18djeZ4K",
+     "n_events": 3,
+     "buy_ts": 1782769999,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182694701.8,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "4TKzbbxJPPLKvBhNjV9jnG1rnahgkD9aJT2ii4YuT3jjqwgcYJKbyeBVuqTY5kKZsHUCuAvVGgr9QywJYi3ka76y",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "J3gG9yTa5ku8RQVyapAgD4xvLukU9Z6Fxi6TkS7TsYsy",
+     "n_events": 3,
+     "buy_ts": 1782769999,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99337408.81,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 32,
+     "premier_transfert_sig": "5rbUkADemWajRpurzQJvr9xx23VnYWCRMoN2K8rPYBoNQughCnxyUhYBhhK6eE7CVVukQC2fhCKksgkMiKfjiBg4",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "82iFPZ62VJKsriQMCJULJ31t9dVM7FoAaARdD92q5b4N",
+     "n_events": 3,
+     "buy_ts": 1782769999,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 58401494.66,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 42,
+     "premier_transfert_sig": "54hNFHfNmEgN4YZuiSS4DBchi4c7J26JGkwwgbdPMbvphV6dpRUdnzRt6pmeQfxcQKiQCJY3EuRRttYVRCVF4CuZ",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "ApANnyv1KP6uZaPmqhaCruMqZHHxQCACKDGCcjU5pump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 789508371.82,
+   "tokens_vendus_directement": 11771266.77,
+   "part_transferee": 0.9853,
+   "delai_transfert_s_med": 24.5,
+   "delai_transfert_s_min_max": [
+    9,
+    36
+   ],
+   "collecteurs": [
+    "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE",
+    "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY",
+    "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC",
+    "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+   ],
+   "wallets": [
+    {
+     "wallet": "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+     "ata": "FUQt5gVTA7dp4yuLxiAxbCEcEWQEEdqFUzp5ND2jhy3m",
+     "n_events": 7,
+     "buy_ts": 1782772257,
+     "n_transferts": 1,
+     "n_ventes_directes": 2,
+     "tokens_transferes": 451425362.43,
+     "tokens_vendus": 3172515.08,
+     "sol_vendu": 0.7958,
+     "premier_transfert_delai_s": 26,
+     "premier_transfert_sig": "653fcEuyBFCoLfVnrj8ft193a6xGWzu2jL2CcysqSfwUcx16fjyZppufouGFnLbbA5H1BDBs4CB5Ve5Qo23JWtSL",
+     "collecteur": "FgjLmLZLkQxKia9z6UQSz1CuGm9v3wWCoVMDzbMptLY"
+    },
+    {
+     "wallet": "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+     "ata": "3uwfQzrD82TLycug1JN9eeD5xkdzAoqSRGFaGZYF6Pyk",
+     "n_events": 5,
+     "buy_ts": 1782772257,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 177768426.39,
+     "tokens_vendus": 2880919.79,
+     "sol_vendu": 0.2744,
+     "premier_transfert_delai_s": 9,
+     "premier_transfert_sig": "KZ8tU6nAUCjTaVb6MfEKCXeNLTjxGDhgAiRv5b2uPd6CixWkcHkxv82B4FGnqns7hJdVBR6MNWRVNYj2R2YhYQi",
+     "collecteur": "2acLWuG8Ly332JmxaPuNdb3p8RwiUdsaWTJe1yGS4sBE"
+    },
+    {
+     "wallet": "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+     "ata": "Ed6Z9LeAfFGBjDnEVoNhArXbkhFrr8hDbjUkPrtsjUGq",
+     "n_events": 7,
+     "buy_ts": 1782772257,
+     "n_transferts": 1,
+     "n_ventes_directes": 2,
+     "tokens_transferes": 98115870.38,
+     "tokens_vendus": 2896135.0,
+     "sol_vendu": 0.9452,
+     "premier_transfert_delai_s": 23,
+     "premier_transfert_sig": "3NfwcLwGn3TjZaHpCk9rvCZk6jCqhPMNhQcDnBxxKNPnpDeVMsYqKcBEKFxf466Ju5BqBm6Xpw2DTWCs9e8e351y",
+     "collecteur": "eUrS4Faom5MmRbaDK7y99yXADvUbUvxEd233T7jNMy9"
+    },
+    {
+     "wallet": "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+     "ata": "7dU84L3C5KaZRjzUSiynRV2j8DSVu812Bxt52iuGCoxo",
+     "n_events": 5,
+     "buy_ts": 1782772257,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 62198712.62,
+     "tokens_vendus": 2821696.9,
+     "sol_vendu": 0.2378,
+     "premier_transfert_delai_s": 36,
+     "premier_transfert_sig": "2HkgdmSFGrVW1qicSf3X1ZgfD6GRqpwbLmAxSb4To8ZSmCoZbnczZpnrsgLd6ezoMBucAz1NVzs3zC8M2hVsnnRW",
+     "collecteur": "HgYQ36rLpudVwbmij2A2ZUxTcMXbPHsEmgitzerp5fNC"
+    }
+   ]
+  },
+  {
+   "mint": "UNB8FtHiZ9N9LEyrQy8surmRjbFxR9fKHTKDe93xzPr",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 779852771.1,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 15.5,
+   "delai_transfert_s_min_max": [
+    6,
+    25
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "Fx8j8rmpWVNyfUkd2GD7DJ7JbxzAPHfdxCUduMfVmEQe",
+     "n_events": 3,
+     "buy_ts": 1782595967,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 437850150.56,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 12,
+     "premier_transfert_sig": "4dquuCHA4mYvHwNhPgwpNbGKGLZ1eSrt9cLEyorLaFFGZ8LLJKPBmjhrTDJyr9EhEWGWkgexWK85jg8bkJNDwUYh",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "2bzdvGnbA6brUhqBsBSdk6EvHFf1FmTT8FU5oDVJ4J2K",
+     "n_events": 3,
+     "buy_ts": 1782595967,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181513868.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "38YFTPNXTD8YL1X66uFf4k8QA978qS5gpmwmC7jPKKgi1EjHoNMTeJTLAD8cJjNVfDfPSjt46RPBJDRHSkygWD1b",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "8MceTGurJPNoAwauyNmt3f3pefYzwff2wL9QRX2b1HSG",
+     "n_events": 3,
+     "buy_ts": 1782595967,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99169269.55,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "39TmPz936tPJd96m8QKrWV6x3D1ikwwVPwxnhKtZXAvu2oMgqJMR8ttWBwZpo1wWh6BwPovGgtCLyrfRtAX84Lko",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "Fqdm29tERmSfvzc6d1MNjogkPd75rK3bPumbQZee24tV",
+     "n_events": 3,
+     "buy_ts": 1782595967,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61319482.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 25,
+     "premier_transfert_sig": "4aaqEcfrJEDErfb8pWtmuhKFL3wWnCHmWhUtjZuNf6VnL4JYZRpBa4Z6Gu6LCBa44gbwkFSUvQT8SuAeztVph25H",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    }
+   ]
+  },
+  {
+   "mint": "7EKtAJTruNL5qURjXrEzfdHzmqucxkQNh1922hz8pump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 779852771.1,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 16.0,
+   "delai_transfert_s_min_max": [
+    5,
+    25
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "2vKBXeFxXSP9RWo8r5XFaKhgKDF4ePMZz5HGHhp8VHWT",
+     "n_events": 3,
+     "buy_ts": 1782601760,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 437850150.56,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "AgBvBUGN39xvBFQBXyoA7HS2WdJt7JsXERK2YXPEP2qfbdZnw8C3fGGiZ5AxDqjYVCyLbSfL3jFFtau9rWL7Yvk",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "9CanNDs1YnNrSUsDwdgtUbbdQ9zzxZ63wFn3vQ3XjfHs",
+     "n_events": 3,
+     "buy_ts": 1782601760,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181513868.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 5,
+     "premier_transfert_sig": "SeV8pDbpSkwjSfSf84BwHCNK6dJkj9e8m6V9bH1WV5uMtfZrr1Pf2cwAniXWimY7MGnUjp12dXMp2ReC113GPXp",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "FaFGZe8BydzioVAZWxLkioDdxTEkdVQNmzSH98LjssG9",
+     "n_events": 3,
+     "buy_ts": 1782601760,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99169269.55,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "AEtauN6sPeFNyL1eabsR399Lq41psUUxVd56DuCCeBpyyMEZaL1ZdcWJTTx9X5jPUiAeCPW5aGVKvooXrjC5tTd",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "GyqBkDjJEvBi7X9PT9TCPbj6KLEy4jVqQdTd8nnRKxZP",
+     "n_events": 3,
+     "buy_ts": 1782601760,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61319482.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 25,
+     "premier_transfert_sig": "3B2h3QjhPFnJz4jVRRoZ7JFV2f89jn9YZxAV6YgqT6WBcqYmNNXvdWiVn9bz1PXf1dK3zdPefnp76iXS1UUihkGi",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    }
+   ]
+  },
+  {
+   "mint": "7adT6gecxwX5C1sT1eynLVhLgpFoEAHfn4REk92Rpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 2,
+   "tokens_transferes": 779852771.1,
+   "tokens_vendus_directement": 6650181.9,
+   "part_transferee": 0.9915,
+   "delai_transfert_s_med": 16.0,
+   "delai_transfert_s_min_max": [
+    6,
+    26
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "J74YriJcqeFFGfJoMwC7rFFCkegMUHK7ED4WPcoUNNHd",
+     "n_events": 5,
+     "buy_ts": 1782603156,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 437850150.56,
+     "tokens_vendus": 2762985.81,
+     "sol_vendu": 0.0733,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "4hwYecbrosdesKbdBuKaBCCgstycVXsvo8CJyRRBbtKF1mToRgFUEm3AFVFdv7569DHoRi5goDBr6djF1F4tb53Z",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "AnVY6E5X8UySwWDsoDd5adGs88abvJTUReWyGFwa9Xzx",
+     "n_events": 3,
+     "buy_ts": 1782603156,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181513868.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 26,
+     "premier_transfert_sig": "5qcWebn7E8W6Ust9dKBr3MFT3CZXpD5VapSJcr2Kqvz1fBBF1B2Vqe64vtYod7owGsFxh7ihjXeFo1zHVXzFpxE5",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "CQ1sWjjvysGzcyL9Dktdbajo6icW1bLW4uFtvuuFB8kG",
+     "n_events": 5,
+     "buy_ts": 1782603156,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 99169269.55,
+     "tokens_vendus": 3887196.09,
+     "sol_vendu": 0.104,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "3A556Wvh6cXFMfbnWtT6ivFCaEFb9HnJ5QwX9krGSMV3b8uqottE7fEAXvZGK8ytdvmv15aNPBGN7wkmbsUZ8wTQ",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "FmmsCJThU6NwbEbZ8eKVz2cWW5Kw39hUvZmgoVzPGyB7",
+     "n_events": 3,
+     "buy_ts": 1782603156,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61319482.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "2LNYDTaogh5EbgWGbG34iWuJ8eCBBxe4aJ4FquxoTbpWYV82cWAg5aJRegW4mce9nHYSBVR9xgxtzi1MskJ7edZm",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    }
+   ]
+  },
+  {
+   "mint": "9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 779852771.1,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 16.5,
+   "delai_transfert_s_min_max": [
+    6,
+    27
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "7MxhpTQnW2oVDTNSwi83VQuPSGTZz266BhLP7St4z7ov",
+     "n_events": 3,
+     "buy_ts": 1782604218,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 437850150.56,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 20,
+     "premier_transfert_sig": "3Ac3PPnyW2PvAfiVwHk9SUmWVUkMaRCLWg584TjMWfP3LVJdwvFCHKTFsYMky8W55bX4JHnQhQUvSumiXMQBURQz",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "8HP9KTLavmyQQoPZrZdFM9SZspc5vz36WUdjrqBQxjoa",
+     "n_events": 3,
+     "buy_ts": 1782604218,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181513868.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 27,
+     "premier_transfert_sig": "3A4fbvoWBpJRsccoBa8cctCDiGPk8w5SsZ5AjMeJGgsE3ke5ZVz5UfUb7cBGxBJxQZof1vXkFNTDFA97PzgcctRV",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "8kiw92bJUC7CzuytAqGTBV2ASYkBhCi7xGFwgLa8bMea",
+     "n_events": 3,
+     "buy_ts": 1782604218,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99169269.55,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "3SaDxmZHkXq3pQRSJmnfTfTE7B5CwrMAwBZ9f2rQ9cvrsYdBxqJAufJCKESGMXyuLWsRdRSCFC31Qg4cji22NYLk",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "AqMA7oexZuDQtwR3j5xCRhnmMMBosLVVqGjK15NAsSMB",
+     "n_events": 3,
+     "buy_ts": 1782604218,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61319482.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "cqSb5yTtALY7iZPvQ1RfcP6u2KR6LQjYqVkwJLLMMkkNzsmKRwauzVA7RXhqHxHGCGqcPBd4egMTPKroj65QQUr",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    }
+   ]
+  },
+  {
+   "mint": "GkgtsQCLdV4rPVcz6YaCRowSK8XUeD99xjFcUyCwpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 779852771.1,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 15.0,
+   "delai_transfert_s_min_max": [
+    6,
+    25
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "99ye9f14LSr7YjvRwggfy1CJjVhBr34bb2etX5onyPmJ",
+     "n_events": 3,
+     "buy_ts": 1782605168,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 437850150.56,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 25,
+     "premier_transfert_sig": "2ggJ3Gwrn1X4Q6vcNJrSiA4MhJxSWEdsCGHDFzKj4vepeAmCcFYDeKNP3ZwK7Yb8MbJ9yA9JHQYtcqp4ZyAgmjvk",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "EperyscX3WoK5WGyek4qGRaJUj2VtwkSN2Vy78nWiGAS",
+     "n_events": 3,
+     "buy_ts": 1782605168,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 181513868.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "3M9GESHZdyTGyfkVEDFUPGMeXRkYppyUsnFpNFjzmi4V5CyhowU7kUW2AjJowMQBVbBd9VN1hSMAunpRByJw4DDp",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "Agir99HuF3t4HhZaEV8WXQe7yqUsUSPLLg9Ny4p7sjvV",
+     "n_events": 3,
+     "buy_ts": 1782605168,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 99169269.55,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "4Bo24TkCce9Fsc8dwsBE5g8TobBCRdDt6ULy3mDUDHgvJC2Vw35Rk8rzFx8ZHGZdRjnWs9igoLieNz8TxuFnmvjg",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "GWbgFrLwAoPjzj6mwLUTjimioNL4vrtL6Gahgeq6zahu",
+     "n_events": 3,
+     "buy_ts": 1782605168,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61319482.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 12,
+     "premier_transfert_sig": "26RTWTHTi9tEWNVMe5fZ5d8fCHdToFPSQjs6FVWR9CVTcg4jMBaGhJZ4uhqUPNTgpNnssshwkA2HoRr9sFvfFwho",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    }
+   ]
+  },
+  {
+   "mint": "GUA59wrxfgzdLx1qZTwX9wDaZFvVteTQLPUc9R1ppump",
+   "n_wallets": 5,
+   "n_avec_transfert": 5,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 785996853.31,
+   "tokens_vendus_directement": 3582775.62,
+   "part_transferee": 0.9955,
+   "delai_transfert_s_med": 14,
+   "delai_transfert_s_min_max": [
+    0,
+    27
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "7JEJ1xFtQXQujSiQEEyeMBHReCH9kFaXFw3wkYwmbb5a",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "H85tPTSfT1yGnSTy74aVyUa23iJY2Jf5WQDDxxWRfMqK",
+     "n_events": 3,
+     "buy_ts": 1783034271,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 414911335.87,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 7,
+     "premier_transfert_sig": "3CbWL6fnDwn7NZseQ6P1r4zq3K7pURUtj9VYRUAq5EWZrWGJ4b1mW8sNSiszG9J9LYfLWefkfoFctcshWcPQP7nY",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "EDxMr5CuZUbH9Ea5hdyHtnwaZrm63YHAuyKVfaJEarzX",
+     "n_events": 3,
+     "buy_ts": 1783034271,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 192547885.92,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "3WCrvxeUEAoJd3YmGWP21C6eGE8XbVjaCvVZtmrF2kjUzG72p4dNHaT9EdBZTPpS5shid6XJbaBydgdQMaucigFA",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "3wNodDbjfwjFNdunKNtHP6mHPbsBvrTCthrPWFq7hkqQ",
+     "n_events": 3,
+     "buy_ts": 1783034271,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103503468.77,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "2LvxTv5gTPNj2cwb4fZjSt8QKrgQhwAL1n88kkC2jem6eWKfzBRGCqHfa46dNjhT76t83ugtziyNdnRuyyXPxtEm",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "3WChw4WavcwZNga7dvVrGf1y7jJYrd8qwt9o5Dbwuojg",
+     "n_events": 3,
+     "buy_ts": 1783034271,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 65821311.14,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 27,
+     "premier_transfert_sig": "4zhSPhZJkdGBypFeen2Di8F3pi1PTZXnPcGdNhzfkkUQvbwdB87e9rChD6hEVaCYktEsJr6AShFRW14CqnDvLvRW",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc",
+     "ata": "9pNYauXUxCorvSwtNr9oojz6LVKMYtk6xYSFt6Sj66k7",
+     "n_events": 5,
+     "buy_ts": 1783034271,
+     "n_transferts": 3,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 9212851.61,
+     "tokens_vendus": 3582775.62,
+     "sol_vendu": 0.002,
+     "premier_transfert_delai_s": 0,
+     "premier_transfert_sig": "4GA8gN5KAKzE8YPtMCyGJUdrhbteq55Cf2KciuUz7CVHhahsFoQ2eTZxAix3TvH4SmCfmdA7GvLoMxrnXWjwWeFz",
+     "collecteur": "7JEJ1xFtQXQujSiQEEyeMBHReCH9kFaXFw3wkYwmbb5a"
+    }
+   ]
+  },
+  {
+   "mint": "HvM3WrbuWuEJTrxDMAPiPwR8oSjHUcbcTDuati9vpump",
+   "n_wallets": 5,
+   "n_avec_transfert": 5,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 830670918.23,
+   "tokens_vendus_directement": 2884005.41,
+   "part_transferee": 0.9965,
+   "delai_transfert_s_med": 10,
+   "delai_transfert_s_min_max": [
+    3,
+    23
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "Ds5zs5NFyFc46JEDg6b13MFfn22kcQMqMCrJLmR4xxxZ",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "ghDH5sMmdNsBk2ps8TMY5FwuQh9HnRbVEMinKntJ8RC",
+     "n_events": 3,
+     "buy_ts": 1783036454,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 414911335.87,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 5,
+     "premier_transfert_sig": "31q8zr5pmAHST1Yx6YM7WwBjouYLnLSmYB9KKZ3u5S7A84kwDaA1femx4JGdh57rtsPoDzJBUty9w5pCZpcF1Feq",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "7XmQm3Je257oYCL2x5Uhy6iAaKnk8uPqcCZXvm8DheeN",
+     "n_events": 3,
+     "buy_ts": 1783036454,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 192547885.92,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 10,
+     "premier_transfert_sig": "3UaehU4KeKFbaw3SypH9eAqtFPQ6y3AnfYhH7zvw4mfuuz7cnkJkgEBExgeTqXyEoRRog3ttXoMaDTLVENniVJkK",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "HaJNCVQ7sgEHcAPvhcpWtxtM6S6D2HEbeGWLThGKFXd8",
+     "n_events": 3,
+     "buy_ts": 1783036454,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103503468.77,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "3en9Zkd8G6JXDzcm1Zjv7ai2K1emWsoHPUmmC3AwNgYq4GooZUmhE6j8vLjdMfuv6fwnM1qVTMkbRBmRRoY6WqCP",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "J5vgkN8v3ruFgDoN9yvT19XSe6dkAAotbw5FhaaKDir1",
+     "n_events": 3,
+     "buy_ts": 1783036454,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 65821311.14,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 23,
+     "premier_transfert_sig": "5YYm22MWZTEyuMu68hVR7dvUisUdrZW4ReZUexZrzrG1515w1ZnxgjEkgSteh8MsoLvdNPLrFg71yS2R9FsTSJsA",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "RDCT-d4fb6b1f86",
+     "ata": "XFUTPLowFFdwFZtzD5x6T5p22wkUjaAsCNebCPr7zHF",
+     "n_events": 9,
+     "buy_ts": 1783036454,
+     "n_transferts": 5,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 53886916.53,
+     "tokens_vendus": 2884005.41,
+     "sol_vendu": 0.0019,
+     "premier_transfert_delai_s": 3,
+     "premier_transfert_sig": "5iXELoLQWyYa2MQVZJqvqZcuvPJJKgFCr9VkP2KzJPqcVZ1jPCPWDSZiPwG3mUcDVzDCkp4QyJSZB4cGoXhbaHuq",
+     "collecteur": "Ds5zs5NFyFc46JEDg6b13MFfn22kcQMqMCrJLmR4xxxZ"
+    }
+   ]
+  },
+  {
+   "mint": "CmFiPswdJEEo3njREo3FKrBUyY9TsmFBQZss2LmZpump",
+   "n_wallets": 5,
+   "n_avec_transfert": 5,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 800292682.91,
+   "tokens_vendus_directement": 754247.03,
+   "part_transferee": 0.9991,
+   "delai_transfert_s_med": 17,
+   "delai_transfert_s_min_max": [
+    2,
+    32
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "B8HB8WnDNkWBJC9VXvVheQV6XG2MJwkc3JZFFUsrAqi8",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "6mgG98A5iCZQFSfX87Q1fz25u6MJGiHijCigQr8hDTNf",
+     "n_events": 3,
+     "buy_ts": 1783037782,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 414911335.87,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 10,
+     "premier_transfert_sig": "tfDLp1YShLkWCvYzVVDSpZrZuDJy9FZSBd5vp2XuXv66z1RChGJteCyhWmBrsmG5LaBiCcYcHQXxuiLzF5s2UR2",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "7CeDvtV1aypXTEoUpgEi2jiTwM9dMKZrf2xaMoSPHh72",
+     "n_events": 3,
+     "buy_ts": 1783037782,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 192547885.92,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "2UWhG2qvM926t9pFEjT5zfA4p9Fu2ckSSKbMQ9ZE9xQLb7UXVzw9yeC9C1HhSavFuxksvRNwuDkL5gBMShTQACkj",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "AKm2o349zVK55srJgsA5yQnjxQbD7bCfUvMovubADWVU",
+     "n_events": 3,
+     "buy_ts": 1783037782,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103503468.77,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 24,
+     "premier_transfert_sig": "5GuAUisZw1a5Bwf9jk7VgVt5dDe2ULsprMRExdpWTb3gDdRMH6CGWZGQ6YZb3zc7UvQ7pAtJsKEUcvawokAWymJL",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "5fJTyBKS6pgYusuhSsAqTdGLhvLvEt5TFyEtT8jx36uY",
+     "n_events": 3,
+     "buy_ts": 1783037782,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 65821311.14,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 32,
+     "premier_transfert_sig": "4zKu5qmASeLekXUNY7bbAg1w79FNLCtQWD3jJ4vfw1uxEz5CqRcw3iRJfx82Tfjxfu67XQeAyMPzX9Xpa572Agpp",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "RDCT-d4fb6b1f86",
+     "ata": "H95JD8WV5M3WKqdYP8pcGtvpzwzU8Y6VGdaHrbPM8UHq",
+     "n_events": 12,
+     "buy_ts": 1783037782,
+     "n_transferts": 8,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 23508681.21,
+     "tokens_vendus": 754247.03,
+     "sol_vendu": 0.0019,
+     "premier_transfert_delai_s": 2,
+     "premier_transfert_sig": "naqvyzcXvJ9ptTa41g3ihP5J2na87beKTeajdNqwP7WkaxKddFnq84rudwoCRBngtD4MVrq6c5r8nMP3n9dyeRe",
+     "collecteur": "B8HB8WnDNkWBJC9VXvVheQV6XG2MJwkc3JZFFUsrAqi8"
+    }
+   ]
+  },
+  {
+   "mint": "BULBzU2i5k9hp4Vh8JgDW8L1fGfskgmoTzMM1Kx7mAho",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 776784001.7,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 15.0,
+   "delai_transfert_s_min_max": [
+    6,
+    24
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "9xdohZLEFiNTisHNzQaA2xcUB5A6187ek8coDTtSj6md",
+     "n_events": 3,
+     "buy_ts": 1783038404,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 414911335.87,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 6,
+     "premier_transfert_sig": "4u1DbxsNqx3y722n4y9hMeqMaRnRrSMSa1iQsGQHyRNFeZQheG5nfEnwTnmkSkhNP3Mpy56mJDP7T7jL3khtNNys",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "CsCTKTt7p872LhXpXC3cWCqLbDLXMQ69ycsN87hiuj9g",
+     "n_events": 3,
+     "buy_ts": 1783038404,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 192547885.92,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 12,
+     "premier_transfert_sig": "7RCZFof7Na33an8Rsva9uXoUJstwsFcUHzTxWDdsseKru5GdZDG96XwWyMwW2HoxsqDwTTZcYnmhL8gaNY4SFba",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "4jUG1qheGXpDkQmXKPRWyG5ARFPj9jabmDzrY9ESRnmz",
+     "n_events": 3,
+     "buy_ts": 1783038404,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103503468.77,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "34pfKGVGjuQxtT4gUEiyBHPhqAdXsj6FvZirxKjvVqDfqJFSfwztjv9a9sPwY15DtBjLGpH8WMPk4vUHXswjKpD6",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "8mLpyzze7c2KUW6LEuF8N9NrfJZ4VpwUthvEBRaXj4wp",
+     "n_events": 3,
+     "buy_ts": 1783038404,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 65821311.14,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 24,
+     "premier_transfert_sig": "3fFKsLAkbypRoMWfHWewPKMzTUC2iQUDU4e9ftQAhN7Pa3zh2Gc1eBU4d3xQoEXNXvG7gNv9PfNDD6tV1XXcP1UE",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    }
+   ]
+  },
+  {
+   "mint": "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+   "n_wallets": 5,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 776671721.91,
+   "tokens_vendus_directement": 12587418.78,
+   "part_transferee": 0.9841,
+   "delai_transfert_s_med": 46.0,
+   "delai_transfert_s_min_max": [
+    37,
+    57
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "CA2qfVfrrUWyN4avs7NDuf7sMND9KtMCd4QEadJ37euy",
+     "n_events": 3,
+     "buy_ts": 1783114682,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 417555580.33,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 37,
+     "premier_transfert_sig": "sH1F9RtKofB85FpLabNp1SGVfc9mJ5ztQpGucBfGTs3LbArr8cRo6vgqdawEDGypCaesqtYJmAr24RYH3Jh8QPX",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "E3nN8kU5Hmd6Xmp4xfHXifDR5StHTK2VtuvconKVcoWo",
+     "n_events": 3,
+     "buy_ts": 1783114682,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 191166552.08,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 42,
+     "premier_transfert_sig": "3W8ZFbBjzT4MbKLQEwV98dQzr4dKrccDwU2xCCSHiZSyQUWD3TdbqFeaUHwcG6McnFxrLmcXN75WDcJvppwJDXbm",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "DvtMD7ATSfgW9DhyRSSqUwxt9WRQVeRYiDWaks8HPqjg",
+     "n_events": 3,
+     "buy_ts": 1783114682,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 102098487.68,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 50,
+     "premier_transfert_sig": "3zseNaUdYQoyW4KECoskEJmajPwvdgKWYW8sd9xhLARyCRmK25VLSbnRbhhhmQLzrrt9tLzHocLFmdfPYHoyfFnu",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "EEHiWcfuZRHNhtkPkirWVzKoQARsupEL3FN26dszoHhG",
+     "n_events": 3,
+     "buy_ts": 1783114682,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 65851101.82,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 57,
+     "premier_transfert_sig": "WoMv8j6UfE2M1NiqzpAk8nhwRcHjxvd8F9jLUFKFo3Wpw6zNQpqqd7Zknxasf2kEsVGQFDgZ4venMJBcL2Jo89S",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe",
+     "ata": "HbrtJrJLioTAAnZo1bFRqUguRyAqkqPNhHtotsDhrW2y",
+     "n_events": 2,
+     "buy_ts": 1783114682,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 12587418.78,
+     "sol_vendu": 9.0484,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "6qPhG9X1YUWHekKro42H6nZLRNRU5HMbnAXSgNqepump",
+   "n_wallets": 5,
+   "n_avec_transfert": 5,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 828804297.2,
+   "tokens_vendus_directement": 1682741.07,
+   "part_transferee": 0.998,
+   "delai_transfert_s_med": 14,
+   "delai_transfert_s_min_max": [
+    2,
+    25
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "86zVWGEbrwMoPBdJg3u7b6gfpnBxbf3q227T2P6XKcg4",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "FxvDxPiwWJ9mnixfmvLH6D43AW7BpVHqcNBoMQrt71BD",
+     "n_events": 3,
+     "buy_ts": 1783125200,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 416157582.94,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 7,
+     "premier_transfert_sig": "EzzjZgfZM4nL9hgQ1TQY5Sx8QfWYo1Rtsh8Z1JHkKq3nXNRZToE3yw7VxbnFtGBroDK1HFayXxuoHi25TfpZ4LY",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "G5VmPHsAYnB18d1s42NNjknY5NZkWXXYHGdH3TLy8wQd",
+     "n_events": 3,
+     "buy_ts": 1783125200,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 191959878.58,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "3fNvdZ64BUNmwEemW2vCwZNw6PA4K5LAj9f4RNx3UhfmTC4KXAQPRPtu6WgFiXsnu4yhMBuyHtMwctJLFkMbXSif",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "2YNd7N4NCCvG4Jtb7dS7uUzNYkX9NP82bT7XA2eSURPA",
+     "n_events": 3,
+     "buy_ts": 1783125200,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103342256.47,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 20,
+     "premier_transfert_sig": "4FMoFi4ECrpJDCb2oZ6nYmnG5sU9zUDXWRr6MPtmsRNfzhsx3MmjE82SkMtvVjj6zYiHFTmZAK6cCFHbG59Pjv1h",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "AoEg9FM8op17cdL51Eh1T5rtXwRYbKQVAkVhQwZsiKvq",
+     "n_events": 3,
+     "buy_ts": 1783125200,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 64896214.22,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 25,
+     "premier_transfert_sig": "4TuaKgfShZKbFxpdYSAgT3YcVmexecohqY3XohsGWwPtTvrw6KCwF19tChRRgLwCnSeUQ2aY8zf97ahgQEAFjaVw",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "RDCT-d4fb6b1f86",
+     "ata": "8VK7PniCEnwuV2ckNMqyJ2buuxuRQvREV3ZK4aTeyHNk",
+     "n_events": 11,
+     "buy_ts": 1783125200,
+     "n_transferts": 8,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 52448364.99,
+     "tokens_vendus": 1682741.07,
+     "sol_vendu": 0.0019,
+     "premier_transfert_delai_s": 2,
+     "premier_transfert_sig": "5mWfsghghKMagmpUT6DBRptSYcHGsKVW38UTp4YSXwmm4d4rnXM8bRj5cEas3MJtJbSZNb5dBy7oCb9i2eyXzFt2",
+     "collecteur": "86zVWGEbrwMoPBdJg3u7b6gfpnBxbf3q227T2P6XKcg4"
+    }
+   ]
+  },
+  {
+   "mint": "3cH1aqzTqNuEZpDVgJ7MvQbKJWZrqkmYyRwbvS5hpump",
+   "n_wallets": 5,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 776355932.21,
+   "tokens_vendus_directement": 11887853.61,
+   "part_transferee": 0.9849,
+   "delai_transfert_s_med": 13.5,
+   "delai_transfert_s_min_max": [
+    4,
+    22
+   ],
+   "collecteurs": [
+    "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy",
+    "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu",
+    "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp",
+    "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+   ],
+   "wallets": [
+    {
+     "wallet": "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+     "ata": "B74MU62un38E3dooFphcCcjzLJ8GLqvgkiBaqYyxnhiq",
+     "n_events": 3,
+     "buy_ts": 1783128306,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 416157582.94,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 4,
+     "premier_transfert_sig": "9LPucg51T2SPcXAoWcSgNdRjV5rezJ3aihz1E8Hrk24XTfp1TzjVHraBZitVyfLcKYyuByqEj8h5p8Mh296zst1",
+     "collecteur": "4FKvKXaY3RydPPCHwhBDRg38MJBrSLcTpLNh4kN7exHy"
+    },
+    {
+     "wallet": "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+     "ata": "HwnSwVhcDLQuZu8HXZvt1sYAFo24suy9VS8NB9d83dPR",
+     "n_events": 3,
+     "buy_ts": 1783128306,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 191959878.58,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 10,
+     "premier_transfert_sig": "2m3aUbBXfqTrwShdAGHeZ8v22enfRxkkiW7MaEcLpLCCU5dWT9ABFzFs2FiJ4Dnr6aiFzHradcpkGuyhckCFAFRw",
+     "collecteur": "NwhipFFcd1fHSiXMsZNW6C4m8AfhT9Mk7ZHKDwsWnXp"
+    },
+    {
+     "wallet": "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+     "ata": "DKEwfPK1YKF4ygryT8arww9oRmgXFoCqkTUCMYpzu8B2",
+     "n_events": 3,
+     "buy_ts": 1783128306,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103342256.47,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "5UtmpaeNBNxJvS6jExuqvumo261XMN5zcSqGmt9Budzs7HYBjYdQuPMXfT6kkxUyhHjYAN2VaTJpWnzBAXm97zvC",
+     "collecteur": "9k7hbwNhmbWF89racE8GtEfeiwBYvjymYgVyH2neimQu"
+    },
+    {
+     "wallet": "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+     "ata": "6H1dQZdRpaHgriWMXGFG4JSFehoUgCKsr73CUPiSvmep",
+     "n_events": 3,
+     "buy_ts": 1783128306,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 64896214.22,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 22,
+     "premier_transfert_sig": "4MVagZMe52rKsM9bqpgk3h5yxFa9FYgnTkm44ebhmDeHQSNShGkSPgR4BDFSW71MFJJCgz7tWxvJs2y7wrJ1U38S",
+     "collecteur": "DW2WsdXzLXFQ6XSqreUBuUrfLLPHFJ4atGHwLoLoeRzp"
+    },
+    {
+     "wallet": "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe",
+     "ata": "BwYyTwbL8Xk6afXkZMhYzUUVj7XCm2qzwMsyXp9jC6dL",
+     "n_events": 2,
+     "buy_ts": 1783128306,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 11887853.61,
+     "sol_vendu": 7.2936,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 788357564.43,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 22.0,
+   "delai_transfert_s_min_max": [
+    14,
+    35
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "D7XMkYFXDCGYihkRiAcR9CAtNdea3zJuUQjnetr4wbma",
+     "n_events": 3,
+     "buy_ts": 1782634955,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 441889207.73,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 22,
+     "premier_transfert_sig": "5gpv12TzJqLJBr8mk5VTMW6wFozbUFySxqXnbYueNFnnShV37CK7bzxFKsknW7kHGginz4yDepugPSnXseDCxCLm",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "DFg69jqj2Xw1t5YUFmVF5UuuyD9FXbD2SUeDugNgF42S",
+     "n_events": 3,
+     "buy_ts": 1782634955,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183171699.65,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 35,
+     "premier_transfert_sig": "4uMrdNDDXMAPgPnSaX82bxW6tRjebjMXDi3gYm1voyWsiYJMnK2UxGq5cVRfw1fxWvyz7H2SGPpDVkFodtCx5ecw",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "6zzw1szuhP728RfEdQCyVccfBGJwUdv2Qsh9n9V8X5Qn",
+     "n_events": 3,
+     "buy_ts": 1782634955,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 100166203.03,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "35dzrT8ABWkQuD4oLQhQGxA1C8w6QSEaqKcKjNkyvUyp9To7ifYrQLfsChBQpFrnCjoaxooGsgJtAiPHE8hmtLFr",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "5J5tETNDwV71xGV6s47hiGmFzUWjUFFMuPPP9VMy68JZ",
+     "n_events": 3,
+     "buy_ts": 1782634955,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 63130454.02,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 22,
+     "premier_transfert_sig": "3bgzjpHiG5kHxDJoNHdVFkF2U1bYefu5PgnEmwPmHHyvqP7QjtFUZaS5GDV1GV8YRXUQUFMTtWZ5614HE4Y4Yr5",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    }
+   ]
+  },
+  {
+   "mint": "EmP6i382zAaURiidLi4qphFvuAhsfQmTcV1F8iz6pump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 788330221.29,
+   "tokens_vendus_directement": 546827.27,
+   "part_transferee": 0.9993,
+   "delai_transfert_s_med": 24.0,
+   "delai_transfert_s_min_max": [
+    11,
+    41
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "5EK4ydcAc4PyMWB1weEQXNYrL6w53qiaYZKoQ9pbzRQk",
+     "n_events": 4,
+     "buy_ts": 1782638510,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 441889207.73,
+     "tokens_vendus": 135791.6,
+     "sol_vendu": 0.1005,
+     "premier_transfert_delai_s": 11,
+     "premier_transfert_sig": "5YGfzMHQN2qm8U8hGUFKSFnfpyxZ2CXnW3vC4dppBrdWJMQiid3u4xEAgF7qVs9VBVpWkAnnJ1My3r2As3cu212A",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "F8dQAxUFCCqPPizwSktoBgALQqLj2c5JeMqzvwt1JEWr",
+     "n_events": 4,
+     "buy_ts": 1782638510,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 183171699.65,
+     "tokens_vendus": 139964.11,
+     "sol_vendu": 0.1037,
+     "premier_transfert_delai_s": 29,
+     "premier_transfert_sig": "3d8u14enQKjS5Y2AeHvmFFALaqWvyS9jg4CJPjbCE5TAv6Fyu9Ss6NDuUnJsD2Euw41mbWyGYxanSyVv9ZTfQu3E",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "CJzTdqFTXAYc4PcER1tfgsUDhP7xghBGJhWStm4Di4a9",
+     "n_events": 4,
+     "buy_ts": 1782638510,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 100166203.03,
+     "tokens_vendus": 137000.74,
+     "sol_vendu": 0.1037,
+     "premier_transfert_delai_s": 41,
+     "premier_transfert_sig": "3SmmqHzxh1rofyuNYof2zJaozPYrML24kbADHVuqVh5meeKrohFMN1hWjZ7tZsMPJZRYgbdDvStRTQcteXGp7gUp",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "f7p59jhyt1undEYUvcEChyq8rzjSAmM17Ae1BY8Yy6D",
+     "n_events": 4,
+     "buy_ts": 1782638510,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 63103110.88,
+     "tokens_vendus": 134070.82,
+     "sol_vendu": 0.0991,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "5LFBtanMixbMTozkzS2e7HRThFtnrLa7CBhKqc4tgRSZ1EYAAWvcHCvxN2BHgjJbE73wjsMmh84kbwVbEMci78F7",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    }
+   ]
+  },
+  {
+   "mint": "tT2Ss23K4WmE9pvQwA5rfaVJD3kmExNpxYUx6xKpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 788023573.25,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 21.0,
+   "delai_transfert_s_min_max": [
+    11,
+    34
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "3VFK9Ys9LWh6HgKKXz4KaPwhX1k1r4UEUr6qZt2txRN9",
+     "n_events": 3,
+     "buy_ts": 1782640983,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 441655860.1,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 23,
+     "premier_transfert_sig": "yL75QM4cuH4LGif1ztg7JyFyUGrf4BH9sygeQzShdFTP9YqmUVqQinZpGQvjZhSGWaoqC66zgZtGrgbi7AxNSF2",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "58u93zYK2Q1KwtxdX5qheYoPZvuQpcEibDQeQ1h2PKLk",
+     "n_events": 3,
+     "buy_ts": 1782640983,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183110516.81,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "5TS8hTcCPbYuiAQFyCcGL5Ue2ijBkvLND8icCjMSWBtMGaZJhTg7LYrtbfZivaU7JKdZFDdS2asXadM74NMptPSX",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "DAdLDWvZFFWZPNDKcEAUsrQ6YAJ1cYTBNDt6jZqxAXS4",
+     "n_events": 3,
+     "buy_ts": 1782640983,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 100141558.39,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 11,
+     "premier_transfert_sig": "2XsucgvP3bdfTew6nffYVVqR6ZvUm7eQ7kpcdnaNTwrYjR2KzzVyGmAtDunVueX7LZttGKzMUAfJXucGimvnhiej",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "8UZT58XCpQRogd7XCHJZphiRPp5eZ7TGBbA9cFkPHD9T",
+     "n_events": 3,
+     "buy_ts": 1782640983,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 63115637.95,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "Z4ydiaEWEQzcXMChnPdSeyhwVUF6eF4T4nwFzqqwUTEVaZeGNQqNn4SDeAGGYKQnwF2DMFhd9eUAeaFLkBWTwPN",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    }
+   ]
+  },
+  {
+   "mint": "9NKToDBF9tiYxoGSjyhcBi2NqVyJjFJyCW98UPVrpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 790810668.31,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 31.5,
+   "delai_transfert_s_min_max": [
+    18,
+    39
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "EdqUkbwCq3NZtnAjexydcrYWbB4SZn64JZZmng5VxL9Q",
+     "n_events": 3,
+     "buy_ts": 1782647923,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 450280276.72,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 39,
+     "premier_transfert_sig": "4iGELxqwTWy5PgQ5dpbjhW84GAN4f7qWSU57VqXRT7SUy96uGLaay2ZzaRxQLAT1L4Ai8h54f34RVkLcZoUXa2VW",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "CY2SondxwSGY8CVTit6zzLpykBWAHAo6XbBFq3rhJ7PA",
+     "n_events": 3,
+     "buy_ts": 1782647923,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 180973576.46,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 31,
+     "premier_transfert_sig": "4Pys6J2LsrnkpkifdbKGNABhJqHCqzKm3kLJasBMUtyrjoZVwdpZe2WFEvhb8ynNUKuo6YFQu7hr3h3qrwB45QHN",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "BZW1DUxC6ZHmof9F1xBYP98YzRshfySgModRdNAVSyL5",
+     "n_events": 3,
+     "buy_ts": 1782647923,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98081131.16,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "5nSCQKbtmDpoLcpeEB8ZsicgT6NxjV7GLf2dPVf66UmfLK6YGwRVABeKUxwmYq8qDXtorh35Hz1v1QzapZpNAXUL",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "4ZnZW54zwkmAw7CDxS2WaLJSgwUxViG7u4WJMPj1Wi1K",
+     "n_events": 3,
+     "buy_ts": 1782647923,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61475683.97,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 32,
+     "premier_transfert_sig": "4XqGefrCEHtVBzUBATvEJ7Q4rCVS2qUCmWZDSMDuRRzu2YT77cSgeNcRwowEGvJWDWr3UP4AZe2HzoYXzNHDaYJb",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    }
+   ]
+  },
+  {
+   "mint": "48pZaxQf5dHvg2K6cfz9Zz4LmXBLv96VRDV84kvgpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 785598749.73,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 11.5,
+   "delai_transfert_s_min_max": [
+    8,
+    15
+   ],
+   "collecteurs": [
+    "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "8QQhSK3vMonbbgttFtDvzzH26mjKcHrWNiBTp5kJAs2p",
+     "n_events": 3,
+     "buy_ts": 1782662500,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 439918100.34,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "4ErR5BrPW44ebcuhLmGWdoBfdWbEiAaCaC6znoYkdhdZDvd2KAjNDni77jHiEUsW1f9SAZE34ryit5XGKkeyj9TU",
+     "collecteur": "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "Ct2xWDNvtpk3mmyKnpf7v7G5Wue5JPa1wDFNs5uQ3LZw",
+     "n_events": 3,
+     "buy_ts": 1782662500,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182610354.6,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 9,
+     "premier_transfert_sig": "BpM7bXBqJyqxzbBTU5PoEsSBSbeLb1BDf1XMsMgNDri4a8R1dg47U5pCirzfzkpBUV8S6Su2BTRiMnmnaCNF3ag",
+     "collecteur": "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "9gnMMSikZF6RwBnTDkr3kMss9pPianGbrF6k7G814r9q",
+     "n_events": 3,
+     "buy_ts": 1782662500,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 100268380.5,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 8,
+     "premier_transfert_sig": "2iVSQXmd8fQtgQrzzDcQLv6Df3RLbqrDfWh5kHajSZRyub7yfkTTA1qYu7zzfvp7ucUHtKkZtvMqDCdK6RBFN5aV",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "BLjDBLipVh1fvUiqBLkRhoXokA8ghbKU7AnnQc8eLGtd",
+     "n_events": 3,
+     "buy_ts": 1782662500,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62801914.29,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "42zhm3T8BfGD6BrdvcrBcdgoV5zoLU2kNPVoqWFg7HZtS7kz5kEa2jMgZV4U8atY6wKM6QFFdmi1p3wRqchPt2Hr",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    }
+   ]
+  },
+  {
+   "mint": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 2,
+   "tokens_transferes": 783967286.13,
+   "tokens_vendus_directement": 150700.39,
+   "part_transferee": 0.9998,
+   "delai_transfert_s_med": 16.5,
+   "delai_transfert_s_min_max": [
+    12,
+    20
+   ],
+   "collecteurs": [
+    "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "GBpfRLCBYveRNPsYcaAEtppdVJmDCzGCyVNyE1Gr8qp7",
+     "n_events": 3,
+     "buy_ts": 1782663501,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 436332419.28,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 20,
+     "premier_transfert_sig": "34YUYyjchyLsboDJs9cBXuSvn79euboW8Vhf2ZchPmq9f5kWxsSyvHVHXdMY927R8TLx33QkEpiN7H2JiwP8zh6m",
+     "collecteur": "GvbttFjLD6yprE6n94PnKWycg2mGvkoQybvhsAu7Gm6B"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "fSLfxZ2P6aJ866Lwuv3452tzfTqz9k4cNRrc6aYwTvP",
+     "n_events": 3,
+     "buy_ts": 1782663501,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 182849326.18,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 18,
+     "premier_transfert_sig": "yTZHsTP8BsYFq67Jd1jPoZvLNhNnZeEPb2dxmYrtd7fUEdiarTCn7dhtCatKbN3HDLs2Rd7VJEsYPSDvvPszoEU",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "FHy5yztb2zRartjkfnxNf68SWoEbwm1WuKckCEZpHLjv",
+     "n_events": 4,
+     "buy_ts": 1782663501,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 100987001.73,
+     "tokens_vendus": 74166.11,
+     "sol_vendu": 0.1002,
+     "premier_transfert_delai_s": 12,
+     "premier_transfert_sig": "4W9c8oGwpW3Fc6CkY8dw2ADXSRdBkiA8ZqVujeQq7EVcZHMyt9SbFm32Fuy1xVUtfocdVwDw3AoNbegTTZ6TV1bx",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "AmRAzLjCUzMqgGBwZ9tjg4S9B1ammjsMr88e8EkP9d5v",
+     "n_events": 4,
+     "buy_ts": 1782663501,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 63798538.94,
+     "tokens_vendus": 76534.28,
+     "sol_vendu": 0.1035,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "5Z5oJwo53tQ2Vt4aWVaHR5QEGiY2r6FRwTrK5RTj29GQTiVpL1HHVzqWYbuA7DoThfrA3gKLnrYHMoWgYzBN8Zqy",
+     "collecteur": "9TSgNnndoYA5VJBkGCVwb6D1icqgQNjvXisS6SdM4JdE"
+    }
+   ]
+  },
+  {
+   "mint": "8Xa1jqBhrxEFX4HgMd9NNRVjK5ap7tBrr5aebCGKpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 791009889.3,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 34.0,
+   "delai_transfert_s_min_max": [
+    13,
+    49
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "Cm8zgBpDoH6ZEUf6PeXsoXbN2SZrceaybFgSVyWGdbsL",
+     "n_events": 3,
+     "buy_ts": 1783078818,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449196686.17,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 49,
+     "premier_transfert_sig": "3hbmfP4TPKCFEvkb4rt82514JdkpyL47rpuioWk8V4zEZ1umX8VNY1sCXDsyafPLuUpUxtw81fFdqyehoX8x4m1A",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "J98SfsJAQDZGWuV3ad219kFm48Z7ySgdrSfZjfDwY9fu",
+     "n_events": 3,
+     "buy_ts": 1783078818,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183274387.39,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "4UaamEEQxx6Ut1iCEJYr7AgHrBcT2bogkiPRVmKySzGj3ihQywHfibKKsog46f1e8d8WMyMqo7uHMtakfLTgN39r",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "8ddzwv2w43yxS6pmLS1RbPU2UbTd1ReEdQ38BUD5Aduc",
+     "n_events": 3,
+     "buy_ts": 1783078818,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 97163258.57,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 40,
+     "premier_transfert_sig": "65UWrUVBawunYmkB2i2GMJHAYXS35TAk4DoTTcq2QYcVGqyWY35c8MT1jkNMEfQZYvM4KvnDNBQZ1bfR1FsGhR8b",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "6fxHuYiBXr1je8DRLwHtMwpwK13CedqZT54QHVUhT7Pu",
+     "n_events": 3,
+     "buy_ts": 1783078818,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61375557.17,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 28,
+     "premier_transfert_sig": "3UVnsuxXeDpTCHWhKTxpqhcGxczJnkTSKJLQ8Hp5iwBE4wwSR69Qea5PZrJ3d66NZHxRkQH4TKKqWWXBoQQFCJDy",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    }
+   ]
+  },
+  {
+   "mint": "ETGVz4jeuZbKqFd1GoBQeJ5nS5pB5Nah9FLvDxTcpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 790766358.65,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 24.0,
+   "delai_transfert_s_min_max": [
+    10,
+    39
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "HP2DpVqXJtStxCGZPU4tC7qxFqf4hnCTy9kbj3kbUZTN",
+     "n_events": 3,
+     "buy_ts": 1783092865,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449027788.22,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 29,
+     "premier_transfert_sig": "295HfqGfAYmnNUj8CZ1BbVzoED63YngnNMeSgdyC7Y6GRRoQ8ZqCfVYQRoZQuzEygQDzopGLvBepJiaJHFmPm6PJ",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "EQA4MtNhcPS6DA4NfgdRnarrUJQk5zuhdYf4SkrfiPyG",
+     "n_events": 3,
+     "buy_ts": 1783092865,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183335092.9,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "66b7EMV8mFiaAGYmXsqfj7yiswuDNzxJSaXFjhTgpxD6z6cBytHVbr4XadQcSTrT3sE7Z7yZ43p7VsnfJpwQMVC5",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "FFbgiEbZspPDzcrBkNWFREBs7jU8F6W6ieGDzcoj8n2Y",
+     "n_events": 3,
+     "buy_ts": 1783092865,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 97205785.29,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 39,
+     "premier_transfert_sig": "3bhSoAEvoqjVxdZm4zcYAFG1GR3Ae8VPX6AuxUcqQbf9vrBvxDLiRLuzT97AAWdrmZvs8n9r7VDGDtvpmTmeSLvT",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "2qwMeeyzTCZvsTGvcwgEcqyaDmmjWJoGxrRAPe4NrA62",
+     "n_events": 3,
+     "buy_ts": 1783092865,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61197692.24,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 10,
+     "premier_transfert_sig": "3KoXii9sqr2oxBeKd3Qj8VeX612gBMqf4LbzKYtHTtnjmd4btuKeN72KauLs8gyxEFyWwJLX3SoNkpYPd4LKduUv",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    }
+   ]
+  },
+  {
+   "mint": "Czv6T6sF5SMTDDYns5tEeSsKb7MNK4QWAnvZwsMxpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 791485891.26,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 29.5,
+   "delai_transfert_s_min_max": [
+    15,
+    54
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "8VaJrACct22SxgpHMaSxsoCkvEWL3Noa8JAkB4VEmXR8",
+     "n_events": 3,
+     "buy_ts": 1783095352,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449027788.22,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 24,
+     "premier_transfert_sig": "2pGx3JecPE5UVmHxCEj96FPvYmYXj7nBSyumRRq92bobdVKaqpL2ckQUcbLfKiXzA6XpA7euD6SYCuEh7vG5yD4H",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "JdshGRGx1gS67Ji7q6zXMh2GFpiHtHhfmA6nAZ6tiww",
+     "n_events": 3,
+     "buy_ts": 1783095352,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183485345.8,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 54,
+     "premier_transfert_sig": "5bcD7L9R7Coicip4LnTTL6PpB7tmbB9R7LuDprzoFQUoN5nXu8Yc9Lec5tS2h4VjoNCgDqRXa9nakvrhZwwhTCS9",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "BfNaTWmvbMrmZBg5bsDm1ae7C5a7hxERCXLdb1f6dfS8",
+     "n_events": 3,
+     "buy_ts": 1783095352,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 97099312.33,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "5kDVy9E9cW79ZiezNhyhJ5rGGLXVbNmy3DhBx1WmjmmRhTgZycUi6naezbCNXVMhJ15qG72JDwTiCiHtDtgQp29o",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "7Xfi2uvY4KVNzSk9CsAkqHAKEQNuTgLQdxrGjitC1tHn",
+     "n_events": 3,
+     "buy_ts": 1783095352,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61873444.91,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 35,
+     "premier_transfert_sig": "4CgEyHQy1ixxTrvXj3KDvd9a93kQUhudcLgA8GStNct6Dp6bGUHm9TxhsewaTqaDPtUF1RzBjFsnKkS1m8TxWheM",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    }
+   ]
+  },
+  {
+   "mint": "CBvxtHtM9W4UXT1m7pwkPkaVDPpKQj8WGMJe7tQpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 792299200.95,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 24.0,
+   "delai_transfert_s_min_max": [
+    10,
+    38
+   ],
+   "collecteurs": [
+    "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7",
+    "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH",
+    "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA",
+    "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+   ],
+   "wallets": [
+    {
+     "wallet": "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+     "ata": "Ht5iysg6UrKBDwctJFB1RSfiDHx2xRbAv4rQoJ8TtMpk",
+     "n_events": 3,
+     "buy_ts": 1783096039,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 449196686.17,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 38,
+     "premier_transfert_sig": "2YuJRVJbagjrdH9m4fWrEYYDcXELEpfU8JGQvkwDhh1ucyumbCgZ3p8HrsGjybZEuKQKjWqu9iaUNK7SoJM3KijA",
+     "collecteur": "BmjceK9NXKG82X4uvjHHXRSgrLdkdrRCaAt3jKacEwnA"
+    },
+    {
+     "wallet": "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+     "ata": "GV3JiY9zpKMEwURXao6YQWAnHNYd7oywA1ocegVA4hoY",
+     "n_events": 3,
+     "buy_ts": 1783096039,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 183610646.0,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 29,
+     "premier_transfert_sig": "3HaKb1xXFDnHte57HKydQBB8W2xAVrU19PrKiNwHuf3THBbp2654d5UAX4agzjBW7kzGNcBMhkimjk1f6SQAteYd",
+     "collecteur": "HGK64NAiBJPVCaVXFe42ZdDyNGGViVLWCWUBT4obwZfx"
+    },
+    {
+     "wallet": "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+     "ata": "FstzYWUNUiWNUTHCPkuwydkey5i4SY5VCpULmecA5taK",
+     "n_events": 3,
+     "buy_ts": 1783096039,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 97910487.14,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 19,
+     "premier_transfert_sig": "66f4D1cP7kFfb7VAm4tBk8eEdjkVPh2gY7inPw986ZoGyzpUmPpr2VW7o3DVKG8MYen6dY6Kano12dCsjirUCeVq",
+     "collecteur": "5Xbhacwcttq3VwwNxbvPE5DC2vAFVPuvdZnedumE9qY7"
+    },
+    {
+     "wallet": "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+     "ata": "8iE6p1wCBdbBb2ZQjVE1QWtYWEBPr3vDKonywr4kVPYz",
+     "n_events": 3,
+     "buy_ts": 1783096039,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 61581381.64,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 10,
+     "premier_transfert_sig": "2CuDxDqxm8pWmdyU3m9PH16UEVkBLD7UsHSMENkCA6xP8FTQ4PdWVsoEYsVxp5XKcD38sx66tifN2pnBpnrKYWCR",
+     "collecteur": "8uSfX74yDSvq2L8TjM6sj86mnYziqmJCGQsLMLzk4vTH"
+    }
+   ]
+  },
+  {
+   "mint": "ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 774459255.2,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 13.0,
+   "delai_transfert_s_min_max": [
+    13,
+    13
+   ],
+   "collecteurs": [
+    "6KtiHxXivAQQRJsmdKDJwbvRkdChp7bVkU6a6Ac4JVGM",
+    "8KGHfdGHxGHS6koTnQPqhtRy7ahFqqXFyLZi4yy6PhQt",
+    "98caDCuNc9P6qM8s9Mrn9zyruEBhSHfAH2g3pd5MLemX",
+    "DL2MP35BpmAnynUhdwkUfyQwsaWvBjacBRnGFFhyAoZM"
+   ],
+   "wallets": [
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "HXcMTCptFdGHqhbKypQciGqm1Se3igGMCV6a6CUEcSZ",
+     "n_events": 3,
+     "buy_ts": 1783064195,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 429397334.09,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "34HMYkNNacELT5pgvo1JzYcjqDJoBeBdmhvfwha2V6VkFsCDmGWRUHH56rSXT3dTq9mM2KFG5Md9XTgwPXfNZ1GG",
+     "collecteur": "6KtiHxXivAQQRJsmdKDJwbvRkdChp7bVkU6a6Ac4JVGM"
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "6JLpMQ86kJaMyoDwN5HeVyWrXDM48cAeA6Qx3aefmdUK",
+     "n_events": 3,
+     "buy_ts": 1783064195,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 184152339.36,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "2EbDHBqGDTqd7WTkELK4Sk5Se9yazzWrn7rmRH8o91cCWqHBFdmNV374vb2jsymKRSSCBe7HRh6L1D585PH1Uywy",
+     "collecteur": "98caDCuNc9P6qM8s9Mrn9zyruEBhSHfAH2g3pd5MLemX"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "8igHfUvt8TWqopKjgdsu69L7QCYzWSzZH1C8Fy9BVjLw",
+     "n_events": 3,
+     "buy_ts": 1783064195,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98402638.59,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "4DKGfPaxfRTGBTgXxuhbv1wJWfqV4wqm8subgkypDBh5r99w1Wwn2o4cPwhF8ciKKsG4sb2mb3EVuU64YWQGPGVG",
+     "collecteur": "8KGHfdGHxGHS6koTnQPqhtRy7ahFqqXFyLZi4yy6PhQt"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "2vedpfJHYnvAGkn4RqnJCpAfrRpuV2ZtX7LnpnMqYJ25",
+     "n_events": 3,
+     "buy_ts": 1783064195,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62506943.16,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 13,
+     "premier_transfert_sig": "9biLFvmZ9VXZHjbCmci9GkT1KZKgAVghJEqTtMxRUScJEz4Cp5BNiLXYWi5pJR9kWmcBKHZAvzbDZLxi5tQboBm",
+     "collecteur": "DL2MP35BpmAnynUhdwkUfyQwsaWvBjacBRnGFFhyAoZM"
+    }
+   ]
+  },
+  {
+   "mint": "fCM1RmVwhkVd8o7NrhAyWXmtVPqPZkaiWdgCcgLpump",
+   "n_wallets": 5,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 774459255.2,
+   "tokens_vendus_directement": 12905523.96,
+   "part_transferee": 0.9836,
+   "delai_transfert_s_med": 14.0,
+   "delai_transfert_s_min_max": [
+    14,
+    14
+   ],
+   "collecteurs": [
+    "5fcxcP8U8KoZrP96XRBdM4yiKjvN59ouMVvGDZ5hosJA",
+    "9qfqVWXdGFRRgkHNzUyHHwnTxVf9N1V3jZ8akYpxsyin",
+    "C3dMdAzMRPSdyvKCwqqNTWH36rLyMEDrjhwnn8oujtBC",
+    "HujFD8A1M76ZS4KoE49dR6WmW7M4S1hpPfQ42F28H52P"
+   ],
+   "wallets": [
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "55RbvZd7PEXzy3LdPATQHShSD5F6yRiGGFoBXjjQWoem",
+     "n_events": 3,
+     "buy_ts": 1783065268,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 429397334.09,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "3pqHaNj8DDMtitKyCxEBsNQPUuun2Sd5bvdPVBSGd8jfj1a77f6W11zo1Deg3GEepVaaFmej9TSv5zTCsNitUsSM",
+     "collecteur": "C3dMdAzMRPSdyvKCwqqNTWH36rLyMEDrjhwnn8oujtBC"
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "GJZS6G5EcGHN5CRDcFzyAYqocoUkExq354EmaUR4uidZ",
+     "n_events": 3,
+     "buy_ts": 1783065268,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 184152339.36,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "5RQ4GE8yir53vADRRN5zMTs38n1k4HBKs5WMEnCzKvf1pRLX3fvFpTLNn6EjDp7fbU6AE6mhagNsjYQBoqzUs2pY",
+     "collecteur": "9qfqVWXdGFRRgkHNzUyHHwnTxVf9N1V3jZ8akYpxsyin"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "J5gKUvtN5s5n53gHxjthfzxhoaNYLk9kYAWQhQzVYeHv",
+     "n_events": 3,
+     "buy_ts": 1783065268,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98402638.59,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "5QusGgbjaC4QDHYrbsxAsWHzwwFVdeB2Zj5RP4sNE4yPYckTLLwM1ahswZd17rJx7h79CUACmJfdUomSMejDC2qD",
+     "collecteur": "5fcxcP8U8KoZrP96XRBdM4yiKjvN59ouMVvGDZ5hosJA"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "3tsqdcjGD2YUrBG7VWjBLaZXdiECLEq11e8mFEpp1VrM",
+     "n_events": 3,
+     "buy_ts": 1783065268,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62506943.16,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "4RyMrYcJTWsYXVz2taCUeS36EFCx6kqP9SFsiQWTQy3XKffKW5QKH1EizG9PScHs3Wgfxy3AMgbeBGHd9bjh7zkS",
+     "collecteur": "HujFD8A1M76ZS4KoE49dR6WmW7M4S1hpPfQ42F28H52P"
+    },
+    {
+     "wallet": "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe",
+     "ata": "HqgnVsCyhhaFGpYHTzzohiKeoY21C8KYYhbgoYqfcxgH",
+     "n_events": 2,
+     "buy_ts": 1783065268,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 12905523.96,
+     "sol_vendu": 7.3648,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "4faz9H9B5FJc6uEMoLT6C1Lg2j5iZ1DEsK535Ekupump",
+   "n_wallets": 5,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 1,
+   "tokens_transferes": 774459255.2,
+   "tokens_vendus_directement": 15207349.69,
+   "part_transferee": 0.9807,
+   "delai_transfert_s_med": 15.0,
+   "delai_transfert_s_min_max": [
+    15,
+    16
+   ],
+   "collecteurs": [
+    "3amLVK5wHv7xkXMGgeuGGSaBUUZgMHDUg8RVsDuhmJvE",
+    "4GjWK4APk8pXCPQDRRs1X9WFsrGVZGa1G6icwPB2agBE",
+    "5kShZ6nm1RD3Mfa9dk7D7HFjMsptJ6k4jzE3iqkGWwka",
+    "9N3ZeU3PuUWYiJS1hPGN4wXeBP8BPcmBMk4CNsCQqznp"
+   ],
+   "wallets": [
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "HtitzFrKRUD6uwp7h1LmyGfejjHQWmgHXzJzNFtqb1ye",
+     "n_events": 3,
+     "buy_ts": 1783066100,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 429397334.09,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "4ViymnstSSrUbujjncZPoAUQXSbpxd8aCFZqA9tovq2GaPCmFMZLqxKY8jwZfk5FCMn1v7exQL9c7oBrwGT1Zymt",
+     "collecteur": "4GjWK4APk8pXCPQDRRs1X9WFsrGVZGa1G6icwPB2agBE"
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "DfXZKZCNJ6ZyQczChomouytq2BSXHDg9cocLv89vjknf",
+     "n_events": 3,
+     "buy_ts": 1783066100,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 184152339.36,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "4zpN4eWA3NfK2cCaRZHgyGcAzP3dq2JTyd5ND1qFLsirxvpRzpvAxwevrRotJT7nV7Tvep1H8jZji2EG5Y2MvZtR",
+     "collecteur": "3amLVK5wHv7xkXMGgeuGGSaBUUZgMHDUg8RVsDuhmJvE"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "9kwUHmh8cvv2cwCjH6jPY7wWnpKyn8LJsfNzHyzq4iN7",
+     "n_events": 3,
+     "buy_ts": 1783066100,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 98402638.59,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 16,
+     "premier_transfert_sig": "5i4X1L47ov7iqbowvb6weJfhvSy2nN3Kum4sPUNBtgWqahEbeu4Lo9tjRJTTursYLwf7MrBQdQEVUCY5FQe661h4",
+     "collecteur": "9N3ZeU3PuUWYiJS1hPGN4wXeBP8BPcmBMk4CNsCQqznp"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "8jVk5AJo8KKNEqehL9HCGF9Lu6G3TNCegvsmoVKspET",
+     "n_events": 3,
+     "buy_ts": 1783066100,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62506943.16,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 15,
+     "premier_transfert_sig": "2SW6jdBknS7VPbYNvgLkMc5XebqoMYatpkoUHgGGeENtN5KPx8sgxcmoUJpUu2Dmsib1PqNaKuzKtsm5ddx8tcZT",
+     "collecteur": "5kShZ6nm1RD3Mfa9dk7D7HFjMsptJ6k4jzE3iqkGWwka"
+    },
+    {
+     "wallet": "F4nx9DbZxQhR2nf8TfRnZ9hFxWJa9tC2BK6ZVrEG2ky9",
+     "ata": "B329FwhFcCfTUqK6tK1ujAxuxgm4gyQxxcDDcESRUkqH",
+     "n_events": 3,
+     "buy_ts": 1783066100,
+     "n_transferts": 0,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 0,
+     "tokens_vendus": 15207349.69,
+     "sol_vendu": 8.8083,
+     "premier_transfert_delai_s": null,
+     "premier_transfert_sig": null,
+     "collecteur": null
+    }
+   ]
+  },
+  {
+   "mint": "HSAuwh7kJ9sS71vYu2pR3wddJRppUE553vTTMm93pump",
+   "n_wallets": 5,
+   "n_avec_transfert": 5,
+   "n_avec_vente_directe": 0,
+   "tokens_transferes": 828713028.44,
+   "tokens_vendus_directement": 0,
+   "part_transferee": 1.0,
+   "delai_transfert_s_med": 14,
+   "delai_transfert_s_min_max": [
+    0,
+    14
+   ],
+   "collecteurs": [
+    "2PxS6QYt5tzerBgRiHbvTMSqXgmBumCv3cEcvLt7A58o",
+    "5gZzNmSibQx7nDUbsSx5FvM3pHuY4qohVSE7f31iYaux",
+    "8so2PHYytv7pN8wwGf83hA4R4EyL5qkeLL3cWAUrJEG8",
+    "Ck3hZbdK1We82Bp4faKqzRPfbzqLtb3i3K77WCAEqpDR",
+    "Ei7fXocL8DiJCVxw9wiLRd8RE1rPTZLasEbqKYnheCkg"
+   ],
+   "wallets": [
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "9u5woFu2CP8bRyXTRFY5h9osYSc7NtBjHuo9iWRNEuHf",
+     "n_events": 3,
+     "buy_ts": 1783067547,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 431911990.21,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "4RtGwsjqcGx4KCbZ6ytPs63YbKGYW5EpmqRZG539R5w7Nude9b2svuNyidcY778RuEWaX2bxKQ7Bv5fKSFgnpHZ2",
+     "collecteur": "2PxS6QYt5tzerBgRiHbvTMSqXgmBumCv3cEcvLt7A58o"
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "3JYpugFU6tR8kUJrSsBs1c1Buc4QxFNAMosaekkPpRJu",
+     "n_events": 3,
+     "buy_ts": 1783067547,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 177434071.89,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "4pwa3cBz339zf2qs9mJtLBE43zYvpD5be1QWptpa65pQPCug9iFVmL8QHrS2vxAnYtVvrJv47M64sm9rv4XG7fya",
+     "collecteur": "Ei7fXocL8DiJCVxw9wiLRd8RE1rPTZLasEbqKYnheCkg"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "8mBBmkh7KqXMX6xLD3s4z6crfyXEQjXN33TwCRyKKzfU",
+     "n_events": 3,
+     "buy_ts": 1783067547,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 103451120.56,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "35KaZdeH368ZMVry2U754hwgBruZMqpkx8UJQhjbAek4ghBhCEjXLrTNd3q4X4aDrRHpgxgKDvW6vEFGff3onLCx",
+     "collecteur": "Ck3hZbdK1We82Bp4faKqzRPfbzqLtb3i3K77WCAEqpDR"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "ArHZVGZSo1mcsLiJoLk8gL96sAts34jfXsjq3K8iMMbZ",
+     "n_events": 3,
+     "buy_ts": 1783067547,
+     "n_transferts": 1,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 62575733.63,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 14,
+     "premier_transfert_sig": "3BmXDCv7KFSCWmHzBzjscjb1MrVAdFRKomaALFYmQJS8duskgfmb7yLpfZjQrAfDzL5fekpFJBu6ktbzNUYgqq47",
+     "collecteur": "5gZzNmSibQx7nDUbsSx5FvM3pHuY4qohVSE7f31iYaux"
+    },
+    {
+     "wallet": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     "ata": "GiSHHCLWm4HoH5XcWmjFSF6Ad9X5kEqyFmt26MSZDbnV",
+     "n_events": 6,
+     "buy_ts": 1783067547,
+     "n_transferts": 4,
+     "n_ventes_directes": 0,
+     "tokens_transferes": 53340112.15,
+     "tokens_vendus": 0,
+     "sol_vendu": 0,
+     "premier_transfert_delai_s": 0,
+     "premier_transfert_sig": "4ip3oax44kPJ4c8arTrgyXd4sMLmJ9TLw6SzYY4vi2SFtWzJZ242MdsoJjhkzfmVQV52d6NUszdpmnSi2X2c5nFV",
+     "collecteur": "8so2PHYytv7pN8wwGf83hA4R4EyL5qkeLL3cWAUrJEG8"
+    }
+   ]
+  },
+  {
+   "mint": "HmqYG1uryHg33JDrky5oAhCxTkXXDbc4qV8NqWXApump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 790734260.91,
+   "tokens_vendus_directement": 1193406.77,
+   "part_transferee": 0.9985,
+   "delai_transfert_s_med": 17.0,
+   "delai_transfert_s_min_max": [
+    17,
+    17
+   ],
+   "collecteurs": [
+    "2T4dbsWVpFG8SzfHMikwxep5CPS3QeUadaDa4JDhEgJ7",
+    "5UHQC2E9RhAivpTeHLVaJyqWwUymfEysGmYyPnNk519u",
+    "7DsXnh4CtdZeGqjT9mNszEMUXsyGBepEvELYDnhUMbaW",
+    "H3q4PY7UyB17s2dSCxDMQTjFS5cqReqVuN19UEMgVomR"
+   ],
+   "wallets": [
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "Ex9cy4K7VApjGXMNhfaE4bJ3xLRMYe6jxbvAzgJDzhQ",
+     "n_events": 4,
+     "buy_ts": 1783102716,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 452494444.36,
+     "tokens_vendus": 289060.67,
+     "sol_vendu": 0.3081,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "56svtR9B36PGKo8zgxamx5qMJv7T2BV7uXFyKC1z3D91t3sr7ZPXwM94t1NVYH694WmwkXbMEV4jzS25kSfCgPH6",
+     "collecteur": "H3q4PY7UyB17s2dSCxDMQTjFS5cqReqVuN19UEMgVomR"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "GW1PooEA3LDv5jaJXDrDExSt3RraN18G6Y5dLhjde4o3",
+     "n_events": 4,
+     "buy_ts": 1783102716,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 182117275.92,
+     "tokens_vendus": 309262.29,
+     "sol_vendu": 0.3062,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "3epGobsvRQLZQoNGgXdbsgWosYb2UxACXqS6TwRCfHXnsijz41aLCfTVuz5QrTwMDHuP63B1brCDTRvsyf2t1PRm",
+     "collecteur": "2T4dbsWVpFG8SzfHMikwxep5CPS3QeUadaDa4JDhEgJ7"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "7ZrhQijq3QkRJPwmfs3gcVnfA8wNN9poRSeRTDXAm7Sr",
+     "n_events": 4,
+     "buy_ts": 1783102716,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 97382452.12,
+     "tokens_vendus": 290981.69,
+     "sol_vendu": 0.2895,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "5Kx4ehSoQE2rwPfKGu4YTRPcRa9Vq1AbKdPHjQ3HxdM5oN7GfEbtYaJ2Qz8o5n6CMgJSC3SYLpZkbvf5KUna8Wd",
+     "collecteur": "7DsXnh4CtdZeGqjT9mNszEMUXsyGBepEvELYDnhUMbaW"
+    },
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "FRiiqDASqGUPzCHLCe4wrCmC2SfM66TiY717Ndfc5w23",
+     "n_events": 4,
+     "buy_ts": 1783102716,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 58740088.51,
+     "tokens_vendus": 304102.12,
+     "sol_vendu": 0.3226,
+     "premier_transfert_delai_s": 17,
+     "premier_transfert_sig": "2TmBsgYTsZyxpfb3wN5VmcLMJmrAZQhj1QSDtNbB7SRDyDnboEsPpLhkT2mu2Pz3YniV1J8QshatkHq3nM4f3bQ2",
+     "collecteur": "5UHQC2E9RhAivpTeHLVaJyqWwUymfEysGmYyPnNk519u"
+    }
+   ]
+  },
+  {
+   "mint": "7vAgNEgE27vqRaU1ti3oMi8Qbb6khDRRcCexYWnupump",
+   "n_wallets": 4,
+   "n_avec_transfert": 4,
+   "n_avec_vente_directe": 4,
+   "tokens_transferes": 792540225.16,
+   "tokens_vendus_directement": 2227056.66,
+   "part_transferee": 0.9972,
+   "delai_transfert_s_med": 34.0,
+   "delai_transfert_s_min_max": [
+    34,
+    34
+   ],
+   "collecteurs": [
+    "2T4dbsWVpFG8SzfHMikwxep5CPS3QeUadaDa4JDhEgJ7",
+    "5UHQC2E9RhAivpTeHLVaJyqWwUymfEysGmYyPnNk519u",
+    "7DsXnh4CtdZeGqjT9mNszEMUXsyGBepEvELYDnhUMbaW",
+    "H3q4PY7UyB17s2dSCxDMQTjFS5cqReqVuN19UEMgVomR"
+   ],
+   "wallets": [
+    {
+     "wallet": "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+     "ata": "E1pnG5PMruMu8LDo2KHA4r5GV5zDBnym71EAc8GHACjS",
+     "n_events": 4,
+     "buy_ts": 1783107556,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 452613471.21,
+     "tokens_vendus": 571591.14,
+     "sol_vendu": 0.4132,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "4wFmKgqJbiXa4Z3iG2NGPYR1YKrthdY8gL5ALvkANZnn46qCLvUEgVPGx3z8R2FGBvmvEYz2f5gpNrsJXJaLcbyC",
+     "collecteur": "5UHQC2E9RhAivpTeHLVaJyqWwUymfEysGmYyPnNk519u"
+    },
+    {
+     "wallet": "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+     "ata": "FRjRuxoVJuCpNVunqJAv5FASoBAkVkmUZa9TF1G6vhQb",
+     "n_events": 4,
+     "buy_ts": 1783107556,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 183402497.79,
+     "tokens_vendus": 528125.7,
+     "sol_vendu": 0.3766,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "4zURhETN3bwE9MkeD8reUNzr4xZuyrqc8kbozKNEeTBFWemNbE67waXJx7ayi5p3eYyoesgkJjursj75ookc7mBM",
+     "collecteur": "2T4dbsWVpFG8SzfHMikwxep5CPS3QeUadaDa4JDhEgJ7"
+    },
+    {
+     "wallet": "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+     "ata": "CoPrcj4VNWe8EfHkteadpGGn53fdniPYzXB3i1iWVt5j",
+     "n_events": 4,
+     "buy_ts": 1783107556,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 97344797.57,
+     "tokens_vendus": 571878.75,
+     "sol_vendu": 0.4034,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "4TKMvkThFToHrXdjKsGMbHBfBNV8CHwv4CpxqURHDygV6wz5XvHGnx94K3EvEPrNK6vUN9MGJxh4yDEHypW1ZZWH",
+     "collecteur": "H3q4PY7UyB17s2dSCxDMQTjFS5cqReqVuN19UEMgVomR"
+    },
+    {
+     "wallet": "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+     "ata": "3qxEU4Ft7md3KfkfsNyKanMW7oNJqabnibs1rRcpEN1z",
+     "n_events": 4,
+     "buy_ts": 1783107556,
+     "n_transferts": 1,
+     "n_ventes_directes": 1,
+     "tokens_transferes": 59179458.59,
+     "tokens_vendus": 555461.07,
+     "sol_vendu": 0.3987,
+     "premier_transfert_delai_s": 34,
+     "premier_transfert_sig": "4gkjJZyJNy6QicNxGsRiGGxYHKerYcLCHcZGSmFNppLd6ZJJoS6RqNjxWkzhGJE1gRKsLJEMUjhoFtUjUu5SGg8D",
+     "collecteur": "7DsXnh4CtdZeGqjT9mNszEMUXsyGBepEvELYDnhUMbaW"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "mint": "EkDGB5fbPXiRmDDjxKcC7dFjzvFZj2KT9t7oeyyPx4SX",
+ "created": 1713526818,
+ "sample": "C_serie_cas",
+ "month": "2024-04",
+ "ath_api": 28626337.39478415,
+ "n_sigs_total": 692,
+ "pagination_complete": true,
+ "dt_created": 0,
+ "status": "ok",
+ "slot0": 261037314,
+ "n_sigs_window": 2,
+ "n_sigs_slot0": 1,
+ "n_tx_parsed": 2,
+ "n_buyers_window": 1,
+ "n_buyers_slot0": 1,
+ "sol_window_30s": 3.001,
+ "sol_first_slot": 3.001,
+ "top_buyer_sol": 3.001,
+ "full_snipe": false,
+ "snipe_in_first_slot": false
+}

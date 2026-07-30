@@ -1,0 +1,56 @@
+[
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.45 (1).jpeg",
+    "symbole": "Chan",
+    "mint_fragment": null,
+    "gain_pct": 226.78,
+    "duree": "3h 52m",
+    "date": "2024-12-30",
+    "notes": "Paire Chan/SOL. Vue galerie iOS '129 sur 256', heure ecran 00:10. Bot: agamemnon_trojanbot. Reflink tronque dans l'image -> aucun fragment de mint lisible. Investi 3.027 SOL (~579 USD) -> 6.864 SOL."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.45 (2).jpeg",
+    "symbole": "symx",
+    "mint_fragment": null,
+    "gain_pct": 635.92,
+    "duree": "8h",
+    "date": "2024-12-21",
+    "notes": "Paire symx/SOL. Galerie '65 sur 256', heure ecran 00:11. Bot: agamemnon_trojanbot. Reflink tronque -> pas de mint. Investi 1.011 SOL (~199 USD) -> 6.429 SOL. Symbole en minuscules, possible debut d'adresse."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.45 (3).jpeg",
+    "symbole": "SAFFRON",
+    "mint_fragment": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+    "gain_pct": 244.43,
+    "duree": "7m 59s",
+    "date": null,
+    "notes": "MINT COMPLET LISIBLE (token pump.fun). Nom long: 'SAFFRON — (Baby Red Panda)'. Capture de conversation Telegram (Trojan on Solana - Hector, 26266 utilisateurs mensuels), heure des messages 23:50, heure ecran 23:51, pas de date calendaire. Contexte: ordre de vente declenche - Sell Amount 2.33M SAFFRON (~1164 USD), Current Price 0.0005001, Trigger Price 0.0005, transaction reussie. Investi 2.017 SOL (~428 USD) -> 4.932 SOL. Tag 'W43' visible au-dessus du message."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.45 (4).jpeg",
+    "symbole": "MIKU",
+    "mint_fragment": "48BVWSkY5Yx79HvaKot2kAYviP9qP",
+    "gain_pct": 167.09,
+    "duree": "6h 24m",
+    "date": "2025-01-01",
+    "notes": "Paire MIKU/SOL, visuel '2025' (nouvel an). Galerie '121 sur 221', heure ecran 00:08. Bot: nestor_trojanbot. Debut de mint partiellement lisible dans le reflink coupe en bas: 48BVWSkY5Yx79HvaKot2kAYviP9qP (derniers caracteres incertains, la ligne est tronquee). Investi 14.126 SOL (~2678 USD) -> 23.602 SOL."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.45.jpeg",
+    "symbole": "bwick",
+    "mint_fragment": "4V56nShpR2RvX1337B71vnx6kHRq",
+    "gain_pct": 390.57,
+    "duree": "13m 41s",
+    "date": null,
+    "notes": "Paire bwick/SOL. Galerie '23 sur 41', horodatage relatif 'hier a 17:33' (pas de date absolue; la capture WhatsApp datant du 2026-07-29, ce 'hier' est celui du telephone au moment de la capture d'ecran, non fiable). Bot: menelaus_trojanbot. Fragment de mint lu sur la ligne coupee du reflink: 4V56nShpR2RvX1337B71vnx6kHRq (lecture partielle, caracteres finaux incertains). Investi 0.254 SOL (~52 USD) -> 0.994 SOL."
+  },
+  {
+    "fichier": "WhatsApp Image 2026-07-29 at 14.43.46 (3).jpeg",
+    "symbole": "sumiko",
+    "mint_fragment": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+    "gain_pct": 28465.63,
+    "duree": "2h 50m",
+    "date": null,
+    "notes": "MINT COMPLET LISIBLE (token pump.fun). Paire sumiko/SOL, plus gros multiple du lot (x285). Zoom sur un message Telegram, bot: nestor_trojanbot, heure du message 17:31, aucune date calendaire. Visuel de Noel (habillage saisonnier Trojan, coherent avec dec. 2024 comme les autres captures du lot). Investi 0.254 SOL (~48 USD) -> 72.516 SOL."
+  }
+]

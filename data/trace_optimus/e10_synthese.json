@@ -1,0 +1,245 @@
+{
+ "comparaison": [
+  {
+   "label": "OPTIMUS",
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "role": "cible",
+   "n_early_buyers": 40,
+   "trop_pauvre_pour_conclure": false,
+   "n_inflows": 122,
+   "genesis_reached": 40,
+   "genesis_missing": 0,
+   "pct_genesis": 100.0,
+   "prebuy_reached": 40,
+   "prebuy_missing": 0,
+   "n_A_meme_tx": 0,
+   "n_B_meme_montant": 0,
+   "n_C_bailleurs_prives": 2,
+   "n_C_bailleurs_infra": 2,
+   "wallets_in_split": 0,
+   "pct_wallets_in_split": 0.0,
+   "wallets_sharing_funder": 4,
+   "pct_wallets_sharing_funder": 10.0,
+   "biggest_A_cluster": 0,
+   "biggest_B_cluster": 0,
+   "C_bailleurs_prives": [
+    {
+     "funder": "9zqLjpSvvvreWyhQBSPquwo7LTotH5eoJWhWLCm6qcde",
+     "n_early_buyers_funded": 2,
+     "n_transfers": 5,
+     "total_sol": 206.7,
+     "first_utc": "2024-03-14 19:59:25",
+     "known": null,
+     "amounts_sol": [
+      5.0,
+      10.0,
+      47.0,
+      54.7,
+      90.0
+     ],
+     "wallets": [
+      "CLcWPcRq7UfSeAZBsN2dPXpdcJaBzfyMu1n9U9Nthrh2",
+      "GZcZ2MR1PxNXzngbmMgLdsZpwYKwJvMYWPpghXaA7srM"
+     ]
+    },
+    {
+     "funder": "A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR",
+     "n_early_buyers_funded": 2,
+     "n_transfers": 3,
+     "total_sol": 52.834406,
+     "first_utc": "2024-07-20 14:51:40",
+     "known": null,
+     "amounts_sol": [
+      0.34440638,
+      2.5,
+      49.99
+     ],
+     "wallets": [
+      "3kmewL6XT5Rbsijdvzg1GaBEbewJWg4W3WB8cKu29Ua8",
+      "GGYjotPrzD5ng5k7d8WWMQS5938siecvsVuqVUeusD5v"
+     ]
+    }
+   ],
+   "verdict": "DECOUPAGE DETECTE"
+  },
+  {
+   "label": "Calm",
+   "mint": "B6Znej2JwW2mEsXeoEGmQwwZ9E3tvNDPWRVw74njpump",
+   "role": "temoin",
+   "n_early_buyers": 40,
+   "trop_pauvre_pour_conclure": false,
+   "n_inflows": 158,
+   "genesis_reached": 38,
+   "genesis_missing": 2,
+   "pct_genesis": 95.0,
+   "prebuy_reached": 37,
+   "prebuy_missing": 3,
+   "n_A_meme_tx": 0,
+   "n_B_meme_montant": 0,
+   "n_C_bailleurs_prives": 1,
+   "n_C_bailleurs_infra": 5,
+   "wallets_in_split": 0,
+   "pct_wallets_in_split": 0.0,
+   "wallets_sharing_funder": 2,
+   "pct_wallets_sharing_funder": 5.0,
+   "biggest_A_cluster": 0,
+   "biggest_B_cluster": 0,
+   "C_bailleurs_prives": [
+    {
+     "funder": "GfMFq3wtBBcvYX7J2aQ72MARfGaDu2DCeS9t1jteUupf",
+     "n_early_buyers_funded": 2,
+     "n_transfers": 2,
+     "total_sol": 1.29,
+     "first_utc": "2024-06-11 04:03:36",
+     "known": null,
+     "amounts_sol": [
+      0.29,
+      1.0
+     ],
+     "wallets": [
+      "3KjBAhZ9ofoDVoygN9Xm5LbNGQV4YBGWdQqjMLYjJNZh",
+      "ABvFVH233gaqbCNRh5bG6xHDQCJLD1huYUP47XtBNK7J"
+     ]
+    }
+   ],
+   "verdict": "DECOUPAGE DETECTE"
+  },
+  {
+   "label": "ODIN_POSITIF",
+   "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+   "role": "temoin_positif",
+   "n_early_buyers": 35,
+   "trop_pauvre_pour_conclure": false,
+   "n_inflows": 78,
+   "genesis_reached": 12,
+   "genesis_missing": 23,
+   "pct_genesis": 34.3,
+   "prebuy_reached": 25,
+   "prebuy_missing": 10,
+   "n_A_meme_tx": 1,
+   "n_B_meme_montant": 1,
+   "n_C_bailleurs_prives": 2,
+   "n_C_bailleurs_infra": 0,
+   "wallets_in_split": 4,
+   "pct_wallets_in_split": 11.4,
+   "wallets_sharing_funder": 6,
+   "pct_wallets_sharing_funder": 17.1,
+   "biggest_A_cluster": 4,
+   "biggest_B_cluster": 4,
+   "C_bailleurs_prives": [
+    {
+     "funder": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+     "n_early_buyers_funded": 4,
+     "n_transfers": 4,
+     "total_sol": 12.0,
+     "first_utc": "2024-11-17 23:55:52",
+     "known": null,
+     "amounts_sol": [
+      3.0,
+      3.0,
+      3.0,
+      3.0
+     ],
+     "wallets": [
+      "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+      "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+      "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+      "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y"
+     ]
+    },
+    {
+     "funder": "B6p9CkSyE8fYNYd5JTQATcy4DekwzttKqBk689SpD39m",
+     "n_early_buyers_funded": 2,
+     "n_transfers": 5,
+     "total_sol": 5.3,
+     "first_utc": "2024-11-22 21:24:21",
+     "known": null,
+     "amounts_sol": [
+      0.1,
+      0.2,
+      1.0,
+      1.0,
+      3.0
+     ],
+     "wallets": [
+      "3CEhdQTZu7KQdk2gFoSbHWmEMbb4xqzCLNdXmMfbcg7F",
+      "3qVmZRQ1bsTTCb73B8cgo6pzMBNrvmPD4vHkWK4EYjzB"
+     ]
+    }
+   ],
+   "verdict": "DECOUPAGE DETECTE"
+  },
+  {
+   "label": "DOGEFORMULA",
+   "mint": "F4j6sMuUUTNqNQrLoHDmKZ4umrhhT2vRf5zMKBE1pump",
+   "role": "temoin",
+   "n_early_buyers": 17,
+   "trop_pauvre_pour_conclure": false,
+   "n_inflows": 34,
+   "genesis_reached": 10,
+   "genesis_missing": 7,
+   "pct_genesis": 58.8,
+   "prebuy_reached": 16,
+   "prebuy_missing": 1,
+   "n_A_meme_tx": 0,
+   "n_B_meme_montant": 0,
+   "n_C_bailleurs_prives": 0,
+   "n_C_bailleurs_infra": 1,
+   "wallets_in_split": 0,
+   "pct_wallets_in_split": 0.0,
+   "wallets_sharing_funder": 0,
+   "pct_wallets_sharing_funder": 0.0,
+   "biggest_A_cluster": 0,
+   "biggest_B_cluster": 0,
+   "C_bailleurs_prives": [],
+   "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/17 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  },
+  {
+   "label": "faith",
+   "mint": "3TpKKNDBqgZAFkTQmsRxwcHQZTJKyYnRgsBs3tcjpump",
+   "role": "temoin",
+   "n_early_buyers": 7,
+   "trop_pauvre_pour_conclure": true,
+   "n_inflows": 28,
+   "genesis_reached": 4,
+   "genesis_missing": 3,
+   "pct_genesis": 57.1,
+   "prebuy_reached": 6,
+   "prebuy_missing": 1,
+   "n_A_meme_tx": 0,
+   "n_B_meme_montant": 0,
+   "n_C_bailleurs_prives": 0,
+   "n_C_bailleurs_infra": 0,
+   "wallets_in_split": 0,
+   "pct_wallets_in_split": 0.0,
+   "wallets_sharing_funder": 0,
+   "pct_wallets_sharing_funder": 0.0,
+   "biggest_A_cluster": 0,
+   "biggest_B_cluster": 0,
+   "C_bailleurs_prives": [],
+   "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 1/7 portefeuilles dont la fenetre pre-achat n'est pas couverte (1 hyperactifs). Ce n'est PAS une absence de decoupage."
+  }
+ ],
+ "conclusion": {
+  "detecteur_valide_par_temoin_positif": true,
+  "n_temoins": 3,
+  "n_temoins_exploitables": 2,
+  "temoins_ecartes_trop_pauvres": [
+   "faith"
+  ],
+  "temoins_avec_A": 0,
+  "temoins_avec_B": 0,
+  "temoins_avec_C_prive": 1,
+  "cible_A": 0,
+  "cible_B": 0,
+  "cible_C_prive": 2,
+  "portefeuilles_temoins_total": 64,
+  "comparabilite_profondeur": {
+   "OPTIMUS": "40/40",
+   "Calm": "38/40",
+   "ODIN_POSITIF": "12/35",
+   "DOGEFORMULA": "10/17",
+   "faith": "4/7"
+  }
+ }
+}

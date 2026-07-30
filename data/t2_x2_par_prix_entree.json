@@ -1,0 +1,277 @@
+{
+ "n": 1243,
+ "n_clusters": 123,
+ "n_jours": 20,
+ "n_B_entier": 1701,
+ "elasticite_logath_logmc": 0.8843497600778185,
+ "prix_pour_90pct_x2_usd": 24384.998211869744,
+ "prix_pour_90pct_x2_usd_B_entier": 23253.386227516865,
+ "panneau_A_contrefactuel": [
+  {
+   "prix_usd": 16000,
+   "n": 1243,
+   "x2_pct": 98.4,
+   "x2_ic95": [
+    97.5,
+    99.0
+   ],
+   "x3_pct": 90.4,
+   "x5_pct": 66.0,
+   "x2_pct_B_entier": 97.4
+  },
+  {
+   "prix_usd": 20000,
+   "n": 1243,
+   "x2_pct": 94.7,
+   "x2_ic95": [
+    93.3,
+    95.8
+   ],
+   "x3_pct": 79.2,
+   "x5_pct": 57.0,
+   "x2_pct_B_entier": 93.7
+  },
+  {
+   "prix_usd": 23000,
+   "n": 1243,
+   "x2_pct": 91.6,
+   "x2_ic95": [
+    90.0,
+    93.0
+   ],
+   "x3_pct": 72.4,
+   "x5_pct": 51.2,
+   "x2_pct_B_entier": 90.2
+  },
+  {
+   "prix_usd": 25000,
+   "n": 1243,
+   "x2_pct": 88.6,
+   "x2_ic95": [
+    86.7,
+    90.2
+   ],
+   "x3_pct": 69.1,
+   "x5_pct": 48.0,
+   "x2_pct_B_entier": 87.4
+  },
+  {
+   "prix_usd": 30000,
+   "n": 1243,
+   "x2_pct": 79.2,
+   "x2_ic95": [
+    76.9,
+    81.4
+   ],
+   "x3_pct": 61.7,
+   "x5_pct": 40.9,
+   "x2_pct_B_entier": 79.0
+  },
+  {
+   "prix_usd": 40000,
+   "n": 1243,
+   "x2_pct": 66.0,
+   "x2_ic95": [
+    63.4,
+    68.6
+   ],
+   "x3_pct": 49.5,
+   "x5_pct": 30.9,
+   "x2_pct_B_entier": 68.1
+  },
+  {
+   "prix_usd": 47000,
+   "n": 1243,
+   "x2_pct": 59.7,
+   "x2_ic95": [
+    56.9,
+    62.4
+   ],
+   "x3_pct": 43.5,
+   "x5_pct": 25.4,
+   "x2_pct_B_entier": 62.8
+  },
+  {
+   "prix_usd": 50000,
+   "n": 1243,
+   "x2_pct": 57.0,
+   "x2_ic95": [
+    54.2,
+    59.7
+   ],
+   "x3_pct": 40.9,
+   "x5_pct": 23.7,
+   "x2_pct_B_entier": 60.8
+  },
+  {
+   "prix_usd": 65000,
+   "n": 1243,
+   "x2_pct": 47.0,
+   "x2_ic95": [
+    44.2,
+    49.8
+   ],
+   "x3_pct": 31.9,
+   "x5_pct": 16.3,
+   "x2_pct_B_entier": 53.1
+  },
+  {
+   "prix_usd": 85000,
+   "n": 1243,
+   "x2_pct": 36.4,
+   "x2_ic95": [
+    33.7,
+    39.1
+   ],
+   "x3_pct": 23.3,
+   "x5_pct": 11.7,
+   "x2_pct_B_entier": 44.4
+  },
+  {
+   "prix_usd": 100000,
+   "n": 1243,
+   "x2_pct": 30.9,
+   "x2_ic95": [
+    28.4,
+    33.5
+   ],
+   "x3_pct": 18.8,
+   "x5_pct": 9.4,
+   "x2_pct_B_entier": 39.9
+  },
+  {
+   "prix_usd": 120000,
+   "n": 1243,
+   "x2_pct": 24.9,
+   "x2_ic95": [
+    22.5,
+    27.3
+   ],
+   "x3_pct": 14.2,
+   "x5_pct": 8.0,
+   "x2_pct_B_entier": 34.7
+  },
+  {
+   "prix_usd": 150000,
+   "n": 1243,
+   "x2_pct": 18.8,
+   "x2_ic95": [
+    16.7,
+    21.1
+   ],
+   "x3_pct": 10.4,
+   "x5_pct": 6.5,
+   "x2_pct_B_entier": 29.4
+  }
+ ],
+ "panneau_B_bandes": [
+  {
+   "bande": "5k-20k",
+   "n": 16,
+   "x2_pct": 75.0,
+   "x2_ic95": [
+    50.5,
+    89.8
+   ],
+   "x2_devant_soi_pct": 37.5,
+   "mc_median": 14596,
+   "ath_median": 42948
+  },
+  {
+   "bande": "20k-30k",
+   "n": 108,
+   "x2_pct": 55.6,
+   "x2_ic95": [
+    46.2,
+    64.6
+   ],
+   "x2_devant_soi_pct": 37.0,
+   "mc_median": 26813,
+   "ath_median": 59217
+  },
+  {
+   "bande": "30k-40k",
+   "n": 137,
+   "x2_pct": 43.8,
+   "x2_ic95": [
+    35.8,
+    52.2
+   ],
+   "x2_devant_soi_pct": 32.8,
+   "mc_median": 33989,
+   "ath_median": 60764
+  },
+  {
+   "bande": "40k-50k",
+   "n": 296,
+   "x2_pct": 44.3,
+   "x2_ic95": [
+    38.7,
+    50.0
+   ],
+   "x2_devant_soi_pct": 39.5,
+   "mc_median": 45614,
+   "ath_median": 82022
+  },
+  {
+   "bande": "50k-65k",
+   "n": 277,
+   "x2_pct": 46.6,
+   "x2_ic95": [
+    40.8,
+    52.5
+   ],
+   "x2_devant_soi_pct": 42.2,
+   "mc_median": 55593,
+   "ath_median": 105500
+  },
+  {
+   "bande": "65k-85k",
+   "n": 121,
+   "x2_pct": 47.9,
+   "x2_ic95": [
+    39.2,
+    56.8
+   ],
+   "x2_devant_soi_pct": 38.0,
+   "mc_median": 72792,
+   "ath_median": 136869
+  },
+  {
+   "bande": "85k-100k",
+   "n": 65,
+   "x2_pct": 44.6,
+   "x2_ic95": [
+    33.2,
+    56.7
+   ],
+   "x2_devant_soi_pct": 36.9,
+   "mc_median": 92583,
+   "ath_median": 169394
+  },
+  {
+   "bande": "100k-120k",
+   "n": 58,
+   "x2_pct": 46.6,
+   "x2_ic95": [
+    34.3,
+    59.2
+   ],
+   "x2_devant_soi_pct": 43.1,
+   "mc_median": 109339,
+   "ath_median": 207671
+  },
+  {
+   "bande": "120k-300k",
+   "n": 165,
+   "x2_pct": 42.4,
+   "x2_ic95": [
+    35.1,
+    50.1
+   ],
+   "x2_devant_soi_pct": 40.6,
+   "mc_median": 153077,
+   "ath_median": 280553
+  }
+ ]
+}

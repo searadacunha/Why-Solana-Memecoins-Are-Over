@@ -1,0 +1,52 @@
+# --- credentials -------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- network caches ----------------------------------------------------------
+# Byte-for-byte mirrors of public chain data (~470 MB). They make a re-run cheap
+# on the machine that already fetched them, and they are worthless in a clone:
+# any script re-fetches what it needs. Everything DERIVED from them is committed.
+data/cache/
+data/cache_r1/
+
+# --- discarded work ----------------------------------------------------------
+# Deep migration walk: kept locally, excluded from the dossier because the
+# backward pagination has no depth (see docs, "what is NOT claimed").
+data/transition/
+
+# --- internal documents, excluded on their own instruction -------------------
+# Both carry their own "do NOT publish" header: INVENTAIRE.md is a triage note
+# quoting a credential, a bot handle and the author's identity; REVIEW.md is the
+# audit that found them and reproduces the offending strings to name them.
+docs/INVENTAIRE.md
+docs/REVIEW.md
+
+# --- working notes, not deliverables -----------------------------------------
+# Session handoff and narrative timeline. CHRONOLOGIE.md quotes amounts the
+# author personally invested, which the dossier's own rules keep out of the
+# public repository; REPRISE.md is a task list written to itself.
+REPRISE.md
+CHRONOLOGIE.md
+
+# --- working artefacts of the phase-1 walks ----------------------------------
+# The runners echo the absolute command line they invoke, so their logs carry a
+# local path. Everything those logs report is in the committed JSON beside them.
+data/*/*.log
+data/*/*.out
+# Signature mirrors of the deep walks: hundreds of MB of raw chain data, worthless
+# in a clone since any script re-fetches what it needs. The derived JSON is committed.
+data/*/cache_sigs*/
+data/trace_origine_hub/
+
+# --- local strings used by the publication gate ------------------------------
+# check_no_secrets.py --identity FILE  and  build_redactions.py --wordlist FILE
+# both take a list that must never be committed.
+identity.txt
+wordlist*.txt
+
+__pycache__/
+*.pyc
+.DS_Store

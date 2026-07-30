@@ -1,0 +1,1922 @@
+{
+ "agregats": {
+  "seuil_bloc_SOL": 5.0,
+  "n_lancements": 42,
+  "n_bloc_egal_4": 33,
+  "distribution_n_bloc": {
+   "4": 33,
+   "5": 9
+  },
+  "sol_bloc_med": 85.213,
+  "sol_bloc_q1q3": [
+   83.12,
+   85.72
+  ],
+  "sol_bloc_min_max": [
+   79.49,
+   87.46
+  ],
+  "part_supply_med": 0.78954,
+  "part_supply_q1q3": [
+   0.78309,
+   0.79094
+  ],
+  "part_supply_min_max": [
+   0.76775,
+   0.79254
+  ],
+  "ticket_cv_intra_med": 0.0265,
+  "n_zero_petit_acheteur_avant": 42,
+  "sol_petits_avant_med": 0.0,
+  "sol_petits_avant_max": 0,
+  "mc_bloc_usd_med": 8321,
+  "mc_dernier_ticket_usd_med": 26093,
+  "mc_amm_ouverture_usd_med": 46147,
+  "ratio_premier_externe_med": 4.33,
+  "n_ratio": 36,
+  "ratio_premier_externe_min_max": [
+   0.046,
+   17.466
+  ],
+  "n_ratio_ge_3": 31,
+  "ratio_amm_med": 5.725,
+  "sol_usd_reference": 77.1919981384726
+ },
+ "lancements": [
+  {
+   "mint": "87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump",
+   "slot": 429307208,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    313,
+    314,
+    315,
+    316
+   ],
+   "idx_creation": 312,
+   "creator": "78wF7WAi4bzFtNt7k3s8Qe3LYiQtSGV1SmTou5Nweqsn",
+   "sol_bloc": 84.9415,
+   "tokens_bloc": 780464208.09,
+   "part_supply": 0.78046,
+   "tickets": [
+    21.8271,
+    21.1508,
+    21.1502,
+    20.8133
+   ],
+   "ticket_cv": 0.0173,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.088345312865161e-07,
+   "mc_bloc_usd": 8401.2,
+   "mc_dernier_ticket_usd": 25960.5,
+   "premier_externe": {
+    "idx": 601,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.8331,
+    "sig": "6FGfTfSf9oYJ9CyWmVwCMNgqEentJUQjvuuzGmu4jsxLwWv1dHonGtXD2DUUyYd7ojcEvVdZjCJE2iXyYrZeYoQ",
+    "mc_usd": 31962.4,
+    "ratio": 3.805
+   },
+   "mc_amm_ouverture_usd": 128178.2,
+   "ratio_amm": 15.257
+  },
+  {
+   "mint": "G6ERt5641ZUKkuTD3otJFWTNsz5QcszmcDmP1P4dpump",
+   "slot": 429323042,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    969,
+    970,
+    971,
+    972
+   ],
+   "idx_creation": 968,
+   "creator": "8rF4neBFFRqZaUuzAWGKSGpKte6dtrBZG1sUSXKKPq95",
+   "sol_bloc": 81.5314,
+   "tokens_bloc": 780077773.08,
+   "part_supply": 0.78008,
+   "tickets": [
+    20.9052,
+    20.809,
+    20.1154,
+    19.7018
+   ],
+   "ticket_cv": 0.0244,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0451695317825926e-07,
+   "mc_bloc_usd": 8067.9,
+   "mc_dernier_ticket_usd": 24461.5,
+   "premier_externe": {
+    "idx": 1111,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.8373,
+    "sig": "585tjPXzq4bexjKNLUU2VGeqQBnDr1o91ZLiTTLoFdJ9VJk2ekYe6enf67ZqmZsHL6brwV6wVBr4sxNcc4Rf4kbh",
+    "mc_usd": 33230.2,
+    "ratio": 4.119
+   },
+   "mc_amm_ouverture_usd": 47956.0,
+   "ratio_amm": 5.944
+  },
+  {
+   "mint": "6Fzphy2B4JTUteQ8jGtj9Tc9anpttVXY3CRgGuJTpump",
+   "slot": 429356376,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    493,
+    494,
+    495,
+    496
+   ],
+   "idx_creation": 492,
+   "creator": "DYrJFTNt3BaRTKQFHMNA1sycP3xnsani3WrKgNTMJXnx",
+   "sol_bloc": 84.4742,
+   "tokens_bloc": 787534964.34,
+   "part_supply": 0.78753,
+   "tickets": [
+    21.3658,
+    21.1168,
+    21.0388,
+    20.9528
+   ],
+   "ticket_cv": 0.0073,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0726404610312287e-07,
+   "mc_bloc_usd": 8279.9,
+   "mc_dernier_ticket_usd": 25564.7,
+   "premier_externe": {
+    "idx": 891,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 2.1765,
+    "sig": "4zDVmq3faHKzQzraBgtXM6nvMCxBs59oEdhaGmxE2TGk85qe2ZLgtpXL3GCv7hHZKmS4E4mdXHL141bvmMXDycXJ",
+    "mc_usd": 44450.5,
+    "ratio": 5.368
+   },
+   "mc_amm_ouverture_usd": 78.0,
+   "ratio_amm": 0.009
+  },
+  {
+   "mint": "FAwimgWuNJBMj5Sk8WtJCvNEztBS3AhgqFm42pWVpump",
+   "slot": 429465430,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd"
+   ],
+   "idx_bloc": [
+    711,
+    712,
+    713,
+    714
+   ],
+   "idx_creation": 710,
+   "creator": "FeFRyJBYzaarVapd8GEkh9NVfkLT1BBW1viA8dQGhzRt",
+   "sol_bloc": 82.4289,
+   "tokens_bloc": 767750124.47,
+   "part_supply": 0.76775,
+   "tickets": [
+    20.8262,
+    20.7249,
+    20.489,
+    20.3888
+   ],
+   "ticket_cv": 0.0085,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.073642740939001e-07,
+   "mc_bloc_usd": 8287.7,
+   "mc_dernier_ticket_usd": 24935.8,
+   "premier_externe": {
+    "idx": 746,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 3.4421,
+    "sig": "43Qr3NfnjR2tDZ2r6ibgPw3s13zAjsitiUSAF7AbHaP1BkpLc9fuxpQj9NhC2N9FC8ij83vbqSh2N7ybD2f4DYaX",
+    "mc_usd": 34241.6,
+    "ratio": 4.132
+   },
+   "mc_amm_ouverture_usd": 103120.2,
+   "ratio_amm": 12.443
+  },
+  {
+   "mint": "Em6ajM2xwou6y2YkfqAxsr5zMjmLepbJUtBaEzCypump",
+   "slot": 429695254,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    245,
+    246,
+    247,
+    248
+   ],
+   "idx_creation": 244,
+   "creator": "6RkAD2cMMAN1K77c9oQH8WfyZDQR6yCrkz5TuRAh8Sj4",
+   "sol_bloc": 85.193,
+   "tokens_bloc": 790927224.21,
+   "part_supply": 0.79093,
+   "tickets": [
+    23.0,
+    21.6934,
+    20.6899,
+    19.8096
+   ],
+   "ticket_cv": 0.0557,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0771276883612512e-07,
+   "mc_bloc_usd": 8314.6,
+   "mc_dernier_ticket_usd": 26209.9,
+   "premier_externe": {
+    "idx": 702,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.0583,
+    "sig": "hiNDdfAojJaFsp1YEsnfjF8qrKZcao3DQwjaHhZYR4JfHDS93JDyPYDsD4dZv1Vzmyig8EQVPrkrR53kVQTpCtG",
+    "mc_usd": 38228.8,
+    "ratio": 4.598
+   },
+   "mc_amm_ouverture_usd": 1700.6,
+   "ratio_amm": 0.205
+  },
+  {
+   "mint": "DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump",
+   "slot": 429722432,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9"
+   ],
+   "idx_bloc": [
+    38,
+    39,
+    40,
+    41
+   ],
+   "idx_creation": 37,
+   "creator": "Gcdpw19YD7935Zb8v2HMgRXkWFGBn75B96WF6JFzGyfb",
+   "sol_bloc": 85.2326,
+   "tokens_bloc": 791023811.45,
+   "part_supply": 0.79102,
+   "tickets": [
+    21.9156,
+    21.8032,
+    21.7334,
+    19.7803
+   ],
+   "ticket_cv": 0.0415,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0774966420625539e-07,
+   "mc_bloc_usd": 8317.4,
+   "mc_dernier_ticket_usd": 26237.7,
+   "premier_externe": {
+    "idx": 151,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.0708,
+    "sig": "2EY5VU5hnz49ErK3Bjv7zuKTVQjqmsXA6HHJ6SBEonvp1yG9Kw4KXNB4TpgaGFtsoHjctuh624s9k168FBbE2axq",
+    "mc_usd": 40507.9,
+    "ratio": 4.87
+   },
+   "mc_amm_ouverture_usd": 50911.2,
+   "ratio_amm": 6.121
+  },
+  {
+   "mint": "H2HmTSxj5mTm4kYe4kJbJuG1HitVoXZ929n1RyrXpump",
+   "slot": 429724313,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9"
+   ],
+   "idx_bloc": [
+    1496,
+    1497,
+    1498,
+    1499
+   ],
+   "idx_creation": 1495,
+   "creator": "3if4oyfELdnhmw7dhqfrmbZwwRg8QAe7oBgx6FVWR4NV",
+   "sol_bloc": 85.0053,
+   "tokens_bloc": 790456762.92,
+   "part_supply": 0.79046,
+   "tickets": [
+    22.1316,
+    21.8037,
+    21.5028,
+    19.5672
+   ],
+   "ticket_cv": 0.0469,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0753947117557983e-07,
+   "mc_bloc_usd": 8301.2,
+   "mc_dernier_ticket_usd": 26182.5,
+   "premier_externe": {
+    "idx": 1508,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.3496,
+    "sig": "3dBK5wciQcyspyLeLkhastk9U8pVmcfwXkbGascYEGsT5zq1CSStk3FEJmFNdYCyzMLcLVpH1ngfZQqYmRc62KhV",
+    "mc_usd": 40148.8,
+    "ratio": 4.837
+   },
+   "mc_amm_ouverture_usd": 57659.0,
+   "ratio_amm": 6.946
+  },
+  {
+   "mint": "5CCnqQy9cyzerWNs29KA27wEweq6UZbR7Q8ewxG7pump",
+   "slot": 429727425,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "C4v2WTmWmYpYZA6JBU7Mh1rdRq1pmCpY5RaYNkkh4AZL",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9"
+   ],
+   "idx_bloc": [
+    1118,
+    1119,
+    1120,
+    1121
+   ],
+   "idx_creation": 1117,
+   "creator": "7BkPZtwzB5agDVsr16SuvBsjJujvZZDhEFuFuQXzFUQK",
+   "sol_bloc": 85.6427,
+   "tokens_bloc": 791970669.13,
+   "part_supply": 0.79197,
+   "tickets": [
+    22.0392,
+    21.8039,
+    21.6934,
+    20.1063
+   ],
+   "ticket_cv": 0.0357,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0813874507883583e-07,
+   "mc_bloc_usd": 8347.4,
+   "mc_dernier_ticket_usd": 26354.7,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 2219710.6,
+   "ratio_amm": 154.114
+  },
+  {
+   "mint": "B1a7zhim82AGr12iBSnH1m4sXCSyt3wudZD2MVYHpump",
+   "slot": 429730832,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "HgUpqjurhgkSkPK3JsfjZZ9JknxY9fLRLNKKGyUSMLfQ",
+    "46ojZjmvYCzgikVQ4NZ1rSMz2vURDhW74U1CQm5p6HSM"
+   ],
+   "idx_bloc": [
+    289,
+    290,
+    291,
+    292
+   ],
+   "idx_creation": 275,
+   "creator": "2qKG4MyMGD9NyZJ7ftpJAPp6LYK1kU7fRFJ66UbmSjdD",
+   "sol_bloc": 85.3046,
+   "tokens_bloc": 790966495.97,
+   "part_supply": 0.79097,
+   "tickets": [
+    21.624,
+    21.2643,
+    21.2633,
+    21.153
+   ],
+   "ticket_cv": 0.0083,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0784861380255087e-07,
+   "mc_bloc_usd": 8325.0,
+   "mc_dernier_ticket_usd": 25901.1,
+   "premier_externe": {
+    "idx": 770,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.1476,
+    "sig": "3VUc4Moheqrs4uU2y1muHtxX2A8Fpap9ZwPAUScCUFwErQfMdVSFxPqcAe1TpV6uUmejeQinrrLaou3mGL5Fj5B7",
+    "mc_usd": 47949.1,
+    "ratio": 5.76
+   },
+   "mc_amm_ouverture_usd": 57062.2,
+   "ratio_amm": 10.822
+  },
+  {
+   "mint": "7V6C6GN1YbtYP6TJ6Kzke9TUwLgjy7gCMEMmbn8Jpump",
+   "slot": 429736173,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9"
+   ],
+   "idx_bloc": [
+    461,
+    464,
+    468,
+    469
+   ],
+   "idx_creation": 459,
+   "creator": "CzJPoJQ6BKwasphaqDwcqDRTha9PhCbnVAY87mt7K14Y",
+   "sol_bloc": 85.03,
+   "tokens_bloc": 790420893.83,
+   "part_supply": 0.79042,
+   "tickets": [
+    22.028,
+    21.6109,
+    21.5208,
+    19.8704
+   ],
+   "ticket_cv": 0.0387,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0757566063156302e-07,
+   "mc_bloc_usd": 8304.0,
+   "mc_dernier_ticket_usd": 26113.4,
+   "premier_externe": {
+    "idx": 556,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.466,
+    "sig": "3rfWSS9vFwFwbdR3azpjH4RKuqtYjvdJwvzrHF8Hdcu5qd9Mo356wg9NDN7JXTkvsAo6GFKntWgt2gvououNVDjZ",
+    "mc_usd": 44778.4,
+    "ratio": 5.392
+   },
+   "mc_amm_ouverture_usd": 107004.4,
+   "ratio_amm": 12.886
+  },
+  {
+   "mint": "7vJ2jdLwkjPSWkQVKv7SGuJ3BLXF7fn18wj2EF8npump",
+   "slot": 429738688,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    232,
+    233,
+    234,
+    235
+   ],
+   "idx_creation": 231,
+   "creator": "2KzY2xLXVtjGeuwEoC4xCozETuQ8yG4S8Z2541kyRBZb",
+   "sol_bloc": 85.3571,
+   "tokens_bloc": 791317232.78,
+   "part_supply": 0.79132,
+   "tickets": [
+    21.9156,
+    21.7941,
+    21.5208,
+    20.1266
+   ],
+   "ticket_cv": 0.0335,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0786709068897095e-07,
+   "mc_bloc_usd": 8326.5,
+   "mc_dernier_ticket_usd": 26205.3,
+   "premier_externe": {
+    "idx": 1091,
+    "signer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+    "sol": 0.7199,
+    "sig": "5JyzHUEdcTKX75gGxTRGszYgGqur7Gm933VBeFnzuuFJ4tsxDwkki4AmWQbR6j2mxu5E1BGLaKtrhagFHXrBLJgN",
+    "mc_usd": 32007.6,
+    "ratio": 3.844
+   },
+   "mc_amm_ouverture_usd": 26.3,
+   "ratio_amm": 0.003
+  },
+  {
+   "mint": "AidtkezbfEF8wR3GNxGYFerGKbtBHkabfqVP3XvKpump",
+   "slot": 429742840,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    82,
+    85,
+    86,
+    89
+   ],
+   "idx_creation": 80,
+   "creator": "4SzrpA9ewMWg2WzZ2wH8jKb3GVhqtukypAT2DufjPLL4",
+   "sol_bloc": 84.3881,
+   "tokens_bloc": 788949163.96,
+   "part_supply": 0.78895,
+   "tickets": [
+    21.8579,
+    21.6149,
+    21.4195,
+    19.4958
+   ],
+   "ticket_cv": 0.0444,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.069626890160668e-07,
+   "mc_bloc_usd": 8256.7,
+   "mc_dernier_ticket_usd": 25893.9,
+   "premier_externe": {
+    "idx": 284,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 2.2792,
+    "sig": "3DvaNANcmsPesS2dJTEw5tGirKF6xN5phW5Uq6sYEnVQu2gkHtv3mq78wPi2mTMcDDH1VmbguvTyjTDdDr23Eg3H",
+    "mc_usd": 42753.6,
+    "ratio": 5.178
+   },
+   "mc_amm_ouverture_usd": 698.4,
+   "ratio_amm": 0.085
+  },
+  {
+   "mint": "5AuHKxmuoXsxzbf8nbVzTWGuzHrGecmigfjgEBLkpump",
+   "slot": 429748537,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    59,
+    60,
+    62,
+    64
+   ],
+   "idx_creation": 57,
+   "creator": "GAKj13ZPPekCvYoXt2xwmsbtaQp7EcZxzdqjCUcmASmw",
+   "sol_bloc": 85.4264,
+   "tokens_bloc": 791262848.13,
+   "part_supply": 0.79126,
+   "tickets": [
+    22.028,
+    21.8032,
+    21.6934,
+    19.9018
+   ],
+   "ticket_cv": 0.0397,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0796215726635814e-07,
+   "mc_bloc_usd": 8333.8,
+   "mc_dernier_ticket_usd": 26305.1,
+   "premier_externe": {
+    "idx": 270,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.2858,
+    "sig": "2Z3W6xnaRcMxrVNqkukj5dW7arkCpj78o2AGLzk87outhSqpz3FMFQhpjFLr3mVkCY5ekEw6TGNMt4qtvbXu6t1E",
+    "mc_usd": 63987.7,
+    "ratio": 7.678
+   },
+   "mc_amm_ouverture_usd": 54988.1,
+   "ratio_amm": 6.598
+  },
+  {
+   "mint": "ApANnyv1KP6uZaPmqhaCruMqZHHxQCACKDGCcjU5pump",
+   "slot": 429754129,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2AqFJzcgSMQ9v7Vwh4yE7Vux8brcrjus1eg4K1zM2zUd",
+    "2wHHnAmdhFaAAsayWAeqKe3snK3KkbRQkRgLwTtz7iCi",
+    "9yxmCNwZcHe63NucU9yvCt7b1ja3jwP9v4T3yFMkQ1Z9",
+    "22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL"
+   ],
+   "idx_bloc": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "idx_creation": 51,
+   "creator": "GJw5QnRj3TVFNniNG4FoAf8BQQBv5AVu4nnyh7aajYxQ",
+   "sol_bloc": 85.279,
+   "tokens_bloc": 789508371.81,
+   "part_supply": 0.78951,
+   "tickets": [
+    22.1627,
+    21.1508,
+    21.0386,
+    20.9269
+   ],
+   "ticket_cv": 0.0231,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0801535102303258e-07,
+   "mc_bloc_usd": 8337.9,
+   "mc_dernier_ticket_usd": 25971.5,
+   "premier_externe": {
+    "idx": 113,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.4307,
+    "sig": "373kfuRLTCnRAVmwgUoPu1pgS2fwnE14CftuiMUBABBX2C6J2ijDFZ22m2tw5Sc4MD9w6yxFvAARGN6frohRuQrB",
+    "mc_usd": 61140.2,
+    "ratio": 7.333
+   },
+   "mc_amm_ouverture_usd": 85.3,
+   "ratio_amm": 0.01
+  },
+  {
+   "mint": "UNB8FtHiZ9N9LEyrQy8surmRjbFxR9fKHTKDe93xzPr",
+   "slot": 429317947,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX"
+   ],
+   "idx_bloc": [
+    1018,
+    1019,
+    1020,
+    1021
+   ],
+   "idx_creation": 1017,
+   "creator": "9CHinZZYGxWd8fLwutPFYxJuArZr3jFsCeJAmkwb2Evx",
+   "sol_bloc": 82.0816,
+   "tokens_bloc": 779852771.1,
+   "part_supply": 0.77985,
+   "tickets": [
+    21.1299,
+    20.814,
+    20.4678,
+    19.6699
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0525274712050354e-07,
+   "mc_bloc_usd": 8124.7,
+   "mc_dernier_ticket_usd": 24761.5,
+   "premier_externe": {
+    "idx": 1064,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.1824,
+    "sig": "3WuwavMa1WGSfmte9LTcw9EbXfuCqHEknDDgF8sDVsfEoEKMsJYgNhhcEvvaxp9VWtbCZYQX1nJ4KxGWihTEureG",
+    "mc_usd": 33343.8,
+    "ratio": 4.104
+   },
+   "mc_amm_ouverture_usd": 91.1,
+   "ratio_amm": 0.011
+  },
+  {
+   "mint": "7EKtAJTruNL5qURjXrEzfdHzmqucxkQNh1922hz8pump",
+   "slot": 429332416,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX"
+   ],
+   "idx_bloc": [
+    1205,
+    1206,
+    1207,
+    1208
+   ],
+   "idx_creation": 1204,
+   "creator": "DqJdZcTCXtMx6H6SZMV2CSBLVdfvdHG9rLciJB1VoLTd",
+   "sol_bloc": 82.0816,
+   "tokens_bloc": 779852771.1,
+   "part_supply": 0.77985,
+   "tickets": [
+    21.1299,
+    20.814,
+    20.4678,
+    19.6699
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0525274712050354e-07,
+   "mc_bloc_usd": 8124.7,
+   "mc_dernier_ticket_usd": 24761.5,
+   "premier_externe": {
+    "idx": 1255,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.3084,
+    "sig": "31uep77JkP76sESTFFjLuQRRuvruThZYSvnodPxZWTW6oDNH5ibjXTywgPwhrs7HoPt38LMt2Mzrk4RLXNJuruc5",
+    "mc_usd": 34348.3,
+    "ratio": 4.228
+   },
+   "mc_amm_ouverture_usd": 53980.3,
+   "ratio_amm": 6.644
+  },
+  {
+   "mint": "7adT6gecxwX5C1sT1eynLVhLgpFoEAHfn4REk92Rpump",
+   "slot": 429335921,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY"
+   ],
+   "idx_bloc": [
+    243,
+    244,
+    245,
+    246
+   ],
+   "idx_creation": 242,
+   "creator": "2MqmD3pZzaWRMqZxi6zc75jFD6qxNU1zsuhUtVnfbppU",
+   "sol_bloc": 82.0816,
+   "tokens_bloc": 779852771.1,
+   "part_supply": 0.77985,
+   "tickets": [
+    21.1299,
+    20.814,
+    20.4678,
+    19.6699
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0525274712050354e-07,
+   "mc_bloc_usd": 8124.7,
+   "mc_dernier_ticket_usd": 24761.5,
+   "premier_externe": {
+    "idx": 388,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.3504,
+    "sig": "4DausUAEjHXoMNQMaQYzAUXHBvBbgDqnESpC5e6VSyGpZkqB6BRpN7atpKH99kX3J2WQLfSGm52W9wacrwtqxbpZ",
+    "mc_usd": 34683.1,
+    "ratio": 4.269
+   },
+   "mc_amm_ouverture_usd": 63925.9,
+   "ratio_amm": 7.868
+  },
+  {
+   "mint": "9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump",
+   "slot": 429338545,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY"
+   ],
+   "idx_bloc": [
+    745,
+    746,
+    747,
+    748
+   ],
+   "idx_creation": 744,
+   "creator": "9vivFUKux1L2zo3t4wyTu8gDEwcDBkZ5KLTs4eP1S9Ru",
+   "sol_bloc": 82.0816,
+   "tokens_bloc": 779852771.1,
+   "part_supply": 0.77985,
+   "tickets": [
+    21.1299,
+    20.814,
+    20.4678,
+    19.6699
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0525274712050354e-07,
+   "mc_bloc_usd": 8124.7,
+   "mc_dernier_ticket_usd": 24761.5,
+   "premier_externe": {
+    "idx": 868,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.3924,
+    "sig": "4WrGWPzaVFnYd7hiKK8ysgzqBaHDVXDQU5QdGnM4xn2n7hD3qu8rAHcihxx1xvT9tUzQXxxS3K8ZH6dQwNY2p4Ra",
+    "mc_usd": 35018.0,
+    "ratio": 4.31
+   },
+   "mc_amm_ouverture_usd": 413.0,
+   "ratio_amm": 0.051
+  },
+  {
+   "mint": "GkgtsQCLdV4rPVcz6YaCRowSK8XUeD99xjFcUyCwpump",
+   "slot": 429340912,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY"
+   ],
+   "idx_bloc": [
+    920,
+    921,
+    922,
+    923
+   ],
+   "idx_creation": 919,
+   "creator": "2CM8KfJ4Xp8gKrmfh919uhbmweQ2LkjpcojcidtMMBQ7",
+   "sol_bloc": 82.0816,
+   "tokens_bloc": 779852771.1,
+   "part_supply": 0.77985,
+   "tickets": [
+    21.1299,
+    20.814,
+    20.4678,
+    19.6699
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0525274712050354e-07,
+   "mc_bloc_usd": 8124.7,
+   "mc_dernier_ticket_usd": 24761.5,
+   "premier_externe": {
+    "idx": 958,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 4.4344,
+    "sig": "4KboBjahbjwRBy8jPT2RpXsVpFJ4yPKcLiJtnQPzQKdxVZBQTPnm7TarQonCY1oywo1wXLvLES8qNyUDW72s3Htm",
+    "mc_usd": 35352.8,
+    "ratio": 4.351
+   },
+   "mc_amm_ouverture_usd": 56469.9,
+   "ratio_amm": 6.95
+  },
+  {
+   "mint": "GUA59wrxfgzdLx1qZTwX9wDaZFvVteTQLPUc9R1ppump",
+   "slot": 430403220,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc"
+   ],
+   "idx_bloc": [
+    190,
+    199,
+    202,
+    205,
+    364
+   ],
+   "idx_creation": 182,
+   "creator": "AuRR3uk25JV3hVA9oPJ1pSYypP3bt9xkLRsixr1y79yV",
+   "sol_bloc": 86.0903,
+   "tokens_bloc": 789579628.93,
+   "part_supply": 0.78958,
+   "tickets": [
+    20.7531,
+    20.4456,
+    20.3678,
+    19.3313,
+    5.1926
+   ],
+   "ticket_cv": 0.3503,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0903313599553371e-07,
+   "mc_bloc_usd": 8416.5,
+   "mc_dernier_ticket_usd": 31325.1,
+   "premier_externe": {
+    "idx": 425,
+    "signer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+    "sol": 2.6947,
+    "sig": "5sh6qfsiYk9ArCGmnyXhgaoNMTwjKNbyZZsccTdGszARz1NDKWPHZV3pYSmd4PEJyERKKo7djmj8pzSQFj8bMJLt",
+    "mc_usd": 4433.4,
+    "ratio": 0.527
+   },
+   "mc_amm_ouverture_usd": 556.8,
+   "ratio_amm": 0.069
+  },
+  {
+   "mint": "HvM3WrbuWuEJTrxDMAPiPwR8oSjHUcbcTDuati9vpump",
+   "slot": 430408646,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "RDCT-d4fb6b1f86"
+   ],
+   "idx_bloc": [
+    655,
+    656,
+    657,
+    658,
+    808
+   ],
+   "idx_creation": 654,
+   "creator": "Hdrx5isYBskc4APEAEHrmktHNWo88HAV1ABzVBGvktxG",
+   "sol_bloc": 86.2103,
+   "tokens_bloc": 789579628.93,
+   "part_supply": 0.78958,
+   "tickets": [
+    20.7531,
+    20.4456,
+    20.3678,
+    19.3313,
+    5.3125
+   ],
+   "ticket_cv": 0.3471,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0918507152629605e-07,
+   "mc_bloc_usd": 8428.2,
+   "mc_dernier_ticket_usd": 32048.8,
+   "premier_externe": {
+    "idx": 809,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.222,
+    "sig": "p7xnTQRVbtZH76KGAjk7LoMMuuGS5Zcue5fj5ix4UgdEkbxNNcv8fmSdnojJdVGPfFFdrN4PHLKuci56Rtbfent",
+    "mc_usd": 389.8,
+    "ratio": 0.046
+   },
+   "mc_amm_ouverture_usd": 62275.5,
+   "ratio_amm": 7.747
+  },
+  {
+   "mint": "CmFiPswdJEEo3njREo3FKrBUyY9TsmFBQZss2LmZpump",
+   "slot": 430411945,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "RDCT-d4fb6b1f86"
+   ],
+   "idx_bloc": [
+    86,
+    87,
+    89,
+    90,
+    246
+   ],
+   "idx_creation": 54,
+   "creator": "2v3SdieWizhT13xBbGNNdSBo5vf7hH95nNfirZyDXzP5",
+   "sol_bloc": 86.3463,
+   "tokens_bloc": 789579628.93,
+   "part_supply": 0.78958,
+   "tickets": [
+    20.7531,
+    20.4456,
+    20.3678,
+    19.3313,
+    5.4485
+   ],
+   "ticket_cv": 0.3434,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0935731507845679e-07,
+   "mc_bloc_usd": 8441.5,
+   "mc_dernier_ticket_usd": 32869.2,
+   "premier_externe": {
+    "idx": 293,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.346,
+    "sig": "fsbK25gzDftTdTJV4Cw95DSA7utPkVG5b77SwGLcPjceTHWU9usu5hHZNPjkq3iaoCKdTq6sPkv3oJhfYeHE1YQ",
+    "mc_usd": 2329.4,
+    "ratio": 0.276
+   },
+   "mc_amm_ouverture_usd": 69201.2,
+   "ratio_amm": 8.608
+  },
+  {
+   "mint": "BULBzU2i5k9hp4Vh8JgDW8L1fGfskgmoTzMM1Kx7mAho",
+   "slot": 430413504,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX"
+   ],
+   "idx_bloc": [
+    850,
+    851,
+    852,
+    853
+   ],
+   "idx_creation": 849,
+   "creator": "BViPyq7YLWPmoxz9NAbPnrCAAfcfRukJmfjgWAh1zJgB",
+   "sol_bloc": 80.8978,
+   "tokens_bloc": 776784001.7,
+   "part_supply": 0.77678,
+   "tickets": [
+    20.7531,
+    20.4456,
+    20.3678,
+    19.3313
+   ],
+   "ticket_cv": 0.0265,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0414450746649593e-07,
+   "mc_bloc_usd": 8039.1,
+   "mc_dernier_ticket_usd": 23977.6,
+   "premier_externe": {
+    "idx": 1015,
+    "signer": "GRevWsvJCmmZ6cF6GdAkpKNW6TCLm5MBKyBc3XtUeMmB",
+    "sol": 0.6051,
+    "sig": "4FJU3SMXJ6oPr1Y2vaiRB8QxqD5PNeoLn2EqZu6TRgFeRGXMuGLWDiy4JuV45Gacof27EUwgKH7NxQGJX3v6wAFs",
+    "mc_usd": 29781.2,
+    "ratio": 3.705
+   },
+   "mc_amm_ouverture_usd": 2219710.6,
+   "ratio_amm": 276.114
+  },
+  {
+   "mint": "AsCCY8efwiy8T9R6ba9BaDUAQYwwSWrVzyvnY72kpump",
+   "slot": 430602477,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe"
+   ],
+   "idx_bloc": [
+    688,
+    689,
+    690,
+    691,
+    943
+   ],
+   "idx_creation": 687,
+   "creator": "4Gy2ooPo6YJmxsVxRJ4qH5LsKWN4GCpKbGTm9oKrza6D",
+   "sol_bloc": 87.4573,
+   "tokens_bloc": 789259140.7,
+   "part_supply": 0.78926,
+   "tickets": [
+    20.7445,
+    20.439,
+    20.1384,
+    19.5332,
+    6.6022
+   ],
+   "ticket_cv": 0.3121,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.1080930082138857e-07,
+   "mc_bloc_usd": 8553.6,
+   "mc_dernier_ticket_usd": 40487.6,
+   "premier_externe": {
+    "idx": 972,
+    "signer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+    "sol": 0.1619,
+    "sig": "XqCTTwBhVr2xB5dqBcctrzmCvdR1qgS2daAM272XnyzTjiNRzCR6AKDGUgYrSU4JtX7c1yLQEHbDY65au975DkQ",
+    "mc_usd": 38996.9,
+    "ratio": 4.559
+   },
+   "mc_amm_ouverture_usd": 44338.4,
+   "ratio_amm": 5.517
+  },
+  {
+   "mint": "6qPhG9X1YUWHekKro42H6nZLRNRU5HMbnAXSgNqepump",
+   "slot": 430628545,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "RDCT-d4fb6b1f86"
+   ],
+   "idx_bloc": [
+    683,
+    684,
+    685,
+    686,
+    733
+   ],
+   "idx_creation": 682,
+   "creator": "26RK9VwosytWBsGoRU7ztZ9cRLrpAK7zgMxn9EeeKYqD",
+   "sol_bloc": 86.2743,
+   "tokens_bloc": 789579628.93,
+   "part_supply": 0.78958,
+   "tickets": [
+    20.7587,
+    20.3934,
+    20.1568,
+    19.4262,
+    5.5391
+   ],
+   "ticket_cv": 0.3404,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0926612731808115e-07,
+   "mc_bloc_usd": 8434.5,
+   "mc_dernier_ticket_usd": 32334.2,
+   "premier_externe": {
+    "idx": 755,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.298,
+    "sig": "66rYGFA9T3SmWEQdrPEssBmryGANM3Kp8arxACbMYcxMGeuabarufPXgk6xuN9vDAPwKYo4NJKm3qV8iF8TeWoy3",
+    "mc_usd": 562.4,
+    "ratio": 0.067
+   },
+   "mc_amm_ouverture_usd": 51350.6,
+   "ratio_amm": 6.397
+  },
+  {
+   "mint": "3cH1aqzTqNuEZpDVgJ7MvQbKJWZrqkmYyRwbvS5hpump",
+   "slot": 430636256,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "6Qx9iprva3A9ywyDPaNFC2KjVLFxJZyxTGxqU4UAHLDP",
+    "339QJtzBbL47zCP4vhFa11tmKL3uJhUZjhNGSw4iwnoY",
+    "8qhHz3D4A1AhcGwRS6ZRH4Y7iCr2ojWqt24LovtnCETv",
+    "A4416eujnydT7gnSTtiW2hnADsNin2mKNKnWVcw71MGX",
+    "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe"
+   ],
+   "idx_bloc": [
+    1092,
+    1093,
+    1094,
+    1095,
+    1325
+   ],
+   "idx_creation": 1091,
+   "creator": "DqRPfWeDoAf3cWepworUWzRvALob3E93np5cXVJm2Hgp",
+   "sol_bloc": 86.9873,
+   "tokens_bloc": 788243785.81,
+   "part_supply": 0.78824,
+   "tickets": [
+    20.7587,
+    20.3934,
+    20.1568,
+    19.4262,
+    6.2522
+   ],
+   "ticket_cv": 0.3213,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.1035588387087389e-07,
+   "mc_bloc_usd": 8518.6,
+   "mc_dernier_ticket_usd": 40597.5,
+   "premier_externe": {
+    "idx": 1357,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.9011,
+    "sig": "2pNN6eZshA2bgU9wFYpUssyKLpWNANm888oSMXD27emvXP4bUP1rg6mH7yovHR37kjcN81p3yNYw8GuT3dswvER",
+    "mc_usd": 52072.4,
+    "ratio": 6.113
+   },
+   "mc_amm_ouverture_usd": 1068.0,
+   "ratio_amm": 0.133
+  },
+  {
+   "mint": "hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump",
+   "slot": 429414857,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN"
+   ],
+   "idx_bloc": [
+    78,
+    80,
+    81,
+    82
+   ],
+   "idx_creation": 76,
+   "creator": "E7B2ojFonfCom6CV95cBpoEX1sEVSprE35YchgY4bkp1",
+   "sol_bloc": 84.8083,
+   "tokens_bloc": 788357564.42,
+   "part_supply": 0.78836,
+   "tickets": [
+    21.3658,
+    21.2646,
+    21.1512,
+    21.0267
+   ],
+   "ticket_cv": 0.006,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0757594769504248e-07,
+   "mc_bloc_usd": 8304.0,
+   "mc_dernier_ticket_usd": 25710.1,
+   "premier_externe": {
+    "idx": 369,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.4344,
+    "sig": "5Noxt52mAuBnTESYwywVkJsQhQctDqdi6Tuz5RsXHkD2UX6PBDD5nCXwZBzF7P7Qq9f37bwM2dpf4CSXQC8UcPvk",
+    "mc_usd": 37443.2,
+    "ratio": 4.509
+   },
+   "mc_amm_ouverture_usd": 49265.1,
+   "ratio_amm": 5.933
+  },
+  {
+   "mint": "EmP6i382zAaURiidLi4qphFvuAhsfQmTcV1F8iz6pump",
+   "slot": 429423688,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN"
+   ],
+   "idx_bloc": [
+    73,
+    76,
+    77,
+    78
+   ],
+   "idx_creation": 65,
+   "creator": "5j7DU77gzoqvJfeF2TiubDB4im8bA7VQXTDJnc3ukTVZ",
+   "sol_bloc": 84.7972,
+   "tokens_bloc": 788330221.29,
+   "part_supply": 0.78833,
+   "tickets": [
+    21.3658,
+    21.2646,
+    21.1512,
+    21.0155
+   ],
+   "ticket_cv": 0.0062,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0756555097273144e-07,
+   "mc_bloc_usd": 8303.2,
+   "mc_dernier_ticket_usd": 25707.6,
+   "premier_externe": {
+    "idx": 183,
+    "signer": "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc",
+    "sol": 1.2315,
+    "sig": "2gNAtQdJhJmFeHEK5LvW7nnzY42313LT9wPoiyL4zbcpco8dw9XrtQAen7svnfuzYaNoosRyTFGv1k5wEBMpyRLq",
+    "mc_usd": 31854.0,
+    "ratio": 3.836
+   },
+   "mc_amm_ouverture_usd": 124.3,
+   "ratio_amm": 0.015
+  },
+  {
+   "mint": "tT2Ss23K4WmE9pvQwA5rfaVJD3kmExNpxYUx6xKpump",
+   "slot": 429429857,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN"
+   ],
+   "idx_bloc": [
+    325,
+    326,
+    327,
+    328
+   ],
+   "idx_creation": 324,
+   "creator": "AT3bajJAfDMMbHF67qdb7QEEtnzRreKcjbAbY9kaqHPE",
+   "sol_bloc": 84.8073,
+   "tokens_bloc": 788023573.25,
+   "part_supply": 0.78802,
+   "tickets": [
+    21.3658,
+    21.2646,
+    21.1512,
+    21.0257
+   ],
+   "ticket_cv": 0.006,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0762025718871885e-07,
+   "mc_bloc_usd": 8307.4,
+   "mc_dernier_ticket_usd": 25714.9,
+   "premier_externe": {
+    "idx": 727,
+    "signer": "2CQgjcdNEo7WtbQLpJTAVcC3Ga61pNvRDTgP5grzctFG",
+    "sol": 1.2261,
+    "sig": "4rr88UUpmn8RBnMchtrpSgJfZ22YRRxQB5Ay6FwrdRXAAyTej3LGm5SyZoZsFnx4fHw1CVxKdYauyD2MGuYSDnG3",
+    "mc_usd": 32251.1,
+    "ratio": 3.882
+   },
+   "mc_amm_ouverture_usd": 628.3,
+   "ratio_amm": 0.076
+  },
+  {
+   "mint": "9NKToDBF9tiYxoGSjyhcBi2NqVyJjFJyCW98UPVrpump",
+   "slot": 429447123,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA"
+   ],
+   "idx_bloc": [
+    768,
+    769,
+    770,
+    771
+   ],
+   "idx_creation": 767,
+   "creator": "2Z6G1iE4fkK42iUamHoWq7yqD2H3R4Cp13r7AB437wAp",
+   "sol_bloc": 85.4047,
+   "tokens_bloc": 790810668.31,
+   "part_supply": 0.79081,
+   "tickets": [
+    22.0057,
+    21.5035,
+    21.137,
+    20.7584
+   ],
+   "ticket_cv": 0.0216,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0799636209921468e-07,
+   "mc_bloc_usd": 8336.5,
+   "mc_dernier_ticket_usd": 26065.3,
+   "premier_externe": {
+    "idx": 1159,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.6686,
+    "sig": "5BzAgRPkdnB3t8PSWuMHqfdM9uGppmNSVsUhqwA3nP5ZQu9gijpe5kkGnHrX48KMYJS1m3xmopE6rbk43J1zH14B",
+    "mc_usd": 32778.9,
+    "ratio": 3.932
+   },
+   "mc_amm_ouverture_usd": 74.6,
+   "ratio_amm": 0.009
+  },
+  {
+   "mint": "48pZaxQf5dHvg2K6cfz9Zz4LmXBLv96VRDV84kvgpump",
+   "slot": 429483283,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN"
+   ],
+   "idx_bloc": [
+    499,
+    501,
+    502,
+    505
+   ],
+   "idx_creation": 497,
+   "creator": "BHeYxsQsUkPLzzLmdg299oskrgEUqdijPz4hJu5yCbKf",
+   "sol_bloc": 83.2339,
+   "tokens_bloc": 785598749.73,
+   "part_supply": 0.7856,
+   "tickets": [
+    21.1376,
+    20.9143,
+    20.7739,
+    20.408
+   ],
+   "ticket_cv": 0.0127,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0594959930180538e-07,
+   "mc_bloc_usd": 8178.5,
+   "mc_dernier_ticket_usd": 25084.2,
+   "premier_externe": {
+    "idx": 753,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 3.3383,
+    "sig": "3tSmsLtSp46cBgp5G5Mfr6NNjBjTCzFaRwFafYwWyGNc5V9S6tF2u39TbhVjMKMAHa5yWhLLemFBevFFj8iqPDC8",
+    "mc_usd": 36997.2,
+    "ratio": 4.524
+   },
+   "mc_amm_ouverture_usd": 82.4,
+   "ratio_amm": 0.01
+  },
+  {
+   "mint": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+   "slot": 429485775,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz"
+   ],
+   "idx_bloc": [
+    1392,
+    1393,
+    1394,
+    1395
+   ],
+   "idx_creation": 1391,
+   "creator": "kc1J4CVAZWPntuiTG5ftZeWcvsoM3cy56adKmNvTjYm",
+   "sol_bloc": 82.7863,
+   "tokens_bloc": 783967286.14,
+   "part_supply": 0.78397,
+   "tickets": [
+    20.8752,
+    20.7118,
+    20.6693,
+    20.5301
+   ],
+   "ticket_cv": 0.0059,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0559923700095473e-07,
+   "mc_bloc_usd": 8151.4,
+   "mc_dernier_ticket_usd": 24840.1,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 127.2,
+   "ratio_amm": 0.016
+  },
+  {
+   "mint": "8Xa1jqBhrxEFX4HgMd9NNRVjK5ap7tBrr5aebCGKpump",
+   "slot": 430513779,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA"
+   ],
+   "idx_bloc": [
+    411,
+    412,
+    413,
+    414
+   ],
+   "idx_creation": 410,
+   "creator": "5WDvAsWwH8RhkSCrcnHMJn2GN8VQbMcTPBSLpXpzhqKH",
+   "sol_bloc": 85.4867,
+   "tokens_bloc": 791009889.3,
+   "part_supply": 0.79101,
+   "tickets": [
+    21.9146,
+    21.7992,
+    21.0155,
+    20.7573
+   ],
+   "ticket_cv": 0.0232,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0807284338406683e-07,
+   "mc_bloc_usd": 8342.4,
+   "mc_dernier_ticket_usd": 26106.5,
+   "premier_externe": {
+    "idx": 596,
+    "signer": "haqqiUUXB5gp7gDbSjpEkw3phAjQb25r86uXJsZQgWq",
+    "sol": 0.2524,
+    "sig": "5GQaPL3Ly3cUrNVyjo747AwiKq2nSFvprv7DsFPSHeQb1KQ3FaF9R4mF19bn9iqaZMCKvVzGQXtcPkpbRCU9jce7",
+    "mc_usd": 32169.9,
+    "ratio": 3.856
+   },
+   "mc_amm_ouverture_usd": 107230.8,
+   "ratio_amm": 12.854
+  },
+  {
+   "mint": "ETGVz4jeuZbKqFd1GoBQeJ5nS5pB5Nah9FLvDxTcpump",
+   "slot": 430548593,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs"
+   ],
+   "idx_bloc": [
+    936,
+    937,
+    938,
+    939
+   ],
+   "idx_creation": 935,
+   "creator": "G55qW3ecatRpAW3WYgXhkVpXzzhhHa7NWBgN4tic5pXt",
+   "sol_bloc": 85.3865,
+   "tokens_bloc": 790766358.65,
+   "part_supply": 0.79077,
+   "tickets": [
+    21.9004,
+    21.7951,
+    21.0155,
+    20.6753
+   ],
+   "ticket_cv": 0.0242,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.079793662564374e-07,
+   "mc_bloc_usd": 8335.1,
+   "mc_dernier_ticket_usd": 26078.9,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 232.9,
+   "ratio_amm": 0.028
+  },
+  {
+   "mint": "Czv6T6sF5SMTDDYns5tEeSsKb7MNK4QWAnvZwsMxpump",
+   "slot": 430554759,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz",
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA"
+   ],
+   "idx_bloc": [
+    341,
+    342,
+    343,
+    344
+   ],
+   "idx_creation": 340,
+   "creator": "26UMwb8uKiLAswCQDJw6H8CJm1UV3ZDETZNoDSHibX5V",
+   "sol_bloc": 85.6831,
+   "tokens_bloc": 791485891.26,
+   "part_supply": 0.79149,
+   "tickets": [
+    21.9004,
+    21.8205,
+    21.0024,
+    20.9598
+   ],
+   "ticket_cv": 0.0206,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.082560208073168e-07,
+   "mc_bloc_usd": 8356.5,
+   "mc_dernier_ticket_usd": 26149.1,
+   "premier_externe": {
+    "idx": 528,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 0.4969,
+    "sig": "27i8NjhncS3BcnyZKompSJsc5SJCnztHP8A8VWAJykhtJRjAtAkVEDDoPVbj8XV5D2cA6GZ1nmLJv99qysratY39",
+    "mc_usd": 42658.3,
+    "ratio": 5.105
+   },
+   "mc_amm_ouverture_usd": 86277.7,
+   "ratio_amm": 10.325
+  },
+  {
+   "mint": "CBvxtHtM9W4UXT1m7pwkPkaVDPpKQj8WGMJe7tQpump",
+   "slot": 430556455,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "FBqJs9fqD6tgFKiCkja2fwD4NYQpbdkt8doR1KTbpGKs",
+    "Aj5Pexz2nm9LAh9UvFp28dvvRS8j75sCsG9aSW4cQ4SN",
+    "2GMhqu3cZsBsGXcdKQnAavzia4iaWT8BjdHBSWMywsuA",
+    "DroL19BGzX91iRebZ69cz6SRHEfRfBws5ko95SA4Lrwz"
+   ],
+   "idx_bloc": [
+    1119,
+    1120,
+    1121,
+    1122
+   ],
+   "idx_creation": 1118,
+   "creator": "8R1Ezx75gC1Jg89gH5vUKLE8WjpwrNoGCCMj4oU2Uf59",
+   "sol_bloc": 86.0203,
+   "tokens_bloc": 792299200.95,
+   "part_supply": 0.7923,
+   "tickets": [
+    21.9146,
+    21.8559,
+    21.2606,
+    20.9892
+   ],
+   "ticket_cv": 0.0183,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0857044398171226e-07,
+   "mc_bloc_usd": 8380.8,
+   "mc_dernier_ticket_usd": 26309.9,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 1007.1,
+   "ratio_amm": 0.12
+  },
+  {
+   "mint": "ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump",
+   "slot": 430477517,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk"
+   ],
+   "idx_bloc": [
+    1061,
+    1062,
+    1063,
+    1064
+   ],
+   "idx_creation": 1060,
+   "creator": "EaopWCEjrPywuiaNBQ76eJQGFCJnNJ8cCMSy1wRzRRKc",
+   "sol_bloc": 79.4884,
+   "tokens_bloc": 774459255.21,
+   "part_supply": 0.77446,
+   "tickets": [
+    20.4496,
+    20.3794,
+    19.5262,
+    19.1331
+   ],
+   "ticket_cv": 0.0282,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0263726583331213e-07,
+   "mc_bloc_usd": 7922.8,
+   "mc_dernier_ticket_usd": 23628.2,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 92.4,
+   "ratio_amm": 0.012
+  },
+  {
+   "mint": "fCM1RmVwhkVd8o7NrhAyWXmtVPqPZkaiWdgCcgLpump",
+   "slot": 430480176,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "HrzFCWbhStnnfDHtQmMN3SvbjA2VELNw9nW1uFvr1bGe"
+   ],
+   "idx_bloc": [
+    880,
+    881,
+    882,
+    883,
+    942
+   ],
+   "idx_creation": 879,
+   "creator": "EXNvUZStqkThSBpfKU56J33DeFvK4YgBGu4L9s5nYk3Y",
+   "sol_bloc": 85.6205,
+   "tokens_bloc": 787364779.17,
+   "part_supply": 0.78736,
+   "tickets": [
+    20.4496,
+    20.3794,
+    19.5262,
+    19.1331,
+    6.1322
+   ],
+   "ticket_cv": 0.3223,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0874317354884804e-07,
+   "mc_bloc_usd": 8394.1,
+   "mc_dernier_ticket_usd": 36678.4,
+   "premier_externe": null,
+   "mc_amm_ouverture_usd": 1169.1,
+   "ratio_amm": 0.148
+  },
+  {
+   "mint": "4faz9H9B5FJc6uEMoLT6C1Lg2j5iZ1DEsK535Ekupump",
+   "slot": 430482245,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "F4nx9DbZxQhR2nf8TfRnZ9hFxWJa9tC2BK6ZVrEG2ky9"
+   ],
+   "idx_bloc": [
+    358,
+    359,
+    360,
+    361,
+    477
+   ],
+   "idx_creation": 353,
+   "creator": "AKT4H4Z8geWaJQoFvhNRKtAu5HEgSDEuKG2TQBMmmJ4w",
+   "sol_bloc": 87.1775,
+   "tokens_bloc": 789666604.9,
+   "part_supply": 0.78967,
+   "tickets": [
+    20.4496,
+    20.3794,
+    19.5262,
+    19.1331,
+    7.6891
+   ],
+   "ticket_cv": 0.281,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.10397810915046e-07,
+   "mc_bloc_usd": 8521.8,
+   "mc_dernier_ticket_usd": 39029.5,
+   "premier_externe": {
+    "idx": 507,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.0891,
+    "sig": "4JpfsLrvnsdi4J25RFSZS4VAGgYqLjKLEeD4BfLMDzR6h7Df1WuN1qXeqBCgikzTZXBg7dVu1MoSccGbiK9e3FeB",
+    "mc_usd": 57617.2,
+    "ratio": 6.761
+   },
+   "mc_amm_ouverture_usd": 13244.3,
+   "ratio_amm": 1.672
+  },
+  {
+   "mint": "HSAuwh7kJ9sS71vYu2pR3wddJRppUE553vTTMm93pump",
+   "slot": 430485810,
+   "n_bloc": 5,
+   "wallets_bloc": [
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq"
+   ],
+   "idx_bloc": [
+    403,
+    404,
+    405,
+    406,
+    454
+   ],
+   "idx_creation": 402,
+   "creator": "FearMd7Fu2HeqsWMG5onVfT3aioi1cnGjE6DQAdsk5Ym",
+   "sol_bloc": 86.4027,
+   "tokens_bloc": 791336922.25,
+   "part_supply": 0.79134,
+   "tickets": [
+    20.5684,
+    20.3676,
+    19.5857,
+    19.2336,
+    6.6473
+   ],
+   "ticket_cv": 0.309,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0918566821602519e-07,
+   "mc_bloc_usd": 8428.3,
+   "mc_dernier_ticket_usd": 32142.4,
+   "premier_externe": {
+    "idx": 455,
+    "signer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+    "sol": 0.9241,
+    "sig": "43SBAaU6QhPfjJnkn7mf2SSV8Hq2qhGQAEvKJG6dij6UKCxtymtCc3ZAMqo4EcvnD2ENEya2HtoucQsCeNszCRh",
+    "mc_usd": 1908.6,
+    "ratio": 0.226
+   },
+   "mc_amm_ouverture_usd": 55758.8,
+   "ratio_amm": 7.023
+  },
+  {
+   "mint": "HmqYG1uryHg33JDrky5oAhCxTkXXDbc4qV8NqWXApump",
+   "slot": 430572931,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP",
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft"
+   ],
+   "idx_bloc": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "idx_creation": 5,
+   "creator": "7AEjo5Dnzy9Uj6ZBu9n7wiP3oHgdVyxuvdJ9cG1i6hn7",
+   "sol_bloc": 85.1685,
+   "tokens_bloc": 790734260.91,
+   "part_supply": 0.79073,
+   "tickets": [
+    22.1627,
+    21.8377,
+    21.2532,
+    19.9149
+   ],
+   "ticket_cv": 0.0404,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0770806698423752e-07,
+   "mc_bloc_usd": 8314.2,
+   "mc_dernier_ticket_usd": 26170.8,
+   "premier_externe": {
+    "idx": 130,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.4813,
+    "sig": "4ZH78pUssjHuh3T5G5kcmBfJbs44X3tFUnGk2oSvh5A81GMtUdhW3DuE6z9FoqZfWSTcjtnQ3mXub11P2529EvJQ",
+    "mc_usd": 52286.3,
+    "ratio": 6.289
+   },
+   "mc_amm_ouverture_usd": 58386.4,
+   "ratio_amm": 7.022
+  },
+  {
+   "mint": "7vAgNEgE27vqRaU1ti3oMi8Qbb6khDRRcCexYWnupump",
+   "slot": 430584885,
+   "n_bloc": 4,
+   "wallets_bloc": [
+    "BxLmrDJaNr9hA35FBGASAhUK74Gs98AyvQXx6HSR1Qft",
+    "2LLHCtDpZWWsoeyAcjnnBgwsqzfvWx8EKfE8YTmGyafk",
+    "E7T1Vs7aCLkN7TyFg382rhG7yVM5cWvjuwhfQkWPiSEH",
+    "AQVoCADzm2aoXW3Qwj4rBsNm9YMHoLFt8SnyitqjcHRP"
+   ],
+   "idx_bloc": [
+    914,
+    915,
+    916,
+    917
+   ],
+   "idx_creation": 913,
+   "creator": "9mComvwgsWcm9tPXSHNfnHNJoXBQy3GCBKr6ginJVGkt",
+   "sol_bloc": 85.8447,
+   "tokens_bloc": 792540225.15,
+   "part_supply": 0.79254,
+   "tickets": [
+    22.1636,
+    22.0513,
+    21.379,
+    20.2509
+   ],
+   "ticket_cv": 0.0354,
+   "n_petits_acheteurs_avant": 0,
+   "sol_petits_avant": 0,
+   "petits_avant": [],
+   "vwap_sol_par_token": 1.0831595159443844e-07,
+   "mc_bloc_usd": 8361.1,
+   "mc_dernier_ticket_usd": 26414.6,
+   "premier_externe": {
+    "idx": 1208,
+    "signer": "RDCT-d4fb6b1f86",
+    "sol": 1.059,
+    "sig": "2HRcAKXZL8sZieFrZPcufs5x3L1nDPv4fNuYuXzAJ38VmLFRrZuUCksZqaG7TZCV6UbAoXqv8VC511nH5z3Sruus",
+    "mc_usd": 146033.4,
+    "ratio": 17.466
+   },
+   "mc_amm_ouverture_usd": 1125.1,
+   "ratio_amm": 0.135
+  }
+ ]
+}

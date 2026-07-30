@@ -1,0 +1,36 @@
+{
+ "corpus": "pump.fun floor_capture \u2014 fenetre 2026-06-27 -> 2026-07-04",
+ "fichiers": {
+  "dataset_socle.json": {
+   "bytes": 2051213,
+   "sha256": "9b886d5ec7df0b43ece2e7621447d146e1ed74f1c8e0a934926fb7c5aa284d5d"
+  },
+  "floor_capture_public.jsonl.gz": {
+   "bytes": 22748636,
+   "sha256": "9a87a0d4ad1166746827ac2fed795065119d00f220cc3ac2144b84678ef06604"
+  },
+  "horizon.json": {
+   "bytes": 85823,
+   "sha256": "3bef66c55268c11e87ab778aebb95c45b87f57f6a01d75b2c1058bb48ca00baa"
+  },
+  "sample/floor_capture_sample.jsonl": {
+   "bytes": 2248354,
+   "sha256": "63e24872a97f91ab62d3cd81f59c0834748e3f1568d712a52c5836a0be0c6ef8"
+  },
+  "snipe_log.json": {
+   "bytes": 75773,
+   "sha256": "ba0455eb820a37a37f7775fa492ca41a875095c710da142cb5e382575445542b"
+  }
+ },
+ "n_captures_publiees": 293,
+ "n_captures_vides_ecartees": 352,
+ "n_fichiers_source": 645,
+ "n_identifiants_redactes": 43,
+ "transformations": [
+  "captures sans swap ecartees",
+  "champ `fees` supprime",
+  "champ `sig` conserve pour t <= created+30s seulement",
+  "sol arrondi 6 chiffres significatifs, tokens/price 8",
+  "aucune anonymisation d'adresse SAUF les identifiants a prefixe vanity injurieux, remplaces par une etiquette stable RDCT-* (voir code/redact.py)"
+ ]
+}

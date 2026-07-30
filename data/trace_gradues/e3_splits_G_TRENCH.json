@@ -1,0 +1,58 @@
+{
+ "label": "G_TRENCH",
+ "mint": "GACpABn18xqiSJbD9ZEyArJDT9RHRMUut5nK9Z9Spump",
+ "n_wallets": 40,
+ "n_inflows_total": 83,
+ "n_rentrees_ecartees_produit_de_vente": 1332,
+ "n_genesis_reached": 25,
+ "n_genesis_NOT_reached": 15,
+ "n_prebuy_reached": 35,
+ "n_prebuy_NOT_reached": 5,
+ "n_hyperactifs_non_mesurables": 5,
+ "wallets_without_genesis": [
+  "9R2UJG1Wyoo5V376TKkHcp98hrKEQhmGMmx8jVtRLJoz",
+  "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA",
+  "DQ97nu7t7fbhAtZUyam8EzNsxUzw5bgEE5seBfevPwRK",
+  "C5ApZQhkXHTo3guW8YRmjsvQJnZ2VEMH1dJTtFHo77ar",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+  "13jJRGTmHk4FMcc3L1JNum1D4B15GicJG6FqfVTmSpST",
+  "2q1eqp14NwNuCgqT6VnTUzjwidz3zCEgvHwpa6ipQhYG",
+  "Aufp7dywCMwdEc288euc8hPJvyrRxquwUK1yZPjXgy2e",
+  "5rumyARH4tTauDcChmji9cwrkd4ZfFKwhA9xaaChkzMy",
+  "suqh5sHtr8HyJ7q8scBimULPkPpA557prMG47xCHQfK",
+  "8uNLyuofKQU2SDuRsXoiEcEcZBX8mWQwQn485ymL7DUF",
+  "H9f7vTF74jt9stBTPj2CitF97pwREGtu9E453nE79aXd",
+  "FKfCsWvBgadnfVtg7thQWdLgZkud1jXgex2CQhoGLocW",
+  "BTCFpZvtExAMndZvxLxLaKfxT8GVGQyANq4pU4qL4CZr"
+ ],
+ "wallets_without_prebuy": [
+  "X1C2Qt6NZc7EpnJ3hEXPVkTrxJX1Z47CdWCkxbobogA",
+  "DQ97nu7t7fbhAtZUyam8EzNsxUzw5bgEE5seBfevPwRK",
+  "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT",
+  "696969Y6orZEjp4gZtwcCZS7TNVuhMVE6G5mFvdJ4mYq",
+  "suqh5sHtr8HyJ7q8scBimULPkPpA557prMG47xCHQfK"
+ ],
+ "verdict": "ECHEC DE MESURE \u2014 aucun decoupage vu, mais 5/40 portefeuilles dont la fenetre pre-achat n'est pas couverte (5 hyperactifs). Ce n'est PAS une absence de decoupage.",
+ "A_meme_transaction": [],
+ "B_meme_montant_meme_moment": [],
+ "C_bailleurs_communs_PRIVES": [],
+ "C_bailleurs_communs_infrastructure_sans_valeur": [
+  {
+   "funder": "ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ",
+   "n_early_buyers_funded": 2,
+   "n_transfers": 2,
+   "total_sol": 50.188,
+   "first_utc": "2024-11-15 17:14:04",
+   "known": "MEXC hot wallet",
+   "amounts_sol": [
+    20.188,
+    30.0
+   ],
+   "wallets": [
+    "FVptwMYuQtMpRyipHEUZmHamPTmh9iDXRwdR4wX5uF9S",
+    "HtjQrkFXWAvMZD1zytFEEoUWGAiPGPpRq3v8UHYDr45D"
+   ]
+  }
+ ]
+}
