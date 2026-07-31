@@ -57,7 +57,7 @@ have already peaked at first external visibility; 50 % within 120 seconds. Post-
 There is no strategy in this repository. The measurement says there is nothing to extract, and that
 result is the one that survived the most attacks.
 
-### 4. The 2024–2025 split — a mechanism that is real, and a claim that failed
+### 4. The 2024–2025 funding dispatch — present, token by token
 
 The reference case is a token whose first four buyers were born in a **single transaction** five
 days before the token existed, each funded with exactly 3.000000000 SOL from one distribution hub.
@@ -68,14 +68,21 @@ recipients. Its principal funder is not new; that account dates to 2022 and its 
 reached, which rules out infrastructure built for this window alone. Two upstream addresses exceed
 the pagination ceiling and are reported as **out of reach**, not as unfunded.
 
-Then the generalisation was tested, and it failed. Against dead tokens matched on creation slot, the
-signature separates the traded tokens at **p = 0.0007**. Against *graduated* tokens of the same
-window that the author never traded, it separates nothing: **5/14 versus 3/12, p = 0.44.** Two
-thirds of untouched graduated tokens carry the same signature. The apparent effect was the
-difference between a token that went somewhere and one that did not.
+Tested token by token on the fifteen tokens of the window, the dispatch is present on **8 of 15**,
+and on **6 of 15** under a strict rule requiring three or more fresh wallets funded with an
+identical amount inside 120 seconds. One token carries three same-transaction fan-outs of **twenty
+wallets each**, at amounts identical to nine decimal places, within half an hour. The reference case
+is recovered by the detector, which is the positive control. Every dispatch is listed with its
+amount, span and timestamp in **[docs/PATTERN.md](docs/PATTERN.md)**.
 
-So the mechanism is documented — it demonstrably existed in at least two measured cases — and the
-claim that it was *general* is not made. Full write-up:
+One correction came out of the data: every cluster at the buying-wallet layer is a *round* amount,
+not a conversion output. The two are one hop apart — a conversion pays a distributor, the
+distributor pays the wallets in round parts — so the round amounts are the observable signal at the
+wallet layer, and the hub above behaves exactly that way.
+
+What the mechanism does **not** do is distinguish these tokens from other graduated tokens of the
+same window: against those, **5/14 versus 3/12, p = 0.44**. Present here, and present elsewhere too.
+Both are true, and the separate write-up keeps them separate:
 **[docs/SPLIT_PHASE1.md](docs/SPLIT_PHASE1.md)**.
 
 ---
@@ -160,6 +167,7 @@ code instead of an assertion.
 | [`docs/PITFALLS.md`](docs/PITFALLS.md) | thirteen ways this project was wrong, and how each was caught |
 | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | definitions, populations, validation protocol, declared limits |
 | [`docs/RESULTATS.md`](docs/RESULTATS.md) | the 2026 measurements in full, with an English summary at the top |
+| [`docs/PATTERN.md`](docs/PATTERN.md) | the funding dispatch, token by token, with every burst listed |
 | [`docs/SPLIT_PHASE1.md`](docs/SPLIT_PHASE1.md) | the 2024–2025 split: targets, two control groups, null model |
 | [`code/`](code/) | every measurement, one script per result — see [`code/README.md`](code/README.md) |
 | [`data/`](data/) | derived data, committed; network caches are git-ignored and re-fetchable |

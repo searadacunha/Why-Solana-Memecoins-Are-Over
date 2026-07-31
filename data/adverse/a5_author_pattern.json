@@ -1,0 +1,825 @@
+{
+ "objet": "Test de PRESENCE du motif tel que l'auteur le decrit : portefeuilles frais, finances par une sortie de swap, montants voisins, sur les tokens qu'il a tradés.",
+ "motif_teste": {
+  "1_portefeuille_frais": "cree moins de 7 jours avant son premier achat, ou ne dont la naissance tombe dans la fenetre pre-achat",
+  "2_calibre_du_versement": "RAPPORTE, PAS EXIGE : 'precis_swap' (sortie de conversion) ou montant rond (versement d'un distributeur intermediaire). Exiger l'un excluait le cas de reference, qui utilise l'autre.",
+  "3_montants_voisins": "au moins 2 portefeuilles distincts a 1e-03 pres, dans une fenetre de 6 h",
+  "4_achats_sequentiels": "les portefeuilles retenus figurent parmi les premiers acheteurs de la courbe, par construction du corpus"
+ },
+ "difference_avec_le_detecteur_generique": "Le critere B de t3_decoupage.py exige 3 portefeuilles au meme montant en 1 h, sans regarder ni la fraicheur du portefeuille ni l'origine du versement. Il peut donc manquer le motif decrit ici, et inversement.",
+ "portee": "Presence, pas prevalence. Cet echantillon est choisi sur l'issue (voir a4_selection_bias.py) : il peut montrer que le mecanisme est la, jamais combien il est repandu.",
+ "controle_positif": "Le cas de reference (ODIN_POSITIF) doit ressortir POSITIF. S'il ne ressort pas, le detecteur est casse et aucune conclusion n'est lisible. La premiere version de ce script le manquait, ce qui a revele le defaut.",
+ "n_tokens": 15,
+ "n_motif_present": 8,
+ "n_motif_franc": 6,
+ "palier_franc": {
+  "min_portefeuilles": 3,
+  "etendue_max_s": 120
+ },
+ "seuils": {
+  "fraicheur_jours": 7.0,
+  "tolerance_relative": 0.001,
+  "fenetre_s": 21600,
+  "min_portefeuilles": 2
+ },
+ "balayage_des_seuils": {
+  "1j": {
+   "1e-04": 8,
+   "1e-03": 8,
+   "1e-02": 12,
+   "1e-01": 12
+  },
+  "3j": {
+   "1e-04": 8,
+   "1e-03": 8,
+   "1e-02": 12,
+   "1e-01": 12
+  },
+  "7j": {
+   "1e-04": 8,
+   "1e-03": 8,
+   "1e-02": 12,
+   "1e-01": 12
+  },
+  "14j": {
+   "1e-04": 8,
+   "1e-03": 8,
+   "1e-02": 12,
+   "1e-01": 12
+  },
+  "30j": {
+   "1e-04": 8,
+   "1e-03": 8,
+   "1e-02": 12,
+   "1e-01": 12
+  }
+ },
+ "tokens": [
+  {
+   "token": "ACID",
+   "mint": "9woMdZe1WVpFBQwRPybAFpqaNMT9YXyNMhdKh7JXpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 20,
+   "n_portefeuilles_frais": 15,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "BLT",
+   "mint": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 26,
+   "n_portefeuilles_frais": 25,
+   "n_clusters_montants_voisins": 4,
+   "plus_gros_cluster": 5,
+   "motif_present": true,
+   "n_clusters_francs": 3,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 10.0,
+     "n_portefeuilles": 5,
+     "portefeuilles": [
+      "4X4SiffbmUcWn9pt88AEz5bRshjo3NNrm4WMdcaDST3d",
+      "E3DYcFMUVGhxWwZDSobfaP8USTZcLP7XPW8zcU6NuGCw",
+      "FVAuTbyvbaUb197dkLCzjb4RAwVTduDwrUw9DyrNvay4",
+      "Ghef42r6DTpwG29c9dRDzGAmGBAtFPHiRPetRB19Vxrc",
+      "Hf7pVwBoMkPNrwfiLb5Pwx3f7Mtxerk2VokB3URBX6MV"
+     ],
+     "etendue_s": 49,
+     "utc_premier": "2024-11-14 13:20:22",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "7KMfmLHz69jdmdRKZ6Ba3jqE8x32dnYP6bJseiCfiTAE"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      5.35,
+      5.35,
+      5.35,
+      5.35,
+      5.35
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 2.0,
+     "n_portefeuilles": 4,
+     "portefeuilles": [
+      "5nvw3BC7Bw74d9NehfuonpZzo8E6RsWBXrnD5cRFTqy6",
+      "6rFwqrV1UNeHUhUXFYLU76XBYbNvFTszwTz6QhZKGUp4",
+      "9c7HxJkQ5bp2bSqUG9UzW5Fa1EDq9XjqX11jybinvBzH",
+      "B3QwAp4ZUPzuJSWA8MgEkrcg4FywdEN8TLibheBzxyLb"
+     ],
+     "etendue_s": 79,
+     "utc_premier": "2024-11-19 21:31:19",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "2iS38PpcY1CUza8ynZ5gqS6mvjhxvmYGUn4ik9LycAVf"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.01,
+      0.01,
+      0.01,
+      0.01
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 10.0,
+     "n_portefeuilles": 4,
+     "portefeuilles": [
+      "2pRbDtXGSgcskqxrF5r7wZD3A5CiDJYqQwGvQsMcNJyj",
+      "8diEEawToNTQkif5qnrPz4VXaCp4XLDBwvZuUasm2k3S",
+      "FFgmKThdhoM1mmTqNNwCpqagkg2hNqCraKHJuYw2ihVA",
+      "FtVaacnh41N6aLNHn5BXtzJ1LcidAwNZUjc1182Bc87f"
+     ],
+     "etendue_s": 4158,
+     "utc_premier": "2024-11-19 19:07:46",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "B5GAfdGBXiqzSasMPcyZWNFo6Fpr36bbGYAmJf6XRuA",
+      "HB9NksFa9gDAsYLZ9HTvRvxHEP38g2TMruvzXBWiCsZ7",
+      "yEVdHrM5whUUtRupn9vmjCoKuLfzDdk3rh1WPxSYuQ7"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.11,
+      0.08,
+      0.06,
+      0.06
+     ],
+     "franc": false
+    },
+    {
+     "montant_sol": 2.0,
+     "n_portefeuilles": 3,
+     "portefeuilles": [
+      "E3DYcFMUVGhxWwZDSobfaP8USTZcLP7XPW8zcU6NuGCw",
+      "FVAuTbyvbaUb197dkLCzjb4RAwVTduDwrUw9DyrNvay4",
+      "Hf7pVwBoMkPNrwfiLb5Pwx3f7Mtxerk2VokB3URBX6MV"
+     ],
+     "etendue_s": 49,
+     "utc_premier": "2024-11-14 17:09:08",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "4X4SiffbmUcWn9pt88AEz5bRshjo3NNrm4WMdcaDST3d"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      5.35,
+      5.35,
+      5.35
+     ],
+     "franc": true
+    }
+   ]
+  },
+  {
+   "token": "CHOCO",
+   "mint": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 29,
+   "n_portefeuilles_frais": 28,
+   "n_clusters_montants_voisins": 3,
+   "plus_gros_cluster": 20,
+   "motif_present": true,
+   "n_clusters_francs": 3,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 0.1,
+     "n_portefeuilles": 20,
+     "portefeuilles": [
+      "33mgeD3X6muTPoKyJxxp4VxXNaV4StNgL41CxYodAnjx",
+      "3R5xfnzhyHt8KoMEWYa3fJfdbiHaYpNG5n73joNVUV8f",
+      "3uxpsg1STj44gtvSfcpMC4BHJrx476gk8FHEsAKZk6kh",
+      "4WeYHCa819EXWz4Pj46DmL9dNFUr3dK7GVoD2a9xFket",
+      "69hBWA4o7mkDfTTDdpdyd9FZ1zqU4FFAHJtkHi3hhQsi",
+      "7D4zvMFT4Ji4SjHFUbMtjCi1yK5qwhY99s23S4bGh85F",
+      "7GGEgKWznTnwmxbRwVY7b6xES2mqvmBaEw6WfbTMUsip",
+      "7WA3dG4TWFpHrLNapusotGS8mLZwfMZU7pxmQXsc6mko",
+      "8qZ7a1nz8tErHbXEt8CDcR3v5Kfa7x8pBMohHE6zXXod",
+      "8vteSsnXDMniRD5cdXJrsW7s5wB6Q4NFFW5gedGmgK7K",
+      "9Eo5YRyyN89PM7nKWopw3EwTFyhc9nEQfdyoEtXQHpZv",
+      "By8YpxepHYxxQCr4idt5AiXSoM6XaDAe72KfrgX76ijR",
+      "C7kkfUegM1jhJCJK9iaBpYM3tjuzMqKQHVsJW4Eb28Qy",
+      "EiSBLjD1YkqKLMYUWzk2mGgNT4WbJzgfFMHfzBJXnK8e",
+      "G7UYBeW1YvJoQKbmKCZpMpQH2YyhXomwdYKqXBRfm7Gf",
+      "HXyDzkQnTaTP1UFnNbDEKrUzqnjfFAWZVwkvVKPBJVqj",
+      "SJCqF6SZz9fqZ8tDptbegs3JXRDHVP9NYDDtdyjx9eS",
+      "d3o17vw5dK3SrKywqLQ3rh11FNcMwoeUiThqQtkUvdB",
+      "shiUC63igXAR4B3pB7btvY25aQHmdNqj6i5hKRT8zKv",
+      "yiqtnUQJEyqurrJFJLM3kjMkffMFsKPss11K6a3jKc8"
+     ],
+     "etendue_s": 0,
+     "utc_premier": "2024-10-10 10:06:59",
+     "calibres": [
+      "rond_0.1"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 0.3,
+     "n_portefeuilles": 20,
+     "portefeuilles": [
+      "33mgeD3X6muTPoKyJxxp4VxXNaV4StNgL41CxYodAnjx",
+      "3R5xfnzhyHt8KoMEWYa3fJfdbiHaYpNG5n73joNVUV8f",
+      "3uxpsg1STj44gtvSfcpMC4BHJrx476gk8FHEsAKZk6kh",
+      "4WeYHCa819EXWz4Pj46DmL9dNFUr3dK7GVoD2a9xFket",
+      "69hBWA4o7mkDfTTDdpdyd9FZ1zqU4FFAHJtkHi3hhQsi",
+      "7D4zvMFT4Ji4SjHFUbMtjCi1yK5qwhY99s23S4bGh85F",
+      "7GGEgKWznTnwmxbRwVY7b6xES2mqvmBaEw6WfbTMUsip",
+      "7WA3dG4TWFpHrLNapusotGS8mLZwfMZU7pxmQXsc6mko",
+      "8qZ7a1nz8tErHbXEt8CDcR3v5Kfa7x8pBMohHE6zXXod",
+      "8vteSsnXDMniRD5cdXJrsW7s5wB6Q4NFFW5gedGmgK7K",
+      "9Eo5YRyyN89PM7nKWopw3EwTFyhc9nEQfdyoEtXQHpZv",
+      "By8YpxepHYxxQCr4idt5AiXSoM6XaDAe72KfrgX76ijR",
+      "C7kkfUegM1jhJCJK9iaBpYM3tjuzMqKQHVsJW4Eb28Qy",
+      "EiSBLjD1YkqKLMYUWzk2mGgNT4WbJzgfFMHfzBJXnK8e",
+      "G7UYBeW1YvJoQKbmKCZpMpQH2YyhXomwdYKqXBRfm7Gf",
+      "HXyDzkQnTaTP1UFnNbDEKrUzqnjfFAWZVwkvVKPBJVqj",
+      "SJCqF6SZz9fqZ8tDptbegs3JXRDHVP9NYDDtdyjx9eS",
+      "d3o17vw5dK3SrKywqLQ3rh11FNcMwoeUiThqQtkUvdB",
+      "shiUC63igXAR4B3pB7btvY25aQHmdNqj6i5hKRT8zKv",
+      "yiqtnUQJEyqurrJFJLM3kjMkffMFsKPss11K6a3jKc8"
+     ],
+     "etendue_s": 0,
+     "utc_premier": "2024-10-10 13:31:44",
+     "calibres": [
+      "rond_0.1"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 1.05,
+     "n_portefeuilles": 20,
+     "portefeuilles": [
+      "33mgeD3X6muTPoKyJxxp4VxXNaV4StNgL41CxYodAnjx",
+      "3R5xfnzhyHt8KoMEWYa3fJfdbiHaYpNG5n73joNVUV8f",
+      "3uxpsg1STj44gtvSfcpMC4BHJrx476gk8FHEsAKZk6kh",
+      "4WeYHCa819EXWz4Pj46DmL9dNFUr3dK7GVoD2a9xFket",
+      "69hBWA4o7mkDfTTDdpdyd9FZ1zqU4FFAHJtkHi3hhQsi",
+      "7D4zvMFT4Ji4SjHFUbMtjCi1yK5qwhY99s23S4bGh85F",
+      "7GGEgKWznTnwmxbRwVY7b6xES2mqvmBaEw6WfbTMUsip",
+      "7WA3dG4TWFpHrLNapusotGS8mLZwfMZU7pxmQXsc6mko",
+      "8qZ7a1nz8tErHbXEt8CDcR3v5Kfa7x8pBMohHE6zXXod",
+      "8vteSsnXDMniRD5cdXJrsW7s5wB6Q4NFFW5gedGmgK7K",
+      "9Eo5YRyyN89PM7nKWopw3EwTFyhc9nEQfdyoEtXQHpZv",
+      "By8YpxepHYxxQCr4idt5AiXSoM6XaDAe72KfrgX76ijR",
+      "C7kkfUegM1jhJCJK9iaBpYM3tjuzMqKQHVsJW4Eb28Qy",
+      "EiSBLjD1YkqKLMYUWzk2mGgNT4WbJzgfFMHfzBJXnK8e",
+      "G7UYBeW1YvJoQKbmKCZpMpQH2YyhXomwdYKqXBRfm7Gf",
+      "HXyDzkQnTaTP1UFnNbDEKrUzqnjfFAWZVwkvVKPBJVqj",
+      "SJCqF6SZz9fqZ8tDptbegs3JXRDHVP9NYDDtdyjx9eS",
+      "d3o17vw5dK3SrKywqLQ3rh11FNcMwoeUiThqQtkUvdB",
+      "shiUC63igXAR4B3pB7btvY25aQHmdNqj6i5hKRT8zKv",
+      "yiqtnUQJEyqurrJFJLM3kjMkffMFsKPss11K6a3jKc8"
+     ],
+     "etendue_s": 0,
+     "utc_premier": "2024-10-10 10:07:26",
+     "calibres": [
+      "rond_0.01"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15,
+      0.15
+     ],
+     "franc": true
+    }
+   ]
+  },
+  {
+   "token": "LEXICON",
+   "mint": "E4wg8YF472u8oiLvSNKB84Y23gZhkSQ3PSCJaUj4pump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "n_portefeuilles_frais": 14,
+   "n_clusters_montants_voisins": 2,
+   "plus_gros_cluster": 3,
+   "motif_present": true,
+   "n_clusters_francs": 1,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 0.35,
+     "n_portefeuilles": 3,
+     "portefeuilles": [
+      "14G9WcazDP2YS1nNLGBzVhZ7DwWwPs7gA6J1MSimX6rP",
+      "6eNyT9TfQZkTYu4EaUkiethn3rjzewUXcFeePyKm2HFc",
+      "ERwcPDToqUSxDYzptfporPqPBmpjwfs63tdtdcMLsHSJ"
+     ],
+     "etendue_s": 29,
+     "utc_premier": "2024-12-24 05:10:03",
+     "calibres": [
+      "rond_0.01"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "9A7kh2TFFVbh8tnx1jhU7kUgKfmkeNpLUUKyEkrDb8WY"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      5.64,
+      5.64,
+      5.64
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 2.0,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "14G9WcazDP2YS1nNLGBzVhZ7DwWwPs7gA6J1MSimX6rP",
+      "6eNyT9TfQZkTYu4EaUkiethn3rjzewUXcFeePyKm2HFc"
+     ],
+     "etendue_s": 13680,
+     "utc_premier": "2024-12-26 13:30:16",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "GxQD1BuF7e8G3LyDnhopLURC4bmnXYp5TG9taTo2wmA6"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      5.64,
+      5.64
+     ],
+     "franc": false
+    }
+   ]
+  },
+  {
+   "token": "MIKU",
+   "mint": "48BVWSkY5XxZ9HwaKet2kAYvjP9gPviUmm8Xg2EKCLNx",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 24,
+   "n_portefeuilles_frais": 20,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "ODIN_POSITIF",
+   "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+   "n_premiers_acheteurs": 35,
+   "n_genese_atteinte": 12,
+   "n_portefeuilles_frais": 12,
+   "n_clusters_montants_voisins": 2,
+   "plus_gros_cluster": 4,
+   "motif_present": true,
+   "n_clusters_francs": 1,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 3.0,
+     "n_portefeuilles": 4,
+     "portefeuilles": [
+      "4EtTqqPJmNLu9z6fDVMGinh515hdvKg6kwtwEk1STqSa",
+      "8zgGV2PBLkCDHey5cwdmcDdvSNUCjezM4b1376oFh63X",
+      "A1cn1VkY65uLXF4Ze1CJDvaKrLWGsJjJ9eKZPSVddF58",
+      "HrtUvejYtXuNetPKmoXveYD7Z8ne6w1K85wov2J2E58Y"
+     ],
+     "etendue_s": 0,
+     "utc_premier": "2024-11-17 23:55:52",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      4.9,
+      4.9,
+      4.9,
+      4.9
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 1.0,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "9SHjio44prKMCuj3EW3Vy7zGYjE2cKWUN7z1RESaH7g8",
+      "ByuQUknQ1CphVA59iGDiJVNLanP7o4S3pc2utrKBxvqn"
+     ],
+     "etendue_s": 5562,
+     "utc_premier": "2024-11-18 15:57:36",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "6aoKnt1siNDvFirufQbYoycLWPpzfqNmfsRs6JFCVVRZ",
+      "EQ1xLEuMByRqY5K8qima4cPt5yin8DyT3SXDqQpiy56p"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      4.23,
+      4.29
+     ],
+     "franc": false
+    }
+   ]
+  },
+  {
+   "token": "OPTIMUS",
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 23,
+   "n_portefeuilles_frais": 16,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "POLMRKTBOT",
+   "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "n_portefeuilles_frais": 13,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "QAMI",
+   "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 23,
+   "n_portefeuilles_frais": 19,
+   "n_clusters_montants_voisins": 1,
+   "plus_gros_cluster": 2,
+   "motif_present": true,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": [
+    {
+     "montant_sol": 0.5,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "2N6DABU1PcwaW86fjSr6ijPyb5MLT1N955AFDH9LQGFg",
+      "2iXom8JUUUCV1J5acCnvmDGLan1m5u5DTYYLwzR6Mcrt"
+     ],
+     "etendue_s": 19879,
+     "utc_premier": "2024-12-31 18:14:48",
+     "calibres": [
+      "rond_0.1"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "4VK7yGyG7w5Rn7AZrqxNtgdHwqrFd7JSbanBspGvR2aR",
+      "GS5dHyDCKk7vEHpwNAkLw34xGQqpjqkegbuZdya2dQS6"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.25,
+      0.07
+     ],
+     "franc": false
+    }
+   ]
+  },
+  {
+   "token": "RAO",
+   "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 29,
+   "n_portefeuilles_frais": 25,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "SAFFRON",
+   "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 25,
+   "n_portefeuilles_frais": 18,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  },
+  {
+   "token": "VISUALIZE",
+   "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 19,
+   "n_portefeuilles_frais": 13,
+   "n_clusters_montants_voisins": 1,
+   "plus_gros_cluster": 3,
+   "motif_present": true,
+   "n_clusters_francs": 1,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 5.0,
+     "n_portefeuilles": 3,
+     "portefeuilles": [
+      "9WjxPxz86Ua4QNGyXj5kJVSpxHVnhDG8bXy1a4NgyQMv",
+      "CAEKZ1mgvD6buYks9TLTEC7FRCijyBAtBMNg13Tbut1",
+      "DKbcb2hZ4BxaJ6xe9bEKHFs7tGBtjhFtyEdF6SjYucog"
+     ],
+     "etendue_s": 42,
+     "utc_premier": "2024-09-13 18:11:38",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "AMW5B2NAMBY7gp7VHLTLkwJzXxh3BTZBdtCHjah32pMi"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.16,
+      0.16,
+      0.16
+     ],
+     "franc": true
+    }
+   ]
+  },
+  {
+   "token": "h2w6gm6jz",
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "n_portefeuilles_frais": 20,
+   "n_clusters_montants_voisins": 3,
+   "plus_gros_cluster": 5,
+   "motif_present": true,
+   "n_clusters_francs": 1,
+   "motif_franc": true,
+   "clusters": [
+    {
+     "montant_sol": 2.0,
+     "n_portefeuilles": 5,
+     "portefeuilles": [
+      "3vzEoggpQUpkQhPThtjgzdZ1m791RZHFZbqnqaE3BZCg",
+      "4bybJyLkWQvrr51BjRfudMmfjJjDtXUQvAYuSrw8PEiq",
+      "DAss7HiqecYzB31WXJuz6xutEbWzpLr77exR4ek86rKH",
+      "GLtrMWXMsLSSdFHKsnUmnGUBmLbkxYqn9DVjAT3vJWTa",
+      "bgF2ueqti7RfXE7zn7FoAmR61crPh7gkMBBQn8tP5wp"
+     ],
+     "etendue_s": 73,
+     "utc_premier": "2024-12-13 07:20:16",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      0.31,
+      0.31,
+      0.31,
+      0.31,
+      0.31
+     ],
+     "franc": true
+    },
+    {
+     "montant_sol": 1.0,
+     "n_portefeuilles": 4,
+     "portefeuilles": [
+      "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+      "2ZMgF63xHvnQ3dC7iLgGtU9HAgmgdKQMc1RnaifypNK9",
+      "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH",
+      "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1"
+     ],
+     "etendue_s": 1368,
+     "utc_premier": "2024-12-03 15:49:28",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      9.96,
+      9.96,
+      9.94,
+      9.94
+     ],
+     "franc": false
+    },
+    {
+     "montant_sol": 2.0,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "25FS2xfQGD6B9BFLd4V5fYmxx2Bju3et6mXJGDA23FVj",
+      "4NKLk2czyXCZNRHGjFrvBGmVta7VpreQbotz5cBTJPJH"
+     ],
+     "etendue_s": 36,
+     "utc_premier": "2024-12-22 05:35:37",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "6yYX5iAr9FGnuNDDV4gTkZjacHF6WHnu2JS8mbFenWy1"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      9.96,
+      9.96
+     ],
+     "franc": false
+    }
+   ]
+  },
+  {
+   "token": "sumiko",
+   "mint": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 20,
+   "n_portefeuilles_frais": 20,
+   "n_clusters_montants_voisins": 2,
+   "plus_gros_cluster": 2,
+   "motif_present": true,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": [
+    {
+     "montant_sol": 10.0,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "3uCz3fpChKFSwMoVYJxvDgS5JDRvcb3amtwwuASDkEmy",
+      "8n1f7u1VvZT9Dswe9BuTECBWcqhDe6iDisWrhHJnuDW8"
+     ],
+     "etendue_s": 95,
+     "utc_premier": "2024-12-19 17:04:18",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "9s6sZx3q869DnTnEKfscxDt1cv98CQLNs2wgmSxAGW9y"
+     ],
+     "services_identifies": [],
+     "ages_jours": [
+      6.85,
+      6.85
+     ],
+     "franc": false
+    },
+    {
+     "montant_sol": 20.0,
+     "n_portefeuilles": 2,
+     "portefeuilles": [
+      "B7on7Dj5N588T9itr3cwL9M4ZrKjL8rcF2qDWp6zGcVc",
+      "Ekpto4RXz5SLP1ZqdbMMFtMbNh78im5hYFFbgXJhMzwc"
+     ],
+     "etendue_s": 13274,
+     "utc_premier": "2024-12-19 02:51:22",
+     "calibres": [
+      "rond_SOL"
+     ],
+     "forme_sortie_de_swap": false,
+     "sources": [
+      "5VCwKtCXgCJ6kit5FybXjvriW3xELsFDhYrPSqtJNmcD",
+      "DoaAMXD3nDp7V6dJcPng4397YZ1SrMmkgDgw7VwQSgrs"
+     ],
+     "services_identifies": [
+      "OKX hot wallet"
+     ],
+     "ages_jours": [
+      7.44,
+      7.29
+     ],
+     "franc": false
+    }
+   ]
+  },
+  {
+   "token": "symx",
+   "mint": "Fu4jQQpUnECSVQrVfeeVPpQpXQffM75LL328EJPtpump",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 16,
+   "n_portefeuilles_frais": 13,
+   "n_clusters_montants_voisins": 0,
+   "plus_gros_cluster": 0,
+   "motif_present": false,
+   "n_clusters_francs": 0,
+   "motif_franc": false,
+   "clusters": []
+  }
+ ]
+}
