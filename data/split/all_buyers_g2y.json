@@ -1,0 +1,845 @@
+{
+ "ACID": {
+  "mint": "9woMdZe1WVpFBQwRPybAFpqaNMT9YXyNMhdKh7JXpump",
+  "creation": "2024-12-09T09:47:21.061000Z",
+  "n_tx_courbe": 3330,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 743,
+  "n_vierges": 188,
+  "n_vierges_finances_G2Y_avant_token": 3,
+  "n_vierges_finances_G2Y_apres_token": 4,
+  "portefeuilles": {
+   "DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq": {
+    "vierge": true,
+    "plus_ancien": 1733133194,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.73942138,
+      "ts": 1733210863,
+      "utc": "2024-12-03 07:27:43",
+      "avant_token": true
+     },
+     {
+      "sol": 1.52605696,
+      "ts": 1733133194,
+      "utc": "2024-12-02 09:53:14",
+      "avant_token": true
+     }
+    ]
+   },
+   "D3JwQSGkn8YUzCDkMphDhVbsEeK9qbttU971cqmFEKRM": {
+    "vierge": true,
+    "plus_ancien": 1733693959,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.50446572,
+      "ts": 1733693959,
+      "utc": "2024-12-08 21:39:19",
+      "avant_token": true
+     }
+    ]
+   },
+   "RwdMax1heLzDiBSk3g3MgvRuJkQYz7tnj96RFpbxxVA": {
+    "vierge": true,
+    "plus_ancien": 1733653102,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.95839316,
+      "ts": 1733653102,
+      "utc": "2024-12-08 10:18:22",
+      "avant_token": true
+     }
+    ]
+   },
+   "GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h": {
+    "vierge": true,
+    "plus_ancien": 1734614707,
+    "genese": false,
+    "g2y": [
+     {
+      "sol": 0.97406,
+      "ts": 1737646307,
+      "utc": "2025-01-23 15:31:47",
+      "avant_token": false
+     }
+    ]
+   },
+   "AimN7tyZysFpQQcnNL3CgmcchP3nJSMQk2aDFXuUVznt": {
+    "vierge": true,
+    "plus_ancien": 1733531055,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.33928488,
+      "ts": 1737463971,
+      "utc": "2025-01-21 12:52:51",
+      "avant_token": false
+     },
+     {
+      "sol": 0.06349398,
+      "ts": 1737323355,
+      "utc": "2025-01-19 21:49:15",
+      "avant_token": false
+     },
+     {
+      "sol": 2.49836037,
+      "ts": 1737313250,
+      "utc": "2025-01-19 19:00:50",
+      "avant_token": false
+     },
+     {
+      "sol": 0.13359031,
+      "ts": 1737296475,
+      "utc": "2025-01-19 14:21:15",
+      "avant_token": false
+     },
+     {
+      "sol": 0.17841706,
+      "ts": 1737246642,
+      "utc": "2025-01-19 00:30:42",
+      "avant_token": false
+     },
+     {
+      "sol": 0.2215369,
+      "ts": 1736974054,
+      "utc": "2025-01-15 20:47:34",
+      "avant_token": false
+     },
+     {
+      "sol": 0.21374811,
+      "ts": 1735589319,
+      "utc": "2024-12-30 20:08:39",
+      "avant_token": false
+     }
+    ]
+   },
+   "EnvLybhGn4P1qxGzNYxNDzFKiyeTQG5FHLroP4szzMYD": {
+    "vierge": true,
+    "plus_ancien": 1733713719,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 23.23533576,
+      "ts": 1733852476,
+      "utc": "2024-12-10 17:41:16",
+      "avant_token": false
+     }
+    ]
+   },
+   "8JL8JmfaYef4mKa4TfGC9ddX4n56WMBuDFyRPvqiSp2Q": {
+    "vierge": true,
+    "plus_ancien": 1733745897,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.1017182,
+      "ts": 1733747640,
+      "utc": "2024-12-09 12:34:00",
+      "avant_token": false
+     },
+     {
+      "sol": 0.12564648,
+      "ts": 1733745897,
+      "utc": "2024-12-09 12:04:57",
+      "avant_token": false
+     }
+    ]
+   }
+  },
+  "mesurable": true
+ },
+ "BLT": {
+  "mint": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+  "creation": "2024-11-19T21:39:44.231000Z",
+  "n_tx_courbe": 893,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 194,
+  "n_vierges": 89,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 0,
+  "portefeuilles": {},
+  "mesurable": true
+ },
+ "LEXICON": {
+  "mint": "E4wg8YF472u8oiLvSNKB84Y23gZhkSQ3PSCJaUj4pump",
+  "creation": "2024-12-29T20:23:14.489000Z",
+  "n_tx_courbe": 280,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 80,
+  "n_vierges": 17,
+  "n_illisibles": 32,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 0,
+  "portefeuilles": {}
+ },
+ "MIKU": {
+  "mint": "48BVWSkY5XxZ9HwaKet2kAYvjP9gPviUmm8Xg2EKCLNx",
+  "creation": "2025-01-01T06:03:31.592000Z",
+  "n_tx_courbe": 2231,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 804,
+  "n_vierges": 173,
+  "n_illisibles": 322,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 1,
+  "portefeuilles": {
+   "FqjF1tkSbTtmKmSCEEvdKBvY8Vh4SUDmovAD2281QHVh": {
+    "vierge": true,
+    "plus_ancien": 1735680148,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.28749372,
+      "ts": 1746144242,
+      "utc": "2025-05-02 00:04:02",
+      "avant_token": false
+     },
+     {
+      "sol": 0.61379348,
+      "ts": 1746074366,
+      "utc": "2025-05-01 04:39:26",
+      "avant_token": false
+     },
+     {
+      "sol": 0.29716862,
+      "ts": 1745900444,
+      "utc": "2025-04-29 04:20:44",
+      "avant_token": false
+     },
+     {
+      "sol": 0.73579624,
+      "ts": 1745623617,
+      "utc": "2025-04-25 23:26:57",
+      "avant_token": false
+     },
+     {
+      "sol": 0.63923003,
+      "ts": 1745485572,
+      "utc": "2025-04-24 09:06:12",
+      "avant_token": false
+     },
+     {
+      "sol": 5.23475549,
+      "ts": 1745271618,
+      "utc": "2025-04-21 21:40:18",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "POLMRKTBOT": {
+  "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+  "creation": "2024-12-15T17:04:54.845000Z",
+  "n_tx_courbe": 500,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 315,
+  "n_vierges": 67,
+  "n_illisibles": 126,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 2,
+  "portefeuilles": {
+   "CS6EnYF9tGptTbUExHAcX6oj8RpdxpET6vXs3mdTSEf7": {
+    "vierge": true,
+    "plus_ancien": 1734158830,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.02471261,
+      "ts": 1739672449,
+      "utc": "2025-02-16 02:20:49",
+      "avant_token": false
+     },
+     {
+      "sol": 0.01037004,
+      "ts": 1739672054,
+      "utc": "2025-02-16 02:14:14",
+      "avant_token": false
+     }
+    ]
+   },
+   "4E1E11kgW2Mev4KUB5zabu1nX9TJgKjrnSu3YP8N5pVb": {
+    "vierge": true,
+    "plus_ancien": 1733805371,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.9888156,
+      "ts": 1736686171,
+      "utc": "2025-01-12 12:49:31",
+      "avant_token": false
+     },
+     {
+      "sol": 2.3307156,
+      "ts": 1736528913,
+      "utc": "2025-01-10 17:08:33",
+      "avant_token": false
+     },
+     {
+      "sol": 1.52625653,
+      "ts": 1735559168,
+      "utc": "2024-12-30 11:46:08",
+      "avant_token": false
+     },
+     {
+      "sol": 1.57239453,
+      "ts": 1735558597,
+      "utc": "2024-12-30 11:36:37",
+      "avant_token": false
+     },
+     {
+      "sol": 1.43919711,
+      "ts": 1735172721,
+      "utc": "2024-12-26 00:25:21",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "RAO": {
+  "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+  "creation": "2024-10-29T11:51:46.301000Z",
+  "n_tx_courbe": 391,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 143,
+  "n_vierges": 42,
+  "n_illisibles": 58,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 0,
+  "portefeuilles": {}
+ },
+ "SAFFRON": {
+  "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+  "creation": "2024-11-12T22:54:53.193000Z",
+  "n_tx_courbe": 587,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 265,
+  "n_vierges": 57,
+  "n_illisibles": 105,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 3,
+  "n_vierges_finances_G2Y_apres_token": 5,
+  "portefeuilles": {
+   "67UopZGpThFd83mzrbQpCBxhHWrJ5TpEBND7mMSxdHSa": {
+    "vierge": true,
+    "plus_ancien": 1731299268,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.9828156,
+      "ts": 1731299268,
+      "utc": "2024-11-11 04:27:48",
+      "avant_token": true
+     }
+    ]
+   },
+   "291vRVW6QcL8Lj3FxXNtDoT5PEXSRfcEQMmbfNmD4zZf": {
+    "vierge": true,
+    "plus_ancien": 1731195187,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 8.62420789,
+      "ts": 1731350199,
+      "utc": "2024-11-11 18:36:39",
+      "avant_token": true
+     }
+    ]
+   },
+   "wbzkg9ftnVEMzeCL6wW8bpNTPDQWhBBnKo3JWJe3wh5": {
+    "vierge": true,
+    "plus_ancien": 1731417405,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 7.77869425,
+      "ts": 1731446840,
+      "utc": "2024-11-12 21:27:20",
+      "avant_token": true
+     },
+     {
+      "sol": 9.894826,
+      "ts": 1731420987,
+      "utc": "2024-11-12 14:16:27",
+      "avant_token": true
+     },
+     {
+      "sol": 2.38041559,
+      "ts": 1731419636,
+      "utc": "2024-11-12 13:53:56",
+      "avant_token": true
+     },
+     {
+      "sol": 2.9768156,
+      "ts": 1731417405,
+      "utc": "2024-11-12 13:16:45",
+      "avant_token": true
+     }
+    ]
+   },
+   "GEBiEjRPz2NjC9CX8qWuyZni2tM5KBPPCWwcnmos7mah": {
+    "vierge": true,
+    "plus_ancien": 1731301547,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.30332191,
+      "ts": 1745258082,
+      "utc": "2025-04-21 17:54:42",
+      "avant_token": false
+     },
+     {
+      "sol": 1.67857686,
+      "ts": 1744742546,
+      "utc": "2025-04-15 18:42:26",
+      "avant_token": false
+     },
+     {
+      "sol": 3.95473815,
+      "ts": 1744144957,
+      "utc": "2025-04-08 20:42:37",
+      "avant_token": false
+     }
+    ]
+   },
+   "6j7nbHaWNiKAdSKSRxtMWCYeh9uSEXNRLSQvdWnSqtAS": {
+    "vierge": true,
+    "plus_ancien": 1731362980,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 6.05567313,
+      "ts": 1732009706,
+      "utc": "2024-11-19 09:48:26",
+      "avant_token": false
+     }
+    ]
+   },
+   "GqivA52cFXGWgxGbFn5z3c7JwCMjbV9ZSrhsU1fRisZf": {
+    "vierge": true,
+    "plus_ancien": 1731284372,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 6.41832644,
+      "ts": 1740893311,
+      "utc": "2025-03-02 05:28:31",
+      "avant_token": false
+     },
+     {
+      "sol": 92.66133888,
+      "ts": 1739860553,
+      "utc": "2025-02-18 06:35:53",
+      "avant_token": false
+     },
+     {
+      "sol": 6.67156786,
+      "ts": 1738816353,
+      "utc": "2025-02-06 04:32:33",
+      "avant_token": false
+     },
+     {
+      "sol": 55.84795193,
+      "ts": 1737485119,
+      "utc": "2025-01-21 18:45:19",
+      "avant_token": false
+     },
+     {
+      "sol": 222.88240926,
+      "ts": 1737390393,
+      "utc": "2025-01-20 16:26:33",
+      "avant_token": false
+     }
+    ]
+   },
+   "GN4bZMfHML82sRJmPQoezYyDgSvkV262xHSxg1qDR9ZV": {
+    "vierge": true,
+    "plus_ancien": 1731094995,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 10.41862112,
+      "ts": 1731506903,
+      "utc": "2024-11-13 14:08:23",
+      "avant_token": false
+     }
+    ]
+   },
+   "9jZwj8tjrhDkJDa5pPDz7JBALu5HSp8m7rdvtbLDTgce": {
+    "vierge": true,
+    "plus_ancien": 1731268889,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 4.86647738,
+      "ts": 1770016628,
+      "utc": "2026-02-02 07:17:08",
+      "avant_token": false
+     },
+     {
+      "sol": 2.30831917,
+      "ts": 1769932940,
+      "utc": "2026-02-01 08:02:20",
+      "avant_token": false
+     },
+     {
+      "sol": 0.28179568,
+      "ts": 1752277687,
+      "utc": "2025-07-11 23:48:07",
+      "avant_token": false
+     },
+     {
+      "sol": 0.49999956,
+      "ts": 1751878639,
+      "utc": "2025-07-07 08:57:19",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "h2w6gm6jz": {
+  "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+  "creation": "2024-12-13T14:50:36.376000Z",
+  "n_tx_courbe": 451,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 223,
+  "n_vierges": 67,
+  "n_illisibles": 90,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 9,
+  "n_vierges_finances_G2Y_apres_token": 1,
+  "portefeuilles": {
+   "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g": {
+    "vierge": true,
+    "plus_ancien": 1734073831,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073831,
+      "utc": "2024-12-13 07:10:31",
+      "avant_token": true
+     }
+    ]
+   },
+   "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R": {
+    "vierge": true,
+    "plus_ancien": 1734073853,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073853,
+      "utc": "2024-12-13 07:10:53",
+      "avant_token": true
+     }
+    ]
+   },
+   "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA": {
+    "vierge": true,
+    "plus_ancien": 1734073682,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073682,
+      "utc": "2024-12-13 07:08:02",
+      "avant_token": true
+     }
+    ]
+   },
+   "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22": {
+    "vierge": true,
+    "plus_ancien": 1734073880,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073880,
+      "utc": "2024-12-13 07:11:20",
+      "avant_token": true
+     }
+    ]
+   },
+   "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe": {
+    "vierge": true,
+    "plus_ancien": 1734073913,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073913,
+      "utc": "2024-12-13 07:11:53",
+      "avant_token": true
+     }
+    ]
+   },
+   "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6": {
+    "vierge": true,
+    "plus_ancien": 1734074012,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734074012,
+      "utc": "2024-12-13 07:13:32",
+      "avant_token": true
+     }
+    ]
+   },
+   "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW": {
+    "vierge": true,
+    "plus_ancien": 1734073669,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073669,
+      "utc": "2024-12-13 07:07:49",
+      "avant_token": true
+     }
+    ]
+   },
+   "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY": {
+    "vierge": true,
+    "plus_ancien": 1734073744,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073744,
+      "utc": "2024-12-13 07:09:04",
+      "avant_token": true
+     }
+    ]
+   },
+   "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU": {
+    "vierge": true,
+    "plus_ancien": 1734073812,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.9768156,
+      "ts": 1734073812,
+      "utc": "2024-12-13 07:10:12",
+      "avant_token": true
+     }
+    ]
+   },
+   "ApBXF9f1tgk8FTDbUonjTmGnWBCJRyedKKD26HP3Tp7X": {
+    "vierge": true,
+    "plus_ancien": 1734098655,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.99271686,
+      "ts": 1751970177,
+      "utc": "2025-07-08 10:22:57",
+      "avant_token": false
+     },
+     {
+      "sol": 1.19151686,
+      "ts": 1749712212,
+      "utc": "2025-06-12 07:10:12",
+      "avant_token": false
+     },
+     {
+      "sol": 1.53941686,
+      "ts": 1746530253,
+      "utc": "2025-05-06 11:17:33",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "symx": {
+  "mint": "Fu4jQQpUnECSVQrVfeeVPpQpXQffM75LL328EJPtpump",
+  "creation": "2024-12-19T10:23:11.755000Z",
+  "n_tx_courbe": 322,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 105,
+  "n_vierges": 31,
+  "n_illisibles": 42,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 1,
+  "portefeuilles": {
+   "GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h": {
+    "vierge": true,
+    "plus_ancien": 1734614707,
+    "genese": false,
+    "g2y": [
+     {
+      "sol": 0.97406,
+      "ts": 1737646307,
+      "utc": "2025-01-23 15:31:47",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "CHOCO": {
+  "mint": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+  "creation": "2024-10-10T13:35:48.615000Z",
+  "n_tx_courbe": 5850,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 289,
+  "n_vierges": 78,
+  "n_illisibles": 114,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 2,
+  "n_vierges_finances_G2Y_apres_token": 2,
+  "portefeuilles": {
+   "Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho": {
+    "vierge": true,
+    "plus_ancien": 1728552283,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.2074956,
+      "ts": 1728552283,
+      "utc": "2024-10-10 09:24:43",
+      "avant_token": true
+     }
+    ]
+   },
+   "4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5": {
+    "vierge": true,
+    "plus_ancien": 1728252661,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 2.30739647,
+      "ts": 1728310532,
+      "utc": "2024-10-07 14:15:32",
+      "avant_token": true
+     }
+    ]
+   },
+   "7QtMyXehv6KebpVZ2Lc2CFAEkJdgz7Pnj1mt447sR8L8": {
+    "vierge": true,
+    "plus_ancien": 1728573838,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.4858156,
+      "ts": 1728573838,
+      "utc": "2024-10-10 15:23:58",
+      "avant_token": false
+     }
+    ]
+   },
+   "6pgh5PJxpAN8FN6zJ4UJomfskGsmPha1MC2h24bSLqAt": {
+    "vierge": true,
+    "plus_ancien": 1728155088,
+    "genese": false,
+    "g2y": [
+     {
+      "sol": 1.92936706,
+      "ts": 1774837480,
+      "utc": "2026-03-30 02:24:40",
+      "avant_token": false
+     },
+     {
+      "sol": 3.01126523,
+      "ts": 1774749869,
+      "utc": "2026-03-29 02:04:29",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "OPTIMUS": {
+  "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+  "erreur": "getSignaturesForAddress a echoue apres 8 tentatives : HTTP Error 429: Too Many Requests",
+  "mesurable": false
+ },
+ "QAMI": {
+  "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+  "creation": "2024-12-31T23:41:23.897000Z",
+  "n_tx_courbe": 538,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 266,
+  "n_vierges": 59,
+  "n_illisibles": 107,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 2,
+  "n_vierges_finances_G2Y_apres_token": 1,
+  "portefeuilles": {
+   "6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K": {
+    "vierge": true,
+    "plus_ancien": 1735579905,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 4.9498234,
+      "ts": 1735579905,
+      "utc": "2024-12-30 17:31:45",
+      "avant_token": true
+     }
+    ]
+   },
+   "E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab": {
+    "vierge": true,
+    "plus_ancien": 1735538072,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.4818756,
+      "ts": 1735665561,
+      "utc": "2024-12-31 17:19:21",
+      "avant_token": true
+     }
+    ]
+   },
+   "2iXom8JUUUCV1J5acCnvmDGLan1m5u5DTYYLwzR6Mcrt": {
+    "vierge": true,
+    "plus_ancien": 1735682807,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 6.14003324,
+      "ts": 1735864063,
+      "utc": "2025-01-03 00:27:43",
+      "avant_token": false
+     },
+     {
+      "sol": 8.67157383,
+      "ts": 1735798686,
+      "utc": "2025-01-02 06:18:06",
+      "avant_token": false
+     },
+     {
+      "sol": 3.81711062,
+      "ts": 1735787439,
+      "utc": "2025-01-02 03:10:39",
+      "avant_token": false
+     },
+     {
+      "sol": 6.50761713,
+      "ts": 1735729881,
+      "utc": "2025-01-01 11:11:21",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
+ "VISUALIZE": {
+  "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
+  "erreur": "getSignaturesForAddress a echoue apres 8 tentatives : HTTP Error 429: Too Many Requests",
+  "mesurable": false
+ }
+}
