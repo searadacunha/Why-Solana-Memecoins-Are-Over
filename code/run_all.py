@@ -50,6 +50,7 @@ PLAN = [
     ("a4_selection_bias.py", "", "distance between the phase-1 cohort and a random sample"),
     ("a5_author_pattern.py", "", "presence test of the funding-dispatch pattern, token by token"),
     ("a6_gateway_chains.py", "", "dated chains: swap gateway -> distributor -> fresh wallets"),
+    ("a7_cross_token_links.py", "", "are the per-token operations linked to each other?"),
     ("v05_creation_block.py", "net", "creation-slot buy block, non-circular (needs the RPC cache)"),
     ("v06_curve_ladder.py", "net", "curve ladder: SOL spent, share of supply"),
     ("fetch_sol_usd.py", "net", "SOL/USDC hourly series (no key, GeckoTerminal)"),
