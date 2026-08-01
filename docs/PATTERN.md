@@ -10,10 +10,18 @@ nothing here supports a statement of the form *"X % of launches work this way"* 
 established; frequency is not.
 
 > Every address, amount and timestamp is a public technical identifier, verifiable on any Solana
-> explorer. The address written **G2Y** throughout is a swap gateway — an address through which
-> capital enters the chain. Reaching it is a **routing fact**: all capital entering Solana passes
-> through some such gateway, and no involvement, intent or wrongdoing is attributed to any service,
-> company or person.
+> explorer. The gateway address, written **G2Y** for brevity, is
+> `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, publicly attributed to a hot wallet of the swap
+> service **ChangeNOW** by two independent sources — a [2025 research study on Solana
+> mixers](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a)
+> whose author observed his own test funds land there, and an [earlier public
+> attribution](https://x.com/CrypticZK/status/1616072613356535808). Neither is an official exchange
+> label; the identification is reported as **publicly attributed, not officially confirmed**.
+>
+> Reaching it is a **routing fact**. Capital entering Solana passes through some such service by
+> necessity, a swap service processes what its users send it, and nothing measured here concerns
+> what the service knew, intended or permitted. No involvement or wrongdoing is attributed to any
+> service, company or person.
 
 ---
 
@@ -24,7 +32,7 @@ Four properties, required together:
 | # | property | why it matters |
 |---|---|---|
 | 1 | the buyer wallet is **fresh** — created shortly before it buys, no prior history | a wallet with a past is a trader; a wallet born days before a launch was made for it |
-| 2 | it is funded **directly by the gateway** | the money's entry point onto the chain, one hop from the buy |
+| 2 | it is funded **directly by the swap service** | the entry point onto the chain, one hop from the buy — and the point at which prior provenance stops being traceable |
 | 3 | the amount is a **conversion output** — nine significant decimals, not a round figure | `2.976816` is what a swap leaves; `3.000000000` is what someone chooses to send |
 | 4 | the payment lands **before the token exists** | a payment after the launch cannot have funded it |
 
