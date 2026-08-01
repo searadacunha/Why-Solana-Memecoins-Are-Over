@@ -1,0 +1,186 @@
+{
+ "objet": "Captures des executions, telles que produites par le bot d'execution.",
+ "n": 20,
+ "trades": [
+  {
+   "fichier": "sumiko_28466pct_83494a.jpeg",
+   "symbole": "sumiko",
+   "gain_pct": 28465.63,
+   "duree": "2h 50m",
+   "investi_sol": 0.254,
+   "mint": null,
+   "bot": "TROJAN"
+  },
+  {
+   "fichier": "Visualize_1614pct_f3067d.jpeg",
+   "symbole": "Visualize",
+   "gain_pct": 1613.53,
+   "duree": "1d 59m",
+   "investi_sol": null,
+   "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
+   "bot": "Trojan on Solana - Odysseus (\"22,779 utilisateurs mensuel\" ; lien https://t.me/odysseus_trojanbot)"
+  },
+  {
+   "fichier": "HOMELESCAT_1085pct_2e0d0e.jpeg",
+   "symbole": "HOMELESCAT",
+   "gain_pct": 1084.63,
+   "duree": "11h 26m",
+   "investi_sol": 0.509,
+   "mint": "NON LISIBLE — le reflink est coupé juste après « ?start=r- », aucun fragment de mint visible",
+   "bot": null
+  },
+  {
+   "fichier": "FS_853pct_96a51b.jpeg",
+   "symbole": "FS",
+   "gain_pct": 852.89,
+   "duree": "4h 30m",
+   "investi_sol": 1.326,
+   "mint": null,
+   "bot": "TROJAN"
+  },
+  {
+   "fichier": "bender_708pct_c0047b.jpeg",
+   "symbole": "bender",
+   "gain_pct": 707.67,
+   "duree": "8h 28m",
+   "investi_sol": 1.021,
+   "mint": null,
+   "bot": "TROJAN"
+  },
+  {
+   "fichier": "RAO_687pct_f968b5.jpeg",
+   "symbole": "RAO",
+   "gain_pct": 687.41,
+   "duree": "12d 13h 42m",
+   "investi_sol": 3.063,
+   "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+   "bot": "Trojan on Solana - Nestor (mention \"bot\" sous le titre ; lien https://t.me/nestor_trojanbot)"
+  },
+  {
+   "fichier": "CHOCO_640pct_f17713.jpeg",
+   "symbole": "CHOCO",
+   "gain_pct": 639.81,
+   "duree": "3h 44m",
+   "investi_sol": null,
+   "mint": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+   "bot": null
+  },
+  {
+   "fichier": "symx_636pct_883fde.jpeg",
+   "symbole": "symx",
+   "gain_pct": 635.92,
+   "duree": "8h",
+   "investi_sol": 1.011,
+   "mint": null,
+   "bot": null
+  },
+  {
+   "fichier": "POLMRKTBOT_443pct_10f81b.jpeg",
+   "symbole": "POLMRKTBOT",
+   "gain_pct": 443.47,
+   "duree": "10m 35s",
+   "investi_sol": 0.449,
+   "mint": "NON LISIBLE — le reflink est coupé par le bas de l'écran juste après \"teamdacunha-\", aucun caractère du mint n'apparaît",
+   "bot": "Trojan on Solana - Agame... (lien affiché : https://t.me/agamemnon_trojanbot?start=r-teamdacunha-)"
+  },
+  {
+   "fichier": "bwick_391pct_b93a0c.jpeg",
+   "symbole": "bwick",
+   "gain_pct": 390.57,
+   "duree": "13m 41s",
+   "investi_sol": 0.254,
+   "mint": "4V56nShnP2PvX1337D71vnx6kHRaU (FRAGMENT tronque tel qu'affiche, non complete — 29 caracteres lisibles, la suite est coupee)",
+   "bot": null
+  },
+  {
+   "fichier": "Mooni_350pct_7a8fbb.jpeg",
+   "symbole": "Mooni",
+   "gain_pct": 350.47,
+   "duree": "1h 58m",
+   "investi_sol": 2.02,
+   "mint": null,
+   "bot": null
+  },
+  {
+   "fichier": "h2w6gm6jz_317pct_72f71f.jpeg",
+   "symbole": "h2w6gm6jz",
+   "gain_pct": 316.75,
+   "duree": "1h 55m",
+   "investi_sol": 2.02,
+   "mint": null,
+   "bot": "TROJAN"
+  },
+  {
+   "fichier": "OPTIMUS_307pct_139bdc.jpeg",
+   "symbole": "OPTIMUS",
+   "gain_pct": 307.26,
+   "duree": "14d 1h 43m",
+   "investi_sol": 4.794,
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "bot": null
+  },
+  {
+   "fichier": "SAFFRON_244pct_fd83e1.jpeg",
+   "symbole": "SAFFRON",
+   "gain_pct": 244.43,
+   "duree": "7m 59s",
+   "investi_sol": 2.017,
+   "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+   "bot": null
+  },
+  {
+   "fichier": "ACID_234pct_6230b2.jpeg",
+   "symbole": "ACID",
+   "gain_pct": 233.75,
+   "duree": "26m 56s",
+   "investi_sol": 2.052,
+   "mint": null,
+   "bot": null
+  },
+  {
+   "fichier": "Chan_227pct_7cc57f.jpeg",
+   "symbole": "Chan",
+   "gain_pct": 226.78,
+   "duree": "3h 52m",
+   "investi_sol": 3.027,
+   "mint": "NON VISIBLE - la ligne du reflink est coupee apres \"teamdacunha-\", aucun fragment de mint lisible",
+   "bot": null
+  },
+  {
+   "fichier": "MIKU_167pct_e83bcf.jpeg",
+   "symbole": "MIKU",
+   "gain_pct": 167.09,
+   "duree": "6h 24m",
+   "investi_sol": 14.126,
+   "mint": "48BVWSkY5Yx79HwaKot2kAYyiP9qP (FRAGMENT tronque tel qu'affiche, non complete — 29 caracteres lisibles, la suite est coupee)",
+   "bot": null
+  },
+  {
+   "fichier": "BLT_133pct_66168c.jpeg",
+   "symbole": "BLT",
+   "gain_pct": 133.21,
+   "duree": "4h 2m",
+   "investi_sol": 7.063,
+   "mint": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+   "bot": null
+  },
+  {
+   "fichier": "LEXICON_130pct_605dec.jpeg",
+   "symbole": "LEXICON",
+   "gain_pct": 129.5,
+   "duree": "2h 51m",
+   "investi_sol": 7.063,
+   "mint": null,
+   "bot": "TROJAN"
+  },
+  {
+   "fichier": "QAMI_100pct_533c0d.jpeg",
+   "symbole": "QAMI",
+   "gain_pct": 100.06,
+   "duree": "4h 47m",
+   "investi_sol": 15.135,
+   "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+   "bot": null
+  }
+ ]
+}
