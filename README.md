@@ -16,14 +16,23 @@ A new token appears. Several wallets buy it early, one after another. On the sur
 demand looks like: independent participants, arriving separately, accumulating supply.
 
 Trace the money and the picture changes. Those wallets were **created days before the token
-existed**, they hold nothing else, and their funding arrives from a **swap gateway** — an address
-through which capital enters the chain.
+existed**, they hold nothing else, and their funding arrives from one address:
+`G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t` — publicly identified as a **hot wallet of the swap
+service ChangeNOW**.[^gw]
 
-That last detail is the whole mechanism, and it is structural rather than sinister: **a swap gateway
-breaks the on-chain link between where funds came from and where they land.** That is its function.
-Anyone can use one, and most users do so for ordinary reasons. But a set of wallets funded through
-one is *indistinguishable on chain* from a set of unrelated buyers — which is exactly the appearance
-of organic demand, obtained without any.
+That is the whole mechanism, and it is structural rather than sinister: **a swap service breaks the
+on-chain link between where funds came from and where they land.** That is what it is for. Anyone
+can use one and most users do so for ordinary reasons. But a set of wallets funded through one is
+*indistinguishable on chain* from a set of unrelated buyers — which is exactly the appearance of
+organic demand, obtained without any.
+
+[^gw]: Identification from two independent public sources, both checkable: a research study on
+    Solana mixers ([Nevan, 23 April 2025](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a)),
+    whose author observed his own test funds arrive at this address and attributes it to ChangeNOW;
+    and an earlier public attribution of the same address to the same service
+    ([2023](https://x.com/CrypticZK/status/1616072613356535808)). Neither is an official exchange
+    label, so the identification is reported at that level of confidence: **publicly attributed,
+    not officially confirmed.** Nothing about the service's conduct follows from it — see below.
 
 The evidence, token by token, is in **[docs/PATTERN.md](docs/PATTERN.md)**. The clearest single
 instance:
@@ -43,11 +52,16 @@ The pattern is confirmed on **6 of 13 tokens** scanned across **3 963 distinct b
 absent, the repository says whether that is a measured no or an unread wallet — the difference
 matters, and [PITFALLS P15](docs/PITFALLS.md) explains what happens when you collapse the two.
 
-**What this does not establish**, and the repository never claims: that any named service was
-complicit, or that one person was behind it. Reaching a gateway is a **routing fact** — all capital
-entering Solana passes through one. And each token was funded through its *own* distributor, with no
-shared funder between them; "clusters sharing a funding origin" is what the data supports, not a
-single controller.
+**What this does not establish**, and the repository never claims:
+
+- **Nothing about ChangeNOW's conduct.** Naming the address is naming a *route*, not an accomplice.
+  A swap service processes what its users send it; capital entering Solana passes through some such
+  service by necessity, and none of the measurements here touch what the service knew, intended or
+  permitted. The property being used is a property of *every* swap service, not a failing of one.
+- **Not a single controller.** Each token traces to its *own* distributor address, with **no shared
+  funder between them**. What the data supports is *clusters sharing a funding origin* — a common
+  entry point, not a common owner. The stronger claim is not made because the measurements argue
+  against it.
 
 ## Act II — the window, and why it was worth closing
 
