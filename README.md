@@ -69,6 +69,12 @@ matters, and [PITFALLS P15](docs/PITFALLS.md) explains what happens when you col
   token nonetheless share a byte-level execution fingerprint. A repeated method proves a repeated
   method; identifying the hand needs an artefact none of the tests produced.
 
+**And it was traded.** The author detected this signal in real time and acted on it: 20 documented
+executions, and **1 200 SOL — 238 990 $ at the price on each transfer's own day — withdrawn over
+October, November and December 2024**, measured on chain across 312 transfers. The receipts, the
+execution stack, the exit ladder and the totals are in
+**[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**.
+
 ## Act II — the window, and why it was worth closing
 
 The 2024 mechanism had one flaw from its operators' point of view: **it was slow enough to watch.**
@@ -105,6 +111,11 @@ launch venue without buyers is not a venue.
 
 That is the answer to the title. Not a crash, not a narrative rotation: the extraction was made so
 efficient that there was nothing left to extract from.
+
+**The before-and-after is measured on the same instrument.** The exit ladder that returned 238 990 $
+over three months of 2024 — take 50 % at ×2, tranches at ×5 and ×10 — is unchanged in
+`code/exit_ladder.py`. Applied to 2026 launches it has **no positive expectancy under any of the
+fifteen policies tested**. The strategy did not decay. Its counterparty was removed.
 
 ---
 
@@ -208,6 +219,7 @@ code instead of an assertion.
 | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | definitions, populations, validation protocol, declared limits |
 | [`docs/RESULTATS.md`](docs/RESULTATS.md) | the 2026 measurements in full, with an English summary at the top |
 | [`docs/PATTERN.md`](docs/PATTERN.md) | the funding dispatch, token by token, with every burst listed |
+| [`docs/EXPLOITATION.md`](docs/EXPLOITATION.md) | trading it: signal, automation, exit ladder, 20 receipts, on-chain totals |
 | [`docs/SPLIT_PHASE1.md`](docs/SPLIT_PHASE1.md) | the 2024–2025 split: targets, two control groups, null model |
 | [`code/`](code/) | every measurement, one script per result — see [`code/README.md`](code/README.md) |
 | [`data/`](data/) | derived data, committed; network caches are git-ignored and re-fetchable |
