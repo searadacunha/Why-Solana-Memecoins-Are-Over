@@ -58,10 +58,16 @@ matters, and [PITFALLS P15](docs/PITFALLS.md) explains what happens when you col
   A swap service processes what its users send it; capital entering Solana passes through some such
   service by necessity, and none of the measurements here touch what the service knew, intended or
   permitted. The property being used is a property of *every* swap service, not a failing of one.
-- **Not a single controller.** Each token traces to its *own* distributor address, with **no shared
-  funder between them**. What the data supports is *clusters sharing a funding origin* — a common
-  entry point, not a common owner. The stronger claim is not made because the measurements argue
-  against it.
+- **One actor per dispatch — that much is certain.** A transaction paying twenty wallets an
+  identical amount has one signer and one decision; the repository says so plainly. What is *not*
+  established is that the dispatches on different tokens are the same actor. Testing it
+  (`code/a7_cross_token_links.py`) found two real cross-token links — an exact nine-decimal amount
+  shared by two launches 31 days apart, and one wallet buying on two of them — against 14 funding
+  sessions that never touch more than one token. That is more than unrelated users of a common
+  gateway and less than one hand behind everything. The alternative that survives is a **shared
+  tool**, which this corpus documents elsewhere: two operator clusters sharing no wallet and no
+  token nonetheless share a byte-level execution fingerprint. A repeated method proves a repeated
+  method; identifying the hand needs an artefact none of the tests produced.
 
 ## Act II — the window, and why it was worth closing
 
