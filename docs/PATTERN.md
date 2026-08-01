@@ -1,7 +1,7 @@
 # The gateway dispatch: a launch-funding pattern, and how to detect it
 
 **What this chapter is.** A description of one funding mechanism visible on the Solana chain during
-the 2024–2025 window, five worked examples with transaction-level evidence, and the code that
+the 2024–2025 window, six worked examples with transaction-level evidence, and the code that
 detects it automatically.
 
 **What it is not.** A prevalence estimate. The tokens below were selected on their outcome, so
@@ -48,7 +48,7 @@ case. The rule that follows: **report the calibre, never require it.**
 
 ---
 
-## 2. Five worked examples
+## 2. Six worked examples
 
 ### h2w6gm6jz — nine wallets, one amount, 343 seconds
 
@@ -109,6 +109,12 @@ the amounts differ, the direction and the timing do not.
 Token created **2024-12-31 23:41**. `6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K` received
 4.949823400 SOL on 2024-12-30 17:31:45; `E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab` received
 0.481875600 SOL on 2024-12-31 17:19:21, six hours before the token existed.
+
+### sumiko — two wallets, seven minutes apart, the day of the launch
+
+Token created **2024-12-26 13:25**. `AJq5My8GFG6Jo7Pq…` received 1.446086 SOL at **12:55:43** and
+`FYG2cyAmhKGyRnH5…` received 0.739785 SOL at **13:02:00** — both fresh, both from the gateway, the
+first twenty-nine minutes before the token existed.
 
 ### CHOCO — two layers of the mechanism on one token
 
@@ -171,8 +177,8 @@ than only the first forty, and dropping that cap is what surfaced ACID.
 
 ## 4. What was scanned
 
-Every buyer on the curve, not a sample. Thirteen tokens reached a complete scan; two could not be
-read at all and are reported as unmeasurable rather than as zeros.
+Every buyer on the curve, not a sample: 3 963 distinct buyers across thirteen tokens. One token
+could not be read at all and is reported as unmeasurable rather than as a zero.
 
 | token | curve buyers | fresh | unreadable | **gateway-funded before launch** |
 |---|---:|---:|---:|---:|
@@ -181,20 +187,29 @@ read at all and are reported as unmeasurable rather than as zeros.
 | `SAFFRON` | 265 | 57 | 105 | **3** |
 | `CHOCO` | 289 | 78 | 114 | **2** |
 | `QAMI` | 266 | 59 | 107 | **2** |
+| `sumiko` | 290 | 96 | 116 | **2** |
 | `BLT` | 194 | 89 | 0 | 0 |
+| `LEXICON` | 80 | 17 | 32 | 0 |
 | `MIKU` | 804 | 173 | 322 | 0 |
+| `OPTIMUS` | 246 | 53 | 99 | 0 |
 | `POLMRKTBOT` | 315 | 67 | 126 | 0 |
 | `RAO` | 143 | 42 | 58 | 0 |
 | `symx` | 105 | 31 | 42 | 0 |
-| `LEXICON` | 80 | 17 | 32 | 0 |
-| `OPTIMUS` | — | — | — | *unmeasurable (HTTP 429)* |
 | `VISUALIZE` | — | — | — | *unmeasurable (HTTP 429)* |
 
-The **unreadable** column is the one to read carefully. Those wallets could not be paged back to
-their first transaction, so their funding origin is unknown — a zero on a token with 322 unreadable
-wallets carries far less weight than the zero on ACID, where the column is empty and the scan is
-complete. Two tokens produced no measurement at all and are marked as such rather than counted as
-negative; the distinction is the subject of `PITFALLS.md` P15.
+**Six of thirteen** measured tokens carry the pattern.
+
+The **unreadable** column is the one to read carefully, because it decides what a zero is worth.
+Those wallets could not be paged back to their first transaction, so their funding origin is
+unknown. `MIKU` has 322 of them and `OPTIMUS` 99 — their zeros are weak. `BLT` has none, so its
+zero is a real negative, and `ACID` has none either and is positive: on the two tokens where the
+scan is complete, one is negative and one is positive, and both statements are worth something.
+Everywhere else the answer is partly "not measured".
+
+One token produced no measurement at all and is marked as such rather than counted as negative. The
+distinction between *measured negative* and *not measurable* is the subject of `PITFALLS.md` P15,
+and it is not bookkeeping: collapsing the two is what produced a clean, entirely false `0/14` in
+this project.
 
 Full per-wallet detail: `data/split/all_buyers_g2y.json`. The separate question of whether this
 mechanism also appears on tokens nobody traded is kept in [`SPLIT_PHASE1.md`](SPLIT_PHASE1.md) §6.

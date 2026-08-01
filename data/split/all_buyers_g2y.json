@@ -761,11 +761,6 @@
    }
   }
  },
- "OPTIMUS": {
-  "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
-  "erreur": "getSignaturesForAddress a echoue apres 8 tentatives : HTTP Error 429: Too Many Requests",
-  "mesurable": false
- },
  "QAMI": {
   "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
   "creation": "2024-12-31T23:41:23.897000Z",
@@ -837,9 +832,74 @@
    }
   }
  },
+ "OPTIMUS": {
+  "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+  "creation": "2024-10-10T05:24:25.235000Z",
+  "n_tx_courbe": 800,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 246,
+  "n_vierges": 53,
+  "n_illisibles": 99,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 0,
+  "n_vierges_finances_G2Y_apres_token": 0,
+  "portefeuilles": {}
+ },
+ "sumiko": {
+  "mint": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+  "creation": "2024-12-26T13:25:10.337000Z",
+  "n_tx_courbe": 815,
+  "courbe_genese": true,
+  "n_acheteurs_distincts": 290,
+  "n_vierges": 96,
+  "n_illisibles": 116,
+  "mesurable": true,
+  "n_vierges_finances_G2Y_avant_token": 2,
+  "n_vierges_finances_G2Y_apres_token": 1,
+  "portefeuilles": {
+   "FYG2cyAmhKGyRnH5v3WvM6t2DnpxE3ZgoC3LCMaJ4cAB": {
+    "vierge": true,
+    "plus_ancien": 1735218120,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.739785,
+      "ts": 1735218120,
+      "utc": "2024-12-26 13:02:00",
+      "avant_token": true
+     }
+    ]
+   },
+   "AJq5My8GFG6Jo7PqS7HGeUc6j3iPvUGGhMFhSNmdKkS2": {
+    "vierge": true,
+    "plus_ancien": 1735217743,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 1.44608649,
+      "ts": 1735217743,
+      "utc": "2024-12-26 12:55:43",
+      "avant_token": true
+     }
+    ]
+   },
+   "A2f7BfcgcwWAakpcTT1c5VB8EfwanpYDMtwxUQ9dAB1k": {
+    "vierge": true,
+    "plus_ancien": 1735165221,
+    "genese": true,
+    "g2y": [
+     {
+      "sol": 0.12537525,
+      "ts": 1739057241,
+      "utc": "2025-02-08 23:27:21",
+      "avant_token": false
+     }
+    ]
+   }
+  }
+ },
  "VISUALIZE": {
-  "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
-  "erreur": "getSignaturesForAddress a echoue apres 8 tentatives : HTTP Error 429: Too Many Requests",
-  "mesurable": false
+  "mesurable": false,
+  "erreur": "getSignaturesForAddress : HTTP 429 repete. Scan interrompu, token declare NON MESURABLE plutot que compte comme negatif."
  }
 }
