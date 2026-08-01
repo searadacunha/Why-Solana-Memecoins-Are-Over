@@ -1,39 +1,127 @@
-# Microstructure of Solana memecoin launches
+# Why Solana memecoins are over
 
-A measurement study of how pump.fun launches actually work, and a record of the fourteen times this
-project produced a number that looked like a finding and was not.
+**A measurement study of how a market ate itself**, told in three acts and backed by on-chain
+evidence at every step — plus a record of the fifteen times this project produced a number that
+looked like a finding and was not.
 
-Two eras are examined with the same instruments, seventeen months apart:
-
-- **2024–2025.** Capital is routed to fresh wallets, split into near-identical amounts, and spent
-  in sequence on a new token. The sequence is slow enough that an outsider watching the chain can
-  see it happen.
-- **2026.** The entire bonding curve is bought inside the token's own creation slot. There is no
-  sequence left to watch: by the time the market opens, the supply is already held.
-
-The interesting part is not that both were measured. It is that measuring them produced a long
-series of confident wrong answers first, and that the chapter documenting those is the longest one
-in the repository.
-
-> **Vocabulary.** *The Matrix*, wherever it appears below, is a naming convention for the
-> coordinated infrastructure observed on chain — a set of addresses that share funding origins and
-> execution patterns. It is a label for a measured structure, never an actor, and nothing in this
-> repository attributes intent, identity, or wrongdoing to any person or company.
+The short version: a launch mechanism that worked *because* outsiders could still see it coming got
+optimised until outsiders could not participate at all. The optimisation worked. It also removed
+the reason anyone was there.
 
 ---
 
-## What is measured
+## Act I — 2024: manufactured organic demand
 
-### 1. Launch mechanics, 2026 — the window closes
+A new token appears. Several wallets buy it early, one after another. On the surface that is what
+demand looks like: independent participants, arriving separately, accumulating supply.
 
-On 42 launches verified transaction by transaction, the whole bonding curve is bought **inside the
-creation slot**: median 85.2 SOL for 79.0 % of supply, with zero curve purchase preceding it in
-42 of 42 cases. The position leaves at a median **t+17.5 s**. Market capitalisation goes from
-~2 158 $ at launch to ~53 985 $ by the time a first external buyer can transact — **×25 before the
-market opens**. On a separately frozen sample of 70 tokens that reached ≥ 500 k$, **58/70 = 82.9 %**
-[95 % CI 72.4–89.9] carry the same creation-slot signature.
+Trace the money and the picture changes. Those wallets were **created days before the token
+existed**, they hold nothing else, and their funding arrives from a **swap gateway** — an address
+through which capital enters the chain.
 
-### 2. Operator clusters — and what they are not
+That last detail is the whole mechanism, and it is structural rather than sinister: **a swap gateway
+breaks the on-chain link between where funds came from and where they land.** That is its function.
+Anyone can use one, and most users do so for ordinary reasons. But a set of wallets funded through
+one is *indistinguishable on chain* from a set of unrelated buyers — which is exactly the appearance
+of organic demand, obtained without any.
+
+The evidence, token by token, is in **[docs/PATTERN.md](docs/PATTERN.md)**. The clearest single
+instance:
+
+> **Nine freshly created wallets each receive exactly 2.976815600 SOL** from the same gateway,
+> between 07:07:49 and 07:13:32 UTC — 343 seconds — on 2024-12-13. The token they would go on to buy
+> is created seven and a half hours later, at 14:50.
+>
+> Nine decimals. Identical across nine wallets. Before the token existed.
+
+That amount is a conversion output, not a figure anyone types — and **the same figure reappears on a
+different token thirty-one days earlier**, from the same gateway. A swap output depends on size,
+route and the price at that instant, so the exact number recurring is a repeated operation, not a
+repeated coincidence.
+
+The pattern is confirmed on **6 of 13 tokens** scanned across **3 963 distinct buyers**. Where it is
+absent, the repository says whether that is a measured no or an unread wallet — the difference
+matters, and [PITFALLS P15](docs/PITFALLS.md) explains what happens when you collapse the two.
+
+**What this does not establish**, and the repository never claims: that any named service was
+complicit, or that one person was behind it. Reaching a gateway is a **routing fact** — all capital
+entering Solana passes through one. And each token was funded through its *own* distributor, with no
+shared funder between them; "clusters sharing a funding origin" is what the data supports, not a
+single controller.
+
+## Act II — the window, and why it was worth closing
+
+The 2024 mechanism had one flaw from its operators' point of view: **it was slow enough to watch.**
+Wallets funded hours ahead, buying in sequence on a visible curve. Someone paying attention could
+see the accumulation and buy alongside it.
+
+That is not a bug in the market. That *is* the market: a launch needs outside buyers, and the
+sequence is what let them in.
+
+## Act III — 2026: the lock, and the death it caused
+
+The obvious optimisation: stop leaving a window at all.
+
+On **42 launches verified transaction by transaction, the entire bonding curve is bought inside the
+token's own creation slot** — median 85.2 SOL for 79.0 % of supply, with zero curve purchase
+preceding it in 42 of 42 cases. On a separate frozen sample of 70 tokens that reached ≥ 500 k$,
+**58/70 = 82.9 %** carry the same signature.
+
+By the time the market opens, market capitalisation has gone from ~2 158 $ to ~53 985 $ — **×25
+before a single outside buyer can transact.** The position leaves at a median **t+17.5 seconds**.
+
+There is no sequence left to watch, because there is no sequence. And the consequence is
+arithmetical:
+
+- across **15 exit policies** on 196 tokens, the mean is negative in **15 of 15**, and no policy has
+  a 95 % confidence interval above zero;
+- **21.3 %** of tokens have already peaked when they first become visible; **50 %** within 120
+  seconds;
+- entering after the snipe returns **0.35× at +1 h** and **0.08× at +24 h**.
+
+A market where every measurable strategy loses does not have disappointed participants. It has
+**no** participants. The optimisation that removed the window removed the counterparty — and a
+launch venue without buyers is not a venue.
+
+That is the answer to the title. Not a crash, not a narrative rotation: the extraction was made so
+efficient that there was nothing left to extract from.
+
+---
+
+## The part that makes this credible: [docs/PITFALLS.md](docs/PITFALLS.md)
+
+Anyone can publish an analysis that agrees with its author. Fifteen cards, each one a number this
+project got wrong, the test that killed it, and what survived. **Eleven killed a positive result.**
+
+Three worth reading:
+
+- **P13** — the detector's most intuitive criterion, *these buyers share a funder*, fires on
+  **88.9 %** of randomly drawn wallet groups. It was carrying the headline claim. Retired.
+- **P14** — with that gone the signal still separated targets from controls at p = 0.0007, until a
+  second control group revealed the controls were all *dead* tokens while every target had
+  graduated. Against graduated controls: **p = 0.44**. It was measuring success, not coordination.
+- **P15** — a scan returned a clean `0/14 tokens carry the pattern`. It was a wrong hostname. Three
+  transport failures in one session, each returning a plausible number instead of an error.
+
+There is also a **[What did not reproduce](docs/PITFALLS.md#what-did-not-reproduce)** section for
+figures in the project's own notes that could not be re-derived. They are recorded as unreproduced
+rather than quietly dropped.
+
+> **Vocabulary.** *The Matrix*, where it appears, names the coordinated infrastructure observed on
+> chain — addresses sharing funding origins and execution patterns. It labels a measured structure,
+> never an actor. Every address and amount quoted is a public technical identifier. Nothing here
+> attributes intent, identity or wrongdoing to any person or company.
+
+---
+
+## The measurements behind the story
+
+Acts I and III quote the headline figures. The full versions, with their `n`, their confidence
+intervals and the attacks each one had to survive, are in
+[docs/RESULTATS.md](docs/RESULTATS.md) and [docs/PATTERN.md](docs/PATTERN.md). Two results deserve
+their own place here, because both cut against the story rather than for it.
+
+### Operator clusters — and what they are not
 
 A token–token graph built on shared wallets is dominated by 9 shared-infrastructure addresses.
 Removing them collapses the giant component from **180/282 to 57/282**. What remains is 6 disjoint
@@ -47,7 +135,7 @@ edge. Two clusters that share no wallet and no token nonetheless share a byte-le
 fingerprint: that is a shared tool, not a shared identity, and the repository says so rather than
 counting them as one operator.
 
-### 3. Cost to a buyer — every exit policy loses
+### Cost to a buyer — every exit policy loses
 
 Across **15 exit policies** on 196 tokens and 20 clusters, the mean is negative in **15 of 15**, and
 no policy has a 95 % cluster-bootstrap confidence interval above zero. 21.3 % of tokens (n = 1 243)
@@ -56,74 +144,6 @@ have already peaked at first external visibility; 50 % within 120 seconds. Post-
 
 There is no strategy in this repository. The measurement says there is nothing to extract, and that
 result is the one that survived the most attacks.
-
-### 4. The 2024–2025 funding dispatch — present, token by token
-
-The reference case is a token whose first four buyers were born in a **single transaction** five
-days before the token existed, each funded with exactly 3.000000000 SOL from one distribution hub.
-Paging that hub back without bound — 217 615 signatures, genesis reached — shows an account
-activated with 0.01 SOL in October 2024 and operating two weeks later as a **fan-out**: it receives
-an amount and pays the same amount out within the minute, cut into round parts across several
-recipients. Its principal funder is not new; that account dates to 2022 and its own genesis is
-reached, which rules out infrastructure built for this window alone. Two upstream addresses exceed
-the pagination ceiling and are reported as **out of reach**, not as unfunded.
-
-Tested token by token on the fifteen tokens of the window, the dispatch is present on **8 of 15**,
-and on **6 of 15** under a strict rule requiring three or more fresh wallets funded with an
-identical amount inside 120 seconds. One token carries three same-transaction fan-outs of **twenty
-wallets each**, at amounts identical to nine decimal places, within half an hour. The reference case
-is recovered by the detector, which is the positive control. Every dispatch is listed with its
-amount, span and timestamp in **[docs/PATTERN.md](docs/PATTERN.md)**.
-
-One correction came out of the data: every cluster at the buying-wallet layer is a *round* amount,
-not a conversion output. The two are one hop apart — a conversion pays a distributor, the
-distributor pays the wallets in round parts — so the round amounts are the observable signal at the
-wallet layer, and the hub above behaves exactly that way.
-
-What the mechanism does **not** do is distinguish these tokens from other graduated tokens of the
-same window: against those, **5/14 versus 3/12, p = 0.44**. Present here, and present elsewhere too.
-Both are true, and the separate write-up keeps them separate:
-**[docs/SPLIT_PHASE1.md](docs/SPLIT_PHASE1.md)**.
-
----
-
-## The centrepiece: [docs/PITFALLS.md](docs/PITFALLS.md)
-
-Fourteen episodes, each one a card: the misleading number first obtained, the specific test that
-exposed it, the fix, the value that survived, and the transferable lesson. **Eleven of the fourteen
-killed a positive result.**
-
-A sample:
-
-| # | what looked true | what was true |
-|---|---|---|
-| 1 | 69.8 % of tokens double | 46.3 % — that was the base rate |
-| 4 | +30.0 pt, p = 0.0032 | Mantel-Haenszel odds ratio 1.22, p = 0.97 |
-| 6 | median +1 h = 29.97× | **0.394×** — two variables, two units |
-| 10 | best of 38 policies = +7.26 % | 5 % critical value of the maximum = +26.3 % |
-| 12 | giant component 63.8 % | 17.0 % once hub nodes are handled |
-| 13 | "these wallets share a funder" separates targets from controls | it fires on 88.9 % of *random* groups |
-| 14 | split signature, targets vs controls, p = 0.0007 | vs *graduated* controls, p = 0.44 — the effect was the outcome |
-
-Pitfalls 13 and 14 are the pair worth reading first — they killed the same claim from two
-directions. A detector was built on three criteria and shipped a
-verdict before any of the three had a null distribution of its own. Supplying one — by pooling the
-control wallets and drawing random groups of forty — showed that the most intuitive criterion, *these
-early buyers share a private funder*, fires on 88.9 % of groups that were never coordinated at all,
-and on 99.5 % of groups restricted to wallets whose history could be read to the end. It would have
-carried the headline claim. The two criteria that require a coincidence in identity **and** in time
-fired 0 times in 5 000 draws, and those are the ones the conclusions now rest on.
-
-Pitfall 14 finished the job. With the worthless criterion gone the signature still separated targets
-from controls at p = 0.0007 — until a *second* control group was built. The first was matched on
-creation slot and consisted entirely of tokens that died; every target had graduated. Two things
-differed between the groups at once, and the design could not say which one the p-value belonged to.
-Against graduated tokens of the same window, the separation vanishes: **p = 0.44**. It was measuring
-success, not coordination.
-
-There is also a **[What did not reproduce](docs/PITFALLS.md#what-did-not-reproduce)** section, for
-three figures that circulate in the project's own notes and could not be re-derived from the
-published data. They are recorded as unreproduced rather than quietly dropped.
 
 ---
 
@@ -188,9 +208,13 @@ code instead of an assertion.
   cohort supports a *conditional* comparison against other graduated tokens of the same window, and
   nothing about how common the pattern is. Six symbols could not be resolved to a mint with
   confidence and are left marked AMBIGUOUS rather than guessed.
-- **No continuum between the two eras.** Roughly sixteen months separate the phase-1 window from
-  the 2026 capture, and they are not observed. The repository compares two epochs; it does not
-  claim to have watched one turn into the other.
+- **No continuum between the two eras.** Roughly sixteen months separate the Act I window from the
+  Act III capture, and they are not observed. The three acts are a reading of two measured
+  end-states, not a filmed transition: the repository shows what the market looked like at each end
+  and argues the link, it does not claim to have watched one become the other.
+- **No causal claim about SOL itself.** What is measured is the buyer economics of pump.fun
+  launches — every exit policy negative, no counterparty left. Nothing here measures the price of
+  SOL or attributes its moves to this mechanism.
 - **No profitable strategy.** The measured outcome of buying into this microstructure is a loss
   under every exit policy tested. That is the result, and it is not hedged.
 - **Negative results stay.** They are what makes the rest credible.
