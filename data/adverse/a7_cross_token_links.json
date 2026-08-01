@@ -1,0 +1,77 @@
+{
+ "objet": "Les operations observees sur des tokens differents sont-elles liees entre elles, ou seulement a un point d'entree commun ?",
+ "prealable": "Un split est un acteur : une transaction payant N portefeuilles au meme montant a un signataire et une decision. Ce qui reste a etablir, c'est si les splits de tokens DIFFERENTS sont le meme acteur, un meme outil, ou des utilisateurs distincts du meme guichet.",
+ "n_tokens_mesures": 13,
+ "n_paiements": 75,
+ "n_paiements_avant_token": 25,
+ "montants_recurrents": {
+  "2.976815600": {
+   "tokens": [
+    "SAFFRON",
+    "h2w6gm6jz"
+   ],
+   "occurrences": [
+    {
+     "token": "SAFFRON",
+     "portefeuille": "wbzkg9ftnVEMzeCL6wW8bpNTPDQWhBBnKo3JWJe3wh5",
+     "utc": "2024-11-12 13:16:45"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+     "utc": "2024-12-13 07:10:31"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+     "utc": "2024-12-13 07:10:53"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+     "utc": "2024-12-13 07:08:02"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+     "utc": "2024-12-13 07:11:20"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+     "utc": "2024-12-13 07:11:53"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+     "utc": "2024-12-13 07:13:32"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW",
+     "utc": "2024-12-13 07:07:49"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+     "utc": "2024-12-13 07:09:04"
+    },
+    {
+     "token": "h2w6gm6jz",
+     "portefeuille": "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+     "utc": "2024-12-13 07:10:12"
+    }
+   ]
+  }
+ },
+ "portefeuilles_partages": {
+  "GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h": [
+   "ACID",
+   "symx"
+  ]
+ },
+ "n_sessions": 14,
+ "n_sessions_multi_tokens": 0,
+ "sessions_multi_tokens": [],
+ "portee": "Aucun de ces tests ne peut demontrer une identite. Un montant recurrent ou une session partagee resserre le lien ; un outil commun produirait les memes signes. Le depot s'arrete a ce que la chaine montre."
+}

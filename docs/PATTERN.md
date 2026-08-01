@@ -183,7 +183,49 @@ than only the first forty, and dropping that cap is what surfaced ACID.
 
 ---
 
-## 4. What was scanned
+## 4. One actor per split — and how far that goes
+
+A split is one actor. A transaction paying twenty wallets an identical amount has one signer, one
+decision, one hand. That is not an inference, it is what a transaction is, and the repository states
+it plainly: **each dispatch observed here was performed by a single actor.**
+
+The open question is different: are the dispatches on *different* tokens the same actor, the same
+tool, or unrelated users of the same gateway? Three tests (`code/a7_cross_token_links.py`), across
+13 measured tokens and 75 gateway payments:
+
+**Recurring exact amount — one hit, and a strong one.** `2.976815600 SOL` appears on two tokens
+31 days apart: once on a SAFFRON wallet (2024-11-12 13:16:45) and nine times on h2w6gm6jz wallets
+(2024-12-13, 07:07:49 → 07:13:32). A swap output depends on the size, the route and the price at
+that instant, so the same nine-decimal figure recurring across two unrelated launches is not what
+conversions produce by chance. This is the strongest cross-token link in the corpus.
+
+**Shared wallets — one, and weaker than it looks.** `GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h`
+bought on both ACID and symx. But its gateway payment is dated 2025-01-23, *after* both tokens
+existed, so it links the two launches as a **buyer** without supporting the funding pattern on
+either. Reported at that strength.
+
+Note what a null result would have meant here: an operator who burns addresses leaves no shared
+wallets by construction, so few shared wallets is equally consistent with one careful actor and with
+many unrelated ones. This test can raise the link, not lower it.
+
+**Funding sessions — nothing.** Grouping payments separated by less than six hours gives 14
+sessions, **none** touching more than one token. The dispatches are not batched together.
+
+### What this supports, and what it does not
+
+Two of the thirteen token pairs are linked by hard on-chain evidence. That is more than "unrelated
+users of a common gateway" and less than "one person wrote all of it".
+
+The alternative that survives is **a shared tool**, and it is not hypothetical: this repository
+already documents two operator clusters that share *no wallet and no token* and nonetheless share a
+byte-level execution fingerprint — the same software, run by different hands. A repeated method is
+evidence of a repeated method. Getting from there to a repeated person requires an artefact that
+identifies the hand rather than the technique, and none of the three tests above produces one.
+
+So the repository writes what it measured: the dispatches are performed by single actors, at least
+two of the operations are linked to each other, and the identity behind them is not established.
+
+## 5. What was scanned
 
 Every buyer on the curve, not a sample: 3 963 distinct buyers across thirteen tokens. One token
 could not be read at all and is reported as unmeasurable rather than as a zero.
