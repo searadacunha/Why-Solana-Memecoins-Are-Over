@@ -1,10 +1,10 @@
 # Methodological pitfalls
 
-**What this chapter is.** Fourteen documented episodes in which this project produced a result that
+**What this chapter is.** Fifteen documented episodes in which this project produced a result that
 looked like a finding and was not. Each one is a card: the misleading number we first obtained, the
 specific test that exposed it, the fix, the value that survived, and the transferable lesson.
 
-Eleven of the fourteen killed a positive result. That is the point. A pipeline that only ever confirms
+Eleven of the fifteen killed a positive result, and one killed a negative. That is the point. A pipeline that only ever confirms
 its author is a pipeline whose failure modes have not been found yet — they have simply not been
 looked for.
 
@@ -53,6 +53,7 @@ this corpus the effective sample size is the number of clusters and days, not th
 | 12 | shared infrastructure in a graph | giant component 63.8 % | 17.0 % |
 | 13 | criterion with no null of its own | "shared funder" separates targets from controls | it fires on 88.9 % of random groups; retired |
 | 14 | control group matched on the wrong thing | split signature, targets vs controls, p = 0.0007 | vs *graduated* controls, p = 0.44 — the effect was the outcome |
+| 15 | transport failure returned as a measurement | "0/14 tokens carry the pattern" | a wrong hostname; measured properly, 3/9 with 5 unmeasurable |
 
 ---
 
@@ -586,6 +587,47 @@ This is P4 — confounding — recurring in a new domain, eleven cards after it 
 That recurrence is the point of keeping this file: naming a pitfall does not immunise you against
 it, and the only reliable defence is the mechanical habit of building the second control group
 before reading the first result.
+
+## P15 — Three transport failures that each returned a clean number
+
+**Symptom.** A scan of every bonding-curve buyer across fourteen tokens returned **0 distinct buyers
+on all fourteen**, and the summary line read `0/14 tokens carry the pattern`. Nothing in the output
+looked broken: the curve transaction counts were right — 538, 391, 587 — and only the buyer column
+was zero.
+
+**Diagnosis.** Three separate transport failures, found one after the other in the same session,
+each of which produced a plausible result instead of an error:
+
+| # | what failed | what it looked like |
+|---|---|---|
+| 1 | batch decode endpoint returned **HTTP 403** (wrong host) | "this curve has no buyers" |
+| 2 | `rpc()` returned `None` on error, caller wrote `or []` | "this curve has no transactions" |
+| 3 | signature pagination hit **HTTP 429** under concurrency | "genesis reached, 0 signatures" |
+
+The common shape is one line of code: an exception swallowed, a falsy value returned, and a caller
+that cannot tell *nothing was found* from *the question was never asked*. Failure #2 is the purest
+form — `return None` on error, then `or []` at the call site, converts an exhausted quota into a
+measurement.
+
+The tell was arithmetic, not technical: a **graduated** token has hundreds of curve transactions by
+definition, so zero buyers on a curve that reported 587 transactions is not a low number, it is a
+contradiction. A result that contradicts a definition is a bug until proven otherwise.
+
+**Correction.** Errors now raise. `rpc()` throws `RpcEchec` after its retries instead of returning
+`None`; a curve that yields zero signatures raises rather than reporting an empty measurement; a
+failed decode batch aborts the token instead of shrinking it. Tokens that cannot be measured are
+printed as `MEASUREMENT IMPOSSIBLE` with the HTTP status, and counted separately from tokens
+measured as negative. The summary line became `3/9 measured tokens, 5 not measurable` — which is
+less tidy than `0/14`, and is the point.
+
+**What it cost, had it not been caught.** The clean `0/14` would have been reported as a refutation
+of the hypothesis under test. It was produced by a wrong hostname.
+
+**Lesson.** Distinguishing *empty* from *failed* is not defensive programming, it is the
+measurement. Any client that can return a falsy value on error will eventually report a network
+fault as a scientific result, and it will do so in the format you designed for real answers. Two
+habits catch it: make the error path raise, and check every zero against what the definition of the
+population makes possible.
 
 ---
 
