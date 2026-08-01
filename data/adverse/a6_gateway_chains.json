@@ -1,0 +1,922 @@
+{
+ "objet": "Chaines datees guichet de swap -> distributeur -> portefeuilles frais -> premiers achats, sur les tokens tradés.",
+ "guichet": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+ "regle_temporelle": "Tout lien posterieur a la creation du token est ECARTE et compte a part : un versement qui arrive apres le lancement ne peut pas l'avoir finance.",
+ "portee": "Presence, pas prevalence. La couverture est partielle et rapportee par token : un portefeuille dont l'historique n'a pas ete remonte jusqu'a la genese a une origine INCONNUE, et un negatif ne vaut rien pour lui.",
+ "n_tokens": 15,
+ "n_guichet_en_amont": 8,
+ "n_adresses_amont_a_historique_incomplet": 409,
+ "tokens": [
+  {
+   "token": "BLT",
+   "mint": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+   "creation": "2024-11-19T21:39:44.231000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 26,
+   "couverture": 0.65,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 1,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 1,
+     "portefeuille": "FF68zwngS4Fw7Usj1DX2cqgMae9zV6gG1f5rH8fqSDzK",
+     "recu_sol": 5.0,
+     "quand": "2024-11-16 08:32:53",
+     "ts": 1731745973,
+     "via": "Brp1nn8fHWMAtbkzCrqLZidQiqTKAFvDiHUDGCugKvhV",
+     "via_recu": {
+      "sol": 67.82455,
+      "quand": "2024-10-30 15:58",
+      "ts": 1730303911,
+      "n_versements": 1
+     }
+    }
+   ],
+   "ecartes": []
+  },
+  {
+   "token": "CHOCO",
+   "mint": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+   "creation": "2024-10-10T13:35:48.615000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 29,
+   "couverture": 0.725,
+   "n_liens_hop0": 1,
+   "n_liens_hop1": 61,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 1,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 0,
+     "portefeuille": "Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho",
+     "recu_sol": 1.2074956,
+     "quand": "2024-10-10 09:24:43",
+     "ts": 1728552283,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "8eehrLyT5TkcPMu22wPXV5zsumAKQrJRz9Rus2b25eid",
+     "recu_sol": 11.703693193,
+     "quand": "2024-10-07 20:26:11",
+     "ts": 1728332771,
+     "via": "3FXdNo4tZ4fXZ9ZDPCAKWTARiNf3BoPwwkKLZnsJo1i9",
+     "via_recu": {
+      "sol": 1.182516,
+      "quand": "2024-10-07 06:50",
+      "ts": 1728283829,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "C7kkfUegM1jhJCJK9iaBpYM3tjuzMqKQHVsJW4Eb28Qy",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "SJCqF6SZz9fqZ8tDptbegs3JXRDHVP9NYDDtdyjx9eS",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "By8YpxepHYxxQCr4idt5AiXSoM6XaDAe72KfrgX76ijR",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "yiqtnUQJEyqurrJFJLM3kjMkffMFsKPss11K6a3jKc8",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "8vteSsnXDMniRD5cdXJrsW7s5wB6Q4NFFW5gedGmgK7K",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "3R5xfnzhyHt8KoMEWYa3fJfdbiHaYpNG5n73joNVUV8f",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "4WeYHCa819EXWz4Pj46DmL9dNFUr3dK7GVoD2a9xFket",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EiSBLjD1YkqKLMYUWzk2mGgNT4WbJzgfFMHfzBJXnK8e",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "d3o17vw5dK3SrKywqLQ3rh11FNcMwoeUiThqQtkUvdB",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "33mgeD3X6muTPoKyJxxp4VxXNaV4StNgL41CxYodAnjx",
+     "recu_sol": 0.1,
+     "quand": "2024-10-10 10:06:59",
+     "ts": 1728554819,
+     "via": "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L",
+     "via_recu": {
+      "sol": 24.051826,
+      "quand": "2024-10-10 09:26",
+      "ts": 1728552377,
+      "n_versements": 2
+     }
+    }
+   ],
+   "ecartes": []
+  },
+  {
+   "token": "LEXICON",
+   "mint": "E4wg8YF472u8oiLvSNKB84Y23gZhkSQ3PSCJaUj4pump",
+   "creation": "2024-12-29T20:23:14.489000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "couverture": 0.525,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 2,
+   "n_liens_ecartes": 3,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 1,
+     "portefeuille": "3tc4BVAdzjr1JpeZu6NAjLHyp4kK3iic7TexMBYGJ4Xk",
+     "recu_sol": 1.0,
+     "quand": "2024-12-09 18:27:20",
+     "ts": 1733768840,
+     "via": "H1M8bLEdEu8QdSu35pTKLeZ1a9SsSnwsi1HNe1bUrn84",
+     "via_recu": {
+      "sol": 0.035683,
+      "quand": "2024-07-25 04:06",
+      "ts": 1721880418,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "GHUNsNBZrkZsqajsXGqLSXhUrEKAJiyewNeq79QH74iC",
+     "recu_sol": 25.04181109,
+     "quand": "2024-12-16 21:53:28",
+     "ts": 1734386008,
+     "via": "DLJ167DK2fNfVyQva7qpozDr3kM3YjKtKi8FGgJSxeD",
+     "via_recu": {
+      "sol": 25.041826,
+      "quand": "2024-12-16 21:45",
+      "ts": 1734385510,
+      "n_versements": 1
+     }
+    }
+   ],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "4SDBpUBfb4JwHdWoYYsuZXgFoEiEMm2ps1JEcZXxBNGB",
+     "recu_sol": 1.0,
+     "quand": "2024-12-13 13:49:39",
+     "ts": 1734097779,
+     "via": "7GqqYXLMJjnfqQJgRmVP3VrBsut1VGuoWG1qyMpRLaVD",
+     "via_recu": {
+      "sol": 4.319144,
+      "quand": "2024-12-13 19:25",
+      "ts": 1734117947,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "4SDBpUBfb4JwHdWoYYsuZXgFoEiEMm2ps1JEcZXxBNGB",
+     "recu_sol": 2.0,
+     "quand": "2024-12-13 15:45:30",
+     "ts": 1734104730,
+     "via": "7GqqYXLMJjnfqQJgRmVP3VrBsut1VGuoWG1qyMpRLaVD",
+     "via_recu": {
+      "sol": 4.319144,
+      "quand": "2024-12-13 19:25",
+      "ts": 1734117947,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "4SDBpUBfb4JwHdWoYYsuZXgFoEiEMm2ps1JEcZXxBNGB",
+     "recu_sol": 0.32,
+     "quand": "2024-12-13 15:57:14",
+     "ts": 1734105434,
+     "via": "7GqqYXLMJjnfqQJgRmVP3VrBsut1VGuoWG1qyMpRLaVD",
+     "via_recu": {
+      "sol": 4.319144,
+      "quand": "2024-12-13 19:25",
+      "ts": 1734117947,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "QAMI",
+   "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+   "creation": "2024-12-31T23:41:23.897000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 23,
+   "couverture": 0.575,
+   "n_liens_hop0": 2,
+   "n_liens_hop1": 1,
+   "n_liens_ecartes": 1,
+   "n_hop0_valides": 2,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 0,
+     "portefeuille": "7TD4Q8cm7iGkQt6PdyPJGUT6pKS2yNDfVber6CK7bFRB",
+     "recu_sol": 2.97981299,
+     "quand": "2024-12-30 17:28:44",
+     "ts": 1735579724,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K",
+     "recu_sol": 4.9498234,
+     "quand": "2024-12-30 17:31:45",
+     "ts": 1735579905,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "45Dz55X311aRWqwRTmRm8j81qCM3BfqDkdgc8LGk3i67",
+     "recu_sol": 0.5,
+     "quand": "2024-12-30 19:29:48",
+     "ts": 1735586988,
+     "via": "HjqS58PcqNctvT55fFF4KoShFnUkV6TViK66iheFoUTM",
+     "via_recu": {
+      "sol": 0.167302,
+      "quand": "2024-11-12 20:26",
+      "ts": 1731443213,
+      "n_versements": 2
+     }
+    }
+   ],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "5f8gReeD3Rob1Lj1pKWj3k44qsoQNAHf6vXmG7RHXm2w",
+     "recu_sol": 10.0,
+     "quand": "2024-12-11 02:15:00",
+     "ts": 1733883300,
+     "via": "Frm84KaxvBCKphqxezjXTZoj7NRr2xoLcp7RRibryTvN",
+     "via_recu": {
+      "sol": 0.095036,
+      "quand": "2025-02-03 07:34",
+      "ts": 1738568054,
+      "n_versements": 1
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "SAFFRON",
+   "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+   "creation": "2024-11-12T22:54:53.193000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 25,
+   "couverture": 0.625,
+   "n_liens_hop0": 15,
+   "n_liens_hop1": 7,
+   "n_liens_ecartes": 3,
+   "n_hop0_valides": 15,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 0,
+     "portefeuille": "EqFkYx9j5rZjYPb3wujLVQ8agew7DirA2MXQ8gyX6kwh",
+     "recu_sol": 3.04982234,
+     "quand": "2024-05-08 17:37:16",
+     "ts": 1715189836,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "49hTR19ddwH2YAQVNrZecgCsFQdKXzmxG4JbVaNcJ5rn",
+     "recu_sol": 3.05505785,
+     "quand": "2024-05-08 17:41:51",
+     "ts": 1715190111,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "6TG2djFpHzGf2Ed2GVvRTnFoLJWrnWpiDRBas4v64s98",
+     "recu_sol": 2.32048155,
+     "quand": "2024-06-11 22:02:43",
+     "ts": 1718143363,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "FMVDDVg6APEfxyCYFozgouZo88mDARKsLt5PtenYcJyi",
+     "recu_sol": 2.43910102,
+     "quand": "2024-06-25 20:49:05",
+     "ts": 1719348545,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "2JT4swftvnwD8T4pqYHzrMybH4uFtW9ekzBW2C2gZRUz",
+     "recu_sol": 3.15060036,
+     "quand": "2024-10-23 20:23:17",
+     "ts": 1729714997,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "EqFkYx9j5rZjYPb3wujLVQ8agew7DirA2MXQ8gyX6kwh",
+     "recu_sol": 1.41340107,
+     "quand": "2024-10-24 20:04:25",
+     "ts": 1729800265,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "49hTR19ddwH2YAQVNrZecgCsFQdKXzmxG4JbVaNcJ5rn",
+     "recu_sol": 1.4138858,
+     "quand": "2024-10-24 20:08:18",
+     "ts": 1729800498,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+     "recu_sol": 7.12323775,
+     "quand": "2024-10-26 20:15:21",
+     "ts": 1729973721,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+     "recu_sol": 10.40138436,
+     "quand": "2024-10-27 20:00:48",
+     "ts": 1730059248,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+     "recu_sol": 42.564826,
+     "quand": "2024-10-27 21:24:53",
+     "ts": 1730064293,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+     "recu_sol": 14.05571761,
+     "quand": "2024-10-28 20:46:09",
+     "ts": 1730148369,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "C5roGFGAJ1dxjhD1TLmDXXKk4QTvLbxSYs41nQ4QFj85",
+     "recu_sol": 11.874826,
+     "quand": "2024-10-29 21:14:28",
+     "ts": 1730236468,
+     "via": null,
+     "via_recu": null
+    }
+   ],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "C6VJc2pAqr27FYr3mBGp9HngHuS813HpKNoXaY51aYFL",
+     "recu_sol": 0.6,
+     "quand": "2024-10-15 23:00:57",
+     "ts": 1729033257,
+     "via": "7NeEdDnK3sdjHCo8ksGkEgWtjRKAkPqU5SKXZP8wjsny",
+     "via_recu": {
+      "sol": 4.175087,
+      "quand": "2025-01-20 21:19",
+      "ts": 1737407998,
+      "n_versements": 1
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "C6VJc2pAqr27FYr3mBGp9HngHuS813HpKNoXaY51aYFL",
+     "recu_sol": 1.0,
+     "quand": "2024-10-16 04:14:53",
+     "ts": 1729052093,
+     "via": "7NeEdDnK3sdjHCo8ksGkEgWtjRKAkPqU5SKXZP8wjsny",
+     "via_recu": {
+      "sol": 4.175087,
+      "quand": "2025-01-20 21:19",
+      "ts": 1737407998,
+      "n_versements": 1
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "C6VJc2pAqr27FYr3mBGp9HngHuS813HpKNoXaY51aYFL",
+     "recu_sol": 0.9,
+     "quand": "2024-10-27 18:37:20",
+     "ts": 1730054240,
+     "via": "7NeEdDnK3sdjHCo8ksGkEgWtjRKAkPqU5SKXZP8wjsny",
+     "via_recu": {
+      "sol": 4.175087,
+      "quand": "2025-01-20 21:19",
+      "ts": 1737407998,
+      "n_versements": 1
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "VISUALIZE",
+   "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
+   "creation": "2024-09-13T21:59:49.966000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 19,
+   "couverture": 0.475,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 5,
+   "n_liens_ecartes": 5,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 1,
+     "portefeuille": "EoCFcymwtao4FHkKS9j94xe3y4J2cuXFCGuuAtfX8UrX",
+     "recu_sol": 0.2,
+     "quand": "2024-08-24 09:06:52",
+     "ts": 1724490412,
+     "via": "EDzXYzXabZfcvzv8MCDQcN6t2DsddX8DmYcZynSfncUW",
+     "via_recu": {
+      "sol": 0.371829,
+      "quand": "2024-05-27 16:23",
+      "ts": 1716826995,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EoCFcymwtao4FHkKS9j94xe3y4J2cuXFCGuuAtfX8UrX",
+     "recu_sol": 0.88,
+     "quand": "2024-08-24 15:02:21",
+     "ts": 1724511741,
+     "via": "EDzXYzXabZfcvzv8MCDQcN6t2DsddX8DmYcZynSfncUW",
+     "via_recu": {
+      "sol": 0.371829,
+      "quand": "2024-05-27 16:23",
+      "ts": 1716826995,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EoCFcymwtao4FHkKS9j94xe3y4J2cuXFCGuuAtfX8UrX",
+     "recu_sol": 0.25,
+     "quand": "2024-08-24 16:01:55",
+     "ts": 1724515315,
+     "via": "EDzXYzXabZfcvzv8MCDQcN6t2DsddX8DmYcZynSfncUW",
+     "via_recu": {
+      "sol": 0.371829,
+      "quand": "2024-05-27 16:23",
+      "ts": 1716826995,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EoCFcymwtao4FHkKS9j94xe3y4J2cuXFCGuuAtfX8UrX",
+     "recu_sol": 0.6,
+     "quand": "2024-08-25 05:58:32",
+     "ts": 1724565512,
+     "via": "EDzXYzXabZfcvzv8MCDQcN6t2DsddX8DmYcZynSfncUW",
+     "via_recu": {
+      "sol": 0.371829,
+      "quand": "2024-05-27 16:23",
+      "ts": 1716826995,
+      "n_versements": 1
+     }
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EoCFcymwtao4FHkKS9j94xe3y4J2cuXFCGuuAtfX8UrX",
+     "recu_sol": 0.485,
+     "quand": "2024-08-26 04:20:32",
+     "ts": 1724646032,
+     "via": "EDzXYzXabZfcvzv8MCDQcN6t2DsddX8DmYcZynSfncUW",
+     "via_recu": {
+      "sol": 0.371829,
+      "quand": "2024-05-27 16:23",
+      "ts": 1716826995,
+      "n_versements": 1
+     }
+    }
+   ],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "EsinpcQvcz2y11uXKadLSECqcthLuyeXmtsvEv1KcpkR",
+     "recu_sol": 0.95,
+     "quand": "2024-08-23 22:36:30",
+     "ts": 1724452590,
+     "via": "Abj4x12qLkvmk1L48xDe7psqTA7Rs7vUEn9fzd9BSevC",
+     "via_recu": {
+      "sol": 0.240872,
+      "quand": "2024-10-14 23:35",
+      "ts": 1728948909,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EsinpcQvcz2y11uXKadLSECqcthLuyeXmtsvEv1KcpkR",
+     "recu_sol": 2.0,
+     "quand": "2024-08-24 00:41:31",
+     "ts": 1724460091,
+     "via": "Abj4x12qLkvmk1L48xDe7psqTA7Rs7vUEn9fzd9BSevC",
+     "via_recu": {
+      "sol": 0.240872,
+      "quand": "2024-10-14 23:35",
+      "ts": 1728948909,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EsinpcQvcz2y11uXKadLSECqcthLuyeXmtsvEv1KcpkR",
+     "recu_sol": 4.0,
+     "quand": "2024-08-24 01:55:50",
+     "ts": 1724464550,
+     "via": "Abj4x12qLkvmk1L48xDe7psqTA7Rs7vUEn9fzd9BSevC",
+     "via_recu": {
+      "sol": 0.240872,
+      "quand": "2024-10-14 23:35",
+      "ts": 1728948909,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "EsinpcQvcz2y11uXKadLSECqcthLuyeXmtsvEv1KcpkR",
+     "recu_sol": 2.0,
+     "quand": "2024-08-24 02:08:53",
+     "ts": 1724465333,
+     "via": "Abj4x12qLkvmk1L48xDe7psqTA7Rs7vUEn9fzd9BSevC",
+     "via_recu": {
+      "sol": 0.240872,
+      "quand": "2024-10-14 23:35",
+      "ts": 1728948909,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "h2w6gm6jz",
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "creation": "2024-12-13T14:50:36.376000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "couverture": 0.525,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 1,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 1,
+     "portefeuille": "ApBXF9f1tgk8FTDbUonjTmGnWBCJRyedKKD26HP3Tp7X",
+     "recu_sol": 10.5878111,
+     "quand": "2024-12-13 14:04:15",
+     "ts": 1734098655,
+     "via": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v",
+     "via_recu": {
+      "sol": 10.587826,
+      "quand": "2024-12-13 13:56",
+      "ts": 1734098205,
+      "n_versements": 1
+     }
+    }
+   ],
+   "ecartes": []
+  },
+  {
+   "token": "sumiko",
+   "mint": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+   "creation": "2024-12-26T13:25:10.337000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 20,
+   "couverture": 0.5,
+   "n_liens_hop0": 2,
+   "n_liens_hop1": 1,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 2,
+   "guichet_en_amont": true,
+   "chaines": [
+    {
+     "niveau": 0,
+     "portefeuille": "AJq5My8GFG6Jo7PqS7HGeUc6j3iPvUGGhMFhSNmdKkS2",
+     "recu_sol": 1.44608649,
+     "quand": "2024-12-26 12:55:43",
+     "ts": 1735217743,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 0,
+     "portefeuille": "FYG2cyAmhKGyRnH5v3WvM6t2DnpxE3ZgoC3LCMaJ4cAB",
+     "recu_sol": 0.739785,
+     "quand": "2024-12-26 13:02:00",
+     "ts": 1735218120,
+     "via": null,
+     "via_recu": null
+    },
+    {
+     "niveau": 1,
+     "portefeuille": "5CvFPs2jX7VpYZ8jQHZHpekgkQ4rHAsvus8i7dET1NKS",
+     "recu_sol": 0.22,
+     "quand": "2024-12-23 20:09:07",
+     "ts": 1734984547,
+     "via": "GwHZ2iXBFGoi7R1HQ6Uh2f7y2etTLc8219VPAHS8k238",
+     "via_recu": {
+      "sol": 0.330156,
+      "quand": "2024-08-18 16:14",
+      "ts": 1723997677,
+      "n_versements": 7
+     }
+    }
+   ],
+   "ecartes": []
+  },
+  {
+   "token": "ACID",
+   "mint": "9woMdZe1WVpFBQwRPybAFpqaNMT9YXyNMhdKh7JXpump",
+   "creation": "2024-12-09T09:47:21.061000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 20,
+   "couverture": 0.5,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 1,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "656kc4i8J3ubXRT9obUyMkkmr2n1PNwXCFzDVkgSHFt7",
+     "recu_sol": 1.695062239,
+     "quand": "2022-01-12 01:37:14",
+     "ts": 1641951434,
+     "via": "GjTaRFkyG3XoDERs2zpxsD5FYXtyAiSeQSdJa5pfSHse",
+     "via_recu": {
+      "sol": 12.077228,
+      "quand": "2024-09-21 09:58",
+      "ts": 1726912734,
+      "n_versements": 2
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "MIKU",
+   "mint": "48BVWSkY5XxZ9HwaKet2kAYvjP9gPviUmm8Xg2EKCLNx",
+   "creation": "2025-01-01T06:03:31.592000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 24,
+   "couverture": 0.6,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 1,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "5x8tfrJSn4Pt5gjQEMWDnoLvAzZ8rgJVTXiTpcwhbxmN",
+     "recu_sol": 98.4,
+     "quand": "2025-01-01 05:28:17",
+     "ts": 1735709297,
+     "via": "GwP5Gj5ZYhqUTUVjGEmAgEdySjiuUyiEw7rrYRME7ZwG",
+     "via_recu": {
+      "sol": 31.271562,
+      "quand": "2025-01-24 23:35",
+      "ts": 1737761731,
+      "n_versements": 5
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "ODIN_POSITIF",
+   "mint": "odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG",
+   "creation": null,
+   "n_premiers_acheteurs": 35,
+   "n_genese_atteinte": 12,
+   "couverture": 0.343,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": []
+  },
+  {
+   "token": "OPTIMUS",
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "creation": "2024-10-10T05:24:25.235000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 23,
+   "couverture": 0.575,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 1,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": [
+    {
+     "niveau": 1,
+     "portefeuille": "HpxGB3Fw87EErbChdG8SeW3AnJ7bUxhYgDtFdiUttxKh",
+     "recu_sol": 3.25,
+     "quand": "2024-03-30 16:59:41",
+     "ts": 1711817981,
+     "via": "9hY9HU4JM1M5RrgtB442BvffCdBFWvzjMYupuJeiaBxW",
+     "via_recu": {
+      "sol": 4.925941,
+      "quand": "2024-05-13 18:04",
+      "ts": 1715623470,
+      "n_versements": 3
+     },
+     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+    }
+   ]
+  },
+  {
+   "token": "POLMRKTBOT",
+   "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+   "creation": "2024-12-15T17:04:54.845000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 21,
+   "couverture": 0.525,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": []
+  },
+  {
+   "token": "RAO",
+   "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+   "creation": "2024-10-29T11:51:46.301000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 29,
+   "couverture": 0.725,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": []
+  },
+  {
+   "token": "symx",
+   "mint": "Fu4jQQpUnECSVQrVfeeVPpQpXQffM75LL328EJPtpump",
+   "creation": "2024-12-19T10:23:11.755000Z",
+   "n_premiers_acheteurs": 40,
+   "n_genese_atteinte": 16,
+   "couverture": 0.4,
+   "n_liens_hop0": 0,
+   "n_liens_hop1": 0,
+   "n_liens_ecartes": 0,
+   "n_hop0_valides": 0,
+   "guichet_en_amont": false,
+   "chaines": [],
+   "ecartes": []
+  }
+ ]
+}
