@@ -1,0 +1,354 @@
+{
+ "CGvXj3Xsmrzd4WHBM65yzkJNc5KDWFvcvEf9ogBJjr7L": {
+  "role": "CHOCO — 3 eventails de 20 portefeuilles",
+  "n_signatures": 30,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-10-10 09:26",
+  "premiers_financements": [
+   {
+    "t": "2024-10-10 09:26",
+    "recu": 24.0518,
+    "sources": [
+     [
+      "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+      -24.0518,
+      "service de swap (G2Y)"
+     ]
+    ]
+   },
+   {
+    "t": "2024-10-10 13:26",
+    "recu": 5.0438,
+    "sources": [
+     [
+      "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+      -5.0438,
+      "service de swap (G2Y)"
+     ]
+    ]
+   },
+   {
+    "t": "2024-10-11 03:43",
+    "recu": 14.5703,
+    "sources": [
+     [
+      "7WA3dG4TWFpHrLNapusotGS8mLZwfMZU7pxmQXsc6mko",
+      -1.7291,
+      null
+     ],
+     [
+      "3uxpsg1STj44gtvSfcpMC4BHJrx476gk8FHEsAKZk6kh",
+      -1.9325,
+      null
+     ],
+     [
+      "shiUC63igXAR4B3pB7btvY25aQHmdNqj6i5hKRT8zKv",
+      -1.8659,
+      null
+     ],
+     [
+      "9Eo5YRyyN89PM7nKWopw3EwTFyhc9nEQfdyoEtXQHpZv",
+      -1.7996,
+      null
+     ],
+     [
+      "By8YpxepHYxxQCr4idt5AiXSoM6XaDAe72KfrgX76ijR",
+      -2.0099,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-10-11 03:43",
+    "recu": 6.8095,
+    "sources": [
+     [
+      "G7UYBeW1YvJoQKbmKCZpMpQH2YyhXomwdYKqXBRfm7Gf",
+      -1.8061,
+      null
+     ],
+     [
+      "7D4zvMFT4Ji4SjHFUbMtjCi1yK5qwhY99s23S4bGh85F",
+      -1.6116,
+      null
+     ],
+     [
+      "SJCqF6SZz9fqZ8tDptbegs3JXRDHVP9NYDDtdyjx9eS",
+      -1.7616,
+      null
+     ],
+     [
+      "yiqtnUQJEyqurrJFJLM3kjMkffMFsKPss11K6a3jKc8",
+      -1.6301,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-10-11 03:44",
+    "recu": 17.2147,
+    "sources": [
+     [
+      "8vteSsnXDMniRD5cdXJrsW7s5wB6Q4NFFW5gedGmgK7K",
+      -2.7169,
+      null
+     ],
+     [
+      "3R5xfnzhyHt8KoMEWYa3fJfdbiHaYpNG5n73joNVUV8f",
+      -2.4323,
+      null
+     ],
+     [
+      "EiSBLjD1YkqKLMYUWzk2mGgNT4WbJzgfFMHfzBJXnK8e",
+      -2.0831,
+      null
+     ],
+     [
+      "C7kkfUegM1jhJCJK9iaBpYM3tjuzMqKQHVsJW4Eb28Qy",
+      -1.8601,
+      null
+     ],
+     [
+      "HXyDzkQnTaTP1UFnNbDEKrUzqnjfFAWZVwkvVKPBJVqj",
+      -1.9219,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-10-11 04:28",
+    "recu": 2.0784,
+    "sources": [
+     [
+      "Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho",
+      -2.0785,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "7KMfmLHz69jdmdRKZ6Ba3jqE8x32dnYP6bJseiCfiTAE": {
+  "role": "BLT — 5 x 10 SOL en 49 s",
+  "n_signatures": 21138,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-07-29 13:01",
+  "premiers_financements": [
+   {
+    "t": "2024-07-29 13:01",
+    "recu": 3.0,
+    "sources": [
+     [
+      "G4TLffykRn4ipfYGeRNJd7oca4gXnsKoPq645YmsEKDp",
+      -3.0,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "2iS38PpcY1CUza8ynZ5gqS6mvjhxvmYGUn4ik9LycAVf": {
+  "role": "BLT — 4 x 2 SOL en 79 s",
+  "n_signatures": 898,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-11-05 17:44",
+  "premiers_financements": [
+   {
+    "t": "2024-11-05 17:44",
+    "recu": 7.5,
+    "sources": [
+     [
+      "8sjFD8Uasez8dHesLu8v2PxvdPEkJish1GHskQyGEQk6",
+      -7.5,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-05 17:44",
+    "recu": 7.5,
+    "sources": [
+     [
+      "zPeHQHBKpLjwdjWDv9SNsq9TRcaRroVz7MjfF5icgr2",
+      -7.5,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE": {
+  "role": "h2w6gm6jz — 5 x 2 SOL en 73 s",
+  "n_signatures": 400000,
+  "genese_atteinte": false,
+  "premiere_activite_utc": "2026-07-09 05:50",
+  "premiers_financements": []
+ },
+ "AMW5B2NAMBY7gp7VHLTLkwJzXxh3BTZBdtCHjah32pMi": {
+  "role": "VISUALIZE — 3 x 5 SOL en 42 s",
+  "n_signatures": 4028,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-04-02 04:25",
+  "premiers_financements": [
+   {
+    "t": "2024-04-02 04:25",
+    "recu": 26.7958,
+    "sources": [
+     [
+      "BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6",
+      -26.7958,
+      "echange (hot wallet)"
+     ]
+    ]
+   },
+   {
+    "t": "2024-06-14 05:24",
+    "recu": 3.61,
+    "sources": [
+     [
+      "BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6",
+      -3.6102,
+      "echange (hot wallet)"
+     ]
+    ]
+   },
+   {
+    "t": "2024-06-14 06:17",
+    "recu": 10.1951,
+    "sources": [
+     [
+      "EnWfa9u16JPQHbENNsRLaWtiGSgpW3csnVJeYBm6f3GK",
+      -10.2826,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-06-14 06:30",
+    "recu": 9.1246,
+    "sources": [
+     [
+      "DkX6Zq912oMXhCDcgJdvgbBU5Jvd4B884VecYczCWuHu",
+      -2.668,
+      null
+     ],
+     [
+      "AxfosPGyrBuQGZ3bjE4Bgjk6tD29TNXcKxT4cq2vawo8",
+      -2.6693,
+      null
+     ],
+     [
+      "EVGW4q1iFjDmtxtHr3NoPi5iVKAxwEjohsusMrinDxr6",
+      -3.8657,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "9A7kh2TFFVbh8tnx1jhU7kUgKfmkeNpLUUKyEkrDb8WY": {
+  "role": "LEXICON — 3 x 0.35 SOL en 29 s",
+  "n_signatures": 3151,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-04-15 22:39",
+  "premiers_financements": [
+   {
+    "t": "2024-04-15 22:39",
+    "recu": 0.5,
+    "sources": [
+     [
+      "74oGoZDngBkBHc2jQ3GJf5e646CRumYtR5wAyBWna4xh",
+      -0.5001,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-04-16 13:10",
+    "recu": 0.5,
+    "sources": [
+     [
+      "74oGoZDngBkBHc2jQ3GJf5e646CRumYtR5wAyBWna4xh",
+      -0.5001,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-05-22 18:27",
+    "recu": 1.0,
+    "sources": [
+     [
+      "F6cFY1U5kSihaUF8XDVqREpyzPc4jtVafmqL5aGXNDu8",
+      -1.0001,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-05-22 18:34",
+    "recu": 3.0,
+    "sources": [
+     [
+      "F6cFY1U5kSihaUF8XDVqREpyzPc4jtVafmqL5aGXNDu8",
+      -3.0001,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-05-22 18:57",
+    "recu": 5.0,
+    "sources": [
+     [
+      "F6cFY1U5kSihaUF8XDVqREpyzPc4jtVafmqL5aGXNDu8",
+      -5.0001,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-05-22 20:04",
+    "recu": 3.5,
+    "sources": [
+     [
+      "F6cFY1U5kSihaUF8XDVqREpyzPc4jtVafmqL5aGXNDu8",
+      -3.5001,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR": {
+  "role": "ODIN (reference) — 4 x 3 SOL, meme tx",
+  "n_signatures": 217622,
+  "genese_atteinte": true,
+  "premiere_activite_utc": "2024-10-22 20:26",
+  "premiers_financements": [
+   {
+    "t": "2024-11-06 15:15",
+    "recu": 1.5001,
+    "sources": [
+     [
+      "3KhoVLJXbcvEdSMYu7XihT4rajuRVa8euKeCRLfmh9WS",
+      -1.5151,
+      null
+     ]
+    ]
+   },
+   {
+    "t": "2024-11-06 16:13",
+    "recu": 0.2455,
+    "sources": [
+     [
+      "EXUcqVP61F51sxZGCHxhFv56owopfb4rYKD5qpMbCU58",
+      -0.3676,
+      null
+     ]
+    ]
+   }
+  ]
+ },
+ "_bailleurs_communs_a_plusieurs_distributeurs": {}
+}

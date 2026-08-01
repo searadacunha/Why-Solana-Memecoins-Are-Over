@@ -49,6 +49,7 @@ PLAN = [
     ("a3_hub_origin.py", "", "phase-1 hub: genesis, fan-out shape, upstream reached and not"),
     ("a4_selection_bias.py", "", "distance between the phase-1 cohort and a random sample"),
     ("a5_author_pattern.py", "", "presence test of the funding-dispatch pattern, token by token"),
+    ("a6_gateway_chains.py", "", "dated chains: swap gateway -> distributor -> fresh wallets"),
     ("v05_creation_block.py", "net", "creation-slot buy block, non-circular (needs the RPC cache)"),
     ("v06_curve_ladder.py", "net", "curve ladder: SOL spent, share of supply"),
     ("fetch_sol_usd.py", "net", "SOL/USDC hourly series (no key, GeckoTerminal)"),
