@@ -15,26 +15,20 @@ ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of 
 to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
 **same amount landing on several fresh wallets at once**, the split signature. That alone was not a
 trade. The trade began the moment **one of those wallets bought at least 20 million of a token's
-supply on pump.fun** — about **2 %** of it, enough to matter for control of the launch, and every
-wallet in the split bought the same size, so no single one of them could crash the price by selling
-alone. The rest of the split had not moved yet, and that first buy was the tell that they were about
-to. Position taken there, ahead of the demand the rest of the split was about to create — then it was
-ordinary chart reading, judging how far the run would carry.
+supply on pump.fun** — about **2 %** of it, enough to matter for control of the launch. Every wallet
+in the split bought the same size, together holding enough of the supply that the NPCs buying in
+afterward had no influence on the price. The rest of the split had not moved yet, and that first buy
+was the tell that they were about to. Position taken there, ahead of the demand the rest of the split
+was about to create — then it was ordinary chart reading, judging how far the run would carry.
 
 The position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
 inside the rules, not a fight against the operators running the split. That was still more than they
 were willing to share.
 
-Proving it on chain — for this repository, after the fact — was a separate problem. A wallet's
-funding lives in its *first* transactions, and `getSignaturesForAddress` walks present → past a
-thousand at a time — so a bounded walk returns recent history and reports "no funding found" for a
-wallet that was funded, without raising anything. Every wallet here is either paged back to its own
-first signature or declared unread; the distribution hub took **217 615 signatures** to reach.
-Funding that arrives by closing a wrapped account leaves no transfer to find, so inflows are
-measured as balance deltas rather than read off transfer lists. And a nine-decimal amount is a
-conversion output while a round one is a deliberate payment — two different links in the same chain,
-which is why the first version of the detector, built to require the former, returned zero on all
-fifteen tokens including the reference case.
+By now enough wallets exist that the pool runs continuously, reactivated as needed rather than spent
+once. Following them would be simple if that were the whole picture, but plenty of decoys get created
+alongside the real ones. Reactivation covers two different plays: ordinary dumps that stay on
+pump.fun, and the big ones — bundle-snipes, where the entire supply is bought inside a single block.
 
 On a chart that reads as independent buyers arriving one after another. On one launch, nine wallets
 received **the same amount to nine decimal places within 343 seconds**, seven and a half hours
@@ -42,12 +36,6 @@ before the token existed — the split signature, at scale.
 
 That is where the 238 989.57 $ came from, and the receipts are in
 [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
-
-Scaled up, the check runs over every buyer on a curve rather than the first forty — **3 963 distinct
-buyers across thirteen tokens** — which is only affordable because a fresh wallet has no history
-before the window: page backwards and stop at the first transaction older than the cutoff, and an
-address with four hundred thousand signatures costs one call instead of four hundred. Dropping that
-forty-buyer cap is what surfaced one of the six confirmed tokens, invisible until then.
 
 It no longer works. The supply is now taken in full inside the token's own creation block — 42
 launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
