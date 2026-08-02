@@ -9,18 +9,23 @@ sometimes minutes before. They are funded through **ChangeNOW**, a swap service,
 beyond which their money is no longer traceable. When the token launches, those wallets buy its
 supply.
 
-It was visible only to someone who knew how to look for it. Establishing it was a different
-problem. Trading it was a third one entirely.
+It was visible only to someone who knew how to look for it. Exploiting it was a different problem.
 
-Finding it: ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of it
-routine. Filtered to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
+ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of it routine. Filtered
+to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
 **same amount landing on several fresh wallets at once**, the split signature. That alone was not a
 trade. The trade began the moment **one of those wallets bought at least 20 million of a token's
-supply on pump.fun**: the rest of the split had not moved yet, and that first buy was the tell that
-they were about to. Position taken there, ahead of the demand the rest of the split was about to
-create — then it was ordinary chart reading, judging how far the run would carry.
+supply on pump.fun** — about **2 %** of it, enough to matter for control of the launch, and every
+wallet in the split bought the same size, so no single one of them could crash the price by selling
+alone. The rest of the split had not moved yet, and that first buy was the tell that they were about
+to. Position taken there, ahead of the demand the rest of the split was about to create — then it was
+ordinary chart reading, judging how far the run would carry.
 
-Establishing it on chain was the different problem. A wallet's
+The position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
+inside the rules, not a fight against the operators running the split. That was still more than they
+were willing to share.
+
+Proving it on chain — for this repository, after the fact — was a separate problem. A wallet's
 funding lives in its *first* transactions, and `getSignaturesForAddress` walks present → past a
 thousand at a time — so a bounded walk returns recent history and reports "no funding found" for a
 wallet that was funded, without raising anything. Every wallet here is either paged back to its own
