@@ -1,12 +1,13 @@
 # Methodological pitfalls
 
-**What this chapter is.** Fifteen documented episodes in which this project produced a result that
-looked like a finding and was not. Each one is a card: the misleading number we first obtained, the
-specific test that exposed it, the fix, the value that survived, and the transferable lesson.
+**What this chapter is.** Fifteen claims this project held, each with the test built to break it and
+what was left afterwards. Each card carries the number first obtained, the specific test that
+exposed it, the correction, the value that survived, and the transferable lesson.
 
-Eleven of the fifteen killed a positive result, and one killed a negative. That is the point. A pipeline that only ever confirms
-its author is a pipeline whose failure modes have not been found yet — they have simply not been
-looked for.
+**Eleven of the fifteen died.** One died in the other direction — a negative that turned out to be a
+broken connection rather than a result. That balance is the point: a pipeline that only ever
+confirms its author is a pipeline whose failure modes have not been found yet, only left unlooked
+for. Every result elsewhere in this repository is what remains after this chapter was applied to it.
 
 **Everything here is recomputed, not recalled.** `code/p0_pitfalls_check.py` reads only the published
 files in `./data/` and prints every figure quoted below. Run it:
@@ -37,7 +38,7 @@ this corpus the effective sample size is the number of clusters and days, not th
 
 ## Summary
 
-| # | pitfall | the number that was wrong | the number after correction |
+| # | the claim that failed | what it said | what survived the test |
 |---|---|---|---|
 | 1 | selection on the outcome | 69.8 % of tokens double | 46.3 % (the base rate) |
 | 2 | denominator artefact | any low-MC variable "predicts" the multiple | elasticity 0.88 explains it; residual target, rho 0.05 |
@@ -57,7 +58,7 @@ this corpus the effective sample size is the number of clusters and days, not th
 
 ---
 
-# The seven core pitfalls
+# The seven core failures
 
 ## P1 — Selection on the outcome
 
@@ -355,7 +356,7 @@ never trust a health check that has no way of returning "unhealthy".
 
 ---
 
-# Further pitfalls found in the same corpus
+# Further failures found in the same corpus
 
 ## P8 — The unfilled-exit convention: one line, three fake edges
 
