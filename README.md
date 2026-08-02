@@ -23,28 +23,33 @@ price. The rest of the split had not moved yet, and that crossing was the tell t
 to. Position taken there, ahead of the demand the rest of the split was about to create — then it was
 ordinary chart reading, judging how far the run would carry.
 
-The same co-funding shows up on almost any token that runs: check the top holders of one that reached
-$1 M+ and most were funded the same day, sometimes the same block. That much is real — it is
-coordination, not noise. What it doesn't say is which way the coordination points. The same operators
-stage dumps the same way they stage runs, so co-funding by itself predicts neither; following it alone
-loses more often than it pays. The split needed the 20-million-token buy to say which one this was.
-
-My position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
-inside the rules, not a fight against the operators running the split. That was still more than they
-were willing to share.
+Splits got rarer as 2024 wore on, but the criterion held: a ChangeNOW-funded wallet buying 2 % of a
+token's supply on pump.fun was still worth selecting on. Why they thinned took longer to understand —
+they were reusing wallets, and reuse meant needing fewer new ones each time.
 
 On a chart that reads as independent buyers arriving one after another. On one launch, nine wallets
 received **the same amount to nine decimal places within 343 seconds**, seven and a half hours
 before the token existed — the split signature, at scale.
 
+My position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
+inside the rules, not a fight against the operators running the split. That was still more than they
+were willing to share.
+
 That is where the 238 989.57 $ came from, and the receipts are in
 [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
 
 By now, what comes out of ChangeNOW is mostly garbage — wallets funded to be burned on a rug. Enough
-of them exist that the pool runs continuously, reactivated as needed rather than spent once.
-Following them would be simple if that were the whole picture, but plenty of decoys get created
-alongside the real ones. Reactivation covers two different plays: a rug that plays out entirely on
-pump.fun, and the big one — a bundle-snipe, where the entire supply is bought inside a single block.
+of them exist that the pool runs continuously, reactivated as needed rather than spent once. What
+gets reactivated comes in groups: wallets funded together in the same block, sometimes a year or two
+ago, sometimes just a few months, held that long and then spent as a set. Following them would be
+simple if that were the whole picture, but plenty of decoys get created alongside the real ones.
+Reactivation covers two different plays: a rug that plays out entirely on pump.fun, and the big one —
+a bundle-snipe, where the entire supply is bought inside a single block.
+
+The same co-funding still shows up on almost any token that runs: check the top holders of one that
+reached $1 M+ and most were funded the same day, sometimes the same block. That much is still real —
+it is coordination, not noise. What it still doesn't say is which way the coordination points: the
+same operators stage dumps the same way they stage runs, so co-funding by itself predicts neither.
 
 It no longer works. The supply is now taken in full inside the token's own creation block — 42
 launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
