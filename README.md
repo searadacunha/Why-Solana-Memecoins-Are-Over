@@ -21,14 +21,9 @@ afterward had no influence on the price. The rest of the split had not moved yet
 was the tell that they were about to. Position taken there, ahead of the demand the rest of the split
 was about to create — then it was ordinary chart reading, judging how far the run would carry.
 
-The position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
+My position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
 inside the rules, not a fight against the operators running the split. That was still more than they
 were willing to share.
-
-By now enough wallets exist that the pool runs continuously, reactivated as needed rather than spent
-once. Following them would be simple if that were the whole picture, but plenty of decoys get created
-alongside the real ones. Reactivation covers two different plays: ordinary dumps that stay on
-pump.fun, and the big ones — bundle-snipes, where the entire supply is bought inside a single block.
 
 On a chart that reads as independent buyers arriving one after another. On one launch, nine wallets
 received **the same amount to nine decimal places within 343 seconds**, seven and a half hours
@@ -36,6 +31,11 @@ before the token existed — the split signature, at scale.
 
 That is where the 238 989.57 $ came from, and the receipts are in
 [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
+
+By now enough wallets exist that the pool runs continuously, reactivated as needed rather than spent
+once. Following them would be simple if that were the whole picture, but plenty of decoys get created
+alongside the real ones. Reactivation covers two different plays: ordinary dumps that stay on
+pump.fun, and the big ones — bundle-snipes, where the entire supply is bought inside a single block.
 
 It no longer works. The supply is now taken in full inside the token's own creation block — 42
 launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
