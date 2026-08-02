@@ -1,42 +1,44 @@
 # Why Solana memecoins are over
 
-**In three months I withdrew 238 989.57 $ trading pump.fun launches. Then I stopped, because the
-thing I was trading stopped existing — and this repository is the measurement of why.**
+**Between October and December 2024 I withdrew 238 989.57 $ from trading pump.fun launches. I
+stopped when the pattern I was trading disappeared, and this repository is the measurement of what
+replaced it.**
 
-Here is what I found, by watching launches one at a time in a block explorer until the shape
-repeated. Before a pump.fun token exists, wallets are created for it — same day, often minutes
-before. Those wallets are funded through **ChangeNOW**, a swap service, which is what makes their
-money untraceable back past that point. When the token launches, **those wallets buy its supply.**
-To anyone watching the chart it looks like independent buyers arriving one after another. They are
-not a crowd. On one launch, nine of those wallets were paid **the same amount to nine decimal
-places, within 343 seconds**, seven hours before the token existed.
+The pattern was findable by hand. Watching launches one at a time in a block explorer, the same
+shape kept coming back: before a pump.fun token exists, wallets are created for it — the same day,
+sometimes minutes before. They are funded through **ChangeNOW**, a swap service, which is the point
+beyond which their money is no longer traceable. When the token launches, those wallets buy its
+supply.
 
-That was findable by eye, and slow enough to trade against. You could spot the wallet created that
-morning, buy alongside it, and sell into the crowd it was built to attract. That is where the
-238 989.57 $ came from.
+On a chart that reads as independent buyers arriving one after another. On one launch, nine of those
+wallets received **the same amount to nine decimal places within 343 seconds**, seven and a half
+hours before the token existed.
 
-**It does not work any more, because they stopped leaving anything.** The supply is now bought in
-full inside the token's own creation block — 42 launches out of 42, verified transaction by
-transaction. Nothing reaches the market. Nothing is left for anyone.
+The sequence took hours, which left room to act on it: identify the wallet created that morning, buy
+alongside it, sell into the demand it was there to create. That is where the 238 989.57 $ came from,
+and the receipts are in [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
 
-**pump.fun is dead.** Not slowing: **0.26 %** of launches ever graduate, and Solana's daily network
-fees are down **84 %** — from ~33 000 SOL a day in January to ~5 300 in June 2026.[^macro] Most
-people have already left. The ones still buying have not worked out that there is nothing left to
-win — the measurement says so plainly, **0 of 15 exit policies with a positive return**, and they
-are trading against a supply that was gone before they could see the token.
+It no longer works. The supply is now taken in full inside the token's own creation block — 42
+launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
+all. The consequences are visible at the scale of the chain: **0.26 %** of pump.fun launches now
+graduate, and Solana's daily network fees have fallen **84 %**, from ~33 000 SOL in January to
+~5 300 in June 2026.[^macro]
 
-They were making money. Refusing to leave a cent on the table cost them the table.
+Buying into what remains has no measurable expectancy: across fifteen exit policies tested on 196
+tokens, **none** has a positive mean return.
+
+The mechanism that made money in 2024 worked because outsiders could see the accumulation and take
+part in it. Closing that gap removed the participants along with the leak.
 
 Every figure below regenerates from this repository with no network access.
 
 [^macro]: Graduation rate and fee decline: [DEXTools, 22 June 2026](https://www.dextools.io/news/pump-fun-graduation-collapse-solana-fees-2026).
-    For scale in the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
-    **71.1 % of all Solana token mints** and **40–67.4 % of all DEX transactions** — the launchpad
-    was not a corner of the chain, it was a large share of its activity.
+    For scale over the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
+    **71.1 % of all Solana token mints** and **40–67.4 % of all DEX transactions**.
 
 ---
 
-## Act I — 2024: manufactured demand, and 238 989.57 $ taken out of it
+## Act I — 2024: the pattern, and what it paid
 
 A new token appears. Several wallets buy it early, one after another. That is what demand looks
 like: independent participants, arriving separately, accumulating supply.
@@ -68,10 +70,10 @@ that were **born on receipt** — 129 of them. One was still active **356 days**
 150 addresses. The nine paid in that 343-second burst also stop together: the six readable ones make
 their last transaction **on the same day**.
 
-**That was the trade.** The accumulation was slow enough to read while it was still happening: spot
-the wallet created that morning and funded through the gateway, buy alongside it, sell into the
-crowd it was built to attract. Fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — so a signal at
-4 a.m. could be taken unattended.
+**That was the trade.** The accumulation could be read while it was still happening: identify the
+wallet created that morning and funded through the gateway, buy alongside it, sell into the demand
+it was there to create. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a signal
+arriving at 4 a.m. could be taken without supervision.
 
 | | |
 |---|---|
@@ -83,21 +85,20 @@ crowd it was built to attract. Fixed ladder — 50 % at ×2, tranches at ×5 and
 Receipts and method: **[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**. The mechanism with six worked
 examples and every timestamp: **[docs/PATTERN.md](docs/PATTERN.md)**.
 
-## Act II — greed, and the flaw it was fixing
+## Act II — the flaw, from the other side
 
-The 2024 mechanism had one defect from its operators' point of view: **it was slow enough to watch.**
-Wallets funded hours ahead, buying in sequence on a visible curve. Anyone paying attention — me, for
-instance — could see the accumulation and buy alongside it.
+Seen from the operators' position, the 2024 mechanism had one defect: it was slow enough to watch.
+Wallets funded hours ahead, buying in sequence on a public curve. Anyone paying attention could read
+the accumulation and buy alongside it, and every SOL that went to an outsider was one that did not
+go to them.
 
-From their side that is leakage. Every SOL an outsider makes is a SOL they did not.
+But a launch needs outside buyers. The sequence that let them in was the same sequence that created
+the demand to sell into. The leak and the exit liquidity were the same thing.
 
-But that leakage *was* the market. A launch needs outside buyers, and the sequence is what let them
-in. The thing they were losing money to was the thing generating their exit liquidity.
+## Act III — 2026: what replaced it
 
-## Act III — 2026: the fix, and what it killed
-
-They fixed it. **On 42 launches verified transaction by transaction, the entire bonding curve is
-bought inside the token's own creation slot** — 85 SOL, 79 % of supply, zero curve purchase
+The gap was closed. **On 42 launches verified transaction by transaction, the entire bonding curve
+is bought inside the token's own creation slot** — 85 SOL, 79 % of supply, zero curve purchase
 preceding it in 42 of 42 cases. On a separate frozen sample of 70 tokens that reached ≥ 500 k$,
 **58/70 = 82.9 %** carry the same signature.
 
@@ -111,20 +112,21 @@ No sequence left to watch, because there is no sequence. And what follows is ari
 - **21.3 %** of tokens have already peaked when they first become visible; **50 %** within 120 s;
 - entering after the snipe returns **0.35× at +1 h** and **0.08× at +24 h**.
 
-**A market where every measurable strategy loses does not have disappointed participants. It has no
-participants.** Downstream the numbers are what that predicts: graduation rate **0.26 %**, Solana
-network fees **−84 %**, 33 000 SOL a day down to 5 300.
+A market in which no measurable strategy returns anything does not keep its participants. The
+chain-level figures follow: graduation rate **0.26 %**, Solana network fees **−84 %**, 33 000 SOL a
+day down to 5 300.
 
-They took the whole curve so they would not have to share it. There was then nobody to sell it to.
+The curve was taken in full so that none of it would be shared. What went with it was the buyer it
+had to be sold to.
 
 **The before-and-after runs on the same instrument.** The ladder that returned 238 989.57 $ — 50 % at
 ×2, tranches at ×5 and ×10 — is unchanged in `code/exit_ladder.py`. Applied to 2026 launches it has
 **no positive expectancy under any of the fifteen policies tested**. The strategy did not decay. Its
 counterparty was removed.
 
-That is the answer to the title. Not a crash, not a rotation of narratives: the extraction was made
-so efficient that there was nothing left to extract from — including for the people who made it
-efficient.
+That is the answer to the title. Not a crash and not a rotation of narratives: the extraction was
+optimised to the point where there was nothing left to extract from — including for whoever
+optimised it.
 
 ---
 
