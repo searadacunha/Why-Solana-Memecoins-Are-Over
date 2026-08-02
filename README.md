@@ -3,11 +3,20 @@
 **In three months I withdrew 238 989.57 $ trading memecoin launches. Then I stopped, because the
 thing I was trading stopped existing — and this repository is the measurement of why.**
 
-Not a market that cooled. A market whose operators optimised their own extraction until there was
-nobody left to extract from. Today **0.26 %** of pump.fun launches ever graduate, and Solana's daily
-network fees have fallen **84 %** — from ~33 000 SOL a day in January to ~5 300 in June 2026.[^macro]
-That collapse has a mechanism, it is visible transaction by transaction, and every figure below
-regenerates from this repository with no network access.
+It was already working. Wallets created hours before a launch bought its supply, the price ran, and
+whoever held that supply sold it into the crowd. It made money. It made money *because* outsiders
+could see the accumulation happening and buy alongside it — and that was the part they decided to
+close. They took the whole curve in a single block so that not one cent would leak to anyone else.
+
+It worked. Every launch is now bought out before the market opens. There is also nothing left to
+sell into: **0.26 %** of pump.fun launches ever graduate, and Solana's daily network fees have
+fallen **84 %** — from ~33 000 SOL a day in January to ~5 300 in June 2026.[^macro] For a chain
+where the launchpad was, at peak, up to **71 % of all token mints** and **40–67 % of DEX
+transactions**, that is not a niche going quiet.
+
+They were earning. Refusing to leave anything on the table cost them the table.
+
+Every figure below regenerates from this repository with no network access.
 
 [^macro]: Graduation rate and fee decline: [DEXTools, 22 June 2026](https://www.dextools.io/news/pump-fun-graduation-collapse-solana-fees-2026).
     For scale in the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
@@ -16,39 +25,42 @@ regenerates from this repository with no network access.
 
 ---
 
-## Act I — 2024: how you make 238 989.57 $ from a market that is lying to you
+## Act I — 2024: manufactured demand, and 238 989.57 $ taken out of it
 
 A new token appears. Several wallets buy it early, one after another. That is what demand looks
 like: independent participants, arriving separately, accumulating supply.
 
-It is not demand. Trace the money and every one of those wallets was **created days before the token
-existed**, holds nothing else, and was funded from a single address:
-`G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t` — identified by independent researchers as a hot
-wallet of the swap service **ChangeNOW**.[^gw]
+Every one of those wallets was **created the same day as the token** — median **9.6 hours** before
+it existed, and the two on sumiko were created **24 and 30 minutes** before. They hold nothing else.
+They were funded from a single address: `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, identified
+by independent researchers as a hot wallet of the swap service **ChangeNOW**.[^gw]
 
-That is the whole trick, and it is structural: **a swap service breaks the on-chain link between
-where funds came from and where they land.** That is what it is for. Push a launch's capital through
-one and the wallets that come out the far side are indistinguishable from unrelated buyers. You get
-the *appearance* of organic demand without any.
+A swap service breaks the on-chain link between where funds came from and where they land. Push a
+launch's capital through one and the wallets that come out the far side are indistinguishable from
+unrelated buyers.
 
 [^gw]: A [2025 research study on Solana mixers](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a)
     whose author routed his own test funds through ChangeNOW and observed them arrive at this
     address, and an [earlier public attribution](https://x.com/CrypticZK/status/1616072613356535808)
-    of the same address to the same service. Neither is an official exchange label. And nothing here
-    concerns the service's conduct: a swap processes what its users send it, and no involvement,
-    knowledge or wrongdoing is attributed to any company.
+    of the same address to the same service.
 
-**Here is what that looks like on chain.** Nine freshly created wallets, each receiving *exactly*
-2.976815600 SOL from that address, between 07:07:49 and 07:13:32 UTC on 2024-12-13 — **343 seconds**.
+**On chain it looks like this.** Nine wallets, created that morning, each receiving *exactly*
+2.976815600 SOL from that address between 07:07:49 and 07:13:32 UTC on 2024-12-13 — **343 seconds**.
 The token they would buy is created seven and a half hours later.
 
 Nine decimals. Identical across nine wallets. Before the token existed. That amount is a conversion
-output — not a figure anyone types — and **the same figure reappears on a different token thirty-one
-days earlier**, from the same gateway.
+output, not a figure anyone types — and **the same figure appears on a different token thirty-one
+days earlier**, from the same address.
 
-**And that was the trade.** The accumulation was slow enough to read while it was still happening:
-spot the fresh gateway-funded wallet, buy alongside it, sell into the crowd it was built to attract.
-Fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — so a signal at 4 a.m. could be taken unattended.
+The wallets are not discarded afterwards. All fourteen that could be read went on to fund addresses
+that were **born on receipt** — 129 of them. One was still active **356 days** later, having funded
+150 addresses. The nine paid in that 343-second burst also stop together: the six readable ones make
+their last transaction **on the same day**.
+
+**That was the trade.** The accumulation was slow enough to read while it was still happening: spot
+the wallet created that morning and funded through the gateway, buy alongside it, sell into the
+crowd it was built to attract. Fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — so a signal at
+4 a.m. could be taken unattended.
 
 | | |
 |---|---|
@@ -57,13 +69,8 @@ Fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — so a signal at 4 a.m.
 | screenshotted executions (a sample; the window holds hundreds) | **19**, from +100 % to **+28 465 %** |
 | the whole window, to Feb 2025 | 246 945.59 $ |
 
-Receipts, execution stack and the full method: **[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**.
-The mechanism with six worked examples: **[docs/PATTERN.md](docs/PATTERN.md)**.
-
-**What this does not claim.** Nothing about ChangeNOW's conduct. And not a single controller: each
-launch traces to its *own* distributor, so what the data supports is *clusters sharing a funding
-origin* — though the wallets themselves turn out to be a self-replenishing fleet, which is
-[§5 of PATTERN.md](docs/PATTERN.md) and stranger than it sounds.
+Receipts and method: **[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**. The mechanism with six worked
+examples and every timestamp: **[docs/PATTERN.md](docs/PATTERN.md)**.
 
 ## Act II — greed, and the flaw it was fixing
 
@@ -94,9 +101,8 @@ No sequence left to watch, because there is no sequence. And what follows is ari
 - entering after the snipe returns **0.35× at +1 h** and **0.08× at +24 h**.
 
 **A market where every measurable strategy loses does not have disappointed participants. It has no
-participants.** The optimisation that closed the window removed the counterparty — and the numbers
-downstream are exactly what that predicts: graduation rate **0.26 %**, Solana network fees **−84 %**,
-33 000 SOL a day down to 5 300.
+participants.** Downstream the numbers are what that predicts: graduation rate **0.26 %**, Solana
+network fees **−84 %**, 33 000 SOL a day down to 5 300.
 
 They took the whole curve so they would not have to share it. There was then nobody to sell it to.
 
@@ -219,15 +225,15 @@ code instead of an assertion.
 
 ---
 
-## What is deliberately not claimed
+## Scope
 
-- **No identity, no intent.** Every address and signature quoted is a public technical identifier.
-  Reaching a swap service or a bridge is a **routing fact**: all capital entering this chain passes
-  through such a gateway, and no involvement of any service is asserted or implied. "A single
-  controller" is not demonstrable from chain data and is never written; what is measured is
-  *clusters sharing a funding origin*.
-- **No prevalence for the 2024–2025 era.** The phase-1 targets are tokens their author traded and
-  screenshotted — selected on the outcome twice over. All 11 graduated, against a **1.17 %** base
+Standard limits, stated once. Everything above is an observation; the reader draws their own
+conclusions from it.
+
+- **Addresses, not people.** Every address and signature quoted is a public technical identifier.
+  Who operates them is not on chain and is not claimed here.
+- **No prevalence.** The 2024–2025 targets are tokens their author traded and screenshotted —
+  selected on the outcome twice over. All 11 graduated, against a **1.17 %** base
   rate for the era; a random draw of 11 would be graduated throughout with probability ~5×10⁻²². The
   cohort supports a *conditional* comparison against other graduated tokens of the same window, and
   nothing about how common the pattern is. Six symbols could not be resolved to a mint with
@@ -241,6 +247,5 @@ code instead of an assertion.
   microstructure that explains them, not the aggregates themselves. And no claim is made about the
   *price* of SOL — what is measured is that the buyer side of these launches stopped being
   survivable, and what is cited is that chain activity fell alongside it.
-- **No profitable strategy.** The measured outcome of buying into this microstructure is a loss
-  under every exit policy tested. That is the result, and it is not hedged.
+- **No strategy on offer.** Buying into this microstructure loses under every exit policy tested.
 - **Negative results stay.** They are what makes the rest credible.
