@@ -127,6 +127,12 @@ go to them.
 But a launch needs outside buyers. The sequence that let them in was the same sequence that created
 the demand to sell into. The leak and the exit liquidity were the same thing.
 
+The shift away from it took about three months, not one release. Fewer and fewer of the wallets
+ChangeNOW funded were the ones actually buying — the wallet count kept growing, but more of it sat
+idle instead of spending. They were building a reserve: thousands of wallets, all carrying the same
+untraceable ChangeNOW origin, held rather than spent. Once the reserve was big enough, ChangeNOW was
+dropped.
+
 ## Act III — 2026: what replaced it
 
 The gap was closed: the bundle snipe became the default. **On 42 launches verified transaction by
