@@ -52,6 +52,7 @@ PLAN = [
     ("a6_gateway_chains.py", "", "dated chains: swap gateway -> distributor -> fresh wallets"),
     ("a7_cross_token_links.py", "", "are the per-token operations linked to each other?"),
     ("exit_ladder.py", "", "the exit ladder actually used, stated as executable policy"),
+    ("a8_wallet_horde.py", "net", "what the funded wallets do AFTER the trade: die, or spawn"),
     ("v05_creation_block.py", "net", "creation-slot buy block, non-circular (needs the RPC cache)"),
     ("v06_curve_ladder.py", "net", "curve ladder: SOL spent, share of supply"),
     ("fetch_sol_usd.py", "net", "SOL/USDC hourly series (no key, GeckoTerminal)"),

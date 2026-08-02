@@ -1,0 +1,834 @@
+{
+ "n_portefeuilles": 21,
+ "n_mesures": 14,
+ "n_ayant_finance_des_adresses_neuves": 14,
+ "portefeuilles": {
+  "DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq": {
+   "statut": "illisible",
+   "token": "ACID"
+  },
+  "D3JwQSGkn8YUzCDkMphDhVbsEeK9qbttU971cqmFEKRM": {
+   "statut": "ok",
+   "n_tx": 208,
+   "derniere_activite": "2024-12-13",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 35,
+   "n_destinataires_NEUFS": 16,
+   "generation_suivante": {
+    "7LqQYQ5XftQLEpDpQqPwVfKDo6kT5WrmV8rTHJyNnaha": {
+     "sol": 5.993875,
+     "n": 6,
+     "quand": "2024-12-09 11:49"
+    },
+    "62M1XrQbogL5hbnqNoiyy25am1cMx5R9XN3PM87B4EDC": {
+     "sol": 3.002381,
+     "n": 3,
+     "quand": "2024-12-09 11:11"
+    },
+    "7XnSdCKK3GuCggWTzHZEgDruH3Q8PHEG5p2UA4LS25Qn": {
+     "sol": 3.0,
+     "n": 3,
+     "quand": "2024-12-08 22:27"
+    },
+    "5PbG2qYSDDm8nhpcryy8wfWKzsZk6Tc6Z5b8AeULZVda": {
+     "sol": 2.054397,
+     "n": 2,
+     "quand": "2024-12-08 21:42"
+    },
+    "5njg4TyXde5rpA8X4SieR5DsLTqbU3LAaUVH6h26BFzx": {
+     "sol": 2.051954,
+     "n": 2,
+     "quand": "2024-12-09 00:06"
+    },
+    "BS78cmQUfg62SB7KgQNGuzioVC5Nhz1wXTSaR6Cq5Uf": {
+     "sol": 2.003143,
+     "n": 2,
+     "quand": "2024-12-08 23:57"
+    },
+    "3nqGqtWnP74aNtwKBrNeMoVJrwiWc4Zovsk7eqpcJadB": {
+     "sol": 1.988202,
+     "n": 4,
+     "quand": "2024-12-08 21:52"
+    },
+    "J2GAHLXTksXYAeXRsrdF5P3FeSrRKGHh1rHyW2YCJLV4": {
+     "sol": 1.001944,
+     "n": 1,
+     "quand": "2024-12-08 21:49"
+    },
+    "GL8cNWzQ1DSiAVL6E2T3zZKb3WJwibAw8uniVHWAPqZY": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-12-09 10:46"
+    },
+    "HYLHmzsVRzfsQKrijEp7X3mHc7PaA7rXhN272DyLywd3": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-12-09 01:02"
+    },
+    "3xyQgxRdVPPAuokEPt1NSd2kBg3k1FsYBu3oXbi5jU5e": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-12-09 00:40"
+    },
+    "3G8XKdygzuusTsed117TwYKLw8NZp3VmYHDZS5xYk3Ap": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-12-09 00:00"
+    },
+    "14QVTjYQGGJQHt1k1MbaTW3e8DmNtgEufnW8ojR6B2L6": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-12-08 21:43"
+    },
+    "EqEebk1dCRFHQNRdLyyvqn1tM6yGG6WW1xXVzYRQyzA7": {
+     "sol": 0.501397,
+     "n": 1,
+     "quand": "2024-12-08 22:11"
+    },
+    "B75UX6duf2rHGg7yBbJmxbvK4r6a8kaE1MDisRnJha9a": {
+     "sol": 0.5,
+     "n": 1,
+     "quand": "2024-12-08 21:50"
+    },
+    "He4TRrjN4Gf9zfusyQB7QzA9JbPoNC7sqZCiqzcYxYRt": {
+     "sol": 0.3,
+     "n": 1,
+     "quand": "2024-12-08 22:13"
+    }
+   },
+   "token": "ACID"
+  },
+  "RwdMax1heLzDiBSk3g3MgvRuJkQYz7tnj96RFpbxxVA": {
+   "statut": "ok",
+   "n_tx": 37,
+   "derniere_activite": "2024-12-09",
+   "jours_apres_le_trade": 0.4,
+   "n_destinataires": 8,
+   "n_destinataires_NEUFS": 4,
+   "generation_suivante": {
+    "7tSBir7zBu492xpqxA7fd7kS2sfBykogbyqPGryGejog": {
+     "sol": 8.5,
+     "n": 1,
+     "quand": "2024-12-09 14:06"
+    },
+    "4fiMVN2DfQZ6o1B7DTb6AbyVBquNH486fT6udR1chmJ9": {
+     "sol": 1.7685,
+     "n": 1,
+     "quand": "2024-12-09 14:48"
+    },
+    "3GpeCXwN8dSSsiYfppuoPnMUDJ8z7kgn9YBAhuRF1qd2": {
+     "sol": 1.470297,
+     "n": 2,
+     "quand": "2024-12-09 07:03"
+    },
+    "65XDq3dQczsDHisL7uvXCME5B2H6fzmT8orUaBtSqEW": {
+     "sol": 0.490099,
+     "n": 1,
+     "quand": "2024-12-09 07:01"
+    }
+   },
+   "token": "ACID"
+  },
+  "67UopZGpThFd83mzrbQpCBxhHWrJ5TpEBND7mMSxdHSa": {
+   "statut": "ok",
+   "n_tx": 30,
+   "derniere_activite": "2025-01-29",
+   "jours_apres_le_trade": 77.8,
+   "n_destinataires": 8,
+   "n_destinataires_NEUFS": 4,
+   "generation_suivante": {
+    "6eu8Mrsprv8u4zLBx5xiGriqTutuZ86evNrJsQc3dgEs": {
+     "sol": 11.0,
+     "n": 1,
+     "quand": "2024-11-13 11:48"
+    },
+    "GYYzZ9LprMzX6bUCLovChEQgDtDaErhvSJyehGMFKNt1": {
+     "sol": 6.0,
+     "n": 1,
+     "quand": "2024-11-13 17:06"
+    },
+    "6E7Z8dS7zJpDM4KPgThzSdsHskSEbRaaoQzHj2bDEaCc": {
+     "sol": 1.088647,
+     "n": 1,
+     "quand": "2024-11-12 22:56"
+    },
+    "2KVBfpDVDfQW4EadhyJ8vHgi3sSfdcu37ZsUa811ctWQ": {
+     "sol": 0.54395,
+     "n": 1,
+     "quand": "2024-11-11 04:45"
+    }
+   },
+   "token": "SAFFRON"
+  },
+  "291vRVW6QcL8Lj3FxXNtDoT5PEXSRfcEQMmbfNmD4zZf": {
+   "statut": "ok",
+   "n_tx": 413,
+   "derniere_activite": "2024-11-15",
+   "jours_apres_le_trade": 2.4,
+   "n_destinataires": 47,
+   "n_destinataires_NEUFS": 19,
+   "generation_suivante": {
+    "B7N7wL41MJ7f7cYJVdNjDSZ54VhT4nb4i4zMoD4ZjtDk": {
+     "sol": 1.090832,
+     "n": 1,
+     "quand": "2024-11-14 19:24"
+    },
+    "8pwXuwyuKw3zxeYekoxZ9gx3e9gDQtbwBx6HSTSyeyqe": {
+     "sol": 1.023115,
+     "n": 2,
+     "quand": "2024-11-14 19:28"
+    },
+    "2JzLLoik9gXzFKCdwCCqD9krZM5tNDxN9DfrgJSzXRNV": {
+     "sol": 0.640909,
+     "n": 2,
+     "quand": "2024-11-13 22:38"
+    },
+    "7MihZwN9YYeMZQe4WhFVzY1oMq5XXZmYQ2KQSFa5DZwj": {
+     "sol": 0.591409,
+     "n": 2,
+     "quand": "2024-11-12 23:10"
+    },
+    "B5n16vDFa4eRLrtx4p4yKvPQHdjPqVdqJT9DsBARyji3": {
+     "sol": 0.528411,
+     "n": 1,
+     "quand": "2024-11-14 19:35"
+    },
+    "Fw6agpuHnD2uZV4ewV8dC62SZC3fn4ZQrDvHyrwtDUpB": {
+     "sol": 0.492132,
+     "n": 1,
+     "quand": "2024-11-14 19:47"
+    },
+    "4rSN2MqMpXLvyKKa3Zwpn4CEobhCsMA5LJxQHvUeQYHA": {
+     "sol": 0.370855,
+     "n": 1,
+     "quand": "2024-11-11 21:22"
+    },
+    "BFmmtfNh7qqedTcbbVEzWKRPWRbtyLVRVsAbvp2LaVNP": {
+     "sol": 0.369019,
+     "n": 1,
+     "quand": "2024-11-11 22:10"
+    },
+    "96enuzLYfWJykYThSGoth84PjnMZGsowme5DXmo9SJX2": {
+     "sol": 0.358801,
+     "n": 1,
+     "quand": "2024-11-12 20:17"
+    },
+    "7LoxHJHUoK6ak67woDKcWXgM4ZjVnB6feGHSWMMTHL7Z": {
+     "sol": 0.349972,
+     "n": 1,
+     "quand": "2024-11-11 21:09"
+    },
+    "3TjRXsx8MLZMMMuHU7TUepB6RH1GtuNws65GGWqFGT6M": {
+     "sol": 0.346753,
+     "n": 1,
+     "quand": "2024-11-14 21:01"
+    },
+    "Dd9LvyewgBZLKgASKwWoXgLF2Mwy4VfkPvanV7Hgaguh": {
+     "sol": 0.328539,
+     "n": 1,
+     "quand": "2024-11-14 20:47"
+    },
+    "FTJogRAESvw7DVjrbJEiFxCMWHCc7MFmtRpNwVychwef": {
+     "sol": 0.3241,
+     "n": 1,
+     "quand": "2024-11-13 18:53"
+    },
+    "FJqgq7PocpykPnJzMz66JJdBbZGFSWPuv8FYpM4UvqTH": {
+     "sol": 0.320177,
+     "n": 1,
+     "quand": "2024-11-12 19:56"
+    },
+    "7L5aQ2h2ibuYNZgCRk3Yv1exX2gT3gLy8VM3FTz4yCxM": {
+     "sol": 0.310467,
+     "n": 1,
+     "quand": "2024-11-11 19:18"
+    },
+    "8ZdCWbewyxvSgKF9GkY3EUN5RWEzhXBWMnBxWju9zLWt": {
+     "sol": 0.2997,
+     "n": 1,
+     "quand": "2024-11-13 21:47"
+    },
+    "ForVnn7RUYCvTfiT4t2ZmpByD7yXpXLjUBavryr5gAFL": {
+     "sol": 0.2997,
+     "n": 1,
+     "quand": "2024-11-12 19:55"
+    },
+    "8VGcP3DKCYypvEY6MRytdjE9a84inQavRwbwqeTNxxaZ": {
+     "sol": 0.299516,
+     "n": 1,
+     "quand": "2024-11-12 20:28"
+    },
+    "684uPRFwxofidSTqN8nxoaLQgn2bAQ25yw9zwWjkbheL": {
+     "sol": 0.299123,
+     "n": 1,
+     "quand": "2024-11-12 18:46"
+    }
+   },
+   "token": "SAFFRON"
+  },
+  "wbzkg9ftnVEMzeCL6wW8bpNTPDQWhBBnKo3JWJe3wh5": {
+   "statut": "illisible",
+   "token": "SAFFRON"
+  },
+  "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g": {
+   "statut": "ok",
+   "n_tx": 71,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 21,
+   "n_destinataires_NEUFS": 8,
+   "generation_suivante": {
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.029552,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.008701,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "J6aiSAqVGK6SmZ7cz9Yi1rduuEULrmUJJHE4KUKjuAxf": {
+     "sol": 0.974862,
+     "n": 1,
+     "quand": "2024-12-15 12:00"
+    },
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 0.973662,
+     "n": 1,
+     "quand": "2024-12-16 14:22"
+    },
+    "7KXFuDkdmcJd3876JENo7jHZ1xiNb4PqTADYFXjhUGTt": {
+     "sol": 0.742464,
+     "n": 1,
+     "quand": "2024-12-16 11:54"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.588137,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.47439,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    },
+    "DQUS7BQ6CTTDedHF6Q6RDas9Mu7kJnV3y2hf2LGBxmbq": {
+     "sol": 0.203652,
+     "n": 1,
+     "quand": "2024-12-15 12:38"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R": {
+   "statut": "illisible",
+   "token": "h2w6gm6jz"
+  },
+  "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA": {
+   "statut": "ok",
+   "n_tx": 82,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 19,
+   "n_destinataires_NEUFS": 6,
+   "generation_suivante": {
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.455931,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.035696,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 0.714113,
+     "n": 1,
+     "quand": "2024-12-16 14:22"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.557528,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "7KXFuDkdmcJd3876JENo7jHZ1xiNb4PqTADYFXjhUGTt": {
+     "sol": 0.552566,
+     "n": 1,
+     "quand": "2024-12-16 11:54"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.444685,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22": {
+   "statut": "ok",
+   "n_tx": 88,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 22,
+   "n_destinataires_NEUFS": 7,
+   "generation_suivante": {
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 1.278637,
+     "n": 2,
+     "quand": "2024-12-16 14:22"
+    },
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.092427,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.086397,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "7KXFuDkdmcJd3876JENo7jHZ1xiNb4PqTADYFXjhUGTt": {
+     "sol": 0.815513,
+     "n": 1,
+     "quand": "2024-12-16 11:54"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.666946,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.440007,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    },
+    "DQUS7BQ6CTTDedHF6Q6RDas9Mu7kJnV3y2hf2LGBxmbq": {
+     "sol": 0.205516,
+     "n": 1,
+     "quand": "2024-12-15 12:38"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe": {
+   "statut": "illisible",
+   "token": "h2w6gm6jz"
+  },
+  "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6": {
+   "statut": "ok",
+   "n_tx": 84,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 20,
+   "n_destinataires_NEUFS": 6,
+   "generation_suivante": {
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.512685,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.502945,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "7KXFuDkdmcJd3876JENo7jHZ1xiNb4PqTADYFXjhUGTt": {
+     "sol": 0.681091,
+     "n": 1,
+     "quand": "2024-12-16 11:54"
+    },
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 0.628514,
+     "n": 1,
+     "quand": "2024-12-16 14:22"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.621338,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.469236,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW": {
+   "statut": "illisible",
+   "token": "h2w6gm6jz"
+  },
+  "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY": {
+   "statut": "ok",
+   "n_tx": 81,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 23,
+   "n_destinataires_NEUFS": 9,
+   "generation_suivante": {
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.41109,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.22227,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "ERGbjcz9fs95YKvM6zXqvEaicK4VPPo2JwNV8beGKZM": {
+     "sol": 0.7,
+     "n": 1,
+     "quand": "2024-12-13 12:14"
+    },
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 0.61144,
+     "n": 1,
+     "quand": "2024-12-16 14:22"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.596184,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "7KXFuDkdmcJd3876JENo7jHZ1xiNb4PqTADYFXjhUGTt": {
+     "sol": 0.525578,
+     "n": 1,
+     "quand": "2024-12-16 11:54"
+    },
+    "J6aiSAqVGK6SmZ7cz9Yi1rduuEULrmUJJHE4KUKjuAxf": {
+     "sol": 0.501422,
+     "n": 1,
+     "quand": "2024-12-15 11:58"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.409231,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    },
+    "DQUS7BQ6CTTDedHF6Q6RDas9Mu7kJnV3y2hf2LGBxmbq": {
+     "sol": 0.2,
+     "n": 1,
+     "quand": "2024-12-15 12:38"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU": {
+   "statut": "ok",
+   "n_tx": 63,
+   "derniere_activite": "2024-12-17",
+   "jours_apres_le_trade": 3.9,
+   "n_destinataires": 18,
+   "n_destinataires_NEUFS": 7,
+   "generation_suivante": {
+    "CRkUhUZ7FkjXy1KzCHLZxeHCzW6VSYgW3wnFVut57iqg": {
+     "sol": 1.368288,
+     "n": 1,
+     "quand": "2024-12-14 09:59"
+    },
+    "9GQHQTq4MAUnsLEQ5ShACAkVHrdH8ncoqcyKY3WQPSAx": {
+     "sol": 1.260364,
+     "n": 1,
+     "quand": "2024-12-16 10:46"
+    },
+    "J6aiSAqVGK6SmZ7cz9Yi1rduuEULrmUJJHE4KUKjuAxf": {
+     "sol": 0.949183,
+     "n": 1,
+     "quand": "2024-12-15 12:00"
+    },
+    "CDd7gwh71pShgtubwrDJHLkXKpTV8zGRwLeTu4WB7iTp": {
+     "sol": 0.648119,
+     "n": 1,
+     "quand": "2024-12-13 07:51"
+    },
+    "6pPLrEm6APYFa7g8DqUH3eYYtnzyzn6ytLmG1Ava7FA7": {
+     "sol": 0.612688,
+     "n": 1,
+     "quand": "2024-12-16 14:22"
+    },
+    "5TSu3vPcYC1vrxoan9DJK9uQAAHUqmGTMBvnd1iLwzAg": {
+     "sol": 0.422012,
+     "n": 1,
+     "quand": "2024-12-13 14:53"
+    },
+    "DQUS7BQ6CTTDedHF6Q6RDas9Mu7kJnV3y2hf2LGBxmbq": {
+     "sol": 0.209321,
+     "n": 1,
+     "quand": "2024-12-15 12:38"
+    }
+   },
+   "token": "h2w6gm6jz"
+  },
+  "Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho": {
+   "statut": "ok",
+   "n_tx": 21,
+   "derniere_activite": "2024-10-11",
+   "jours_apres_le_trade": 0.6,
+   "n_destinataires": 4,
+   "n_destinataires_NEUFS": 3,
+   "generation_suivante": {
+    "Gq2S49AZEyCpnJ7SgKEr2Z1jfjNXGKUzxKHzL7v4Utby": {
+     "sol": 1.2,
+     "n": 1,
+     "quand": "2024-10-11 03:57"
+    },
+    "1Jxw2bA5oiVUCbWXURyLjXiYi4Vceohbp7b8dvJKnNG": {
+     "sol": 1.0,
+     "n": 1,
+     "quand": "2024-10-10 13:35"
+    },
+    "DsVjVYC8d3HUqtdCagYAvEHFWZzTBVsVDHztUD75HbNW": {
+     "sol": 0.015116,
+     "n": 1,
+     "quand": "2024-10-10 13:35"
+    }
+   },
+   "token": "CHOCO"
+  },
+  "4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5": {
+   "statut": "ok",
+   "n_tx": 1880,
+   "derniere_activite": "2025-10-02",
+   "jours_apres_le_trade": 356.5,
+   "n_destinataires": 150,
+   "n_destinataires_NEUFS": 19,
+   "generation_suivante": {
+    "CzZ29NN99ekJMpimoSndYoYEaXuayR9QQBUPV1M4ev31": {
+     "sol": 120.817237,
+     "n": 30,
+     "quand": "2024-10-07 07:26"
+    },
+    "5PLNPbSVJN8VHmwLafnq3CCaGABqFa5JBdYFqCT4EcHW": {
+     "sol": 80.0,
+     "n": 1,
+     "quand": "2024-10-19 17:45"
+    },
+    "ttK1Roqg6ZTfJaJNkpWZo1uiGUVsi5gm2Hz6Pd9DegY": {
+     "sol": 20.47,
+     "n": 1,
+     "quand": "2024-10-19 17:55"
+    },
+    "4dWEziwP5QUNfr3qNfnAit5THiRBSDUg152YaHHFs24D": {
+     "sol": 15.055599,
+     "n": 7,
+     "quand": "2024-10-19 00:01"
+    },
+    "52d8zLwkByQAFUxojHVxT9vVdhp88xYXSQqXiBEjJ3Q3": {
+     "sol": 10.112637,
+     "n": 5,
+     "quand": "2024-10-13 00:45"
+    },
+    "D8FfavjiyKq9f452jwz7xiP2cVJPLpNaNCCYa7WXV2Bn": {
+     "sol": 8.027476,
+     "n": 4,
+     "quand": "2024-10-07 09:26"
+    },
+    "3x2YqKCfwyjtVLF4cCCtWFuvyqXbcBQKszkLoDLbFEx5": {
+     "sol": 7.0,
+     "n": 1,
+     "quand": "2024-10-11 13:10"
+    },
+    "HFrhyD39kS9EE99w8LZPQCXkhasXpXd3YkiUKDqt2nxo": {
+     "sol": 6.18553,
+     "n": 3,
+     "quand": "2024-10-18 14:13"
+    },
+    "9eFsPjYcq7CewXcFqz1akZzczv6ekvinKbf1pV4Qxf5v": {
+     "sol": 5.994678,
+     "n": 3,
+     "quand": "2024-10-12 16:59"
+    },
+    "4fxFtsxY79eiPnAeg7vm43piq217ooU6qLwdwb3qvmzT": {
+     "sol": 5.0,
+     "n": 3,
+     "quand": "2024-10-11 09:07"
+    },
+    "5t7DDUuqLffWnrkZdAvUjnmmfqpdgvTBrZmUKE5ZJGeP": {
+     "sol": 5.0,
+     "n": 1,
+     "quand": "2024-10-11 12:59"
+    },
+    "57CJBkUJAapJzYv6VcUTHgFNwnNeAYVTy1BtYrrZJ5oy": {
+     "sol": 4.485208,
+     "n": 2,
+     "quand": "2024-10-18 15:59"
+    },
+    "BNdNRic9T2yumJYxNUiHWk4DrdNHqHeceU4BnhwvRRnm": {
+     "sol": 4.256789,
+     "n": 3,
+     "quand": "2024-10-09 18:24"
+    },
+    "HaKJsYjwtpRuZVHK9Si2ZScXhsHNhy8phujty7rk5CAa": {
+     "sol": 4.072187,
+     "n": 2,
+     "quand": "2024-10-15 17:32"
+    },
+    "KakxemtzDhc4rLyWRzUdQ1ZiDw4z2BWZhpSpqjXooRk": {
+     "sol": 4.003561,
+     "n": 3,
+     "quand": "2024-10-10 16:25"
+    },
+    "CNGM848oZY8Eaa9QsFCSwMFFnSBY6hnn3nRPZ23Yweug": {
+     "sol": 4.0,
+     "n": 1,
+     "quand": "2024-10-19 13:36"
+    },
+    "2nDaYuDJTN9H6FRjxpq6nVwoZr62Ax2moFyxSZ4JBbv1": {
+     "sol": 4.0,
+     "n": 1,
+     "quand": "2024-10-14 01:51"
+    },
+    "5h1E2MtJVa6DDNuyzQnxa4d4QF8oZXrtgD3UcBJUwjQD": {
+     "sol": 4.0,
+     "n": 1,
+     "quand": "2024-10-13 23:02"
+    },
+    "6cSLYpLVZvKaZJbQYPnf6L6v68PTDg5Bjyj1igkVCbs3": {
+     "sol": 3.702406,
+     "n": 3,
+     "quand": "2024-10-07 19:55"
+    }
+   },
+   "token": "CHOCO"
+  },
+  "6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K": {
+   "statut": "illisible",
+   "token": "QAMI"
+  },
+  "E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab": {
+   "statut": "ok",
+   "n_tx": 1823,
+   "derniere_activite": "2025-01-01",
+   "jours_apres_le_trade": 0.3,
+   "n_destinataires": 127,
+   "n_destinataires_NEUFS": 19,
+   "generation_suivante": {
+    "AhP67dPnw8nPvwJfRRoD595A45fv7m7YoX5vgjxB74ZG": {
+     "sol": 73.026403,
+     "n": 324,
+     "quand": "2024-12-30 08:36"
+    },
+    "7bZoqdqpHLzDAaeNdmPyBA8tYtxs7RNUJ1zCaTQNEU8M": {
+     "sol": 0.977293,
+     "n": 8,
+     "quand": "2024-12-31 14:47"
+    },
+    "ECgWy8Rt1jTF7xoMgnyxQ7Ld2SmUmT8tRZBATEDFq2VU": {
+     "sol": 0.793719,
+     "n": 8,
+     "quand": "2025-01-01 02:05"
+    },
+    "FmpEDQXj6TcZ3xVENq3hEiWoq3QyRXn77yoPp9fc2oBL": {
+     "sol": 0.593976,
+     "n": 2,
+     "quand": "2024-12-31 20:24"
+    },
+    "6RsHFPxqd9mhdas4sD3EsGiUZLmkvaMarAbJjEAjPAMi": {
+     "sol": 0.573559,
+     "n": 4,
+     "quand": "2025-01-01 02:21"
+    },
+    "AAfaVrSNtvJywUESHcCbVKHNcFo79tsd9t9SJk4NWu2Z": {
+     "sol": 0.495571,
+     "n": 1,
+     "quand": "2024-12-30 14:53"
+    },
+    "ANnz2spfe6SpJV3vBionjLsBw2EnvagbjbHoJicUGT5n": {
+     "sol": 0.495,
+     "n": 1,
+     "quand": "2024-12-31 20:26"
+    },
+    "9Uq2av8yJyoWWD1wRFn5QD7hUHT9gkKYMKq3MhSRtXVm": {
+     "sol": 0.495,
+     "n": 1,
+     "quand": "2024-12-30 12:16"
+    },
+    "AjQ59dUZn5QwSgBEYfhEyTdAskWq6pG1faRPASw6HWdh": {
+     "sol": 0.494971,
+     "n": 1,
+     "quand": "2025-01-01 02:19"
+    },
+    "D3FiuiMaxLdxGKU2JhMCzG5Mmsi4AUaoaf7EtCf8jrfg": {
+     "sol": 0.47805,
+     "n": 5,
+     "quand": "2025-01-01 02:01"
+    },
+    "7Kc8WonLVkPfEZrv4nK2gASJHMQZhnBPpn6xvqGrfAF1": {
+     "sol": 0.448126,
+     "n": 3,
+     "quand": "2024-12-30 12:37"
+    },
+    "7tcxZuZbZckDkcgirgjnSH361mcfF3wZdfE6UmmpJejq": {
+     "sol": 0.395989,
+     "n": 4,
+     "quand": "2024-12-31 23:53"
+    },
+    "7Pobh4K3UmReVMY4JhjdtWV6zaYMgifxx2Q2PtPUxf9q": {
+     "sol": 0.343201,
+     "n": 5,
+     "quand": "2025-01-01 00:06"
+    },
+    "2XxR1sABS3mv1JY5h8F8zarGJWFmQNJ2asT7DRRrN9qP": {
+     "sol": 0.301154,
+     "n": 3,
+     "quand": "2025-01-01 00:04"
+    },
+    "HPLUkLRKAt36ZvmS6do1KpueA4yMUVR2DGfiPeioGifP": {
+     "sol": 0.296995,
+     "n": 3,
+     "quand": "2024-12-30 09:04"
+    },
+    "H3hhXUG2ZgBaoSJWQFYG2eLzq6uRWQWtpV26SXjo6A79": {
+     "sol": 0.292873,
+     "n": 3,
+     "quand": "2025-01-01 03:55"
+    },
+    "8Z3Fapi91GCdGFNPCJFqdCeutqUR9a4nK5W3KEmv4Ffh": {
+     "sol": 0.277192,
+     "n": 3,
+     "quand": "2024-12-31 23:57"
+    },
+    "CXEKiNMervVpEqH6zxuCZFDNxZUemVznyHvb1HmJN3Ft": {
+     "sol": 0.269548,
+     "n": 3,
+     "quand": "2024-12-31 23:54"
+    },
+    "JDTwxBvYinNHBfkuGWsPZpfGJibrhh7TQwR36pexGYen": {
+     "sol": 0.253875,
+     "n": 3,
+     "quand": "2025-01-01 00:27"
+    }
+   },
+   "token": "QAMI"
+  },
+  "FYG2cyAmhKGyRnH5v3WvM6t2DnpxE3ZgoC3LCMaJ4cAB": {
+   "statut": "ok",
+   "n_tx": 23,
+   "derniere_activite": "2025-01-20",
+   "jours_apres_le_trade": 24.7,
+   "n_destinataires": 3,
+   "n_destinataires_NEUFS": 2,
+   "generation_suivante": {
+    "GwkzakP8AAY9pxeoC6yM5rXNo5DR36cyLoGxitKxEsXX": {
+     "sol": 10.702521,
+     "n": 1,
+     "quand": "2025-01-20 06:50"
+    },
+    "3tPD1uPLissDVQ4Z1NM5RyEFMpQiCASpqyaJABEpSGwc": {
+     "sol": 2.101348,
+     "n": 4,
+     "quand": "2024-12-26 13:34"
+    }
+   },
+   "token": "sumiko"
+  },
+  "AJq5My8GFG6Jo7PqS7HGeUc6j3iPvUGGhMFhSNmdKkS2": {
+   "statut": "illisible",
+   "token": "sumiko"
+  }
+ }
+}
