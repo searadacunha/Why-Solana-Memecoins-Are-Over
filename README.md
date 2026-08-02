@@ -95,9 +95,10 @@ that were **born on receipt** — 129 of them. One was still active **356 days**
 150 addresses. The nine paid in that 343-second burst also stop together: the six readable ones make
 their last transaction **on the same day**.
 
-**That was the trade.** The accumulation could be read while it was still happening: identify the
-wallet created that morning and funded through the gateway, buy alongside it, sell into the demand
-it was there to create. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a signal
+**That was the trade.** The split could be read while it was still happening: identify the wallets
+funded through the gateway, wait for one of them to buy its 20-million-token stake, then buy
+alongside it — small, clean, never enough to draw attention — and sell into the demand the rest of
+the split was about to create. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a signal
 arriving at 4 a.m. could be taken without supervision.
 
 | | |
@@ -122,9 +123,9 @@ the demand to sell into. The leak and the exit liquidity were the same thing.
 
 ## Act III — 2026: what replaced it
 
-The gap was closed. **On 42 launches verified transaction by transaction, the entire bonding curve
-is bought inside the token's own creation slot** — 85 SOL, 79 % of supply, zero curve purchase
-preceding it in 42 of 42 cases. On a separate frozen sample of 70 tokens that reached ≥ 500 k$,
+The gap was closed: the bundle snipe became the default. **On 42 launches verified transaction by
+transaction, the entire bonding curve is bought inside the token's own creation slot** — 85 SOL,
+79 % of supply, zero curve purchase preceding it in 42 of 42 cases. On a separate frozen sample of 70 tokens that reached ≥ 500 k$,
 **58/70 = 82.9 %** carry the same signature.
 
 By the time the market opens, capitalisation has gone from ~2 158 $ to ~53 985 $ — **×25 before a
