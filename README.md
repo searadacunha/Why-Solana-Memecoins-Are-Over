@@ -213,11 +213,11 @@ code instead of an assertion.
 
 | path | what is in it |
 |---|---|
-| [`docs/PITFALLS.md`](docs/PITFALLS.md) | thirteen ways this project was wrong, and how each was caught |
+| [`docs/PITFALLS.md`](docs/PITFALLS.md) | fifteen ways this project was wrong, and how each was caught |
 | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | definitions, populations, validation protocol, declared limits |
 | [`docs/RESULTATS.md`](docs/RESULTATS.md) | the 2026 measurements in full, with an English summary at the top |
 | [`docs/PATTERN.md`](docs/PATTERN.md) | the funding dispatch, token by token, with every burst listed |
-| [`docs/EXPLOITATION.md`](docs/EXPLOITATION.md) | trading it: signal, automation, exit ladder, 20 receipts, on-chain totals |
+| [`docs/EXPLOITATION.md`](docs/EXPLOITATION.md) | trading it: signal, automation, exit ladder, 19 receipts, on-chain totals |
 | [`docs/SPLIT_PHASE1.md`](docs/SPLIT_PHASE1.md) | the 2024–2025 split: targets, two control groups, null model |
 | [`code/`](code/) | every measurement, one script per result — see [`code/README.md`](code/README.md) |
 | [`data/`](data/) | derived data, committed; network caches are git-ignored and re-fetchable |
