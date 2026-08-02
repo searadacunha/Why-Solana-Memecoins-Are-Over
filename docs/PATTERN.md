@@ -225,7 +225,70 @@ identifies the hand rather than the technique, and none of the three tests above
 So the repository writes what it measured: the dispatches are performed by single actors, at least
 two of the operations are linked to each other, and the identity behind them is not established.
 
-## 5. What was scanned
+## 5. What the wallets do next: a fleet, not confetti
+
+Every measurement above looks *upstream* — who funded the buyer. Looking the other way turned out to
+be the direction that mattered, and it corrects something this repository had wrong.
+
+Two models predict different things. A **disposable** wallet receives, buys, sells and dies: no
+outgoing payments to accounts that did not already exist. A **fleet** wallet is kept, reactivated,
+and used to fund fresh wallets that go on to fund others. The discriminating measurement is how many
+of a wallet's later payment recipients were **born on receipt** — first activity within an hour of
+the payment. Paying an address that comes into existence at that moment is not a transfer between
+accounts; it is a wallet being created.
+
+`code/a8_wallet_horde.py`, on the 14 readable gateway-funded wallets:
+
+| | |
+|---|---|
+| wallets that went on to fund at least one **brand-new** address | **14 of 14** |
+| new addresses spawned in total | **129** |
+| median lifetime after the trade | 3.9 days |
+| longest still active | **+356 days** |
+
+Fourteen out of fourteen. Not a tendency — the behaviour of every wallet measured.
+
+**The extremes make the shape clear.** `4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5`, a CHOCO
+buyer, ran to **1 880 transactions** and was still active **356 days** after its trade, funding
+**150 addresses of which 19 were newly born** — including 120.8 SOL to an address created that same
+week. `291vRVW6QcL8Lj3F…` (SAFFRON) funded **47 addresses, 19 of them new**. These are not the
+account histories of someone who bought a memecoin.
+
+**And the h2w6gm6jz batch behaves as one object.** The nine wallets that received an identical
+2.976815600 SOL within 343 seconds do not merely start together — the six whose history is readable
+all **stop on the same day, 2024-12-17**, exactly 3.9 days after the launch, each having spawned
+between 6 and 9 new addresses in the interval:
+
+| wallet | last activity | addresses funded | of which newborn |
+|---|---|---:|---:|
+| `CDvfNWiamAR1B84G…` | 2024-12-17 | 21 | 8 |
+| `BmkuX6DaZUp9UCeR…` | 2024-12-17 | 19 | 6 |
+| `6QMshP9zwFXKbpLP…` | 2024-12-17 | 22 | 7 |
+| `5ibajLyeBmJhDfyZ…` | 2024-12-17 | 20 | 6 |
+| `AwQqcqdQQ3zydrtW…` | 2024-12-17 | 23 | 9 |
+| `3bBaA1MpQZuQpHjW…` | 2024-12-17 | 18 | 7 |
+
+Six wallets funded in the same burst, retired on the same day, each leaving behind a similar number
+of children. Independent users do not synchronise their last transaction.
+
+### The correction this forces
+
+Section 4 reports no shared funder between the per-token distributors and concludes that the
+operations are linked only in pairs. That test looked **upstream only**, and upstream is where a
+careful operator leaves nothing: each launch gets its own distributor precisely so the ancestry does
+not converge.
+
+Downstream, it converges anyway. The wallets are not consumed by the launch — they survive it and
+become funders themselves, which means the addresses buying later launches can be the descendants of
+the ones that bought earlier. That is a materially different structure from "unrelated users of a
+common gateway": it is a standing population, replenished from within.
+
+What it still does not establish is a hand. A fleet of thousands of addresses spawning generations
+is equally the signature of one operator with a script and of a tool many operators run. Section 4's
+verdict is unchanged in that respect — but its *reasoning* was wrong, and the reason it was wrong is
+that it only looked one way.
+
+## 6. What was scanned
 
 Every buyer on the curve, not a sample: 3 963 distinct buyers across thirteen tokens. One token
 could not be read at all and is reported as unmeasurable rather than as a zero.

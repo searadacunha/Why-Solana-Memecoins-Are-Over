@@ -68,6 +68,13 @@ matters, and [PITFALLS P15](docs/PITFALLS.md) explains what happens when you col
   tool**, which this corpus documents elsewhere: two operator clusters sharing no wallet and no
   token nonetheless share a byte-level execution fingerprint. A repeated method proves a repeated
   method; identifying the hand needs an artefact none of the tests produced.
+- **But the wallets are not disposable, and that changes the shape.** Those tests looked *upstream*,
+  where a careful operator leaves nothing. Looking downstream — what each funded wallet does after
+  its trade — **14 of 14** went on to fund addresses that were **born on receipt**: 129 new wallets
+  spawned, one buyer still active **356 days** later after funding 150 addresses. And the nine
+  wallets funded in the same 343-second burst do not only start together: the six that are readable
+  all **stop on the same day**. This is a standing population that replenishes itself, not confetti
+  — see [docs/PATTERN.md](docs/PATTERN.md) §5.
 
 **And it was traded.** The author detected this signal in real time and acted on it: 20 documented
 executions, and **1 200 SOL — 238 990 $ at the price on each transfer's own day — withdrawn over
