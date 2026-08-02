@@ -54,7 +54,7 @@ Fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — so a signal at 4 a.m.
 |---|---|
 | withdrawn Oct–Dec 2024 | **1 200.12 SOL — 238 989.57 $** at the price on each transfer's own day |
 | across | **312 transfers, 97 trading wallets** |
-| documented executions | **20**, from +100 % to **+28 465 %** |
+| screenshotted executions (a sample; the window holds hundreds) | **19**, from +100 % to **+28 465 %** |
 | the whole window, to Feb 2025 | 246 945.59 $ |
 
 Receipts, execution stack and the full method: **[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**.
