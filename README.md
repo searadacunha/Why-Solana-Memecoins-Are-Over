@@ -103,15 +103,14 @@ output, not a figure anyone types — and **the same figure appears on a differe
 days earlier**, from the same address.
 
 The wallets are not discarded afterwards. The ones that could be read kept going — funding fresh
-addresses born on receipt, one still active **356 days** later. What got read is a sample; what
-actually exists likely runs into the thousands. The nine paid in that 343-second burst also stop
-together: the six readable ones make their last transaction **on the same day**.
+addresses born on receipt. What got read is a sample; what actually exists likely runs into the
+thousands. The nine paid in that 343-second burst also stop together: the six readable ones make
+their last transaction **on the same day**.
 
-The split could be read while it was still happening: identify the wallets
-funded through the gateway, wait for one of them to buy its 20-million-token stake, then buy
-alongside it — small, clean, never enough to draw attention — and sell into the demand the rest of
-the split was about to create. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a signal
-arriving at 4 a.m. could be taken without supervision.
+The split could be read while it was still happening: identify the wallets funded through the
+gateway, wait for one of them to buy its 20-million-token stake, then buy alongside it — small,
+clean, never enough to draw attention. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a
+signal arriving at 4 a.m. was taken while I slept.
 
 | | |
 |---|---|
@@ -151,14 +150,20 @@ single outside buyer can transact.** The position leaves at a median **t+17.5 se
 
 ### The same signature, on a launch the whole market is watching right now
 
-$ANSEM — created **2026-06-16 21:05:48 UTC**, mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump` —
-carries it exactly. Measured with the same frozen script as the 42, paginated to the curve's own
-first signature: **the entire bonding curve, 85.007 SOL, is bought inside the creation slot**
-(426930467), 84.74 of it by one wallet. Two buyers, sixteen signatures, nothing left on the curve by
-the time the launch is visible.
+$ANSEM, "The Black Bull", is named after **@blknoiz06** — one of the most-followed traders on
+Solana, whose reputation is the asset the token is built on. He did not deploy it. An anonymous
+developer created it on 2026-06-16, spent roughly 6 300 $ on the launch, and sent **650 million
+tokens — 65 % of the supply — to his public wallet, for free**. He kept it, ended up holding 60–66 %
+of the token, and between 27 and 29 June airdropped about **7 M$** of it to Solana users, aiming to
+take the holder base from ~25 000 wallets to a million.[^ansem]
 
-What makes it worth naming is that **both slot-0 wallets were already catalogued in this repository
-before that token existed**:
+Underneath that, the launch itself: mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`, created
+**2026-06-16 21:05:48 UTC**. Measured with the same frozen script as the 42, paginated to the curve's
+own first signature: **the entire bonding curve, 85.007 SOL, is bought inside the creation slot**
+(426930467), 84.74 of it by one wallet. Two buyers, sixteen signatures, nothing left on the curve by
+the time the launch is visible. The 6 300 $ the developer "spent on the launch" is that buy.
+
+And **both slot-0 wallets were already catalogued in this repository before that token existed**:
 
 | wallet | SOL at slot 0 | already in this repo as |
 |---|---|---|
@@ -166,12 +171,12 @@ before that token existed**:
 | `9ryBR3Sn…XLaq` | 0.265 | a **shared-infrastructure sniper**, 5th by ubiquity at **44 of 282** tokens |
 
 A launch that a large part of the market read as memecoin season restarting was executed by the same
-addresses running the mechanism that ended it. That is the closest this repository gets to answering
-*who* — not a name, an address with a history.
+addresses running the mechanism that ended it.
 
-Two things this does **not** say. It does not identify who controls those wallets, which is not on
-chain. And it says nothing whatsoever about the person the token is named after: the measurement
-reads a curve, not an intent, and a token bearing someone's name is not that person's transaction.
+[^ansem]: Deployer, the 650 M transfer and the holding range: [MEXC News](https://www.mexc.com/news/1182542)
+    and [Phemex Academy](https://phemex.com/academy/black-bull-ansem-solana-meme-token). The 7 M$
+    airdrop and the one-million-holder target: [CryptoBriefing](https://cryptobriefing.com/ansem-airdrops-7m-ansem-memecoin-solana/)
+    and [The Defiant](https://thedefiant.io/news/defi/ansem-airdrops-usd7m-of-usdansem-memecoin-in-bid-to-reach-1m-holders).
 
 No sequence left to watch, because there is no sequence. And what follows is arithmetic:
 
