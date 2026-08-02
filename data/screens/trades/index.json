@@ -1,6 +1,6 @@
 {
- "objet": "Captures des executions, telles que produites par le bot d'execution.",
- "n": 20,
+ "objet": "Captures d'executions, telles que produites par le bot. ECHANTILLON illustratif : la fenetre oct-2024 -> fev-2025 compte des centaines de trades, ceux-ci sont simplement ceux qui ont ete captures. La mesure complete est on-chain, pas ici.",
+ "n": 19,
  "trades": [
   {
    "fichier": "sumiko_28466pct_83494a.jpeg",
@@ -10,15 +10,6 @@
    "investi_sol": 0.254,
    "mint": null,
    "bot": "TROJAN"
-  },
-  {
-   "fichier": "Visualize_1614pct_f3067d.jpeg",
-   "symbole": "Visualize",
-   "gain_pct": 1613.53,
-   "duree": "1d 59m",
-   "investi_sol": null,
-   "mint": "Foth1khUc3rGs4wKacCicHsEqU2p7HwPtYPyjGTpump",
-   "bot": "Trojan on Solana - Odysseus (\"22,779 utilisateurs mensuel\" ; lien https://t.me/odysseus_trojanbot)"
   },
   {
    "fichier": "HOMELESCAT_1085pct_2e0d0e.jpeg",
