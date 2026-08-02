@@ -4,11 +4,21 @@
 stopped when the pattern I was trading disappeared, and this repository is the measurement of what
 replaced it.**
 
-The pattern was findable by hand. Watching launches one at a time in a block explorer, the same
-shape kept coming back: before a pump.fun token exists, wallets are created for it — the same day,
+**The pattern.** Before a pump.fun token exists, wallets are created for it — the same day,
 sometimes minutes before. They are funded through **ChangeNOW**, a swap service, which is the point
 beyond which their money is no longer traceable. When the token launches, those wallets buy its
 supply.
+
+Noticing it took watching launches one at a time. Establishing it took more than that. A wallet's
+funding lives in its *first* transactions, and `getSignaturesForAddress` walks present → past a
+thousand at a time — so a bounded walk returns recent history and reports "no funding found" for a
+wallet that was funded, without raising anything. Every wallet here is either paged back to its own
+first signature or declared unread; the distribution hub took **217 615 signatures** to reach.
+Funding that arrives by closing a wrapped account leaves no transfer to find, so inflows are
+measured as balance deltas rather than read off transfer lists. And a nine-decimal amount is a
+conversion output while a round one is a deliberate payment — two different links in the same chain,
+which is why the first version of the detector, built to require the former, returned zero on all
+fifteen tokens including the reference case.
 
 On a chart that reads as independent buyers arriving one after another. On one launch, nine of those
 wallets received **the same amount to nine decimal places within 343 seconds**, seven and a half
@@ -18,6 +28,12 @@ The sequence took hours, which left room to act on it: identify the wallet creat
 alongside it, sell into the demand it was there to create. That is where the 238 989.57 $ came from,
 and the receipts are in [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
 
+Scaled up, the check runs over every buyer on a curve rather than the first forty — **3 963 distinct
+buyers across thirteen tokens** — which is only affordable because a fresh wallet has no history
+before the window: page backwards and stop at the first transaction older than the cutoff, and an
+address with four hundred thousand signatures costs one call instead of four hundred. Dropping that
+forty-buyer cap is what surfaced one of the six confirmed tokens, invisible until then.
+
 It no longer works. The supply is now taken in full inside the token's own creation block — 42
 launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
 all. The consequences are visible at the scale of the chain: **0.26 %** of pump.fun launches now
@@ -25,7 +41,10 @@ graduate, and Solana's daily network fees have fallen **84 %**, from ~33 000 SOL
 ~5 300 in June 2026.[^macro]
 
 Buying into what remains has no measurable expectancy: across fifteen exit policies tested on 196
-tokens, **none** has a positive mean return.
+tokens and 20 detection clusters, **none** has a positive mean return and none has a 95 %
+cluster-bootstrap interval clearing zero — the cluster unit matters, because tokens detected within
+the same half hour are not independent observations and treating them as such inflates every
+significance test in this domain.
 
 The mechanism that made money in 2024 worked because outsiders could see the accumulation and take
 part in it. Closing that gap removed the participants along with the leak.
