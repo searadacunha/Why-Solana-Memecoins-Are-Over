@@ -24,6 +24,12 @@ data/transition/
 docs/INVENTAIRE.md
 docs/REVIEW.md
 
+# --- traductions de relecture ------------------------------------------------
+# Le depot se publie en ANGLAIS. Ces versions francaises existent pour que
+# l'auteur relise avant publication ; elles ne sont pas la version de reference
+# et divergeraient au premier correctif applique a l'anglais.
+_relecture_fr/
+
 # --- working notes, not deliverables -----------------------------------------
 # Session handoff and narrative timeline. CHRONOLOGIE.md quotes amounts the
 # author personally invested, which the dossier's own rules keep out of the
