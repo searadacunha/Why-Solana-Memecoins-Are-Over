@@ -1,20 +1,31 @@
 # Why Solana memecoins are over
 
-**In three months I withdrew 238 989.57 $ trading memecoin launches. Then I stopped, because the
+**In three months I withdrew 238 989.57 $ trading pump.fun launches. Then I stopped, because the
 thing I was trading stopped existing — and this repository is the measurement of why.**
 
-It was already working. Wallets created hours before a launch bought its supply, the price ran, and
-whoever held that supply sold it into the crowd. It made money. It made money *because* outsiders
-could see the accumulation happening and buy alongside it — and that was the part they decided to
-close. They took the whole curve in a single block so that not one cent would leak to anyone else.
+Here is what I found, by watching launches one at a time in a block explorer until the shape
+repeated. Before a pump.fun token exists, wallets are created for it — same day, often minutes
+before. Those wallets are funded through **ChangeNOW**, a swap service, which is what makes their
+money untraceable back past that point. When the token launches, **those wallets buy its supply.**
+To anyone watching the chart it looks like independent buyers arriving one after another. They are
+not a crowd. On one launch, nine of those wallets were paid **the same amount to nine decimal
+places, within 343 seconds**, seven hours before the token existed.
 
-It worked. Every launch is now bought out before the market opens. There is also nothing left to
-sell into: **0.26 %** of pump.fun launches ever graduate, and Solana's daily network fees have
-fallen **84 %** — from ~33 000 SOL a day in January to ~5 300 in June 2026.[^macro] For a chain
-where the launchpad was, at peak, up to **71 % of all token mints** and **40–67 % of DEX
-transactions**, that is not a niche going quiet.
+That was findable by eye, and slow enough to trade against. You could spot the wallet created that
+morning, buy alongside it, and sell into the crowd it was built to attract. That is where the
+238 989.57 $ came from.
 
-They were earning. Refusing to leave anything on the table cost them the table.
+**It does not work any more, because they stopped leaving anything.** The supply is now bought in
+full inside the token's own creation block — 42 launches out of 42, verified transaction by
+transaction. Nothing reaches the market. Nothing is left for anyone.
+
+**pump.fun is dead.** Not slowing: **0.26 %** of launches ever graduate, and Solana's daily network
+fees are down **84 %** — from ~33 000 SOL a day in January to ~5 300 in June 2026.[^macro] Most
+people have already left. The ones still buying have not worked out that there is nothing left to
+win — the measurement says so plainly, **0 of 15 exit policies with a positive return**, and they
+are trading against a supply that was gone before they could see the token.
+
+They were making money. Refusing to leave a cent on the table cost them the table.
 
 Every figure below regenerates from this repository with no network access.
 
