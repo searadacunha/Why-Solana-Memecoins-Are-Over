@@ -15,16 +15,19 @@ ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of 
 to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
 **same amount landing on several fresh wallets at once**, the split signature. That alone was not a
 trade. The trade began the moment **one of those wallets bought at least 20 million of a token's
-supply on pump.fun** — about **2 %** of it, enough to matter for control of the launch. Every wallet
-in the split bought the same size, together holding enough of the supply that the NPCs buying in
-afterward had no influence on the price. The rest of the split had not moved yet, and that first buy
-was the tell that they were about to. Position taken there, ahead of the demand the rest of the split
-was about to create — then it was ordinary chart reading, judging how far the run would carry.
+supply on pump.fun** — about **2 %** of it. That threshold was the filter: a ChangeNOW-funded wallet
+buying less than that had no real intention of controlling the token — it read as the dev's own buy,
+not a split wallet worth following. Cross it, and every wallet in the split bought the same size,
+together holding enough of the supply that the NPCs buying in afterward had no influence on the
+price. The rest of the split had not moved yet, and that crossing was the tell that they were about
+to. Position taken there, ahead of the demand the rest of the split was about to create — then it was
+ordinary chart reading, judging how far the run would carry.
 
-A similar-looking pattern shows up elsewhere: check the top holders of any token that ran to $1 M+
-and most were funded the same day, sometimes the same block. On a chart it reads identically. Trading
-it doesn't — following that co-funding alone loses more often than it pays. The split needed the
-20-million-token buy to mean anything; on its own it is noise with a shape.
+The same co-funding shows up on almost any token that runs: check the top holders of one that reached
+$1 M+ and most were funded the same day, sometimes the same block. That much is real — it is
+coordination, not noise. What it doesn't say is which way the coordination points. The same operators
+stage dumps the same way they stage runs, so co-funding by itself predicts neither; following it alone
+loses more often than it pays. The split needed the 20-million-token buy to say which one this was.
 
 My position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
 inside the rules, not a fight against the operators running the split. That was still more than they
@@ -143,6 +146,30 @@ transaction, the entire bonding curve is bought inside the token's own creation 
 By the time the market opens, capitalisation has gone from ~2 158 $ to ~53 985 $ — **×25 before a
 single outside buyer can transact.** The position leaves at a median **t+17.5 seconds**.
 
+### The same signature, on a launch the whole market was watching
+
+$ANSEM — created **2026-06-16 21:05:48 UTC**, mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump` —
+carries it exactly. Measured with the same frozen script as the 42, paginated to the curve's own
+first signature: **the entire bonding curve, 85.007 SOL, is bought inside the creation slot**
+(426930467), 84.74 of it by one wallet. Two buyers, sixteen signatures, nothing left on the curve by
+the time the launch is visible.
+
+What makes it worth naming is that **both slot-0 wallets were already catalogued in this repository
+before that token existed**:
+
+| wallet | SOL at slot 0 | already in this repo as |
+|---|---|---|
+| `yHCxHBEa…6PRe` | **84.743** | **OP1** — a repeat operator, present on **24 of 282** tokens, explicitly *not* classed as shared infrastructure |
+| `9ryBR3Sn…XLaq` | 0.265 | a **shared-infrastructure sniper**, 5th by ubiquity at **44 of 282** tokens |
+
+A launch that a large part of the market read as memecoin season restarting was executed by the same
+addresses running the mechanism that ended it. That is the closest this repository gets to answering
+*who* — not a name, an address with a history.
+
+Two things this does **not** say. It does not identify who controls those wallets, which is not on
+chain. And it says nothing whatsoever about the person the token is named after: the measurement
+reads a curve, not an intent, and a token bearing someone's name is not that person's transaction.
+
 No sequence left to watch, because there is no sequence. And what follows is arithmetic:
 
 - across **15 exit policies** on 196 tokens, the mean is negative in **15 of 15**, and no policy has
@@ -166,10 +193,12 @@ That is the answer to the title. Not a crash and not a rotation of narratives: t
 optimised to the point where there was nothing left to extract from — including for whoever
 optimised it.
 
-Who that is stays an open question. Millions of dollars move through ChangeNOW every day, and for
-nearly all of it the wallets on the other side belong to nobody in particular. Whether the ones
-behind this specific mechanism trace back to one operation, several, or nothing more than
-coincidence is not something this repository can answer.
+Who that is stays an open question. The chain gives up addresses and their history — OP1 on 24
+tokens, the infrastructure snipers on 44 and 99 and 165 — and stops there. Millions of dollars move
+through ChangeNOW every day, and for nearly all of it the wallets on the other side belong to nobody
+in particular. Whether the ones behind this specific mechanism trace back to one operation, several,
+or nothing more than coincidence is not something this repository can answer, and it does not
+pretend to.
 
 ---
 
