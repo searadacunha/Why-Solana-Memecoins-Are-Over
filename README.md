@@ -75,7 +75,7 @@ A new token appears. Several wallets buy it early, one after another. That is wh
 like: independent participants, arriving separately, accumulating supply.
 
 Every one of those wallets was **created the same day as the token** — median **9.6 hours** before
-it existed, and the two on sumiko were created **24 and 30 minutes** before. They hold nothing else.
+it existed, and the two on $sumiko were created **24 and 30 minutes** before. They hold nothing else.
 They were funded from a single address: `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, identified
 by independent researchers as a hot wallet of the swap service **ChangeNOW**.[^gw]
 
