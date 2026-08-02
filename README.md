@@ -9,7 +9,7 @@ sometimes minutes before. They are funded through **ChangeNOW**, a swap service,
 beyond which their money is no longer traceable. When the token launches, those wallets buy its
 supply.
 
-It was visible only to someone who knew how to look for it. Exploiting it was a different problem.
+It was visible only to those who see it. Exploiting it was still a different problem.
 
 ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of it routine. Filtered
 to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
