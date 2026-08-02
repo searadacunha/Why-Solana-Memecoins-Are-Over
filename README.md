@@ -160,6 +160,11 @@ That is the answer to the title. Not a crash and not a rotation of narratives: t
 optimised to the point where there was nothing left to extract from — including for whoever
 optimised it.
 
+Who that is stays an open question. Millions of dollars move through ChangeNOW every day, and for
+nearly all of it the wallets on the other side belong to nobody in particular. Whether the ones
+behind this specific mechanism trace back to one operation, several, or nothing more than
+coincidence is not something this repository can answer.
+
 ---
 
 ## Hypotheses tested to destruction: [docs/PITFALLS.md](docs/PITFALLS.md)
