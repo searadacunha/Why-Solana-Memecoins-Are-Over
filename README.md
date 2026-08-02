@@ -66,10 +66,8 @@ significance test in this domain.
 The mechanism that made money in 2024 worked because outsiders could see the accumulation and take
 part in it. Closing that gap removed the participants along with the leak.
 
-**They were already making money. Refusing to leave a cent of it to anyone else is what ended the
-market they were making it in.**
-
-Every figure below regenerates from this repository with no network access.
+**They were already making plenty. They decided to let no one else win. Their greed cost them the
+market.**
 
 [^macro]: Graduation rate and fee decline: [DEXTools, 22 June 2026](https://www.dextools.io/news/pump-fun-graduation-collapse-solana-fees-2026).
     For scale over the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
@@ -104,12 +102,12 @@ Nine decimals. Identical across nine wallets. Before the token existed. That amo
 output, not a figure anyone types — and **the same figure appears on a different token thirty-one
 days earlier**, from the same address.
 
-The wallets are not discarded afterwards. All fourteen that could be read went on to fund addresses
-that were **born on receipt** — 129 of them. One was still active **356 days** later, having funded
-150 addresses. The nine paid in that 343-second burst also stop together: the six readable ones make
-their last transaction **on the same day**.
+The wallets are not discarded afterwards. The ones that could be read kept going — funding fresh
+addresses born on receipt, one still active **356 days** later. What got read is a sample; what
+actually exists likely runs into the thousands. The nine paid in that 343-second burst also stop
+together: the six readable ones make their last transaction **on the same day**.
 
-**That was the trade.** The split could be read while it was still happening: identify the wallets
+The split could be read while it was still happening: identify the wallets
 funded through the gateway, wait for one of them to buy its 20-million-token stake, then buy
 alongside it — small, clean, never enough to draw attention — and sell into the demand the rest of
 the split was about to create. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a signal
@@ -135,11 +133,11 @@ go to them.
 But a launch needs outside buyers. The sequence that let them in was the same sequence that created
 the demand to sell into. The leak and the exit liquidity were the same thing.
 
-The shift away from it took about three months, not one release. Fewer and fewer of the wallets
-ChangeNOW funded were the ones actually buying — the wallet count kept growing, but more of it sat
-idle instead of spending. They were building a reserve: thousands of wallets, all carrying the same
-untraceable ChangeNOW origin, held rather than spent. Once the reserve was big enough, ChangeNOW was
-dropped.
+The shift away from it wasn't one release — it started earlier than it became visible and kept
+moving gradually from there. Fewer and fewer of the wallets ChangeNOW funded were the ones actually
+buying — the wallet count kept growing, but more of it sat idle instead of spending. They were
+building a reserve: thousands of wallets, all carrying the same untraceable ChangeNOW origin, held
+rather than spent. Once the reserve was big enough, ChangeNOW was dropped.
 
 ## Act III — 2026: what replaced it
 
@@ -151,7 +149,7 @@ transaction, the entire bonding curve is bought inside the token's own creation 
 By the time the market opens, capitalisation has gone from ~2 158 $ to ~53 985 $ — **×25 before a
 single outside buyer can transact.** The position leaves at a median **t+17.5 seconds**.
 
-### The same signature, on a launch the whole market was watching
+### The same signature, on a launch the whole market is watching right now
 
 $ANSEM — created **2026-06-16 21:05:48 UTC**, mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump` —
 carries it exactly. Measured with the same frozen script as the 42, paginated to the curve's own
@@ -209,8 +207,8 @@ pretend to.
 
 ## Hypotheses tested to destruction: [docs/PITFALLS.md](docs/PITFALLS.md)
 
-Anyone can publish an analysis that agrees with its author. Fifteen cards, each one a claim this
-project held, the test built to break it, and what was left afterwards. **Eleven of them died.**
+Fifteen cards, each one a claim this project held, the test built to break it, and what was left
+afterwards. **Eleven of them died.**
 
 Three worth reading, because all three killed something I wanted to be true:
 
