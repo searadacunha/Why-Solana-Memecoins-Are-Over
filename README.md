@@ -9,7 +9,8 @@ sometimes minutes before. They are funded through **ChangeNOW**, a swap service,
 beyond which their money is no longer traceable. When the token launches, those wallets buy its
 supply.
 
-Noticing it took watching launches one at a time. Establishing it took more than that. A wallet's
+It was visible to anyone reading the chain closely enough to see it — and establishing it was a
+different problem. A wallet's
 funding lives in its *first* transactions, and `getSignaturesForAddress` walks present → past a
 thousand at a time — so a bounded walk returns recent history and reports "no funding found" for a
 wallet that was funded, without raising anything. Every wallet here is either paged back to its own
@@ -48,6 +49,9 @@ significance test in this domain.
 
 The mechanism that made money in 2024 worked because outsiders could see the accumulation and take
 part in it. Closing that gap removed the participants along with the leak.
+
+**They were already making money. Refusing to leave a cent of it to anyone else is what ended the
+market they were making it in.**
 
 Every figure below regenerates from this repository with no network access.
 
@@ -149,29 +153,50 @@ optimised it.
 
 ---
 
-## The part that makes this credible: [docs/PITFALLS.md](docs/PITFALLS.md)
+## Hypotheses tested to destruction: [docs/PITFALLS.md](docs/PITFALLS.md)
 
-Anyone can publish an analysis that agrees with its author. Fifteen cards, each one a number this
-project got wrong, the test that killed it, and what survived. **Eleven killed a positive result.**
+Anyone can publish an analysis that agrees with its author. Fifteen cards, each one a claim this
+project held, the test built to break it, and what was left afterwards. **Eleven of them died.**
 
-Three worth reading:
+Three worth reading, because all three killed something I wanted to be true:
 
-- **P13** — the detector's most intuitive criterion, *these buyers share a funder*, fires on
-  **88.9 %** of randomly drawn wallet groups. It was carrying the headline claim. Retired.
-- **P14** — with that gone the signal still separated targets from controls at p = 0.0007, until a
-  second control group revealed the controls were all *dead* tokens while every target had
-  graduated. Against graduated controls: **p = 0.44**. It was measuring success, not coordination.
-- **P15** — a scan returned a clean `0/14 tokens carry the pattern`. It was a wrong hostname. Three
-  transport failures in one session, each returning a plausible number instead of an error.
+- **P13 — the detector was measuring nothing.** Its most intuitive criterion, *these early buyers
+  share a private funder*, was carrying the headline result. Giving it a null distribution — pool
+  the control wallets, draw random groups of forty, run the criterion unchanged — showed it fires on
+  **88.9 %** of groups that were never coordinated at all, and 99.5 % of groups restricted to
+  wallets whose history could be read to the end. A criterion that fires on nine random groups in
+  ten cannot enter a verdict. Retired, and every token recounted without it.
+- **P14 — the control group answered a different question.** With that criterion gone the signal
+  still separated targets from controls at p = 0.0007. The controls were all *dead* tokens; every
+  target had graduated. Two things differed at once, and the design could not say which the p-value
+  belonged to. Against a second control group of *graduated* tokens from the same window: **p =
+  0.44.** It had been measuring success, not coordination.
+- **P15 — a clean number produced by a broken connection.** A scan returned `0/14 tokens carry the
+  pattern`. It was a wrong hostname, swallowed as an empty answer. What caught it was arithmetic,
+  not debugging: a graduated curve has hundreds of transactions by definition, so zero buyers on a
+  curve reporting 587 is a contradiction rather than a low number.
+
+### Is there still a way to win?
+
+That question gets its own tests, because it is the one that decides whether any of this is
+actionable. Fifteen exit policies on 196 tokens and 20 detection clusters; entry timed at the snipe,
+after it, and at every horizon out to 24 hours; the null distribution of the *best* of 38 policies,
+because picking the winner from a search is not the same as finding one.
+
+**Nothing clears zero.** Not one policy, not one horizon, not the best-of after correcting for the
+search. Entering post-snipe returns 0.35× at +1 h and 0.08× at +24 h, and 21.3 % of tokens have
+already peaked before an outsider can see them.
+
+The answer is no, and the work to establish that is the same work that found the pattern in the
+first place. Knowing a thing is finished is worth as much as knowing it started.
 
 There is also a **[What did not reproduce](docs/PITFALLS.md#what-did-not-reproduce)** section for
-figures in the project's own notes that could not be re-derived. They are recorded as unreproduced
-rather than quietly dropped.
+figures in the project's own notes that could not be re-derived from the published data. They are
+recorded as unreproduced rather than quietly dropped.
 
 > **Vocabulary.** *The Matrix*, where it appears, names the coordinated infrastructure observed on
 > chain — addresses sharing funding origins and execution patterns. It labels a measured structure,
-> never an actor. Every address and amount quoted is a public technical identifier. Nothing here
-> attributes intent, identity or wrongdoing to any person or company.
+> never an actor. Every address and amount quoted is a public technical identifier.
 
 ---
 
@@ -245,7 +270,7 @@ code instead of an assertion.
 
 | path | what is in it |
 |---|---|
-| [`docs/PITFALLS.md`](docs/PITFALLS.md) | fifteen ways this project was wrong, and how each was caught |
+| [`docs/PITFALLS.md`](docs/PITFALLS.md) | fifteen claims, the test built to break each one, and what survived |
 | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | definitions, populations, validation protocol, declared limits |
 | [`docs/RESULTATS.md`](docs/RESULTATS.md) | the 2026 measurements in full, with an English summary at the top |
 | [`docs/PATTERN.md`](docs/PATTERN.md) | the funding dispatch, token by token, with every burst listed |
