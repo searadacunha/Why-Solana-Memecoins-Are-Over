@@ -151,11 +151,11 @@ single outside buyer can transact.** The position leaves at a median **t+17.5 se
 ### The same signature, on a launch the whole market is watching right now
 
 $ANSEM, "The Black Bull", is named after **@blknoiz06** — one of the most-followed traders on
-Solana, whose reputation is the asset the token is built on. He did not deploy it. An anonymous
-developer created it on 2026-06-16, spent roughly 6 300 $ on the launch, and sent **650 million
-tokens — 65 % of the supply — to his public wallet, for free**. He kept it, ended up holding 60–66 %
-of the token, and between 27 and 29 June airdropped about **7 M$** of it to Solana users, aiming to
-take the holder base from ~25 000 wallets to a million.[^ansem]
+Solana, whose reputation is the asset the token is built on. According to reports, an anonymous
+developer deployed it on 2026-06-16, spent roughly 6 300 $ on the launch, and sent **650 million
+tokens — 65 % of the supply — to his public wallet**. He accepted it, held 60–66 % of the token, and
+between 27 and 29 June airdropped about **7 M$** of it to Solana users, aiming to take the holder base
+from ~25 000 wallets to a million.[^ansem]
 
 Underneath that, the launch itself: mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`, created
 **2026-06-16 21:05:48 UTC**. Measured with the same frozen script as the 42, paginated to the curve's
