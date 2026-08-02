@@ -9,8 +9,18 @@ sometimes minutes before. They are funded through **ChangeNOW**, a swap service,
 beyond which their money is no longer traceable. When the token launches, those wallets buy its
 supply.
 
-It was visible to anyone reading the chain closely enough to see it — and establishing it was a
-different problem. A wallet's
+It was visible only to someone who knew how to look for it. Establishing it was a different
+problem. Trading it was a third one entirely.
+
+Finding it: ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of it
+routine. Filtered to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
+**same amount landing on several fresh wallets at once**, the split signature. That alone was not a
+trade. The trade began the moment **one of those wallets bought at least 20 million of a token's
+supply on pump.fun**: the rest of the split had not moved yet, and that first buy was the tell that
+they were about to. Position taken there, ahead of the demand the rest of the split was about to
+create — then it was ordinary chart reading, judging how far the run would carry.
+
+Establishing it on chain was the different problem. A wallet's
 funding lives in its *first* transactions, and `getSignaturesForAddress` walks present → past a
 thousand at a time — so a bounded walk returns recent history and reports "no funding found" for a
 wallet that was funded, without raising anything. Every wallet here is either paged back to its own
@@ -21,13 +31,12 @@ conversion output while a round one is a deliberate payment — two different li
 which is why the first version of the detector, built to require the former, returned zero on all
 fifteen tokens including the reference case.
 
-On a chart that reads as independent buyers arriving one after another. On one launch, nine of those
-wallets received **the same amount to nine decimal places within 343 seconds**, seven and a half
-hours before the token existed.
+On a chart that reads as independent buyers arriving one after another. On one launch, nine wallets
+received **the same amount to nine decimal places within 343 seconds**, seven and a half hours
+before the token existed — the split signature, at scale.
 
-The sequence took hours, which left room to act on it: identify the wallet created that morning, buy
-alongside it, sell into the demand it was there to create. That is where the 238 989.57 $ came from,
-and the receipts are in [docs/EXPLOITATION.md](docs/EXPLOITATION.md).
+That is where the 238 989.57 $ came from, and the receipts are in
+[docs/EXPLOITATION.md](docs/EXPLOITATION.md).
 
 Scaled up, the check runs over every buyer on a curve rather than the first forty — **3 963 distinct
 buyers across thirteen tokens** — which is only affordable because a fresh wallet has no history
