@@ -6,51 +6,42 @@ transaction. Un compte signataire dont l'adresse se termine par "pump" est donc 
 mint pump.fun en train d'etre cree. On lit les blocs avec transactionDetails="accounts"
 (leger : pas d'instructions, juste les cles de comptes + drapeaux signataire).
 
-Aucune cle en dur : SOLANA_RPC_URL vient de l'environnement.
+CLIENT
+------
+Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
+($HELIUS_API_KEYS, ou .env non versionné — voir settings.py) et **un échec réseau
+LÈVE** au lieu de se déguiser en bloc sauté. Les slots sautés, eux, renvoient une
+erreur JSON-RPC qui est une réponse légitime (« slot skipped »), tolérée en None
+via tolerate_codes (docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée ici.
 """
 from __future__ import annotations
-import json, os, sys, time, urllib.request, datetime as dt
+import datetime as dt, json, os, sys
 from concurrent.futures import ThreadPoolExecutor
+from typing import Optional
 
-RPC = os.environ.get("SOLANA_RPC_URL", "")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_client  # noqa: E402
+
 PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 
-
-def rpc(method, params, retries=5, timeout=60):
-    if not RPC:
-        sys.exit("SOLANA_RPC_URL non defini.")
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method,
-                       "params": params}).encode()
-    last = None
-    for i in range(retries):
-        try:
-            req = urllib.request.Request(RPC, data=body, headers={
-                "Content-Type": "application/json", "User-Agent": "harvest/1.0"})
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-            last = out.get("error")
-            # slot saute / non disponible : inutile de reessayer
-            if isinstance(last, dict) and last.get("code") in (-32007, -32009, -32004):
-                return None
-        except Exception as e:
-            last = str(e)
-        time.sleep(1.0 * (i + 1))
-    return None
+# getBlock / getBlockTime sur un slot saute renvoie une erreur JSON-RPC qui est une
+# reponse legitime (« slot skipped »), pas une panne : on la tolere en None.
+SKIPPED_SLOT_CODES = (-32007, -32009, -32004)
 
 
-def slot_for_ts(target_ts, lo=1, hi=None):
+def slot_for_ts(target_ts: int, lo: int = 1,
+                hi: Optional[int] = None) -> Optional[tuple[int, int]]:
     """Binary search slot -> blockTime. Renvoie le slot dont le temps <= target_ts."""
     if hi is None:
-        hi = rpc("getSlot", [])
-    best = None
+        hi = rpc_client.rpc("getSlot", [])
+    best: Optional[tuple[int, int]] = None
     while lo < hi:
         mid = (lo + hi) // 2
         t = None
         # les slots sautes n'ont pas de blockTime : on decale
         for d in range(0, 60):
-            t = rpc("getBlockTime", [mid + d])
+            t = rpc_client.rpc("getBlockTime", [mid + d],
+                               tolerate_codes=SKIPPED_SLOT_CODES)
             if t:
                 mid = mid + d
                 break
@@ -65,14 +56,15 @@ def slot_for_ts(target_ts, lo=1, hi=None):
     return best
 
 
-def block_pump_mints(slot):
+def block_pump_mints(slot: int) -> Optional[list[tuple[str, Optional[str]]]]:
     """Renvoie [(mint, signature)] des mints pump.fun CREES dans ce bloc."""
-    b = rpc("getBlock", [slot, {
+    b = rpc_client.rpc("getBlock", [slot, {
         "encoding": "json", "transactionDetails": "accounts",
-        "rewards": False, "maxSupportedTransactionVersion": 0}])
+        "rewards": False, "maxSupportedTransactionVersion": 0}],
+        tolerate_codes=SKIPPED_SLOT_CODES)
     if not b:
         return None  # bloc saute / indisponible
-    out = []
+    out: list[tuple[str, Optional[str]]] = []
     for tx in b.get("transactions", []):
         meta = tx.get("meta") or {}
         if meta.get("err"):
@@ -89,9 +81,11 @@ def block_pump_mints(slot):
     return out
 
 
-def harvest(start_slot, n_slots, workers=12):
+def harvest(start_slot: int, n_slots: int,
+            workers: int = 12) -> tuple[list[dict], int, int]:
     slots = list(range(start_slot, start_slot + n_slots))
-    found, skipped = [], 0
+    found: list[dict] = []
+    skipped = 0
     with ThreadPoolExecutor(max_workers=workers) as ex:
         for slot, res in zip(slots, ex.map(block_pump_mints, slots)):
             if res is None:

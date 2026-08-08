@@ -1,0 +1,63 @@
+name: ci
+
+# The badge this produces is the public proof that the dossier still holds:
+# every committed artefact regenerates byte-for-byte, the README's figures match
+# the measurements, the shared libraries type-check, the unit tests pass, and the
+# publication gate finds no leak. It runs on every push and pull request.
+#
+# BYTE-EXACT PIN. The --strict byte comparison is pinned to CPython 3.12 and
+# 3.13, on which the committed artefacts reproduce exactly. The code is
+# stdlib-only and runs on 3.9+ (requirements.txt), but two aggregates -- the
+# log-log ATH/MC elasticity (t2) and the mean-based cluster bootstrap CI (m5) --
+# differ in their last ~1e-15 across older CPython/libm builds (3.9-3.11). That
+# is float noise in the final aggregation, not a logic difference: the LCG
+# resampling itself is identical across versions. Rather than assert a
+# cross-version byte-identity that libm does not give, CI pins the interpreters
+# on which "byte for byte" is literally true. See code/README.md, Reproducibility.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # code/ is stdlib-only by design; mypy and pytest are dev-only tools,
+      # never imported by any measurement (run_all.py --deps enforces that).
+      - name: Install dev tools
+        run: python -m pip install --upgrade pip mypy pytest
+
+      - name: Stdlib-only (no undeclared third-party import)
+        run: python code/run_all.py --deps
+
+      - name: Reproduce every committed artefact byte-for-byte
+        run: python code/run_all.py --strict
+
+      - name: README claim ledger (prose == measurement)
+        run: python code/p1_readme_check.py
+
+      - name: Unit tests
+        run: python -m pytest -q
+
+      - name: Type-check the shared libraries (mypy --strict)
+        run: >
+          mypy --strict --config-file mypy.ini
+          code/rpc_client.py code/statlib.py code/splitlib.py code/redact.py
+          code/settings.py code/lib_verif.py code/hlib.py code/r1lib.py
+
+      - name: Publication gate (no secrets; working tree clean)
+        run: python code/check_no_secrets.py --require-clean

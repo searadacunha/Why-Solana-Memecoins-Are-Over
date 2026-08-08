@@ -209,16 +209,11 @@ def sol_usd(ts=None):
 
 
 # --------------------------------------------------------------- stats ------
-def med(v):
-    return st.median(v) if v else None
-
-
-def q(v, p):
-    if not v:
-        return None
-    s = sorted(v)
-    i = min(len(s) - 1, max(0, int(round(p * (len(s) - 1)))))
-    return s[i]
+# med / q / wilson are defined once in statlib.py; kept under their historical
+# names here so the t-series keeps calling common.med / common.wilson unchanged.
+from statlib import median as med  # noqa: E402,F401
+from statlib import quantile as q  # noqa: E402,F401
+from statlib import wilson  # noqa: E402,F401
 
 
 def boot_ci_median(v, B=4000, seed=12345):
@@ -233,17 +228,6 @@ def boot_ci_median(v, B=4000, seed=12345):
         out.append(st.median([v[rnd.randrange(n)] for _ in range(n)]))
     out.sort()
     return out[int(0.025 * B)], out[int(0.975 * B)]
-
-
-def wilson(k, n, z=1.96):
-    """IC95 de Wilson pour une proportion."""
-    if n == 0:
-        return (None, None)
-    p = k / n
-    d = 1 + z * z / n
-    c = (p + z * z / (2 * n)) / d
-    h = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
-    return max(0.0, c - h), min(1.0, c + h)
 
 
 def load_socle():

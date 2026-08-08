@@ -53,6 +53,16 @@ data/trace_origine_hub/
 identity.txt
 wordlist*.txt
 
+# --- HMAC salt for the KYC deposit-address redaction (code/redact.py) ---------
+# Uncommitted on purpose: it is what keeps the RDCT-* label from being an
+# enumeration oracle. Losing it only means the deposit-address label can no
+# longer be regenerated or confirmed; the slur-set redaction is independent.
+redact_salt.txt
+
 __pycache__/
 *.pyc
 .DS_Store
+
+# --- dev tool caches (mypy, pytest) — never part of the dossier ---------------
+.mypy_cache/
+.pytest_cache/

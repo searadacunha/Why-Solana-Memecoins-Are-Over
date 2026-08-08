@@ -539,13 +539,14 @@ def collect(targets=None):
 # agregation
 # --------------------------------------------------------------------------- #
 def wilson(k, n, z=1.96):
-    if not n:
+    """Wilson 95 % interval as a rounded percentage. The interval itself is the
+    single definition in statlib.wilson; this only scales it to percent and
+    rounds for the table."""
+    from statlib import wilson as _wilson_frac
+    lo, hi = _wilson_frac(k, n, z)
+    if lo is None:
         return (None, None)
-    p = k / n
-    d = 1 + z * z / n
-    c = (p + z * z / (2 * n)) / d
-    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (round(100 * max(0.0, c - h), 1), round(100 * min(1.0, c + h), 1))
+    return (round(100 * lo, 1), round(100 * hi, 1))
 
 
 def fisher(a, b, c, d):

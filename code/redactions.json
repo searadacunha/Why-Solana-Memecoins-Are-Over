@@ -45,7 +45,18 @@
   "fef538417dac69f0fed69b730e12056183dae8ecee1a6d8d1c6f41dcfec92ecf": "RDCT-fef538417d",
   "ffb6015767533b253517e6097545c5bb135084824d6afb52940ecf3b15db5cf1": "RDCT-ffb6015767"
  },
- "n_redacted": 43,
+ "map_hmac": {
+  "838bf381fe465e52d53274b26e97d6760085a93394c09f7f4d8dc9825d313ee3": "RDCT-838bf381fe"
+ },
+ "hmac": {
+  "algo": "HMAC-SHA256",
+  "key_source": "uncommitted salt: $REDACT_HMAC_SALT, or redact_salt.txt at the repo root (both git-ignored)",
+  "why": "the single entry here is the author's KYC'd exchange deposit address, redacted for privacy. A plain sha256 map (as used for the slur set) would be an enumeration oracle: an analyst holding candidate deposit addresses could hash each and match the committed map. Keying it by HMAC under a secret salt closes that: without the salt, neither the map key nor the label can be recomputed from a candidate address. The label is HMAC-derived, so it leaks nothing about sha256(address). Only someone holding BOTH the address AND the salt can confirm it.",
+  "scheme_change": "2026-08: this address moved from the plain `map` (label was RDCT-0a350b2ba8, a sha256 prefix) to `map_hmac` (label RDCT-838bf381fe). The old label is retired everywhere."
+ },
+ "n_redacted": 44,
+ "n_redacted_plain": 43,
+ "n_redacted_hmac": 1,
  "n_scanned": 212201,
- "rule": "identifier redacted iff its first 8 characters contain a term of an external hard-slur word list; see code/redact.py"
+ "rule": "TWO schemes. (1) plain SHA-256 in `map`: an identifier is redacted iff its first 8 characters contain a term of an external hard-slur word list (see code/redact.py) -- publicly confirmable by hashing, which is the point for a slur label. (2) salted HMAC-SHA256 in `map_hmac`: one identifier, the author's KYC'd exchange deposit address (see code/expl_ledger.py), redacted for privacy under an uncommitted salt so it is NOT enumerable -- see the `hmac` block above."
 }

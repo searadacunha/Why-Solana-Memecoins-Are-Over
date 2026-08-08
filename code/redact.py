@@ -7,41 +7,61 @@ WHY THIS EXISTS
 ---------------
 Solana addresses and mints are public data, and this dossier publishes them
 unmasked on purpose: masking them would make every claim unverifiable. There
-is one exception. A vanity address is *chosen* by whoever generated it, and a
-handful of identifiers in this corpus were generated to carry a racial slur in
-their first characters. Reproducing those strings in a public repository would
-republish the slur, so they -- and only they -- are replaced by a stable
-neutral label.
+are two exceptions, redacted by two different schemes for two different reasons.
 
-THE RULE (mechanical, applied once, auditable)
-----------------------------------------------
+1. SLUR-VANITY IDENTIFIERS (plain SHA-256).
+   A vanity address is *chosen* by whoever generated it, and a handful of
+   identifiers in this corpus were generated to carry a racial slur in their
+   first characters. Reproducing those strings would republish the slur, so
+   they are replaced by a stable neutral label. The map is committed as
+   sha256(identifier) -> label, which lets anyone who already holds such an
+   address confirm what it became by hashing it -- decency, not secrecy, so
+   public confirmability is a feature and a plain hash is the right tool.
+
+2. THE AUTHOR'S KYC'D EXCHANGE DEPOSIT ADDRESS (salted HMAC-SHA256).
+   This one is redacted for privacy, and a plain sha256 map would defeat the
+   purpose: an analyst holding candidate deposit addresses (shortlisted from
+   the published trade fingerprints) could hash each and match it against the
+   committed map -- an enumeration oracle. It is therefore keyed by
+   HMAC-SHA256(salt, address) under an UNCOMMITTED salt (env REDACT_HMAC_SALT,
+   or redact_salt.txt at the repo root -- both git-ignored). The label is
+   HMAC-derived too, so it leaks nothing about sha256(address). Only someone
+   holding BOTH the address AND the salt can confirm the label; the oracle is
+   closed. See docs/EXPLOITATION.md and code/redactions.json.
+
+THE RULE FOR THE SLUR SET (mechanical, applied once, auditable)
+---------------------------------------------------------------
 An identifier is redacted iff its first 8 characters contain a term from a
 hard-slur word list. The rule is applied by build_redactions.py, which takes
 the word list as an external file: **the list is never committed**, and this
 repository therefore contains neither the offending addresses nor the words
 used to find them.
 
-What IS committed is code/redactions.json: a map from
-sha256(identifier) -> label. That is enough to
-  * apply the substitution to any file (hash each candidate, look it up), and
-  * let any third party who already holds an address confirm what it became,
-    by hashing it themselves,
-without the repository containing a single one of the strings.
+WHAT IS COMMITTED is code/redactions.json:
+  * "map"      : sha256(identifier) -> label       (the slur set)
+  * "map_hmac" : HMAC-SHA256(salt, identifier) -> label   (the KYC address)
+Neither contains a single one of the redacted strings.
 
-Labels are of the form  RDCT-<first 10 hex of sha256>. They contain a hyphen,
-so they can never be mistaken for a base58 address, and they are stable across
-files: grouping, graph and ubiquity computations are unaffected -- a
-substitution that is injective on identifiers leaves every count invariant.
+Labels are of the form  RDCT-<10 hex>. They contain a hyphen, so they can never
+be mistaken for a base58 address, and they are stable across files: a
+substitution injective on identifiers leaves every count invariant.
 
-Redacted identifiers are a rounding error in the corpus (24 of ~91 600
-identifiers, none of them in the operator clusters that the dossier analyses).
+Redacted identifiers are a rounding error in the corpus: 44 of 212 201 scanned
+(43 slur-vanity + 1 KYC deposit address), none of them in the operator clusters
+the dossier analyses.
 """
+from __future__ import annotations
+
+import functools
 import hashlib
+import hmac
 import json
 import os
 import re
+from typing import Any, Optional
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 MAP_PATH = os.path.join(HERE, "redactions.json")
 
 # Base58 alphabet (no 0, O, I, l). The look-around is NOT cosmetic: a Solana
@@ -58,49 +78,97 @@ B58_RE = re.compile(
 LABEL_RE = re.compile(r"^RDCT-[0-9a-f]{10}$")
 
 
-def _load():
+def _load() -> tuple[dict[str, str], dict[str, str]]:
     if not os.path.exists(MAP_PATH):
-        return {}
+        return {}, {}
     with open(MAP_PATH) as f:
-        return json.load(f).get("map", {})
+        d = json.load(f)
+    return d.get("map", {}), d.get("map_hmac", {})
 
 
-MAP = _load()
+MAP, MAP_HMAC = _load()
 
 
-def h(s):
+def _load_salt() -> Optional[bytes]:
+    """The HMAC salt, from $REDACT_HMAC_SALT or redact_salt.txt (both
+    git-ignored). None when absent -- the KYC address then cannot be scrubbed
+    or confirmed on this machine, but the slur set still is (it uses plain
+    sha256), so a clone without the salt loses nothing it is allowed to have."""
+    raw = os.environ.get("REDACT_HMAC_SALT")
+    if not raw:
+        p = os.path.join(ROOT, "redact_salt.txt")
+        if os.path.exists(p):
+            raw = open(p).read().strip()
+    if not raw:
+        return None
+    try:
+        return bytes.fromhex(raw)
+    except ValueError:
+        return raw.encode()
+
+
+_SALT = _load_salt()
+
+
+def h(s: str) -> str:
     return hashlib.sha256(s.encode()).hexdigest()
 
 
-def label_of(s):
-    """Return 'RDCT-xxxxxxxxxx' for a canonically redacted identifier."""
+def hm(s: str) -> Optional[str]:
+    """HMAC-SHA256(salt, s), or None when no salt is available."""
+    if _SALT is None:
+        return None
+    return hmac.new(_SALT, s.encode(), hashlib.sha256).hexdigest()
+
+
+def label_of(s: str) -> str:
+    """Label for a plain-sha256 (slur-set) identifier."""
     return "RDCT-" + h(s)[:10]
 
 
-def apply(s):
+@functools.lru_cache(maxsize=None)
+def _label_for(s: str) -> Optional[str]:
+    """The published label for an identifier under either scheme, or None.
+
+    Memoised: scrubbing the corpus runs this over millions of base58 tokens,
+    the same wallet appearing thousands of times, so a per-identifier cache
+    turns the sha256 (+ HMAC, when a salt is loaded) into a one-off cost per
+    distinct string. MAP / MAP_HMAC / the salt are fixed at import, so the
+    cache is always valid for the life of the process."""
+    lab = MAP.get(h(s))
+    if lab is not None:
+        return lab
+    if MAP_HMAC:
+        hx = hm(s)
+        if hx is not None:
+            return MAP_HMAC.get(hx)
+    return None
+
+
+def apply(s: Any) -> Any:
     """Identifier -> published form. Non-redacted identifiers pass through."""
     if not isinstance(s, str):
         return s
-    return MAP.get(h(s), s)
+    return _label_for(s) or s
 
 
-def is_redacted(s):
+def is_redacted(s: Any) -> bool:
     return isinstance(s, str) and bool(LABEL_RE.match(s))
 
 
-def scrub_text(text):
+def scrub_text(text: str) -> str:
     """Substitute inside arbitrary text (Markdown, logs, JSON as a string)."""
-    if not MAP:
+    if not MAP and not MAP_HMAC:
         return text
-    return B58_RE.sub(lambda m: MAP.get(h(m.group(0)), m.group(0)), text)
+    return B58_RE.sub(lambda m: _label_for(m.group(0)) or m.group(0), text)
 
 
-def scrub(obj):
+def scrub(obj: Any) -> Any:
     """Recursively substitute inside a decoded JSON object, keys included."""
-    if not MAP:
+    if not MAP and not MAP_HMAC:
         return obj
     if isinstance(obj, str):
-        return MAP.get(h(obj), obj)
+        return _label_for(obj) or obj
     if isinstance(obj, list):
         return [scrub(x) for x in obj]
     if isinstance(obj, dict):
@@ -108,8 +176,10 @@ def scrub(obj):
     return obj
 
 
-def stats():
-    return {"n_redacted_identifiers": len(MAP), "map": MAP_PATH}
+def stats() -> dict[str, Any]:
+    return {"n_redacted_identifiers": len(MAP) + len(MAP_HMAC),
+            "n_plain": len(MAP), "n_hmac": len(MAP_HMAC),
+            "salt_present": _SALT is not None, "map": MAP_PATH}
 
 
 if __name__ == "__main__":

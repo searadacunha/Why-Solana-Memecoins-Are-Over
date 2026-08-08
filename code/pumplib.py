@@ -27,7 +27,6 @@ import bisect
 import datetime as _dt
 import gzip
 import json
-import math
 import os
 import statistics
 
@@ -129,29 +128,9 @@ def clusters(caps, gap_s=1800):
 
 
 # ------------------------------------------------------------------ stats
-def median(xs):
-    xs = [x for x in xs if x is not None]
-    return statistics.median(xs) if xs else None
-
-
-def quantile(xs, q):
-    xs = sorted(x for x in xs if x is not None)
-    if not xs:
-        return None
-    i = min(len(xs) - 1, max(0, int(round(q * (len(xs) - 1)))))
-    return xs[i]
-
-
-def wilson(k, n, z=1.96):
-    """IC95 de Wilson pour une proportion. Preferable a l'IC normal des que
-    la proportion approche 0 ou 1, ce qui est le cas partout ici."""
-    if n == 0:
-        return (None, None)
-    p = k / n
-    d = 1 + z * z / n
-    c = p + z * z / (2 * n)
-    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
-    return ((c - h) / d, (c + h) / d)
+# median / quantile / wilson are defined once in statlib.py and re-exported here
+# so the m-series can keep calling P.median / P.wilson unchanged.
+from statlib import median, quantile, wilson  # noqa: E402,F401
 
 
 def bootstrap_median_ci(xs, n_boot=2000, seed=12345, alpha=0.05):

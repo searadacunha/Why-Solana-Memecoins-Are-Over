@@ -25,13 +25,23 @@ USAGE
 -----
     python3 05_trace_origin.py --addr <ADDR> --depth 3 --strategy sample
 
-Nécessite SOLANA_RPC_URL dans l'environnement. Aucune clé n'est stockée dans ce dépôt.
+Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, urllib.request, datetime as dt
-from collections import defaultdict
 
-RPC = os.environ.get("SOLANA_RPC_URL", "")
+import argparse
+import datetime as dt
+import json
+import os
+import sys
+import time
+from collections import defaultdict
+from typing import Optional
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_client  # noqa: E402
+import settings  # noqa: E402
+
 LAMPORTS = 1_000_000_000
 MIN_INFLOW_SOL = 1.0          # en dessous, c'est du bruit opérationnel
 
@@ -50,29 +60,11 @@ SYSTEM = {"11111111111111111111111111111111",
           "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"}
 
 
-def rpc(method, params, tries=4):
-    if not RPC:
-        sys.exit("SOLANA_RPC_URL non defini. Voir l'en-tete du script.")
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    for i in range(tries):
-        try:
-            req = urllib.request.Request(RPC, data=body, headers={
-                "Content-Type": "application/json", "User-Agent": "trace-origin/1.0"})
-            with urllib.request.urlopen(req, timeout=45) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-        except Exception:
-            pass
-        time.sleep(1.2 * (i + 1))
-    return None
+def page(addr: str, before: Optional[str] = None) -> list:
+    return rpc_client.sigs(addr, 1000, before)
 
 
-def page(addr, before=None):
-    return rpc("getSignaturesForAddress", [addr, {"limit": 1000, "before": before}]) or []
-
-
-def deep_signatures(addr, max_pages):
+def deep_signatures(addr: str, max_pages: int) -> tuple:
     """Pagination continue. Rend (signatures triées, genese_atteinte)."""
     out, before = [], None
     for i in range(max_pages):
@@ -91,7 +83,7 @@ def deep_signatures(addr, max_pages):
     return sorted(out, key=lambda s: s.get("blockTime") or 0), False
 
 
-def sampled_signatures(addr, max_pages, keep_per_page=60):
+def sampled_signatures(addr: str, max_pages: int, keep_per_page: int = 60) -> tuple:
     """Échantillonnage : on traverse l'historique par bonds, en gardant un extrait de chaque page.
 
     On ne cherche pas l'exhaustivité mais les zones anciennes, atteintes à coût constant.
@@ -114,7 +106,7 @@ def sampled_signatures(addr, max_pages, keep_per_page=60):
     return sorted(out, key=lambda s: s.get("blockTime") or 0), False
 
 
-def inflows(addr, sigs, max_tx):
+def inflows(addr: str, sigs: list, max_tx: int) -> list:
     """Entrées de SOL notables : [(source, montant, ts, signature)].
 
     Mesure par delta de solde : le financement est souvent obfusqué (fermeture d'un compte wrappé),
@@ -122,8 +114,7 @@ def inflows(addr, sigs, max_tx):
     """
     found, n = [], 0
     for s in sigs[:max_tx]:
-        tx = rpc("getTransaction", [s["signature"],
-                                    {"maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}])
+        tx = rpc_client.tx(s["signature"])
         n += 1
         if not tx:
             continue
@@ -149,7 +140,7 @@ def inflows(addr, sigs, max_tx):
     return found
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--addr", required=True)
     ap.add_argument("--depth", type=int, default=3)
@@ -157,7 +148,7 @@ def main():
     ap.add_argument("--max-pages", type=int, default=150)
     ap.add_argument("--max-tx", type=int, default=600)
     ap.add_argument("--top", type=int, default=3, help="sources majeures suivies par niveau")
-    ap.add_argument("--out", default="../data/split/origin_trace.json")
+    ap.add_argument("--out", default=os.path.join(settings.DATA, "split", "origin_trace.json"))
     a = ap.parse_args()
 
     trace, frontier, seen = [], [a.addr], set()
@@ -207,7 +198,7 @@ def main():
         if not frontier:
             break
 
-    os.makedirs(os.path.dirname(a.out), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     json.dump({"root": a.addr, "strategy": a.strategy, "trace": trace}, open(a.out, "w"), indent=1)
 
     print("\n=== SYNTHESE ===")

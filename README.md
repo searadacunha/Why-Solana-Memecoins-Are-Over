@@ -1,339 +1,200 @@
-# Why Solana memecoins are over
+# Why Solana Memecoins Are Over
 
-**Between October and December 2024 I withdrew 238 989.57 $ from trading pump.fun launches. I
-stopped when the pattern I was trading disappeared, and this repository is the measurement of what
-replaced it.**
+<!-- Set OWNER/REPO to the GitHub slug once pushed; the badge then turns green
+     when the claim ledger, the byte-for-byte reproduction, the tests, the type
+     checks and the publication gate all pass on every push. -->
+[![ci](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
 
-**The pattern.** Before a pump.fun token exists, wallets are created for it — the same day,
-sometimes minutes before. They are funded through **ChangeNOW**, a swap service, which is the point
-beyond which their money is no longer traceable. When the token launches, those wallets buy its
-supply.
+Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
-It was visible only to those who see it. Exploiting it was still a different problem.
+I stopped when the pattern I was exploiting disappeared.
 
-ChangeNOW moves large volumes of SOL out to fresh wallets continuously, most of it routine. Filtered
-to a minimum of **1 SOL** per transfer, one shape stood out from the noise — the
-**same amount landing on several fresh wallets at once**, the split signature. That alone was not a
-trade. The trade began the moment **one of those wallets bought at least 20 million of a token's
-supply on pump.fun** — about **2 %** of it. That threshold was the filter: a ChangeNOW-funded wallet
-buying less than that had no real intention of controlling the token — it read as the dev's own buy,
-not a split wallet worth following. Cross it, and every wallet in the split bought the same size,
-together holding enough of the supply that the NPCs buying in afterward had no influence on the
-price. The rest of the split had not moved yet, and that crossing was the tell that they were about
-to. Position taken there, ahead of the demand the rest of the split was about to create — then it was
-ordinary chart reading, judging how far the run would carry.
+This repository is a measurement of what replaced it.
 
-Splits got rarer as 2024 wore on, but the criterion held: a ChangeNOW-funded wallet buying 2 % of a
-token's supply on pump.fun was still worth selecting on. Why they thinned took longer to understand —
-they were reusing wallets, and reuse meant needing fewer new ones each time.
-
-On a chart that reads as independent buyers arriving one after another. On one launch, nine wallets
-received **the same amount to nine decimal places within 343 seconds**, seven and a half hours
-before the token existed — the split signature, at scale.
-
-My position stayed small on purpose — never big enough to draw attention. It was a clean cut, taken
-inside the rules, not a fight against the operators running the split. That was still more than they
-were willing to share.
-
-That is where the 238 989.57 $ came from, and the receipts are in
-[docs/EXPLOITATION.md](docs/EXPLOITATION.md).
-
-By now, what comes out of ChangeNOW is mostly garbage — wallets funded to be burned on a rug. Enough
-of them exist that the pool runs continuously, reactivated as needed rather than spent once. What
-gets reactivated comes in groups: wallets funded together in the same block, sometimes a year or two
-ago, sometimes just a few months, held that long and then spent as a set. Following them would be
-simple if that were the whole picture, but plenty of decoys get created alongside the real ones.
-Reactivation covers two different plays: a rug that plays out entirely on pump.fun, and the big one —
-a bundle-snipe, where the entire supply is bought inside a single block.
-
-The same co-funding still shows up on almost any token that runs: check the top holders of one that
-reached $1 M+ and most were funded the same day, sometimes the same block. That much is still real —
-it is coordination, not noise. What it still doesn't say is which way the coordination points: the
-same operators stage dumps the same way they stage runs, so co-funding by itself predicts neither.
-
-It no longer works. The supply is now taken in full inside the token's own creation block — 42
-launches out of 42, verified transaction by transaction — so nothing reaches an outside buyer at
-all. The consequences are visible at the scale of the chain: **0.26 %** of pump.fun launches now
-graduate, and Solana's daily network fees have fallen **84 %**, from ~33 000 SOL in January to
-~5 300 in June 2026.[^macro]
-
-Buying into what remains has no measurable expectancy: across fifteen exit policies tested on 196
-tokens and 20 detection clusters, **none** has a positive mean return and none has a 95 %
-cluster-bootstrap interval clearing zero — the cluster unit matters, because tokens detected within
-the same half hour are not independent observations and treating them as such inflates every
-significance test in this domain.
-
-The mechanism that made money in 2024 worked because outsiders could see the accumulation and take
-part in it. Closing that gap removed the participants along with the leak.
-
-**They were already making plenty. They decided to let no one else win. Their greed cost them the
-market.**
-
-[^macro]: Graduation rate and fee decline: [DEXTools, 22 June 2026](https://www.dextools.io/news/pump-fun-graduation-collapse-solana-fees-2026).
-    For scale over the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
-    **71.1 % of all Solana token mints** and **40–67.4 % of all DEX transactions**.
+> **Every figure on this page is checked against the artefacts, by code in this same commit.**
+> `python3 code/p1_readme_check.py` recomputes each one and prints a claim ledger.
+> **It passes: all 22 figures with an artefact behind them reproduce exactly.** A further 15 —
+> network-wide aggregates, third-party reports, the $ANSEM launch, the 2% entry threshold and the
+> Phase-0 seed-capital recollection — have no artefact in this repository and are listed as unsourced
+> rather than quietly asserted. Both lists are itemised
+> in `docs/out/p1_readme_check.json`. Where prose and measurement disagree, the measurement is right.
 
 ---
 
-## Act I — 2024: the pattern, and what it paid
+## Abstract
 
-A new token appears. Several wallets buy it early, one after another. That is what demand looks
-like: independent participants, arriving separately, accumulating supply.
+In 2024, the Solana memecoins that performed followed a repeatable accumulation pattern: fresh wallets created shortly before a token launch, funded through **ChangeNOW**, then accumulating meaningful portions of the supply one after another. Because that accumulation happened in public, outsiders could detect it early enough to participate.
 
-Every one of those wallets was **created the same day as the token** — median **9.6 hours** before
-it existed, and the two on $sumiko were created **24 and 30 minutes** before. They hold nothing else.
-They were funded from a single address: `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, identified
-by independent researchers as a hot wallet of the swap service **ChangeNOW**.[^gw]
+This repository documents how the transition happened — built on thousands of transactions, hundreds of successful launches, and launches **verified by hand, transaction by transaction**.
 
-A swap service breaks the on-chain link between where funds came from and where they land. Push a
-launch's capital through one and the wallets that come out the far side are indistinguishable from
-unrelated buyers.
+---
+
+## Act I — The 2024 Pattern
+
+Before a pump.fun token existed, the wallets for it already did. Typically they were:
+
+- created the same day as the token
+- funded through ChangeNOW
+- holding nothing else
+- buying immediately after launch
+- accumulating meaningful percentages of supply
+
+They were funded from a single address, `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, a hot wallet of the swap service **ChangeNOW**.[^gw] ChangeNOW breaks the on-chain trail, so the wallets appeared unrelated.
 
 [^gw]: A [2025 research study on Solana mixers](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a)
     whose author routed his own test funds through ChangeNOW and observed them arrive at this
     address, and an [earlier public attribution](https://x.com/CrypticZK/status/1616072613356535808)
-    of the same address to the same service.
+    of the same address to the same service. The attribution is external; this repository measures
+    what leaves that address, not who runs it.
 
-**On chain it looks like this.** Nine wallets, created that morning, each receiving *exactly*
-2.976815600 SOL from that address between 07:07:49 and 07:13:32 UTC on 2024-12-13 — **343 seconds**.
-The token they would buy is created seven and a half hours later.
+They weren't. The signal was hidden in the funding: large SOL transfers reaching multiple fresh wallets in **identical amounts down to nine decimals**. Coincidence does not produce that.
 
-Nine decimals. Identical across nine wallets. Before the token existed. That amount is a conversion
-output, not a figure anyone types — and **the same figure appears on a different token thirty-one
-days earlier**, from the same address.
+One case:
 
-The wallets are not discarded afterwards. The ones that could be read kept going — funding fresh
-addresses born on receipt. What got read is a sample; what actually exists likely runs into the
-thousands. The nine paid in that 343-second burst also stop together: the six readable ones make
-their last transaction **on the same day**.
+- 9 wallets
+- all created that morning
+- all funded with exactly **2.976815600 SOL**
+- all funded within **343 seconds**
+- token launched **7.6 hours** later
 
-The split could be read while it was still happening: identify the wallets funded through the
-gateway, wait for one of them to buy its 20-million-token stake, then buy alongside it — small,
-clean, never enough to draw attention. A fixed ladder — 50 % at ×2, tranches at ×5 and ×10 — meant a
-signal arriving at 4 a.m. was taken while I slept.
+Nobody manually types nine identical decimal amounts.
 
-| | |
-|---|---|
-| withdrawn Oct–Dec 2024 | **1 200.12 SOL — 238 989.57 $** at the price on each transfer's own day |
-| across | **312 transfers, 97 trading wallets** |
-| screenshotted executions (a sample; the window holds hundreds) | **19**, from +100 % to **+28 465 %** |
-| the whole window, to Feb 2025 | 246 945.59 $ |
+It was a split.
 
-Receipts and method: **[docs/EXPLOITATION.md](docs/EXPLOITATION.md)**. The mechanism with six worked
-examples and every timestamp: **[docs/PATTERN.md](docs/PATTERN.md)**.
+Once one wallet bought roughly **2% of the supply** (around 20 million tokens), the rest almost always followed — enough confidence to buy alongside them, ahead of the public.
 
-## Act II — the flaw, from the other side
+---
 
-Seen from the operators' position, the 2024 mechanism had one defect: it was slow enough to watch.
-Wallets funded hours ahead, buying in sequence on a public curve. Anyone paying attention could read
-the accumulation and buy alongside it, and every SOL that went to an outsider was one that did not
-go to them.
+## Exploiting the Pattern
 
-But a launch needs outside buyers. The sequence that let them in was the same sequence that created
-the demand to sell into. The leak and the exit liquidity were the same thing.
+As soon as one wallet bought, the others followed. The strategy waited for one configuration: a ChangeNOW-funded wallet buying at least **2% of supply** on a fresh pump.fun launch. Then I bought too — small, **1% of the supply at most**, never large enough to draw attention.
 
-The shift away from it wasn't one release — it started earlier than it became visible and kept
-moving gradually from there. Fewer and fewer of the wallets ChangeNOW funded were the ones actually
-buying — the wallet count kept growing, but more of it sat idle instead of spending. They were
-building a reserve: thousands of wallets, all carrying the same untraceable ChangeNOW origin, held
-rather than spent. Once the reserve was big enough, ChangeNOW was dropped.
+My assumption was that the rest of the coordinated wallets would follow, draining available supply until retail buyers had almost no influence on price.
 
-## Act III — 2026: what replaced it
+After every large gain I moved to a fresh wallet. Being copied would have ended the pattern faster than anything — if everyone piled in alongside me, the edge closed.
 
-The gap was closed: the bundle snipe became the default. **On 42 launches verified transaction by
-transaction, the entire bonding curve is bought inside the token's own creation slot** — 85 SOL,
-79 % of supply, zero curve purchase preceding it in 42 of 42 cases. On a separate frozen sample of 70 tokens that reached ≥ 500 k$,
-**58/70 = 82.9 %** carry the same signature.
+From there the position was read off the operators' own behaviour, trade by trade, off the shape of the curve. A double top says they have set their exit and do not intend to carry it higher, so sell there; take profit into a move rather than chasing it past resistance; a lower high after a parabolic run is exhaustion, not a dip to buy. Only the hours away from the screen were fully automated.
 
-By the time the market opens, capitalisation has gone from ~2 158 $ to ~53 985 $ — **×25 before a
-single outside buyer can transact.** The position leaves at a median **t+17.5 seconds**.
+Results, reconstructed on chain from the deposit address's own balance deltas:
 
-### The same signature, on a launch the whole market is watching right now
+| Metric | Value |
+|---------|------:|
+| Withdrawn, Oct–Dec 2024 | **1,190.6957 SOL** |
+| USD at each transfer's own day price | **$237,137.87** |
+| Incoming transfers, Oct–Dec 2024 | **245** |
+| Distinct sending wallets, Oct–Dec 2024 | **74** |
+| Example trades (a sample; the window holds hundreds) | **19 (+100% to +28,465%)** |
+| Full window to 2 Feb 2025 | **$244,315.58** |
 
-$ANSEM, "The Black Bull", is named after **@blknoiz06** — one of the most-followed traders on
-Solana, whose reputation is the asset the token is built on. According to reports, an anonymous
-developer deployed it on 2026-06-16, spent roughly 6 300 $ on the launch, and sent **650 million
-tokens — 65 % of the supply — to his public wallet**. He accepted it, held 60–66 % of the token, and
-between 27 and 29 June airdropped about **7 M$** of it to Solana users, aiming to take the holder base
-from ~25 000 wallets to a million.[^ansem]
+The two money rows are the strong ones. They are the net of every incoming transfer in the window, winners and losers alike, each valued at the SOL close of its own UTC day rather than at one average price. The wallet is a pass-through, and that is what validates the reading: **1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out to the exchange.
 
-Underneath that, the launch itself: mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`, created
-**2026-06-16 21:05:48 UTC**. Measured with the same frozen script as the 42, paginated to the curve's
-own first signature: **the entire bonding curve, 85.007 SOL, is bought inside the creation slot**
-(426930467), 84.74 of it by one wallet. Two buyers, sixteen signatures, nothing left on the curve by
-the time the launch is visible. The 6 300 $ the developer "spent on the launch" is that buy.
+The two count rows are weaker, and method-dependent. A transfer here is one successful transaction carrying a positive balance delta, so a batched or multi-hop route counts once; a sending wallet is attributed as the counterparty with the largest opposing delta in the same transaction, which bounds the number of distinct senders without decomposing every transfer exactly.
 
-And **both slot-0 wallets were already catalogued in this repository before that token existed**:
+The deposit address is a KYC'd exchange address and is not published: the artefact identifies it only as `RDCT-838bf381fe`, a **salted HMAC** label (not a plain hash of the address, which would let anyone shortlist candidates from the published fingerprints and confirm them by hashing). Confirming it requires both the address and the uncommitted salt, so only I can. The 74 sending wallets are published as a count, not as a list. Most are my own trading wallets, but the count is what the artefact claims and ownership is not: the same heuristic resolves four of the 74 to third-party exchange hot wallets this repository already labels elsewhere, so `docs/out/expl_ledger.json` files any identity behind a sending wallet under `NON_ETABLI`.
+
+Receipts and methodology: `docs/EXPLOITATION.md` and `docs/PATTERN.md`. The reconstruction itself is `code/expl_ledger.py` → `docs/out/expl_ledger.json`.
+
+---
+
+## Act II — Closing the Leak
+
+That was the trade from my side. From the operators' side, the model had one flaw: it was observable. Funding ran hours ahead of launch, accumulation was slow, anyone paying attention could buy beside them — and every SOL earned by an outsider was one they didn't keep.
+
+As their wallet inventory grew into the thousands, ChangeNOW became unnecessary. The public funding stage disappeared.
+
+---
+
+## Act III — 2026: What Replaced It
+
+What replaced it does not shorten the observation window. It removes it.
+
+The new mechanism is the **group snipe**: instead of accumulating publicly, insiders purchase essentially the entire bonding curve in the creation slot itself.
+
+Measured across **42/42 manually verified launches**, every transaction individually checked:
+
+- **85 SOL**
+- approximately **79% of supply**
+- purchased inside the token creation slot
+- zero public bonding-curve purchases beforehand
+
+On a **separate frozen sample** of **70 tokens reaching at least $500k market cap**, **58 (82.9%)** exhibit the same signature.
+
+By the time trading becomes visible, market cap is already around **25×**, public buyers are already late, and insiders typically exit around **17.5 seconds** after launch.
+
+---
+
+## Real-World Example
+
+This signature is now the norm. It appears, for one, on the launch associated with **ANSEM ("TheBlackBull")**, mint `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`, created **2026-06-16 21:05:48 UTC**, creation slot **426930467**.
+
+Measured independently, using the same frozen scripts as the previous 42 launches:
+
+- entire bonding curve purchased in the creation slot — **85.007 SOL**
+- **84.74 SOL** purchased by a single wallet
+- only two buyers
+- sixteen signatures
+- nothing left for public buyers
+
+Both wallets had already been catalogued inside this repository before the token existed:
 
 | wallet | SOL at slot 0 | already in this repo as |
 |---|---|---|
-| `yHCxHBEa…6PRe` | **84.743** | **OP1** — a repeat operator, present on **24 of 282** tokens, explicitly *not* classed as shared infrastructure |
-| `9ryBR3Sn…XLaq` | 0.265 | a **shared-infrastructure sniper**, 5th by ubiquity at **44 of 282** tokens |
+| `yHCxHBEa…6PRe` | **84.743** | a repeat operator on **24 of 282** tokens, explicitly *not* classed as shared infrastructure — `docs/out/m4_infra.json` |
+| `9ryBR3Sn…XLaq` | 0.265 | a **shared-infrastructure sniper**, 5th by ubiquity at **44 of 282** tokens — `docs/out/m4_infra.json` |
 
-A launch that a large part of the market read as memecoin season restarting was executed by the same
-addresses running the mechanism that ended it.
+The alert triggered immediately after creation.[^ansem]
 
 [^ansem]: Deployer, the 650 M transfer and the holding range: [MEXC News](https://www.mexc.com/news/1182542)
     and [Phemex Academy](https://phemex.com/academy/black-bull-ansem-solana-meme-token). The 7 M$
     airdrop and the one-million-holder target: [CryptoBriefing](https://cryptobriefing.com/ansem-airdrops-7m-ansem-memecoin-solana/)
     and [The Defiant](https://thedefiant.io/news/defi/ansem-airdrops-usd7m-of-usdansem-memecoin-in-bid-to-reach-1m-holders).
-
-No sequence left to watch, because there is no sequence. And what follows is arithmetic:
-
-- across **15 exit policies** on 196 tokens, the mean is negative in **15 of 15**, and no policy has
-  a 95 % confidence interval above zero;
-- **21.3 %** of tokens have already peaked when they first become visible; **50 %** within 120 s;
-- entering after the snipe returns **0.35× at +1 h** and **0.08× at +24 h**.
-
-A market in which no measurable strategy returns anything does not keep its participants. The
-chain-level figures follow: graduation rate **0.26 %**, Solana network fees **−84 %**, 33 000 SOL a
-day down to 5 300.
-
-The curve was taken in full so that none of it would be shared. What went with it was the buyer it
-had to be sold to.
-
-**The before-and-after runs on the same instrument.** The ladder that returned 238 989.57 $ — 50 % at
-×2, tranches at ×5 and ×10 — is unchanged in `code/exit_ladder.py`. Applied to 2026 launches it has
-**no positive expectancy under any of the fifteen policies tested**. The strategy did not decay. Its
-counterparty was removed.
-
-That is the answer to the title. Not a crash and not a rotation of narratives: the extraction was
-optimised to the point where there was nothing left to extract from — including for whoever
-optimised it.
-
-Who that is stays an open question. The chain gives up addresses and their history — OP1 on 24
-tokens, the infrastructure snipers on 44 and 99 and 165 — and stops there. Millions of dollars move
-through ChangeNOW every day, and for nearly all of it the wallets on the other side belong to nobody
-in particular. Whether the ones behind this specific mechanism trace back to one operation, several,
-or nothing more than coincidence is not something this repository can answer, and it does not
-pretend to.
+    The two wallet rows are measured in this repository (`docs/out/m4_infra.json`); the slot-0 SOL
+    amounts are not — no artefact of this repository covers this mint, and `code/p1_readme_check.py`
+    lists them as unsourced. The mint and slot are published here so that the claim is falsifiable.
 
 ---
 
-## Hypotheses tested to destruction: [docs/PITFALLS.md](docs/PITFALLS.md)
+## Why Solana Memecoins Are Finished
 
-Fifteen cards, each one a claim this project held, the test built to break it, and what was left
-afterwards. **Eleven of them died.**
+In 2024, outsiders could observe accumulation, and that observation created the opportunity. Today, nothing reaches the public: across **42 out of 42** verified launches, the full pump.fun supply is purchased inside the creation block itself. Only insiders participate. Everyone else buys after the move.
 
-Three worth reading, because all three killed something I wanted to be true:
+The aggregates agree:
 
-- **P13 — the detector was measuring nothing.** Its most intuitive criterion, *these early buyers
-  share a private funder*, was carrying the headline result. Giving it a null distribution — pool
-  the control wallets, draw random groups of forty, run the criterion unchanged — showed it fires on
-  **88.9 %** of groups that were never coordinated at all, and 99.5 % of groups restricted to
-  wallets whose history could be read to the end. A criterion that fires on nine random groups in
-  ten cannot enter a verdict. Retired, and every token recounted without it.
-- **P14 — the control group answered a different question.** With that criterion gone the signal
-  still separated targets from controls at p = 0.0007. The controls were all *dead* tokens; every
-  target had graduated. Two things differed at once, and the design could not say which the p-value
-  belonged to. Against a second control group of *graduated* tokens from the same window: **p =
-  0.44.** It had been measuring success, not coordination.
-- **P15 — a clean number produced by a broken connection.** A scan returned `0/14 tokens carry the
-  pattern`. It was a wrong hostname, swallowed as an empty answer. What caught it was arithmetic,
-  not debugging: a graduated curve has hundreds of transactions by definition, so zero buyers on a
-  curve reporting 587 is a contradiction rather than a low number.
+- only **0.26%** of pump.fun tokens now graduate
+- Solana daily network fees fell roughly **84%**, from approximately **33,000 SOL/day** to roughly **5,300 SOL/day** by June 2026[^macro]
 
-### Is there still a way to win?
+Solana, which runs in large part on memecoin activity, has shed billions in market cap as a result — people left memecoins because they were tired of no longer being able to win.
 
-That question gets its own tests, because it is the one that decides whether any of this is
-actionable. Fifteen exit policies on 196 tokens and 20 detection clusters; entry timed at the snipe,
-after it, and at every horizon out to 24 hours; the null distribution of the *best* of 38 policies,
-because picking the winner from a search is not the same as finding one.
+[^macro]: Graduation rate and fee decline: [DEXTools, 22 June 2026](https://www.dextools.io/news/pump-fun-graduation-collapse-solana-fees-2026).
+    These are network-wide aggregates from an outside source; no script in this repository computes
+    them, and `code/p1_readme_check.py` lists both as unsourced by the measurements here.
+    For scale over the period this study covers, a Q4-2024 academic analysis put pump.fun at up to
+    **71.1% of all Solana token mints** and **40–67.4% of all DEX transactions**.
 
-**Nothing clears zero.** Not one policy, not one horizon, not the best-of after correcting for the
-search. Entering post-snipe returns 0.35× at +1 h and 0.08× at +24 h, and 21.3 % of tokens have
-already peaked before an outsider can see them.
+The mechanism that made money in 2024 worked because outsiders could still join; closing that loophole removed the outsiders. The memecoin season didn't end because traders became worse. It ended because participation became impossible.
 
-The answer is no, and the work to establish that is the same work that found the pattern in the
-first place. Knowing a thing is finished is worth as much as knowing it started.
-
-There is also a **[What did not reproduce](docs/PITFALLS.md#what-did-not-reproduce)** section for
-figures in the project's own notes that could not be re-derived from the published data. They are
-recorded as unreproduced rather than quietly dropped.
-
-> **Vocabulary.** *The Matrix*, where it appears, names the coordinated infrastructure observed on
-> chain — addresses sharing funding origins and execution patterns. It labels a measured structure,
-> never an actor. Every address and amount quoted is a public technical identifier.
+The public wasn't outcompeted. It was optimized out of the order flow.
 
 ---
 
-## The measurements behind the story
+## Author
 
-Acts I and III quote the headline figures. The full versions, with their `n`, their confidence
-intervals and the attacks each one had to survive, are in
-[docs/RESULTATS.md](docs/RESULTATS.md) and [docs/PATTERN.md](docs/PATTERN.md). Two results deserve
-their own place here, because both cut against the story rather than for it.
+**Benjamin Da Cunha.** This is published under my name on purpose. The commit history is authored under it, the `teamdacunha` referral handle is left visible on the trade screenshots in `data/screens/trades/`, and the **$237,137.87** reconstructed on chain in the deposit ledger is mine — commits, handle and money are the same person, and I am not anonymising any of it. The only thing redacted is the KYC'd exchange deposit address, behind a salted-HMAC label, because an exchange address is an attack surface, not a signature. I do not present myself as a generic engineer: I find and exploit patterns, and this repository is the evidence, checked line by line by the code beside it.
 
-### Operator clusters — and what they are not
-
-A token–token graph built on shared wallets is dominated by 9 shared-infrastructure addresses.
-Removing them collapses the giant component from **180/282 to 57/282**. What remains is 6 disjoint
-clusters covering 76/282 tokens, with intra-cluster wallet reuse of 0.90–1.00 against a **0.019**
-base rate.
-
-Then the result argues against itself. Cluster membership does **not** predict how high a token
-goes (p = 1.000), and clustered tokens perform *below* the baseline — 0.130 against 0.213 on tokens
-peaking above 300 k$. Detecting a coordinated launch is a **negative** signal for a buyer, not an
-edge. Two clusters that share no wallet and no token nonetheless share a byte-level execution
-fingerprint: that is a shared tool, not a shared identity, and the repository says so rather than
-counting them as one operator.
-
-### Cost to a buyer — every exit policy loses
-
-Across **15 exit policies** on 196 tokens and 20 clusters, the mean is negative in **15 of 15**, and
-no policy has a 95 % cluster-bootstrap confidence interval above zero. 21.3 % of tokens (n = 1 243)
-have already peaked at first external visibility; 50 % within 120 seconds. Post-snipe entry returns
-0.35× at +1 h and 0.08× at +24 h.
-
-There is no strategy in this repository. The measurement says there is nothing to extract, and that
-result is the one that survived the most attacks.
+For the record, and outside the measured perimeter: I started from roughly **$400** of starting capital, and my first trade on this pattern staked **1-2 SOL** and closed near **$2,000**. That is a Phase-0 recollection from before the 2024-10 window the ledger measures, and no artefact here reconstructs it — a deposit ledger sees proceeds landing on the exchange, not the buys that produced them. So `p1_readme_check.py` lists both figures as unsourced, exactly like every other number without an artefact behind it: the story is mine to tell, but only the measured figures are asserted as measured.
 
 ---
 
-## Reproducing it
+## Repository Structure
 
-Stdlib-only Python 3.9+. No install step, no credential in any file, relative paths throughout.
-
-```bash
-python3 code/run_all.py --strict
-```
-
-That runs every offline measurement — no API key, no network, ~20 s — and then **byte-compares each
-regenerated table and JSON against the committed one**. A green run means the numbers in `docs/`
-are what this code produces from this data today, not what it produced on some earlier state of
-either.
-
-Measurements that need the chain are listed and skipped unless a Helius key is present:
-
-```bash
-export HELIUS_API_KEYS=key1[,key2]
-python3 code/run_all.py --with-net
-```
-
-Before any push, the publication gate:
-
-```bash
-python3 code/check_no_secrets.py --identity identity.txt
-```
-
-Seven classes of leak — keys, credential files, local paths, personal handles, bot tokens,
-unsubstituted redactions, oversized data — each with a mechanical rule. The point is not that a
-scanner proves a repository clean. The point is that *"I checked"* becomes a command with an exit
-code instead of an assertion.
-
----
-
-## Repository map
-
-| path | what is in it |
-|---|---|
-| [`docs/PITFALLS.md`](docs/PITFALLS.md) | fifteen claims, the test built to break each one, and what survived |
-| [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) | definitions, populations, validation protocol, declared limits |
-| [`docs/RESULTATS.md`](docs/RESULTATS.md) | the 2026 measurements in full, with an English summary at the top |
-| [`docs/PATTERN.md`](docs/PATTERN.md) | the funding dispatch, token by token, with every burst listed |
-| [`docs/EXPLOITATION.md`](docs/EXPLOITATION.md) | trading it: signal, automation, exit ladder, 19 receipts, on-chain totals |
-| [`docs/SPLIT_PHASE1.md`](docs/SPLIT_PHASE1.md) | the 2024–2025 split: targets, two control groups, null model |
-| [`code/`](code/) | every measurement, one script per result — see [`code/README.md`](code/README.md) |
-| [`data/`](data/) | derived data, committed; network caches are git-ignored and re-fetchable |
-| [`figures/`](figures/) | regenerated by `code/f_figures_resultats.py` |
-
+| Path | Description |
+|------|-------------|
+| `docs/PITFALLS.md` | Fifteen competing explanations, the tests designed to break each one, and what survived |
+| `docs/METHODOLOGY.md` | Definitions, populations, validation protocol and declared limitations |
+| `docs/RESULTATS.md` | Complete 2026 measurements with an English executive summary |
+| `docs/PATTERN.md` | Funding distributions token by token with every detected burst |
+| `docs/EXPLOITATION.md` | Trading methodology, automation, exit strategy, receipts and on-chain totals |
+| `docs/SPLIT_PHASE1.md` | 2024–2025 split analysis with controls and null models |
+| `code/` | One script per measurement (see `code/README.md`) |
+| `data/` | Versioned derived datasets; network caches are ignored and reproducible |
+| `figures/` | Figures regenerated by `code/f_figures_resultats.py` |
