@@ -14,43 +14,34 @@ USAGE
 -----
     python3 04_early_buyers_funding.py --mint <MINT> --created 2024-11-22 --n-early 40
 
-Nécessite SOLANA_RPC_URL dans l'environnement. Aucune clé n'est stockée dans ce dépôt.
+Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, urllib.request, datetime as dt
 
-RPC = os.environ.get("SOLANA_RPC_URL", "")
+import argparse
+import datetime as dt
+import json
+import os
+import sys
+import time
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_client  # noqa: E402
+import settings  # noqa: E402
+from splitlib import find_splits  # noqa: E402
+
 LAMPORTS = 1_000_000_000
-MIN_SOL, MAX_SOL = 0.5, 50.0     # plus large ici : on ne connaît pas le calibre de l'époque
-REL_TOL = 1e-4
-WINDOW_S = 3600
-MIN_CLUSTER = 3
+# Bande d'entrées plus large ici : on ne connaît pas le calibre de l'époque. Ce filtre local
+# reste ; le regroupement (REL_TOL / WINDOW_S / MIN_CLUSTER) vit désormais dans splitlib.
+MIN_SOL, MAX_SOL = 0.5, 50.0
 
 
-def rpc(method, params, retries=4):
-    if not RPC:
-        sys.exit("SOLANA_RPC_URL non defini.")
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    for i in range(retries):
-        try:
-            req = urllib.request.Request(RPC, data=body, headers={
-                "Content-Type": "application/json", "User-Agent": "early-buyers/1.0"})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-        except Exception:
-            pass
-        time.sleep(1.5 * (i + 1))
-    return None
-
-
-def oldest_signatures(addr, stop_ts, max_pages=400):
+def oldest_signatures(addr: str, stop_ts: int, max_pages: int = 400) -> list:
     """Pagine jusqu'à atteindre stop_ts. Indispensable : une pagination bornée trop court ne
     remonte jamais à la création sur une adresse active, et fait conclure à tort."""
     out, before = [], None
     for i in range(max_pages):
-        page = rpc("getSignaturesForAddress", [addr, {"limit": 1000, "before": before}]) or []
+        page = rpc_client.sigs(addr, 1000, before)
         if not page:
             break
         out.extend(page)
@@ -67,7 +58,7 @@ def oldest_signatures(addr, stop_ts, max_pages=400):
     return sorted(out, key=lambda s: s.get("blockTime") or 0)
 
 
-def early_buyers(mint, created_ts, n_early, window_h=48):
+def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -> tuple:
     """Signataires des premières transactions touchant le mint."""
     sigs = oldest_signatures(mint, created_ts - 3600)
     if not sigs:
@@ -79,8 +70,7 @@ def early_buyers(mint, created_ts, n_early, window_h=48):
     for s in early:
         if len(order) >= n_early:
             break
-        tx = rpc("getTransaction", [s["signature"],
-                                    {"maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}])
+        tx = rpc_client.tx(s["signature"])
         if not tx:
             continue
         try:
@@ -95,7 +85,7 @@ def early_buyers(mint, created_ts, n_early, window_h=48):
     return order, t0
 
 
-def all_signatures(addr, max_pages=60):
+def all_signatures(addr: str, max_pages: int = 60) -> tuple:
     """TOUTES les signatures d'une adresse, de la plus ancienne à la plus récente.
 
     ⚠️ Ne pas borner cette pagination trop court. Le financement initial d'un portefeuille se trouve
@@ -105,7 +95,7 @@ def all_signatures(addr, max_pages=60):
     """
     out, before, complete = [], None, False
     for _ in range(max_pages):
-        page = rpc("getSignaturesForAddress", [addr, {"limit": 1000, "before": before}]) or []
+        page = rpc_client.sigs(addr, 1000, before)
         if not page:
             complete = True
             break
@@ -118,7 +108,7 @@ def all_signatures(addr, max_pages=60):
     return sorted(out, key=lambda s: s.get("blockTime") or 0), complete
 
 
-def funding_events(wallet):
+def funding_events(wallet: str) -> list:
     """Entrées de SOL notables d'un portefeuille, mesurées par delta de solde.
 
     On lit les 40 PREMIÈRES transactions de son existence : c'est là que se trouve son financement.
@@ -129,8 +119,7 @@ def funding_events(wallet):
               flush=True)
     out = []
     for s in sigs[:40]:
-        tx = rpc("getTransaction", [s["signature"],
-                                    {"maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}])
+        tx = rpc_client.tx(s["signature"])
         if not tx:
             continue
         try:
@@ -145,40 +134,12 @@ def funding_events(wallet):
     return out
 
 
-def find_splits(funding):
-    rows = sorted([(w, a, t) for w, lst in funding.items() for a, t in lst], key=lambda r: r[1])
-    clusters, used = [], set()
-    for i, (w, amt, ts) in enumerate(rows):
-        if i in used:
-            continue
-        grp = [(i, w, amt, ts)]
-        for j in range(i + 1, len(rows)):
-            if j in used:
-                continue
-            w2, a2, t2 = rows[j]
-            if abs(a2 - amt) > amt * REL_TOL:
-                break
-            if w2 != w and abs(t2 - ts) <= WINDOW_S:
-                grp.append((j, w2, a2, t2))
-        wallets = {g[1] for g in grp}
-        if len(wallets) >= MIN_CLUSTER:
-            for g in grp:
-                used.add(g[0])
-            times = [g[3] for g in grp]
-            clusters.append({"amount_sol": round(amt, 9), "n_wallets": len(wallets),
-                             "wallets": sorted(wallets),
-                             "span_seconds": max(times) - min(times),
-                             "date": dt.datetime.fromtimestamp(min(times), dt.UTC)
-                                       .strftime("%Y-%m-%d %H:%M")})
-    return sorted(clusters, key=lambda c: -c["n_wallets"])
-
-
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--mint", required=True)
     ap.add_argument("--created", required=True, help="date de creation approx., AAAA-MM-JJ")
     ap.add_argument("--n-early", type=int, default=40)
-    ap.add_argument("--out", default="../data/split/early_buyers.json")
+    ap.add_argument("--out", default=os.path.join(settings.DATA, "split", "early_buyers.json"))
     a = ap.parse_args()
 
     created_ts = int(dt.datetime.strptime(a.created, "%Y-%m-%d")
@@ -193,7 +154,7 @@ def main():
         print(f"  [{k}/{len(buyers)}] {w[:14]}… {len(funding[w])} entrees", flush=True)
 
     clusters = find_splits(funding)
-    os.makedirs(os.path.dirname(a.out), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     json.dump({"mint": a.mint, "first_tx_ts": t0, "n_early_buyers": len(buyers),
                "n_clusters": len(clusters), "clusters": clusters,
                "funding": {w: [[round(x, 9), t] for x, t in v] for w, v in funding.items()}},

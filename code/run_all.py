@@ -19,6 +19,7 @@ their committed outputs are what the offline scripts consume.
 """
 import argparse
 import filecmp
+import glob
 import os
 import shutil
 import subprocess
@@ -31,6 +32,11 @@ import settings  # noqa: E402
 
 # (script, needs, one-line description)
 #   needs: "" offline | "net" Helius key | "priv" unpublished corpus
+#          | "priv-addr" the unpublished deposit address ($EXPL_LEDGER_ADDR) AND
+#            the network: a Helius key on the first run, after which data/cache/
+#            is enough (the address is still required -- it is what the cached
+#            transactions are read against). Two conditions, so two skip
+#            reasons: a clean clone is told which one it is missing.
 PLAN = [
     ("p0_pitfalls_check.py", "", "recompute every figure quoted in docs/PITFALLS.md"),
     ("m1_corpus.py", "", "corpus perimeter: what is in it, what was dropped and why"),
@@ -51,12 +57,17 @@ PLAN = [
     ("a5_author_pattern.py", "", "presence test of the funding-dispatch pattern, token by token"),
     ("a6_gateway_chains.py", "", "dated chains: swap gateway -> distributor -> fresh wallets"),
     ("a7_cross_token_links.py", "", "are the per-token operations linked to each other?"),
-    ("exit_ladder.py", "", "the exit ladder actually used, stated as executable policy"),
+    ("exit_ladder.py", "", "a mechanical exit policy, stated as executable code and measured"),
+    ("a9_g2y_prelaunch.py", "", "2024 pre-launch funding burst: amounts, span, delay to creation"),
+    # last of the offline block: it consumes the committed outputs of all the others
+    ("p1_readme_check.py", "", "recompute every figure quoted in README.md"),
     ("a8_wallet_horde.py", "net", "what the funded wallets do AFTER the trade: die, or spawn"),
     ("v05_creation_block.py", "net", "creation-slot buy block, non-circular (needs the RPC cache)"),
     ("v06_curve_ladder.py", "net", "curve ladder: SOL spent, share of supply"),
     ("fetch_sol_usd.py", "net", "SOL/USDC hourly series (no key, GeckoTerminal)"),
     ("fetch_gt_ohlcv.py", "net", "per-token OHLCV (no key, GeckoTerminal)"),
+    ("expl_ledger.py", "priv-addr", "deposit-wallet ledger: SOL landed 2024-10..2025-02, valued per transfer-day"),
+    ("make_public_data.py", "priv", "builds data/ from the raw corpus; published so the reduction is auditable"),
     ("v01_corpus.py", "priv", "corpus reconciliation against the raw capture files"),
     ("v02_fleets.py", "priv", "wallet fleets in the creation window"),
     ("v03_onchain_slot.py", "priv", "on-chain re-read of the creation slot"),
@@ -72,8 +83,35 @@ PLAN = [
     ("f_signature_gros_tokens.py", "fig", "redraw the creation-signature figure (matplotlib)"),
 ]
 
+# docs/out/ is in here, so docs/out/expl_ledger.json is byte-compared like every
+# other artefact: on a machine holding data/cache/ the ledger reconstruction is
+# reproducible offline (same posture as the v0* chain scripts), and a re-run
+# that changed a figure would fail --strict rather than pass unnoticed.
 ARTEFACT_DIRS = [settings.TABLES, settings.OUT,
-                 os.path.join(settings.DATA, "cout_acheteur")]
+                 os.path.join(settings.DATA, "cout_acheteur"),
+                 os.path.join(settings.DATA, "adverse")]
+
+# Individual committed artefacts written by offline PLAN scripts that live
+# outside the ARTEFACT_DIRS above; byte-compared the same way under --strict.
+# Listed as files (not dirs) so we cover exactly these and do not drag in the
+# read-only siblings that share their directory (e.g. the network/priv-built
+# JSONs alongside hrs6_synthese.json in data/split/).
+ARTEFACT_FILES = [
+    os.path.join(settings.DATA, "split", "hrs6_synthese.json"),
+    os.path.join(settings.DATA, "t2_x2_par_prix_entree.json"),
+    os.path.join(settings.DATA, "t3_ath_avant_detection.json"),
+]
+
+
+def expl_cache_ready():
+    """True when data/cache/ already holds the deposit-ledger fetches.
+
+    expl_ledger.py then re-runs with no key and no network -- but still with
+    $EXPL_LEDGER_ADDR, which is what the cached transactions are read against.
+    The cache is git-ignored (raw chain mirror), so this is False on a clean
+    clone and the script is skipped with the network reason, not run and failed.
+    """
+    return bool(glob.glob(os.path.join(settings.CACHE, "expl_sigs_*.json")))
 
 
 def snapshot(dst):
@@ -81,6 +119,11 @@ def snapshot(dst):
         if os.path.isdir(d):
             shutil.copytree(d, os.path.join(dst, os.path.basename(d)),
                             dirs_exist_ok=True)
+    for f in ARTEFACT_FILES:
+        if os.path.isfile(f):
+            dstf = os.path.join(dst, "_files", os.path.relpath(f, settings.ROOT))
+            os.makedirs(os.path.dirname(dstf), exist_ok=True)
+            shutil.copy2(f, dstf)
 
 
 def compare(snap):
@@ -93,6 +136,12 @@ def compare(snap):
             a, b = os.path.join(base, n), os.path.join(d, n)
             if not os.path.exists(b) or not filecmp.cmp(a, b, shallow=False):
                 changed.append(os.path.relpath(b, settings.ROOT))
+    for f in ARTEFACT_FILES:
+        a = os.path.join(snap, "_files", os.path.relpath(f, settings.ROOT))
+        if not os.path.isfile(a):
+            continue
+        if not os.path.exists(f) or not filecmp.cmp(a, f, shallow=False):
+            changed.append(os.path.relpath(f, settings.ROOT))
     return changed
 
 
@@ -152,6 +201,7 @@ def main():
     if a.list:
         for name, need, desc in PLAN:
             tag = {"": "offline", "net": "network", "priv": "raw corpus",
+                   "priv-addr": "addr+net",
                    "fig": "figures"}[need]
             print("  %-32s [%-10s] %s" % (name, tag, desc))
         print("\n  offline = data/ only, no key, no network.")
@@ -159,6 +209,7 @@ def main():
 
     has_key = bool(settings.helius_keys())
     has_priv = bool(settings.private_root())
+    has_addr = bool(settings.expl_ledger_addr(required=False))
 
     snap = tempfile.mkdtemp(prefix="runall_") if a.strict else None
     if snap:
@@ -169,6 +220,13 @@ def main():
         if need == "priv" and not has_priv:
             skipped.append((name, "needs $PUMP_PRIVATE_ROOT"))
             continue
+        if need == "priv-addr":
+            if not has_addr:
+                skipped.append((name, "needs $EXPL_LEDGER_ADDR (never committed)"))
+                continue
+            if not (a.with_net or has_key or expl_cache_ready()):
+                skipped.append((name, "needs $HELIUS_API_KEYS or a populated data/cache/"))
+                continue
         if need == "fig" and not a.with_figures:
             skipped.append((name, "needs --with-figures (matplotlib)"))
             continue

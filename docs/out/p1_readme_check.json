@@ -1,0 +1,423 @@
+{
+ "claims": [
+  {
+   "attendu": "237,137.87",
+   "chemin": "derive:expl_usd_bons_mois",
+   "niveau": "MESURE",
+   "note": "the headline occurrence of the same figure as the table row below; it gets its own row because a substring check cannot see a second occurrence, and the front page is what most people read",
+   "section": "0 Front page",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "I withdrew **$237,137.87** trading memecoins",
+   "texte_fr": "j'ai retir\u00e9 **237 137,87 $**",
+   "valeur_artefact": "237,137.87"
+  },
+  {
+   "attendu": 9,
+   "chemin": "cas_reference/n_portefeuilles",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "1 Act I",
+   "source": "docs/out/a9_g2y_prelaunch.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "- 9 wallets",
+   "texte_fr": "",
+   "valeur_artefact": 9
+  },
+  {
+   "attendu": "2.976815600",
+   "chemin": "cas_reference/montant_sol",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "1 Act I",
+   "source": "docs/out/a9_g2y_prelaunch.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "all funded with exactly **2.976815600 SOL**",
+   "texte_fr": "",
+   "valeur_artefact": "2.976815600"
+  },
+  {
+   "attendu": 343,
+   "chemin": "cas_reference/etendue_s",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "1 Act I",
+   "source": "docs/out/a9_g2y_prelaunch.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "all funded within **343 seconds**",
+   "texte_fr": "",
+   "valeur_artefact": 343
+  },
+  {
+   "attendu": 7.6,
+   "chemin": "cas_reference/delai_creation_h_depuis_dernier_credit",
+   "niveau": "MESURE",
+   "note": "delay from the LAST credit; from the first one a9 measures 7.7 h",
+   "section": "1 Act I",
+   "source": "docs/out/a9_g2y_prelaunch.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "token launched **7.6 hours** later",
+   "texte_fr": "",
+   "valeur_artefact": 7.6
+  },
+  {
+   "attendu": "**1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out",
+   "chemin": "derive:expl_passthrough",
+   "niveau": "MESURE",
+   "note": "the consistency check that makes the totals readable: a deposit address holds nothing, so in and out must meet. They do, to 0.0098 SOL. The derive recomputes that residual from the two sides rather than trusting the artefact's own field",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "**1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out",
+   "texte_fr": "**1 226,4663 SOL** sont arriv\u00e9s sur la fen\u00eatre compl\u00e8te contre **1 226,4566 SOL** balay\u00e9s",
+   "valeur_artefact": "**1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out"
+  },
+  {
+   "attendu": 74,
+   "chemin": "good_months_2024_10_12/distinct_senders",
+   "niveau": "INFERE",
+   "note": "sender = the counterparty with the most negative delta in the same transaction. A heuristic, and named as one in the artefact's INFERE block: it bounds the number of senders, it is not an exact transfer-level decomposition. The addresses are published as a count, never as a list; ownership is not claimed, since the same heuristic resolves four of the 74 to third-party exchange hot wallets this repository labels elsewhere",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| Distinct sending wallets, Oct\u2013Dec 2024 | **74** |",
+   "texte_fr": "| Portefeuilles exp\u00e9diteurs distincts, oct.\u2013d\u00e9c. 2024 | **74** |",
+   "valeur_artefact": 74
+  },
+  {
+   "attendu": "19 (+100% to +28,465%)",
+   "chemin": "derive:trades_plage",
+   "niveau": "MESURE (on the screenshot sample, not on the book)",
+   "note": "",
+   "section": "2 Exploiting the pattern",
+   "source": "data/screens/trades/index.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| Example trades (a sample; the window holds hundreds) | **19 (+100% to +28,465%)** |",
+   "texte_fr": "| Trades d'exemple (un \u00e9chantillon ; la fen\u00eatre en compte des centaines) | **19 (de +100 % \u00e0 +28 465 %)** |",
+   "valeur_artefact": "19 (+100% to +28,465%)"
+  },
+  {
+   "attendu": "244,315.58",
+   "chemin": "derive:expl_usd_fenetre",
+   "niveau": "MESURE",
+   "note": "2024-10-01 to 2025-02-02 exclusive, the bound checked by the derive against the artefact's own window_utc. Replaces the 246 945.59 asserted before",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| Full window to 2 Feb 2025 | **$244,315.58** |",
+   "texte_fr": "| Fen\u00eatre compl\u00e8te jusqu'au 2 f\u00e9vrier 2025 | **244 315,58 $** |",
+   "valeur_artefact": "244,315.58"
+  },
+  {
+   "attendu": 245,
+   "chemin": "good_months_2024_10_12/n_transfers",
+   "niveau": "INFERE",
+   "note": "one successful transaction with a positive delta = one transfer. Batched or multi-hop routes are not unbundled, so this is weaker than the SOL it sums to -- the money does not depend on how the transfers are counted",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| Incoming transfers, Oct\u2013Dec 2024 | **245** |",
+   "texte_fr": "| Transferts entrants, oct.\u2013d\u00e9c. 2024 | **245** |",
+   "valeur_artefact": 245
+  },
+  {
+   "attendu": "237,137.87",
+   "chemin": "derive:expl_usd_bons_mois",
+   "niveau": "MESURE",
+   "note": "each transfer valued at the Binance SOLUSDT close of its own UTC day, never at a window average; expl_ledger publishes missing_price_days and raises rather than skipping a day",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| USD at each transfer's own day price | **$237,137.87** |",
+   "texte_fr": "| USD au prix du jour propre \u00e0 chaque transfert | **237 137,87 $** |",
+   "valeur_artefact": "237,137.87"
+  },
+  {
+   "attendu": "1,190.6957",
+   "chemin": "derive:expl_sol_bons_mois",
+   "niveau": "MESURE",
+   "note": "sum of the deposit address's own positive balance deltas on successful transactions, the three 2024 months; sweeps out to the exchange are reported separately and excluded. Replaces the 1 200.12 asserted before, which no on-chain read produced",
+   "section": "2 Exploiting the pattern",
+   "source": "docs/out/expl_ledger.json",
+   "statut": "OK",
+   "statut_fr": "OK",
+   "texte": "| Withdrawn, Oct\u2013Dec 2024 | **1,190.6957 SOL** |",
+   "texte_fr": "| Retir\u00e9, oct.\u2013d\u00e9c. 2024 | **1 190,6957 SOL** |",
+   "valeur_artefact": "1,190.6957"
+  },
+  {
+   "attendu": "58 (82.9%)",
+   "chemin": "derive:v09_signature",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "data/v09_signature_gros_tokens.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "**58 (82.9%)** exhibit the same signature",
+   "texte_fr": "",
+   "valeur_artefact": "58 (82.9%)"
+  },
+  {
+   "attendu": 70,
+   "chemin": "n",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "data/v09_signature_gros_tokens.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "**70 tokens reaching at least $500k market cap**",
+   "texte_fr": "",
+   "valeur_artefact": 70
+  },
+  {
+   "attendu": 85,
+   "chemin": "agregats/sol_bloc_med",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "data/v05_creation_block.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "- **85 SOL**",
+   "texte_fr": "",
+   "valeur_artefact": 85
+  },
+  {
+   "attendu": 79,
+   "chemin": "agregats/part_supply_med",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "data/v05_creation_block.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "- approximately **79% of supply**",
+   "texte_fr": "",
+   "valeur_artefact": 79
+  },
+  {
+   "attendu": "42/42",
+   "chemin": "derive:v05_42_42",
+   "niveau": "MESURE",
+   "note": "launches with zero small buyer before the block / total",
+   "section": "3 Act III",
+   "source": "data/v05_creation_block.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "Measured across **42/42 manually verified launches**",
+   "texte_fr": "",
+   "valeur_artefact": "42/42"
+  },
+  {
+   "attendu": 17.5,
+   "chemin": "agregats/delai_transfert_s_med",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "data/v07_exit.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "insiders typically exit around **17.5 seconds** after launch",
+   "texte_fr": "",
+   "valeur_artefact": 17.5
+  },
+  {
+   "attendu": 25,
+   "chemin": "multiple_median",
+   "niveau": "MESURE",
+   "note": "",
+   "section": "3 Act III",
+   "source": "docs/out/m2_entry_price.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "market cap is already around **25\u00d7**",
+   "texte_fr": "",
+   "valeur_artefact": 25
+  },
+  {
+   "attendu": "44 of 282, infra=yes",
+   "chemin": "derive:m4_sniper",
+   "niveau": "MESURE",
+   "note": "9ryBR3Sn..., classed as shared infrastructure",
+   "section": "4 Real-world example",
+   "source": "docs/out/m4_infra.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "5th by ubiquity at **44 of 282** tokens",
+   "texte_fr": "",
+   "valeur_artefact": "44 of 282, infra=yes"
+  },
+  {
+   "attendu": "24 of 282, infra=no",
+   "chemin": "derive:m4_op1",
+   "niveau": "MESURE",
+   "note": "yHCxHBEa..., the slot-0 buyer; not classed as shared infrastructure",
+   "section": "4 Real-world example",
+   "source": "docs/out/m4_infra.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "a repeat operator on **24 of 282** tokens",
+   "texte_fr": "",
+   "valeur_artefact": "24 of 282, infra=no"
+  },
+  {
+   "attendu": "42 out of 42",
+   "chemin": "derive:v06_42_of_42",
+   "niveau": "MESURE",
+   "note": "launches with zero curve purchase before the block / total",
+   "section": "6 Why Solana memecoins are finished",
+   "source": "data/v06_curve_ladder.json",
+   "statut": "OK",
+   "statut_fr": "-",
+   "texte": "across **42 out of 42** verified launches",
+   "texte_fr": "",
+   "valeur_artefact": "42 out of 42"
+  }
+ ],
+ "n_absent": 0,
+ "n_claims": 22,
+ "n_fr_absent": 0,
+ "n_fr_declares": 8,
+ "n_mismatch": 0,
+ "n_non_source_present": 15,
+ "n_non_source_retire": 5,
+ "n_ok": 22,
+ "niveau": "MESURE",
+ "non_source": [
+  {
+   "present_dans_readme": true,
+   "raison": "data/ holds no purchased-token quantity for the phase-1 tokens; a9 lists this under non_etabli",
+   "section": "1 Act I",
+   "texte": "roughly **2% of the supply** (around 20 million tokens)"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the operator's own position size, stated as personal prose. No artefact of this repository measures the size of my own buys; the deposit ledger measures only the net that reached the exchange. Kept as prose, never a measured row",
+   "section": "2 Exploiting the pattern",
+   "texte": "1% of the supply at most"
+  },
+  {
+   "present_dans_readme": false,
+   "raison": "exit tranche size: no source. The x10 level was part of the automated configuration; the share sold there was never recorded. code/exit_ladder.py states 15 % \u2014 two unsourced figures that also disagree. Not to be resolved by picking one",
+   "section": "2 Exploiting the pattern",
+   "texte": "10% at 10\u00d7"
+  },
+  {
+   "present_dans_readme": false,
+   "raison": "exit tranche size: no source. The x5 level was part of the automated configuration left running unattended; the share sold there was never recorded. The 25 % agrees with code/exit_ladder.py only because both are the same unsourced assertion",
+   "section": "2 Exploiting the pattern",
+   "texte": "25% at 5\u00d7"
+  },
+  {
+   "present_dans_readme": false,
+   "raison": "exit tranche size: no source. The operator confirmed no percentage at any rung, and code/exit_ladder.py's LADDER is a policy this repository stipulates so it can be simulated, not a record of execution. The x2 level itself was used post-graduation on large positions, not as the first rung of the unattended configuration",
+   "section": "2 Exploiting the pattern",
+   "texte": "50% at 2\u00d7"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "second occurrence of the entry rule, in the Exploiting the Pattern section; same gap as the Act I wording -- data/ holds no purchased-token quantity for the phase-1 tokens",
+   "section": "2 Exploiting the pattern",
+   "texte": "a ChangeNOW-funded wallet buying at least **2% of supply**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the ANSEM launch has no committed artefact; the 84.74 in data/v09 belongs to a different mint, with 8 buyers",
+   "section": "4 Real-world example",
+   "texte": "**84.74 SOL** purchased by a single wallet"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the ANSEM launch has no committed artefact; data/v05 covers a different, frozen set of 42 mints",
+   "section": "4 Real-world example",
+   "texte": "**85.007 SOL**"
+  },
+  {
+   "present_dans_readme": false,
+   "raison": "the ANSEM launch has no committed artefact",
+   "section": "4 Real-world example",
+   "texte": "**June 16, 2026**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the mint is published so the block is falsifiable, but no script here measures it; re-running the frozen v05/v06 chain on it needs $HELIUS_API_KEYS and is the declared remedy",
+   "section": "4 Real-world example",
+   "texte": "`9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`"
+  },
+  {
+   "present_dans_readme": false,
+   "raison": "reported off-chain by third parties; nothing in data/ measures it",
+   "section": "4 Real-world example",
+   "texte": "approximately **$6,300** spent on launch"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the ANSEM launch has no committed artefact",
+   "section": "4 Real-world example",
+   "texte": "creation slot **426930467**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the ANSEM launch has no committed artefact",
+   "section": "4 Real-world example",
+   "texte": "only two buyers"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "the ANSEM launch has no committed artefact",
+   "section": "4 Real-world example",
+   "texte": "sixteen signatures"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "seed capital: Phase-0 author recollection from before the 2024-10-01 window the deposit ledger measures. Nothing in data/ records the initial funding into the first wallet; the ledger measures only proceeds landing on the exchange. Never measured, listed as unsourced",
+   "section": "5 Author",
+   "texte": "roughly **$400** of starting capital"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "first-trade stake and exit: Phase-0 (token EPEP, per CHRONOLOGIE.md), before the measured window and never resolved on chain. A deposit ledger sees proceeds arriving, not the trades that produced them, so no artefact here reconstructs it",
+   "section": "5 Author",
+   "texte": "staked **1-2 SOL** and closed near **$2,000**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "arithmetic on the two SOL/day endpoints above, which are themselves unsourced here; the percentage had no row of its own and was invisible to this ledger",
+   "section": "6 Why Solana memecoins are finished",
+   "texte": "fell roughly **84%**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "network-wide aggregate; no script in this repository computes it. Cited to DEXTools, 22 June 2026, in footnote [^macro]",
+   "section": "6 Why Solana memecoins are finished",
+   "texte": "from approximately **33,000 SOL/day** to roughly **5,300 SOL/day**"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "network-wide aggregate; no script in this repository computes it. Cited to DEXTools, 22 June 2026, in footnote [^macro]",
+   "section": "6 Why Solana memecoins are finished",
+   "texte": "only **0.26%** of pump.fun tokens now graduate"
+  },
+  {
+   "present_dans_readme": true,
+   "raison": "network-wide market-cap loss; no script in this repository measures it, and the figure is deliberately left qualitative. The DEXTools graduation collapse and 84% fee decline in [^macro] are the measured proxy for the consequence, not a measurement of the market-cap figure itself",
+   "section": "6 Why Solana memecoins are finished",
+   "texte": "shed billions in market cap"
+  }
+ ],
+ "objet": "Every figure quoted in README.md, the artefact that produces it, the value that artefact holds, and whether the two agree.",
+ "regle": "A red row means the README states a number this code does not produce. Fix the README, or fix the measurement. Never adjust the expected value to match the prose."
+}

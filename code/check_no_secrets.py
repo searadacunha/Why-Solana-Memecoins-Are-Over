@@ -6,10 +6,9 @@ contains anything that must not be published.
 
 Run it before every push:
 
-    python3 code/check_no_secrets.py
+    python3 code/check_no_secrets.py --identity identity.txt
 
-Seven classes of leak, each with a rule that is mechanical rather than a
-judgement call:
+Classes of leak, each with a rule that is mechanical rather than a judgement call:
 
   1. API keys           any 32-hex or UUID-shaped literal in a tracked file, and
                         any live key currently present in the environment.
@@ -24,21 +23,48 @@ judgement call:
                         substituted (delegates to sanitize_data.py --check).
   7. Oversized data     files above --max-mb that would bloat the clone; the
                         network caches are expected to be git-ignored.
+  8. Image METADATA     the same patterns, run over text extracted from image
+                        metadata (PNG text chunks; JPEG/WebP comment/EXIF/XMP
+                        ASCII). Pixel content (a handle rendered in the image, a
+                        QR code) is NOT machine-readable from the stdlib alone;
+                        the committed OCR side-car data/screens/trades/index.json
+                        is plain JSON and is text-scanned like any other file.
+
+WHAT IS SCANNED. The set is `git ls-files --cached --others --exclude-standard`
+-- everything a `git add .` then push would carry, INCLUDING files not yet
+committed but not git-ignored. So a brand-new, uncommitted script is scanned
+before it can ship. `--require-clean` additionally fails if the working tree has
+any uncommitted change, which is how CI enforces the README's "checked by code
+in this same commit".
+
+INTENTIONAL ATTRIBUTION. Some identity strings are published ON PURPOSE -- the
+author signs this dossier, and the trading handle on the committed screenshots
+is part of that. They are listed in code/allow_identity.txt (--allow) and a
+matching finding is reported as "allowed", never as a failure. This is the
+deliberate counterpart to --identity: a denylist of what must never appear, and
+an allowlist of what is meant to.
 
 The point is not that a scanner can prove a repository clean. The point is that
 "I checked" becomes a command with an exit code instead of an assertion.
 """
+from __future__ import annotations
+
 import argparse
+import gzip
 import os
 import re
+import struct
 import subprocess
 import sys
+import zlib
+from typing import Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import settings  # noqa: E402
 
 SKIP_DIRS = {".git", "__pycache__", "cache", "cache_r1", "transition", "node_modules"}
 BINARY_EXT = {".gz", ".zip", ".png", ".jpg", ".jpeg", ".pdf", ".webp", ".mp4"}
+IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp"}
 
 PATTERNS = [
     ("api key (32 hex)", re.compile(r"\b[0-9a-fA-F]{32}\b")),
@@ -47,6 +73,7 @@ PATTERNS = [
     ("openai-style key", re.compile(r"\bsk-[A-Za-z0-9_-]{16,}")),
     ("telegram bot token", re.compile(r"\b\d{8,10}:[A-Za-z0-9_-]{30,}\b")),
     ("telegram handle", re.compile(r"@[A-Za-z0-9_]{4,}bot\b", re.I)),
+    ("telegram reflink", re.compile(r"t\.me/[A-Za-z0-9_]+\?start=[A-Za-z0-9_-]+", re.I)),
     ("local path", re.compile(r"(/Users/|/home/[a-z]|[A-Z]:\\\\Users\\\\)")),  # noqa: leakscan
     ("query-string key", re.compile(r"api[-_]?key=[A-Za-z0-9-]{8,}")),
     ("webhook", re.compile(r"https://hooks\.[A-Za-z0-9.]+/[A-Za-z0-9/_-]+")),
@@ -65,9 +92,10 @@ FORBIDDEN_NAMES = re.compile(
 
 
 URL_RE = re.compile(r"https?://[^\s\"'<>]+")
+ASCII_RUN = re.compile(rb"[\x20-\x7e]{6,}")
 
 
-def in_url_path(line, pos):
+def in_url_path(line: str, pos: int) -> bool:
     """True if position `pos` falls inside the path of a URL (before any '?')."""
     for u in URL_RE.finditer(line):
         if u.start() <= pos < u.end():
@@ -76,7 +104,15 @@ def in_url_path(line, pos):
     return False
 
 
-def tracked_files(root, max_mb):
+def read_list(path: Optional[str]) -> list[str]:
+    if not path or not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return [l.strip().lower() for l in f
+                if l.strip() and not l.startswith("#")]
+
+
+def tracked_files(root: str, max_mb: float):
     """Every file that a `git add .` would pick up, big ones flagged.
 
     Asks git rather than walking the tree, so that .gitignore is the single source of truth for
@@ -124,14 +160,65 @@ def tracked_files(root, max_mb):
         yield rel, p, size
 
 
-def scan_text(rel, path, findings):
-    if os.path.splitext(path)[1] in BINARY_EXT:
-        return
+# --------------------------------------------------------------- image metadata
+def _png_text(data: bytes) -> str:
+    """Text embedded in PNG tEXt / zTXt / iTXt chunks (never pixel data)."""
+    out: list[str] = []
+    i = 8  # skip the 8-byte signature
+    n = len(data)
+    while i + 8 <= n:
+        try:
+            length = struct.unpack(">I", data[i:i + 4])[0]
+        except struct.error:
+            break
+        ctype = data[i + 4:i + 8]
+        body = data[i + 8:i + 8 + length]
+        i += 12 + length  # length + type + data + 4-byte CRC
+        if ctype == b"tEXt":
+            out.append(body.replace(b"\0", b": ").decode("latin-1", "ignore"))
+        elif ctype == b"zTXt":
+            k, _, rest = body.partition(b"\0")
+            comp = rest[1:] if rest else b""
+            try:
+                out.append(k.decode("latin-1", "ignore") + ": "
+                           + zlib.decompress(comp).decode("latin-1", "ignore"))
+            except zlib.error:
+                pass
+        elif ctype == b"iTXt":
+            parts = body.split(b"\0", 5)
+            if len(parts) == 6:
+                out.append(parts[0].decode("utf-8", "ignore") + ": "
+                           + parts[5].decode("utf-8", "ignore"))
+        if ctype == b"IEND":
+            break
+    return "\n".join(out)
+
+
+def image_meta_text(path: str) -> str:
+    """Human-readable text carried in an image's METADATA, stdlib only.
+
+    PNG: the text chunks above. JPEG / WebP / others: printable ASCII runs of
+    the raw bytes -- which covers EXIF/XMP/comment strings. This is a metadata
+    scan, NOT OCR: a handle drawn into the pixels is invisible here (documented
+    in the module docstring; its OCR side-car index.json is scanned as JSON)."""
     try:
-        with open(path, encoding="utf-8", errors="strict") as f:
-            text = f.read()
-    except (UnicodeDecodeError, OSError):
-        return
+        with open(path, "rb") as f:
+            data = f.read()
+    except OSError:
+        return ""
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return _png_text(data)
+    # JPEG / WebP / others: pull printable ASCII runs. Pixel bytes almost never
+    # form a 6+ char printable run that also matches a leak PATTERN, so this is
+    # low-noise for the specific patterns we look for (paths, keys, handles).
+    return "\n".join(m.group(0).decode("ascii", "ignore")
+                     for m in ASCII_RUN.finditer(data))
+
+
+# --------------------------------------------------------------------- scanning
+def scan_blob(rel: str, text: str, source: str, findings: list, allow: list[str]) -> None:
+    """Run the leak PATTERNS over a blob of text (file body or image metadata),
+    routing anything on the allowlist to the 'allowed' bucket instead."""
     for line_no, line in enumerate(text.splitlines(), 1):
         if "noqa: leakscan" in line:
             continue
@@ -142,34 +229,65 @@ def scan_text(rel, path, findings):
             frag = m.group(0)
             if ALLOW.search(line):
                 continue
-            # A "32 hex" made of one or two distinct characters is not a key.
-            # This is how the Solana System Program id (base58 all-ones,
-            # 11111111111111111111111111111111) shows up in every account dump.
+            # A "32 hex" made of one or two distinct characters is not a key
+            # (e.g. the Solana System Program id, base58 all-ones).
             if name.startswith("api key") and len(set(frag)) <= 2:
                 continue
-            # A key-shaped token inside a URL *path* is a public resource id --
-            # token metadata URIs are full of UUIDs. A key in a URL *query
-            # string* is a different matter and is caught by its own pattern.
+            # A key-shaped token inside a URL *path* is a public resource id.
             if name.startswith("api key") and in_url_path(line, m.start()):
                 continue
-            findings.append((name, rel, line_no, frag[:60]))
+            tag = "%s [%s]" % (name, source) if source else name
+            # Allow only when the MATCHED fragment itself is intentional (e.g. a
+            # reflink containing the author's handle) -- not merely because an
+            # allowed word sits elsewhere on the same line, which would let a
+            # real key ride along beside it.
+            if any(a in frag.lower() for a in allow):
+                findings.append(("ALLOWED " + tag, rel, line_no, frag[:60]))
+            else:
+                findings.append((tag, rel, line_no, frag[:60]))
 
 
-def main():
+def scan_identity(rel: str, text: str, source: str, findings: list,
+                  identity: list[str], live_keys: list[str], allow: list[str]) -> None:
+    low = text.lower()
+    suffix = " [%s]" % source if source else ""
+    for k in live_keys:
+        if k in text:
+            findings.append(("LIVE API KEY", rel, 0, k[:6] + "..."))
+    for tok in identity:
+        if tok in low and tok not in allow:      # denylist wins unless explicitly allowed
+            findings.append(("personal identifier" + suffix, rel, 0, tok))
+    for a in allow:
+        if a in low:
+            findings.append(("ALLOWED identifier" + suffix, rel, 0, a))
+
+
+def read_text(path: str) -> Optional[str]:
+    try:
+        with open(path, encoding="utf-8", errors="strict") as f:
+            return f.read()
+    except (UnicodeDecodeError, OSError):
+        return None
+
+
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--identity", help="file of personal strings to forbid "
                                        "(one per line); never commit it")
+    ap.add_argument("--allow", default=os.path.join(settings.CODE, "allow_identity.txt"),
+                    help="file of identity strings published on purpose (allowlist)")
     ap.add_argument("--max-mb", type=float, default=60.0)
+    ap.add_argument("--require-clean", action="store_true",
+                    help="also fail if the git working tree has any uncommitted change "
+                         "(enforces the README's 'checked by code in this same commit')")
     a = ap.parse_args()
     root = settings.ROOT
-    findings, oversized = [], []
+    findings: list = []
+    allowed: list = []
+    oversized: list = []
 
-    identity = []
-    if a.identity:
-        with open(a.identity) as f:
-            identity = [l.strip().lower() for l in f
-                        if l.strip() and not l.startswith("#")]
-
+    identity = read_list(a.identity)
+    allow = read_list(a.allow)
     live_keys = [k for k in settings.helius_keys() if len(k) >= 12]
 
     for rel, path, size in tracked_files(root, a.max_mb):
@@ -177,21 +295,27 @@ def main():
             findings.append(("credential file", rel, 0, os.path.basename(rel)))
         if size > a.max_mb * 1e6:
             oversized.append((rel, size / 1e6))
-        scan_text(rel, path, findings)
-        if identity or live_keys:
-            if os.path.splitext(path)[1] in BINARY_EXT:
-                continue
-            try:
-                low = open(path, encoding="utf-8", errors="ignore").read()
-            except OSError:
-                continue
-            for k in live_keys:
-                if k in low:
-                    findings.append(("LIVE API KEY", rel, 0, k[:6] + "..."))
-            low = low.lower()
-            for tok in identity:
-                if tok in low:
-                    findings.append(("personal identifier", rel, 0, tok))
+        ext = os.path.splitext(path)[1].lower()
+        if ext in IMAGE_EXT:
+            meta = image_meta_text(path)
+            if meta:
+                scan_blob(rel, meta, "image metadata", findings, allow)
+                if identity or live_keys or allow:
+                    scan_identity(rel, meta, "image metadata", findings,
+                                  identity, live_keys, allow)
+            continue
+        if ext in BINARY_EXT:
+            continue
+        text = read_text(path)
+        if text is None:
+            continue
+        scan_blob(rel, text, "", findings, allow)
+        if identity or live_keys or allow:
+            scan_identity(rel, text, "", findings, identity, live_keys, allow)
+
+    # Split allowed (intentional) from real findings.
+    allowed = [f for f in findings if f[0].startswith("ALLOWED")]
+    findings = [f for f in findings if not f[0].startswith("ALLOWED")]
 
     print("scanned %s" % root)
 
@@ -204,14 +328,28 @@ def main():
         ok = False
         print("\n%d POTENTIAL LEAK(S):" % len(findings))
         for kind, rel, ln, frag in findings:
-            print("  [%-18s] %s:%s  %s" % (kind, rel, ln or "-", frag))
+            print("  [%-24s] %s:%s  %s" % (kind, rel, ln or "-", frag))
     else:
         print("no key, credential file, local path or personal identifier found")
+
+    if allowed:
+        print("\n%d ALLOWED (published on purpose, see code/allow_identity.txt):" % len(allowed))
+        for kind, rel, ln, frag in allowed:
+            print("  [%-24s] %s:%s  %s" % (kind, rel, ln or "-", frag))
 
     if oversized:
         print("\nfiles above %.0f MB (check .gitignore):" % a.max_mb)
         for rel, mb in oversized:
             print("  %8.1f MB  %s" % (mb, rel))
+
+    if a.require_clean:
+        dirty = subprocess.run(["git", "-C", root, "status", "--porcelain"],
+                               capture_output=True, text=True).stdout.strip()
+        if dirty:
+            ok = False
+            print("\n--require-clean: the working tree has uncommitted changes:")
+            for line in dirty.splitlines():
+                print("   ", line)
 
     if rc != 0:
         ok = False
