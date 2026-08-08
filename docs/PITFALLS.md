@@ -672,6 +672,6 @@ a result, even when it points the right way.
    exception.
 6. **Probes are code.** Two of two supervision probes were wrong on first use (P7), and both failed
    toward false confidence.
-7. **A null result is a deliverable.** Nine of these twelve cards killed a positive finding. The
+7. **A null result is a deliverable.** Eleven of these fifteen cards killed a positive finding. The
    corpus's honest answer — no exit policy is profitable in expectation, and nothing observable at
-   purchase time locates the winners — only became defensible once those nine were dead.
+   purchase time locates the winners — only became defensible once those eleven were dead.

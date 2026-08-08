@@ -113,7 +113,7 @@ def refresh_manifest():
           and not t.startswith("identifiants a prefixe")]
     tr.append(note)
     m["transformations"] = tr
-    m["n_identifiants_redactes"] = len(redact.MAP)
+    m["n_identifiants_redactes"] = (len(redact.MAP) + len(redact.MAP_HMAC))
     with open(p, "w") as f:
         json.dump(m, f, indent=1, sort_keys=True)
     print("MANIFEST.json refreshed")
@@ -150,12 +150,12 @@ def main():
                 print("   ", t)
             sys.exit(1)
         print("OK: no redacted identifier left in data/, docs/ or code/ "
-              "(%d in the map)" % len(redact.MAP))
+              "(%d in the map)" % (len(redact.MAP) + len(redact.MAP_HMAC)))
         return
 
     for t in touched:
         print("  rewritten:", t)
-    print("%d file(s) rewritten, %d identifiers in the map" % (len(touched), len(redact.MAP)))
+    print("%d file(s) rewritten, %d identifiers in the map" % (len(touched), (len(redact.MAP) + len(redact.MAP_HMAC))))
     if touched:
         refresh_manifest()
 

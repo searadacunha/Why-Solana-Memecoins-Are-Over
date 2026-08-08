@@ -5,8 +5,11 @@ every term means as a formula, which population each rate is computed on, which 
 a claim had to survive to be published, and where the whole thing stops being valid.
 
 It is deliberately separate from the results. A result is only as good as the definition of its
-denominator, and definitions are where this corpus hides its traps — nine of the twelve episodes in
-[PITFALLS.md](PITFALLS.md) were definition errors, not statistical ones.
+denominator, and definitions are where this corpus hides its traps — nine of the fifteen episodes in
+[PITFALLS.md](PITFALLS.md) were definition errors, not statistical ones. The three cards added since
+that count (P13 a missing null distribution, P14 a confounded control group, P15 a transport failure)
+are statistical or instrumentation errors, so the definition-error count stays nine while the total
+moves to fifteen.
 
 **Five-minute path.** Read [§0 Conventions at a glance](#0-conventions-at-a-glance), then
 [§3.1 The unit of analysis is not the token](#31-the-unit-of-analysis-is-not-the-token), then
@@ -69,9 +72,11 @@ version of the measurement.
 **Graduation.** The migration of liquidity from the bonding curve to an AMM pool, executed through
 the pump.fun migration authority account. It is the moment the token becomes buyable by an ordinary
 observer through a normal DEX route. Graduation events are enumerable exhaustively by walking the
-signatures of that single account (`t1_enum_graduations.py`), which is the only survivorship-free
-sampling frame available here: it is an on-chain event that persists whatever the token later
-becomes, unlike any screener, leaderboard or frontend API ranking.
+signatures of that single account -- a survivorship-free sampling frame, because it is an on-chain
+event that persists whatever the token later becomes, unlike any screener, leaderboard or frontend
+API ranking. That exhaustive walk was performed in the unpublished collector, not by a script in
+this repository; the frozen >= 500 k USD subset it produced is committed as
+`data/v09_signature_gros_tokens.json` (see 1.2, "Full-curve buyback").
 
 **Creation slot.** The Solana slot containing the mint creation transaction. Same-slot means same
 block: transactions in one slot are ordered by index but are not separated by any interval an
@@ -110,11 +115,14 @@ replaced a regular one.
 | implied MC at the last curve ticket | ~26.1 k USD | — |
 | implied MC at AMM open | ~46.1 k USD | — |
 
-On an independent sample of tokens that later reached >= 500 k USD, **48 of 60 = 80.0 %**, Wilson
-95 % CI **[68.2 ; 88.2]**, had their curve bought back for >= 60 SOL inside the creation slot, median
-85.0 SOL **[N]**. Two caveats travel with that figure permanently and are repeated wherever it is
-quoted: the 60 tokens are the **first 60 in source-file order, not a random draw**, and the source
-file was still being written when the count was taken, so `n` must be frozen at publication time.
+On an independent, frozen sample of tokens that later reached >= 500 k USD, **58 of 70 = 82.9 %**,
+Wilson 95 % CI **[72.4 ; 89.9]**, had their curve bought back for >= 60 SOL inside the creation slot
+**[R]** (`data/v09_signature_gros_tokens.json`, frozen 2026-07-29). Two caveats travel with that
+figure permanently and are repeated wherever it is quoted: the 70 tokens are an **outcome-selected
+set** — conditioned on reaching >= 500 k USD, so this is P(signature | large), never
+P(large | signature) — and the sample is **frozen at a fixed date**, so `n` is fixed at 70 and does
+not grow with new launches. (An earlier draft quoted 48 of 60 = 80.0 %; that count was the first 60
+rows of the file while it was still being written, and is superseded by the frozen 70.)
 
 **Fleet.** A set of addresses that co-occur in creation-slot blocks across several launches.
 Membership is asserted upstream and **tested** here, not assumed: `m3_operators.py` recomputes
@@ -474,7 +482,7 @@ project now applies:
 
 - **Standard library only** for every published measurement — no numpy, no pandas, no network, no
   API key. The scripts that *do* need the network are the two fetchers (`fetch_sol_usd.py`,
-  `fetch_gt_ohlcv.py`) and the on-chain verifiers (`v0*.py`, `t1_enum_graduations.py`); their outputs
+  `fetch_gt_ohlcv.py`) and the on-chain verifiers (`v0*.py`); their outputs
   are committed so every table regenerates offline.
 - **Deterministic randomness**: explicit LCG, fixed seeds, stated in the function docstring.
 - **One command per table**, printed in the table's own footer (`Regenerer : python3 code/...`).
