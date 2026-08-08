@@ -1,6 +1,6 @@
 {
  "objet": "Taux de faux positifs du detecteur de decoupage sur des groupes de portefeuilles tires au hasard dans la population temoin.",
- "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de taille k sont tires sans remise. Les criteres A/B/C sont ceux de t3_decoupage.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : toute detection dans un groupe tire est donc une coincidence.",
+ "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de taille k sont tires sans remise. Les criteres A/B/C sont ceux de splitlib.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : toute detection dans un groupe tire est donc une coincidence.",
  "population": {
   "n_portefeuilles": 136,
   "n_tokens": 9,

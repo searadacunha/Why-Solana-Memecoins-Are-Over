@@ -6,7 +6,7 @@
   "3_montants_voisins": "au moins 2 portefeuilles distincts a 1e-03 pres, dans une fenetre de 6 h",
   "4_achats_sequentiels": "les portefeuilles retenus figurent parmi les premiers acheteurs de la courbe, par construction du corpus"
  },
- "difference_avec_le_detecteur_generique": "Le critere B de t3_decoupage.py exige 3 portefeuilles au meme montant en 1 h, sans regarder ni la fraicheur du portefeuille ni l'origine du versement. Il peut donc manquer le motif decrit ici, et inversement.",
+ "difference_avec_le_detecteur_generique": "Le critere B de splitlib.py exige 3 portefeuilles au meme montant en 1 h, sans regarder ni la fraicheur du portefeuille ni l'origine du versement. Il peut donc manquer le motif decrit ici, et inversement.",
  "portee": "Presence, pas prevalence. Cet echantillon est choisi sur l'issue (voir a4_selection_bias.py) : il peut montrer que le mecanisme est la, jamais combien il est repandu.",
  "controle_positif": "Le cas de reference (ODIN_POSITIF) doit ressortir POSITIF. S'il ne ressort pas, le detecteur est casse et aucune conclusion n'est lisible. La premiere version de ce script le manquait, ce qui a revele le defaut.",
  "n_tokens": 15,

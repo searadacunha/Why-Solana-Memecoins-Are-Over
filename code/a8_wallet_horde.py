@@ -64,13 +64,15 @@ def parsed(addr, ki=0, before=None, tries=5):
 
 
 def naissance(addr, ki=0):
-    """Premiere activite d'une adresse. None si hors de portee."""
+    """Premiere activite d'une adresse. None si hors de portee.
+
+    Une panne reseau/quota LEVE Echec (elle ne doit surtout pas passer pour
+    "aucune naissance trouvee") ; seul un resultat legitimement vide -- aucune
+    signature, ou genese hors du budget de pagination -- rend None.
+    """
     before, oldest = None, None
     for _ in range(6):
-        try:
-            page = rpc("getSignaturesForAddress", [addr, {"limit": 1000, "before": before}], ki=ki)
-        except Echec:
-            return None
+        page = rpc("getSignaturesForAddress", [addr, {"limit": 1000, "before": before}], ki=ki)
         if not page:
             break
         o = min((s.get("blockTime") or 0) for s in page)

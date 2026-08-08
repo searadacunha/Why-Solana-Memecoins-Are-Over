@@ -40,7 +40,7 @@ No address is hard-coded as a gateway beyond the default below, and no service i
 is an address through which capital enters the chain. Reaching one is a routing fact.
 """
 from __future__ import annotations
-import argparse, json, sys, time, urllib.request, datetime as dt
+import argparse, json, sys, time, urllib.error, urllib.request, datetime as dt
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
@@ -111,7 +111,9 @@ def bonding_curve(mint):
             d = json.load(r)
         ts = d.get("created_timestamp")
         return d.get("bonding_curve"), (ts / 1000 if ts else None), d.get("symbol")
-    except Exception:
+    except (urllib.error.URLError, TimeoutError, ValueError):
+        # None ici = repli VOULU vers le drapeau --created (l'API pump ne repond
+        # pas ou ne connait pas ce mint), pas une mesure a zero silencieuse.
         return None, None, None
 
 
