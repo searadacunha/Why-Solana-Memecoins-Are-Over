@@ -86,6 +86,7 @@ from concurrent.futures import ThreadPoolExecutor
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import settings  # noqa: E402
+import rpc_client  # noqa: E402
 
 OUTDIR = settings.data("bundle")
 CACHEDIR = os.path.join(OUTDIR, "cache")
@@ -182,49 +183,36 @@ class Rpc:
         self.last = 0.0
         self.n_calls = 0
 
-    def _key(self):
+    def _throttle(self):
+        """Espacement local entre appels (rate-limit par instance) + compteur
+        d'appels pour l'affichage de progression. Le transport lui-meme -- envoi,
+        rotation des cles, cooldown 429, reprises 5xx -- appartient a rpc_client."""
         with self.lock:
-            k = self.keys[self.i % len(self.keys)]
-            self.i += 1
             gap = self.min_gap - (time.time() - self.last)
             if gap > 0:
                 time.sleep(gap)
             self.last = time.time()
             self.n_calls += 1
-            return k
 
     def call(self, method, params, tries=7):
-        body = json.dumps({"jsonrpc": "2.0", "id": 1,
-                           "method": method, "params": params}).encode()
-        last = None
-        for t in range(tries):
-            url = "https://mainnet.helius-rpc.com/?api-key=" + self._key()
-            try:
-                req = urllib.request.Request(
-                    url, data=body, headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=90) as r:
-                    j = json.loads(r.read())
-                if "error" in j:
-                    last = str(j["error"])[:120]
-                    time.sleep(0.4 * (t + 1))
-                    continue
-                return j.get("result")
-            except Exception as e:                      # 429, 5xx, timeout
-                last = settings.redact_key(str(e))[:120]
-                time.sleep(0.6 * (2 ** t) * (0.7 + random.random() * 0.6))
-        raise RuntimeError("rpc %s: %s" % (method, last))
+        # Transport delegue a rpc_client : il possede la rotation des cles, le
+        # cooldown apres un 429 et les reprises bornees, et surtout il LEVE
+        # HeliusError -- jamais un None/[]/{} confondu avec un vide. On ne garde
+        # ici que le petit espacement local entre appels. tries reste dans la
+        # signature pour ne pas toucher aux appelants mais n'est plus utilise.
+        self._throttle()
+        return rpc_client.rpc(method, params)
 
     def sigs(self, addr, before=None):
-        o = {"limit": 1000, "commitment": "confirmed"}
-        if before:
-            o["before"] = before
-        return self.call("getSignaturesForAddress", [addr, o]) or []
+        # rpc_client.sigs LEVE si le RPC renvoie null (un null est une panne, pas
+        # une page vide) ; une page reellement vide reste []. Plus de "or []" qui
+        # transformait une panne de quota en "courbe sans transaction".
+        self._throttle()
+        return rpc_client.sigs(addr, 1000, before)
 
     def tx(self, sig):
-        return self.call("getTransaction",
-                         [sig, {"encoding": "jsonParsed",
-                                "maxSupportedTransactionVersion": 0,
-                                "commitment": "confirmed"}])
+        self._throttle()
+        return rpc_client.tx(sig)
 
 
 # --------------------------------------------------------------------------- #

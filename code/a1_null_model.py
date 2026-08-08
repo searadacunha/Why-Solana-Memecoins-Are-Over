@@ -36,7 +36,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA = os.path.join(ROOT, "data")
 
-REL_TOL = 1e-4      # identical to t3_decoupage.py
+REL_TOL = 1e-4      # identical to splitlib.py
 WINDOW_S = 3600     # identical
 MIN_CLUSTER = 3     # identical
 
@@ -64,7 +64,7 @@ def load_wallets(pattern):
 
 
 def detect(group):
-    """Criteria A / B / C of t3_decoupage.py, unchanged, applied to an arbitrary wallet group."""
+    """Criteria A / B / C of splitlib.py, unchanged, applied to an arbitrary wallet group."""
     rows = [(g["wallet"], a, t, s, sig) for g in group for a, t, s, sig in g["events"]]
     rows.sort(key=lambda r: (r[1], r[2]))
 
@@ -185,7 +185,7 @@ def main():
                  "tires au hasard dans la population temoin.",
         "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de "
                    "taille k sont tires sans remise. Les criteres A/B/C sont ceux de "
-                   "t3_decoupage.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, "
+                   "splitlib.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, "
                    "cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : "
                    "toute detection dans un groupe tire est donc une coincidence.",
         "population": {"n_portefeuilles": len(pool), "n_tokens": len(sizes),
