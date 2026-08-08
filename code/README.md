@@ -198,15 +198,19 @@ address, so publishing it in the clear would attach a legal identity to this
 dossier permanently. It is read from `$EXPL_LEDGER_ADDR` exactly like
 `PUMP_PRIVATE_ROOT` (`settings.expl_ledger_addr()`, clear
 error when unset), and everything committed names it **only by its redaction
-label**, `RDCT-0a350b2ba8` — the artefact, and the cache filenames too. The
+label**, `RDCT-838bf381fe` — the artefact, and the cache filenames too. The
 script refuses to run at all if that label is missing from
 `code/redactions.json`, so the scrubbing cannot be forgotten; redaction happens
-at write time inside `pumplib.emit`, not as a post-hoc pass. Anyone already
-holding the address can hash it and confirm the label. That is the whole point:
-verifiable on demand, without publishing the address. `check_no_secrets.py`
-passes on the result. It stops the address being read off this repository; it
-does not make the wallet unfindable, since the published aggregates are
-themselves a fingerprint that can be matched against the chain.
+at write time inside `pumplib.emit`, not as a post-hoc pass. This one label is a
+**salted HMAC** of the address (not a plain sha256, which the slur-vanity set
+still uses): a plain hash would let anyone shortlist candidate deposit addresses
+from the published fingerprints and confirm them by hashing, so it is keyed by
+HMAC under an uncommitted salt (`$REDACT_HMAC_SALT` / `redact_salt.txt`).
+Confirming the label needs both the address and the salt, so only the author can;
+that closes the enumeration oracle. `check_no_secrets.py` passes on the result.
+It stops the address being read off this repository; it does not make the wallet
+unfindable, since the published aggregates are themselves a fingerprint that can
+be matched against the chain.
 
 `run_all.py` lists it as `[addr+net]` and skips it with the missing condition
 named — `needs $EXPL_LEDGER_ADDR` or `needs $HELIUS_API_KEYS or a populated

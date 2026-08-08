@@ -3,7 +3,7 @@
 
 WHY A SEPARATE SCRIPT
 ---------------------
-The split detector of `t3_decoupage.py` asks three generic questions: were two early buyers funded
+The split detector of `splitlib.py` asks three generic questions: were two early buyers funded
 in the same transaction (A), did three or more receive the same amount within an hour (B), do two
 share a private funder (C). None of those is the thing the author says he watched for.
 
@@ -221,7 +221,7 @@ json.dump({
         "4_achats_sequentiels": "les portefeuilles retenus figurent parmi les premiers acheteurs "
                                 "de la courbe, par construction du corpus",
     },
-    "difference_avec_le_detecteur_generique": "Le critere B de t3_decoupage.py exige 3 "
+    "difference_avec_le_detecteur_generique": "Le critere B de splitlib.py exige 3 "
         "portefeuilles au meme montant en 1 h, sans regarder ni la fraicheur du portefeuille ni "
         "l'origine du versement. Il peut donc manquer le motif decrit ici, et inversement.",
     "portee": "Presence, pas prevalence. Cet echantillon est choisi sur l'issue "
