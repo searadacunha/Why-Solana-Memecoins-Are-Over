@@ -40,14 +40,18 @@ No address is hard-coded as a gateway beyond the default below, and no service i
 is an address through which capital enters the chain. Reaching one is a routing fact.
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, urllib.request, datetime as dt
+import argparse, json, sys, time, urllib.request, datetime as dt
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
-RPC = "https://mainnet.helius-rpc.com/?api-key={key}"
+import rpc_client
+import settings
+
+# Endpoint de decodage par LOT de signatures (POST /v0/transactions). Il n'a pas
+# d'equivalent dans rpc_client (qui expose l'enhanced PAR ADRESSE, pas le lot par
+# signatures), donc post_parsed() reste local. Le JSON-RPC et l'enhanced par
+# adresse, eux, passent desormais par rpc_client.
 PARSED_TX = "https://api-mainnet.helius-rpc.com/v0/transactions?api-key={key}"
-PARSED_ADDR = ("https://api-mainnet.helius-rpc.com/v0/addresses/{addr}/transactions"
-               "?api-key={key}&limit=100")
 LAMPORTS = 1e9
 PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 DEFAULT_GATEWAY = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"
@@ -58,8 +62,7 @@ class RpcError(Exception):
 
 
 def keys():
-    raw = os.environ.get("HELIUS_API_KEYS") or os.environ.get("HELIUS_API_KEY") or ""
-    ks = [k.strip() for k in raw.split(",") if k.strip()]
+    ks = settings.helius_keys()
     if not ks:
         sys.exit("HELIUS_API_KEYS non defini. export HELIUS_API_KEYS=cle1[,cle2]")
     return ks
@@ -69,24 +72,14 @@ KEYS = None
 
 
 def rpc(method, params, ki=0, tries=6):
-    last = None
-    for i in range(tries):
-        key = KEYS[(ki + i) % len(KEYS)]        # rotate keys on retry: a 429 is per-key
-        try:
-            req = urllib.request.Request(
-                RPC.format(key=key),
-                data=json.dumps({"jsonrpc": "2.0", "id": 1,
-                                 "method": method, "params": params}).encode(),
-                headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=45) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-            last = out.get("error")
-        except Exception as e:
-            last = e
-        time.sleep(2.0 * (i + 1))
-    raise RpcError(f"{method} a echoue apres {tries} tentatives : {last}")
+    """Transport delegue a rpc_client (rotation de cles, cooldown 429, reprises
+    bornees). On conserve RpcError : un echec LEVE, jamais un None confondu avec
+    un vide (regle 2). ki/tries sont ignores -- rpc_client possede la rotation --
+    mais gardes pour ne pas toucher aux appelants."""
+    try:
+        return rpc_client.rpc(method, params)
+    except rpc_client.HeliusError as e:
+        raise RpcError(f"{method} a echoue : {e}")
 
 
 def post_parsed(sigs, ki=0, tries=5):
@@ -185,19 +178,9 @@ def probe(args):
 
     hits, before2 = [], None
     for _ in range(20):
-        key = KEYS[idx % len(KEYS)]
-        url = PARSED_ADDR.format(addr=wallet, key=key) + (f"&before={before2}" if before2 else "")
-        batch = None
-        for a in range(4):
-            try:
-                with urllib.request.urlopen(
-                        urllib.request.Request(url, headers={"Accept": "application/json"}),
-                        timeout=45) as r:
-                    batch = json.load(r)
-                break
-            except Exception:
-                time.sleep(2.0 * (a + 1))
-        if batch is None:
+        try:
+            batch = rpc_client.enhanced(wallet, before=before2)
+        except rpc_client.HeliusError:
             return wallet, {"statut": "illisible", "detail": "transactions parsees illisibles"}
         if not batch:
             break

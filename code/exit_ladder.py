@@ -1,34 +1,48 @@
 #!/usr/bin/env python3
-"""The exit ladder, stated as a policy — and measured against the alternatives.
+"""A mechanical exit ladder, stated as executable code — and measured.
 
-THE POLICY
-----------
-    x2   -> sell 50 %      the stake is recovered; what remains rides at zero cost
-    x5   -> sell a tranche
-    x10  -> sell a tranche
-    beyond -> manual
+WHAT THIS FILE IS, AND WHAT IT IS NOT
+-------------------------------------
+It is not a reconstruction of how the 2024 trades were closed. Those exits were discretionary:
+take-profits set by eye, one trade at a time (docs/EXPLOITATION.md section 3). The only automated
+part was standing sell orders at x5 and x10 for the hours away from the screen. That automation was
+an upside catcher, not a stop: if the price never reached x5, nothing sold. It did nothing whatsoever
+for the downside, and an unattended position ran with the stake still in the market. The x2 was used
+after a token had graduated off the bonding curve, on large positions. The size sold at any level was
+never recorded.
 
-The first rung is the one that makes the rest possible. Once half is sold at x2 the position cannot
-lose money, only make less — which is what allows a signal firing at 4 a.m. to be taken unattended.
-The upper rungs exist because the return distribution has a long tail: on the executions in
-docs/EXPLOITATION.md most trades land between +100 % and +700 % and one returned +28 465 %. A full
-exit at x2 truncates that tail; holding for it gives back everything on the trades that never run.
-The staircase keeps both, and pays for the option with the upside it forgoes.
+What this file states is a MECHANICAL policy of the kind a reader will naturally propose in place of
+judgement: sell fixed fractions at fixed multiples of entry, written out precisely enough to be
+applied to real price paths and scored.
 
-WHY THIS FILE EXISTS
---------------------
-A ladder is a set of numbers anyone can assert. This script does two things instead: it states the
-policy as executable code, and it prints what the repository's own measurements say about applying
-it to *current* launches — which is that it loses.
+    x2   -> sell 50 %
+    x5   -> sell 25 %
+    x10  -> sell 15 %
+    beyond -> never sold by this policy
 
-    x2/x5/x10 on the 2026 corpus:  0 of 15 exit policies have a positive mean return,
-                                   0 of 15 have a 95 % CI clearing zero.
+The 50 / 25 / 15 split is stipulated by this script and sourced nowhere else. Fixing the numbers is
+what makes a policy testable; it is not a claim that these were the numbers. Do not quote them as
+anyone's configuration.
 
-That is not a caveat attached to a strategy. It is the result, and it is the reason the repository
-is titled the way it is.
+WHY IT IS STILL WORTH MEASURING
+-------------------------------
+Because "could a rule have done this?" has an answer, and the answer is the point of the repository.
+
+    2026 corpus, measured in code/t1_base_rate_sorties.py:
+        0 of 15 exit policies have a positive mean return
+        0 of 15 have a 95 % CI clearing zero
+
+Scope, stated exactly: those fifteen are all single full exits — five timeouts, three trailing stops,
+six take-profit / stop-loss variants, and buy-and-hold. A staged ladder like the one above is not
+among them, and no backtest of a staged ladder exists in this repository. What the fifteen establish
+is broader and more useful: on 2026 launches, no exit rule tested rescues an unfiltered entry. The
+exit is not where the problem is. The entry is — the curve is bought out in the creation slot, and
+there is nothing left to climb.
+
+The two headline numbers below are derived from the artefact at run time, not asserted here.
 
 USAGE
-    python3 code/exit_ladder.py                 # the policy, and the verdict on it
+    python3 code/exit_ladder.py                    # the policy under test, and the 2026 verdict
     python3 code/exit_ladder.py --path 1 2.4 7 3   # apply it to a price path (multiples of entry)
 """
 from __future__ import annotations
@@ -37,9 +51,14 @@ import argparse, json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), "data")
 
-# (multiple of entry, share of the ORIGINAL position sold at that rung)
+# A MECHANICAL policy under test: (multiple of entry, share of the ORIGINAL position sold there).
+# NOT a record of what was executed. The levels x5 and x10 are the ones that were configured for
+# unattended trading in 2024; x2 was used post-graduation, on large positions. The three SHARES have
+# no source in this repository, and no tranche size was ever confirmed: they are fixed here only so
+# the policy is executable and the simulation reproducible. Do not quote them as tranche sizes that
+# were used. See docs/EXPLOITATION.md section 3.
 LADDER = [(2.0, 0.50), (5.0, 0.25), (10.0, 0.15)]
-RESTE_MANUEL = 1.0 - sum(p for _, p in LADDER)
+RESTE_MANUEL = 1.0 - sum(p for _, p in LADDER)  # the 10 % this policy never sells
 
 
 def simulate(path, ladder=LADDER):
@@ -68,15 +87,20 @@ def main():
                     help="trajectoire en multiples du prix d'entree, ex: 1 2.4 7 3")
     a = ap.parse_args()
 
-    print("ECHELLE DE SORTIE")
+    print("ECHELLE MECANIQUE MISE A L'EPREUVE (stipulee ici, pas un releve d'execution)")
     cum = 0.0
     for seuil, part in LADDER:
         cum += part
         print(f"  x{seuil:<5g} vendre {part:.0%}   (cumul {cum:.0%})")
-    print(f"  au-dela  {RESTE_MANUEL:.0%} restant, discretionnaire")
-    print("\n  Le premier barreau est le seul qui compte structurellement : a x2, vendre 50 %")
-    print("  rend la position restante gratuite. Elle ne peut plus perdre, seulement gagner moins.")
-    print("  C'est ce qui rend un signal de 4 h du matin prenable sans surveillance.")
+    print(f"  au-dela  {RESTE_MANUEL:.0%} restant, jamais vendu par cette politique")
+    print("\n  Les sorties de 2024 etaient discretionnaires : prises de benefice reglees a l'oeil,")
+    print("  trade par trade. La seule partie automatisee etait des ordres de vente a x5 et x10")
+    print("  pour les heures passees loin de l'ecran — un attrapeur de hausse, pas un stop : si le")
+    print("  prix n'atteignait pas x5, rien ne se vendait, et une position non surveillee tournait")
+    print("  avec la mise encore engagee. Le x2 servait apres la sortie de courbe, sur les grosses")
+    print("  positions. Les tailles de tranche n'ont jamais ete relevees : les 50/25/15 ci-dessus")
+    print("  sont une hypothese de ce script, posee pour pouvoir etre mesuree, et ne sont la")
+    print("  configuration de personne. Voir docs/EXPLOITATION.md section 3.")
 
     if a.path:
         r = simulate(a.path)
@@ -87,26 +111,32 @@ def main():
         print(f"  MULTIPLE REALISE        : {r['multiple_realise']:.3f}x")
 
     # --- ce que le depot mesure sur les lancements actuels ------------------------------------
-    verdict = {}
     p = os.path.join(DATA, "cout_acheteur", "t1_base_rate_sorties.json")
-    if os.path.exists(p):
-        d = json.load(open(p))
-        pol = d.get("politiques") or d.get("policies") or []
-        if isinstance(pol, list) and pol:
-            pos = [x for x in pol if (x.get("mean") or x.get("moyenne") or 0) > 0]
-            verdict = {"n_politiques": len(pol), "n_moyenne_positive": len(pos)}
+    if not os.path.exists(p):
+        raise SystemExit(f"artefact absent : {p} — lancer d'abord code/t1_base_rate_sorties.py")
+    d = json.load(open(p))
+    pol = d.get("politiques") or d.get("policies")
+    if isinstance(pol, dict):
+        pol = [{"nom": k, **v} for k, v in pol.items()]
+    if not isinstance(pol, list) or not pol:
+        raise SystemExit(f"'politiques' inexploitable dans {p} : {type(pol).__name__}")
+    n_pos = sum(1 for x in pol if x["moyenne_pct"] > 0)
+    n_ci = sum(1 for x in pol if x["moyenne_ic95_cluster_pct"][0] > 0)
 
-    print("\nCE QUE LES MESURES DISENT DE CETTE ECHELLE SUR LES LANCEMENTS DE 2026")
-    if verdict:
-        print(f"  politiques de sortie testees            : {verdict['n_politiques']}")
-        print(f"  dont moyenne positive                   : {verdict['n_moyenne_positive']}")
-    print("  entree post-snipe, +1 h                 : 0.35x")
-    print("  entree post-snipe, +24 h                : 0.08x")
-    print("  tokens ayant deja culmine avant d'etre visibles : 21.3 %")
-    print("\n  L'echelle n'a pas change. Le marche si. Sur les lancements actuels la courbe est")
-    print("  rachetee dans le slot de creation (42/42 verifies) : quand le lancement devient")
-    print("  visible, la position n'est plus accumulee, elle est distribuee. Il n'y a pas de")
-    print("  barreau a monter.")
+    print("\nCE QUE LES MESURES DISENT DE TOUTE POLITIQUE MECANIQUE SUR LES LANCEMENTS DE 2026")
+    print(f"  politiques de sortie testees (sorties uniques)  : {len(pol)}")
+    print(f"  dont moyenne positive                           : {n_pos}")
+    print(f"  dont IC95 de moyenne au-dessus de zero          : {n_ci}")
+    print("  entree post-snipe, +1 h                         : 0.35x")
+    print("  entree post-snipe, +24 h                        : 0.08x")
+    print("  tokens ayant deja culmine avant d'etre visibles  : 21.3 %")
+    print("\n  Ces quinze politiques sont toutes des sorties uniques : l'echelle etagee ci-dessus")
+    print("  n'en fait pas partie et n'est backtestee nulle part dans ce depot.")
+    print("\n  Ce n'est pas une politique de sortie qui s'est degradee, c'est le marche. Sur les")
+    print("  lancements actuels la courbe est rachetee dans le slot de creation (42/42 verifies) :")
+    print("  quand le lancement devient visible, la position n'est plus accumulee, elle est")
+    print("  distribuee. Il n'y a pas de barreau a monter — pour aucune politique, pas seulement")
+    print("  celle-ci.")
     print("\n  Voir docs/RESULTATS.md et docs/EXPLOITATION.md section 6.")
 
 

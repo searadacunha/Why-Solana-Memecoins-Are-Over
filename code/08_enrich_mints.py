@@ -8,58 +8,58 @@ Deux mesures independantes de la performance :
   - on-chain : nombre TOTAL de transactions sur le compte bonding_curve, pagine
     JUSQU'A LA GENESE (une page incomplete). C'est la mesure d'activite reelle du token
     sur toute sa vie, et elle dit si le token a assez d'acheteurs pour etre analysable.
+
+CLIENT
+------
+Le comptage on-chain passe par le client Helius unique (rpc_client.py) : les clés
+viennent de l'environnement ($HELIUS_API_KEYS, ou .env non versionné — voir
+settings.py) et **un échec réseau LÈVE** au lieu de se déguiser en « compte trop
+actif » (docs/PITFALLS.md, règle n°2). L'API frontend pump.fun n'est PAS Helius :
+elle garde un petit GET local, qui lève lui aussi à l'épuisement des essais.
 """
 from __future__ import annotations
-import json, os, sys, time, urllib.request, datetime as dt
+import datetime as dt, json, os, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
+from typing import Any, Optional
 
-RPC = os.environ.get("SOLANA_RPC_URL", "")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_client  # noqa: E402
+
 UA = "Mozilla/5.0"
 
 
-def http_json(url, timeout=30, retries=4):
+class PumpError(RuntimeError):
+    """Échec de l'API frontend pump.fun (endpoint non-Helius). Levée, jamais rendue
+    en None : une panne réseau doit interrompre la mesure, pas la vider en silence."""
+
+
+def pump_get(url: str, timeout: int = 30, retries: int = 4) -> Any:
+    """GET JSON sur le frontend pump.fun (endpoint NON-Helius, hors rpc_client).
+    Retourne le JSON décodé, ou LÈVE PumpError une fois les essais épuisés."""
+    last: Optional[str] = None
     for i in range(retries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.load(r)
-        except Exception:
+        except Exception as e:  # noqa: BLE001  (transport / decode)
+            last = repr(e)
             time.sleep(0.8 * (i + 1))
-    return None
+    raise PumpError("pump GET a echoue apres %d essais: %s" % (retries, last))
 
 
-def rpc(method, params, retries=4, timeout=45):
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method,
-                       "params": params}).encode()
-    for i in range(retries):
-        try:
-            req = urllib.request.Request(RPC, data=body, headers={
-                "Content-Type": "application/json", "User-Agent": "enrich/1.0"})
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-        except Exception:
-            pass
-        time.sleep(0.8 * (i + 1))
-    return None
-
-
-def count_txs(addr, cap_pages=30):
+def count_txs(addr: str, cap_pages: int = 30) -> tuple[int, bool, Optional[int]]:
     """Nombre total de tx d'un compte, pagine jusqu'a la genese.
 
-    Renvoie (n, genese_atteinte). genese_atteinte=False => plafond de pagination
-    touche, le compte est TROP ACTIF pour etre compte ici (donc pas un token mort).
+    Renvoie (n, genese_atteinte, first_ts). genese_atteinte=False => plafond de
+    pagination touche, le compte est TROP ACTIF pour etre compte ici (donc pas un
+    token mort). Un echec reseau LEVE (rpc_client) au lieu de se faire passer pour
+    ce plafond.
     """
     n, before, pages = 0, None, 0
-    first_ts = None
+    first_ts: Optional[int] = None
     while pages < cap_pages:
-        p = {"limit": 1000}
-        if before:
-            p["before"] = before
-        res = rpc("getSignaturesForAddress", [addr, p])
-        if res is None:
-            return n, False, first_ts
+        res = rpc_client.sigs(addr, 1000, before)
         n += len(res)
         pages += 1
         if res:
@@ -70,8 +70,8 @@ def count_txs(addr, cap_pages=30):
     return n, False, first_ts
 
 
-def enrich(mint):
-    c = http_json(f"https://frontend-api-v3.pump.fun/coins/{mint}")
+def enrich(mint: str) -> dict:
+    c = pump_get(f"https://frontend-api-v3.pump.fun/coins/{mint}")
     if not c or "mint" not in c:
         return {"mint": mint, "pump_api": None}
     bc = c.get("bonding_curve")

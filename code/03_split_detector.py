@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Détecteur de SPLIT — la pièce centrale du dépôt.
 
 HYPOTHÈSE TESTÉE
@@ -12,62 +13,60 @@ c'est la signature d'un découpage unique.
 CE QUE LE SCRIPT MESURE
 -----------------------
 1. Pour un ensemble de portefeuilles (ex. les principaux détenteurs d'un token), il collecte les
-   entrées de SOL et les regroupe par quasi-égalité de montant + proximité temporelle.
+   entrées de SOL et les regroupe par quasi-égalité de montant + proximité temporelle (splitlib).
 2. Il calcule le **taux de faux positifs** sur un groupe témoin de portefeuilles sans lien.
    Sans cette mesure, le détecteur ne vaut rien : des montants proches se produisent naturellement.
 
+OUTIL EXPLORATOIRE : ne fait pas partie du pipeline reproductible (absent de run_all.py).
+La mesure publiée du signal de split est docs/SPLIT_PHASE1.md + a1_null_model.py / a2_recount.py.
+
+CLIENT
+------
+Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
+($HELIUS_API_KEYS, ou .env non versionné — voir settings.py) et **un échec réseau
+LÈVE** au lieu de se déguiser en résultat vide (docs/PITFALLS.md, règle n°2).
+
 USAGE
 -----
-    python3 03_split_detector.py --mint <MINT> --top 30
-    python3 03_split_detector.py --wallets w1,w2,w3
-    python3 03_split_detector.py --mint <MINT> --control 40   # + groupe témoin
-
-Nécessite une clé RPC Solana dans la variable d'environnement SOLANA_RPC_URL
-(ex. https://mainnet.helius-rpc.com/?api-key=VOTRE_CLE). Aucune clé n'est stockée dans ce dépôt.
+    python3 code/03_split_detector.py --mint <MINT> --top 30
+    python3 code/03_split_detector.py --wallets w1,w2,w3
+    python3 code/03_split_detector.py --mint <MINT> --control 40   # + groupe témoin
 """
 from __future__ import annotations
-import argparse, json, os, random, sys, time, urllib.request
-from collections import defaultdict
 
-RPC = os.environ.get("SOLANA_RPC_URL", "")
+import argparse
+import json
+import os
+import random
+import sys
+import time
+from typing import Optional
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_client  # noqa: E402
+import settings  # noqa: E402
+from splitlib import MIN_CLUSTER, REL_TOL, WINDOW_S, find_splits  # noqa: E402
+
 LAMPORTS = 1_000_000_000
 
 # Fenêtre de montants retenue : en dessous, on capte le bruit (dust, frais) ;
 # au-dessus, les transferts deviennent trop rares et hétérogènes pour former un split.
 MIN_SOL, MAX_SOL = 1.0, 20.0
-REL_TOL = 1e-4        # tolérance relative d'égalité des montants (0,01 %)
-WINDOW_S = 3600       # fenêtre temporelle d'un même découpage
-MIN_CLUSTER = 3       # nb minimal de portefeuilles pour parler de split
 
-
-def rpc(method: str, params: list, retries: int = 4):
-    if not RPC:
-        sys.exit("SOLANA_RPC_URL non defini. Voir l'en-tete du script.")
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(
-                RPC, data=body,
-                headers={"Content-Type": "application/json", "User-Agent": "split-detector/1.0"})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                out = json.load(r)
-            if "result" in out:
-                return out["result"]
-        except Exception:
-            pass
-        time.sleep(1.5 * (attempt + 1))
-    return None
+# getBlock sur un slot sauté renvoie une erreur JSON-RPC qui est une réponse
+# légitime (« slot skipped »), pas une panne : on la tolère en None.
+SKIPPED_SLOT_CODES = (-32007, -32009, -32004)
 
 
 def top_holders(mint: str, n: int) -> list[str]:
     """Principaux détenteurs d'un token, via leurs comptes de token."""
-    res = rpc("getTokenLargestAccounts", [mint]) or {}
-    owners = []
+    res = rpc_client.rpc("getTokenLargestAccounts", [mint]) or {}
+    owners: list[str] = []
     for acc in (res.get("value") or [])[:n]:
-        info = rpc("getAccountInfo", [acc["address"], {"encoding": "jsonParsed"}]) or {}
+        info = rpc_client.account_info(acc["address"], encoding="jsonParsed") or {}
         try:
-            owners.append(info["value"]["data"]["parsed"]["info"]["owner"])
-        except Exception:
+            owners.append(info["data"]["parsed"]["info"]["owner"])
+        except (KeyError, TypeError):
             continue
         time.sleep(0.15)
     return owners
@@ -80,26 +79,26 @@ def incoming_sol(wallet: str, max_pages: int = 3) -> list[tuple[float, int]]:
     système : le financement est souvent obfusqué (closeAccount d'un compte wrappé), auquel cas
     aucun transfert système n'apparaît alors que le solde augmente bien.
     """
-    sigs, before = [], None
+    sigs: list[dict] = []
+    before: Optional[str] = None
     for _ in range(max_pages):
-        page = rpc("getSignaturesForAddress", [wallet, {"limit": 1000, "before": before}]) or []
+        page = rpc_client.sigs(wallet, 1000, before)
         if not page:
             break
         sigs.extend(page)
         if len(page) < 1000:
             break
         before = page[-1]["signature"]
-    out = []
+    out: list[tuple[float, int]] = []
     for s in sigs[-60:]:                     # les plus anciennes = le financement initial
-        tx = rpc("getTransaction", [s["signature"],
-                                    {"maxSupportedTransactionVersion": 0, "encoding": "jsonParsed"}])
+        tx = rpc_client.tx(s["signature"])
         if not tx:
             continue
         try:
             keys = [k["pubkey"] for k in tx["transaction"]["message"]["accountKeys"]]
             i = keys.index(wallet)
             delta = (tx["meta"]["postBalances"][i] - tx["meta"]["preBalances"][i]) / LAMPORTS
-        except Exception:
+        except (KeyError, ValueError, TypeError):
             continue
         if MIN_SOL <= delta <= MAX_SOL:
             out.append((delta, tx.get("blockTime") or 0))
@@ -107,54 +106,22 @@ def incoming_sol(wallet: str, max_pages: int = 3) -> list[tuple[float, int]]:
     return out
 
 
-def find_splits(funding: dict[str, list[tuple[float, int]]]) -> list[dict]:
-    """Regroupe les portefeuilles par montant quasi identique reçu dans une même fenêtre."""
-    events = [(w, amt, ts) for w, lst in funding.items() for amt, ts in lst]
-    events.sort(key=lambda e: e[1])
-    clusters, used = [], set()
-    for i, (w, amt, ts) in enumerate(events):
-        if i in used:
-            continue
-        group = [(i, w, amt, ts)]
-        for j in range(i + 1, len(events)):
-            if j in used:
-                continue
-            w2, amt2, ts2 = events[j]
-            if abs(amt2 - amt) > amt * REL_TOL:
-                break                          # trié par montant : au-delà, plus rien ne colle
-            if w2 != w and abs(ts2 - ts) <= WINDOW_S:
-                group.append((j, w2, amt2, ts2))
-        wallets = {g[1] for g in group}
-        if len(wallets) >= MIN_CLUSTER:
-            for g in group:
-                used.add(g[0])
-            times = [g[3] for g in group]
-            clusters.append({
-                "amount_sol": round(amt, 9),
-                "n_wallets": len(wallets),
-                "wallets": sorted(wallets),
-                "span_seconds": max(times) - min(times),
-                "first_ts": min(times),
-            })
-    return sorted(clusters, key=lambda c: -c["n_wallets"])
-
-
-def collect(wallets: list[str], label: str) -> dict:
-    funding = {}
+def collect(wallets: list[str], label: str) -> dict[str, list[tuple[float, int]]]:
+    funding: dict[str, list[tuple[float, int]]] = {}
     for k, w in enumerate(wallets, 1):
         funding[w] = incoming_sol(w)
         print(f"  [{label}] {k}/{len(wallets)} {w[:12]}… {len(funding[w])} entrées", flush=True)
     return funding
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--mint")
     ap.add_argument("--wallets")
     ap.add_argument("--top", type=int, default=30)
     ap.add_argument("--control", type=int, default=0,
                     help="taille du groupe témoin (portefeuilles sans lien) pour le taux de faux positifs")
-    ap.add_argument("--out", default="../data/split/result.json")
+    ap.add_argument("--out", default=os.path.join(settings.DATA, "split", "result.json"))
     a = ap.parse_args()
 
     if a.wallets:
@@ -175,10 +142,12 @@ def main():
     # Groupe témoin : des portefeuilles pris au hasard parmi des transactions récentes non liées.
     # C'est ce qui distingue un détecteur d'une illusion.
     if a.control:
-        slot = rpc("getSlot", [])
-        blk = rpc("getBlock", [slot - 200, {"maxSupportedTransactionVersion": 0,
-                                            "transactionDetails": "accounts", "rewards": False}]) or {}
-        pool = []
+        slot = rpc_client.rpc("getSlot", [])
+        blk = rpc_client.rpc(
+            "getBlock", [slot - 200, {"maxSupportedTransactionVersion": 0,
+                                      "transactionDetails": "accounts", "rewards": False}],
+            tolerate_codes=SKIPPED_SLOT_CODES) or {}
+        pool: list[str] = []
         for tx in (blk.get("transactions") or []):
             for k in (tx.get("transaction", {}).get("accountKeys") or []):
                 pk = k.get("pubkey") if isinstance(k, dict) else k
@@ -191,7 +160,7 @@ def main():
             result["control"] = {"n_wallets": len(ctrl), "n_clusters": len(cc),
                                  "wallets_in_cluster": len({w for c in cc for w in c["wallets"]})}
 
-    os.makedirs(os.path.dirname(a.out), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     json.dump(result, open(a.out, "w"), indent=1)
 
     print(f"\n=== {len(clusters)} splits détectés sur {len(wallets)} portefeuilles ===")

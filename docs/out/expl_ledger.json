@@ -1,0 +1,69 @@
+{
+ "address_label": "RDCT-838bf381fe",
+ "distinct_senders_full_window": 80,
+ "epistemic_status": {
+  "INFERE": [
+   "sender attribution: the counterparty account with the most negative balance delta in the same transaction; bounds the distinct-sender count, is not an exact transfer-level decomposition",
+   "transfer count: one successful transaction with a positive delta = one transfer; batched or multi-hop routes are not unbundled"
+  ],
+  "MESURE": [
+   "per-transfer SOL deltas, monthly and window totals, sweep totals, the pass-through residual, and the USD valuation given the stated price source"
+  ],
+  "NON_ETABLI": [
+   "per-trade P&L",
+   "the purpose of each transfer (proceeds vs returning capital) beyond the candidate count above",
+   "any identity behind the sender wallets"
+  ]
+ },
+ "good_months_2024_10_12": {
+  "distinct_senders": 74,
+  "n_transfers": 245,
+  "sol": 1190.6957,
+  "usd": 237137.87
+ },
+ "missing_price_days": [],
+ "n_incoming_transfers": 259,
+ "n_outgoing_sweeps": 190,
+ "n_signatures_ok_in_window": 453,
+ "niveau": "MESURE",
+ "passthrough_check": {
+  "residual_sol": 0.0098,
+  "sol_in": 1226.4663,
+  "sol_swept_out": 1226.4566
+ },
+ "per_month": {
+  "2024-10": {
+   "n": 73,
+   "sol": 378.1767,
+   "usd": 59977.47
+  },
+  "2024-11": {
+   "n": 75,
+   "sol": 416.9711,
+   "usd": 94406.65
+  },
+  "2024-12": {
+   "n": 97,
+   "sol": 395.5479,
+   "usd": 82753.75
+  },
+  "2025-01": {
+   "n": 14,
+   "sol": 35.7707,
+   "usd": 7177.71
+  }
+ },
+ "price_source": "Binance SOLUSDT daily close (api.binance.com /api/v3/klines, keyless); each transfer valued at the close of its own UTC day, never at a window average",
+ "return_of_capital_candidates": {
+  "n_incoming_whose_heuristic_sender_is_a_sweep_recipient": 0,
+  "sol": 0,
+  "treatment": "included in the totals; published so a reader can subtract them"
+ },
+ "sweep_sol_total": 1226.4566,
+ "total_sol_full_window": 1226.4663,
+ "total_usd_full_window": 244315.58,
+ "window_utc": {
+  "hi_exclusive": "2025-02-02",
+  "lo_inclusive": "2024-10-01"
+ }
+}

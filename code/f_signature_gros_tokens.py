@@ -29,14 +29,13 @@ SRC = os.path.join(ROOT, "data", "v09_signature_gros_tokens.json")
 
 
 def wilson(k, n, z=1.96):
-    """IC95 de Wilson (adapte aux petits n et aux proportions extremes)."""
-    if n == 0:
+    """IC95 de Wilson en pourcentage. L'intervalle est defini une seule fois
+    dans statlib.wilson ; on ne fait ici que le passer en pourcentage."""
+    from statlib import wilson as _wilson_frac
+    lo, hi = _wilson_frac(k, n, z)
+    if lo is None:
         return (0.0, 0.0)
-    p = k / n
-    d = 1 + z * z / n
-    centre = (p + z * z / (2 * n)) / d
-    demi = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (100 * (centre - demi), 100 * (centre + demi))
+    return (100 * lo, 100 * hi)
 
 
 def main():

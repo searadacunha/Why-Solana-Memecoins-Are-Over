@@ -62,6 +62,8 @@ Usage :
 
 Aucune cle n'est ecrite sur disque ni dans les sorties (cf. settings.py).
 """
+from __future__ import annotations
+
 import datetime as dt
 import json
 import os
@@ -73,6 +75,7 @@ import urllib.parse
 import urllib.request
 
 import redact
+import rpc_client
 import settings
 
 # --------------------------------------------------------------------- paths
@@ -128,36 +131,51 @@ def iso(ts):
 
 # ------------------------------------------------------------------ http ----
 class Http:
-    """Client HTTP minimal, avec rotation de cles et comptage des appels.
+    """Adaptateur mince. Le transport Solana JSON-RPC est delegue au client
+    partage rpc_client (rotation de cles, cooldown apres 429, reprises bornees) ;
+    on ne conserve ici que la traduction vers le contrat (resultat, erreur)
+    attendu par les appelants, plus le petit GET web() vers les frontends
+    pump/dexscreener/jup, qui ne sont PAS des endpoints Helius.
 
     Le comptage n'est pas cosmetique : le budget d'appels est rapporte dans la
     sortie pour que le cout de reproduction soit connu avant de relancer.
     """
 
     def __init__(self):
-        self.keys = settings.helius_keys()
-        self.i = 0
         self.n_rpc = 0
         self.n_web = 0
 
-    def key(self):
-        if not self.keys:
-            self.keys = settings.require_helius()
-        k = self.keys[self.i % len(self.keys)]
-        self.i += 1
-        return k
+    # -- Solana JSON-RPC (transport delegue a rpc_client) -------------------
+    def rpc(self, method, params):
+        """Rend (resultat, erreur). L'erreur n'est JAMAIS confondue avec une
+        reponse vide : c'est exactement le piege qui a fait croire, en cours de
+        mise au point, que l'historique du mint EPEP s'arretait en 2024-12.
+        rpc_client.rpc leve HeliusError sur un echec (transport ou objet `error`
+        JSON-RPC) ; on le retraduit en tuple pour ne rien changer aux appelants."""
+        self.n_rpc += 1
+        try:
+            return rpc_client.rpc(method, params), None
+        except rpc_client.HeliusError as e:
+            return None, settings.redact_key(str(e))
 
-    def _raw(self, url, payload=None, tries=7, timeout=90):
+    def sigs(self, addr, limit=1000, before=None):
+        self.n_rpc += 1
+        try:
+            return rpc_client.sigs(addr, limit, before), None
+        except rpc_client.HeliusError as e:
+            return None, settings.redact_key(str(e))
+
+    # -- web (frontends pump/dexscreener/jup ; PAS un endpoint Helius) -------
+    def web(self, url, tries=5, timeout=60):
+        """Petit GET local. Retente 429/5xx et erreurs de transport ; rend
+        {"_error": ...} sur un statut HTTP definitif non rejouable (ex. 404 =
+        token absent : une reponse, pas une panne), mais LEVE quand les essais
+        sont epuises -- une panne reseau ne doit pas se cacher en page vide."""
+        self.n_web += 1
         last = None
         for t in range(tries):
             try:
-                if payload is None:
-                    req = urllib.request.Request(url, headers={"User-Agent": UA})
-                else:
-                    req = urllib.request.Request(
-                        url, data=json.dumps(payload).encode(),
-                        headers={"Content-Type": "application/json",
-                                 "User-Agent": UA})
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
                 with urllib.request.urlopen(req, timeout=timeout) as r:
                     return json.loads(r.read().decode())
             except urllib.error.HTTPError as e:
@@ -169,40 +187,8 @@ class Http:
             except Exception as e:                      # noqa: BLE001
                 last = type(e).__name__ + ": " + str(e)[:120]
                 time.sleep(min(8.0, 0.8 * (t + 1)))
-        return {"_error": settings.redact_key(str(last))}
-
-    # -- Solana JSON-RPC ----------------------------------------------------
-    def rpc(self, method, params):
-        """Rend (resultat, erreur). L'erreur n'est JAMAIS confondue avec une
-        reponse vide : c'est exactement le piege qui a fait croire, en cours de
-        mise au point, que l'historique du mint EPEP s'arretait en 2024-12."""
-        self.n_rpc += 1
-        url = "https://mainnet.helius-rpc.com/?api-key=" + self.key()
-        r = self._raw(url, {"jsonrpc": "2.0", "id": 1,
-                            "method": method, "params": params})
-        if not isinstance(r, dict):
-            return None, "reponse non-dict"
-        if "_error" in r:
-            return None, r["_error"]
-        if "error" in r:
-            return None, settings.redact_key(json.dumps(r["error"])[:200])
-        return r.get("result"), None
-
-    def sigs(self, addr, limit=1000, before=None):
-        p = {"limit": limit}
-        if before:
-            p["before"] = before
-        for _ in range(4):
-            r, err = self.rpc("getSignaturesForAddress", [addr, p])
-            if err is None:
-                return r or [], None
-            time.sleep(2.0)
-        return None, err
-
-    # -- web ----------------------------------------------------------------
-    def web(self, url):
-        self.n_web += 1
-        return self._raw(url, None, tries=5, timeout=60)
+        raise RuntimeError("web GET epuise apres %d essais : %s"
+                           % (tries, settings.redact_key(str(last))))
 
 
 H = Http()

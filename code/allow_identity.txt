@@ -1,0 +1,17 @@
+# allow_identity.txt -- identifiers that are PUBLISHED ON PURPOSE.
+#
+# check_no_secrets.py treats these as intentional attribution, not leaks: a
+# finding whose fragment matches one of these (case-insensitive) is reported as
+# "allowed", not as a failure. This is the deliberate counterpart to the
+# --identity denylist: the author signs this work, so the name and the trading
+# handle that appears on the committed screenshots are meant to be here.
+#
+# Keep this SHORT and specific. It is not a place to silence real leaks -- it is
+# the record of which identity strings are load-bearing to the dossier's
+# author-attribution claim (see the "Author" section of README.md).
+#
+# One string per line; blank lines and #-comments ignored.
+
+teamdacunha
+benjamindacunha
+benjamin da cunha

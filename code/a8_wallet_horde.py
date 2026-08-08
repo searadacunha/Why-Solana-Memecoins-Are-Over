@@ -17,16 +17,19 @@ NEW at the moment of payment (first activity within an hour of receiving). A pay
 that is born on receipt is not a transfer between existing accounts; it is a wallet being created.
 
 USAGE
-    export HELIUS_KEYS=key1[,key2,...]
+    export HELIUS_API_KEYS=key1[,key2,...]
     python3 code/a8_wallet_horde.py
 Needs the network. Its output, data/split/horde.json, is committed so the finding is checkable
 without a key.
 """
-import json, os, sys, time, urllib.request, datetime as dt
+from __future__ import annotations
+
+import json, os, sys, time, datetime as dt
 from concurrent.futures import ThreadPoolExecutor
 
-_raw = os.environ.get("HELIUS_KEYS") or os.environ.get("HELIUS_API_KEYS") or ""
-KEYS = [k.strip() for k in _raw.split(",") if k.strip()]
+import rpc_client
+import settings
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "split", "all_buyers_g2y.json")
 OUT = os.path.join(ROOT, "data", "split", "horde.json")
@@ -38,41 +41,26 @@ class Echec(Exception):
     pass
 
 
+# Le transport Helius (JSON-RPC + transactions parsees) est delegue au client
+# partage rpc_client : rotation de cles, cooldown apres un 429, reprises bornees,
+# et surtout UNE seule regle d'erreur -- il LEVE HeliusError, il ne rend jamais
+# [] ou None pour dire "echec". On conserve ici les fines enveloppes
+# rpc()/parsed() qui retraduisent HeliusError en Echec, afin de ne rien changer
+# aux appelants (naissance/etudie attrapent deja Echec). Les parametres ki/tries
+# subsistent pour la compatibilite d'appel mais ne servent plus : rpc_client
+# possede desormais la rotation et les reprises.
 def rpc(method, params, ki=0, tries=8):
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    last = None
-    for i in range(tries):
-        key = KEYS[(ki + i) % len(KEYS)]
-        try:
-            req = urllib.request.Request(f"https://mainnet.helius-rpc.com/?api-key={key}",
-                                         data=body,
-                                         headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=45) as r:
-                o = json.load(r)
-            if "result" in o:
-                return o["result"]
-            last = o.get("error")
-        except Exception as e:
-            last = e
-        time.sleep(min(20.0, 1.0 * (2 ** i)))
-    raise Echec(f"{method}: {last}")
+    try:
+        return rpc_client.rpc(method, params)
+    except rpc_client.HeliusError as e:
+        raise Echec(f"{method}: {e}")
 
 
 def parsed(addr, ki=0, before=None, tries=5):
-    key = KEYS[ki % len(KEYS)]
-    url = (f"https://api-mainnet.helius-rpc.com/v0/addresses/{addr}/transactions"
-           f"?api-key={key}&limit=100" + (f"&before={before}" if before else ""))
-    last = None
-    for i in range(tries):
-        try:
-            with urllib.request.urlopen(
-                    urllib.request.Request(url, headers={"Accept": "application/json"}),
-                    timeout=45) as r:
-                return json.load(r)
-        except Exception as e:
-            last = e
-            time.sleep(min(20.0, 1.0 * (2 ** i)))
-    raise Echec(f"parsed {addr[:10]}: {last}")
+    try:
+        return rpc_client.enhanced(addr, limit=100, before=before)
+    except rpc_client.HeliusError as e:
+        raise Echec(f"parsed {addr[:10]}: {e}")
 
 
 def naissance(addr, ki=0):
@@ -141,8 +129,9 @@ def etudie(args):
                     "generation_suivante": neuves}
 
 
-if not KEYS:
-    sys.exit("HELIUS_KEYS non defini. export HELIUS_KEYS=cle1[,cle2]")
+if not settings.helius_keys():
+    sys.exit("Aucune cle Helius. export HELIUS_API_KEYS=cle1[,cle2] "
+             "(ou .env a la racine).")
 
 src = json.load(open(SRC))
 cibles = []

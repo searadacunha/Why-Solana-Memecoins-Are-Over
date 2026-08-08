@@ -1,0 +1,350 @@
+{
+ "cas_reference": {
+  "autres_tokens_au_meme_montant": [
+   "SAFFRON"
+  ],
+  "delai_creation_h_depuis_dernier_credit": 7.6178,
+  "delai_creation_h_depuis_premier_credit": 7.7131,
+  "delai_readme_annonce_h": 7.6,
+  "etendue_s": 343,
+  "jeton": "h2w6gm6jz",
+  "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+  "montant_sol": 2.9768156,
+  "n_portefeuilles": 9
+ },
+ "convention_horodatage": "date de creation tronquee a la seconde (la fraction de seconde du fichier est ignoree, <= 2.8e-4 h sur un delai)",
+ "n_tokens_en_desaccord_avec_le_compte_du_fichier": 0,
+ "n_tokens_fichier": 14,
+ "n_tokens_mesures": 13,
+ "n_tokens_rejetes": 1,
+ "niveau": "MESURE",
+ "non_etabli": [
+  "part de supply achetee par portefeuille : data/ ne contient aucune quantite de tokens achetee pour ces tokens (seul sol_spent_first_buy existe, dans une autre collecte), donc ni les 2 % de supply ni les 20 millions de tokens ne sont mesures ici",
+  "que ce motif soit rare : aucune population temoin n'est construite par ce script, voir a4_selection_bias.py",
+  "laquelle des deux collectes du token de reference est complete : les deux fichiers sont [MESURE], leur desaccord est un ecart de couverture, il n'est pas arbitre ici"
+ ],
+ "objet": "Recomptage des credits de passerelle recus par des portefeuilles vierges AVANT la creation du token, pour chaque token de phase 1, plus la reconciliation du token de reference contre la seconde collecte.",
+ "par_token": [
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1733737641,
+   "creation_utc": "2024-12-09T09:47:21.061000Z",
+   "delai_creation_h_depuis_dernier_credit": 12.1339,
+   "delai_creation_h_depuis_premier_credit": 167.9019,
+   "etendue_totale_s": 560765,
+   "groupe_montant_max": {
+    "etendue_s": 0,
+    "montant_sol": 0.73942138,
+    "n_credits": 1,
+    "n_portefeuilles": 1,
+    "portefeuilles": [
+     "DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq"
+    ],
+    "ts_dernier": 1733210863,
+    "ts_premier": 1733210863
+   },
+   "jeton": "ACID",
+   "mint": "9woMdZe1WVpFBQwRPybAFpqaNMT9YXyNMhdKh7JXpump",
+   "montants_distincts_sol": [
+    0.73942138,
+    1.50446572,
+    1.52605696,
+    1.95839316
+   ],
+   "n_credits_avant_token": 4,
+   "n_montants_distincts": 4,
+   "n_vierges_finances_avant_token": 3,
+   "n_vierges_finances_avant_token_declare_fichier": 3
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1732052384,
+   "creation_utc": "2024-11-19T21:39:44.231000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "BLT",
+   "mint": "BYDrEVy1Loiehw7jYj8Tdjpk4NhA1AF6CBfQBhPCpump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1728567348,
+   "creation_utc": "2024-10-10T13:35:48.615000Z",
+   "delai_creation_h_depuis_dernier_credit": 4.1847,
+   "delai_creation_h_depuis_premier_credit": 71.3378,
+   "etendue_totale_s": 241751,
+   "groupe_montant_max": {
+    "etendue_s": 0,
+    "montant_sol": 1.2074956,
+    "n_credits": 1,
+    "n_portefeuilles": 1,
+    "portefeuilles": [
+     "Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho"
+    ],
+    "ts_dernier": 1728552283,
+    "ts_premier": 1728552283
+   },
+   "jeton": "CHOCO",
+   "mint": "GSFvzyczBmq56fHDue4hygBHckz7ooB5MRhtc8fApump",
+   "montants_distincts_sol": [
+    1.2074956,
+    2.30739647
+   ],
+   "n_credits_avant_token": 2,
+   "n_montants_distincts": 2,
+   "n_vierges_finances_avant_token": 2,
+   "n_vierges_finances_avant_token_declare_fichier": 2
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1735503794,
+   "creation_utc": "2024-12-29T20:23:14.489000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "LEXICON",
+   "mint": "E4wg8YF472u8oiLvSNKB84Y23gZhkSQ3PSCJaUj4pump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1735711411,
+   "creation_utc": "2025-01-01T06:03:31.592000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "MIKU",
+   "mint": "48BVWSkY5XxZ9HwaKet2kAYvjP9gPviUmm8Xg2EKCLNx",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1728537865,
+   "creation_utc": "2024-10-10T05:24:25.235000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "OPTIMUS",
+   "mint": "9fURVh8YkzXDch2KmiBK7YT1zPYGC9UcWfXATvcupump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1734282294,
+   "creation_utc": "2024-12-15T17:04:54.845000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "POLMRKTBOT",
+   "mint": "GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1735688483,
+   "creation_utc": "2024-12-31T23:41:23.897000Z",
+   "delai_creation_h_depuis_dernier_credit": 6.3672,
+   "delai_creation_h_depuis_premier_credit": 30.1606,
+   "etendue_totale_s": 85656,
+   "groupe_montant_max": {
+    "etendue_s": 0,
+    "montant_sol": 0.4818756,
+    "n_credits": 1,
+    "n_portefeuilles": 1,
+    "portefeuilles": [
+     "E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab"
+    ],
+    "ts_dernier": 1735665561,
+    "ts_premier": 1735665561
+   },
+   "jeton": "QAMI",
+   "mint": "4pGhuznKZPRwnMhgoZHPkj921GELuzmzpXAjgrVVpump",
+   "montants_distincts_sol": [
+    0.4818756,
+    4.9498234
+   ],
+   "n_credits_avant_token": 2,
+   "n_montants_distincts": 2,
+   "n_vierges_finances_avant_token": 2,
+   "n_vierges_finances_avant_token_declare_fichier": 2
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1730202706,
+   "creation_utc": "2024-10-29T11:51:46.301000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "RAO",
+   "mint": "3cxqCGH1gq5BzvfxfrWXMm4V3ZaAyBMcXMomzDxapump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1731452093,
+   "creation_utc": "2024-11-12T22:54:53.193000Z",
+   "delai_creation_h_depuis_dernier_credit": 1.4592,
+   "delai_creation_h_depuis_premier_credit": 42.4514,
+   "etendue_totale_s": 147572,
+   "groupe_montant_max": {
+    "etendue_s": 0,
+    "montant_sol": 1.9828156,
+    "n_credits": 1,
+    "n_portefeuilles": 1,
+    "portefeuilles": [
+     "67UopZGpThFd83mzrbQpCBxhHWrJ5TpEBND7mMSxdHSa"
+    ],
+    "ts_dernier": 1731299268,
+    "ts_premier": 1731299268
+   },
+   "jeton": "SAFFRON",
+   "mint": "BWeCExEGteR8VL4bacWmFh8CG1qGjBFCdkFrxrUwpump",
+   "montants_distincts_sol": [
+    1.9828156,
+    2.38041559,
+    2.9768156,
+    7.77869425,
+    8.62420789,
+    9.894826
+   ],
+   "n_credits_avant_token": 6,
+   "n_montants_distincts": 6,
+   "n_vierges_finances_avant_token": 3,
+   "n_vierges_finances_avant_token_declare_fichier": 3
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1734101436,
+   "creation_utc": "2024-12-13T14:50:36.376000Z",
+   "delai_creation_h_depuis_dernier_credit": 7.6178,
+   "delai_creation_h_depuis_premier_credit": 7.7131,
+   "etendue_totale_s": 343,
+   "groupe_montant_max": {
+    "etendue_s": 343,
+    "montant_sol": 2.9768156,
+    "n_credits": 9,
+    "n_portefeuilles": 9,
+    "portefeuilles": [
+     "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+     "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+     "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+     "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+     "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+     "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+     "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+     "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+     "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW"
+    ],
+    "ts_dernier": 1734074012,
+    "ts_premier": 1734073669
+   },
+   "jeton": "h2w6gm6jz",
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "montants_distincts_sol": [
+    2.9768156
+   ],
+   "n_credits_avant_token": 9,
+   "n_montants_distincts": 1,
+   "n_vierges_finances_avant_token": 9,
+   "n_vierges_finances_avant_token_declare_fichier": 9
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1735219510,
+   "creation_utc": "2024-12-26T13:25:10.337000Z",
+   "delai_creation_h_depuis_dernier_credit": 0.3861,
+   "delai_creation_h_depuis_premier_credit": 0.4908,
+   "etendue_totale_s": 377,
+   "groupe_montant_max": {
+    "etendue_s": 0,
+    "montant_sol": 0.739785,
+    "n_credits": 1,
+    "n_portefeuilles": 1,
+    "portefeuilles": [
+     "FYG2cyAmhKGyRnH5v3WvM6t2DnpxE3ZgoC3LCMaJ4cAB"
+    ],
+    "ts_dernier": 1735218120,
+    "ts_premier": 1735218120
+   },
+   "jeton": "sumiko",
+   "mint": "D9EoEz3Avd3W1mTVKCDtKcifuR7v8CeFDcfyedJTpump",
+   "montants_distincts_sol": [
+    0.739785,
+    1.44608649
+   ],
+   "n_credits_avant_token": 2,
+   "n_montants_distincts": 2,
+   "n_vierges_finances_avant_token": 2,
+   "n_vierges_finances_avant_token_declare_fichier": 2
+  },
+  {
+   "accord_avec_le_fichier": true,
+   "creation_ts": 1734603791,
+   "creation_utc": "2024-12-19T10:23:11.755000Z",
+   "delai_creation_h_depuis_dernier_credit": null,
+   "delai_creation_h_depuis_premier_credit": null,
+   "etendue_totale_s": null,
+   "groupe_montant_max": null,
+   "jeton": "symx",
+   "mint": "Fu4jQQpUnECSVQrVfeeVPpQpXQffM75LL328EJPtpump",
+   "montants_distincts_sol": [],
+   "n_credits_avant_token": 0,
+   "n_montants_distincts": 0,
+   "n_vierges_finances_avant_token": 0,
+   "n_vierges_finances_avant_token_declare_fichier": 0
+  }
+ ],
+ "reconciliation": {
+  "chemin": "data/trace_h2w6/e2_funding_h2w6gm6jz.json",
+  "disponible": true,
+  "lecture": "Deux collectes du meme token. Elles ne partagent aucun portefeuille et aucun montant de reference. C'est un ecart de couverture entre deux collectes, pas une contradiction sur la chaine. Ce script n'etablit PAS laquelle des deux est complete.",
+  "lue_par": "a5_author_pattern.py",
+  "montant_de_reference_sol": 2.9768156,
+  "montant_le_plus_proche_sol": 2.981490868,
+  "n_inflows_au_montant_de_reference": 0,
+  "n_inflows_nature_financement": 61,
+  "n_inflows_total": 905,
+  "n_portefeuilles": 40,
+  "n_portefeuilles_communs_avec_source_a": 0
+ },
+ "rejets": [
+  {
+   "erreur_source": "getSignaturesForAddress : HTTP 429 repete. Scan interrompu, token declare NON MESURABLE plutot que compte comme negatif.",
+   "jeton": "VISUALIZE",
+   "motif": "non_mesurable_scan_interrompu"
+  }
+ ],
+ "source": "data/split/all_buyers_g2y.json",
+ "tokens_en_desaccord": []
+}
