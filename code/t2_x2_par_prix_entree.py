@@ -115,18 +115,18 @@ def main():
 
     write_table(
         "T2a_x2_contrefactuel",
-        ["prix d'entree USD", "n", "x2 %", "IC95 %", "x3 %", "x5 %",
-         "x2 % (B entier, n={})".format(len(allB))],
+        ["entry price USD", "n", "x2 %", "95% CI %", "x3 %", "x5 %",
+         "x2 % (all of B, n={})".format(len(allB))],
         tabA,
         ["",
-         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} jours UTC | socle B propre.",
-         "x2(P) = part des tokens dont l'ATH pump.fun >= 2 x P. Fonction de survie "
-         "des ATH : aucun parametre libre.",
-         f"**Prix qui donne 90 % de x2 : {p90:,.0f} USD** "
-         f"(= 10e percentile des ATH / 2 ; {p90_all:,.0f} USD sur B entier)."
+         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} UTC days | clean population B.",
+         "x2(P) = share of tokens whose pump.fun ATH >= 2 x P. Survival function "
+         "of the ATHs: no free parameter.",
+         f"**Entry price that yields a 90 % x2 rate: {p90:,.0f} USD** "
+         f"(= 10th percentile of ATHs / 2; {p90_all:,.0f} USD on all of B)."
          .replace(",", " "),
-         "Borne SUPERIEURE : atteindre l'ATH n'est pas vendre a l'ATH.",
-         "", "Regenerer : `python3 code/t2_x2_par_prix_entree.py`"])
+         "An UPPER bound: reaching the ATH is not selling at the ATH.",
+         "", "Regenerate: `python3 code/t2_x2_par_prix_entree.py`"])
 
     # ---------------- panneau B : bandes observees
     Bp, tabB = [], []
@@ -155,21 +155,21 @@ def main():
 
     write_table(
         "T2b_x2_bandes",
-        ["bande MC detectee", "n", "MC median", "ATH median", "x2 %", "IC95 %",
-         "x2 devant soi %"],
+        ["detected MC band", "n", "median MC", "median ATH", "x2 %", "95% CI %",
+         "x2 ahead %"],
         tabB,
         ["",
-         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} jours UTC | socle B propre.",
-         "Ici le denominateur est le prix REELLEMENT observe a la detection. Le taux "
-         "de x2 est quasi plat : les tokens qui apparaissent bas ont aussi un ATH bas.",
-         f"Elasticite log10(ATH) ~ log10(mc), demeanee par jour : **b = {el:.3f}** "
-         f"(n={len(rows)}). b < 1 => entrer plus haut degrade reellement le multiple.",
-         "Limite (relecture) : b publie sans SE/IC ; l'erreur de mesure sur le MC d'entree "
-         "(errors-in-variables) tire la pente sous 1 ; et le taux de x2 quasi plat de ce "
-         "panneau est en tension avec une lecture causale. Decomposition mecanique : "
-         "mesuree. Claim economique : indicatif, NON ETABLI.",
-         "`x2 devant soi` = x2 ET ATH survenant >= 60 s apres la detection.",
-         "", "Regenerer : `python3 code/t2_x2_par_prix_entree.py`"])
+         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} UTC days | clean population B.",
+         "Here the denominator is the price ACTUALLY observed at detection. The x2 "
+         "rate is nearly flat: tokens that appear low also have a low ATH.",
+         f"Elasticity log10(ATH) ~ log10(mc), demeaned by day: **b = {el:.3f}** "
+         f"(n={len(rows)}). b < 1 => entering higher genuinely degrades the multiple.",
+         "Limit (added on review): b is published without SE/CI; measurement error on "
+         "the entry MC (errors-in-variables) pulls the slope below 1; and the nearly "
+         "flat x2 rate of this panel is in tension with a causal reading. Mechanical "
+         "decomposition: measured. Economic claim: indicative, NON ETABLI.",
+         "`x2 ahead` = x2 AND the ATH occurring >= 60 s after detection.",
+         "", "Regenerate: `python3 code/t2_x2_par_prix_entree.py`"])
 
     dump_json({"n": len(rows), "n_clusters": nclu, "n_jours": ndays,
                "n_B_entier": len(allB),
