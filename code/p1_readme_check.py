@@ -69,7 +69,7 @@ THE FAILURE MODE THIS SCRIPT CANNOT SEE ON ITS OWN
     the digits. Where the supporting fact was not measured at all, the
     measurement is extended rather than the sentence softened.
 
-THE FRENCH EDITION
+THE FRENCH EDITION -- A LOCAL AID, NEVER PART OF THE ARTEFACT
     _relecture_fr/README.fr.md used to be checked by no code at all: figures
     were copied there by hand, and both prose defects above were duplicated
     into it verbatim. Rows may now carry `texte_fr`, checked literally against
@@ -78,6 +78,20 @@ THE FRENCH EDITION
     purpose -- only the rows carrying `texte_fr` are checked, and the count is
     printed at every run so the gap is a visible quantity rather than a
     memory.
+
+    That file is deliberately UNTRACKED (.gitignore: the repository publishes
+    in English, and a committed translation would diverge at the first fix
+    applied to the English). A clone therefore does not carry it, and its
+    absence is the normal state, not a defect: the check is skipped and the
+    run still passes.
+
+    The consequence is a rule, and it was learnt the hard way -- the first CI
+    run this repository ever executed failed on it. The French results are
+    PRINTED but never WRITTEN: no `statut_fr`, no French counts in
+    docs/out/p1_readme_check.json. An artefact that recorded them would hold a
+    value derived from an untracked file, so it would reproduce on the author's
+    machine and nowhere else -- which is precisely the defect run_all.py
+    --strict exists to catch.
 
 WHAT IT DOES NOT ESTABLISH
     - That the artefacts themselves are right. p1 compares prose to artefacts; the
@@ -91,8 +105,10 @@ WHAT IT DOES NOT ESTABLISH
 
 READS (all committed, no network, no private state)
     README.md                              the claims themselves
-    _relecture_fr/README.fr.md             the French edition, for the rows that
-                                           declare a `texte_fr`
+    _relecture_fr/README.fr.md             OPTIONAL and untracked: the French
+                                           edition, for the rows that declare a
+                                           `texte_fr`. Absent in any clone; it
+                                           feeds stdout only, never the artefact
     docs/out/a9_g2y_prelaunch.json         act I burst
     docs/out/expl_ledger.json              the 2024 deposit ledger, reconstructed
                                            on chain; since 2026-08 it carries
@@ -111,8 +127,9 @@ WRITES
 
 Usage :  python3 code/p1_readme_check.py [--out ...]
 Sortie :  docs/out/p1_readme_check.json
-Exit code : 1 if any row is MISMATCH or ABSENT, or if a declared `texte_fr` is
-            not found in README.fr.md; 0 otherwise.
+Exit code : 1 if any row is MISMATCH or ABSENT, or if README.fr.md is present
+            and a declared `texte_fr` is not found in it; 0 otherwise. The mere
+            absence of README.fr.md never fails the run.
 """
 import argparse
 import ast
@@ -631,15 +648,16 @@ README_FR = os.path.join("_relecture_fr", "README.fr.md")
 def evaluer_fr(row, texte_fr_source):
     """-> statut of one row's French sentence.
 
-    "-" when the row declares none (the honest majority today), "OK" when the
-    declared sentence is present verbatim, "ABSENT" when it is not -- which
-    fails the run, exactly like an English claim text that moved. A row that
-    declares a French sentence has promised it exists.
+    "-" when the row declares none (the honest majority today) OR when the
+    French edition is not in this checkout at all -- it is untracked by design,
+    so a clone legitimately has nothing to compare against. "OK" when the
+    declared sentence is present verbatim, "ABSENT" when the file IS there and
+    the sentence is not -- which fails the run, exactly like an English claim
+    text that moved. A row that declares a French sentence has promised it
+    exists in a checkout that carries the file.
     """
-    if not row.get("texte_fr"):
+    if not row.get("texte_fr") or texte_fr_source is None:
         return "-"
-    if texte_fr_source is None:
-        return "ABSENT"
     return "OK" if row["texte_fr"] in texte_fr_source else "ABSENT"
 
 
@@ -747,7 +765,10 @@ def main():
     print("\n  FRENCH EDITION (%s): %d of %d claim(s) declare a sentence there"
           % (README_FR, n_fr, len(lignes)))
     if fr_texte is None:
-        print("    file not present in this checkout")
+        print("    file not in this checkout -- untracked by design, so this is"
+              " the normal state of a clone.")
+        print("    The check is skipped, it never fails the run, and nothing"
+              " from it reaches the artefact.")
     for r in lignes:
         if r["statut_fr"] == "ABSENT":
             print("    ABSENT  %s" % r["texte_fr"])
@@ -768,12 +789,19 @@ def main():
     P.kv("claims also checked in README.fr.md", n_fr,
          note="%d of them not found there" % n_fr_ab)
 
+    # The French columns are stripped here, and the French counts are absent
+    # below: _relecture_fr/README.fr.md is untracked by design, so any value
+    # derived from it would reproduce on the author's machine and nowhere else.
+    # Keeping them printed but unwritten is what makes this artefact regenerate
+    # byte-for-byte from a clean clone. (See "THE FRENCH EDITION" at the top.)
+    claims_publies = [{k: v for k, v in r.items()
+                       if k not in ("statut_fr", "texte_fr")}
+                      for r in lignes]
+
     obj = {
-        "claims": lignes,
+        "claims": claims_publies,
         "n_absent": n_ab,
         "n_claims": len(lignes),
-        "n_fr_absent": n_fr_ab,
-        "n_fr_declares": n_fr,
         "n_mismatch": n_mm,
         "n_non_source_present": n_present,
         "n_non_source_retire": len(non_source) - n_present,
