@@ -1,6 +1,6 @@
 {
- "objet": "Taux de faux positifs du detecteur de decoupage sur des groupes de portefeuilles tires au hasard dans la population temoin.",
- "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de taille k sont tires sans remise. Les criteres A/B/C sont ceux de splitlib.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : toute detection dans un groupe tire est donc une coincidence.",
+ "objet": "False-positive rate of the split detector on wallet groups drawn at random from the control population.",
+ "methode": "Control-token wallets are pooled, then groups of size k are drawn without replacement. Criterion B applies the split-grouping semantics of splitlib.find_splits, reduced to a boolean (REL_TOL=1e-4, window=3600 s, min cluster=3; equivalence enforced by tests/test_splitlib.py). Criteria A (shared funding transaction) and C (shared private funder) are the phase-1 detector's definitions. Resampling destroys within-token co-occurrence: any detection in a drawn group is therefore a coincidence.",
  "population": {
   "n_portefeuilles": 136,
   "n_tokens": 9,
@@ -100,7 +100,7 @@
     "part_de_la_population": 0.0074
    }
   ],
-  "lecture": "Si le premier bailleur ne couvre qu'une part marginale de la population, le taux de declenchement de C ne vient pas d'une poignee d'adresses d'infrastructure oubliees : il vient du nombre de PAIRES que forment 40 portefeuilles. C'est alors un probleme d'anniversaire, et allonger la liste des terminaux connus n'y changerait rien."
+  "lecture": "If the top funder only covers a marginal share of the population, C's firing rate does not come from a handful of unlabelled infrastructure addresses: it comes from the number of PAIRS that 40 wallets form. That is a birthday problem, and extending the list of known terminals would change nothing."
  },
- "portee": "Ce taux mesure la propension du detecteur a se declencher par hasard sur la population de portefeuilles de l'epoque. Il ne corrige pas le biais de selection de la cohorte de cibles, qui est un defaut distinct."
+ "portee": "This rate measures the detector's propensity to fire by chance on the era's wallet population. It does not correct the selection bias of the target cohort, which is a separate defect."
 }
