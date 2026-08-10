@@ -1,27 +1,10 @@
 # Why Solana Memecoins Are Over
 
-*A measurement, not a market call: one Oct–Dec 2024 on-chain trading ledger, and a 6.2-day
-capture window of pump.fun launches (June–July 2026, 6.8 % end-to-end coverage). The perimeter
-is `docs/METHODOLOGY.md`; nothing here generalises beyond it.*
-
-<!-- Set OWNER/REPO to the GitHub slug once pushed; the badge then turns green
-     when the claim ledger, the byte-for-byte reproduction, the tests, the type
-     checks and the publication gate all pass on every push. -->
-[![ci](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
-
 Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
 I stopped when the pattern I was exploiting disappeared.
 
 This repository is a measurement of what replaced it.
-
-> **Every figure on this page is checked against the artefacts, by code in this same commit.**
-> `python3 code/p1_readme_check.py` recomputes each one and prints a claim ledger.
-> **It passes: all 22 figures with an artefact behind them reproduce exactly.** A further 15 —
-> network-wide aggregates, third-party reports, the $ANSEM launch, the 2% entry threshold and the
-> Phase-0 seed-capital recollection — have no artefact in this repository and are listed as unsourced
-> rather than quietly asserted. Both lists are itemised
-> in `docs/out/p1_readme_check.json`. Where prose and measurement disagree, the measurement is right.
 
 ---
 
