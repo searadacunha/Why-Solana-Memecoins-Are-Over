@@ -27,9 +27,9 @@ WHY A RED RUN IS NOT A BUG IN p1
     changes; a claim that leaves the front page leaves the CLAIMS table with it,
     together with any artefact only that claim read.
 
-    The README still carries this run's counts on its front page, and main()
-    re-checks that banner against the run that just happened, so a stale count
-    cannot sit there unnoticed.
+    (The README used to carry this run's two counts in a front-page banner,
+    re-checked verbatim here; the banner was removed by author decision on
+    2026-08-10 and the counts now live only in this script's output and JSON.)
 
     THE 2024 TRADING TABLE, AND WHY ITS ROWS CHANGED SOURCE
     The "Exploiting the pattern" table used to quote 1 200.12 SOL / 238 989.57 $
@@ -512,26 +512,6 @@ CLAIMS = [
      "note": "launches with zero curve purchase before the block / total"},
 ]
 
-# The front-page banner of README.md, which quotes the two counts this script
-# produces. Checked verbatim at the end of main(): a count printed on the front
-# page and re-checked by nothing would go stale without a single error.
-ANNONCE_README_ECHEC = ("**It currently fails: %d of the figures below are "
-                        "contradicted by the measurements**, and %d more")
-ANNONCE_README_OK = ("**It passes: all %d figures with an artefact behind them "
-                     "reproduce exactly.** A further %d")
-
-
-def annonce_readme(n_contredits, n_avec_artefact, n_sans_artefact):
-    """The banner the README must carry, for this run's counts.
-
-    Two shapes, because "0 of the figures are contradicted" is not a sentence
-    anyone should have to read on a front page. The passing form still quotes
-    both counts, so neither can go stale unnoticed.
-    """
-    if n_contredits:
-        return ANNONCE_README_ECHEC % (n_contredits, n_sans_artefact)
-    return ANNONCE_README_OK % (n_avec_artefact, n_sans_artefact)
-
 # Figures quoted in README.md that NO committed artefact backs. They never fail
 # the run: "unsourced" is a different defect from "wrong". They are printed and
 # counted at every run so the number is a falling quantity, not a memory.
@@ -787,19 +767,6 @@ def main():
          note="listed above, not fatal")
     P.kv("claims also checked in README.fr.md", n_fr,
          note="%d of them not found there" % n_fr_ab)
-
-    # The README's front-page banner quotes these two counts so a first-time
-    # reader sees the state of the ledger without opening anything. A quoted
-    # number that nothing re-checks goes stale in silence, so it is re-checked
-    # here, against the run that just happened.
-    banniere = annonce_readme(n_mm + n_ab, n_ok, n_present)
-    if banniere not in readme:
-        raise SystemExit(
-            "README.md's ledger banner does not match this run.\n"
-            "  this run  : %d contradicted, %d unsourced\n"
-            "  expected in README.md, verbatim :\n    %s\n"
-            "Update the banner, or work out why the counts moved."
-            % (n_mm + n_ab, n_present, banniere))
 
     obj = {
         "claims": lignes,
