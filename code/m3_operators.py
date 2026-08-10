@@ -85,10 +85,11 @@ INFRA = {
 }
 
 
-def log_hyper_pval(k, a, b, N):
+def hyper_pval(k, a, b, N):
     """P(X >= k) sous la loi hypergeometrique : deux adresses vues dans a et b
     tokens sur N, combien de tokens en commun au hasard. Sert a dire si une
-    co-occurrence est surprenante. Calcul exact en entiers (stdlib)."""
+    co-occurrence est surprenante. Calcul exact en entiers (stdlib), rendu en
+    probabilite brute — pas en log."""
     tot = math.comb(N, b)
     s = 0
     for i in range(k, min(a, b) + 1):
@@ -193,7 +194,7 @@ def main():
             exp = a_ * b_ / N
             pairs.append({"a": x, "b": y, "obs": k, "attendu": exp,
                           "lift": k / exp if exp else None,
-                          "p": log_hyper_pval(k, a_, b_, N)})
+                          "p": hyper_pval(k, a_, b_, N)})
         if pairs:
             worst = max(pairs, key=lambda r: r["p"])
             cooc[name] = pairs

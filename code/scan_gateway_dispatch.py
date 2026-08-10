@@ -118,20 +118,15 @@ def bonding_curve(mint):
 
 
 def curve_buyers(curve):
-    """Every distinct fee payer on the curve, oldest first. Raises rather than returning empty."""
-    sigs, before = [], None
-    for _ in range(60):
-        page = rpc("getSignaturesForAddress", [curve, {"limit": 1000, "before": before}])
-        if not page:
-            if not sigs:
-                raise RpcError(f"courbe {curve[:12]}… : zero signature. Une courbe active en a "
-                               f"des centaines — c'est une panne, pas une mesure.")
-            break
-        sigs.extend(page)
-        if len(page) < 1000:
-            break
-        before = page[-1]["signature"]
-        time.sleep(0.3)
+    """Every distinct fee payer on the curve, oldest first. Raises rather than returning empty
+    or truncated: a page budget exhausted before genesis is a failure, not a measurement."""
+    try:
+        sigs, _ = rpc_client.walk_sigs(curve, max_pages=60)
+    except rpc_client.HeliusError as e:
+        raise RpcError(f"courbe {curve[:12]}… : {e}")
+    if not sigs:
+        raise RpcError(f"courbe {curve[:12]}… : zero signature. Une courbe active en a "
+                       f"des centaines — c'est une panne, pas une mesure.")
     sigs.sort(key=lambda s: s.get("blockTime") or 0)
 
     seen, order = set(), []

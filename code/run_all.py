@@ -32,8 +32,9 @@ import settings  # noqa: E402
 
 # (script, needs, one-line description)
 #   needs: "" offline | "net" Helius key | "priv" unpublished corpus
-#          | "priv-addr" the unpublished deposit address ($EXPL_LEDGER_ADDR) AND
-#            the network: a Helius key on the first run, after which data/cache/
+#          | "priv-addr" the deposit address ($EXPL_LEDGER_ADDR -- published in
+#            README.md since 2026-08, but still an environment input) AND the
+#            network: a Helius key on the first run, after which data/cache/
 #            is enough (the address is still required -- it is what the cached
 #            transactions are read against). Two conditions, so two skip
 #            reasons: a clean clone is told which one it is missing.
@@ -222,7 +223,7 @@ def main():
             continue
         if need == "priv-addr":
             if not has_addr:
-                skipped.append((name, "needs $EXPL_LEDGER_ADDR (never committed)"))
+                skipped.append((name, "needs $EXPL_LEDGER_ADDR (published in README.md, 'Author')"))
                 continue
             if not (a.with_net or has_key or expl_cache_ready()):
                 skipped.append((name, "needs $HELIUS_API_KEYS or a populated data/cache/"))

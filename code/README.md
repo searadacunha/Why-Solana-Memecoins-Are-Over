@@ -125,7 +125,7 @@ prints on every run.
 | **Public HTTP, no key** | `fetch_sol_usd`, `fetch_gt_ohlcv` | GeckoTerminal, ~300 requests, rate-limited client |
 | **Solana RPC** | `v05`–`v08`, `v1_*`, `v2_*`, `r1_*`, `a8_wallet_horde`, `09_bundle_snipe` | `HELIUS_API_KEYS` (free tier) |
 | **Unpublished raw corpus** | `v01`–`v04`, `make_public_data` | `PUMP_PRIVATE_ROOT` |
-| **Unpublished deposit address** | `expl_ledger` | `EXPL_LEDGER_ADDR` **and** `HELIUS_API_KEYS` (a populated `data/cache/` replaces the key, never the address) |
+| **Deposit address** | `expl_ledger` | `EXPL_LEDGER_ADDR` **and** `HELIUS_API_KEYS` (a populated `data/cache/` replaces the key, never the address — which is published, see below) |
 | **Figures** | `f_*` | `matplotlib`, the only third-party package anywhere |
 
 ```bash
@@ -156,7 +156,7 @@ measured. They are now measured, and the prose moved onto the measurement rather
 than the measurement onto the prose.
 
 ```bash
-export EXPL_LEDGER_ADDR=<base58 address>   # never committed, see below
+export EXPL_LEDGER_ADDR=6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU   # published, see below
 export HELIUS_API_KEYS=...                 # first run only
 python3 code/expl_ledger.py                # -> docs/out/expl_ledger.json
 ```
@@ -193,28 +193,31 @@ transfers whose heuristic sender is also a sweep recipient — the only
 return-of-capital signature visible from this wallet — is measured and published
 so a reader can subtract it. It is 0.
 
-**Privacy: the address is never committed.** It is a KYC'd exchange deposit
-address, so publishing it in the clear would attach a legal identity to this
-dossier permanently. It is read from `$EXPL_LEDGER_ADDR` exactly like
-`PUMP_PRIVATE_ROOT` (`settings.expl_ledger_addr()`, clear
-error when unset), and everything committed names it **only by its redaction
-label**, `RDCT-838bf381fe` — the artefact, and the cache filenames too. The
-script refuses to run at all if that label is missing from
-`code/redactions.json`, so the scrubbing cannot be forgotten; redaction happens
-at write time inside `pumplib.emit`, not as a post-hoc pass. This one label is a
-**salted HMAC** of the address (not a plain sha256, which the slur-vanity set
-still uses): a plain hash would let anyone shortlist candidate deposit addresses
-from the published fingerprints and confirm them by hashing, so it is keyed by
-HMAC under an uncommitted salt (`$REDACT_HMAC_SALT` / `redact_salt.txt`).
-Confirming the label needs both the address and the salt, so only the author can;
-that closes the enumeration oracle. `check_no_secrets.py` passes on the result.
-It stops the address being read off this repository; it does not make the wallet
-unfindable, since the published aggregates are themselves a fingerprint that can
-be matched against the chain.
+**The address is published.** It is a KYC'd exchange deposit address —
+`6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU` — so publishing it attaches the
+author's legal identity to this dossier permanently; that is a deliberate
+trade, made in 2026-08 (see the root `README.md`, *Author*): in exchange, the
+ledger stops being an attested artefact and becomes verifiable by anyone
+against the chain. Until then the address was redacted behind a salted-HMAC
+label, `RDCT-838bf381fe` (a plain hash would have been an enumeration oracle —
+anyone could shortlist candidate deposit addresses from the published
+fingerprints and confirm them by hashing); that scheme is retired, and the
+`map_hmac` block was removed from `code/redactions.json` (its `history` field
+records the change). The address is still read
+from `$EXPL_LEDGER_ADDR` exactly like `PUMP_PRIVATE_ROOT`
+(`settings.expl_ledger_addr()`, clear error when unset): the script measures
+the address it is given, and the artefact records which one that was. It
+appears verbatim in the artefact and in the cache filenames; every write path
+still runs through `redact` inside `pumplib.emit`, so re-adding an entry to
+`code/redactions.json` would scrub it again with no other change. Note what
+publishing implies: the artefact keeps publishing **aggregates only** — no
+signature, no sender list — but with the address in the clear both are one
+explorer query away, so that is a statement of scope, not a privacy defence.
 
 `run_all.py` lists it as `[addr+net]` and skips it with the missing condition
-named — `needs $EXPL_LEDGER_ADDR` or `needs $HELIUS_API_KEYS or a populated
-data/cache/` — so a clean clone reports a reason instead of a failure. Its
+named — `needs $EXPL_LEDGER_ADDR (published in README.md, 'Author')` or `needs
+$HELIUS_API_KEYS or a populated data/cache/` — so a clean clone reports a
+reason instead of a failure. Its
 artefact lives in `docs/out/`, so `--strict` byte-compares it like every other.
 
 ---
@@ -291,9 +294,11 @@ base58, and the substitution is injective — every count, cluster and graph
 measure is unchanged. 43 identifiers out of 212 201 scanned (0.02 %), none of
 them in the operator clusters the dossier analyses.
 
-A 44th entry is there for **privacy rather than decency**: the exchange deposit
-address measured by `expl_ledger.py`. Same machinery, different reason — see
-*The deposit-wallet ledger* above.
+A 44th entry used to be there for **privacy rather than decency**: the exchange
+deposit address measured by `expl_ledger.py`, behind a salted-HMAC label. It was
+removed in 2026-08 when the author chose to publish the address in the clear —
+see *The deposit-wallet ledger* above. The `map_hmac` machinery in
+`code/redact.py` remains, currently mapping nothing.
 
 Redaction is applied **at write time**, inside `common.dump_json`,
 `pumplib.emit`, `lib_verif.save` and `r1lib.save` — not as a post-hoc pass. A

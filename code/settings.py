@@ -28,13 +28,14 @@ Three classes of input, deliberately kept apart:
               $PUMP_PRIVATE_ROOT and degrade with an explicit message when it
               is absent. No published measurement requires it.
 
-  PRIVATE-ADDR  one identifier rather than a corpus: the exchange deposit
+  ADDR        one identifier rather than a corpus: the exchange deposit
               address measured by expl_ledger.py, read from $EXPL_LEDGER_ADDR.
-              Same posture for the same reason -- it is KYC'd, so committing it
-              would attach a legal identity to this repository. Its committed
-              artefact names it only by its RDCT-* label, a SALTED HMAC of the
-              address (see code/redact.py): confirming it needs both the
-              address and the uncommitted salt, so it is not enumerable.
+              Since 2026-08 the address is PUBLISHED in the repository --
+              6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU, see README.md
+              ("Author") -- so this is no longer a privacy boundary. It stays
+              an environment input so the script measures the address it is
+              given and the artefact records which one that was, rather than
+              the code silently assuming one.
 """
 from __future__ import annotations
 
@@ -100,14 +101,13 @@ _B58 = set("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
 def expl_ledger_addr(required: bool = True) -> Optional[str]:
     """The exchange-deposit address measured by code/expl_ledger.py, or None.
 
-    It is a KYC'd exchange address: committing it would attach the author's
-    legal identity to this repository, so it is read from the environment like
-    the other private inputs and the published artefact names it only by its
-    RDCT-* label (see code/redact.py).
-        export EXPL_LEDGER_ADDR=<base58 address>
-    Only expl_ledger.py reads it, and it reads it as required. run_all.py probes
-    it with required=False -- like private_root() -- to decide whether to run
-    that script or skip it with a reason.
+    The address is published (README.md, "Author"):
+        export EXPL_LEDGER_ADDR=6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU
+    It is still read from the environment rather than hard-coded: the script
+    measures the address it is given, and the published artefact records which
+    one that was. Only expl_ledger.py reads it, and it reads it as required.
+    run_all.py probes it with required=False -- like private_root() -- to
+    decide whether to run that script or skip it with a reason.
     """
     a = os.environ.get("EXPL_LEDGER_ADDR")
     if a:
@@ -118,10 +118,9 @@ def expl_ledger_addr(required: bool = True) -> Optional[str]:
     if required:
         raise SystemExit(
             "this script needs the deposit address.\n"
-            "  export EXPL_LEDGER_ADDR=<base58 address>\n"
-            "The address is never committed: docs/out/expl_ledger.json names it\n"
-            "only by its RDCT-* label, a salted HMAC of the address (code/redact.py):\n"
-            "confirming it needs both the address and the uncommitted salt."
+            "  export EXPL_LEDGER_ADDR=6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU\n"
+            "The address is published (README.md, 'Author');\n"
+            "docs/out/expl_ledger.json records it in the clear."
         )
     return None
 

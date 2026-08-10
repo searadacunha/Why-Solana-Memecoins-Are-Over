@@ -38,7 +38,7 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import (DATA, boot_ci_median, clusters, load_captures,  # noqa: E402
+from common import (DATA, boot_ci_median_tokens, clusters, load_captures,  # noqa: E402
                     med, q, robust_price, sol_usd, wilson, write_table, dump_json)
 
 GT_RAW = os.path.join(DATA, "cout_acheteur", "gt_raw.json")
@@ -119,7 +119,7 @@ def main():
         v = [r["ratios"][h] for r in rows if r["ratios"][h] is not None]
         vh = [r["highs"][h] for r in rows if r["highs"][h] is not None]
         absent = n_tot - len(v)
-        lo, hi = boot_ci_median(v)
+        lo, hi = boot_ci_median_tokens(v)
         wl, wh = wilson(absent, n_tot)
         rec = {"horizon_h": h, "n_avec_bougie": len(v), "n_total": n_tot,
                "sans_bougie": absent,

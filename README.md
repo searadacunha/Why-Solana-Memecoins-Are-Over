@@ -1,5 +1,9 @@
 # Why Solana Memecoins Are Over
 
+*A measurement, not a market call: one Oct–Dec 2024 on-chain trading ledger, and a 6.2-day
+capture window of pump.fun launches (June–July 2026, 6.8 % end-to-end coverage). The perimeter
+is `docs/METHODOLOGY.md`; nothing here generalises beyond it.*
+
 <!-- Set OWNER/REPO to the GitHub slug once pushed; the badge then turns green
      when the claim ledger, the byte-for-byte reproduction, the tests, the type
      checks and the publication gate all pass on every push. -->
@@ -18,6 +22,20 @@ This repository is a measurement of what replaced it.
 > Phase-0 seed-capital recollection — have no artefact in this repository and are listed as unsourced
 > rather than quietly asserted. Both lists are itemised
 > in `docs/out/p1_readme_check.json`. Where prose and measurement disagree, the measurement is right.
+
+---
+
+## Disclosure
+
+The pattern documented below is one I identified and traded myself, lawfully, under my own name.
+Starting capital was roughly **$400**; withdrawals over October–December 2024 came to
+**$237,137.87** — a multiple of roughly **590×**. The withdrawal figure is reconstructed on chain
+by `code/expl_ledger.py` and reproduces from the committed artefacts; the starting capital is a
+Phase-0 recollection listed as unsourced, and the multiple is arithmetic on the two, so it
+inherits that status. When the trading stopped, the same instruments were turned on my own
+claims: `docs/PITFALLS.md` records fifteen of them failing their designed tests, each corrected
+or retired, and results that could not be regenerated from the published data were deleted
+rather than kept.
 
 ---
 
@@ -90,7 +108,7 @@ The two money rows are the strong ones. They are the net of every incoming trans
 
 The two count rows are weaker, and method-dependent. A transfer here is one successful transaction carrying a positive balance delta, so a batched or multi-hop route counts once; a sending wallet is attributed as the counterparty with the largest opposing delta in the same transaction, which bounds the number of distinct senders without decomposing every transfer exactly.
 
-The deposit address is a KYC'd exchange address and is not published: the artefact identifies it only as `RDCT-838bf381fe`, a **salted HMAC** label (not a plain hash of the address, which would let anyone shortlist candidates from the published fingerprints and confirm them by hashing). Confirming it requires both the address and the uncommitted salt, so only I can. The 74 sending wallets are published as a count, not as a list. Most are my own trading wallets, but the count is what the artefact claims and ownership is not: the same heuristic resolves four of the 74 to third-party exchange hot wallets this repository already labels elsewhere, so `docs/out/expl_ledger.json` files any identity behind a sending wallet under `NON_ETABLI`.
+The deposit address is published: **`6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU`**. It is my KYC'd exchange deposit address, so publishing it attaches my legal identity to this ledger permanently — which is the point: every number in the table stops being "trust the artefact" and becomes one explorer query, reproducible by anyone against the chain. (Earlier commits redacted it behind a salted-HMAC label, `RDCT-838bf381fe`; the de-redaction is deliberate.) The artefact itself still publishes the 74 sending wallets as a count, not as a list — with the address in the clear anyone can enumerate them on chain, so that is a statement of the artefact's scope, not a defence. The count is what the artefact claims and ownership is not: the same heuristic resolves four of the 74 to third-party exchange hot wallets this repository already labels elsewhere, so `docs/out/expl_ledger.json` files any identity behind a sending wallet under `NON_ETABLI`.
 
 Receipts and methodology: `docs/EXPLOITATION.md` and `docs/PATTERN.md`. The reconstruction itself is `code/expl_ledger.py` → `docs/out/expl_ledger.json`.
 
@@ -179,7 +197,7 @@ The public wasn't outcompeted. It was optimized out of the order flow.
 
 ## Author
 
-**Benjamin Da Cunha.** This is published under my name on purpose. The commit history is authored under it, the `teamdacunha` referral handle is left visible on the trade screenshots in `data/screens/trades/`, and the **$237,137.87** reconstructed on chain in the deposit ledger is mine — commits, handle and money are the same person, and I am not anonymising any of it. The only thing redacted is the KYC'd exchange deposit address, behind a salted-HMAC label, because an exchange address is an attack surface, not a signature. I do not present myself as a generic engineer: I find and exploit patterns, and this repository is the evidence, checked line by line by the code beside it.
+**Benjamin Da Cunha.** This is published under my name on purpose. The commit history is authored under it, the `teamdacunha` referral handle is left visible on the trade screenshots in `data/screens/trades/`, and the **$237,137.87** reconstructed on chain in the deposit ledger is mine — commits, handle and money are the same person, and I am not anonymising any of it. That includes the KYC'd exchange deposit address itself, `6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU`, published above: earlier commits kept it behind a salted-HMAC label as an attack-surface precaution, and I have since chosen to publish it so the ledger is verifiable by anyone rather than only attested by me. The only redactions left in this repository are the slur-vanity identifiers — decency, not secrecy. I do not present myself as a generic engineer: I find and exploit patterns, and this repository is the evidence, checked line by line by the code beside it.
 
 For the record, and outside the measured perimeter: I started from roughly **$400** of starting capital, and my first trade on this pattern staked **1-2 SOL** and closed near **$2,000**. That is a Phase-0 recollection from before the 2024-10 window the ledger measures, and no artefact here reconstructs it — a deposit ledger sees proceeds landing on the exchange, not the buys that produced them. So `p1_readme_check.py` lists both figures as unsourced, exactly like every other number without an artefact behind it: the story is mine to tell, but only the measured figures are asserted as measured.
 

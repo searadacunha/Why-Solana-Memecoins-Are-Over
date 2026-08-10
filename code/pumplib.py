@@ -136,7 +136,10 @@ from statlib import median, quantile, wilson  # noqa: E402,F401
 def bootstrap_median_ci(xs, n_boot=2000, seed=12345, alpha=0.05):
     """IC de la mediane par bootstrap. Generateur congruentiel explicite pour
     que le resultat soit identique sur toute machine et toute version de
-    Python (random.seed ne le garantit pas entre versions)."""
+    Python (random.seed ne le garantit pas entre versions). La variante par
+    token a random.Random est common.boot_ci_median_tokens ; volontairement
+    distinctes (en-tete de statlib.py : fusionner changerait les nombres
+    publies)."""
     xs = [x for x in xs if x is not None]
     if len(xs) < 3:
         return (None, None)
