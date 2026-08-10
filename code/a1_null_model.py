@@ -64,27 +64,43 @@ def load_wallets(pattern):
 
 
 def detect(group):
-    """Criteria A / B / C of splitlib.py, unchanged, applied to an arbitrary wallet group."""
+    """Criteria A / B / C applied to an arbitrary wallet group.
+
+    A (shared funding transaction) and C (shared private funder) are the phase-1
+    detector's definitions. B is the split-grouping of splitlib.find_splits with
+    the same parameters, reduced to a boolean: does at least one cluster of
+    MIN_CLUSTER distinct wallets exist? For that boolean the `used` bookkeeping
+    of find_splits is provably irrelevant — find_splits only marks events used
+    when a cluster VALIDATES, so up to its first validated cluster the set is
+    empty and every seed is scanned exactly as below. Equivalence with
+    find_splits is enforced by tests/test_splitlib.py.
+
+    An earlier version of this function marked events used while scanning, even
+    for clusters below MIN_CLUSTER — a semantics find_splits does not have,
+    which could hide a real cluster behind a failed seed and understate the
+    false-positive rate. It also claimed to be splitlib "unchanged", which was
+    not true. Both are fixed here; the committed artefact is regenerated.
+    """
     rows = [(g["wallet"], a, t, s, sig) for g in group for a, t, s, sig in g["events"]]
-    rows.sort(key=lambda r: (r[1], r[2]))
 
     by_sig = defaultdict(set)
     for w, a, t, s, sig in rows:
         by_sig[sig].add(w)
     A = any(len(ws) >= 2 for ws in by_sig.values())
 
-    B, used = False, set()
-    for i, (w, amt, ts, s, sig) in enumerate(rows):
-        if i in used:
-            continue
+    # B: find_splits semantics — events sorted by amount alone (stable), every
+    # seed scanned, cluster = distinct wallets within REL_TOL and WINDOW_S.
+    events = [(w, a, t) for w, a, t, s, sig in rows]
+    events.sort(key=lambda e: e[1])
+    B = False
+    for i, (w, amt, ts) in enumerate(events):
         ws = {w}
-        for j in range(i + 1, len(rows)):
-            w2, a2, t2, _, _ = rows[j]
+        for j in range(i + 1, len(events)):
+            w2, a2, t2 = events[j]
             if abs(a2 - amt) > amt * REL_TOL:
-                break
+                break                          # sorted by amount: nothing else fits
             if w2 != w and abs(t2 - ts) <= WINDOW_S:
                 ws.add(w2)
-                used.add(j)
         if len(ws) >= MIN_CLUSTER:
             B = True
             break
@@ -107,13 +123,13 @@ def main():
 
     pool = load_wallets(os.path.join(DATA, "trace_temoins", "e2_funding_*.json"))
     if not pool:
-        sys.exit("Aucun portefeuille temoin trouve. Lancer d'abord le groupe temoin.")
+        sys.exit("No control wallet found. Run the control group first.")
     sizes = defaultdict(int)
     for w in pool:
         sizes[w["token"]] += 1
 
-    print(f"Population nulle : {len(pool)} portefeuilles issus de {len(sizes)} tokens temoins")
-    print(f"  evenements de financement : {sum(len(w['events']) for w in pool)}")
+    print(f"Null population: {len(pool)} wallets from {len(sizes)} control tokens")
+    print(f"  funding events: {sum(len(w['events']) for w in pool)}")
 
     # The draw size is the one the detector actually faces on a target: 40 buyers per token.
     results = {}
@@ -131,11 +147,11 @@ def main():
                       "P_C_bailleur_prive_commun": nC / a.draws,
                       "P_au_moins_un_critere": nAny / a.draws}
         r = results[k]
-        print(f"\n  groupe de {k} portefeuilles tires au hasard ({a.draws} tirages) :")
-        print(f"    A  meme transaction de financement : {r['P_A_meme_transaction']:.4f}")
-        print(f"    B  meme montant en moins d'1 h     : {r['P_B_meme_montant_1h']:.4f}")
-        print(f"    C  bailleur prive commun           : {r['P_C_bailleur_prive_commun']:.4f}")
-        print(f"    au moins un critere                : {r['P_au_moins_un_critere']:.4f}")
+        print(f"\n  group of {k} wallets drawn at random ({a.draws} draws):")
+        print(f"    A  same funding transaction     : {r['P_A_meme_transaction']:.4f}")
+        print(f"    B  same amount within 1 h       : {r['P_B_meme_montant_1h']:.4f}")
+        print(f"    C  shared private funder        : {r['P_C_bailleur_prive_commun']:.4f}")
+        print(f"    at least one criterion          : {r['P_au_moins_un_critere']:.4f}")
 
     # Same measurement restricted to wallets whose genesis was actually reached: a negative on a
     # wallet we could not page back to birth is a measurement failure, not an observation.
@@ -147,7 +163,7 @@ def main():
             A, B, C = detect(rng.sample(pool_g, 40))
             nAny += (A or B or C)
         res_g = {"n_portefeuilles": len(pool_g), "P_au_moins_un_critere": nAny / a.draws}
-        print(f"\n  restreint aux {len(pool_g)} portefeuilles a genese atteinte : "
+        print(f"\n  restricted to the {len(pool_g)} wallets whose genesis was reached: "
               f"{res_g['P_au_moins_un_critere']:.4f}")
 
     # Why does C fail? Two explanations have different lessons. Either funders are simply too few
@@ -167,36 +183,37 @@ def main():
         "n_bailleurs_prives_distincts": len(ranked),
         "n_bailleurs_finançant_2_portefeuilles_ou_plus": n_multi,
         "top_bailleurs": top,
-        "lecture": "Si le premier bailleur ne couvre qu'une part marginale de la population, le "
-                   "taux de declenchement de C ne vient pas d'une poignee d'adresses "
-                   "d'infrastructure oubliees : il vient du nombre de PAIRES que forment 40 "
-                   "portefeuilles. C'est alors un probleme d'anniversaire, et allonger la liste "
-                   "des terminaux connus n'y changerait rien.",
+        "lecture": "If the top funder only covers a marginal share of the population, C's firing "
+                   "rate does not come from a handful of unlabelled infrastructure addresses: it "
+                   "comes from the number of PAIRS that 40 wallets form. That is a birthday "
+                   "problem, and extending the list of known terminals would change nothing.",
     }
-    print(f"\n  bailleurs prives distincts dans la population : {len(ranked)}")
-    print(f"  dont finançant au moins 2 portefeuilles       : {n_multi}")
+    print(f"\n  distinct private funders in the population : {len(ranked)}")
+    print(f"  of which fund at least 2 wallets           : {n_multi}")
     for t in top[:5]:
-        print(f"    {t['funder'][:16]}… {t['n_wallets_finances']} portefeuilles "
-              f"({t['part_de_la_population']:.1%} de la population)")
+        print(f"    {t['funder'][:16]}… {t['n_wallets_finances']} wallets "
+              f"({t['part_de_la_population']:.1%} of the population)")
 
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     json.dump({
-        "objet": "Taux de faux positifs du detecteur de decoupage sur des groupes de portefeuilles "
-                 "tires au hasard dans la population temoin.",
-        "methode": "Les portefeuilles des tokens temoins sont mis en commun, puis des groupes de "
-                   "taille k sont tires sans remise. Les criteres A/B/C sont ceux de "
-                   "splitlib.py, sans modification (REL_TOL=1e-4, fenetre=3600 s, "
-                   "cluster minimal=3). Le tirage detruit la co-occurrence interne a un token : "
-                   "toute detection dans un groupe tire est donc une coincidence.",
+        "objet": "False-positive rate of the split detector on wallet groups drawn at random "
+                 "from the control population.",
+        "methode": "Control-token wallets are pooled, then groups of size k are drawn without "
+                   "replacement. Criterion B applies the split-grouping semantics of "
+                   "splitlib.find_splits, reduced to a boolean (REL_TOL=1e-4, window=3600 s, "
+                   "min cluster=3; equivalence enforced by tests/test_splitlib.py). Criteria A "
+                   "(shared funding transaction) and C (shared private funder) are the phase-1 "
+                   "detector's definitions. Resampling destroys within-token co-occurrence: any "
+                   "detection in a drawn group is therefore a coincidence.",
         "population": {"n_portefeuilles": len(pool), "n_tokens": len(sizes),
                        "n_evenements_financement": sum(len(w["events"]) for w in pool),
                        "par_token": dict(sizes)},
         "graine": a.seed, "par_taille_de_groupe": results,
         "genese_atteinte_seulement": res_g,
         "ubiquite_des_bailleurs": ubiquity,
-        "portee": "Ce taux mesure la propension du detecteur a se declencher par hasard sur la "
-                  "population de portefeuilles de l'epoque. Il ne corrige pas le biais de "
-                  "selection de la cohorte de cibles, qui est un defaut distinct.",
+        "portee": "This rate measures the detector's propensity to fire by chance on the era's "
+                  "wallet population. It does not correct the selection bias of the target "
+                  "cohort, which is a separate defect.",
     }, open(a.out, "w"), indent=1, ensure_ascii=False)
     print(f"\n-> {a.out}")
 
