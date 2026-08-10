@@ -39,7 +39,7 @@ is broader and more useful: on 2026 launches, no exit rule tested rescues an unf
 exit is not where the problem is. The entry is — the curve is bought out in the creation slot, and
 there is nothing left to climb.
 
-The two headline numbers below are derived from the artefact at run time, not asserted here.
+The headline numbers below are derived from the committed artefacts at run time, not asserted here.
 
 USAGE
     python3 code/exit_ladder.py                    # the policy under test, and the 2026 verdict
@@ -58,7 +58,7 @@ DATA = os.path.join(os.path.dirname(HERE), "data")
 # the policy is executable and the simulation reproducible. Do not quote them as tranche sizes that
 # were used. See docs/EXPLOITATION.md section 3.
 LADDER = [(2.0, 0.50), (5.0, 0.25), (10.0, 0.15)]
-RESTE_MANUEL = 1.0 - sum(p for _, p in LADDER)  # the 10 % this policy never sells
+NEVER_SOLD = 1.0 - sum(p for _, p in LADDER)  # the 10 % this policy never sells
 
 
 def simulate(path, ladder=LADDER):
@@ -68,76 +68,86 @@ def simulate(path, ladder=LADDER):
     price in the path — a convention, and stated as one: in reality that tranche is discretionary,
     and 'touched but not sold' is exactly the confusion PITFALLS P5 was written about.
     """
-    vendu, produit, hauts = 0.0, 0.0, []
+    sold, proceeds, hit = 0.0, 0.0, []
     for mult in path:
-        for seuil, part in ladder:
-            if mult >= seuil and seuil not in hauts:
-                hauts.append(seuil)
-                vendu += part
-                produit += part * seuil
-    reste = 1.0 - vendu
-    produit += reste * path[-1]
-    return {"multiple_realise": round(produit, 4), "part_vendue_sur_echelle": round(vendu, 4),
-            "reste_marque_au_dernier_prix": round(reste, 4), "rungs_touches": hauts}
+        for rung, share in ladder:
+            if mult >= rung and rung not in hit:
+                hit.append(rung)
+                sold += share
+                proceeds += share * rung
+    rest = 1.0 - sold
+    proceeds += rest * path[-1]
+    return {"realised_multiple": round(proceeds, 4), "sold_on_ladder": round(sold, 4),
+            "remainder_at_last_price": round(rest, 4), "rungs_hit": hit}
+
+
+def _artefact(*parts):
+    p = os.path.join(DATA, *parts)
+    if not os.path.exists(p):
+        raise SystemExit(f"missing artefact: {p} — run the script that produces it first")
+    return json.load(open(p))
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--path", nargs="*", type=float,
-                    help="trajectoire en multiples du prix d'entree, ex: 1 2.4 7 3")
+                    help="price path in multiples of entry, e.g. 1 2.4 7 3")
     a = ap.parse_args()
 
-    print("ECHELLE MECANIQUE MISE A L'EPREUVE (stipulee ici, pas un releve d'execution)")
+    print("MECHANICAL LADDER UNDER TEST (stipulated here, not an execution record)")
     cum = 0.0
-    for seuil, part in LADDER:
-        cum += part
-        print(f"  x{seuil:<5g} vendre {part:.0%}   (cumul {cum:.0%})")
-    print(f"  au-dela  {RESTE_MANUEL:.0%} restant, jamais vendu par cette politique")
-    print("\n  Les sorties de 2024 etaient discretionnaires : prises de benefice reglees a l'oeil,")
-    print("  trade par trade. La seule partie automatisee etait des ordres de vente a x5 et x10")
-    print("  pour les heures passees loin de l'ecran — un attrapeur de hausse, pas un stop : si le")
-    print("  prix n'atteignait pas x5, rien ne se vendait, et une position non surveillee tournait")
-    print("  avec la mise encore engagee. Le x2 servait apres la sortie de courbe, sur les grosses")
-    print("  positions. Les tailles de tranche n'ont jamais ete relevees : les 50/25/15 ci-dessus")
-    print("  sont une hypothese de ce script, posee pour pouvoir etre mesuree, et ne sont la")
-    print("  configuration de personne. Voir docs/EXPLOITATION.md section 3.")
+    for rung, share in LADDER:
+        cum += share
+        print(f"  x{rung:<5g} sell {share:.0%}   (cumulative {cum:.0%})")
+    print(f"  beyond   {NEVER_SOLD:.0%} remainder, never sold by this policy")
+    print("\n  The 2024 exits were discretionary: take-profits set by eye, one trade at a time.")
+    print("  The only automated part was standing sell orders at x5 and x10 for the hours away")
+    print("  from the screen — an upside catcher, not a stop: if the price never reached x5,")
+    print("  nothing sold, and an unattended position ran with the stake still in the market.")
+    print("  The x2 was used after a token had left the bonding curve, on large positions. No")
+    print("  tranche size was ever recorded: the 50/25/15 above are this script's hypothesis,")
+    print("  fixed so the policy can be measured, and are nobody's configuration. See")
+    print("  docs/EXPLOITATION.md section 3.")
 
     if a.path:
         r = simulate(a.path)
-        print(f"\nTRAJECTOIRE {a.path}")
-        print(f"  barreaux touches        : {r['rungs_touches'] or 'aucun'}")
-        print(f"  vendu sur l'echelle     : {r['part_vendue_sur_echelle']:.0%}")
-        print(f"  reste marque au dernier : {r['reste_marque_au_dernier_prix']:.0%}")
-        print(f"  MULTIPLE REALISE        : {r['multiple_realise']:.3f}x")
+        print(f"\nPATH {a.path}")
+        print(f"  rungs hit                : {r['rungs_hit'] or 'none'}")
+        print(f"  sold on the ladder       : {r['sold_on_ladder']:.0%}")
+        print(f"  remainder at last price  : {r['remainder_at_last_price']:.0%}")
+        print(f"  REALISED MULTIPLE        : {r['realised_multiple']:.3f}x")
 
-    # --- ce que le depot mesure sur les lancements actuels ------------------------------------
-    p = os.path.join(DATA, "cout_acheteur", "t1_base_rate_sorties.json")
-    if not os.path.exists(p):
-        raise SystemExit(f"artefact absent : {p} — lancer d'abord code/t1_base_rate_sorties.py")
-    d = json.load(open(p))
+    # --- what the repository measures on current launches -------------------------------------
+    # All figures below are read from the committed artefacts, never asserted here.
+    d = _artefact("cout_acheteur", "t1_base_rate_sorties.json")
     pol = d.get("politiques") or d.get("policies")
     if isinstance(pol, dict):
         pol = [{"nom": k, **v} for k, v in pol.items()]
     if not isinstance(pol, list) or not pol:
-        raise SystemExit(f"'politiques' inexploitable dans {p} : {type(pol).__name__}")
+        raise SystemExit(f"'politiques' unusable in t1_base_rate_sorties.json: {type(pol).__name__}")
     n_pos = sum(1 for x in pol if x["moyenne_pct"] > 0)
     n_ci = sum(1 for x in pol if x["moyenne_ic95_cluster_pct"][0] > 0)
 
-    print("\nCE QUE LES MESURES DISENT DE TOUTE POLITIQUE MECANIQUE SUR LES LANCEMENTS DE 2026")
-    print(f"  politiques de sortie testees (sorties uniques)  : {len(pol)}")
-    print(f"  dont moyenne positive                           : {n_pos}")
-    print(f"  dont IC95 de moyenne au-dessus de zero          : {n_ci}")
-    print("  entree post-snipe, +1 h                         : 0.35x")
-    print("  entree post-snipe, +24 h                        : 0.08x")
-    print("  tokens ayant deja culmine avant d'etre visibles  : 21.3 %")
-    print("\n  Ces quinze politiques sont toutes des sorties uniques : l'echelle etagee ci-dessus")
-    print("  n'en fait pas partie et n'est backtestee nulle part dans ce depot.")
-    print("\n  Ce n'est pas une politique de sortie qui s'est degradee, c'est le marche. Sur les")
-    print("  lancements actuels la courbe est rachetee dans le slot de creation (42/42 verifies) :")
-    print("  quand le lancement devient visible, la position n'est plus accumulee, elle est")
-    print("  distribuee. Il n'y a pas de barreau a monter — pour aucune politique, pas seulement")
-    print("  celle-ci.")
-    print("\n  Voir docs/RESULTATS.md et docs/EXPLOITATION.md section 6.")
+    t5 = _artefact("cout_acheteur", "t5_horizon_1h_24h.json")["horizons"]
+    ath = _artefact("t3_ath_avant_detection.json")["bandes"]["_toutes_bandes"]
+
+    print("\nWHAT THE MEASUREMENTS SAY OF ANY MECHANICAL POLICY ON 2026 LAUNCHES")
+    print(f"  exit policies tested (single full exits)     : {len(pol)}")
+    print(f"  of which positive mean return                : {n_pos}")
+    print(f"  of which 95 % CI of the mean clears zero     : {n_ci}")
+    print(f"  entering after the snipe, +1 h               : "
+          f"{t5['1']['mult_median']:.2f}x  (median, docs/tables/T5)")
+    print(f"  entering after the snipe, +24 h              : "
+          f"{t5['24']['mult_median']:.2f}x")
+    print(f"  tokens that peaked before becoming visible   : "
+          f"{ath['ath_avant_detection_pct']:.1f} %")
+    print("\n  Those policies are all single full exits: the staged ladder above is not among")
+    print("  them and is not backtested anywhere in this repository.")
+    print("\n  It is not an exit policy that degraded, it is the market. On current launches the")
+    print("  curve is bought out in the creation slot (42/42 verified): by the time a launch is")
+    print("  visible, the position is no longer being accumulated, it is being distributed.")
+    print("  There is no rung to climb — for any policy, not just this one.")
+    print("\n  See docs/RESULTATS.md and docs/EXPLOITATION.md section 6.")
 
 
 if __name__ == "__main__":

@@ -38,3 +38,50 @@ def test_time_window_excludes_far_apart_transfers():
                "c": [(3.0, 999999)]}   # c is hours away
     clusters = splitlib.find_splits(funding, window_s=3600)
     assert clusters == []              # only 2 within the window -> below min_cluster
+
+
+# --- a1_null_model.detect must agree with find_splits on criterion B -----------------
+# The null model keeps its own copy of the grouping so it stays runnable from
+# published data alone. A copy is only a copy if it behaves identically: these
+# tests pin detect()'s B to "find_splits returns at least one cluster".
+
+import random
+
+import a1_null_model
+
+
+def _as_group(funding):
+    """funding dict -> the wallet-group structure a1_null_model.detect eats,
+    preserving insertion order so both sides sort the same event list."""
+    return [{"wallet": w, "events": [(amt, ts, None, None) for amt, ts in lst]}
+            for w, lst in funding.items()]
+
+
+def test_a1_detect_B_matches_find_splits_on_failed_seed_shadow():
+    # Regression for the earlier a1 semantics, which marked events 'used' even
+    # when the seed's cluster failed: the failed seed w1 absorbs w2's event,
+    # and the real cluster {w2, w3, w4} only exists if w2 may still seed it.
+    funding = {
+        "w1": [(1.0, 0)],
+        "w2": [(1.00002, 3500)],   # within w1's window -> absorbed by the failed seed
+        "w3": [(1.00004, 5000)],   # outside w1's window, inside w2's
+        "w4": [(1.00006, 5500)],
+    }
+    assert len(splitlib.find_splits(funding)) == 1          # {w2, w3, w4}
+    _, B, _ = a1_null_model.detect(_as_group(funding))
+    assert B is True
+
+
+def test_a1_detect_B_matches_find_splits_fuzzed():
+    rng = random.Random(20260810)
+    for _ in range(300):
+        funding = {}
+        for wi in range(rng.randint(2, 8)):
+            base = rng.choice([1.0, 2.5, 2.976815600])
+            funding[f"w{wi}"] = [
+                (base * (1 + rng.uniform(-3e-4, 3e-4)), rng.randint(0, 8000))
+                for _ in range(rng.randint(1, 3))
+            ]
+        expected = len(splitlib.find_splits(funding)) >= 1
+        _, B, _ = a1_null_model.detect(_as_group(funding))
+        assert B is expected, f"divergence on {funding}"
