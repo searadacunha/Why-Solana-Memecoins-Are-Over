@@ -6,8 +6,8 @@ redact.py -- stable pseudonymisation of a small set of on-chain identifiers.
 WHY THIS EXISTS
 ---------------
 Solana addresses and mints are public data, and this dossier publishes them
-unmasked on purpose: masking them would make every claim unverifiable. There
-are two exceptions, redacted by two different schemes for two different reasons.
+unmasked on purpose: masking them would make every claim unverifiable. One
+exception remains in force; a second existed and was retired.
 
 1. SLUR-VANITY IDENTIFIERS (plain SHA-256).
    A vanity address is *chosen* by whoever generated it, and a handful of
@@ -18,16 +18,16 @@ are two exceptions, redacted by two different schemes for two different reasons.
    address confirm what it became by hashing it -- decency, not secrecy, so
    public confirmability is a feature and a plain hash is the right tool.
 
-2. THE AUTHOR'S KYC'D EXCHANGE DEPOSIT ADDRESS (salted HMAC-SHA256).
-   This one is redacted for privacy, and a plain sha256 map would defeat the
-   purpose: an analyst holding candidate deposit addresses (shortlisted from
-   the published trade fingerprints) could hash each and match it against the
-   committed map -- an enumeration oracle. It is therefore keyed by
-   HMAC-SHA256(salt, address) under an UNCOMMITTED salt (env REDACT_HMAC_SALT,
-   or redact_salt.txt at the repo root -- both git-ignored). The label is
-   HMAC-derived too, so it leaks nothing about sha256(address). Only someone
-   holding BOTH the address AND the salt can confirm the label; the oracle is
-   closed. See docs/EXPLOITATION.md and code/redactions.json.
+2. RETIRED: THE AUTHOR'S KYC'D EXCHANGE DEPOSIT ADDRESS (salted HMAC-SHA256).
+   Until 2026-08 that one address was redacted for privacy under a second
+   scheme, keyed by HMAC-SHA256(salt, address) under an UNCOMMITTED salt, so
+   that it could not be confirmed by hashing candidate addresses against the
+   committed map (an enumeration oracle, which a plain sha256 map would be).
+   The author has since chosen to publish the address in the clear as part of
+   the dossier's attribution (see README.md, "Author"), and the `map_hmac`
+   block was removed from code/redactions.json (its "history" field records
+   the change). The machinery below stays: re-adding a `map_hmac` entry
+   re-redacts the address on every write path with no other change.
 
 THE RULE FOR THE SLUR SET (mechanical, applied once, auditable)
 ---------------------------------------------------------------
@@ -38,17 +38,17 @@ repository therefore contains neither the offending addresses nor the words
 used to find them.
 
 WHAT IS COMMITTED is code/redactions.json:
-  * "map"      : sha256(identifier) -> label       (the slur set)
-  * "map_hmac" : HMAC-SHA256(salt, identifier) -> label   (the KYC address)
-Neither contains a single one of the redacted strings.
+  * "map" : sha256(identifier) -> label            (the slur set)
+It contains hashes only, not a single one of the redacted strings. (A second
+block, "map_hmac" : HMAC-SHA256(salt, identifier) -> label, held the KYC
+address until 2026-08; the loader still reads it whenever it is present.)
 
 Labels are of the form  RDCT-<10 hex>. They contain a hyphen, so they can never
 be mistaken for a base58 address, and they are stable across files: a
 substitution injective on identifiers leaves every count invariant.
 
-Redacted identifiers are a rounding error in the corpus: 44 of 212 201 scanned
-(43 slur-vanity + 1 KYC deposit address), none of them in the operator clusters
-the dossier analyses.
+Redacted identifiers are a rounding error in the corpus: 43 of 212 201 scanned
+(all slur-vanity), none of them in the operator clusters the dossier analyses.
 """
 from __future__ import annotations
 
@@ -91,9 +91,11 @@ MAP, MAP_HMAC = _load()
 
 def _load_salt() -> Optional[bytes]:
     """The HMAC salt, from $REDACT_HMAC_SALT or redact_salt.txt (both
-    git-ignored). None when absent -- the KYC address then cannot be scrubbed
+    git-ignored). None when absent -- a map_hmac entry then cannot be scrubbed
     or confirmed on this machine, but the slur set still is (it uses plain
-    sha256), so a clone without the salt loses nothing it is allowed to have."""
+    sha256), so a clone without the salt loses nothing it is allowed to have.
+    map_hmac has no entry since 2026-08 (see the module docstring), so this
+    is currently a no-op either way."""
     raw = os.environ.get("REDACT_HMAC_SALT")
     if not raw:
         p = os.path.join(ROOT, "redact_salt.txt")

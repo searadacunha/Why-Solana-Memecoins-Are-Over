@@ -84,3 +84,23 @@ def test_key_cooldown_rotates_off_a_cooling_key(monkeypatch):
     # Over several picks, a cooling key must not be handed out while a fresh one exists.
     picks = {rpc_client._available_key() for _ in range(6)}
     assert "b" in picks and "a" not in picks
+
+
+def test_walk_sigs_raises_when_pages_exhausted(monkeypatch):
+    # Endless full pages: the walk must refuse to return a partial history.
+    full = {"jsonrpc": "2.0", "id": 1,
+            "result": [{"signature": "s%d" % i, "blockTime": 1_000_000}
+                       for i in range(1000)]}
+    _patch_response(monkeypatch, full)
+    with pytest.raises(rpc_client.HeliusError):
+        rpc_client.walk_sigs("SomeAddr", max_pages=2)
+
+
+def test_walk_sigs_stops_at_until_ts_without_raising(monkeypatch):
+    # A full page already older than until_ts is a NATURAL stop, not a quota cut.
+    full = {"jsonrpc": "2.0", "id": 1,
+            "result": [{"signature": "s%d" % i, "blockTime": 50}
+                       for i in range(1000)]}
+    _patch_response(monkeypatch, full)
+    out, pages = rpc_client.walk_sigs("SomeAddr", until_ts=100, max_pages=2)
+    assert len(out) == 1000 and pages == 1

@@ -1,5 +1,6 @@
 """redact: label format, deterministic plain labels, pass-through/recursion of
-scrub, and the salted-HMAC scheme used for the KYC deposit address."""
+scrub, and the salted-HMAC map_hmac scheme (formerly used for the KYC deposit
+address; retired 2026-08 when the address was published, machinery kept)."""
 import hashlib
 import hmac
 import importlib

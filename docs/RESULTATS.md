@@ -481,6 +481,14 @@ cible fabrique des résultats.**
   primaire.
 - **b < 1 est une vraie information, pas une tautologie.** Entrer plus haut dégrade réellement le
   multiple ; la relation n'est pas parfaitement mécanique. La nuance est publiée avec le chiffre.
+- **Limite (ajoutée en relecture) : la lecture économique de b est indicative, NON ÉTABLIE.**
+  b = 0,884 est publié **sans erreur-type ni intervalle de confiance** ; l'erreur de mesure sur le
+  MC d'entrée (*errors-in-variables*) tire mécaniquement la pente OLS **sous 1**, donc une partie
+  de « b < 1 » peut être du bruit de mesure et non de l'économie ; et le panneau B (taux de ×2
+  quasi plat par bande, point suivant) est en tension avec une lecture causale de « entrer plus
+  haut dégrade le multiple ». L'usage de b comme **décomposition mécanique** (pente du multiple
+  = b − 1, artefact de dénominateur) reste mesuré et reproduit ; c'est la lecture causale qui
+  n'est pas établie.
 - **Le taux de ×2 est quasi plat par bande de MC observé** : **42–48 % sur toutes les bandes
   au-dessus de 30 k$** (n = 1 119 sur 1 243). Les deux bandes basses sont plus élevées (55,6 % sur
   20–30 k$, n = 108 ; 75,0 % sous 20 k$, n = 16), mais ce sont aussi celles où l'ATH est déjà passé

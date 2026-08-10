@@ -15,13 +15,15 @@ WHAT IT ESTABLISHES [MESURE]
     deposit address holds no balance.
 
 WHAT IT READS
-    $EXPL_LEDGER_ADDR   the deposit address, from the environment like every
-                        other private input (settings.expl_ledger_addr). It
-                        is a KYC'd exchange address and is NEVER committed:
-                        the artefact names it only by its RDCT-* label, a
-                        SALTED HMAC of the address (code/redact.py) -- not a
-                        plain hash, so it cannot be confirmed by hashing a
-                        candidate; that needs the address and the salt both.
+    $EXPL_LEDGER_ADDR   the deposit address, from the environment like the
+                        other external inputs (settings.expl_ledger_addr).
+                        It is the author's KYC'd exchange deposit address and
+                        since 2026-08 it is PUBLISHED --
+                        6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU, see
+                        README.md ("Author"). It stays an environment input
+                        so the script measures the address it is given and
+                        the artefact records which one that was, rather than
+                        the code silently assuming one.
     Helius RPC          getSignaturesForAddress + getTransaction (jsonParsed
                         balance deltas), key from the environment
                         (settings.py). Every response is cached under
@@ -32,14 +34,16 @@ WHAT IT READS
                         cached the same way.
 
 WHAT IT WRITES
-    docs/out/expl_ledger.json -- aggregates only: per-month SOL/USD/n,
-    window totals, sweep totals, counts. No transaction signature, no sender
-    address, no deposit address: a single signature would identify the
-    wallet, so none is published. The sender wallets: their COUNT is
-    published, never the list. Most are the author's own trading wallets,
-    but the heuristic also resolves a few to third-party exchange hot
-    wallets, so ownership is NOT claimed -- the artefact files any identity
-    behind a sender under NON_ETABLI.
+    docs/out/expl_ledger.json -- the deposit address, plus aggregates:
+    per-month SOL/USD/n, window totals, sweep totals, counts. No transaction
+    signature and no sender address appears IN THE ARTEFACT -- but with the
+    deposit address published, both are one explorer query away, so
+    aggregates-only is a statement of the artefact's scope, not a privacy
+    defence. The sender wallets: their COUNT is published, never the list.
+    Most are the author's own trading wallets, but the heuristic also
+    resolves a few to third-party exchange hot wallets, so ownership is NOT
+    claimed -- the artefact files any identity behind a sender under
+    NON_ETABLI.
 
 WHAT IT DOES NOT ESTABLISH
     - The transfer count and the distinct-sender count are method-dependent
@@ -66,9 +70,9 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pumplib as P  # noqa: E402
-import redact  # noqa: E402
 import settings  # noqa: E402
 from lib_verif import cached, rpc  # noqa: E402
+from rpc_client import walk_sigs  # noqa: E402
 
 LAMPORTS = 1e9
 WINDOW_LO = 1727740800   # 2024-10-01 00:00 UTC, inclusive
@@ -96,26 +100,12 @@ def http_get_json(url, tries=6):
     raise RuntimeError("GET %s failed after %d tries: %s" % (url, tries, last))
 
 
-def all_signatures(addr, label):
-    """Full backward pagination, cached under a filename that carries only
-    the RDCT label -- never the address."""
-    def fetch():
-        out, before = [], None
-        while True:
-            p = [addr, {"limit": 1000}]
-            if before:
-                p[1]["before"] = before
-            page = rpc("getSignaturesForAddress", p)
-            if page is None:
-                raise RuntimeError("getSignaturesForAddress returned null")
-            if not page:
-                break
-            out.extend(page)
-            before = page[-1]["signature"]
-            if (page[-1].get("blockTime") or 0) < WINDOW_LO or len(page) < 1000:
-                break
-        return out
-    return cached("expl_sigs_%s_%d" % (label, WINDOW_LO), fetch)
+def all_signatures(addr):
+    """Full backward pagination down to WINDOW_LO, cached under a filename that
+    carries the (published) deposit address. Raises rather than returning a
+    partial history."""
+    return cached("expl_sigs_%s_%d" % (addr, WINDOW_LO),
+                  lambda: walk_sigs(addr, until_ts=WINDOW_LO)[0])
 
 
 def get_tx(sig):
@@ -173,17 +163,16 @@ def main():
     a = ap.parse_args()
 
     addr = settings.expl_ledger_addr()
-    label = redact.apply(addr)
-    if label == addr or not redact.is_redacted(label):
-        raise SystemExit(
-            "the deposit address has no entry in code/redactions.json: every "
-            "write path must be able to scrub it. Add sha256(addr) -> "
-            "RDCT-label to the map (see code/redact.py) before publishing.")
+    # The address is published in the clear since 2026-08 (README.md,
+    # "Author"): it appears verbatim in the artefact and in the cache
+    # filenames. Every write path still runs through redact (pumplib.emit),
+    # so re-adding an entry to code/redactions.json would scrub it again
+    # with no change here.
 
-    P.head("EXPL — DEPOSIT-WALLET LEDGER, 2024-10-01 .. 2025-02-02 (%s)" % label,
+    P.head("EXPL — DEPOSIT-WALLET LEDGER, 2024-10-01 .. 2025-02-02 (%s)" % addr,
            "MESURE")
 
-    sigs = [s for s in all_signatures(addr, label)
+    sigs = [s for s in all_signatures(addr)
             if s.get("err") is None
             and WINDOW_LO <= (s.get("blockTime") or 0) < WINDOW_HI]
     P.kv("successful signatures in window", len(sigs))
@@ -275,7 +264,7 @@ def main():
         len(incoming), len(senders), len(roc)))
 
     P.emit({
-        "address_label": label,
+        "address": addr,
         "window_utc": {"lo_inclusive": "2024-10-01", "hi_exclusive": "2025-02-02"},
         "price_source": PRICE_SOURCE,
         "n_signatures_ok_in_window": len(sigs),

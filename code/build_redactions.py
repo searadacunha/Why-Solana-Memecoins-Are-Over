@@ -17,7 +17,7 @@ Why the first 8 characters only: a slur appearing in the middle of a base58
 string is a coincidence -- with ~91 600 identifiers you expect a few by pure
 chance -- whereas a slur in the leading characters is the signature of a
 vanity grind, i.e. it was chosen. Anchoring the rule to the prefix keeps the
-redaction set small (24 identifiers) and defensible.
+redaction set small (43 identifiers at the last full run) and defensible.
 
 Usage:
     python3 code/build_redactions.py --wordlist FILE [--head 8] [--dry-run]
@@ -121,11 +121,19 @@ def main():
         "n_redacted": len(new_map),
         "map": new_map,
     }
+    dst = os.path.join(settings.CODE, "redactions.json")
+    # The de-redaction record of the retired map_hmac scheme (see redact.py,
+    # "RETIRED") lives in the existing file's "history" field; a rebuild must
+    # carry it forward rather than silently dropping it.
+    if os.path.exists(dst):
+        with open(dst) as f:
+            prev = json.load(f)
+        if "history" in prev:
+            out["history"] = prev["history"]
     print("scanned %d identifiers, %d redacted (%.4f %%)"
           % (len(ids), len(flagged), 100.0 * len(flagged) / max(1, len(ids))))
     if a.dry_run:
         return
-    dst = os.path.join(settings.CODE, "redactions.json")
     with open(dst, "w") as f:
         json.dump(out, f, indent=1, sort_keys=True)
     print("-> %s (hashes only, no identifier and no word is stored)" % dst)
