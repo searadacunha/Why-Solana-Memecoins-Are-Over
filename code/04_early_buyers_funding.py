@@ -37,24 +37,11 @@ MIN_SOL, MAX_SOL = 0.5, 50.0
 
 
 def oldest_signatures(addr: str, stop_ts: int, max_pages: int = 400) -> list:
-    """Pagine jusqu'à atteindre stop_ts. Indispensable : une pagination bornée trop court ne
-    remonte jamais à la création sur une adresse active, et fait conclure à tort."""
-    out, before = [], None
-    for i in range(max_pages):
-        page = rpc_client.sigs(addr, 1000, before)
-        if not page:
-            break
-        out.extend(page)
-        oldest = min((s.get("blockTime") or 0) for s in page)
-        if oldest and oldest <= stop_ts:
-            break
-        if len(page) < 1000:
-            break
-        before = page[-1]["signature"]
-        if i % 20 == 19:
-            print(f"  … {len(out)} signatures, plus ancienne "
-                  f"{dt.datetime.fromtimestamp(oldest, dt.UTC):%Y-%m-%d}", flush=True)
-        time.sleep(0.1)
+    """Pagine jusqu'à atteindre stop_ts, du plus ancien au plus récent. Indispensable : une
+    pagination bornée trop court ne remonte jamais à la création sur une adresse active, et fait
+    conclure à tort — un budget de pages épuisé LÈVE donc au lieu de rendre un historique
+    partiel."""
+    out, _ = rpc_client.walk_sigs(addr, until_ts=stop_ts, max_pages=max_pages)
     return sorted(out, key=lambda s: s.get("blockTime") or 0)
 
 

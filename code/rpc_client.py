@@ -177,11 +177,17 @@ def sigs(addr: str, limit: int = 1000, before: Optional[str] = None) -> list[Any
 def walk_sigs(addr: str, until_ts: Optional[int] = None, max_pages: int = 400,
               verbose: bool = False) -> tuple[list[Any], int]:
     """Full backward history (or down to until_ts, exclusive), newest to
-    oldest. Raises if the quota cuts the walk short -- no silent truncation."""
+    oldest. Raises if max_pages runs out before genesis or until_ts is
+    reached -- no silent truncation."""
     out: list[Any] = []
     before: Optional[str] = None
     pages = 0
-    while pages < max_pages:
+    while True:
+        if pages >= max_pages:
+            raise HeliusError(
+                "walk_sigs %s: %d pages exhausted before genesis%s -- partial "
+                "history refused" % (addr[:8], max_pages,
+                                     "" if until_ts is None else " or until_ts"))
         page = sigs(addr, 1000, before)
         pages += 1
         if not page:

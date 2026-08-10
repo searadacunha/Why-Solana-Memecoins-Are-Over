@@ -218,6 +218,11 @@ Three families, and the rule that governs them:
   `beta - 1 = -0.126` in the entry market cap — measured at −0.1263, exactly as predicted. Any
   variable correlated with entry MC becomes "predictive" of the multiple without carrying
   information. The dataset's own metadata carries the prohibition in writing.
+  *Limitation, added on review*: the elasticity is published **without a standard error or CI**;
+  measurement error in the entry MC (errors-in-variables) mechanically pulls the OLS slope below 1,
+  and the near-flat ×2 rate across observed-MC bands (T2b, panel B) is in tension with a causal
+  reading of b < 1. b is used here as a mechanical decomposition only; as an economic claim
+  ("entering higher degrades the multiple") it is indicative, **NON ÉTABLI**.
 
 Two fields are flagged in the dataset as **outcome-contaminated or censored** and are banned as
 targets: `t_buyable` (defined as "peak occurs after detection" — it selects tokens that went up) and
@@ -281,6 +286,12 @@ observations inflates precision. So:
 - median intervals use a percentile bootstrap with an **explicitly coded linear congruential
   generator**, so results are byte-identical across machines and Python versions —
   `random.seed()` does not guarantee that between versions.
+- *Precision, added on review*: the LCG median bootstrap above is the engine of the
+  m5/`pumplib` chain. The T1/T4/T5 **median** intervals use `common.boot_ci_median_tokens` —
+  token-level resampling with `random.Random` — so they are narrower than a cluster-aware
+  interval would be (effective n ≈ 5.5, below) and are indicative; the **mean** CIs, which carry
+  the conclusions, are cluster-level. The engines are deliberately not merged (`code/statlib.py`,
+  header): merging would silently change published numbers.
 
 **And the honest consequence.** On the canonical corpus the 196 tokens fall into 20 clusters of sizes
 **67, 34, 31, 12, 9, 8, 6, 6, 6, 5, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1**; one single day supplies **70 of
@@ -609,11 +620,15 @@ points the right way.
 - **Object of study.** The microstructure of a public market venue. Descriptive work: no
   recommendation, no investment advice, no execution tooling, and nothing in this repository is
   designed to be traded.
-- **Addresses.** Solana addresses are public on-chain identifiers and appear as such. They are never
-  linked to a person, a name or an intent. Shared-infrastructure addresses are referenced by the
-  neutral identifiers W1...W9 in prose (§1.2).
-- **No secrets, no personal data.** No API keys, tokens, `.env` files, session material, local
-  filesystem paths, personal wallets or trading history. Published data is the reduction described in
+- **Addresses.** Solana addresses are public on-chain identifiers and appear as such. No
+  third-party address is ever linked to a person, a name or an intent. Shared-infrastructure
+  addresses are referenced by the neutral identifiers W1...W9 in prose (§1.2). The one deliberate
+  exception is the author's own exchange deposit address, published and self-attributed on purpose
+  (README.md, "Author"; `docs/EXPLOITATION.md` §5).
+- **No secrets, no third-party personal data.** No API keys, tokens, `.env` files, session
+  material, local filesystem paths. The one personal disclosure is the author's own: the KYC'd
+  exchange deposit address and its reconstructed deposit ledger (`docs/out/expl_ledger.json`),
+  published deliberately as self-attribution. Published data is the reduction described in
   `data/MANIFEST.json`, with a sha256 per file.
 - **Reproduction.** Offline, standard library only:
 

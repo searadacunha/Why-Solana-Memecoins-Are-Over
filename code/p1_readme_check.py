@@ -95,8 +95,9 @@ READS (all committed, no network, no private state)
                                            declare a `texte_fr`
     docs/out/a9_g2y_prelaunch.json         act I burst
     docs/out/expl_ledger.json              the 2024 deposit ledger, reconstructed
-                                           on chain; the address itself is never
-                                           in it, only its redaction label
+                                           on chain; since 2026-08 it carries
+                                           the deposit address in the clear
+                                           (published -- README.md, "Author")
     docs/out/m2_entry_price.json           entry multiple
     data/v05_creation_block.json           creation-slot buy
     data/v06_curve_ladder.json             curve captured

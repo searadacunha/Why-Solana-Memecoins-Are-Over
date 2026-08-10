@@ -44,7 +44,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from t1_base_rate_sorties import (BUCKET, SAFE_MARGIN, Book, boot_ci_mean_cluster,  # noqa: E402
                                   pnl)
-from common import (DATA, POS_SOL, boot_ci_median, clusters,  # noqa: E402
+from common import (DATA, POS_SOL, boot_ci_median_tokens, clusters,  # noqa: E402
                     load_captures, med, q, source_label, write_table, dump_json)
 
 RETRACES = [0.20, 0.30, 0.40, 0.50, 0.60, 0.70]
@@ -130,7 +130,7 @@ def main():
         net = [r["pnl_net"] for _, r in ok]
         if not ok:
             continue
-        lo, hi = boot_ci_median(mult)
+        lo, hi = boot_ci_median_tokens(mult)
         nclu = len({cmap[c["mint"]] for c, _ in ok})
         byclu = {}
         for c, r in ok:
@@ -138,7 +138,6 @@ def main():
         mlo, mhi = boot_ci_mean_cluster(byclu)
         srt = sorted(net, reverse=True)
         net_sans1 = st.mean(srt[1:]) if len(srt) > 1 else float("nan")
-        top1_share = (srt[0] - st.mean(net)) / abs(st.mean(net)) if st.mean(net) else None
         rec = {"regle": nom, "n": len(ok), "n_clusters": nclu,
                "jamais_declenche": never,
                "mult_median": med(mult), "mult_ic95": [lo, hi],
