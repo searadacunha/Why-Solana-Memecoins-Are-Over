@@ -328,36 +328,36 @@ def main():
 
     notes = [
         "",
-        f"n = {len(ok)} tokens | {nclu} clusters | {ndays} jours UTC | "
-        f"entree a t0+120 s, AUCUN filtre d'entree.",
-        f"Source : `{source_label()}` ({nfiles} fichiers, "
-        f"{len(caps)} captures exploitables, rejets {dict(rej)}).",
-        "Couts : 1 % de frais + 2 % de slippage adverse par jambe = **5,8241 % "
-        "aller-retour**, deja retranches.",
-        "`mediane excl` = meme calcul en JETANT les sorties non remplies "
-        "(convention optimiste, publiee pour montrer ce qu'elle fabrique).",
-        f"**Moyenne negative sur {len(neg_mean)}/{len(POLICIES)} politiques.** "
-        f"Mediane negative sur {len(neg_med)}/{len(POLICIES)} "
-        f"({len(neg10)}/10 sur la grille canonique du 28/07).",
-        f"**Aucune politique n'est positive a la fois en mediane et en moyenne "
-        f"({len(pos_both)}/{len(POLICIES)}).** Les rares medianes positives sont "
-        "des politiques a take-profit serre : elles gagnent souvent un peu et "
-        "perdent rarement beaucoup, donc leur ESPERANCE est la pire du tableau "
-        "(tp30 : mediane +22 %, moyenne -16 %).",
-        f"Aucune politique n'a un IC95 de moyenne (bootstrap au niveau CLUSTER) "
-        f"entierement au-dessus de zero : {len(ci_pos)}/{len(POLICIES)}.",
-        f"Moyenne des moyennes sur les {len(POLICIES)} politiques : "
-        f"**{moy_all:+.1f} %** par aller-retour.",
-        "Aucune correction de multiplicite n'est necessaire ici : le resultat est "
-        "NEGATIF partout, et balayer plus de politiques ne peut que rendre un "
-        "resultat negatif plus difficile a obtenir par hasard.",
-        "", "Regenerer : `python3 code/t1_base_rate_sorties.py`",
+        f"n = {len(ok)} tokens | {nclu} clusters | {ndays} UTC days | "
+        f"entry at t0+120 s, NO entry filter.",
+        f"Source: `{source_label()}` ({nfiles} files, "
+        f"{len(caps)} usable captures, rejects {dict(rej)}).",
+        "Costs: 1 % fees + 2 % adverse slippage per leg = **5.8241 % "
+        "round-trip**, already deducted.",
+        "`median excl` = same computation DROPPING unfilled exits "
+        "(an optimistic convention, published to show what it manufactures).",
+        f"**Negative mean on {len(neg_mean)}/{len(POLICIES)} policies.** "
+        f"Negative median on {len(neg_med)}/{len(POLICIES)} "
+        f"({len(neg10)}/10 on the canonical 28/07 grid).",
+        f"**No policy is positive in both median and mean "
+        f"({len(pos_both)}/{len(POLICIES)}).** The few positive medians are "
+        "tight take-profit policies: they often win a little and rarely lose "
+        "a lot, so their EXPECTATION is the worst of the table "
+        "(tp30: median +22 %, mean -16 %).",
+        f"No policy has a 95% CI of the mean (CLUSTER-level bootstrap) "
+        f"entirely above zero: {len(ci_pos)}/{len(POLICIES)}.",
+        f"Mean of means over the {len(POLICIES)} policies: "
+        f"**{moy_all:+.1f} %** per round-trip.",
+        "No multiplicity correction is needed here: the result is NEGATIVE "
+        "everywhere, and sweeping more policies can only make a negative "
+        "result harder to obtain by chance.",
+        "", "Regenerate: `python3 code/t1_base_rate_sorties.py`",
     ]
     txt = write_table("T1_base_rate_sorties",
-                      ["politique de sortie", "n", "mediane %", "IC95 mediane %",
-                       "moyenne %", "IC95 moyenne (cluster) %", "% gagnants",
-                       "% non remplies", "mediane excl %", "clusters +",
-                       "jours med>0"],
+                      ["exit policy", "n", "median %", "median 95% CI %",
+                       "mean %", "mean 95% CI (cluster) %", "% winners",
+                       "% unfilled", "median excl %", "clusters +",
+                       "days med>0"],
                       table, notes)
     print(txt)
 
