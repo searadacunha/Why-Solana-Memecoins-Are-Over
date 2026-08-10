@@ -66,7 +66,7 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import settings  # noqa: E402
 from common import (DATA, DEPTH_MIN_SOL, FEE_IN, FEE_OUT, MIN_SOL_PRICE,  # noqa: E402
-                    POS_SOL, boot_ci_median, clusters, load_captures, med,
+                    POS_SOL, boot_ci_median_tokens, clusters, load_captures, med,
                     source_label, write_table, dump_json)
 
 BUCKET = 30
@@ -153,7 +153,11 @@ def pnl(p_in, p_out):
 def boot_ci_mean_cluster(byclu, B=4000, seed=777):
     """IC95 de la moyenne, bootstrap au niveau CLUSTER (on retire des clusters
     entiers, pas des tokens : deux tokens du meme lancement ne sont pas des
-    observations independantes)."""
+    observations independantes). Estimateur re-echantillonne = moyenne POOLED
+    des tokens des clusters tires, coherent avec le point estime pooled de T1 ;
+    pumplib.cluster_bootstrap_mean_ci re-echantillonne la moyenne des moyennes
+    de grappe, coherent avec le point estime de m5. Deux estimateurs, deux
+    moteurs, volontairement non fusionnes (en-tete de statlib.py)."""
     import random
     ks = list(byclu.keys())
     if len(ks) < 3:
@@ -293,7 +297,7 @@ def main():
             if pol in s["policies"]:
                 byday[days[s["mint"]]].append(s["policies"][pol]["pnl_net"])
         jpos = sum(1 for x in byday.values() if st.median(x) > 0)
-        lo, hi = boot_ci_median(v)
+        lo, hi = boot_ci_median_tokens(v)
         clo, chi = boot_ci_mean_cluster(byclu)
         rec = {"n": len(v), "mediane_pct": 100 * med(v), "moyenne_pct": 100 * st.mean(v),
                "mediane_ic95_pct": [100 * lo, 100 * hi],

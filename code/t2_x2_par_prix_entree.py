@@ -164,6 +164,10 @@ def main():
          "de x2 est quasi plat : les tokens qui apparaissent bas ont aussi un ATH bas.",
          f"Elasticite log10(ATH) ~ log10(mc), demeanee par jour : **b = {el:.3f}** "
          f"(n={len(rows)}). b < 1 => entrer plus haut degrade reellement le multiple.",
+         "Limite (relecture) : b publie sans SE/IC ; l'erreur de mesure sur le MC d'entree "
+         "(errors-in-variables) tire la pente sous 1 ; et le taux de x2 quasi plat de ce "
+         "panneau est en tension avec une lecture causale. Decomposition mecanique : "
+         "mesuree. Claim economique : indicatif, NON ETABLI.",
          "`x2 devant soi` = x2 ET ATH survenant >= 60 s apres la detection.",
          "", "Regenerer : `python3 code/t2_x2_par_prix_entree.py`"])
 

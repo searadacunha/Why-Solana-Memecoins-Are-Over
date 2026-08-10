@@ -216,8 +216,15 @@ from statlib import quantile as q  # noqa: E402,F401
 from statlib import wilson  # noqa: E402,F401
 
 
-def boot_ci_median(v, B=4000, seed=12345):
-    """IC95 bootstrap de la mediane (percentile). Retourne (lo, hi)."""
+def boot_ci_median_tokens(v, B=4000, seed=12345):
+    """IC95 bootstrap de la mediane (percentile), re-echantillonnage PAR TOKEN
+    avec random.Random. Deux limites assumees : les tokens d'une meme grappe
+    sont traites comme independants, donc l'IC est plus etroit que la realite
+    (cf. METHODOLOGY §3.1, n effectif ~5,5), et random.Random n'est pas
+    byte-identique entre versions de Python. Le moteur LCG cross-version est
+    pumplib.bootstrap_median_ci ; les deux sont volontairement distincts
+    (en-tete de statlib.py : fusionner changerait les nombres publies).
+    Retourne (lo, hi)."""
     import random
     if len(v) < 5:
         return (None, None)

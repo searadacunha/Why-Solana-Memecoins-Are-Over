@@ -15,3 +15,6 @@
 teamdacunha
 benjamindacunha
 benjamin da cunha
+# the author's KYC'd exchange deposit address, published since 2026-08
+# (README.md, "Author"; measured by code/expl_ledger.py)
+6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU
