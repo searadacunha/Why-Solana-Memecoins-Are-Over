@@ -113,7 +113,7 @@ replaced a regular one.
 | small buyers *before* the block | **0 in 42/42** | — |
 | implied MC at the block's own price | ~8.3 k USD | — |
 | implied MC at the last curve ticket | ~26.1 k USD | — |
-| implied MC at AMM open | ~46.1 k USD | — |
+| implied MC at AMM open | ~54.0 k USD | — |
 
 On an independent, frozen sample of tokens that later reached >= 500 k USD, **58 of 70 = 82.9 %**,
 Wilson 95 % CI **[72.4 ; 89.9]**, had their curve bought back for >= 60 SOL inside the creation slot
@@ -193,7 +193,7 @@ the OHLCV provider returns **USD per token**. Mixing them multiplies every ratio
 (~75 over the window) and once turned a −60 % result into a +2 900 % one **[P]**. Two defences are
 now permanent: unit conventions are declared at the top of the shared library, and every cross-source
 table prints a **dimensional sanity ratio** — `(USD price / SOL price) / (SOL in USD)` — whose
-measured value is **0.833 on n = 193**, close to 1, published in the table's own footer.
+measured value is **0.850 on n = 277**, close to 1, published in the table's own footer.
 
 **Depth and the book.** The data contains no order book. The "book" is reconstructed from the trades
 that actually happened: the counterparties that really showed up. Bids are walked from the best price
@@ -502,9 +502,10 @@ project now applies:
   list (empty captures dropped, `fees` removed, signatures kept only for `t <= created + 30 s`, SOL
   rounded to 6 significant digits, prices to 8, **no address anonymisation**: Solana addresses are
   public data).
-- **Verified**: 4 of 5 result tables regenerate bit-for-bit from `./code` + `./data`. The fifth (T5)
-  differed because the committed table was **stale** (n = 18); the regenerated one uses n = 128 and
-  supersedes it.
+- **Verified**: every committed result table regenerates bit-for-bit from `./code` + `./data`, and
+  CI re-runs that byte-comparison on every push (`run_all.py --strict`). An earlier pass caught the
+  committed T5 **stale** at n = 18; it has been regenerated since (currently n = 191, 27 clusters)
+  and the byte-check now guards all of them.
 
 ---
 
@@ -516,10 +517,10 @@ A compact audit trail: the tests each published claim actually passed, and the o
 |---|---|---|---|---|---|---|
 | no exit policy is profitable in expectation (T1) | canonical, 196 / 20 / 6 | yes (0/15 above zero) | not needed (uniformly negative) | n/a | n/a | **no** |
 | no post-snipe entry rule reaches 1x (T4) | canonical | yes (all cross zero) | n/a | n/a | yes (bucket k -> k+1) | **no** |
-| value decays over 1 h - 24 h (T5) | 128 / 18 clusters | yes | n/a | n/a | n/a | **no** |
+| value decays over 1 h - 24 h (T5) | 191 / 27 clusters | yes | n/a | n/a | n/a | **no** |
 | the peak is already past at first visibility (T3) | B clean, 1 243 / 123 / 20 | Wilson per band | n/a | yes (by MC band) | n/a | n/a (descriptive) |
 | the multiple is a denominator artefact (T2) | A, B, C | — | n/a | yes | n/a | replicated on 3 populations |
-| the creation-slot signature | 42 launches / 60 large tokens | Wilson [68.2 ; 88.2] | n/a | n/a | n/a | **no** (non-random 60) |
+| the creation-slot signature | 42 launches / 70 large tokens (frozen) | Wilson [72.4 ; 89.9] | n/a | n/a | n/a | **no** (outcome-selected 70) |
 | fleets are distinct, method is shared | 282 tokens | co-occurrence p-values | n/a | n/a | n/a | attacked twice, survived, §5.7 |
 
 ---
@@ -549,9 +550,10 @@ conclusion: a sample enriched in winners should make buying look *less* unprofit
 is. Where a bias helps the author's thesis it is treated as fatal; here it does not, and that is
 stated rather than left for the reader to work out.
 
-Separately, the 60-token sample behind the creation-slot signature is the **first 60 in file order**,
-not a random draw (§1.2). It should be re-drawn randomly before the figure is used anywhere it
-matters.
+Separately, the 70-token sample behind the creation-slot signature is **outcome-selected** — frozen
+tokens that later reached >= 500 k USD, not a random draw of launches (§1.2): the figure is
+P(signature | large), never P(large | signature). (An earlier draft used the first 60 rows in file
+order; it is superseded by the frozen 70.)
 
 ### 5.4 Effective sample size
 
