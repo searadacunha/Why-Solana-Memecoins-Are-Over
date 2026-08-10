@@ -8,9 +8,7 @@
    "section": "0 Front page",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "I withdrew **$237,137.87** trading memecoins",
-   "texte_fr": "j'ai retir\u00e9 **237 137,87 $**",
    "valeur_artefact": "237,137.87"
   },
   {
@@ -21,9 +19,7 @@
    "section": "1 Act I",
    "source": "docs/out/a9_g2y_prelaunch.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "- 9 wallets",
-   "texte_fr": "",
    "valeur_artefact": 9
   },
   {
@@ -34,9 +30,7 @@
    "section": "1 Act I",
    "source": "docs/out/a9_g2y_prelaunch.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "all funded with exactly **2.976815600 SOL**",
-   "texte_fr": "",
    "valeur_artefact": "2.976815600"
   },
   {
@@ -47,9 +41,7 @@
    "section": "1 Act I",
    "source": "docs/out/a9_g2y_prelaunch.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "all funded within **343 seconds**",
-   "texte_fr": "",
    "valeur_artefact": 343
   },
   {
@@ -60,9 +52,7 @@
    "section": "1 Act I",
    "source": "docs/out/a9_g2y_prelaunch.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "token launched **7.6 hours** later",
-   "texte_fr": "",
    "valeur_artefact": 7.6
   },
   {
@@ -73,9 +63,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "**1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out",
-   "texte_fr": "**1 226,4663 SOL** sont arriv\u00e9s sur la fen\u00eatre compl\u00e8te contre **1 226,4566 SOL** balay\u00e9s",
    "valeur_artefact": "**1,226.4663 SOL** arrived over the full window against **1,226.4566 SOL** swept out"
   },
   {
@@ -86,9 +74,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| Distinct sending wallets, Oct\u2013Dec 2024 | **74** |",
-   "texte_fr": "| Portefeuilles exp\u00e9diteurs distincts, oct.\u2013d\u00e9c. 2024 | **74** |",
    "valeur_artefact": 74
   },
   {
@@ -99,9 +85,7 @@
    "section": "2 Exploiting the pattern",
    "source": "data/screens/trades/index.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| Example trades (a sample; the window holds hundreds) | **19 (+100% to +28,465%)** |",
-   "texte_fr": "| Trades d'exemple (un \u00e9chantillon ; la fen\u00eatre en compte des centaines) | **19 (de +100 % \u00e0 +28 465 %)** |",
    "valeur_artefact": "19 (+100% to +28,465%)"
   },
   {
@@ -112,9 +96,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| Full window to 2 Feb 2025 | **$244,315.58** |",
-   "texte_fr": "| Fen\u00eatre compl\u00e8te jusqu'au 2 f\u00e9vrier 2025 | **244 315,58 $** |",
    "valeur_artefact": "244,315.58"
   },
   {
@@ -125,9 +107,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| Incoming transfers, Oct\u2013Dec 2024 | **245** |",
-   "texte_fr": "| Transferts entrants, oct.\u2013d\u00e9c. 2024 | **245** |",
    "valeur_artefact": 245
   },
   {
@@ -138,9 +118,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| USD at each transfer's own day price | **$237,137.87** |",
-   "texte_fr": "| USD au prix du jour propre \u00e0 chaque transfert | **237 137,87 $** |",
    "valeur_artefact": "237,137.87"
   },
   {
@@ -151,9 +129,7 @@
    "section": "2 Exploiting the pattern",
    "source": "docs/out/expl_ledger.json",
    "statut": "OK",
-   "statut_fr": "OK",
    "texte": "| Withdrawn, Oct\u2013Dec 2024 | **1,190.6957 SOL** |",
-   "texte_fr": "| Retir\u00e9, oct.\u2013d\u00e9c. 2024 | **1 190,6957 SOL** |",
    "valeur_artefact": "1,190.6957"
   },
   {
@@ -164,9 +140,7 @@
    "section": "3 Act III",
    "source": "data/v09_signature_gros_tokens.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "**58 (82.9%)** exhibit the same signature",
-   "texte_fr": "",
    "valeur_artefact": "58 (82.9%)"
   },
   {
@@ -177,9 +151,7 @@
    "section": "3 Act III",
    "source": "data/v09_signature_gros_tokens.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "**70 tokens reaching at least $500k market cap**",
-   "texte_fr": "",
    "valeur_artefact": 70
   },
   {
@@ -190,9 +162,7 @@
    "section": "3 Act III",
    "source": "data/v05_creation_block.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "- **85 SOL**",
-   "texte_fr": "",
    "valeur_artefact": 85
   },
   {
@@ -203,9 +173,7 @@
    "section": "3 Act III",
    "source": "data/v05_creation_block.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "- approximately **79% of supply**",
-   "texte_fr": "",
    "valeur_artefact": 79
   },
   {
@@ -216,9 +184,7 @@
    "section": "3 Act III",
    "source": "data/v05_creation_block.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "Measured across **42/42 manually verified launches**",
-   "texte_fr": "",
    "valeur_artefact": "42/42"
   },
   {
@@ -229,9 +195,7 @@
    "section": "3 Act III",
    "source": "data/v07_exit.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "insiders typically exit around **17.5 seconds** after launch",
-   "texte_fr": "",
    "valeur_artefact": 17.5
   },
   {
@@ -242,9 +206,7 @@
    "section": "3 Act III",
    "source": "docs/out/m2_entry_price.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "market cap is already around **25\u00d7**",
-   "texte_fr": "",
    "valeur_artefact": 25
   },
   {
@@ -255,9 +217,7 @@
    "section": "4 Real-world example",
    "source": "docs/out/m4_infra.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "5th by ubiquity at **44 of 282** tokens",
-   "texte_fr": "",
    "valeur_artefact": "44 of 282, infra=yes"
   },
   {
@@ -268,9 +228,7 @@
    "section": "4 Real-world example",
    "source": "docs/out/m4_infra.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "a repeat operator on **24 of 282** tokens",
-   "texte_fr": "",
    "valeur_artefact": "24 of 282, infra=no"
   },
   {
@@ -281,16 +239,12 @@
    "section": "6 Why Solana memecoins are finished",
    "source": "data/v06_curve_ladder.json",
    "statut": "OK",
-   "statut_fr": "-",
    "texte": "across **42 out of 42** verified launches",
-   "texte_fr": "",
    "valeur_artefact": "42 out of 42"
   }
  ],
  "n_absent": 0,
  "n_claims": 22,
- "n_fr_absent": 0,
- "n_fr_declares": 8,
  "n_mismatch": 0,
  "n_non_source_present": 15,
  "n_non_source_retire": 5,
