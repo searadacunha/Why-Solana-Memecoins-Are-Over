@@ -24,10 +24,10 @@ data/transition/
 docs/INVENTAIRE.md
 docs/REVIEW.md
 
-# --- traductions de relecture ------------------------------------------------
-# Le depot se publie en ANGLAIS. Ces versions francaises existent pour que
-# l'auteur relise avant publication ; elles ne sont pas la version de reference
-# et divergeraient au premier correctif applique a l'anglais.
+# --- review translations -----------------------------------------------------
+# The repository is published in ENGLISH. These French versions exist so the
+# author can proofread before publication; they are not the reference version
+# and would diverge at the first fix applied to the English.
 _relecture_fr/
 
 # --- working notes, not deliverables -----------------------------------------

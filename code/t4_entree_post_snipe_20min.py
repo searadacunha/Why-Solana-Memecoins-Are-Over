@@ -165,33 +165,33 @@ def main():
     best = max(out.values(), key=lambda r: r["mult_median"])
     txt = write_table(
         "T4_entree_post_snipe_20min",
-        ["regle d'entree", "n", "clusters", "jamais declenchee",
-         "t entree median (s)", "multiple median", "IC95", "p25 / p75",
-         "% multiple > 1", "PnL net median %", "PnL net moyen %",
-         "IC95 moyenne (cluster) %", "moyenne sans le meilleur token %"],
+        ["entry rule", "n", "clusters", "never triggered",
+         "median entry t (s)", "median multiple", "95% CI", "p25 / p75",
+         "% multiple > 1", "median net PnL %", "mean net PnL %",
+         "mean 95% CI (cluster) %", "mean without the best token %"],
         table,
         ["",
-         f"Source : `{source_label()}` ({nfiles} fichiers, "
-         f"{len(caps)} captures exploitables). Sortie commune : conservation "
-         f"jusqu'a la fin exploitable de la capture (<= 20 min).",
-         "`multiple median` est BRUT (hors frais) ; `PnL net` retranche 5,8241 % "
-         "aller-retour.",
-         "Toutes les regles sont live-safe : la decision prise sur un bucket de "
-         "30 s s'execute au bucket suivant, jamais au prix qui l'a declenchee.",
-         f"**Aucune regle d'entree post-snipe n'atteint un multiple median de 1 "
-         f"sur cet horizon** ; la meilleure est `{best['regle']}` a "
-         f"{best['mult_median']:.2f}x (IC95 "
+         f"Source: `{source_label()}` ({nfiles} files, "
+         f"{len(caps)} usable captures). Common exit: hold until the usable "
+         f"end of the capture (<= 20 min).",
+         "`median multiple` is GROSS (before fees); `net PnL` deducts 5.8241 % "
+         "round-trip.",
+         "Every rule is live-safe: a decision taken on a 30 s bucket executes on "
+         "the next bucket, never at the price that triggered it.",
+         f"**No post-snipe entry rule reaches a median multiple of 1 on this "
+         f"horizon**; the best is `{best['regle']}` at "
+         f"{best['mult_median']:.2f}x (95% CI "
          f"[{best['mult_ic95'][0]:.2f}, {best['mult_ic95'][1]:.2f}], n={best['n']}).",
-         "`jamais declenchee` = le token n'a pas offert le retracement demande "
-         "pendant la capture ; ces tokens ne comptent dans aucune colonne.",
-         "**A ne pas surinterpreter** : la MOYENNE devient positive sur les "
-         "retracements profonds (-40 % a -70 %). Ce n'est pas un edge. Deux "
-         "controles le montrent, et ils sont dans le tableau : (a) l'IC95 de la "
-         "moyenne, bootstrappe au niveau CLUSTER, traverse zero pour chacune de "
-         "ces lignes ; (b) retirer LE SEUL meilleur token de l'echantillon fait "
-         "repasser toutes ces moyennes en negatif. C'est une queue droite epaisse "
-         "portee par une poignee de tokens, pas une esperance positive.",
-         "", "Regenerer : `python3 code/t4_entree_post_snipe_20min.py`"])
+         "`never triggered` = the token never offered the requested retracement "
+         "during the capture; those tokens count in no column.",
+         "**Not to be over-read**: the MEAN turns positive on deep retracements "
+         "(-40 % to -70 %). That is not an edge. Two controls show it, and both "
+         "are in the table: (a) the 95% CI of the mean, bootstrapped at the "
+         "CLUSTER level, crosses zero on every one of those rows; (b) removing "
+         "the SINGLE best token flips all those means back negative. It is a "
+         "fat right tail carried by a handful of tokens, not a positive "
+         "expectation.",
+         "", "Regenerate: `python3 code/t4_entree_post_snipe_20min.py`"])
     print(txt)
     dump_json({"n_fichiers": nfiles, "n_captures": len(caps), "regles": out},
               os.path.join(DATA, "cout_acheteur", "t4_entree_post_snipe_20min.json"))

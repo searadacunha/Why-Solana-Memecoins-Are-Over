@@ -142,26 +142,26 @@ def main():
 
     txt = write_table(
         "T5_horizon_1h_24h",
-        ["horizon", "n avec bougie", "sans bougie", "multiple median",
-         "IC95", "p25 / p75", "% > 1", "high median", "median population entiere"],
+        ["horizon", "n with candle", "no candle", "median multiple",
+         "95% CI", "p25 / p75", "% > 1", "high median", "whole-population median"],
         table,
         ["",
-         f"n = {n_tot} tokens | {nclu} clusters. Achat au prix robuste des 120 "
-         f"dernieres secondes de la capture (~t0+20 min), converti en USD ; vente "
-         f"au `close` de la bougie horaire la plus proche (tolerance 90 min).",
-         "`high median` = mediane du plus haut de la bougie d'echeance : borne "
-         "OPTIMISTE (elle suppose de vendre au plus haut de l'heure).",
-         "`median population entiere` compte 0,00x les tokens qui n'ont plus "
-         "AUCUNE bougie a l'echeance, c'est-a-dire plus aucun echange : c'est la "
-         "convention honnete pour un actif qu'on ne peut plus vendre.",
-         f"Controle d'unites (prix GT en USD / prix de swap en SOL) / (SOL en USD) "
-         f"= **{ctrl['mediane_rapport']:.3f}** en mediane sur n={ctrl['n']} tokens. "
-         f"Proche de 1 : la conversion SOL->USD est correcte. Sans cette "
-         f"conversion, tous les multiples de cette table seraient multiplies par "
+         f"n = {n_tot} tokens | {nclu} clusters. Bought at the robust price of the "
+         f"last 120 seconds of the capture (~t0+20 min), converted to USD; sold "
+         f"at the `close` of the nearest hourly candle (90 min tolerance).",
+         "`high median` = median of the expiry candle's high: an OPTIMISTIC bound "
+         "(it assumes selling at the hour's high).",
+         "`whole-population median` counts as 0.00x the tokens that no longer have "
+         "ANY candle at expiry, i.e. no trading left at all: the honest "
+         "convention for an asset that can no longer be sold.",
+         f"Units control (GT price in USD / swap price in SOL) / (SOL in USD) "
+         f"= **{ctrl['mediane_rapport']:.3f}** median on n={ctrl['n']} tokens. "
+         f"Close to 1: the SOL->USD conversion is correct. Without it, every "
+         f"multiple in this table would be multiplied by "
          f"~{smed:.0f}.",
-         "", "Prerequis : `python3 code/fetch_sol_usd.py` puis "
+         "", "Prerequisites: `python3 code/fetch_sol_usd.py` then "
          "`python3 code/fetch_gt_ohlcv.py`.",
-         "Regenerer : `python3 code/t5_horizon_1h_24h.py`"])
+         "Regenerate: `python3 code/t5_horizon_1h_24h.py`"])
     print(txt)
     dump_json({"n_tokens": n_tot, "n_clusters": nclu,
                "controle_unites": ctrl, "sol_usd_median": smed,

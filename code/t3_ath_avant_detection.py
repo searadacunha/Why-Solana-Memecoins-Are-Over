@@ -86,29 +86,29 @@ def main():
     tot = bloc(rows)
     out["_sous_20k"] = b20
     out["_toutes_bandes"] = tot
-    tab.append(["--- < 20k (agrege)", b20["n"], f"{b20['ath_avant_detection_pct']:.1f}",
+    tab.append(["--- < 20k (aggregated)", b20["n"], f"{b20['ath_avant_detection_pct']:.1f}",
                 f"{b20['ath_avant_60s_pct']:.1f}",
                 f"[{b20['ath_avant_60s_ic95'][0]:.1f}, {b20['ath_avant_60s_ic95'][1]:.1f}]",
                 f"{b20['ath_avant_120s_pct']:.1f}", f"{b20['delai_ath_median_min']:.1f}"])
-    tab.append(["--- toute la population", tot["n"], f"{tot['ath_avant_detection_pct']:.1f}",
+    tab.append(["--- whole population", tot["n"], f"{tot['ath_avant_detection_pct']:.1f}",
                 f"{tot['ath_avant_60s_pct']:.1f}",
                 f"[{tot['ath_avant_60s_ic95'][0]:.1f}, {tot['ath_avant_60s_ic95'][1]:.1f}]",
                 f"{tot['ath_avant_120s_pct']:.1f}", f"{tot['delai_ath_median_min']:.1f}"])
 
     txt = write_table(
         "T3_ath_avant_detection",
-        ["bande MC a la detection", "n", "ATH deja passe %", "ATH < +60 s %",
-         "IC95 %", "ATH < +120 s %", "delai median ATH (min)"],
+        ["MC band at detection", "n", "ATH already past %", "ATH < +60 s %",
+         "95% CI %", "ATH < +120 s %", "median ATH delay (min)"],
         tab,
         ["",
-         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} jours UTC | socle B propre.",
-         "`detect_ts` = premiere visibilite exterieure (token `complete` vu <= 12 s "
-         "apres creation). C'est une borne BASSE de la latence d'un acheteur humain.",
-         "Un delai median NEGATIF signifie que, dans la bande, le token typique a "
-         "deja fait son sommet avant d'exister pour l'observateur.",
-         "Limite : `o_ath_ts` (API pump.fun) et `detect_ts` (horloge locale) peuvent "
-         "differer de quelques secondes ; les trois seuils sont publies pour cela.",
-         "", "Regenerer : `python3 code/t3_ath_avant_detection.py`"])
+         f"n = {len(rows)} tokens | {nclu} clusters | {ndays} UTC days | clean population B.",
+         "`detect_ts` = first outside visibility (token `complete` seen <= 12 s "
+         "after creation). A LOWER bound on a human buyer's latency.",
+         "A NEGATIVE median delay means that, within the band, the typical token "
+         "peaked before it existed for the observer.",
+         "Limit: `o_ath_ts` (pump.fun API) and `detect_ts` (local clock) can differ "
+         "by a few seconds; the three thresholds are published for that reason.",
+         "", "Regenerate: `python3 code/t3_ath_avant_detection.py`"])
     print(txt)
     dump_json({"n": len(rows), "n_clusters": nclu, "n_jours": ndays, "bandes": out},
               os.path.join(DATA, "t3_ath_avant_detection.json"))

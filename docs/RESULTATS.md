@@ -1,13 +1,13 @@
-# Résultats techniques — microstructure des lancements pump.fun
+# Technical results — microstructure of pump.fun launches
 
-> **Summary (EN).** Three measured results on a 7-day capture of Solana memecoin launches
+> **Summary.** Three measured results on a 7-day capture of Solana memecoin launches
 > (645 capture files, 293 with swap flow, 282 with identified early buyers, 511 508 swaps).
 > **(1) Launch mechanics.** On 42 launches verified transaction-by-transaction, the entire bonding
 > curve is bought inside the *creation slot itself* — median 85.2 SOL for 79.0 % of supply, with
 > **zero** curve purchase preceding it in 42/42 cases. The position is transferred out at a median
-> **t+17.5 s**. Median market cap goes from ~2 158 $ at launch to ~53 985 $ when the first external
+> **t+17.5 s**. Median market cap goes from ~$2,158 at launch to ~$53,985 when the first external
 > buyer can transact: **×25 before the market opens**. On a separate frozen sample of 70 tokens that
-> reached ≥ 500 k$, **58/70 = 82.9 %** [95 % CI 72.4–89.9] carry this creation-slot signature.
+> reached ≥ $500k, **58/70 = 82.9 %** [95 % CI 72.4–89.9] carry this creation-slot signature.
 > **(2) Operator clusters.** A token–token graph is dominated by 9 shared-infrastructure addresses:
 > removing them collapses the giant component from **180/282 to 57/282 tokens**. Once cleaned,
 > 6 disjoint clusters cover 76/282 tokens, with intra-cluster wallet reuse of 0.90–1.00 against a
@@ -17,564 +17,567 @@
 > negative **15/15** and no policy has a 95 % CI (cluster bootstrap) above zero. 21.3 % of tokens
 > (n=1243) have already peaked at first external visibility, 50 % within 120 s.
 > **What is deliberately not claimed:** operator identity does not predict how high a token goes
-> (p = 1.000), the clusters' tokens perform *below* baseline, and the ≥500 k$ sample is not random.
+> (p = 1.000), the clusters' tokens perform *below* baseline, and the ≥$500k sample is not random.
 > Every figure regenerates from `code/` + `data/` with no network access.
 
-**Fenêtre** : 2026-06-27 → 2026-07-04 (7 jours UTC). **Périmètre** : lancements pump.fun dits
-*fast-grad* (graduation rapide vers l'AMM). Toutes les adresses et signatures citées sont des
-identifiants techniques publics, vérifiables sur un explorateur Solana. Aucune intention, aucune
-identité et aucune personne ne leur est attribuée : ce document décrit une microstructure de marché.
+**Window**: 2026-06-27 → 2026-07-04 (7 UTC days). **Scope**: pump.fun launches known as
+*fast-grad* (fast graduation to the AMM). All addresses and signatures quoted are public technical
+identifiers, verifiable on a Solana explorer. No intent, no identity and no person is attributed
+to them: this document describes a market microstructure.
 
 ---
 
-## 0. Le corpus, et ce qu'il ne couvre pas
+## 0. The corpus, and what it does not cover
 
-| grandeur | valeur | source |
+| quantity | value | source |
 |---|---|---|
-| fichiers de capture | 645 | `data/v01_corpus.json` |
-| captures avec flux de swaps | 293 | idem |
-| captures avec acheteurs précoces identifiés | 282 | idem |
-| swaps (recompte brut) | **511 508** | idem |
-| adresses distinctes | 91 353 (brut) | idem |
-| wallets snipeurs distincts | 1 616 (2 894 occurrences) | idem |
-| lancements vérifiés transaction par transaction | **42** | `data/v05`, `v06`, `v07` |
-| tokens ≥ 500 k$ ré-audités on-chain | **70** (gelé le 29/07) | `data/v09_signature_gros_tokens.json` |
+| capture files | 645 | `data/v01_corpus.json` |
+| captures with swap flow | 293 | idem |
+| captures with identified early buyers | 282 | idem |
+| swaps (raw recount) | **511,508** | idem |
+| distinct addresses | 91,353 (raw) | idem |
+| distinct sniper wallets | 1,616 (2,894 occurrences) | idem |
+| launches verified transaction by transaction | **42** | `data/v05`, `v06`, `v07` |
+| tokens ≥ $500k re-audited on-chain | **70** (frozen 2026-07-29) | `data/v09_signature_gros_tokens.json` |
 
-⚠️ **Écart de comptage assumé.** `docs/out/m1_corpus.json` publie 476 847 swaps et 90 979 adresses,
-soit ~7 % de moins que le recompte brut ci-dessus. `m1` applique un filtre supplémentaire qui n'est
-pas documenté dans son en-tête. Les deux chiffres sont publiés ; **aucun résultat de ce document ne
-dépend de ce total**, qui ne sert qu'à décrire la taille du corpus.
+⚠️ **A counting gap, acknowledged.** `docs/out/m1_corpus.json` publishes 476,847 swaps and 90,979
+addresses, about 7 % less than the raw recount above. `m1` applies an additional filter that is not
+documented in its header. Both figures are published; **no result in this document depends on this
+total**, which serves only to describe the size of the corpus.
 
-⚠️ **Couverture réelle du capteur : 6,8 %.** `floor_capture` ne voit que **282 / 749** tokens
-fast-grad de sa propre fenêtre (0,377), et sur-échantillonne les gagnants (part d'ATH ≥ 200 k$ :
-0,337 chez les tokens captés contre 0,255 chez les non captés). Combiné au taux d'attribution à un
-cluster (0,181), le bout-en-bout réel est de **6,8 %**. Le corpus n'est donc **pas** un échantillon
-représentatif du flux : c'est un échantillon biaisé vers les lancements qui ont marché, et tous les
-résultats ci-dessous doivent se lire ainsi.
+⚠️ **Real sensor coverage: 6.8 %.** `floor_capture` sees only **282 / 749** fast-grad tokens of its
+own window (0.377), and over-samples winners (share with ATH ≥ $200k: 0.337 among captured tokens
+versus 0.255 among non-captured ones). Combined with the cluster-attribution rate (0.181), the real
+end-to-end coverage is **6.8 %**. The corpus is therefore **not** a representative sample of the
+flow: it is a sample biased toward the launches that worked, and every result below must be read
+that way.
 
 ---
 
-## 1. Le mode opératoire reconstitué
+## 1. The reconstructed operating method
 
-### 1.1 Le geste, mesuré sur 42 lancements
+### 1.1 The move, measured on 42 launches
 
-La bonding curve pump.fun gradue vers l'AMM aux alentours de 85 SOL. Sur les 42 lancements
-reconstitués transaction par transaction, cette courbe est rachetée **en totalité, dans le slot de
-création du token**, avant que quiconque d'autre puisse transiger.
+The pump.fun bonding curve graduates to the AMM at around 85 SOL. On the 42 launches reconstructed
+transaction by transaction, that curve is bought back **in full, inside the token's creation slot**,
+before anyone else can transact.
 
-**Table A — Le geste commun (n = 42 lancements, 4 clusters)**
+**Table A — The common move (n = 42 launches, 4 clusters)**
 
-| mesure | médiane | Q1–Q3 | min–max | source |
+| measurement | median | Q1–Q3 | min–max | source |
 |---|---|---|---|---|
-| SOL engagé dans le bloc de création | **85,21** | 83,12 – 85,72 | 79,49 – 87,46 | `v05` |
-| part de la supply totale raflée | **78,95 %** | 78,31 – 79,09 % | 76,78 – 79,25 % | `v05` |
-| part de la courbe captée | 79,09 % | — | 77,60 – 79,29 % | `v06` |
-| part du SOL de courbe captée | **98,72 %** | — | — | `v06` |
-| achats de courbe **avant** le bloc | **0** | — | max = 0 SOL (**42/42**) | `v06` |
-| écart temporel intra-noyau | **0 s / 0 slot** | — | 42/42 | `v02` |
-| CV des tickets à l'intérieur du bloc | 0,0265 | — | — | `v05` |
-| dev-buy du créateur | 0,068 SOL | — | — | `v06` |
-| taille du bloc | 4 wallets (33 cas) / 5 wallets (9 cas) | — | — | `v05` |
+| SOL committed in the creation block | **85.21** | 83.12 – 85.72 | 79.49 – 87.46 | `v05` |
+| share of total supply grabbed | **78.95 %** | 78.31 – 79.09 % | 76.78 – 79.25 % | `v05` |
+| share of the curve captured | 79.09 % | — | 77.60 – 79.29 % | `v06` |
+| share of the curve's SOL captured | **98.72 %** | — | — | `v06` |
+| curve purchases **before** the block | **0** | — | max = 0 SOL (**42/42**) | `v06` |
+| intra-core time gap | **0 s / 0 slots** | — | 42/42 | `v02` |
+| CV of the tickets inside the block | 0.0265 | — | — | `v05` |
+| creator's dev-buy | 0.068 SOL | — | — | `v06` |
+| block size | 4 wallets (33 cases) / 5 wallets (9 cases) | — | — | `v05` |
 
-Deux lignes portent l'essentiel :
+Two rows carry most of it:
 
-- **`achats de courbe avant le bloc = 0, sur 42/42`.** Ce n'est pas « l'opérateur est rapide » :
-  c'est qu'il n'y a **aucune fenêtre** entre la création du token et le rachat de la courbe. Le
-  premier acheteur externe possible arrive après.
-- **`écart temporel intra-noyau = 0 s et 0 slot, sur 42/42`.** Les 4 (ou 5) achats sont dans le même
-  slot Solana. Aucun observateur externe, si rapide soit-il, ne peut s'intercaler.
+- **`curve purchases before the block = 0, on 42/42`.** This is not "the operator is fast": it is
+  that there is **no window at all** between the token's creation and the curve buyback. The first
+  possible external buyer arrives after.
+- **`intra-core time gap = 0 s and 0 slots, on 42/42`.** The 4 (or 5) purchases are in the same
+  Solana slot. No external observer, however fast, can slip in between.
 
-### 1.2 L'escalier de prix
+### 1.2 The price staircase
 
-![F1 — escalier de capitalisation](../figures/f1_escalier_capitalisation.png)
+![F1 — market-cap staircase](../figures/f1_escalier_capitalisation.png)
 
-**Table B — Capitalisation médiane à chaque étape (n = 42)**
+**Table B — Median market cap at each step (n = 42)**
 
-| étape | MC médiane | ×  vs lancement |
+| step | median MC | ×  vs launch |
 |---|---|---|
-| lancement (courbe vierge, constante de 27,96 SOL) | **2 158 $** | ×1 |
-| exécution du bloc de création | 8 321 $ | ×3,9 |
-| après le dernier ticket du bloc | 26 093 $ | ×12,1 |
-| **ouverture AMM = premier acheteur externe possible** | **53 985 $** | **×25,0** |
+| launch (untouched curve, 27.96 SOL constant) | **$2,158** | ×1 |
+| execution of the creation block | $8,321 | ×3.9 |
+| after the block's last ticket | $26,093 | ×12.1 |
+| **AMM open = first possible external buyer** | **$53,985** | **×25.0** |
 
-Ratio ouverture AMM / exécution du bloc : **médiane ×6,54** (n = 42, plage 0,22 – 14,57 ;
+Ratio AMM open / block execution: **median ×6.54** (n = 42, range 0.22 – 14.57;
 **40/42 ≥ ×3**).
 
-**Convergence indépendante.** Ce ×25 est retrouvé sur une **autre population et une autre méthode** :
-`docs/out/m2_entry_price.json` mesure, sur les **293** captures, une capitalisation médiane de
-**706 SOL au premier instant observable de l'extérieur** contre la constante de lancement de
-27,96 SOL, soit **×25,2** [IC95 672 – 724 SOL]. La part du log-run lancement → pic déjà consommée à
-cet instant est de **0,90 en médiane**. Deux mesures sans code commun, à 0,2 point l'une de l'autre.
+**Independent convergence.** This ×25 is found again on **another population with another method**:
+`docs/out/m2_entry_price.json` measures, on the **293** captures, a median market cap of
+**706 SOL at the first externally observable instant** against the launch constant of
+27.96 SOL, i.e. **×25.2** [95 % CI 672 – 724 SOL]. The share of the launch → peak log-run already
+consumed at that instant is **0.90 in median**. Two measurements with no shared code, 0.2 points
+apart.
 
-### 1.3 Cinq lancements vérifiables
+### 1.3 Five verifiable launches
 
-Chaque ligne est un mint public. Le slot, le nombre de wallets du bloc, le SOL engagé et le délai de
-transfert sont vérifiables sur un explorateur Solana à partir du mint seul.
+Each row is a public mint. The slot, the number of block wallets, the SOL committed and the transfer
+delay are verifiable on a Solana explorer from the mint alone.
 
-**Table C — Cinq lancements, bout en bout**
+**Table C — Five launches, end to end**
 
-| mint | cluster (lead) | slot de création | wallets du bloc | SOL du bloc | supply raflée | achats avant | MC bloc → ouverture AMM | transfert du sac (médiane) | collecteurs |
+| mint | cluster (lead) | creation slot | block wallets | block SOL | supply grabbed | purchases before | block MC → AMM open | bag transfer (median) | collectors |
 |---|---|---|---|---|---|---|---|---|---|
-| `87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump` | C1 `22vL22Pc…` | 429 307 208 | 4 | 84,94 | 78,05 % | **0** | 8 401 $ → 122 404 $ | t+23,5 s (19–35) | 3 |
-| `DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump` | C1 `22vL22Pc…` | 429 722 432 | 4 | 85,23 | 79,10 % | **0** | 8 317 $ → 60 423 $ | t+14,0 s (9–18) | 4 |
-| `9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump` | C2 `339QJtzB…` | 429 338 545 | 4 | 82,08 | 77,99 % | **0** | 8 125 $ → 52 951 $ | t+16,5 s (6–27) | 4 |
-| `hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump` | C3 `2GMhqu3c…` | 429 414 857 | 4 | 84,81 | 78,84 % | **0** | 8 304 $ → 51 938 $ | t+22,0 s (14–35) | 4 |
-| `ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump` | C4 `2LLHCtDp…` | 430 477 517 | 4 | 79,49 | 77,45 % | **0** | 7 923 $ → 59 736 $ | t+13,0 s (13–13) | 4 |
+| `87QChghgFr2XBNumi2Tg1MJCWHLqoTTT5KThtnDspump` | C1 `22vL22Pc…` | 429,307,208 | 4 | 84.94 | 78.05 % | **0** | $8,401 → $122,404 | t+23.5 s (19–35) | 3 |
+| `DuiJLBQbnW7q5DibZNUckqtQbPMpMrXyc81iSNmzpump` | C1 `22vL22Pc…` | 429,722,432 | 4 | 85.23 | 79.10 % | **0** | $8,317 → $60,423 | t+14.0 s (9–18) | 4 |
+| `9hrV5rTGN7s2noUZwo84kpFZKmhsnRuMS6AVMs1upump` | C2 `339QJtzB…` | 429,338,545 | 4 | 82.08 | 77.99 % | **0** | $8,125 → $52,951 | t+16.5 s (6–27) | 4 |
+| `hCVRw8Qq9e8ZTeGYzWBoY8G5GvhDdkoMDmy4MWypump` | C3 `2GMhqu3c…` | 429,414,857 | 4 | 84.81 | 78.84 % | **0** | $8,304 → $51,938 | t+22.0 s (14–35) | 4 |
+| `ALbvXciC8k4P3G57b4hMRPypvvsc2Rr9K4WucSwLpump` | C4 `2LLHCtDp…` | 430,477,517 | 4 | 79.49 | 77.45 % | **0** | $7,923 → $59,736 | t+13.0 s (13–13) | 4 |
 
-Les 5 tokens ont **5 créateurs différents** (`78wF7WAi…`, `Gcdpw19Y…`, `9vivFUKu…`, `E7B2ojFo…`,
-`EaopWCEj…`). Aucun n'est réutilisé. Voir §2.3 : ce point disqualifie l'interprétation « ces clusters
-lancent les tokens ».
+The 5 tokens have **5 different creators** (`78wF7WAi…`, `Gcdpw19Y…`, `9vivFUKu…`, `E7B2ojFo…`,
+`EaopWCEj…`). None is reused. See §2.3: this point disqualifies the reading "these clusters
+launch the tokens".
 
-### 1.4 Le template est déterministe — et ça se prouve
+### 1.4 The template is deterministic — and it can be proven
 
-En vérifiant la table C, cinq lancements du cluster C2 se sont révélés porter des valeurs
-**identiques au dix-millième** : mêmes 4 tickets `[21,1299 / 20,8140 / 20,4678 / 19,6699]`, même
-`tokens_bloc = 779 852 771,1`, même part de supply `0,77985`, sur cinq tokens différents.
+While verifying table C, five launches of cluster C2 turned out to carry values **identical to the
+fourth decimal**: same 4 tickets `[21.1299 / 20.8140 / 20.4678 / 19.6699]`, same
+`tokens_bloc = 779,852,771.1`, same supply share `0.77985`, on five different tokens.
 
-Une répétition parfaite est d'abord un signal de **bug de données** (enregistrement dupliqué). Le
-contrôle a été fait avant toute publication :
+A perfect repetition is first of all a signal of a **data bug** (a duplicated record). The check was
+done before any publication:
 
-| contrôle | résultat | conclusion |
+| check | result | conclusion |
 |---|---|---|
-| créateurs des 5 tokens | **5 créateurs distincts** | pas un doublon |
-| ordre d'exécution des 4 wallets | **différent** sur 3 des 5 | pas un doublon |
-| slots | 5 slots distincts, étalés sur ~23 000 slots | pas un doublon |
-| dev-buy en **tokens** | `3 564 784,69` — identique | *explique* la répétition |
-| valeurs distinctes de `tokens_bloc` sur les 42 | **35 / 42** | la répétition est locale, pas globale |
+| creators of the 5 tokens | **5 distinct creators** | not a duplicate |
+| execution order of the 4 wallets | **different** on 3 of the 5 | not a duplicate |
+| slots | 5 distinct slots, spread over ~23,000 slots | not a duplicate |
+| dev-buy in **tokens** | `3,564,784.69` — identical | *explains* the repetition |
+| distinct `tokens_bloc` values across the 42 | **35 / 42** | the repetition is local, not global |
 
-**Diagnostic** : le dev-buy achète une **quantité fixe de tokens**, donc l'état de la courbe à
-l'entrée du bloc est identique d'un lancement à l'autre ; une échelle d'achat exprimée elle aussi en
-quantité de tokens coûte alors un montant de SOL identique au dix-millième. Ce n'est pas un artefact
-de données : c'est un **template d'exécution codé en dur**, et la constance des chiffres en est la
-signature la plus lisible. Le CV inter-lancements du cluster C2 est de **0,0075** (`v02`).
+**Diagnosis**: the dev-buy purchases a **fixed quantity of tokens**, so the state of the curve at
+the block's entry is identical from one launch to the next; a buy ladder itself expressed in token
+quantities then costs an amount of SOL identical to the fourth decimal. This is not a data
+artefact: it is a **hard-coded execution template**, and the constancy of the figures is its most
+legible signature. Cluster C2's inter-launch CV is **0.0075** (`v02`).
 
-### 1.5 La sortie
+### 1.5 The exit
 
-**Table D — Sortie de position (n = 42 lancements, 177 wallets de bloc)**
+**Table D — Position exit (n = 42 launches, 177 block wallets)**
 
-| mesure | valeur |
+| measurement | value |
 |---|---|
-| wallets transférant leur sac | **162 / 177** |
-| wallets vendant directement | 46 / 177 |
-| part de la supply transférée (médiane) | **99,99 %** |
-| délai du premier transfert | **médiane 17,5 s**, Q1–Q3 13,0 – 26,2 s, plage 0 – 80 s |
-| collecteurs distincts (2ᵉ étage) | 41 |
+| wallets transferring their bag | **162 / 177** |
+| wallets selling directly | 46 / 177 |
+| share of the supply transferred (median) | **99.99 %** |
+| delay to the first transfer | **median 17.5 s**, Q1–Q3 13.0 – 26.2 s, range 0 – 80 s |
+| distinct collectors (2nd tier) | 41 |
 
-Le sac n'est presque jamais vendu par le wallet qui l'a acheté : il est transféré en SPL, à
-**t+17,5 s en médiane**, vers un second étage d'adresses qui liquident ensuite en série. Le rapport
-forensique mesure ces liquidations à **119 à 194 tranches** d'environ 4 SOL espacées de ~1,5 s selon
-le cluster (n = 42 ; comptage par cluster, pas par lancement — à traiter comme un ordre de grandeur).
+The bag is almost never sold by the wallet that bought it: it is transferred as SPL, at
+**t+17.5 s in median**, to a second tier of addresses that then liquidate in series. The forensic
+report measures these liquidations at **119 to 194 tranches** of about 4 SOL spaced ~1.5 s apart
+depending on the cluster (n = 42; counted per cluster, not per launch — to be read as an order of
+magnitude).
 
-**Asymétrie d'âge des wallets** (n = 476 wallets datés exactement) :
+**Wallet-age asymmetry** (n = 476 exactly dated wallets):
 
-| population | n | âge médian au 1ᵉʳ snipe |
+| population | n | median age at first snipe |
 |---|---|---|
-| créateur du token | 151 | **0,03 j (~45 min)** — 75,5 % ont moins d'un jour |
-| snipeur jetable (1–2 tokens) | 267 | 0,22 j |
-| membre de cluster | 58 | **32,5 j** (q75 = 118 j) ; les 4 clusters « quad » : 118 / 228 / 419 j |
+| token creator | 151 | **0.03 d (~45 min)** — 75.5 % are less than a day old |
+| disposable sniper (1–2 tokens) | 267 | 0.22 d |
+| cluster member | 58 | **32.5 d** (q75 = 118 d); the 4 "quad" clusters: 118 / 228 / 419 d |
 
-Le wallet **créateur est jetable et frais** ; les wallets **d'achat sont pré-provisionnés en lot et
-vieillis** des mois avant emploi, puis réutilisés sur 6 à 14 lancements. Les 4 wallets du cluster C3
-ont été créés **en 50 secondes** (12/11/2025) et employés **228 jours** plus tard.
+The **creator** wallet is **disposable and fresh**; the **buying** wallets are **pre-provisioned in
+batches and aged** for months before use, then reused across 6 to 14 launches. The 4 wallets of
+cluster C3 were created **within 50 seconds** (2025-11-12) and used **228 days** later.
 
-### 1.6 La signature sur les gros tokens — et ses trois limites
+### 1.6 The signature on large tokens — and its three limits
 
-Question posée séparément : quand un token atteint une capitalisation élevée, porte-t-il cette
-signature d'ouverture ? Test on-chain **indépendant du détecteur**, sur un échantillon **gelé** de
-70 tokens d'ATH ≥ 500 k$ (`code/f_signature_gros_tokens.py`).
+A question asked separately: when a token reaches a high market cap, does it carry this opening
+signature? An on-chain test **independent of the detector**, on a **frozen** sample of
+70 tokens with ATH ≥ $500k (`code/f_signature_gros_tokens.py`).
 
-| mesure | valeur |
+| measurement | value |
 |---|---|
-| ATH médian de l'échantillon | 1 205 423 $ |
-| courbe rachetée (≥ 60 SOL) **dans le slot de création** | **58 / 70 = 82,9 %** — IC95 Wilson **[72,4 ; 89,9]** |
-| accord « rachat en 30 s » vs « rachat dans le slot de création » | **70 / 70** |
-| SOL engagé dans ce slot | médiane **85,01** (81,79 – 85,01) |
-| acheteurs dans ce slot | médiane 4 (1 – 13) |
+| median ATH of the sample | $1,205,423 |
+| curve bought back (≥ 60 SOL) **inside the creation slot** | **58 / 70 = 82.9 %** — Wilson 95 % CI **[72.4, 89.9]** |
+| agreement "buyback within 30 s" vs "buyback inside the creation slot" | **70 / 70** |
+| SOL committed in that slot | median **85.01** (81.79 – 85.01) |
+| buyers in that slot | median 4 (1 – 13) |
 
-L'accord **70/70** est le fait le plus net du dossier : il n'existe pas de cas intermédiaire où la
-courbe serait rachetée en quelques secondes *sans* l'être dans le slot de création. Il n'y a pas de
-fenêtre — il y a une porte fermée.
+The **70/70** agreement is the sharpest fact in the file: there is no intermediate case where the
+curve would be bought back within a few seconds *without* being bought back in the creation slot.
+There is no window — there is a closed door.
 
-⚠️ **Trois limites, à lire avec le chiffre :**
+⚠️ **Three limits, to be read with the figure:**
 
-1. **L'échantillon n'est pas aléatoire.** Ce sont les 70 premiers tokens ≥ 500 k$ dans l'ordre du
-   fichier source. L'IC95 quantifie l'erreur d'échantillonnage, pas le biais de sélection.
-2. **La signature ne fait pas monter les tokens.** Dans ces mêmes 70 : ATH médian **avec** signature
-   (n=58) = **1,13 M$** ; ATH médian **sans** signature (n=12) = **2,33 M$**. Les tokens *sans* la
-   signature montent **plus haut**. Elle décrit un démarrage, elle ne prédit pas une trajectoire.
-3. **C'est P(signature | gros), pas P(gros | signature).** Cette mesure est conditionnée sur le
-   succès. Elle ne dit rien de la part de lancements snipés dans le flux général, ni de la
-   probabilité qu'un lancement snipé réussisse. Confondre les deux serait exactement le biais de
-   sélection sur l'outcome documenté dans `PITFALLS.md`.
+1. **The sample is not random.** These are the first 70 tokens ≥ $500k in the order of the source
+   file. The 95 % CI quantifies sampling error, not selection bias.
+2. **The signature does not make tokens go up.** Within these same 70: median ATH **with** the
+   signature (n=58) = **$1.13M**; median ATH **without** the signature (n=12) = **$2.33M**. The
+   tokens *without* the signature go **higher**. It describes a start, it does not predict a
+   trajectory.
+3. **It is P(signature | large), not P(large | signature).** This measurement is conditioned on
+   success. It says nothing about the share of sniped launches in the general flow, nor about the
+   probability that a sniped launch succeeds. Confusing the two would be exactly the
+   outcome-selection bias documented in `PITFALLS.md`.
 
-### 1.7 Une réconciliation trouvée en écrivant cette section
+### 1.7 A reconciliation found while writing this section
 
-Les deux scripts `v05_creation_block.py` et `v06_curve_ladder.py` calculent tous deux la
-capitalisation à l'ouverture AMM. Leurs médianes publiées divergent : **46 147 $ contre 53 985 $**,
-et le désaccord porte sur **42 lancements sur 42**, avec des écarts unitaires allant jusqu'à un
-facteur 100 (un lancement à 78 $ contre 11 435 $).
+The two scripts `v05_creation_block.py` and `v06_curve_ladder.py` both compute the market cap at
+AMM open. Their published medians diverge: **$46,147 versus $53,985**, and the disagreement covers
+**42 launches out of 42**, with per-launch gaps up to a factor of 100 (one launch at $78 versus
+$11,435).
 
-Diagnostic : `v05` retenait le **premier swap venu** et se faisait piloter par des échanges poussière
-de ~0,002 SOL, dont le prix implicite est aberrant. `v06` prend la **médiane des swaps PUMP_AMM
-≥ 0,1 SOL des 60 premières secondes** — sa docstring déclare explicitement corriger `v05`.
+Diagnosis: `v05` kept the **first swap that came along** and was driven by dust trades of
+~0.002 SOL, whose implied price is aberrant. `v06` takes the **median of the PUMP_AMM swaps
+≥ 0.1 SOL over the first 60 seconds** — its docstring explicitly declares that it corrects `v05`.
 
-**`v06` fait autorité ; les chiffres de ce document en viennent.** L'épisode est conservé ici parce
-qu'il illustre le mécanisme central du dossier : deux implémentations de la même grandeur, un écart,
-et une convention d'estimation robuste qui tranche. Sans le croisement, la valeur fausse aurait été
-publiée — elle l'était déjà dans `v05`.
+**`v06` is authoritative; the figures in this document come from it.** The episode is kept here
+because it illustrates the project's central mechanism: two implementations of the same quantity, a
+gap, and a robust estimation convention that settles it. Without the cross-check, the wrong value
+would have been published — it already was, in `v05`.
 
 ---
 
-## 2. Les clusters d'opérateurs par analyse de graphe
+## 2. Operator clusters by graph analysis
 
-### 2.1 Le piège d'abord : nettoyer avant d'interpréter
+### 2.1 The trap first: clean before interpreting
 
-![F4 — graphe et infrastructure](../figures/f4_graphe_infra.png)
+![F4 — graph and infrastructure](../figures/f4_graphe_infra.png)
 
-Construire un graphe token–token (arête si deux tokens partagent ≥ 3 acheteurs précoces) sur les
-282 captures donne une **composante géante de 180 tokens sur 282 (63,8 %)**. Lue naïvement, elle
-décrit « un réseau unique couvrant les deux tiers du marché ». C'est faux.
+Building a token–token graph (edge if two tokens share ≥ 3 early buyers) over the
+282 captures yields a **giant component of 180 tokens out of 282 (63.8 %)**. Read naively, it
+describes "a single network covering two thirds of the market". That is wrong.
 
-Un petit nombre d'adresses achète une fraction énorme de **tous** les lancements. Ce ne sont pas des
-opérateurs : ce sont des **services** utilisés par tout le monde, qui relient artificiellement
-n'importe quelle paire de tokens.
+A small number of addresses buys an enormous fraction of **all** launches. They are not operators:
+they are **services** used by everyone, which artificially link any pair of tokens.
 
-**Table E — Ubiquité des 5 premières adresses d'infrastructure (n = 282 tokens)**
+**Table E — Ubiquity of the top 5 infrastructure addresses (n = 282 tokens)**
 
-| id | tokens snipés | part du corpus |
+| id | tokens sniped | share of the corpus |
 |---|---|---|
-| **W1** | 165 | **58,5 %** |
-| W2 | 99 | 35,1 % |
-| W3 | 91 | 32,3 % |
-| W4 | 70 | 24,8 % |
-| W5 | 44 | 15,6 % |
+| **W1** | 165 | **58.5 %** |
+| W2 | 99 | 35.1 % |
+| W3 | 91 | 32.3 % |
+| W4 | 70 | 24.8 % |
+| W5 | 44 | 15.6 % |
 
-**En retirant 9 adresses de ce type, la composante géante tombe de 180 à 57 tokens (63,8 % →
-20,2 %).** Le « réseau géant » était un artefact de pontage. C'est le piège le plus facile à commettre
-sur ces données, et le dépôt publie le test qui le démontre (`code/m4_infra_ubiquity.py`), pas
-seulement la conclusion.
+**Removing 9 addresses of this type drops the giant component from 180 to 57 tokens (63.8 % →
+20.2 %).** The "giant network" was a bridging artefact. It is the easiest trap to fall into on this
+data, and the repository publishes the test that demonstrates it (`code/m4_infra_ubiquity.py`), not
+just the conclusion.
 
-Deux corrections de classification, gardées parce qu'elles vont dans les deux sens :
+Two classification corrections, kept because they cut both ways:
 
-- **W1 avait été étiqueté « bot de volume mono-mint ».** Faux : sur ses 500 dernières transactions,
-  45 mints distincts, mint dominant à 4,0 %. Le test « ≥ 90 % des tx sur un seul mint » ne passe sur
-  **0 wallet / 57**. W1 est exclu pour **ubiquité**, pas pour mono-mint — la bonne raison compte.
-- **`GeBJSHK4…` avait été classé infrastructure** par le clustering. Faux : c'est un créateur de
-  51 tokens qui achète les siens. Le classer en infra l'aurait fait **manquer**. Un filtre
-  d'infrastructure trop large coûte des vrais positifs.
+- **W1 had been labelled a "single-mint volume bot".** Wrong: over its last 500 transactions,
+  45 distinct mints, dominant mint at 4.0 %. The test "≥ 90 % of txs on a single mint" passes on
+  **0 wallets / 57**. W1 is excluded for **ubiquity**, not for being single-mint — the right reason
+  matters.
+- **`GeBJSHK4…` had been classified as infrastructure** by the clustering. Wrong: it is a creator of
+  51 tokens buying its own. Classing it as infra would have caused it to be **missed**. An
+  infrastructure filter that is too broad costs true positives.
 
-### 2.2 Ce que le graphe donne une fois nettoyé
+### 2.2 What the graph yields once cleaned
 
-**Table F — Les 6 clusters (n = 282 tokens capturés)**
+**Table F — The 6 clusters (n = 282 captured tokens)**
 
-| cluster | adresses du noyau | tokens | wallets / lancement | réutilisation intra-cluster | CV inter-lancements | SOL médian |
+| cluster | core addresses | tokens | wallets / launch | intra-cluster reuse | inter-launch CV | median SOL |
 |---|---|---|---|---|---|---|
-| C1 `22vL22Pc…` | 7 (**substitue un titulaire en cours de série**) | 14 | 4 | 0,904 | 0,146 | 84,97 |
-| C2 `339QJtzB…` | 4 | 12 | 4 | 1,000 | **0,0075** | 80,90 |
-| C3 `2GMhqu3c…` | 4 (**0 rotation sur 10 lancements**) | 10 | 4 | 1,000 | 0,0118 | 85,10 |
-| C4 `2LLHCtDp…` | 4 | 6 | 4 | 1,000 | 0,0345 | 79,62 |
-| C5 `yHCxHBEa…` | 1 + 12 sous-wallets | 24 | 1 | 1,000 | 0,316 | 84,9 |
-| C6 `GeBJSHK4…` | 1 | 10 | 1 | 1,000 | **0,000** | **84,0 exactement, 10/10** |
-| **base de comparaison** | — | — | — | **0,0191** | — | — |
+| C1 `22vL22Pc…` | 7 (**a stand-in replaces one regular mid-series**) | 14 | 4 | 0.904 | 0.146 | 84.97 |
+| C2 `339QJtzB…` | 4 | 12 | 4 | 1.000 | **0.0075** | 80.90 |
+| C3 `2GMhqu3c…` | 4 (**0 rotation over 10 launches**) | 10 | 4 | 1.000 | 0.0118 | 85.10 |
+| C4 `2LLHCtDp…` | 4 | 6 | 4 | 1.000 | 0.0345 | 79.62 |
+| C5 `yHCxHBEa…` | 1 + 12 sub-wallets | 24 | 1 | 1.000 | 0.316 | 84.9 |
+| C6 `GeBJSHK4…` | 1 | 10 | 1 | 1.000 | **0.000** | **exactly 84.0, 10/10** |
+| **comparison base** | — | — | — | **0.0191** | — | — |
 
-**Ce qui rend ces clusters solides :**
+**What makes these clusters solid:**
 
-- **Réutilisation 0,904 – 1,000 contre une base de 0,0191**, soit un facteur ~47 à 52.
-- **Co-occurrence** : sur les paires du noyau C1, lift **×20 à ×22**, p de 2×10⁻¹⁹ à 6×10⁻²⁴.
-- **Disjonction totale** : les 6 clusters ne partagent **aucun token** (0 paire) et **aucune adresse**
-  (0 paire). Ils ne sont pas des morceaux arbitraires d'un même blob.
-- **Persistance hors fenêtre** : les 4 clusters « quad » sont retrouvés en activité **25 jours après**
-  la fenêtre de capture, mêmes wallets, même ticket, alors que toute leur couche de financement avait
-  été renouvelée entre-temps.
+- **Reuse of 0.904 – 1.000 against a base of 0.0191**, a factor of ~47 to 52.
+- **Co-occurrence**: on the C1 core pairs, lift **×20 to ×22**, p from 2×10⁻¹⁹ to 6×10⁻²⁴.
+- **Total disjointness**: the 6 clusters share **no token** (0 pairs) and **no address**
+  (0 pairs). They are not arbitrary pieces of a single blob.
+- **Persistence beyond the window**: the 4 "quad" clusters are found still active **25 days after**
+  the capture window, same wallets, same ticket, while their entire funding layer had been renewed
+  in the meantime.
 
-Couverture : **76 / 282 tokens = 27,0 %**. Le reste du corpus est atomisé — **1 062 créateurs sur
-1 183 (90 %) n'ont lancé qu'un seul token** (n = 1 701 tokens mappés). Le marché observé est
-majoritairement individuel, pas industriel.
+Coverage: **76 / 282 tokens = 27.0 %**. The rest of the corpus is atomised — **1,062 creators out of
+1,183 (90 %) launched only one token** (n = 1,701 mapped tokens). The observed market is mostly
+individual, not industrial.
 
-### 2.3 Ce que ces clusters ne sont pas
+### 2.3 What these clusters are not
 
-**42 tokens, 42 créateurs différents, zéro répétition.** Les clusters C1–C4 n'ont aucun lien avec les
-wallets qui créent les tokens qu'ils achètent. L'hypothèse initiale — « ce sont des lanceurs qui
-snipent leurs propres tokens » — est **réfutée** : ce sont des acteurs côté **demande**, qui achètent
-la courbe de tokens créés par d'autres.
+**42 tokens, 42 different creators, zero repetition.** Clusters C1–C4 have no link to the wallets
+that create the tokens they buy. The initial hypothesis — "these are launchers sniping their own
+tokens" — is **refuted**: they are **demand-side** actors, buying the curve of tokens created by
+others.
 
-**Et « bundle » est un abus de langage ici.** Le signataire dominant vaut exactement **1/n** sur tous
-les tokens (n = 42 pour les quads, n = 187 hors cluster) : **chaque wallet signe sa propre
-transaction**, 0/42 duplication. Il n'y a **pas** de bundle atomique à fee-payer partagé. Le seul
-mécanisme d'atomicité observé est un bundle Jito à tip unique, sur 2 clusters. Le terme est conservé
-dans le code pour raisons historiques ; il ne décrit pas un fait technique.
+**And "bundle" is a misnomer here.** The dominant signer is worth exactly **1/n** on all tokens
+(n = 42 for the quads, n = 187 outside clusters): **each wallet signs its own transaction**, 0/42
+duplication. There is **no** atomic bundle with a shared fee-payer. The only atomicity mechanism
+observed is a single-tip Jito bundle, on 2 clusters. The term is kept in the code for historical
+reasons; it does not describe a technical fact.
 
-> **Écarté faute de preuve.** L'hypothèse d'une transition historique « achats séquentiels et donc
-> observables → bundle atomique et donc invisible » est **non testable sur ces données** : la marche
-> arrière dans l'historique n'a aucune profondeur (le plus ancien enregistrement atteint est le jour
-> même). Aucune datation n'est proposée. Le mot « atomique » est de surcroît réfuté ci-dessus.
+> **Dismissed for lack of evidence.** The hypothesis of a historical transition "sequential and
+> therefore observable purchases → atomic and therefore invisible bundle" is **not testable on this
+> data**: walking back through the history has no depth (the oldest record reached is the same
+> day). No dating is proposed. The word "atomic" is moreover refuted above.
 
-### 2.4 Deux familles logicielles, pas six opérateurs
+### 2.4 Two software families, not six operators
 
-Trois axes techniques indépendants donnent **la même partition** des 4 clusters quad :
+Three independent technical axes give **the same partition** of the 4 quad clusters:
 
 | | **{C1, C3}** | **{C2, C4}** |
 |---|---|---|
-| Address Lookup Tables | 100 % | partielle |
-| frais par transaction | 11 500 lamports | 6 500 lamports |
-| tip Jito | aucun | **destinataire codé en dur** (un client standard tire au sort parmi 8) |
-| ordre des tickets | strictement décroissants **16/16** | non monotones |
+| Address Lookup Tables | 100 % | partial |
+| fees per transaction | 11,500 lamports | 6,500 lamports |
+| Jito tip | none | **hard-coded recipient** (a standard client picks at random among 8) |
+| ticket order | strictly decreasing **16/16** | non-monotonic |
 
-Deux clusters qui ne partagent **ni wallet ni token** exécutent le même binaire, au lamport près.
-L'inférence défendable est **« outil partagé ou vendu »**, pas **« même acteur »** — et la distinction
-est le résultat, pas une prudence de forme.
+Two clusters that share **neither wallet nor token** run the same binary, to the lamport. The
+defensible inference is **"shared or sold tool"**, not **"same actor"** — and that distinction is
+the result, not a rhetorical precaution.
 
-### 2.5 Les trois attaques — ce que le graphe ne permet PAS de conclure
+### 2.5 The three attacks — what the graph does NOT allow one to conclude
 
-Un graphe de co-occurrence produit des clusters même sur du bruit. Trois attaques ont été montées
-contre les conclusions ci-dessus ; **elles en détruisent la partie prédictive**.
+A co-occurrence graph produces clusters even on noise. Three attacks were mounted against the
+conclusions above; **they destroy their predictive part**.
 
-**Attaque A — le null du graphe était aveugle au temps.**
-Le modèle nul initial (Chung-Lu, degrés préservés) donnait « 19 clusters significatifs ». Il ignore
-que deux tokens du même jour partagent des acheteurs par simple co-présence temporelle. Avec un null
-qui **préserve le jour de chaque arête** : **1 502 paires de faux positifs sur 6 024 (25 %)**, et la
-composante géante nulle atteint 564 wallets contre 668 observés. Seuls les **quads parfaits**
-résistent (1 observé, **0 dans 30 rejeux**). Les 6 clusters de la table F sont les survivants de ce
-test ; les 13 autres « flottes candidates » ne le sont pas.
+**Attack A — the graph's null was blind to time.**
+The initial null model (Chung-Lu, degree-preserving) gave "19 significant clusters". It ignores
+that two tokens from the same day share buyers by mere temporal co-presence. With a null that
+**preserves the day of each edge**: **1,502 false-positive pairs out of 6,024 (25 %)**, and the
+null giant component reaches 564 wallets against 668 observed. Only the **perfect quads** survive
+(1 observed, **0 in 30 replays**). The 6 clusters of table F are the survivors of this test; the
+13 other "candidate fleets" are not.
 
-**Attaque B — l'identité de l'opérateur ne prédit rien.**
+**Attack B — operator identity predicts nothing.**
 
-| test | résultat |
+| test | result |
 |---|---|
-| ANOVA-permutation, 4 opérateurs, n = 46 tokens | l'identité explique `ATH ≥ 200 k$` à **p = 1,000** |
-| test hors échantillon de la revendication exacte | **×1,162** sur les tokens sélectionnés, **×1,167** sur ceux qu'on aurait écartés → l'identité vaut **−0,5 % relatif** |
-| meilleur groupe | le groupe **INCONNU** (noyaux non attribuables) : `ATH ≥ 300 k$` = **0,286** contre 0,083 – 0,100 pour les clusters nommés |
-| tokens à signature de noyau (n = 54) | `ATH ≥ 300 k$` = **0,130** [0,064 ; 0,244] contre **0,213** pour la base (n = 268) |
+| permutation ANOVA, 4 operators, n = 46 tokens | identity explains `ATH ≥ $200k` at **p = 1.000** |
+| out-of-sample test of the exact claim | **×1.162** on the selected tokens, **×1.167** on those that would have been discarded → identity is worth **−0.5 % relative** |
+| best group | the **UNKNOWN** group (non-attributable cores): `ATH ≥ $300k` = **0.286** against 0.083 – 0.100 for the named clusters |
+| tokens with a core signature (n = 54) | `ATH ≥ $300k` = **0.130** [0.064, 0.244] against **0.213** for the base (n = 268) |
 
-**Les tokens des clusters identifiés font moins bien que le marché.** Leur profit vient
-intégralement de l'écart entrée → ouverture AMM (§1.2), **pas** d'une capacité à faire monter le prix.
+**The identified clusters' tokens do worse than the market.** Their profit comes entirely from the
+entry → AMM-open gap (§1.2), **not** from any ability to push the price up.
 
-**Attaque C — la sélection du « meilleur opérateur » est de la survie.**
-Une règle « k ≥ 8 tokens » appliquée en walk-forward donne un taux apparent de 0,512 (n = 125). Sans
-les **2 adresses** qui fournissent 55–64 % des tokens sélectionnés, il retombe à **0,326** contre une
-base de 0,309 : la règle avait **mémorisé 2 adresses sur 822 créateurs**. Une règle live appliquée à
-mi-parcours n'aurait pas choisi le meilleur opérateur — il était **5ᵉ sur 22**. En équipondérant par
-créateur (la vraie unité), 6 créateurs sur 13 ont un résidu positif : pile ou face.
+**Attack C — selecting the "best operator" is survivorship.**
+A "k ≥ 8 tokens" rule applied walk-forward gives an apparent rate of 0.512 (n = 125). Without the
+**2 addresses** that supply 55–64 % of the selected tokens, it falls back to **0.326** against a
+base of 0.309: the rule had **memorised 2 addresses out of 822 creators**. A live rule applied
+mid-window would not have picked the best operator — it was **5th of 22**. Equal-weighting by
+creator (the real unit), 6 creators out of 13 have a positive residual: a coin flip.
 
-**Conclusion de la section.** Le graphe **identifie** des structures réelles, reproductibles et
-persistantes. Il **ne fournit aucun pouvoir prédictif** sur la trajectoire de prix d'un token. Ces
-deux phrases sont le résultat ; publier la première sans la seconde serait le trahir.
+**Conclusion of the section.** The graph **identifies** real, reproducible and persistent
+structures. It **provides no predictive power** over a token's price trajectory. These two
+sentences are the result; publishing the first without the second would betray it.
 
 ---
 
-## 3. La quantification du coût pour l'acheteur
+## 3. Quantifying the cost to the buyer
 
-### 3.1 Le mouvement précède le signal
+### 3.1 The move precedes the signal
 
-**Table G — Où en est le prix quand un observateur externe voit le token (n = 1 243, 123 clusters, 20 jours)**
+**Table G — Where the price already is when an external observer sees the token (n = 1,243, 123 clusters, 20 days)**
 
-| bande de MC à la détection | n | ATH déjà passé | ATH < +60 s | ATH < +120 s | délai médian jusqu'à l'ATH |
+| MC band at detection | n | ATH already past | ATH < +60 s | ATH < +120 s | median delay to ATH |
 |---|---|---|---|---|---|
-| 5k – 20k | 16 | 43,8 % | 62,5 % | 62,5 % | 0,1 min |
-| 20k – 30k | 108 | 23,1 % | 55,6 % | 60,2 % | 0,5 min |
-| 30k – 40k | 137 | 27,7 % | 60,6 % | 65,7 % | 0,3 min |
-| 40k – 50k | 296 | 18,9 % | 44,6 % | 54,4 % | 1,7 min |
-| 50k – 65k | 277 | 26,4 % | 46,6 % | 51,6 % | 1,6 min |
-| 65k – 85k | 121 | 26,4 % | 52,1 % | 58,7 % | 0,9 min |
-| 85k – 120k | 123 | 14,6 % | 31,7 % | 35,8 % | 6,7 min |
-| 120k – 300k | 165 | 9,7 % | 17,6 % | 23,0 % | 36,1 min |
-| **toute la population** | **1 243** | **21,3 %** | **43,8 %** [41,1 ; 46,6] | **50,0 %** | **2,0 min** |
+| 5k – 20k | 16 | 43.8 % | 62.5 % | 62.5 % | 0.1 min |
+| 20k – 30k | 108 | 23.1 % | 55.6 % | 60.2 % | 0.5 min |
+| 30k – 40k | 137 | 27.7 % | 60.6 % | 65.7 % | 0.3 min |
+| 40k – 50k | 296 | 18.9 % | 44.6 % | 54.4 % | 1.7 min |
+| 50k – 65k | 277 | 26.4 % | 46.6 % | 51.6 % | 1.6 min |
+| 65k – 85k | 121 | 26.4 % | 52.1 % | 58.7 % | 0.9 min |
+| 85k – 120k | 123 | 14.6 % | 31.7 % | 35.8 % | 6.7 min |
+| 120k – 300k | 165 | 9.7 % | 17.6 % | 23.0 % | 36.1 min |
+| **whole population** | **1,243** | **21.3 %** | **43.8 %** [41.1, 46.6] | **50.0 %** | **2.0 min** |
 
-**21,3 % des tokens ont déjà atteint leur maximum au moment de leur première visibilité extérieure.
-50 % l'atteignent dans les 120 secondes.** Ce résultat ne dépend d'aucun modèle : il transforme une
-question de marché en question de **latence**.
+**21.3 % of tokens have already reached their maximum at the moment of their first external
+visibility. 50 % reach it within 120 seconds.** This result depends on no model: it turns a market
+question into a question of **latency**.
 
-> **Chiffre corrigé.** Une note de travail antérieure avançait « 67 % des tokens avaient déjà atteint
-> leur maximum ». Ce 67 % ne se retrouve que sur la bande < 20 k$ de la population A, où **n = 3**.
-> La valeur sur population propre est **21,3 %** (n = 1 243). C'est celle qui est publiée.
+> **Corrected figure.** An earlier working note put forward "67 % of tokens had already reached
+> their maximum". That 67 % is only found on the < $20k band of population A, where **n = 3**.
+> The value on a clean population is **21.3 %** (n = 1,243). That is the one published.
 
-### 3.2 Quinze politiques de sortie, toutes négatives
+### 3.2 Fifteen exit policies, all negative
 
-![F2 — politiques de sortie](../figures/f2_politiques_sortie.png)
+![F2 — exit policies](../figures/f2_politiques_sortie.png)
 
-Protocole : entrée **systématique** à t0+120 s, **sans aucun filtre d'entrée**, sur les 196 tokens
-exploitables (20 clusters, 6 jours). Coûts de **5,8241 % aller-retour** (1 % de frais + 2 % de
-slippage adverse par jambe) déjà retranchés. Décisions live-safe : la décision prise sur un bucket
-de 30 s s'exécute au bucket suivant, jamais au prix qui l'a déclenchée.
+Protocol: **systematic** entry at t0+120 s, **with no entry filter whatsoever**, on the 196
+exploitable tokens (20 clusters, 6 days). Costs of **5.8241 % round-trip** (1 % fee + 2 % adverse
+slippage per leg) already deducted. Live-safe decisions: a decision taken on a 30 s bucket executes
+on the next bucket, never at the price that triggered it.
 
-| résultat | valeur |
+| result | value |
 |---|---|
-| politiques à **moyenne négative** | **15 / 15** |
-| politiques à médiane négative | 12 / 15 |
-| politiques positives **à la fois** en médiane et en moyenne | **0 / 15** |
-| politiques dont l'IC95 de moyenne (bootstrap **au niveau cluster**) est au-dessus de zéro | **0 / 15** |
-| moyenne des moyennes | **−11,3 %** par aller-retour |
+| policies with a **negative mean** | **15 / 15** |
+| policies with a negative median | 12 / 15 |
+| policies positive **both** in median and in mean | **0 / 15** |
+| policies whose mean's 95 % CI (**cluster-level** bootstrap) is above zero | **0 / 15** |
+| mean of the means | **−11.3 %** per round trip |
 
-**Le piège que ce tableau rend visible.** Les seules médianes positives sont des take-profits serrés,
-et leur espérance est **la pire du tableau** : `tp30` affiche une médiane de **+22,4 %** pour une
-moyenne de **−16,4 %**. Gagner souvent un peu, perdre rarement beaucoup. Lire la médiane seule sur
-une distribution à queue épaisse inverse la conclusion.
+**The trap this table makes visible.** The only positive medians are tight take-profits, and their
+expectation is **the worst in the table**: `tp30` shows a median of **+22.4 %** for a mean of
+**−16.4 %**. Winning often a little, losing rarely a lot. Reading the median alone on a fat-tailed
+distribution inverts the conclusion.
 
-**Aucune correction de multiplicité n'est nécessaire** ici, et c'est une propriété du résultat :
-il est négatif partout, et balayer davantage de politiques ne peut que rendre un résultat
-uniformément négatif *plus* difficile à obtenir par hasard.
+**No multiplicity correction is needed** here, and that is a property of the result:
+it is negative everywhere, and sweeping more policies can only make a uniformly negative result
+*harder* to obtain by chance.
 
-### 3.3 Les entrées post-snipe, et la colonne qui détruit son propre résultat
+### 3.3 Post-snipe entries, and the column that destroys its own result
 
-Sept règles d'entrée testées après le rachat de courbe, sortie commune à la fin de la capture
+Seven entry rules tested after the curve buyback, with a common exit at the end of the capture
 (≤ 20 min).
 
-| règle d'entrée | n | multiple médian | IC95 | % multiple > 1 | moyenne nette | **moyenne sans le meilleur token** |
+| entry rule | n | median multiple | 95 % CI | % multiple > 1 | net mean | **mean without the best token** |
 |---|---|---|---|---|---|---|
-| graduation (+120 s) | 196 | **0,81** | [0,61 ; 0,93] | 40,3 % | −10,2 % | −13,8 % |
-| retrace −20 % | 181 | 0,70 | [0,56 ; 0,91] | 38,1 % | −15,6 % | −19,5 % |
-| retrace −30 % | 160 | 0,64 | [0,53 ; 0,84] | 35,0 % | −14,0 % | −24,2 % |
-| retrace −40 % | 135 | 0,63 | [0,51 ; 0,84] | 33,3 % | **+16,6 %** | **−15,2 %** |
-| retrace −50 % | 118 | 0,67 | [0,46 ; 0,80] | 28,0 % | **+22,3 %** | **−14,1 %** |
-| retrace −60 % | 86 | 0,46 | [0,09 ; 0,73] | 23,3 % | **+23,9 %** | **−26,3 %** |
-| retrace −70 % | 61 | 0,16 | [0,00 ; 0,51] | 16,4 % | **+13,1 %** | **−58,0 %** |
+| graduation (+120 s) | 196 | **0.81** | [0.61, 0.93] | 40.3 % | −10.2 % | −13.8 % |
+| retrace −20 % | 181 | 0.70 | [0.56, 0.91] | 38.1 % | −15.6 % | −19.5 % |
+| retrace −30 % | 160 | 0.64 | [0.53, 0.84] | 35.0 % | −14.0 % | −24.2 % |
+| retrace −40 % | 135 | 0.63 | [0.51, 0.84] | 33.3 % | **+16.6 %** | **−15.2 %** |
+| retrace −50 % | 118 | 0.67 | [0.46, 0.80] | 28.0 % | **+22.3 %** | **−14.1 %** |
+| retrace −60 % | 86 | 0.46 | [0.09, 0.73] | 23.3 % | **+23.9 %** | **−26.3 %** |
+| retrace −70 % | 61 | 0.16 | [0.00, 0.51] | 16.4 % | **+13.1 %** | **−58.0 %** |
 
-**Aucune règle n'atteint un multiple médian de 1.** La meilleure est `graduation (+120 s)` à
-**0,81×** [0,61 ; 0,93].
+**No rule reaches a median multiple of 1.** The best is `graduation (+120 s)` at
+**0.81×** [0.61, 0.93].
 
-La moyenne devient positive sur les retracements profonds (−40 % à −70 %). **Ce n'est pas un edge**,
-et le tableau publie les deux contrôles qui le montrent : (a) l'IC95 de moyenne bootstrappé au niveau
-**cluster** traverse zéro sur chacune de ces lignes ; (b) retirer **le seul meilleur token** fait
-repasser **toutes** ces moyennes en négatif, jusqu'à −58 %. Une queue droite épaisse portée par une
-poignée de tokens n'est pas une espérance positive.
+The mean turns positive on the deep retracements (−40 % to −70 %). **This is not an edge**, and the
+table publishes the two controls that show it: (a) the **cluster-level** bootstrapped 95 % CI of the
+mean crosses zero on each of those rows; (b) removing **the single best token** flips **all** of
+those means back to negative, down to −58 %. A fat right tail carried by a handful of tokens is not
+positive expectation.
 
-### 3.4 Ce qu'il reste après quelques heures
+### 3.4 What is left after a few hours
 
-![F3 — décroissance par horizon](../figures/f3_horizon_decroissance.png)
+![F3 — decay by horizon](../figures/f3_horizon_decroissance.png)
 
-Achat au prix robuste des 120 dernières secondes de la capture (~t0+20 min), revente au `close` de
-la bougie horaire d'échéance. n = 128 tokens, 18 clusters.
+Buy at the robust price of the last 120 seconds of the capture (~t0+20 min), sell at the `close` of
+the hourly candle at the horizon. n = 191 tokens, 27 clusters.
 
-| horizon | n avec bougie | sans bougie | multiple médian | IC95 | % > 1 | population entière |
+| horizon | n with candle | no candle | median multiple | 95 % CI | % > 1 | whole population |
 |---|---|---|---|---|---|---|
-| +1 h | 127 | 1 (1 %) | **0,45** | [0,30 ; 0,60] | 16,5 % | 0,45 |
-| +2 h | 125 | 3 (2 %) | 0,42 | [0,28 ; 0,59] | 18,4 % | 0,41 |
-| +4 h | 121 | 7 (5 %) | 0,38 | [0,26 ; 0,51] | 15,7 % | 0,31 |
-| +24 h | 97 | **31 (24 %)** | **0,22** | [0,06 ; 0,35] | 12,4 % | **0,03** |
+| +1 h | 189 | 2 (1 %) | **0.48** | [0.38, 0.61] | 18.5 % | 0.47 |
+| +2 h | 185 | 6 (3 %) | 0.43 | [0.29, 0.54] | 18.4 % | 0.41 |
+| +4 h | 179 | 12 (6 %) | 0.38 | [0.26, 0.49] | 15.6 % | 0.30 |
+| +24 h | 144 | **47 (25 %)** | **0.20** | [0.05, 0.29] | 12.5 % | **0.03** |
 
-La colonne « population entière » compte **0,00×** les tokens qui n'ont plus **aucune bougie** à
-l'échéance, c'est-à-dire plus aucun échange : c'est la convention honnête pour un actif qu'on ne peut
-plus vendre. À +24 h, **24 % des tokens sont dans ce cas**, et le multiple médian de la population
-entière tombe à **0,03×**.
+The "whole population" column scores at **0.00×** the tokens that no longer have **any candle** at
+the horizon, that is, no trading at all: it is the honest convention for an asset that can no
+longer be sold. At +24 h, **25 % of tokens are in that case**, and the median multiple of the whole
+population falls to **0.03×**.
 
-**Contrôle d'unités publié avec le résultat.** Le rapport (prix externe en USD / prix de swap en SOL)
-divisé par (SOL en USD) vaut **0,833 en médiane sur n = 193**. Proche de 1 ⇒ la conversion est
-correcte. Sans cette conversion, tous les multiples de cette table seraient **multipliés par ~76** —
-une erreur d'unité aurait transformé une perte de 78 % en un gain de ×34.
+**A units control published with the result.** The ratio (external price in USD / swap price in
+SOL) divided by (SOL in USD) is **0.850 in median on n = 277**. Close to 1 ⇒ the conversion is
+correct. Without that conversion, every multiple in this table would be **multiplied by ~76** —
+a unit error would have turned a 78 % loss into a ×34 gain.
 
-> **Chiffres corrigés.** Des notes antérieures avançaient « 0,35× à +1 h et 0,08× à +24 h », et
-> « 50 % des tokens sans volume ». Les valeurs régénérées sur le corpus actuel sont **0,45×** et
-> **0,22×** (0,03× en population entière), et **24 %** sans bougie **à +24 h**. Ce sont celles-ci qui
-> font foi. La table antérieurement livrée était en outre périmée (n = 18) ; elle est régénérée à
-> n = 128.
+> **Corrected figures.** Earlier notes put forward "0.35× at +1 h and 0.08× at +24 h", and
+> "50 % of tokens without volume". The values regenerated on the current corpus are **0.48×** and
+> **0.20×** (0.03× on the whole population), and **25 %** without candle **at +24 h**. An earlier
+> prose version of this section was itself stale (n = 128, 18 clusters); the figures of record are
+> the committed table `docs/tables/T5_horizon_1h_24h.md`, regenerated at n = 191, 27 clusters.
 
-### 3.5 Pourquoi il ne faut pas raisonner en multiple de l'ATH
+### 3.5 Why one must not reason in multiples of the ATH
 
-Un réflexe naturel est de mesurer « combien de fois le prix d'entrée » un token atteint. **Cette
-cible fabrique des résultats.**
+A natural reflex is to measure "how many times its entry price" a token reaches. **That target
+manufactures results.**
 
-- **Artefact de dénominateur.** Mesurer ATH / MC d'entrée rend *mécaniquement* prédictive toute
-  variable corrélée au MC d'entrée, sans qu'elle prédise quoi que ce soit. L'élasticité mesurée
-  log₁₀(ATH) ~ log₁₀(MC), démoyennée par jour, vaut **b = 0,884** (n = 1 243) — recalculée
-  indépendamment, **identique au millième**. Correctif adopté : cible **résiduelle** (résidu de
-  log(ATH) après régression sur log(MC)), et interdiction explicite des cibles `t_mult*` en cible
-  primaire.
-- **b < 1 est une vraie information, pas une tautologie.** Entrer plus haut dégrade réellement le
-  multiple ; la relation n'est pas parfaitement mécanique. La nuance est publiée avec le chiffre.
-- **Limite (ajoutée en relecture) : la lecture économique de b est indicative, NON ÉTABLIE.**
-  b = 0,884 est publié **sans erreur-type ni intervalle de confiance** ; l'erreur de mesure sur le
-  MC d'entrée (*errors-in-variables*) tire mécaniquement la pente OLS **sous 1**, donc une partie
-  de « b < 1 » peut être du bruit de mesure et non de l'économie ; et le panneau B (taux de ×2
-  quasi plat par bande, point suivant) est en tension avec une lecture causale de « entrer plus
-  haut dégrade le multiple ». L'usage de b comme **décomposition mécanique** (pente du multiple
-  = b − 1, artefact de dénominateur) reste mesuré et reproduit ; c'est la lecture causale qui
-  n'est pas établie.
-- **Le taux de ×2 est quasi plat par bande de MC observé** : **42–48 % sur toutes les bandes
-  au-dessus de 30 k$** (n = 1 119 sur 1 243). Les deux bandes basses sont plus élevées (55,6 % sur
-  20–30 k$, n = 108 ; 75,0 % sous 20 k$, n = 16), mais ce sont aussi celles où l'ATH est déjà passé
-  le plus souvent (§3.1 : 43,8 % et 23,1 %). Les tokens qui apparaissent bas ont aussi un ATH bas.
-  Il n'y a pas de « bonne bande d'entrée ».
-- **Sans aucun paramètre libre** : le prix d'entrée qui donnerait 90 % de chances de ×2 est
-  **24 385 $**, alors que la MC médiane à la détection est de ~52 k$. Le prix requis est déjà passé.
-- **Et « atteindre l'ATH » n'est pas « vendre à l'ATH ».** Toutes les colonnes ×2 de ce dépôt sont
-  des **bornes supérieures**. C'est §3.1 qui donne la mesure encaissable.
+- **Denominator artefact.** Measuring ATH / entry MC *mechanically* makes any variable correlated
+  with the entry MC predictive, without it predicting anything. The measured elasticity
+  log₁₀(ATH) ~ log₁₀(MC), demeaned by day, is **b = 0.884** (n = 1,243) — recomputed
+  independently, **identical to the third decimal**. Corrective adopted: a **residual** target
+  (residual of log(ATH) after regressing on log(MC)), and an explicit ban on `t_mult*` targets as
+  a primary target.
+- **b < 1 is real information, not a tautology.** Entering higher genuinely degrades the
+  multiple; the relationship is not perfectly mechanical. The nuance is published with the figure.
+- **Limitation (added on review): the economic reading of b is indicative, NON ÉTABLI (not
+  established).** b = 0.884 is published **without a standard error or a confidence interval**; the
+  measurement error on the entry MC (*errors-in-variables*) mechanically pulls the OLS slope
+  **below 1**, so part of "b < 1" may be measurement noise rather than economics; and panel B (a
+  near-flat ×2 rate per band, next point) is in tension with a causal reading of "entering higher
+  degrades the multiple". The use of b as a **mechanical decomposition** (slope of the multiple
+  = b − 1, denominator artefact) remains measured and reproduced; it is the causal reading that is
+  not established.
+- **The ×2 rate is nearly flat across observed-MC bands**: **42–48 % on every band above $30k**
+  (n = 1,119 of 1,243). The two low bands are higher (55.6 % on $20–30k, n = 108; 75.0 % below
+  $20k, n = 16), but they are also the ones where the ATH is most often already past
+  (§3.1: 43.8 % and 23.1 %). Tokens that show up low also have a low ATH.
+  There is no "good entry band".
+- **With no free parameter at all**: the entry price that would give a 90 % chance of ×2 is
+  **$24,385**, while the median MC at detection is ~$52k. The required price is already gone.
+- **And "reaching the ATH" is not "selling at the ATH".** All the ×2 columns of this repository are
+  **upper bounds**. §3.1 gives the collectable measure.
 
-**Le biais de sélection, chiffré.** Filtrer sur un champ `buyable` défini comme « l'ATH survient
-après la détection » fait passer le taux de ×2 de **38,3 % à 63,0 %** (B, n = 1 701 → 1 034) :
-**+24,7 points de succès entièrement fabriqués**, puisque le filtre sélectionne mécaniquement les
-tokens qui sont montés. Le détail de cet épisode et des six autres pièges est dans
+**Selection bias, quantified.** Filtering on a `buyable` field defined as "the ATH occurs after
+detection" moves the ×2 rate from **38.3 % to 63.0 %** (B, n = 1,701 → 1,034):
+**+24.7 points of success entirely manufactured**, since the filter mechanically selects the
+tokens that went up. The details of this episode and of the six other traps are in
 [`PITFALLS.md`](PITFALLS.md).
 
-> **Chiffre corrigé.** Une note antérieure chiffrait cet écart d'ATH médian à « 310 k contre 48 k,
-> facteur 6,4 ». Le recalcul donne **272 k contre 62 k = facteur 4,39** (B, n = 1 701 ; 2,55 sur A,
-> 3,09 sur C). Le mécanisme est confirmé, l'amplitude annoncée ne l'était pas.
+> **Corrected figure.** An earlier note put this median-ATH gap at "310 k versus 48 k,
+> a factor of 6.4". The recomputation gives **272 k versus 62 k = a factor of 4.39** (B, n = 1,701;
+> 2.55 on A, 3.09 on C). The mechanism is confirmed; the announced magnitude was not.
 
 ---
 
-## 4. Ce que ce travail établit, et ce qu'il n'établit pas
+## 4. What this work establishes, and what it does not
 
-**Établi (mesuré, avec n et IC) :**
+**Established (measured, with n and CI):**
 
-1. Sur 42 lancements vérifiés transaction par transaction, la bonding curve est rachetée en totalité
-   dans le slot de création, avec **0 achat préalable sur 42/42**, et la position est transférée à
-   **t+17,5 s** en médiane.
-2. La capitalisation médiane passe de ~2 158 $ à ~53 985 $ (**×25**) avant qu'un acheteur externe
-   puisse transiger — valeur confirmée indépendamment à ×25,2 sur les 293 captures.
-3. Sur un échantillon gelé de 70 tokens ≥ 500 k$, **82,9 %** [72,4 ; 89,9] portent cette signature,
-   avec un accord parfait (70/70) entre les deux définitions de la fenêtre.
-4. Six clusters d'acheteurs, disjoints en tokens et en adresses, avec une réutilisation de wallets de
-   0,90–1,00 contre une base de 0,019, persistants 25 jours au-delà de la fenêtre de capture.
-5. Pour un acheteur entrant après ce mouvement : **moyenne négative sur 15/15 politiques de sortie**,
-   **0/15** IC95 au-dessus de zéro, et **0,22×** à 24 h (0,03× en comptant les tokens devenus
-   inéchangeables).
+1. On 42 launches verified transaction by transaction, the bonding curve is bought back in full
+   inside the creation slot, with **0 prior purchases on 42/42**, and the position is transferred at
+   **t+17.5 s** in median.
+2. The median market cap goes from ~$2,158 to ~$53,985 (**×25**) before an external buyer can
+   transact — a value confirmed independently at ×25.2 on the 293 captures.
+3. On a frozen sample of 70 tokens ≥ $500k, **82.9 %** [72.4, 89.9] carry this signature,
+   with perfect agreement (70/70) between the two definitions of the window.
+4. Six buyer clusters, disjoint in tokens and in addresses, with a wallet reuse of
+   0.90–1.00 against a base of 0.019, persistent 25 days beyond the capture window.
+5. For a buyer entering after this move: **negative mean on 15/15 exit policies**,
+   **0/15** 95 % CIs above zero, and **0.20×** at 24 h (0.03× counting the tokens that became
+   untradeable).
 
-**Non établi — et explicitement refusé :**
+**Not established — and explicitly refused:**
 
-- **Aucune datation** d'une évolution historique du marché : les données n'ont pas la profondeur
-  requise (§2.3).
-- **Aucun pouvoir prédictif** de l'identité d'un cluster sur la trajectoire d'un token : p = 1,000,
-  et les tokens des clusters identifiés font **moins bien** que la base (§2.5).
-- **Aucune stratégie** n'est proposée. Le résultat principal de cette section est négatif.
-- **Aucune intention** n'est attribuée à une adresse. Les adresses sont des identifiants publics ;
-  ce document décrit des régularités observables, pas des acteurs.
-- **Aucune généralisation au marché entier** : la couverture bout-en-bout du capteur est de **6,8 %**
-  et l'échantillon sur-représente les lancements qui ont réussi (§0).
+- **No dating** of a historical evolution of the market: the data does not have the required
+  depth (§2.3).
+- **No predictive power** of a cluster's identity over a token's trajectory: p = 1.000,
+  and the identified clusters' tokens do **worse** than the base (§2.5).
+- **No strategy** is proposed. The main result of that section is negative.
+- **No intent** is attributed to any address. Addresses are public identifiers;
+  this document describes observable regularities, not actors.
+- **No generalisation to the whole market**: the sensor's end-to-end coverage is **6.8 %**
+  and the sample over-represents the launches that succeeded (§0).
 
 ---
 
 ## Notes
 
-1. **Reproduction.** Toutes les figures et tables se régénèrent hors ligne depuis `code/` et `data/` :
+1. **Reproduction.** All figures and tables regenerate offline from `code/` and `data/`:
 
    ```
-   python3 code/f_figures_resultats.py        # figures F1 à F4
-   python3 code/f_signature_gros_tokens.py    # §1.6, échantillon gelé n = 70
-   python3 code/m4_infra_ubiquity.py          # §2.1, effondrement de la composante
+   python3 code/f_figures_resultats.py        # figures F1 to F4
+   python3 code/f_signature_gros_tokens.py    # §1.6, frozen sample n = 70
+   python3 code/m4_infra_ubiquity.py          # §2.1, component collapse
    python3 code/t1_base_rate_sorties.py       # §3.2
    python3 code/t3_ath_avant_detection.py     # §3.1
    python3 code/t4_entree_post_snipe_20min.py # §3.3
    python3 code/t5_horizon_1h_24h.py          # §3.4
    ```
 
-   Aucun de ces scripts n'effectue d'appel réseau ni ne requiert de clé d'API.
+   None of these scripts makes a network call or requires an API key.
 
-2. **Anonymisation.** Les adresses d'infrastructure sont désignées par `W1`…`W5` dans ce document et
-   dans les figures. Ce n'est pas une précaution générale — les adresses on-chain sont publiques et
-   figurent ailleurs dans le dépôt — mais une nécessité ponctuelle : **le préfixe de l'adresse W1
-   constitue une injure raciste**, vraisemblablement choisie par son propriétaire via une
-   « vanity address ». La reproduire servirait sa diffusion sans rien ajouter au résultat. Elle est
-   remplacée par un jeton de rédaction (`RDCT-…`) partout dans les données publiées ; W1 reste
-   pleinement identifiable par ses métriques (165 tokens, 58,5 % du corpus) pour qui veut refaire le
-   calcul. Les quatre autres adresses de la table E ne sont anonymisées que par cohérence de
-   présentation et figurent en clair dans `docs/out/m4_infra.json`.
+2. **Anonymisation.** The infrastructure addresses are referred to as `W1`…`W5` in this document and
+   in the figures. This is not a general precaution — on-chain addresses are public and appear
+   elsewhere in the repository — but a one-off necessity: **the prefix of address W1
+   constitutes a racial slur**, presumably chosen by its owner via a
+   "vanity address". Reproducing it would serve its diffusion while adding nothing to the result.
+   It is replaced by a redaction token (`RDCT-…`) everywhere in the published data; W1 remains
+   fully identifiable by its metrics (165 tokens, 58.5 % of the corpus) for anyone who wants to
+   redo the computation. The four other addresses of table E are anonymised only for consistency of
+   presentation and appear in clear in `docs/out/m4_infra.json`.
 
-3. **Ordre de grandeur vs mesure.** Les comptages de tranches de liquidation (§1.5, 119–194) viennent
-   du volet forensique et sont agrégés **par cluster**, non par lancement : à lire comme un ordre de
-   grandeur. Toutes les autres valeurs de ce document sont des mesures sur un n déclaré.
+3. **Order of magnitude vs measurement.** The liquidation-tranche counts (§1.5, 119–194) come
+   from the forensic track and are aggregated **per cluster**, not per launch: to be read as an
+   order of magnitude. All other values in this document are measurements on a declared n.
 
-4. **Six chiffres corrigés.** Ce document remplace six valeurs issues de notes de travail qui ne se
-   reproduisent pas : le facteur du biais de sélection (6,4 → **4,39**), la part d'ATH déjà passé
-   (67 % → **21,3 %**), les multiples à 1 h et 24 h (0,35× / 0,08× → **0,45× / 0,22×**), la part de
-   tokens sans volume (50 % → **24 % à +24 h**), et le total de swaps (476 847 → **511 508** brut,
-   écart de filtre documenté au §0). Un septième écart — les deux estimations de la capitalisation à
-   l'ouverture AMM — a été trouvé et tranché en rédigeant ce document (§1.7).
+4. **Six corrected figures.** This document replaces six values from working notes that do not
+   reproduce: the selection-bias factor (6.4 → **4.39**), the share of ATH already past
+   (67 % → **21.3 %**), the 1 h and 24 h multiples (0.35× / 0.08× → **0.48× / 0.20×**), the share
+   of tokens without volume (50 % → **25 % at +24 h**), and the swap total (476,847 → **511,508**
+   raw, a filter gap documented in §0). A seventh gap — the two estimates of the market cap at
+   AMM open — was found and settled while writing this document (§1.7).
