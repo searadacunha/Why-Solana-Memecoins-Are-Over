@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
-"""ETAPE 5 — cible contre temoins : le decoupage est-il specifique, ou banal ?
+"""Etape 5 : cible contre temoins, le decoupage est-il specifique ou banal ?
 
-POURQUOI CETTE ETAPE N'EST PAS OPTIONNELLE
-------------------------------------------
-Des portefeuilles finances au meme moment pour des montants voisins arrivent NATURELLEMENT sur
+Lit les e3_splits_*.json passes en argument et les e2_funding_*.json correspondants, ecrit
+e5_synthese.json.
+
+Des portefeuilles finances au meme moment pour des montants voisins arrivent naturellement sur
 pump.fun : les acheteurs precoces sortent souvent du meme robot, du meme echange, de la meme
 fenetre de retrait. Sans taux de faux positifs mesure sur des tokens temoins, un motif observe sur
 la cible ne prouve rien.
 
-Les temoins ont ete choisis a la SECONDE pres autour de la creation de la cible, sur des criteres
+Les temoins ont ete choisis a la seconde pres autour de la creation de la cible, sur des criteres
 qui ne touchent ni au financement, ni a l'origine des portefeuilles, ni a G2Y. La comparaison est
 donc licite.
 
-CE QUI EST COMPARE
-------------------
+Ce qui est compare :
 - part des premiers acheteurs impliques dans un decoupage (meme transaction, ou meme montant/moment)
 - part des premiers acheteurs partageant un bailleur commun
 - nombre d'acheteurs precoces distincts (un token trop pauvre donne un faux negatif mecanique)
 - couverture de la mesure : geneses et fenetres pre-achat atteintes
 
-USAGE
+Usage :
     python3 etape5_synthese.py --splits e3_splits_OPTIMUS.json --splits e3_splits_faith.json ...
 """
 from __future__ import annotations
 import argparse, json
 
 CIBLES = {"OPTIMUS"}
-# ODIN sert de TEMOIN POSITIF : cas de decoupage deja etabli. Si le pipeline ne le retrouve pas,
+# ODIN sert de temoin positif : cas de decoupage deja etabli. Si le pipeline ne le retrouve pas,
 # c'est le pipeline qui est en cause, et aucun resultat negatif sur les autres tokens ne vaut.
 POSITIF = {"ODIN_POSITIF"}
 

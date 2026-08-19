@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""ETAPE 6 — un bailleur commun « PRIVE » l'est-il vraiment ?
+"""Etape 6 : un bailleur commun "prive" l'est-il vraiment ?
 
-POURQUOI CETTE VERIFICATION EXISTE
-----------------------------------
-La signature C (un meme bailleur finance >= 2 premiers acheteurs) est la SEULE que le detecteur ait
-trouvee sur la cible OPTIMUS, et elle est aussi la seule trouvee sur le temoin HLGOOFY. Tout repose
-donc sur un point : ces bailleurs sont-ils des acteurs prives, ou de l'infrastructure absente de la
-liste `KNOWN` ? Un depot d'echange mal etiquete produirait exactement le meme motif sans aucune
+La signature C (un meme bailleur finance >= 2 premiers acheteurs) est la seule que le detecteur ait
+trouvee sur la cible OPTIMUS, et aussi la seule trouvee sur le temoin HLGOOFY. Tout repose donc sur
+un point : ces bailleurs sont-ils des acteurs prives, ou de l'infrastructure absente de la liste
+`KNOWN` ? Un depot d'echange mal etiquete produirait exactement le meme motif sans aucune
 coordination.
 
-CE QU'ON MESURE, SYMETRIQUEMENT SUR LA CIBLE ET SUR LE TEMOIN
--------------------------------------------------------------
-Volume total de transactions, age, nombre de destinataires distincts, montant de sortie le plus
-repete. Une adresse a des centaines de milliers de transactions et des milliers de destinataires est
-de l'infrastructure, quel que soit son etiquetage. Une adresse a quelques dizaines de sorties vers
-quelques destinataires est un acteur.
+Mesure, symetriquement sur la cible et sur le temoin : volume total de transactions, age, nombre de
+destinataires distincts, montant de sortie le plus repete. Une adresse a des centaines de milliers
+de transactions et des milliers de destinataires est de l'infrastructure, quel que soit son
+etiquetage. Une adresse a quelques dizaines de sorties vers quelques destinataires est un acteur.
+
+Ecrit t6_profil_bailleurs.json a cote du script. Les adresses viennent de DEFAUT, ou de --addresses.
+
+Piege : la pagination des signatures est plafonnee a 120 pages et seules 6 pages de transactions
+parsees sont echantillonnees. Le profil est donc une borne inferieure, et `genese_atteinte` le dit.
 """
 from __future__ import annotations
 import argparse, json, os
@@ -30,7 +31,7 @@ DEFAUT = [
 
 
 def profil(addr, pages_parsees=6):
-    """Profil d'une adresse. La pagination de signatures est bornee ET le dit."""
+    """Profil d'une adresse. La pagination de signatures est bornee, et le dit."""
     sigs, genesis, npages = L.all_signatures(addr, max_pages=120, label=addr[:8], verbose=False)
     out_counts, dests, entrees = Counter(), Counter(), Counter()
     before, n_tx = None, 0

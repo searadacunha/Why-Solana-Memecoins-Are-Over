@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""ETAPE 6 — a quelle date le service de swap G2Y a-t-il COMMENCE a operer ?
+"""Etape 6 : a quelle date le service de swap G2Y a-t-il commence a operer ?
 
-POURQUOI CETTE QUESTION TRANCHE TOUT
-------------------------------------
-OPTIMUS est cree le 2024-10-10. Si la premiere transaction de G2Y est POSTERIEURE a cette date, alors
-G2Y ne peut pas, meme indirectement, avoir finance les premiers acheteurs d'OPTIMUS. La question
-« ces portefeuilles viennent-ils de G2Y ? » recoit alors une reponse definitive par impossibilite
-chronologique, sans avoir a remonter une seule chaine — et l'hypothese a tester devient : le service
-operait-il depuis une AUTRE adresse en 2024 ?
+Pagine l'historique complet de G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t, ecrit
+e6_g2y_naissance.json.
 
-C'est une mesure couteuse mais faite une seule fois, et elle vaut pour les trois cibles.
-La pagination va jusqu'a la genese ; si le plafond est touche, on le dit et on ne conclut pas.
+OPTIMUS est cree le 2024-10-10. Si la premiere transaction de G2Y est posterieure a cette date, G2Y
+ne peut pas, meme indirectement, avoir finance les premiers acheteurs d'OPTIMUS : la question
+« ces portefeuilles viennent-ils de G2Y ? » est alors tranchee par impossibilite chronologique,
+sans remonter une seule chaine, et l'hypothese a tester devient : le service operait-il depuis une
+autre adresse en 2024 ?
+
+Mesure couteuse, faite une seule fois, valable pour les trois cibles. La pagination va jusqu'a la
+genese. Si le plafond est touche, on le dit et on ne conclut pas.
 """
 from __future__ import annotations
 import json, sys, datetime as dt

@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
-"""ETAPE 3 — y a-t-il un DECOUPAGE dans le financement des premiers acheteurs ?
+"""Etape 3 : y a-t-il un decoupage dans le financement des premiers acheteurs ?
 
-TROIS SIGNATURES, de la plus forte a la plus faible
----------------------------------------------------
-A. MEME TRANSACTION. Plusieurs portefeuilles finances dans UNE SEULE transaction. C'est la signature
-   du cas ODIN : 12.0001 SOL decoupes en 4 x 3.000000000 depuis une seule adresse. Indiscutable.
-B. MEME MONTANT, MEME MOMENT. Montants egaux a 1e-4 pres, dans une fenetre courte, vers >= 3
-   portefeuilles distincts. Forte, mais exige un groupe temoin : ce motif arrive naturellement.
-C. MEME BAILLEUR. Une source qui finance >= 2 des premiers acheteurs, quels que soient les montants.
-   Plus faible seule, mais elle designe le distributeur a remonter a l'etape 4.
+Lit le JSON de l'etape 2, ecrit e3_splits_<label>.json.
 
-VALIDITE
---------
-Le rapport refuse de conclure « aucun decoupage » si des geneses manquent. Dans ce cas le verdict est
-`echec_de_mesure` et il est nomme comme tel.
+Trois signatures, de la plus forte a la plus faible.
+A. Meme transaction : plusieurs portefeuilles finances dans une seule transaction. C'est la
+   signature du cas ODIN, 12.0001 SOL decoupes en 4 x 3.000000000 depuis une seule adresse.
+B. Meme montant, meme moment : montants egaux a 1e-4 pres, dans une fenetre courte, vers >= 3
+   portefeuilles distincts. Exige un groupe temoin, ce motif arrive naturellement.
+C. Meme bailleur : une source qui finance >= 2 des premiers acheteurs, quels que soient les
+   montants. Plus faible seule, mais elle designe le distributeur a remonter a l'etape 4.
 
-USAGE
-    python3 etape3_decoupage.py --funding e2_funding_OPTIMUS.json
+Le rapport refuse de conclure a une absence de decoupage si des geneses manquent : dans ce cas le
+verdict est un echec de mesure, et il est nomme comme tel.
+
+Usage : python3 etape3_decoupage.py --funding e2_funding_OPTIMUS.json
 """
 from __future__ import annotations
 import argparse, json
@@ -40,7 +38,7 @@ def main():
     wallets = d["wallets"]
     out = a.out or f"e3_splits_{label}.json"
 
-    # On ne cherche le decoupage que dans les FINANCEMENTS. Les produits de vente sont ecartes :
+    # On ne cherche le decoupage que dans les financements. Les produits de vente sont ecartes :
     # deux bots qui vendent au meme instant sur la meme courbe produisent mecaniquement des montants
     # voisins au meme moment, ce qui fabriquerait un faux decoupage sur tous les tokens actifs.
     rows, n_sales = [], 0
@@ -53,7 +51,7 @@ def main():
                          f.get("signature"), f.get("calibre")))
     rows.sort(key=lambda r: (r[1], r[2]))
 
-    # --- A. financements partageant la MEME transaction ---------------------------------------
+    # --- A. financements partageant la meme transaction ---------------------------------------
     by_sig = defaultdict(list)
     for w, amt, ts, src, sig, cal in rows:
         by_sig[sig].append((w, amt, src, ts, cal))
@@ -108,10 +106,10 @@ def main():
         e["n"] += 1
         e["amounts"].append(round(amt, 9))
         e["first"] = ts if e["first"] is None else min(e["first"], ts)
-    # Un bailleur commun n'a de sens que s'il est PRIVE. Le groupe temoin l'a montre : deux premiers
-    # acheteurs de DOGEFORMULA sont finances par le meme portefeuille chaud de Binance — c'est le
+    # Un bailleur commun n'a de sens que s'il est prive. Le groupe temoin l'a montre : deux premiers
+    # acheteurs de DOGEFORMULA sont finances par le meme portefeuille chaud de Binance, c'est le
     # depot d'un echange, pas une coordination. Les terminaux d'infrastructure connus sont donc
-    # comptes a part et ne valent PAS comme signature.
+    # comptes a part et ne valent pas comme signature.
     common = sorted(({"funder": s, "n_early_buyers_funded": len(v["wallets"]),
                       "n_transfers": v["n"], "total_sol": round(v["total_sol"], 6),
                       "first_utc": L.utc(v["first"]), "known": L.KNOWN.get(s),
@@ -123,8 +121,8 @@ def main():
     common_infra = [c for c in common if c["known"]]
 
     # Deux couvertures distinctes, deux portees de conclusion.
-    #  - M1 (financement de naissance, la signature ODIN) n'est testable que si la GENESE est atteinte.
-    #  - M2 (financement pre-achat) n'est testable que si la FENETRE PRE-ACHAT est couverte.
+    #  - M1 (financement de naissance, la signature ODIN) n'est testable que si la genese est atteinte.
+    #  - M2 (financement pre-achat) n'est testable que si la fenetre pre-achat est couverte.
     # Un negatif ne vaut que sur la portee effectivement couverte, et jamais au-dela.
     n_fail = sum(1 for w in wallets if not w["genesis_reached"])
     n_fail_pre = sum(1 for w in wallets if not w.get("prebuy_window_reached"))

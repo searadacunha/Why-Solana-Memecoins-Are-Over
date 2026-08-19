@@ -3,12 +3,12 @@
 
 Trois regles non negociables, heritees des erreurs precedentes :
 
-1. PAGINATION. `getSignaturesForAddress` ne remonte que du present vers le passe. On pagine
-   TOUJOURS jusqu'a ce qu'une page revienne incomplete (ou vide) et on rend un drapeau
-   `genesis_reached` explicite. Une mesure sans ce drapeau ne vaut rien.
-2. DELTA DE SOLDE. Le financement passe souvent par la fermeture d'un compte wrappe : aucun
+1. Pagination. `getSignaturesForAddress` ne remonte que du present vers le passe. On pagine
+   jusqu'a ce qu'une page revienne incomplete (ou vide) et on rend un drapeau `genesis_reached`
+   explicite. Une mesure sans ce drapeau ne vaut rien.
+2. Delta de solde. Le financement passe souvent par la fermeture d'un compte wrappe : aucun
    transfert systeme n'apparait alors que les soldes bougent. On mesure par delta pre/post.
-3. AUCUNE CLE EN DUR. Tout vient de l'environnement (SOLANA_RPC_URL, HELIUS_API_KEY).
+3. Aucune cle en dur. Tout vient de l'environnement (SOLANA_RPC_URL, HELIUS_API_KEY).
 """
 from __future__ import annotations
 import json, os, sys, time, urllib.request, urllib.error, datetime as dt
@@ -29,7 +29,7 @@ SYSTEM_ACCOUNTS = {
     "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB",
 }
 
-# Terminaux d'infrastructure connus. Aboutir ici est un FAIT DE ROUTAGE, pas une preuve
+# Terminaux d'infrastructure connus. Aboutir ici est un fait de routage, pas une preuve
 # d'implication du service : tout capital entrant sur Solana passe par une telle porte.
 KNOWN = {
     "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t": "service de swap G2Y (cible de l'enquete)",
@@ -80,12 +80,11 @@ def rpc(method, params, tries=6):
 
 
 def get_transactions(signatures, chunk=100, pause=0.12, progress=None):
-    """Transactions PARSEES par paquets de cent, via l'API enrichie de Helius.
+    """Transactions parsees par paquets de cent, via l'API enrichie de Helius.
 
-    Le JSON-RPC par lots est refuse par le plan gratuit ; `getTransaction` un par un coute une
-    requete HTTP par transaction. Cet endpoint en rend cent d'un coup, avec `accountData[].
-    nativeBalanceChange` — c'est-a-dire le DELTA DE SOLDE deja calcule, la mesure qui capte les
-    financements obfusques par fermeture de compte wrappe.
+    Cet endpoint rend cent transactions d'un coup, avec `accountData[].nativeBalanceChange`,
+    c'est-a-dire le delta de solde deja calcule, la mesure qui capte les financements obfusques par
+    fermeture de compte wrappe. Le JSON-RPC par lots est refuse par le plan gratuit.
 
     Rend {signature: tx_parsee}. Les signatures absentes de la reponse sont signalees a l'appelant
     par leur absence de la table : jamais de zero silencieux.
@@ -111,14 +110,13 @@ def all_signatures(addr, max_pages=2000, label="", verbose=True, stop_ts=None):
     """Signatures d'une adresse, de la plus ancienne a la plus recente.
 
     Rend (signatures triees, genesis_reached, n_pages). genesis_reached=False signifie que le debut
-    de l'historique n'a PAS ete vu : toute conclusion negative tiree de ces seules donnees est un
-    ECHEC DE MESURE, pas un resultat.
+    de l'historique n'a pas ete vu : toute conclusion negative tiree de ces seules donnees est un
+    echec de mesure, pas un resultat.
 
-    `stop_ts` autorise un arret anticipe des qu'une page contient une transaction ANTERIEURE a cet
-    horodatage. C'est legitime quand la mesure ne porte que sur une fenetre datee : on a alors
-    couvert toute la fenetre, et `genesis_reached` reste False sans que cela invalide la mesure —
-    l'appelant distingue les deux. Sans ce garde-fou, remonter la genese d'un bot a plusieurs
-    centaines de milliers de transactions coute des heures pour une information inutile.
+    `stop_ts` autorise un arret anticipe des qu'une page contient une transaction anterieure a cet
+    horodatage. Legitime quand la mesure ne porte que sur une fenetre datee : la fenetre est alors
+    couverte et `genesis_reached` reste False sans que cela invalide la mesure, l'appelant
+    distingue les deux cas.
     """
     out, before, genesis = [], None, False
     pages, newest, capped_by_projection = 0, None, False
@@ -131,7 +129,7 @@ def all_signatures(addr, max_pages=2000, label="", verbose=True, stop_ts=None):
             print(f"      ⚠️ {label} page {pages+1} illisible, nouvelle tentative", flush=True)
             time.sleep(3.0 * (attempt + 1))
         if pg is None:
-            # Erreur reseau persistante : on ne declare PAS la genese. L'appelant verra
+            # Erreur reseau persistante : on ne declare pas la genese. L'appelant verra
             # genesis_reached=False et traitera le portefeuille comme non mesure.
             print(f"      ⚠️ {label} pagination interrompue par erreur reseau", flush=True)
             break
@@ -148,10 +146,9 @@ def all_signatures(addr, max_pages=2000, label="", verbose=True, stop_ts=None):
         oldest_page = min((s.get("blockTime") or 0) for s in pg if s.get("blockTime")) or 0
         if stop_ts and oldest_page and oldest_page <= stop_ts:
             break                                   # fenetre datee entierement couverte
-        # Arret par PROJECTION. Purement une optimisation : on ne s'arrete que si le plafond
-        # `max_pages` serait de toute facon depasse d'au moins 50 %. La frontiere de decision est
-        # donc inchangee — seul le temps perdu a paginer un bot a plusieurs millions de
-        # transactions est economise. Le motif est rendu a l'appelant.
+        # Arret par projection. Optimisation : on ne s'arrete que si le plafond `max_pages` serait
+        # de toute facon depasse d'au moins 50 %. La frontiere de decision est donc inchangee, seul
+        # le temps de pagination est economise. Le motif est rendu a l'appelant.
         if stop_ts and oldest_page and pages >= 12:
             span_days = max((newest - oldest_page) / 86400.0, 0.01)
             rate = len(out) / span_days                       # signatures par jour
@@ -175,7 +172,7 @@ def all_signatures(addr, max_pages=2000, label="", verbose=True, stop_ts=None):
 def balance_deltas(tx):
     """{compte: delta_SOL} d'une transaction parsee, lu depuis accountData.
 
-    Mesure par DELTA DE SOLDE, jamais par les seuls transferts systeme : un financement livre par
+    Mesure par delta de solde, jamais par les seuls transferts systeme : un financement livre par
     fermeture d'un compte wrappe ne produit aucun transfert systeme alors que les soldes bougent.
     """
     out = {}

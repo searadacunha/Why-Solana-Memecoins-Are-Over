@@ -47,6 +47,6 @@
  },
  "n_redacted": 43,
  "n_scanned": 212201,
- "rule": "ONE scheme: plain SHA-256 in `map`. An identifier is redacted iff its first 8 characters contain a term of an external hard-slur word list (see code/redact.py) -- publicly confirmable by hashing, which is the point for a slur label.",
+ "rule": "ONE scheme: plain SHA-256 in `map`. An identifier is redacted iff its first 8 characters contain a term of an external hard-slur word list (see code/redact.py) Confirmable by hashing, which is what a slur label needs.",
  "history": "2026-08: a 44th entry -- the author's KYC'd exchange deposit address measured by code/expl_ledger.py, first under a plain label (RDCT-0a350b2ba8), then under a salted-HMAC `map_hmac` block (RDCT-838bf381fe) -- was removed: the author now publishes the address in the clear (see README.md, 'Author'). The `map_hmac` machinery in code/redact.py remains and currently maps nothing; re-adding an entry re-redacts the address on every write path."
 }

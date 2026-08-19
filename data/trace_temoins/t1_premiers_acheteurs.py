@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
-"""ETAPE 1 — les premiers ACHETEURS reels d'un token pump.fun.
+"""Etape 1 : les premiers acheteurs reels d'un token pump.fun.
 
-POURQUOI PAS LES « TOP HOLDERS »
---------------------------------
-Les principaux detenteurs actuels d'un token de 2024 ne disent rien de son lancement : la supply a
-change de mains cent fois depuis. On lit donc la courbe de bonding depuis sa PREMIERE transaction.
+Les principaux detenteurs actuels d'un token de 2024 ne disent rien de son lancement, la supply a
+change de mains cent fois depuis. On lit donc la courbe de bonding depuis sa premiere transaction.
 
-CE QU'ON LIT
-------------
-Le compte `bonding_curve` du token concentre toutes les operations d'achat/vente sur la courbe. On
-pagine ses signatures JUSQU'A LA GENESE (page incomplete), on trie par ordre chronologique, puis on
-classe les signataires par ordre de PREMIER ACHAT. Un achat = variation POSITIVE du solde du token
-pour le signataire, et variation NEGATIVE de son solde SOL. On distingue ainsi les acheteurs des
-vendeurs et du createur.
+Le compte `bonding_curve` du token concentre toutes les operations d'achat et de vente sur la
+courbe. On pagine ses signatures jusqu'a la genese (page incomplete), on trie par ordre
+chronologique, puis on classe les signataires par ordre de premier achat. Un achat = variation
+positive du solde du token pour le signataire et variation negative de son solde SOL, ce qui
+distingue les acheteurs des vendeurs et du createur.
 
-USAGE
+Ecrit e1_buyers_<label>.json dans --outdir.
+
+Pieges : si la genese de la courbe n'est pas atteinte, l'ordre des premiers acheteurs n'est pas
+fiable, le script le signale. Sous 10 acheteurs distincts, on ne peut ni confirmer ni infirmer une
+signature de decoupage.
+
+Usage :
     python3 etape1_premiers_acheteurs.py --mint <MINT> --curve <BONDING_CURVE> --label OPTIMUS
 """
 from __future__ import annotations

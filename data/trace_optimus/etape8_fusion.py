@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""ETAPE 8 — fusion des mesures M2 (etape 2) et M1 rattrapee (etape 7).
+"""Etape 8 : fusion des mesures M2 (etape 2) et M1 rattrapee (etape 7).
 
-Produit un fichier de financement au meme format que `e2_funding_OPTIMUS.json`, mais ou
-`genesis_reached` reflete la pagination REELLEMENT poussee jusqu'a la naissance, et ou les entrees de
-naissance des 16 portefeuilles rattrapes sont presentes. C'est ce fichier que l'etape 3 doit relire :
-la signature de type ODIN (financement de naissance) devient alors TESTEE sur ces portefeuilles.
+Lit e2_funding_<label>.json et e7_genese_M1_<label>.json, ecrit e8_funding_complet_<label>.json, au
+meme format que le fichier de l'etape 2 mais ou `genesis_reached` reflete la pagination reellement
+poussee jusqu'a la naissance, et ou les entrees de naissance des 16 portefeuilles rattrapes sont
+presentes. C'est ce fichier que l'etape 3 doit relire : la signature de type ODIN (financement de
+naissance) devient alors testee sur ces portefeuilles.
 
-La deduplication se fait par signature : un portefeuille ne vivant que quelques jours avant l'achat a
-ses transactions de naissance DANS la fenetre pre-achat, et elles seraient sinon comptees deux fois.
+Piege : la deduplication se fait par signature. Un portefeuille ne vivant que quelques jours avant
+l'achat a ses transactions de naissance dans la fenetre pre-achat, elles seraient sinon comptees
+deux fois.
 
-USAGE
+Usage :
     python3 etape8_fusion.py
 """
 from __future__ import annotations

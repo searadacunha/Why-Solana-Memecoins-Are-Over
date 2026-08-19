@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""ETAPE 13 — combler la derniere fenetre pre-achat manquante.
+"""Etape 13 : combler la derniere fenetre pre-achat manquante.
+
+Lit le cache complet de l'etape 7 (cache_sigs_full/) et met a jour e2_funding_OPTIMUS.json sur
+place.
 
 nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT (28e acheteur d'OPTIMUS) est le seul portefeuille dont
 la mesure M2 restait vide : a l'etape 2 la pagination avait ete abandonnee (~4 000 signatures/jour,
-projection a plus de 2 700 pages). L'etape 7 a finalement atteint sa genese apres 2 332 569
-signatures. Le cache complet etant desormais sur disque, la fenetre pre-achat se lit sans aucun
-appel de pagination supplementaire : il ne reste qu'a relire les transactions de la fenetre.
+projection a plus de 2 700 pages). L'etape 7 a atteint sa genese apres 2 332 569 signatures. Le
+cache complet etant sur disque, la fenetre pre-achat se lit sans appel de pagination
+supplementaire, il ne reste qu'a relire les transactions de la fenetre.
 
-Sans cette etape, le rapport devait dire « 39/40 fenetres pre-achat couvertes » et donc traiter tout
-negatif comme partiel. Avec elle, la couverture est complete et un negatif devient interpretable.
+Sans cette etape la couverture restait a 39/40 fenetres pre-achat et tout negatif devait etre traite
+comme partiel. Avec elle la couverture est complete et un negatif devient interpretable.
 
-USAGE
+Usage :
     python3 etape13_boucher_prebuy.py
 """
 from __future__ import annotations

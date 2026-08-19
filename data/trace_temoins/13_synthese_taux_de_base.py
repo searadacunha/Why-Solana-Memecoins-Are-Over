@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
-"""SYNTHESE : taux de base du decoupage chez les premiers acheteurs des tokens temoins.
+"""Synthese : taux de base du decoupage chez les premiers acheteurs des tokens temoins.
 
-Fusionne la passe 1 (11_temoins_split.py, plafond de 04 : 60 pages) et la passe 2
-(12_deep_genese_temoins.py, plafond 600 pages sur les adresses non resolues), puis :
+Fusionne la passe 1 (11_temoins_split.py, plafond de 04 : 60 pages), la passe 2
+(12_deep_genese_temoins.py, plafond 600 pages sur les adresses non resolues) et la passe 3
+(14_corrige_pages_vides.py, prioritaire), puis :
 
   1. recalcule le detecteur de decoupage par token avec les donnees les plus completes ;
-  2. classe CHAQUE token selon la validite de son resultat :
-       POSITIF                 un decoupage est detecte ;
-       NEGATIF VALIDE          aucun decoupage ET toutes les geneses atteintes ;
-       NEGATIF PARTIEL         aucun decoupage MAIS >=1 genese non atteinte (echec de mesure) ;
-       NON CONCLUANT           moins de 10 acheteurs precoces distincts : pas de matiere ;
-  3. rapporte la MATIERE disponible au detecteur par token (portefeuilles a genese atteinte et
+  2. classe chaque token selon la validite de son resultat :
+       positif            un decoupage est detecte ;
+       negatif valide     aucun decoupage et toutes les geneses atteintes ;
+       negatif partiel    aucun decoupage mais au moins une genese non atteinte (echec de mesure) ;
+       non concluant      moins de 10 acheteurs precoces distincts, pas de matiere ;
+  3. rapporte la matiere disponible au detecteur par token (portefeuilles a genese atteinte et
      nombre d'entrees de financement), condition sans laquelle un zero ne prouve rien ;
-  4. ne modifie AUCUNE constante du detecteur.
+  4. ne modifie aucune constante du detecteur.
+
+Lit temoins_split.json, plus temoins_deep_genese.json et temoins_corrections.json s'ils existent.
+Ecrit synthese_taux_de_base.json a cote du script.
 """
 from __future__ import annotations
 import json, os, math, datetime as dt
@@ -22,7 +26,7 @@ D = os.path.dirname(os.path.abspath(__file__))
 P1 = json.load(open(f"{D}/temoins_split.json"))
 P2 = json.load(open(f"{D}/temoins_deep_genese.json")) if os.path.exists(f"{D}/temoins_deep_genese.json") else {"adresses": []}
 DEEP = {a["wallet"]: a for a in P2.get("adresses", [])}
-# Passe 3 : corrige les arrets sur page VIDE (voir 14_corrige_pages_vides.py). Priorite maximale.
+# Passe 3 : corrige les arrets sur page vide (voir 14_corrige_pages_vides.py). Priorite maximale.
 P3 = json.load(open(f"{D}/temoins_corrections.json")) if os.path.exists(f"{D}/temoins_corrections.json") else {"adresses": []}
 CORR = {a["wallet"]: a for a in P3.get("adresses", [])}
 DEEP.update(CORR)

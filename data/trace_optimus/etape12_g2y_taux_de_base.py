@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
-"""ETAPE 12 — le lien avec G2Y est-il SPECIFIQUE a la cible, ou banal ?
+"""Etape 12 : le lien avec G2Y est-il specifique a la cible, ou banal ?
 
-LA QUESTION POSEE
-------------------------------
-« Les portefeuilles qui achetent en premier un token pump.fun sont-ils majoritairement finances,
-directement ou en quelques sauts, depuis un service de swap ? » — G2Y etant le service identifie.
+Lit un ou plusieurs e9_origine_*.json, ecrit e12_g2y_taux_de_base.json.
 
-CE QUI SERAIT UNE FAUTE
------------------------
-Trouver une chaine G2Y -> intermediaire -> premier acheteur sur la CIBLE et s'arreter la. Tout
-capital qui entre sur Solana franchit une porte de conversion ; un service qui traite ~200 000
-transactions par mois apparait mecaniquement dans beaucoup de chaines. La seule mesure qui informe est
-l'ECART entre la cible et des temoins mesures a la meme profondeur, avec le meme code.
+Question posee : « les portefeuilles qui achetent en premier un token pump.fun sont-ils
+majoritairement finances, directement ou en quelques sauts, depuis un service de swap ? », G2Y
+etant le service identifie.
 
-DEUX QUALITES D'APPARITION, A NE JAMAIS CONFONDRE
-------------------------------------------------
-- FLUX DE VALEUR : le delta de solde de G2Y est non nul dans la transaction. G2Y a paye ou encaisse.
-- MENTION A DELTA NUL : G2Y n'est qu'un compte cite dans la transaction (route, compte de programme).
-  Ce n'est PAS un financement. La premiere version de l'etape 4 comptait les deux ensemble et a
-  produit un faux lien G2Y sur le distributeur 9zqLjp — corrige ici.
+Ce qui serait une faute : trouver une chaine G2Y -> intermediaire -> premier acheteur sur la cible
+et s'arreter la. Tout capital qui entre sur Solana franchit une porte de conversion, et un service
+qui traite ~200 000 transactions par mois apparait mecaniquement dans beaucoup de chaines. La seule
+mesure qui informe est l'ecart entre la cible et des temoins mesures a la meme profondeur, avec le
+meme code.
 
-USAGE
+Deux qualites d'apparition, a ne jamais confondre :
+- flux de valeur : le delta de solde de G2Y est non nul dans la transaction, G2Y a paye ou encaisse.
+- mention a delta nul : G2Y n'est qu'un compte cite dans la transaction (route, compte de
+  programme). Ce n'est pas un financement. La premiere version de l'etape 4 comptait les deux
+  ensemble et a produit un faux lien G2Y sur le distributeur 9zqLjp, corrige ici.
+
+Usage :
     python3 etape12_g2y_taux_de_base.py --origine e9_origine_OPTIMUS.json \
                                         --origine e9_origine_Calm.json
 """

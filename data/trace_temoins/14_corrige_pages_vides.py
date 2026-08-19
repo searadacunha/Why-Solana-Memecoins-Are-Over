@@ -1,31 +1,28 @@
 #!/usr/bin/env python3
-"""Troisieme passe : corriger le PIEGE DE LA PAGE VIDE.
+"""Troisieme passe : corriger le piege de la page vide.
 
-CE QU'ON A DECOUVERT
---------------------
 La condition d'arret "une page revient incomplete = genese atteinte", utilisee dans 04 et dans les
-passes 1 et 2, admet un cas faux : sous charge, Helius renvoie parfois `result: []` SANS erreur au
+passes 1 et 2, admet un cas faux : sous charge, Helius renvoie parfois `result: []` sans erreur au
 milieu de l'historique. Le paginateur conclut alors a la genese, en silence, sur une adresse qui a
 encore des centaines de milliers de transactions plus anciennes. C'est le piege n.1 sous une forme
-nouvelle : non plus un plafond de pages, mais une reponse vide mensongere.
+nouvelle, non plus un plafond de pages mais une reponse vide mensongere.
 
-COMMENT ON LES REPERE SANS RIEN RE-PAGINER
-------------------------------------------
-Une pagination qui s'acheve normalement finit sur une page PARTIELLE (1 a 999 signatures), donc son
-total n'est pas un multiple de 1000. Un total exactement multiple de 1000 signifie que la derniere
-page etait PLEINE et que l'arret vient d'une page VIDE : c'est le seul arret non fiable.
-3 adresses sur 111 marquees "genese atteinte" a la passe 1 sont dans ce cas.
+Reperage sans rien re-paginer : une pagination qui s'acheve normalement finit sur une page
+partielle (1 a 999 signatures), donc son total n'est pas un multiple de 1000. Un total exactement
+multiple de 1000 signifie que la derniere page etait pleine et que l'arret vient d'une page vide,
+le seul arret non fiable. 3 adresses sur 111 marquees "genese atteinte" a la passe 1 sont dans ce
+cas.
 
-LE PAGINATEUR CORRIGE
----------------------
-Sur page vide, on re-interroge 3 fois la MEME page. On ne conclut a la genese que si les 3
-confirmations sont vides. Verdict des 3 adresses :
+Le paginateur corrige re-interroge 3 fois la meme page sur reponse vide, et ne conclut a la genese
+que si les 3 confirmations sont vides. Verdict des 3 adresses :
     ARsCio3NSiKWop…  genese reellement atteinte a 65 619 tx (la passe 1 s'arretait a 30 000)
     6UEprdYLQpgdgg…  genese reellement atteinte a 11 247 tx (la passe 1 s'arretait a  9 000)
-    X1C2Qt6NZc7Epn…  genese NON atteinte a 900 000 tx — adresse industrielle, elle etait comptee
-                     a tort comme resolue dans 6 temoins
-Les deux premieres voient leur financement RE-MESURE sur leurs vraies 40 premieres transactions.
+    X1C2Qt6NZc7Epn…  genese non atteinte a 900 000 tx, adresse industrielle, comptee a tort comme
+                     resolue dans 6 temoins
+Les deux premieres voient leur financement re-mesure sur leurs vraies 40 premieres transactions.
 Aucune constante du detecteur n'est touchee.
+
+Lit temoins_split.json, ecrit temoins_corrections.json a cote du script.
 """
 from __future__ import annotations
 import importlib.util, json, os, datetime as dt
