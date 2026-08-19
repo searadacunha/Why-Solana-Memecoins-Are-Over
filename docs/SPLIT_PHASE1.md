@@ -265,7 +265,7 @@ general.
 | **A or B only** vs dead controls | 5/14 | 0/9 | 0.0595 |
 | A alone (zero false positives in the null) vs dead controls | 1/14 | 0/9 | 0.6087 |
 | original verdict (A or B or **C**) vs graduated controls | 12/14 | 8/12 | 0.2478 |
-| **A or B only** vs graduated controls — *the comparison that counts* | 5/14 | 3/12 | 0.4371 |
+| **A or B only** vs graduated controls | 5/14 | 3/12 | 0.4371 |
 | A alone (zero false positives in the null) vs graduated controls | 1/14 | 0/12 | 0.5385 |
 
 <!-- /RESULTS-TABLE -->

@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TABLEAU 5 — Au-dela des 20 minutes : +1 h, +2 h, +4 h, +24 h.
+Tableau 5 : au-dela des 20 minutes, +1 h, +2 h, +4 h, +24 h.
 
-Les captures `floor_capture` s'arretent a 20 minutes. Le tableau 4 ne peut donc
+Les captures `floor_capture` s'arretent a 20 minutes, le tableau 4 ne peut donc
 pas repondre a << et si j'attendais plus longtemps ? >>. Cette table leve la
-limite avec les bougies HORAIRES GeckoTerminal (1000 bougies = 41 jours, ce qui
+limite avec les bougies horaires GeckoTerminal (1000 bougies = 41 jours, ce qui
 couvre toute la fenetre d'observation).
 
-Achat : a la FIN de la capture (dernier swap enregistre), au prix robuste des
+Achat : a la fin de la capture (dernier swap enregistre), au prix robuste des
 120 dernieres secondes (mediane des swaps >= 0.3 SOL). Vente : au `close` de la
 bougie horaire la plus proche de l'echeance, tolerance 90 minutes.
 
-*** PIEGE D'UNITES — c'est la raison d'etre de ce script ***
-Les swaps de `floor_capture` sont libelles en **SOL par token**. GeckoTerminal
-renvoie des **USD par token**. Diviser l'un par l'autre sans conversion gonfle
-tous les multiples d'un facteur egal au prix du SOL, soit ~73x sur la fenetre.
-Le fichier `analysis_supervision/horizon.json` du 29/07 contient d'ailleurs, en
-commentaire, l'affirmation << les prix GT et les prix de swap sont dans la meme
-unite (SOL/token) >> : elle est FAUSSE. Ici :
+Piege d'unites, la raison d'etre de ce script : les swaps de `floor_capture`
+sont libelles en **SOL par token**, GeckoTerminal renvoie des **USD par token**.
+Diviser l'un par l'autre sans conversion gonfle tous les multiples d'un facteur
+egal au prix du SOL, soit ~73x sur la fenetre. Le fichier
+`analysis_supervision/horizon.json` du 29/07 affirme d'ailleurs en commentaire
+que << les prix GT et les prix de swap sont dans la meme unite (SOL/token) >> :
+c'est faux. Ici :
   - le prix d'entree en SOL est converti en USD via la serie horaire SOL/USDC
     (data/sol_usd_hourly.json) ;
-  - la conversion est ensuite VERIFIEE contre les donnees elles-memes : pour
+  - la conversion est ensuite verifiee contre les donnees elles-memes : pour
     chaque token on compare l'ouverture de sa premiere bougie GT (USD) au prix
     robuste de ses premieres secondes de swaps (SOL). Le rapport doit reproduire
     le prix du SOL. Le controle est imprime a chaque execution.
@@ -149,11 +149,11 @@ def main():
          f"n = {n_tot} tokens | {nclu} clusters. Bought at the robust price of the "
          f"last 120 seconds of the capture (~t0+20 min), converted to USD; sold "
          f"at the `close` of the nearest hourly candle (90 min tolerance).",
-         "`high median` = median of the expiry candle's high: an OPTIMISTIC bound "
+         "`high median` = median of the expiry candle's high: an optimistic bound "
          "(it assumes selling at the hour's high).",
-         "`whole-population median` counts as 0.00x the tokens that no longer have "
-         "ANY candle at expiry, i.e. no trading left at all: the honest "
-         "convention for an asset that can no longer be sold.",
+         "`whole-population median` counts as 0.00x the tokens with no candle at "
+         "all at expiry, i.e. no trading left: an asset that can no longer be "
+         "sold is priced at zero rather than dropped from the sample.",
          f"Units control (GT price in USD / swap price in SOL) / (SOL in USD) "
          f"= **{ctrl['mediane_rapport']:.3f}** median on n={ctrl['n']} tokens. "
          f"Close to 1: the SOL->USD conversion is correct. Without it, every "

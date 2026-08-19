@@ -1,23 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-make_public_data.py — construit data/ a partir du corpus prive (lecture seule).
+make_public_data.py : construit data/ a partir du corpus prive (lecture seule).
 
-Ce script est publie POUR QUE LA REDUCTION SOIT AUDITABLE : il documente
-exactement ce qui a ete garde, ce qui a ete jete, et ce qui a ete arrondi
-entre le corpus de travail et le corpus publie.
+Publie pour rendre la reduction auditable : il documente ce qui a ete garde,
+jete et arrondi entre le corpus de travail et le corpus publie. Il n'est pas
+necessaire pour reproduire les mesures, data/ est deja dans le depot. Il sert
+a verifier que data/ derive bien du corpus prive, et a mettre au format un
+autre corpus pour qui en possede un.
 
-Il n'est PAS necessaire pour reproduire les mesures : data/ est deja dans le
-depot. Il sert a (a) verifier que data/ derive bien du corpus prive et
-(b) permettre a quiconque possede son propre corpus de le mettre au format.
-
-SOURCE (jamais publiee telle quelle, lecture seule) :
+Source (jamais publiee telle quelle, lecture seule) :
     <PRIVATE>/state/floor_capture/*.json      645 fichiers, 171 Mo
     <PRIVATE>/analysis_fullsnipe/socle/dataset.json
     <PRIVATE>/analysis_supervision/horizon.json
     <PRIVATE>/state/snipe_log.json
 
-SORTIE (publiee) :
+Sortie (publiee) :
     data/floor_capture_public.jsonl.gz
     data/dataset_socle.json
     data/horizon.json
@@ -25,22 +23,22 @@ SORTIE (publiee) :
     data/sample/floor_capture_sample.jsonl
     data/MANIFEST.json
 
-TRANSFORMATIONS APPLIQUEES, exhaustivement :
-  1. Les 352 fichiers sans aucun swap sont ECARTES (captures vides = pannes du
+Transformations appliquees, exhaustivement :
+  1. Les 352 fichiers sans aucun swap sont ecartes (captures vides = pannes du
      collecteur, pas un phenomene de marche). 293 fichiers conserves.
-  2. Champ `fees` (liste de wallets payeurs de frais) SUPPRIME : non utilise par
+  2. Champ `fees` (liste de wallets payeurs de frais) supprime : non utilise par
      les mesures publiees, ~40 Mo.
-  3. Champ `sig` (signature de transaction) CONSERVE uniquement pour les swaps
-     a t <= created + 30 s, c.-a-d. exactement ceux qui servent d'ancre de
-     verification on-chain. Supprime au-dela (~500 000 signatures inutiles).
+  3. Champ `sig` (signature de transaction) conserve pour les seuls swaps a
+     t <= created + 30 s, ceux qui servent d'ancre de verification on-chain.
+     Supprime au-dela (~500 000 signatures inutiles).
   4. `sol` arrondi a 6 chiffres significatifs, `tokens` et `price` a 8. Effet
      mesure sur les resultats : voir m5_roundtrip_policies.py --check-rounding
      (ecart max cellule a cellule < 1e-6 en PnL relatif).
-  5. AUCUNE anonymisation d'adresse. Mints, wallets et signatures sont des
-     donnees publiques Solana : les masquer rendrait le dossier invérifiable.
-     C'est un choix assume et c'est la raison pour laquelle le dossier ne parle
-     que d'adresses et jamais de personnes.
-  6. AUCUN chemin local, AUCUNE cle, AUCUN identifiant de compte ne transite :
+  5. Aucune anonymisation d'adresse. Mints, wallets et signatures sont des
+     donnees publiques Solana, les masquer rendrait le dossier inverifiable.
+     Choix assume : le dossier ne parle donc que d'adresses, jamais de
+     personnes.
+  6. Aucun chemin local, aucune cle, aucun identifiant de compte ne transite :
      verifie par check_no_secrets.py, qui echoue si quoi que ce soit passe.
 
 Usage :
@@ -137,7 +135,7 @@ def main():
 
     # echantillon lisible : 20 tokens espaces dans la fenetre, swaps tronques a
     # created+300 s, non compresse. Sert au test a froid (m*.py --data ...) et a
-    # inspecter le format a l'oeil. Ne sert a AUCUNE mesure publiee.
+    # inspecter le format a l'oeil. Ne sert a aucune mesure publiee.
     smp = os.path.join(out, "sample", "floor_capture_sample.jsonl")
     step = max(1, len(kept) // SAMPLE_N)
     with open(smp, "w") as f:

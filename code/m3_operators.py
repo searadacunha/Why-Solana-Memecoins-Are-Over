@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M3 — SIX FLOTTES DISTINCTES, UNE SEULE METHODE.
+M3 : six flottes distinctes, une seule methode.
 
-Ce script teste DEUX affirmations opposees et tranche entre elles.
+Le script tranche entre deux affirmations opposees.
 
   H_unique  : "tout est controle par une seule entite".
   H_methode : "plusieurs entites distinctes appliquent la meme methode".
 
 Le depart se fait sur des criteres mesurables, pas sur une intuition :
-  - Si les flottes partagent des adresses ou des tokens, H_unique gagne du
-    terrain.
-  - Si elles sont strictement disjointes mais que leur GEOMETRIE est identique
-    (meme nombre d'adresses par lancement, meme co-occurrence parfaite), alors
-    H_methode est soutenue et H_unique n'est PAS etablie.
+  - des adresses ou des tokens partages entre flottes font gagner du terrain a
+    H_unique.
+  - des flottes strictement disjointes mais de geometrie identique (meme
+    nombre d'adresses par lancement, meme co-occurrence parfaite) soutiennent
+    H_methode et laissent H_unique non etablie.
 
-Le resultat mesure sur ce corpus soutient H_methode. Le dossier n'affirme donc
+Sur ce corpus, le resultat mesure soutient H_methode, et le dossier n'affirme
 rien de plus. Une infrastructure mutualisee en amont (financeurs communs, hubs
 de sortie communs) reste possible et est signalee comme [INFERE] ailleurs :
 elle ne se mesure pas dans ce corpus, qui ne contient pas les transferts.
 
-DONNEE UTILISEE : le champ `snipers[]` de chaque capture. C'est la liste des
-adresses ayant achete le token AVANT l'ouverture du pool observable, sur la
-courbe de bonding. Ces adresses n'apparaissent donc pas (ou peu) dans le flux
-de swaps : c'est tout l'objet du dossier.
+Donnee utilisee : le champ `snipers[]` de chaque capture, soit les adresses
+ayant achete le token avant l'ouverture du pool observable, sur la courbe de
+bonding. Elles n'apparaissent donc pas (ou peu) dans le flux de swaps, ce qui
+est l'objet du dossier.
 
-Les adresses de flotte ci-dessous sont PUBLIQUES et verifiables sur n'importe
-quel explorateur Solana. Elles designent des ADRESSES, jamais des personnes.
+Les adresses de flotte ci-dessous sont publiques et verifiables sur n'importe
+quel explorateur Solana. Elles designent des adresses, jamais des personnes.
 
 Usage :  python3 m3_operators.py [--data ...]
 """
@@ -41,7 +41,7 @@ import pumplib as P
 
 # --------------------------------------------------------------------------
 # Adresses de flotte. Etablies par la forensique amont ; ce script ne les
-# suppose pas correctes, il les TESTE (comptes, disjonction, co-occurrence).
+# suppose pas correctes, il les teste (comptes, disjonction, co-occurrence).
 # Une flotte dont la co-occurrence ne serait pas significative apparaitrait
 # comme telle dans la sortie.
 # --------------------------------------------------------------------------
@@ -69,7 +69,7 @@ FLEETS = {
     "OP2":  ["GeBJSHK4WsGrz2HRvTbqvWGx4JRMpHfJG2ikzrYBDuwR"],
 }
 
-# Adresses d'INFRASTRUCTURE PARTAGEE, a exclure de tout calcul de lien : elles
+# Adresses d'infrastructure partagee, a exclure de tout calcul de lien : elles
 # snipent une part enorme du corpus et relient artificiellement n'importe quelle
 # paire de tokens. Leur ubiquite est mesuree par m4_infra_ubiquity.py.
 INFRA = {
@@ -89,7 +89,7 @@ def hyper_pval(k, a, b, N):
     """P(X >= k) sous la loi hypergeometrique : deux adresses vues dans a et b
     tokens sur N, combien de tokens en commun au hasard. Sert a dire si une
     co-occurrence est surprenante. Calcul exact en entiers (stdlib), rendu en
-    probabilite brute — pas en log."""
+    probabilite brute, pas en log."""
     tot = math.comb(N, b)
     s = 0
     for i in range(k, min(a, b) + 1):
@@ -105,7 +105,7 @@ def main():
 
     caps = [d for d in P.load_captures(a.data) if d.get("snipers")]
     N = len(caps)
-    P.head("M3 — FLOTTES D'OPERATEURS", "MESURE")
+    P.head("M3 : FLOTTES D'OPERATEURS", "MESURE")
     P.kv("tokens avec liste snipers[] exploitable", N)
 
     # frequence de chaque adresse dans le corpus
@@ -137,7 +137,7 @@ def main():
         print("    %-6s %6d %6d %-24s %-16d" % (name, len(toks), len(S), dstr, amm))
 
     # ---------------------------------------------------------------- H_unique
-    print("\n  TEST DE H_unique — les flottes partagent-elles quoi que ce soit ?")
+    print("\n  TEST DE H_unique : les flottes partagent-elles quoi que ce soit ?")
     shared_addr, shared_tok = [], []
     for x, y in itertools.combinations(FLEETS, 2):
         ia = set(FLEETS[x]) & set(FLEETS[y])
@@ -161,7 +161,7 @@ def main():
          note="%.1f %% du corpus" % (100.0 * len(union) / N))
 
     # ---------------------------------------------------------------- H_methode
-    print("\n  TEST DE H_methode — la geometrie est-elle la meme ?")
+    print("\n  TEST DE H_methode : la geometrie est-elle la meme ?")
     quads = [k for k in FLEETS if len(FLEETS[k]) > 1]
     for name in quads:
         dist = res[name]["adresses_par_lancement"]
@@ -234,15 +234,15 @@ def main():
             P.kv("%s : reutilisation d'un lancement au suivant" % name,
                  "%.3f" % reuse[name], n=res[name]["n_tokens"],
                  note="x%.0f la base" % (reuse[name] / base) if base else "")
-    P.kv("BASE — snipeurs ordinaires (hors infra, hors flottes)",
+    P.kv("BASE : snipeurs ordinaires (hors infra, hors flottes)",
          "%.3f" % base, n=len(base_vals))
     print("      (OP1 et OP2 n'ont qu'une adresse : leur taux vaut 1,000 par"
           " construction et ne prouve rien. Seuls F002..F006 sont informatifs.)")
 
     print("""
   CONCLUSION DE M3 :
-   - Les 6 flottes ne partagent AUCUNE adresse et AUCUN token. [MESURE]
-     H_unique n'est PAS soutenue par ce corpus. Le dossier ne l'affirme pas.
+   - Les 6 flottes ne partagent aucune adresse et aucun token. [MESURE]
+     H_unique n'est pas soutenue par ce corpus, et le dossier ne l'affirme pas.
    - Les 4 flottes multi-adresses engagent exactement 4 adresses a chaque
      lancement, sans une seule exception sur 42 lancements. [MESURE]
    - La co-occurrence de ces adresses est plusieurs ordres de grandeur au-dessus
@@ -251,7 +251,7 @@ def main():
      commune mesure avec les snipeurs ordinaires. [MESURE]
    => Ce qui est etabli : des entites distinctes appliquent une methode
       identique. [MESURE + INFERE pour le mot "methode"]
-   => Ce qui n'est PAS etabli ici : un controle unique, une coordination entre
+   => Ce qui n'est pas etabli ici : un controle unique, une coordination entre
       flottes, une identite civile quelconque. [NON ETABLI]""")
 
     P.emit({"n_tokens_corpus": N, "flottes": res,

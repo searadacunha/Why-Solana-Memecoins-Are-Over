@@ -1,54 +1,43 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M5 — COMBIEN COUTE UN ALLER-RETOUR, SUR DIX POLITIQUES DE SORTIE.
+M5 : cout d'un aller-retour, sur dix politiques de sortie.
 
-Affirmation testee : un acheteur ordinaire qui entre APRES l'ouverture du
-marche perd de l'argent en esperance, quelle que soit sa strategie de sortie.
+Affirmation testee : un acheteur ordinaire qui entre apres l'ouverture du
+marche perd de l'argent en esperance, quelle que soit sa sortie. Mesure d'un
+cout structurel, pas backtest de strategie.
 
-Ce n'est pas un backtest de strategie : c'est une mesure du cout structurel.
-On n'essaie pas de gagner, on mesure ce que perd quelqu'un qui achete.
+Conventions d'execution, pessimistes-neutres ; les changer change le resultat.
+  X1  Entree a t0 + 120 s (creation + 2 min), le temps qu'un humain voie le
+      token apparaitre et passe un ordre. Variante +300 s en sensibilite.
+  X2  Prix robuste d'un instant = mediane des prix executes des swaps
+      >= 0,3 SOL dans les 30 s qui suivent, pour qu'un swap de poussiere ne
+      puisse pas definir un prix. X3 Buckets de decision de 30 s.
+  X4  Gate d'entree : prix robuste defini, >= 0,5 SOL de volume gros dans le
+      bucket, et une offre absorbant 0,5 SOL. Prix paye = max(prix robuste,
+      prix de l'offre), le plus defavorable des deux.
+  X5  Fill verifie sur 120 s, sans escalade. X6 Carnet = les swaps reels ;
+      profondeur cote demande = descente des bids par prix decroissant
+      jusqu'a absorber 0,5 SOL.
+  X7  Une vente au marche est plafonnee par le prix robuste de l'instant, on
+      ne vend pas au-dessus de ce que le marche imprime.
+  X8  1 % de frais et 2 % de slippage par jambe, soit une traine aller-retour
+      de 1 - (0,98 x 0,99) / (1,02 x 1,01) = 5,82 %.
+  X9  t_safe = dernier swap observe - 120 s ; une sortie planifiee au-dela y
+      est ramenee, faute de l'avoir observee.
+  X10 TP = ordre limite (credite au niveau, sans overshoot) ; SL, trailing et
+      timeout passent au marche.
+  X11 Position de 0,5 SOL, minuscule a dessein : plus gros ferait pire.
+  X12 Non-fillable (personne n'achete ce qu'on veut vendre) = -100 %, la
+      convention dure. La convention molle, qui exclut ces cas, est calculee
+      en colonne pour montrer l'ecart.
 
-CONVENTIONS D'EXECUTION — toutes explicites, toutes pessimistes-neutres.
-Elles sont le coeur de la credibilite du chiffre ; les changer change le
-resultat, donc elles sont enoncees, pas cachees.
+Unite statistique : la grappe temporelle (tokens crees a moins de 30 min les
+uns des autres) partage le regime de marche ; les traiter comme independants
+surestimerait la puissance, d'ou une moyenne principale de moyennes de grappe.
 
-  X1 Entree a t0 + 120 s (creation + 2 min). Variante +300 s en sensibilite.
-     Pourquoi 120 s : c'est le premier instant ou un humain qui a vu le token
-     apparaitre peut raisonnablement avoir passe un ordre.
-  X2 Prix ROBUSTE d'un instant = mediane des prix executes des swaps
-     >= 0,3 SOL dans la fenetre de 30 s qui suit. Un seul swap de poussiere ne
-     peut donc pas definir un prix.
-  X3 Grille de decision : buckets de 30 s.
-  X4 GATE D'ENTREE. On n'entre que si (a) le prix robuste existe, (b) il y a
-     >= 0,5 SOL de volume "gros" dans le bucket d'entree, (c) il existe une
-     OFFRE absorbant 0,5 SOL. Le prix d'entree paye est max(prix robuste,
-     prix de l'offre) : on paie le plus defavorable des deux.
-  X5 Verification du fill sur 120 s, sans escalade.
-  X6 Carnet = les swaps reels. Profondeur cote demande = on descend les bids
-     par prix decroissant jusqu'a absorber 0,5 SOL.
-  X7 Une vente AU MARCHE est plafonnee par le prix robuste de l'instant :
-     on ne peut pas vendre au-dessus de ce que le marche imprime.
-  X8 Couts : 1 % de frais par jambe + 2 % de slippage par jambe.
-     Traine aller-retour = 1 - (0,98 x 0,99) / (1,02 x 1,01) = 5,82 %.
-  X9 t_safe = dernier swap observe - 120 s. Une sortie planifiee au-dela est
-     ramenee a t_safe. On ne credite jamais une sortie qu'on n'a pas vue.
-  X10 Un TP est un ordre LIMITE (credite au niveau, sans overshoot) ; SL,
-     trailing et timeout sont des ordres AU MARCHE.
-  X11 Taille de position 0,5 SOL. Volontairement minuscule : un acheteur plus
-     gros ferait PIRE, jamais mieux.
-  X12 Non-fillable = -100 %. C'est la convention dure : si personne n'achete
-     ce qu'on veut vendre, on ne vend pas. La convention molle (exclure ces
-     cas) est calculee aussi, en colonne, pour montrer l'ecart.
-
-UNITE STATISTIQUE : la grappe temporelle (tokens crees a moins de 30 min les
-uns des autres). Les tokens d'une meme grappe partagent le regime de marche ;
-les traiter comme independants surestimerait la puissance. La moyenne
-principale est donc une moyenne de moyennes de grappe.
-
-Ce moteur est un portage direct du moteur utilise en interne. Le portage est
-verifiable : `--reference docs/reference_canonical.json` recompare cellule par
-cellule avec la sortie du moteur d'origine.
+Portage direct du moteur interne. `--reference docs/reference_canonical.json`
+recompare cellule par cellule avec la sortie du moteur d'origine.
 
 Usage :
     python3 m5_roundtrip.py
@@ -112,10 +101,10 @@ def load(path=None):
 
 
 class Book:
-    """Carnet reconstruit a partir du flux de trades. Ce n'est pas un carnet
-    d'ordres (la donnee n'en contient pas) : c'est la profondeur REELLEMENT
+    """Carnet reconstruit a partir du flux de trades. La donnee ne contient pas
+    de carnet d'ordres : ce qu'on mesure est la profondeur reellement
     constatee, c.-a-d. les contreparties qui se sont effectivement presentees.
-    C'est plus conservateur qu'un carnet affiche, qui peut etre annule."""
+    Plus conservateur qu'un carnet affiche, qui peut etre annule."""
 
     def __init__(self, sw):
         self.sw = sw
@@ -286,9 +275,9 @@ def main():
     ap.add_argument("--out", default=os.path.join(P.HERE, "..", "docs", "out", "m5_roundtrip.json"))
     a = ap.parse_args()
 
-    # Garde-fou : avec --data (jeu d'exemple), on n'ecrase PAS l'artefact
-    # publie. Un tableau du dossier ne doit jamais pouvoir etre remplace par le
-    # resultat d'un echantillon de 20 tokens sans que personne s'en apercoive.
+    # Garde-fou : avec --data (jeu d'exemple) on n'ecrase pas l'artefact
+    # publie, pour qu'un tableau du dossier ne puisse pas etre remplace en
+    # silence par le resultat d'un echantillon de 20 tokens.
     if a.data and a.out == ap.get_default("out"):
         a.out = os.path.join(P.HERE, "..", "data", "sample",
                              os.path.basename(a.out))
@@ -296,7 +285,7 @@ def main():
     caps, rej = load(a.data)
     cl = P.clusters(caps, CLUSTER_GAP)
 
-    P.head("M5 — ALLER-RETOUR NET, ENTREE A t0 + %d s" % a.entry, "MESURE")
+    P.head("M5 : ALLER-RETOUR NET, ENTREE A t0 + %d s" % a.entry, "MESURE")
     P.kv("captures exploitables", len(caps))
     for k, v in sorted(rej.items()):
         P.kv("  ecartees : %s" % k, v)
@@ -347,9 +336,9 @@ def main():
     neg_mean = sum(1 for p in POLICIES if table[p]["moy"] < 0)
     neg_clu = sum(1 for p in POLICIES if table[p]["moy_grappe"] < 0)
     print()
-    P.kv("politiques a MEDIANE negative", "%d / %d" % (neg_med, len(POLICIES)))
-    P.kv("politiques a MOYENNE negative", "%d / %d" % (neg_mean, len(POLICIES)))
-    P.kv("politiques a moyenne de GRAPPE negative",
+    P.kv("politiques a mediane negative", "%d / %d" % (neg_med, len(POLICIES)))
+    P.kv("politiques a moyenne negative", "%d / %d" % (neg_mean, len(POLICIES)))
+    P.kv("politiques a moyenne de grappe negative",
          "%d / %d" % (neg_clu, len(POLICIES)))
 
     best = max(POLICIES, key=lambda p: table[p]["moy_grappe"])
@@ -382,31 +371,29 @@ def main():
                     cells += 1
         P.kv("cellules comparees", cells)
         P.kv("ecart absolu maximal", "%.6f point de %%" % worst,
-             note="OK" if worst < 0.01 else "DIVERGENCE — a expliquer")
+             note="OK" if worst < 0.01 else "DIVERGENCE, a expliquer")
 
     print("""
-  LECTURE — enoncer le resultat exactement, sans l'arrondir dans le bon sens :
-   - Les DIX politiques ont une MOYENNE negative. C'est le resultat principal :
-     l'esperance d'un aller-retour est negative quelle que soit la sortie
+  LECTURE :
+   - Resultat principal : les dix politiques ont une moyenne negative.
+     L'esperance d'un aller-retour est negative quelle que soit la sortie
      choisie parmi les dix. [MESURE]
-   - NEUF politiques sur dix ont aussi une mediane negative. La dixieme,
-     `tp50` (prise de profit a +50 %), a une mediane POSITIVE (+3,3 %) tout en
-     ayant la PIRE moyenne de la grille (-12,9 %). Ce n'est pas une
-     contradiction : cette politique gagne souvent un peu et perd rarement
-     beaucoup. Ecrire "les dix politiques ont une mediane negative" serait
-     faux, et le dossier ne l'ecrit pas. [MESURE]
+   - Neuf politiques sur dix ont aussi une mediane negative. La dixieme,
+     `tp50` (prise de profit a +50 %), a une mediane positive (+3,3 %) tout en
+     ayant la pire moyenne de la grille (-12,9 %) : elle gagne souvent un peu
+     et perd rarement beaucoup. Ecrire "les dix politiques ont une mediane
+     negative" serait donc faux. [MESURE]
    - Le taux de tokens gagnants (%>0) depasse 50 % pour `tp50` : on peut avoir
-     raison plus d'une fois sur deux et perdre de l'argent. C'est la forme
-     meme de la distribution qui est defavorable, pas la frequence des gains.
-     [MESURE]
+     raison plus d'une fois sur deux et perdre de l'argent. C'est la forme de
+     la distribution qui est defavorable, pas la frequence des gains. [MESURE]
    - La position simulee fait 0,5 SOL. Un acheteur ordinaire qui met plus
      subit un impact plus grand, dans le meme sens. [INFERE]
-   - Ces chiffres sont NETS de 5,82 % de traine, qui expliquent une partie de
+   - Ces chiffres sont nets de 5,82 % de traine, qui expliquent une partie de
      la perte mais pas sa totalite : plusieurs politiques perdent nettement
      plus. [MESURE]
-   - Ce que ce script NE dit PAS : qu'il existerait une onzieme politique
-     gagnante. Il dit qu'aucune des dix testees ne l'est en esperance, sur ce
-     corpus, sur cette fenetre. [MESURE]""")
+   - Ce script ne dit pas qu'il existerait une onzieme politique gagnante. Il
+     dit qu'aucune des dix testees ne l'est en esperance, sur ce corpus, sur
+     cette fenetre. [MESURE]""")
 
     P.emit({"entry_offset_s": a.entry, "n_entrables": n,
             "n_grappes": len(used_clusters),

@@ -18,6 +18,6 @@
 n = 1243 tokens | 123 clusters | 20 UTC days | clean population B.
 x2(P) = share of tokens whose pump.fun ATH >= 2 x P. Survival function of the ATHs: no free parameter.
 **Entry price that yields a 90 % x2 rate: 24 385 USD** (= 10th percentile of ATHs / 2; 23 253 USD on all of B).
-An UPPER bound: reaching the ATH is not selling at the ATH.
+An upper bound: reaching the ATH is not selling at the ATH.
 
 Regenerate: `python3 code/t2_x2_par_prix_entree.py`

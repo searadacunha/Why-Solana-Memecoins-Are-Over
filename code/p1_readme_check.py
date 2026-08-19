@@ -1,119 +1,43 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-p1_readme_check.py -- recomputes every figure quoted in README.md.
+"""p1_readme_check.py -- recomputes every figure quoted in README.md, as
+p0_pitfalls_check.py does for docs/PITFALLS.md. Output is a claim ledger: per
+quoted figure, the literal sentence, the artefact behind it, the value that
+artefact holds, whether the two agree. Expected values are written out in
+CLAIMS below rather than scraped from the prose with a regex, so a claim that
+moves or is reworded turns up as ABSENT instead of being skipped. Figures no
+artefact backs sit in UNBACKED: counted at every run, never fatal, since
+unsourced is a different defect from wrong.
 
-The README's counterpart to p0_pitfalls_check.py. p0 recomputes docs/PITFALLS.md;
-this one recomputes the front page, which is the document most people read and the
-only one nobody was checking.
+A failing row means the README states a number this code does not produce. Fix
+the README, or fix the measurement; never adjust the expected value to match
+the prose. Every row reproduces today, so a red row is a real signal. (Until
+2026-08-10 the front page also quoted this run's two counts in a banner; the
+author removed it, and they now live only in this script's output and JSON.)
 
-WHAT IT ESTABLISHES
-    A machine-readable claim ledger. For each figure quoted in README.md: the
-    literal sentence, the committed artefact it is supposed to come from, the
-    value that artefact actually holds, and whether the two agree. Nothing is
-    scraped out of the prose with a regex -- the expected values are written out
-    in the CLAIMS table below, one row per quoted figure, so a claim that moves
-    or is reworded is NOTICED (status ABSENT) instead of silently skipped.
+Only the literal `texte` substrings are matched, so a correct number can sit in
+a sentence whose surrounding claim is false and the row still passes on the
+digits. A row's `texte` therefore has to span the clause the figure supports,
+not just the digits.
 
-WHY A RED RUN IS NOT A BUG IN p1
-    A failing row means the README states a number this code does not produce.
-    Fix the README, or fix the measurement. Never adjust the expected value to
-    match the prose.
+Rows may carry a `texte_fr`, checked against _relecture_fr/README.fr.md exactly
+as `texte` is against README.md, and a declared French sentence that is not
+found fails the run. That file is untracked by design (the repository publishes
+in English), so a clone lacks it and the check is then skipped. Coverage is
+partial and the count is printed at every run. French results are printed but
+never written: a value derived from an untracked file would reproduce on the
+author's machine and nowhere else, which is what run_all.py --strict catches.
 
-    On the README as it stands this script is EXPECTED to exit 0: every row
-    below reproduces against its committed artefact. A red row is therefore a
-    real signal -- the README states a number the artefacts do not produce --
-    not a normal state of this script. Rows are added and removed as the README
-    changes; a claim that leaves the front page leaves the CLAIMS table with it,
-    together with any artefact only that claim read.
-
-    (The README used to carry this run's two counts in a front-page banner,
-    re-checked verbatim here; the banner was removed by author decision on
-    2026-08-10 and the counts now live only in this script's output and JSON.)
-
-    THE 2024 TRADING TABLE, AND WHY ITS ROWS CHANGED SOURCE
-    The "Exploiting the pattern" table used to quote 1 200.12 SOL / 238 989.57 $
-    / 312 withdrawals / 97 wallets. One of those four had a row here, and it was
-    a weak one: the SOL total was checked by ADDING UP a table inside
-    docs/EXPLOITATION.md, which establishes that the README agrees with another
-    document of the same repository, not that either agrees with the chain. The
-    other three had no source at all and sat in UNBACKED.
-
-    code/expl_ledger.py now reconstructs the deposit address's ledger from the
-    chain, and the table quotes THAT. So the arithmetic-on-a-document row is
-    gone -- not because it failed, but because the figure it checked is no
-    longer the figure the README prints -- and the rows below read
-    docs/out/expl_ledger.json instead. Four entries left UNBACKED by being
-    MEASURED, which is the only honest way for that list to shrink. Do not
-    restore the docs/EXPLOITATION.md addition as a second opinion on the same
-    number: two sources agreeing is not a check when one of them is prose.
-
-    A seventh row used to sit here: the README's "sell 10% at 10x" against the
-    15 % in code/exit_ladder.py's LADDER. It is gone, and not because the two
-    were reconciled. The exit tranche sizes were never recorded by the operator,
-    so BOTH figures are unsourced -- two assertions with no source that also
-    happen to disagree. Checking one against the other only proved that two
-    unsourced numbers agree or do not; it never established either. The three
-    rungs therefore moved out of CLAIMS and into UNBACKED, where "no artefact
-    behind it" is the finding rather than an artefact comparison. Do not resolve
-    the 10 % / 15 % disagreement by picking a number: that would manufacture a
-    fact. See docs/EXPLOITATION.md section 3.
-
-THE FAILURE MODE THIS SCRIPT CANNOT SEE ON ITS OWN
-    A CORRECT NUMBER INSIDE A FALSE SENTENCE. p1 checks the literal `texte`
-    substrings listed below and nothing else, so prose ADJACENT to a checked
-    figure is invisible to it: a correct number can sit inside a sentence
-    whose surrounding claim is false, and this script would still pass the row
-    on the digits alone. The remedy is not a cleverer scraper; it is that a
-    row's `texte` must span the CLAUSE the figure is used to support, not just
-    the digits. Where the supporting fact was not measured at all, the
-    measurement is extended rather than the sentence softened.
-
-THE FRENCH EDITION -- A LOCAL AID, NEVER PART OF THE ARTEFACT
-    _relecture_fr/README.fr.md used to be checked by no code at all: figures
-    were copied there by hand, and both prose defects above were duplicated
-    into it verbatim. Rows may now carry `texte_fr`, checked literally against
-    that file exactly as `texte` is against README.md. A declared French
-    sentence that is not found FAILS the run. The coverage is partial on
-    purpose -- only the rows carrying `texte_fr` are checked, and the count is
-    printed at every run so the gap is a visible quantity rather than a
-    memory.
-
-    That file is deliberately UNTRACKED (.gitignore: the repository publishes
-    in English, and a committed translation would diverge at the first fix
-    applied to the English). A clone therefore does not carry it, and its
-    absence is the normal state, not a defect: the check is skipped and the
-    run still passes.
-
-    The consequence is a rule, and it was learnt the hard way -- the first CI
-    run this repository ever executed failed on it. The French results are
-    PRINTED but never WRITTEN: no `statut_fr`, no French counts in
-    docs/out/p1_readme_check.json. An artefact that recorded them would hold a
-    value derived from an untracked file, so it would reproduce on the author's
-    machine and nowhere else -- which is precisely the defect run_all.py
-    --strict exists to catch.
-
-WHAT IT DOES NOT ESTABLISH
-    - That the artefacts themselves are right. p1 compares prose to artefacts; the
-      artefacts are established by the scripts that produce them.
-    - That the README is complete. UNBACKED below holds the figures with no
-      artefact at all, each with a one-line reason. They are printed and counted
-      at every run -- a visible, falling quantity rather than a memory -- and they
-      never fail the run, because "unsourced" is not the same defect as "wrong".
-    - Anything about the figures p1 does not list. A number added to the README
-      without a row here is invisible to this script.
-
-READS (all committed, no network, no private state)
+Reads (all committed, no network, no private state)
     README.md                              the claims themselves
-    _relecture_fr/README.fr.md             OPTIONAL and untracked: the French
-                                           edition, for the rows that declare a
-                                           `texte_fr`. Absent in any clone; it
-                                           feeds stdout only, never the artefact
+    _relecture_fr/README.fr.md             optional and untracked: the French
+                                           edition, for the rows declaring a
+                                           `texte_fr`; feeds stdout only
     docs/out/a9_g2y_prelaunch.json         act I burst
-    docs/out/expl_ledger.json              the 2024 deposit ledger, reconstructed
-                                           on chain; since 2026-08 it carries
-                                           the deposit address in the clear
-                                           (published -- README.md, "Author")
+    docs/out/expl_ledger.json              the 2024 deposit ledger, rebuilt on
+                                           chain; since 2026-08 it carries the
+                                           deposit address in the clear
+                                           (published: README.md, "Author")
     docs/out/m2_entry_price.json           entry multiple
     data/v05_creation_block.json           creation-slot buy
     data/v06_curve_ladder.json             curve captured
@@ -121,7 +45,7 @@ READS (all committed, no network, no private state)
     data/v09_signature_gros_tokens.json    frozen 70-token sample
     data/screens/trades/index.json         the 19 screenshotted executions
 
-WRITES
+Writes
     docs/out/p1_readme_check.json          the ledger (byte-compared by --strict:
                                            no timestamp, no run id, rows sorted)
 
@@ -149,8 +73,8 @@ MOTS = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
 
 
 class Absent(Exception):
-    """An artefact, or a key inside it, is not there. A measured outcome, not a
-    crash: it is reported as a row status and it fails the run."""
+    """An artefact, or a key inside it, is not there. An expected outcome
+    rather than a crash: it is reported as a row status and it fails the run."""
 
 
 # --------------------------------------------------------------------- load
@@ -158,9 +82,9 @@ _CACHE = {}
 
 
 def _consts_py(path):
-    """Module-level literal assignments of a .py file, WITHOUT importing it.
+    """Module-level literal assignments of a .py file, without importing it.
 
-    a file such as exit_ladder.py runs work at import or under __main__; the
+    A file such as exit_ladder.py runs work at import or under __main__. The
     values wanted here are constants, and ast.literal_eval reads them without
     executing a line of the file."""
     out = {}
@@ -210,7 +134,8 @@ def walk(obj, chemin, rel):
 
 # -------------------------------------------------------------------- derives
 # Each derive rebuilds, from one artefact, the exact form the README quotes.
-# They are the audit trail: the transformation is code, not a claim about code.
+# They are the audit trail: the transformation is code rather than a claim
+# about code.
 
 def d_v05_42_42(a):
     g = a["agregats"]
@@ -246,10 +171,9 @@ def _expl_bons_mois(a, cle):
     """One good-months total of expl_ledger.json, checked against its own
     per-month breakdown before it is returned.
 
-    The artefact publishes both, so the addition is verifiable here and it is
-    performed: a good-months total that did not equal the sum of the three
-    months it names would be an arithmetic defect inside the artefact, and this
-    ledger is the place where that becomes visible rather than assumed."""
+    The artefact publishes both, so the addition is done here rather than
+    assumed: a good-months total that does not equal the sum of the three
+    months it names is an arithmetic defect inside the artefact."""
     g = a["good_months_2024_10_12"]
     somme = round(sum(a["per_month"][m][cle] for m in BONS_MOIS), 4)
     if somme != round(g[cle], 4):
@@ -270,8 +194,8 @@ def d_expl_usd_fenetre(a):
     """The full-window USD total, with the window bound the README names.
 
     The README says "to 2 Feb 2025"; the artefact carries the bound it actually
-    used. If the two ever part company the row goes red instead of the prose
-    quietly relabelling a different window."""
+    used. If the two part company the row goes red rather than the prose
+    relabelling a different window."""
     hi = a["window_utc"]["hi_exclusive"]
     if hi != "2025-02-02":
         raise Absent("expl_ledger: window hi_exclusive is %r, the README says "
@@ -280,7 +204,7 @@ def d_expl_usd_fenetre(a):
 
 
 def d_expl_passthrough(a):
-    """In against out, which is what makes the totals readable at all.
+    """In against out, the check that makes the totals readable.
 
     A deposit address is a pass-through: everything that lands is swept to the
     exchange. The two figures matching to a hundredth of a SOL is the evidence
@@ -288,14 +212,13 @@ def d_expl_passthrough(a):
     subset of them, so the residual is recomputed here from the two sides
     instead of being taken from the artefact's own field.
 
-    The comparison carries one unit of the last published place, and that is
-    arithmetic rather than slack. expl_ledger publishes sol_in, sol_swept_out
-    and residual_sol each rounded to 4 decimals, but it computes the residual
-    from the UNROUNDED sides: here in - out = 0.0097 while residual_sol is
-    0.0098, because the two roundings go opposite ways. A stricter equality
-    would fail on a correct artefact, and loosening it further would stop
-    checking anything -- 1e-4 is the exact resolution of the figures the
-    artefact hands over."""
+    The tolerance is one unit of the last published place, which is arithmetic
+    rather than slack. expl_ledger publishes sol_in, sol_swept_out and
+    residual_sol each rounded to 4 decimals but computes the residual from the
+    unrounded sides: here in - out = 0.0097 while residual_sol is 0.0098,
+    because the two roundings go opposite ways. 1e-4 is the exact resolution of
+    the figures the artefact hands over, so a stricter equality would fail on a
+    correct artefact."""
     p = a["passthrough_check"]
     if round(p["sol_in"], 4) != round(a["total_sol_full_window"], 4):
         raise Absent("expl_ledger: passthrough sol_in %r != total_sol_full_window "
@@ -311,9 +234,9 @@ def d_expl_passthrough(a):
 
 def _m4_ubiquite(prefixe, infra_attendue):
     """The two ANSEM slot-0 wallets, looked up in the ubiquity table of
-    m4_infra.json. This is the ONLY part of the ANSEM block any artefact of
-    this repository covers: the wallets' presence across the 282-token corpus.
-    The slot-0 SOL amounts are not measured here and are declared UNBACKED."""
+    m4_infra.json. The wallets' presence across the 282-token corpus is the
+    only part of the ANSEM block any artefact of this repository covers; the
+    slot-0 SOL amounts are not measured here and are declared UNBACKED."""
     def f(a):
         hit = [e for e in a["top_ubiquite"] if e["adresse"].startswith(prefixe)]
         if not hit:
@@ -360,8 +283,8 @@ REGLES = {
 
 # ----------------------------------------------------------------------- table
 # One row per figure quoted in README.md that has a committed artefact behind it.
-# 'texte' is the LITERAL substring as it appears in README.md: if the sentence is
-# reworded the row goes ABSENT rather than quietly passing.
+# 'texte' is the literal substring as it appears in README.md: if the sentence
+# is reworded the row goes ABSENT rather than passing unnoticed.
 CLAIMS = [
     # ---------------------------------------------------------------- act I --
     {"section": "1 Act I", "texte": "- 9 wallets",
@@ -384,16 +307,18 @@ CLAIMS = [
 
     # ------------------------------------------------- exploiting the pattern -
     # The three exit rungs used to be checked here, against LADDER in
-    # code/exit_ladder.py. They are not claims p1 can settle: that constant is an
-    # assertion, not a record, and the tranche sizes were never written down. They
+    # code/exit_ladder.py. p1 cannot settle them: that constant is an assertion
+    # rather than a record, and the tranche sizes were never written down. They
     # are listed in UNBACKED below instead.
     # The 2024 table. Its money and its counts are now read on chain by
-    # code/expl_ledger.py; see the docstring for what these rows replaced and
-    # why the docs/EXPLOITATION.md addition is not kept beside them. Every row
-    # carries its French sentence, spanning the whole table row rather than the
-    # digits alone -- the FR edition writes these figures with a decimal comma
-    # and a space for thousands, so a bare number would also have to be
-    # transcribed and could not be shared with the English form.
+    # code/expl_ledger.py. The SOL total used to be checked by adding up a table
+    # inside docs/EXPLOITATION.md, which established only that the README agreed
+    # with another document of this repository; do not restore it beside the
+    # on-chain rows. Every row carries its French sentence, spanning the whole
+    # table row rather than the digits alone -- the FR edition writes these
+    # figures with a decimal comma and a space for thousands, so a bare number
+    # would also have to be transcribed and could not be shared with the
+    # English form.
     {"section": "0 Front page",
      "texte": "I withdrew **$237,137.87** trading memecoins",
      "texte_fr": "j'ai retiré **237 137,87 $**",
@@ -529,9 +454,9 @@ CLAIMS = [
      "note": "launches with zero curve purchase before the block / total"},
 ]
 
-# Figures quoted in README.md that NO committed artefact backs. They never fail
+# Figures quoted in README.md that no committed artefact backs. They never fail
 # the run: "unsourced" is a different defect from "wrong". They are printed and
-# counted at every run so the number is a falling quantity, not a memory.
+# counted at every run so the number stays a visible, falling quantity.
 UNBACKED = [
     {"section": "2 Exploiting the pattern", "texte": "50% at 2×",
      "raison": "exit tranche size: no source. The operator confirmed no percentage "
@@ -547,11 +472,11 @@ UNBACKED = [
     {"section": "2 Exploiting the pattern", "texte": "10% at 10×",
      "raison": "exit tranche size: no source. The x10 level was part of the "
                "automated configuration; the share sold there was never recorded. "
-               "code/exit_ladder.py states 15 % — two unsourced figures that also "
+               "code/exit_ladder.py states 15 %, two unsourced figures that also "
                "disagree. Not to be resolved by picking one"},
     # Four entries used to sit here: 238 989.57 $, 246 945.59 $, 312 withdrawals
     # and 97 trading wallets. They are gone from this list because they were
-    # MEASURED, not because they were deleted: code/expl_ledger.py reconstructs
+    # measured, not because they were deleted: code/expl_ledger.py reconstructs
     # the deposit ledger on chain and the README now prints what it produced --
     # 237 137.87 $, 244 315.58 $, 245 transfers, 74 senders. The four figures
     # they replaced were assertions whose cents appeared in no file, no script
@@ -648,13 +573,12 @@ README_FR = os.path.join("_relecture_fr", "README.fr.md")
 def evaluer_fr(row, texte_fr_source):
     """-> statut of one row's French sentence.
 
-    "-" when the row declares none (the honest majority today) OR when the
-    French edition is not in this checkout at all -- it is untracked by design,
-    so a clone legitimately has nothing to compare against. "OK" when the
-    declared sentence is present verbatim, "ABSENT" when the file IS there and
-    the sentence is not -- which fails the run, exactly like an English claim
-    text that moved. A row that declares a French sentence has promised it
-    exists in a checkout that carries the file.
+    "-" when the row declares none, which is still most of them, or when the
+    French edition is not in this checkout: it is untracked by design, so a
+    clone has nothing to compare against. "OK" when the declared sentence is
+    present verbatim. "ABSENT" when the file is there and the sentence is not,
+    which fails the run like an English claim text that moved: declaring a
+    French sentence promises it exists wherever the file does.
     """
     if not row.get("texte_fr") or texte_fr_source is None:
         return "-"
@@ -691,14 +615,14 @@ def main():
                          % os.path.relpath(readme_path, settings.ROOT))
     readme = open(readme_path, encoding="utf-8").read()
 
-    # The French edition is optional as a FILE (a checkout may not carry the
-    # relecture directory) but not optional as a CHECK: if it is there, every
-    # row that declares a French sentence must find it.
+    # The French edition is optional as a file (a checkout may not carry the
+    # relecture directory) but not as a check: if it is there, every row that
+    # declares a French sentence must find it.
     fr_path = os.path.join(settings.ROOT, README_FR)
     fr_texte = (open(fr_path, encoding="utf-8").read()
                 if os.path.exists(fr_path) else None)
 
-    P.head("P1 — README CLAIM LEDGER", "MESURE")
+    P.head("P1 : README CLAIM LEDGER", "MESURE")
     print("  Every figure quoted in README.md, the artefact behind it, and whether")
     print("  the two agree. A red row means the README states a number this code")
     print("  does not produce: fix the README, or fix the measurement.\n")
@@ -793,7 +717,7 @@ def main():
     # below: _relecture_fr/README.fr.md is untracked by design, so any value
     # derived from it would reproduce on the author's machine and nowhere else.
     # Keeping them printed but unwritten is what makes this artefact regenerate
-    # byte-for-byte from a clean clone. (See "THE FRENCH EDITION" at the top.)
+    # byte-for-byte from a clean clone. (See the module docstring.)
     claims_publies = [{k: v for k, v in r.items()
                        if k not in ("statut_fr", "texte_fr")}
                       for r in lignes]
@@ -819,14 +743,14 @@ def main():
     print("""
 => What is established: for every figure listed, the value the committed
    artefact holds and whether it agrees with the README's prose. [MESURE]
-=> What is NOT established here: that the artefacts are themselves right. p1
+=> What is not established here: that the artefacts are themselves right. p1
    compares prose to artefacts; the artefacts are established by the scripts
    that produce them. [MESURE for the agreement, NON ETABLI for the substance]
-=> Also NOT established: that the README is complete. A figure added without a
+=> Also not established: that the README is complete. A figure added without a
    row in CLAIMS or UNBACKED is invisible to this script. [NON ETABLI]
 => A red run is not a regression in p1. Fix the README, or fix the measurement;
    never adjust the expected value to match the prose. [MESURE]
-=> Also NOT established: that README.fr.md is right. Only the rows declaring a
+=> Also not established: that README.fr.md is right. Only the rows declaring a
    `texte_fr` are compared to it; the rest of the French prose is transcribed
    by hand and checked by nothing. [NON ETABLI for the remainder]""")
 
