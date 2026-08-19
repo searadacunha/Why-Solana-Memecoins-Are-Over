@@ -3,15 +3,15 @@
 
 The hub is the address that funded the four wallets of the reference split, five days before the
 token they went on to buy existed. Earlier work could not establish where the hub itself got its
-funds: the pagination was bounded and stopped in the recent past, which is exactly the silent
-failure documented as P-pagination in docs/PITFALLS.md.
+funds: the pagination was bounded and stopped in the recent past, the silent failure documented
+as P-pagination in docs/PITFALLS.md.
 
 Both walks were therefore redone unbounded, paging until a short page proved the genesis had been
 reached, and declaring the outcome either way. This script turns the two raw walks into one
-statement, and — this is the point — keeps the two upstream nodes that remain out of reach in the
-output instead of dropping them.
+statement, and keeps in the output the two upstream nodes that remain out of reach, rather than
+dropping them.
 
-USAGE
+Usage:
     python3 code/a3_hub_origin.py
 Reads data/split/hrs6_genesis.json and data/split/hrs6_upstream.json. No network, no key.
 """

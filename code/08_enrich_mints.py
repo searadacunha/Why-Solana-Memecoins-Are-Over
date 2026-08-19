@@ -12,7 +12,7 @@ Deux mesures independantes de la performance :
 CLIENT
 ------
 Le comptage on-chain passe par le client Helius unique (rpc_client.py) : les clés
-viennent de l'environnement ($HELIUS_API_KEYS, ou .env non versionné — voir
+viennent de l'environnement ($HELIUS_API_KEYS, ou .env non versionné, voir
 settings.py) et **un échec réseau LÈVE** au lieu de se déguiser en « compte trop
 actif » (docs/PITFALLS.md, règle n°2). L'API frontend pump.fun n'est PAS Helius :
 elle garde un petit GET local, qui lève lui aussi à l'épuisement des essais.

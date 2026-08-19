@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""v04 - ORDRE D'EXECUTION DANS LE SLOT DE CREATION + ECHELLE DE PRIX.
+"""v04 - ordre d'execution dans le slot de creation + echelle de prix.
 
-On telecharge le BLOC ENTIER du slot de creation (getBlock) et on enumere
+On telecharge le bloc entier du slot de creation (getBlock) et on enumere
 *toutes* les transactions qui touchent le mint, dans l'ordre du bloc. C'est une
 enumeration exhaustive : rien ne peut se cacher entre deux index.
 
 On mesure alors, par lancement :
   - index de la tx de creation, index des achats de la flotte, contiguite
-  - nombre d'acheteurs NON-operateur executes AVANT le dernier achat de la flotte
+  - nombre d'acheteurs non-operateur executes avant le dernier achat de la flotte
   - VWAP de la flotte (SOL/token)  -> MC d'entree (prix x 1e9)
-  - prix du PREMIER acheteur non-operateur non-createur -> MC d'ouverture publique
+  - prix du premier acheteur non-operateur non-createur -> MC d'ouverture publique
   - ratio MC_ouverture / MC_flotte
   - prix d'ouverture du pool AMM (1er swap PUMP_AMM de floor_capture)
 

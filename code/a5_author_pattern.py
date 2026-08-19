@@ -1,52 +1,27 @@
 #!/usr/bin/env python3
-"""Presence test for the pattern as the author actually described it.
+"""Presence test on the traded tokens, part by part, for the pattern as the author described it.
 
-WHY A SEPARATE SCRIPT
----------------------
-The split detector of `splitlib.py` asks three generic questions: were two early buyers funded
-in the same transaction (A), did three or more receive the same amount within an hour (B), do two
-share a private funder (C). None of those is the thing the author says he watched for.
+The split detector of `splitlib.py` asks three generic questions: were two early buyers funded in
+the same transaction (A), did three or more receive the same amount within an hour (B), do two share
+a private funder (C). The author describes four properties at once: fresh buying wallets (created
+shortly before they buy, no prior history), several of them receiving near-identical amounts close
+together in time, those amounts coming from a single funding step, then sequential buys early on the
+same curve. The conjunction can hold where B is absent, since B needs three wallets at one amount
+inside one hour.
 
-What he describes is narrower and has four parts at once:
+That funding step comes in two calibres, one link apart in the same chain: a swap output (an amount
+like 1.393934883 SOL, precise to nine decimals) or a round payment from an intermediate distributor
+(4 x 3.000000000 SOL). The first version required a swap output and returned 0 tokens out of 15, the
+reference case included: its four wallets each got exactly 3.000000000 SOL from a distributor. The
+calibre is now reported per cluster instead of gating the search, and the reference case serves as
+positive control, so any change that makes it disappear is a bug here.
 
-  1. the buying wallets are **fresh** — created shortly before they buy, with no prior history;
-  2. several of them receive **near-identical amounts**, close together in time;
-  3. those amounts come from one funding step, whether that step is a swap output (an amount like
-     1.393934883 SOL, precise to nine decimals) or a deliberate round payment from an intermediate
-     distributor (4 x 3.000000000 SOL);
-  4. they then buy the same token **in sequence**, early on its curve.
+"Fresh" and "near-identical" are the only free parameters, so both are swept rather than picked, the
+freshness cut over several values and the tolerance over four orders of magnitude, with the whole
+sweep printed. A conclusion holding at one setting only shows up as such. Scope is presence, not
+prevalence: see `code/a4_selection_bias.py`.
 
-THE FIRST VERSION OF THIS TEST WAS WRONG, AND THE REFERENCE CASE IS WHAT CAUGHT IT
----------------------------------------------------------------------------------
-It required part 3 to be a *swap output specifically*, taking the author's example amount as the
-definition. Run that way it returned 0 tokens out of 15 — including the reference case, whose four
-wallets were funded with exactly 3.000000000 SOL each, a round figure, from a distributor rather
-than from a conversion. A detector that cannot find the case it was built from is broken, and it
-said so before any conclusion was drawn from it.
-
-The funding calibre is therefore reported per cluster instead of gating the search. Both calibres
-belong to the same chain, one link apart: a conversion pays a distributor, the distributor pays the
-wallets. Requiring one excludes the other.
-
-The reference case now serves as the **positive control**: any change to this script that makes it
-disappear is a bug in the script.
-
-A conjunction of four properties is a much stronger claim than any one of the generic criteria, and
-it can be present in a token where B is absent — B needs three wallets at one amount inside one
-hour, which is neither necessary nor sufficient for what is described above.
-
-This script tests that conjunction on the traded tokens, and reports for each one which of the four
-parts is present. It is a **presence test**: it asks whether the mechanism the author says he saw is
-visible on the tokens he says he saw it on. It is not a prevalence estimate and cannot become one —
-see `code/a4_selection_bias.py` for why.
-
-THRESHOLD HONESTY
------------------
-"Fresh" and "near-identical" are the only two free parameters, so both are swept rather than picked:
-the freshness cut runs over several values and the amount tolerance over four orders of magnitude,
-and the full sweep is printed. A conclusion that only holds at one setting is reported as such.
-
-USAGE
+Usage:
     python3 code/a5_author_pattern.py
 Reads only committed files under ./data/. No network, no key.
 """
@@ -72,8 +47,8 @@ MIN_WALLETS = 2         # the author describes "several wallets", not a fixed co
 
 # A second, stricter tier. Two wallets receiving a common round amount five hours apart is the kind
 # of coincidence any active week produces; the same amount reaching three or more fresh wallets
-# inside two minutes is a dispatch. Both tiers are reported, because the gap between them is the
-# honest measure of how much of the result rests on the loose reading.
+# inside two minutes is a dispatch. Both tiers are reported, so the gap between them shows how much
+# of the result rests on the loose reading.
 FRANC_MIN_WALLETS = 3
 FRANC_MAX_SPAN_S = 120
 
@@ -190,9 +165,9 @@ print(f"MOTIF FRANC  (>={FRANC_MIN_WALLETS} ptf en <={FRANC_MAX_SPAN_S}s) : "
 ctrl = next((r for r in rows if r["token"] == "ODIN_POSITIF"), None)
 if ctrl:
     print(f"CONTROLE POSITIF (cas de reference) : "
-          f"{'OK, retrouve' if ctrl['motif_franc'] else 'ECHEC — detecteur casse'}")
+          f"{'OK, retrouve' if ctrl['motif_franc'] else 'ECHEC, detecteur casse'}")
 
-# --- sensitivity: neither free parameter is allowed to carry the conclusion alone ----------------
+# --- sensitivity: both free parameters swept, so neither carries the conclusion alone ------------
 print("\nBalayage des deux seuils libres (nombre de tokens où le motif est présent) :")
 print(f"{'fraicheur':>10} " + " ".join(f"{t:>9.0e}" for t in (1e-4, 1e-3, 1e-2, 1e-1)))
 sweep = {}
@@ -208,12 +183,12 @@ for fd in (1.0, 3.0, 7.0, 14.0, 30.0):
 out = os.path.join(DATA, "adverse", "a5_author_pattern.json")
 os.makedirs(os.path.dirname(out), exist_ok=True)
 json.dump({
-    "objet": "Test de PRESENCE du motif tel que l'auteur le decrit : portefeuilles frais, "
+    "objet": "Test de presence du motif tel que l'auteur le decrit : portefeuilles frais, "
              "finances par une sortie de swap, montants voisins, sur les tokens qu'il a tradés.",
     "motif_teste": {
         "1_portefeuille_frais": f"cree moins de {FRESH_DAYS:g} jours avant son premier achat, "
-                                f"ou ne dont la naissance tombe dans la fenetre pre-achat",
-        "2_calibre_du_versement": "RAPPORTE, PAS EXIGE : 'precis_swap' (sortie de conversion) "
+                                f"ou dont la naissance tombe dans la fenetre pre-achat",
+        "2_calibre_du_versement": "rapporte, pas exige : 'precis_swap' (sortie de conversion) "
                                   "ou montant rond (versement d'un distributeur intermediaire). "
                                   "Exiger l'un excluait le cas de reference, qui utilise l'autre.",
         "3_montants_voisins": f"au moins {MIN_WALLETS} portefeuilles distincts a "
@@ -227,7 +202,7 @@ json.dump({
     "portee": "Presence, pas prevalence. Cet echantillon est choisi sur l'issue "
               "(voir a4_selection_bias.py) : il peut montrer que le mecanisme est la, jamais "
               "combien il est repandu.",
-    "controle_positif": "Le cas de reference (ODIN_POSITIF) doit ressortir POSITIF. S'il ne "
+    "controle_positif": "Le cas de reference (ODIN_POSITIF) doit ressortir positif. S'il ne "
                         "ressort pas, le detecteur est casse et aucune conclusion n'est lisible. "
                         "La premiere version de ce script le manquait, ce qui a revele le defaut.",
     "n_tokens": len(rows), "n_motif_present": len(pres), "n_motif_franc": len(franc),

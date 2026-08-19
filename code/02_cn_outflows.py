@@ -3,14 +3,14 @@
 
 On part de la SOURCE plutôt que des détenteurs : toutes les sorties de l'adresse sur la période
 visée sont collectées, puis regroupées par montant quasi identique reçu dans un intervalle court.
-Chaque groupe est un découpage — donc un ensemble de portefeuilles vraisemblablement contrôlés par
+Chaque groupe est un découpage, donc un ensemble de portefeuilles vraisemblablement contrôlés par
 la même main.
 
 POURQUOI LE FILTRE DE DATES EST ESSENTIEL
 -----------------------------------------
 Lire une signature coûte 1/1000e d'appel (elles arrivent par pages de 1000) ; lire une transaction
 coûte un appel entier. Sur une adresse de service qui traite ~200 000 transactions par mois, tout
-lire est hors de portée. On pagine donc les signatures — c'est rapide — en ne retenant que celles
+lire est hors de portée. On pagine donc les signatures (c'est rapide) en ne retenant que celles
 de la fenêtre, et on ne lit en détail QUE celles-là.
 
 USAGE

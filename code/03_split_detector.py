@@ -1,33 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Détecteur de SPLIT — la pièce centrale du dépôt.
+"""Détecteur de split, la pièce centrale du dépôt.
 
-HYPOTHÈSE TESTÉE
-----------------
-Un opérateur qui veut faire passer N portefeuilles pour N acheteurs indépendants doit d'abord les
-financer. S'il le fait en découpant une somme via un service de swap, les portefeuilles reçoivent
-des montants **quasi identiques** dans une **fenêtre temporelle courte**. Un montant précis à la
-neuvième décimale (ex. 1.393934883 SOL) répété sur plusieurs adresses n'est pas une coïncidence :
-c'est la signature d'un découpage unique.
+Hypothèse testée : un opérateur qui veut faire passer N portefeuilles pour N acheteurs
+indépendants doit d'abord les financer. S'il découpe une somme via un service de swap, les
+portefeuilles reçoivent des montants quasi identiques dans une fenêtre temporelle courte. Un
+montant précis à la neuvième décimale (ex. 1.393934883 SOL) répété sur plusieurs adresses ne
+se produit pas par hasard : c'est la signature d'un découpage unique.
 
-CE QUE LE SCRIPT MESURE
------------------------
-1. Pour un ensemble de portefeuilles (ex. les principaux détenteurs d'un token), il collecte les
-   entrées de SOL et les regroupe par quasi-égalité de montant + proximité temporelle (splitlib).
-2. Il calcule le **taux de faux positifs** sur un groupe témoin de portefeuilles sans lien.
-   Sans cette mesure, le détecteur ne vaut rien : des montants proches se produisent naturellement.
+Le script fait deux choses. Pour un ensemble de portefeuilles (ex. les principaux détenteurs
+d'un token), il collecte les entrées de SOL et les regroupe par quasi-égalité de montant et
+proximité temporelle (splitlib). Il mesure ensuite le taux de faux positifs sur un groupe
+témoin de portefeuilles sans lien : sans cette mesure, le nombre de splits ne veut rien dire,
+des montants proches se produisent naturellement.
 
-OUTIL EXPLORATOIRE : ne fait pas partie du pipeline reproductible (absent de run_all.py).
-La mesure publiée du signal de split est docs/SPLIT_PHASE1.md + a1_null_model.py / a2_recount.py.
+Outil exploratoire, hors du pipeline reproductible (absent de run_all.py). La mesure publiée
+du signal de split est docs/SPLIT_PHASE1.md + a1_null_model.py / a2_recount.py.
 
-CLIENT
-------
 Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
-($HELIUS_API_KEYS, ou .env non versionné — voir settings.py) et **un échec réseau
-LÈVE** au lieu de se déguiser en résultat vide (docs/PITFALLS.md, règle n°2).
+($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un échec réseau lève au lieu
+de se déguiser en résultat vide (docs/PITFALLS.md, règle n°2).
 
-USAGE
------
+Usage :
     python3 code/03_split_detector.py --mint <MINT> --top 30
     python3 code/03_split_detector.py --wallets w1,w2,w3
     python3 code/03_split_detector.py --mint <MINT> --control 40   # + groupe témoin
@@ -140,7 +134,7 @@ def main() -> None:
                          "window_s": WINDOW_S, "min_cluster": MIN_CLUSTER}}
 
     # Groupe témoin : des portefeuilles pris au hasard parmi des transactions récentes non liées.
-    # C'est ce qui distingue un détecteur d'une illusion.
+    # C'est lui qui donne le taux de faux positifs.
     if a.control:
         slot = rpc_client.rpc("getSlot", [])
         blk = rpc_client.rpc(

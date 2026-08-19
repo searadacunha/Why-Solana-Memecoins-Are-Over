@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""v07 - LA SORTIE : transfert du sac vers un collecteur, puis liquidation.
+"""v07 - la sortie : transfert du sac vers un collecteur, puis liquidation.
 
 Chaine mesuree, 100 % on-chain :
-  1. depuis la tx d'achat du bloc, on releve le COMPTE DE TOKEN (ATA) de chaque
+  1. depuis la tx d'achat du bloc, on releve le compte de token (ATA) de chaque
      wallet du bloc pour ce mint ;
-  2. getSignaturesForAddress(ATA) donne TOUTE la vie de ce compte : l'achat,
+  2. getSignaturesForAddress(ATA) donne toute la vie de ce compte : l'achat,
      puis ce qui sort ;
   3. on classe chaque tx : SELL (l'ATA perd des tokens et le proprietaire gagne
      du SOL) ou TRANSFERT (l'ATA perd des tokens, un autre proprietaire en gagne

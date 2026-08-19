@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
 """Recolte de mints pump.fun crees dans une fenetre de slots donnee.
 
-Principe : dans une transaction de creation pump.fun, la KEYPAIR DU MINT SIGNE la
+Principe : dans une transaction de creation pump.fun, la keypair du mint signe la
 transaction. Un compte signataire dont l'adresse se termine par "pump" est donc un
 mint pump.fun en train d'etre cree. On lit les blocs avec transactionDetails="accounts"
 (leger : pas d'instructions, juste les cles de comptes + drapeaux signataire).
 
-CLIENT
-------
 Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
-($HELIUS_API_KEYS, ou .env non versionné — voir settings.py) et **un échec réseau
-LÈVE** au lieu de se déguiser en bloc sauté. Les slots sautés, eux, renvoient une
-erreur JSON-RPC qui est une réponse légitime (« slot skipped »), tolérée en None
-via tolerate_codes (docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée ici.
+($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un échec réseau lève
+au lieu de se déguiser en bloc sauté. Les slots sautés, eux, renvoient une erreur
+JSON-RPC qui est une réponse légitime (« slot skipped »), tolérée en None via
+tolerate_codes (docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée ici.
 """
 from __future__ import annotations
 import datetime as dt, json, os, sys
@@ -57,7 +55,7 @@ def slot_for_ts(target_ts: int, lo: int = 1,
 
 
 def block_pump_mints(slot: int) -> Optional[list[tuple[str, Optional[str]]]]:
-    """Renvoie [(mint, signature)] des mints pump.fun CREES dans ce bloc."""
+    """Renvoie [(mint, signature)] des mints pump.fun crees dans ce bloc."""
     b = rpc_client.rpc("getBlock", [slot, {
         "encoding": "json", "transactionDetails": "accounts",
         "rewards": False, "maxSupportedTransactionVersion": 0}],

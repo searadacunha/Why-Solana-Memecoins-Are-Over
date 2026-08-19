@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
 """Are the per-token operations linked to each other, or only to a common entry point?
 
-THE QUESTION
-------------
-A split is one actor: a transaction paying N wallets identical amounts has one signer and one
-decision. That much is definitional, not inferred. The open question is whether the splits observed
-on *different* tokens are the same actor, a shared tool, or unrelated users of the same gateway.
+A split is one actor by definition: a transaction paying N wallets identical amounts has one
+signer and one decision. What is open is whether the splits observed on different tokens come
+from the same actor, a shared tool, or unrelated users of the same gateway. Three independent
+tests, none of which can prove identity, each of which strengthens or weakens the link:
 
-Three independent tests, each of which can only strengthen or weaken the link — none can prove
-identity, and the script says so rather than implying otherwise:
+1. Recurring exact amounts. A swap output depends on size, route and the instant price, so the
+   same nine-decimal figure appearing on two unrelated launches is not what conversions produce
+   by chance. Recurrence across tokens is the strongest link available short of a shared
+   address.
 
-1. **Recurring exact amounts.** A swap output depends on size, route and the instant price. The same
-   nine-decimal figure appearing on two unrelated launches is not what conversions produce by
-   chance. Recurrence across tokens is the strongest available link short of a shared address.
+2. Shared wallets. A wallet buying on two of the tokens is a direct link. An operator who burns
+   addresses leaves none, so a null result here is uninformative and is reported as such.
 
-2. **Shared wallets.** A wallet buying on two of the tokens is a direct link. Absence of shared
-   wallets is what one would expect from an operator who burns addresses, so a null result here is
-   uninformative and is reported as such.
+3. Funding sessions. Several tokens' wallets funded from the gateway inside the same short
+   window point to one operator working a batch, or to a busy gateway. The base rate matters,
+   so the observed clustering is compared against the gateway's own traffic.
 
-3. **Funding sessions.** If several tokens' wallets are funded from the gateway inside the same
-   short window, that points to one operator working a batch — or to a busy gateway. The base rate
-   matters, so the observed clustering is compared against the gateway's own traffic.
-
-USAGE
+Usage:
     python3 code/a7_cross_token_links.py
 Reads only committed files under ./data/. No network, no key.
 """
@@ -79,7 +75,7 @@ print(f"\n2. PORTEFEUILLES PRESENTS SUR PLUSIEURS TOKENS : {len(partages) or 'au
 for w, toks in partages.items():
     print(f"   {w}  {', '.join(toks)}")
 if not partages:
-    print("   Resultat NON informatif : un operateur qui brule ses adresses ne laisse pas de")
+    print("   Resultat non informatif : un operateur qui brule ses adresses ne laisse pas de")
     print("   portefeuille partage. L'absence ici ne distingue pas 'acteurs differents' de")
     print("   'meme acteur, adresses jetables'.")
 
@@ -95,7 +91,7 @@ if cur:
     sessions.append(cur)
 multi = [s for s in sessions if len({p[0] for p in s}) >= 2]
 print(f"\n3. SESSIONS DE FINANCEMENT (paiements espaces de moins de 6 h)")
-print(f"   {len(sessions)} sessions, dont {len(multi)} touchant PLUSIEURS tokens")
+print(f"   {len(sessions)} sessions, dont {len(multi)} touchant plusieurs tokens")
 for s in multi:
     toks = sorted({p[0] for p in s})
     print(f"   {s[0][4]} -> {s[-1][4]}  {len(s)} paiements, tokens : {', '.join(toks)}")
@@ -105,7 +101,7 @@ res = {
              "seulement a un point d'entree commun ?",
     "prealable": "Un split est un acteur : une transaction payant N portefeuilles au meme montant "
                  "a un signataire et une decision. Ce qui reste a etablir, c'est si les splits de "
-                 "tokens DIFFERENTS sont le meme acteur, un meme outil, ou des utilisateurs "
+                 "tokens differents sont le meme acteur, un meme outil, ou des utilisateurs "
                  "distincts du meme guichet.",
     "n_tokens_mesures": len(mesures), "n_paiements": len(paiements),
     "n_paiements_avant_token": len(avant),

@@ -1,18 +1,18 @@
 """
-v1_probe_addresses.py — existence and activity profile of every address the
-dossier is tempted to cite as "upstream infrastructure".
+v1_probe_addresses.py: existence and activity profile of every address the
+dossier cites as "upstream infrastructure".
 
-For each address, MEASURED on-chain (Helius):
-  exists        : getAccountInfo != null OR at least 1 signature
+For each address, measured on-chain (Helius):
+  exists        : getAccountInfo != null, or at least 1 signature
   owner         : account owner program (11111... = plain system wallet)
   lamports      : current balance
   sigs_p1       : signatures returned on the first page (cap 1000)
   span_p1_s     : wall-clock span covered by that first page, in seconds
   tx_per_day_p1 : sigs_p1 / span_p1 extrapolated  (only meaningful if saturated)
   newest_ts     : block time of the most recent signature
-  payers/payees : distinct counterparties over the last 100 parsed transactions
-                  (fan-in / fan-out shape — an exchange hot wallet has hundreds
-                  of both and never stops; a burner dispatcher does not)
+  payers/payees : distinct counterparties over the last 100 parsed tx, the
+                  fan-in / fan-out shape. An exchange hot wallet has hundreds
+                  of both and never stops, a burner dispatcher does not.
 
 Output: data/v1_addresses.json + a printed table.
 Usage: python3 v1_probe_addresses.py

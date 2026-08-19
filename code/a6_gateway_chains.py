@@ -1,36 +1,27 @@
 #!/usr/bin/env python3
 """Dated funding chains: swap gateway -> distributor -> fresh wallets -> first buys.
 
-WHAT THIS ANSWERS
------------------
-The entry rule this cohort was traded on was not "the amounts look split". It was narrower: **at
-least one early buyer of the token traces back to one specific swap gateway**, the address referred
-to throughout this repository as G2Y. This script tests that rule token by token and, where it
-holds, reconstructs the chain with timestamps at every link.
+The entry rule for this cohort was a narrow one: at least one early buyer of the token traces
+back to one specific swap gateway, the address called G2Y throughout this repository. This
+script tests that rule token by token and, where it holds, rebuilds the chain with a timestamp
+on every link.
 
-TWO LEVELS, BECAUSE ONE IS NOT ENOUGH
--------------------------------------
-- **hop 0** — the gateway paid an early buyer directly.
-- **hop 1** — the gateway paid an address that then funded an early buyer. The reference case works
-  exactly this way: the gateway does not touch the buying wallets, it pays a distributor which fans
-  the money out. A hop-0-only test is blind to the shape the mechanism actually has, and it reported
-  4 tokens where the two levels together report far more.
+Two levels are tested. At hop 0 the gateway paid an early buyer directly. At hop 1 it paid an
+address that then funded an early buyer, which is how the reference case works: the gateway
+never touches the buying wallets, it pays a distributor that fans the money out. Testing hop 0
+alone found 4 tokens, far fewer than the two levels together.
 
-THE TEMPORAL RULE, WHICH REMOVES CASES RATHER THAN ADDING THEM
---------------------------------------------------------------
-A gateway payment dated *after* the token was created cannot have funded a launch that already
-happened. Every link is therefore checked against the token's creation time, and payments that
-arrive later are dropped and counted separately. This is the difference between a chain and a
-coincidence, and it is the reason two tokens that "have G2Y" are not counted as confirmations.
+Every link is checked against the token's creation time. A gateway payment dated after the
+token was created cannot have funded a launch that already happened, so those links are dropped
+and counted separately. Two tokens that "have G2Y" fail that check and are not counted as
+confirmations.
 
-WHAT IT STILL CANNOT SAY
-------------------------
-Coverage is partial and is printed per token: wallets whose history could not be paged back to
-genesis have an unknown funding origin, and for those a negative is a measurement failure, not an
-observation. A token reported without a chain may simply be one whose buyers were not reachable.
-Absence here is never evidence of absence.
+Coverage is partial and is printed per token. A wallet whose history could not be paged back to
+genesis has an unknown funding origin, so a negative on it is a measurement failure rather than
+an observation: a token reported without a chain may simply be one whose buyers were out of
+reach. Absence here is not evidence of absence.
 
-USAGE
+Usage:
     python3 code/a6_gateway_chains.py
 Reads only committed files under ./data/. No network, no key.
 """
@@ -109,14 +100,14 @@ for pat in FUNDING:
                 else:
                     continue
 
-                # Two temporal rules, and both remove cases rather than adding them.
+                # Two temporal rules. Both remove cases, neither adds any.
                 #
-                # 1. Inside the chain: the gateway must pay the distributor BEFORE the distributor
+                # 1. Inside the chain: the gateway must pay the distributor before the distributor
                 #    pays the buyer. A funder that paid a wallet in 2022 and only received from the
-                #    gateway in 2024 is not a link — the money cannot have flowed that way. Without
-                #    this check the script reported such a chain, which is how the bug was found.
+                #    gateway in 2024 is no link, the money cannot have flowed that way. The script
+                #    reported such a chain before this check existed.
                 if lien["via_recu"] and lien["via_recu"]["ts"] > lien["ts"]:
-                    lien["motif_rejet"] = "guichet paie le distributeur APRES que celui-ci ait " \
+                    lien["motif_rejet"] = "guichet paie le distributeur apres que celui-ci ait " \
                                           "paye le portefeuille : ordre impossible"
                     tardifs.append(lien)
                     continue
@@ -146,7 +137,7 @@ for pat in FUNDING:
 rows.sort(key=lambda r: (not r["guichet_en_amont"], r["token"]))
 conf = [r for r in rows if r["guichet_en_amont"]]
 
-print(f"GUICHET EN AMONT — {len(conf)}/{len(rows)} tokens tradés\n")
+print(f"GUICHET EN AMONT : {len(conf)}/{len(rows)} tokens tradés\n")
 print(f"{'token':<13} {'couv.':>6} {'hop0':>5} {'hop1':>5} {'écartés':>8}  premier lien daté")
 for r in rows:
     prem = r["chaines"][0]["quand"] if r["chaines"] else ""
@@ -171,11 +162,11 @@ json.dump({
     "objet": "Chaines datees guichet de swap -> distributeur -> portefeuilles frais -> premiers "
              "achats, sur les tokens tradés.",
     "guichet": GATEWAY,
-    "regle_temporelle": "Tout lien posterieur a la creation du token est ECARTE et compte a part : "
+    "regle_temporelle": "Tout lien posterieur a la creation du token est ecarte et compte a part : "
                         "un versement qui arrive apres le lancement ne peut pas l'avoir finance.",
     "portee": "Presence, pas prevalence. La couverture est partielle et rapportee par token : "
               "un portefeuille dont l'historique n'a pas ete remonte jusqu'a la genese a une "
-              "origine INCONNUE, et un negatif ne vaut rien pour lui.",
+              "origine inconnue, et un negatif ne vaut rien pour lui.",
     "n_tokens": len(rows), "n_guichet_en_amont": len(conf),
     "n_adresses_amont_a_historique_incomplet": len(incomplete),
     "tokens": rows,
