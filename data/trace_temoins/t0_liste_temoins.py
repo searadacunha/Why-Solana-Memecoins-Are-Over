@@ -19,8 +19,23 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "t0_temoins.json"
 ASCII = {"₫øⒼё": "DONGOE"}
 
 
+# Le schema de cibles.json a change depuis: 10_select_temoins.py ne produit plus
+# `acheteurs_distincts` ni `analysable_financement`. On le dit au lieu de lever un
+# KeyError nu. La correspondance avec les champs actuels n'est pas devinable, il
+# faut la retrouver: t0_temoins.json committe garde les valeurs d'alors.
+ATTENDUS = ("acheteurs_distincts", "analysable_financement")
+
+
 def main():
     d = json.load(open(CIBLES))
+    exemple = (d.get("temoins") or d.get("cibles") or [{}])[0]
+    absents = [k for k in ATTENDUS if k not in exemple]
+    if absents:
+        raise SystemExit(
+            "%s ne porte plus %s.\n"
+            "  Ce script attend le schema d'avant la regeneration de cibles.json par\n"
+            "  10_select_temoins.py. Les valeurs d'alors sont dans t0_temoins.json."
+            % (CIBLES, " ni ".join(absents)))
     rows = []
     for t in d["temoins"]:
         sym = t["symbole"]
