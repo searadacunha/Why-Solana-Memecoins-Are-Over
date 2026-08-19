@@ -1,4 +1,4 @@
-# `code/` — how to re-run every measurement
+# `code/`: how to re-run every measurement
 
 Stdlib-only Python 3.9+. No install step. Relative paths only. No credential in
 any file.
@@ -8,10 +8,10 @@ git clone <repo> && cd <repo>
 python3 code/run_all.py --strict
 ```
 
-That runs the 22 offline scripts — no API key, no network, ~20 s — and
-then **byte-compares every regenerated table and JSON against the committed
-one**. A green run means the numbers in `docs/` are what this code produces
-from this data today, not what it produced on some earlier state of either.
+That runs the 22 offline scripts (no API key, no network, ~20 s), then
+byte-compares every regenerated table and JSON against the committed one. A
+green run means the numbers in `docs/` are what this code produces from this
+data today, not what it produced on some earlier state of either.
 
 ```
   ok    p0_pitfalls_check.py               0.6 s
@@ -26,16 +26,15 @@ from this data today, not what it produced on some earlier state of either.
 
 All 22 offline scripts pass, `p1_readme_check.py` included.
 
-**`p1_readme_check.py` is the guard that keeps the prose honest, not just
-another script that happens to pass.** It recomputes every figure quoted in the
-root `README.md` from the committed artefacts and exits non-zero the moment the
-prose and the measurement disagree — today it reproduces all 22 sourced claims
-with 0 mismatch and lists the 15 figures that still have no artefact behind them
-(counted, never fatal: *unsourced* is not the same defect as *wrong*). The two
-lines are independent and both have to be read: *"reproduced byte for byte"*
-says the code still produces the committed artefacts, *"0 failed"* says the
-narrative has not drifted from them. When p1 does go red, fix the README or fix
-the measurement; never adjust the expected value to make the runner green.
+`p1_readme_check.py` recomputes every figure quoted in the root `README.md`
+from the committed artefacts and exits non-zero the moment the prose and the
+measurement disagree. Today it reproduces all 22 sourced claims with 0 mismatch
+and lists the 15 figures that still have no artefact behind them (counted, never
+fatal: *unsourced* is not the same defect as *wrong*). The two lines report
+different things: *"reproduced byte for byte"* says the code still produces the
+committed artefacts, *"0 failed"* says the narrative has not drifted from them.
+When p1 goes red, fix the README or fix the measurement; never adjust the
+expected value to make the runner green.
 
 ---
 
@@ -50,11 +49,11 @@ the measurement; never adjust the expected value to make the runner green.
 ### 1. On-chain verification of the creation-slot signature
 
 The claim is that the whole bonding curve is bought back within the token's
-*creation slot*. `v05` deliberately **does not start from the operator wallets**
-— that would be circular. It takes the 42 creation slots, pulls the full block,
-enumerates *every* successful buy of the mint in that block whoever the signer
-is, and calls "buy block" the set of buyers above 5 SOL. Identity is used only
-to pick which tokens to look at, never to decide what counts.
+*creation slot*. `v05` does not start from the operator wallets, which would be
+circular. It takes the 42 creation slots, pulls the full block, enumerates
+*every* successful buy of the mint in that block whoever the signer is, and
+calls "buy block" the set of buyers above 5 SOL. Identity is used only to pick
+which tokens to look at, never to decide what counts.
 
 ```bash
 export HELIUS_API_KEYS=...          # free tier is enough
@@ -72,11 +71,11 @@ git-ignored while everything derived from it is committed.
 `t1_base_rate_sorties.py` is the quantitative core, and it is written to be
 attacked:
 
-* the simulator is **re-implemented from scratch** in that one file — it reads
-  the raw swap stream and nothing else — and is then reconciled **token by
-  token** against a second, independently written implementation. The
-  agreement block prints at the end of the run (it needs the unpublished
-  working corpus; the archived result is in `docs/PITFALLS.md`, pitfall P2);
+* the simulator is **re-implemented from scratch** in that one file, reading
+  the raw swap stream and nothing else, then reconciled **token by token**
+  against a second, independently written implementation. The agreement block
+  prints at the end of the run (it needs the unpublished working corpus; the
+  archived result is in `docs/PITFALLS.md`, pitfall P2);
 * **no lookahead**: a decision taken on the 30 s bucket *k* executes at
   `t_e + 30(k+1)`, because the price of bucket *k* is only known once it
   closes. On this data the price moves 6.2 % per 30 s step in the median, so
@@ -109,8 +108,8 @@ python3 code/t5_horizon_1h_24h.py
 
 Swap prices are **SOL per token**; GeckoTerminal returns **USD per token**.
 Dividing one by the other without converting inflates every multiple by the
-price of SOL (~73× over this window). `t5` converts through the hourly series
-**and then verifies the conversion against the data itself**: for each token it
+price of SOL (~73× over this window). `t5` converts through the hourly series,
+then verifies the conversion against the data itself: for each token it
 compares the open of its first candle (USD) to the robust price of its first
 seconds of swaps (SOL); the ratio must reproduce the SOL price. That check
 prints on every run.
@@ -125,7 +124,7 @@ prints on every run.
 | **Public HTTP, no key** | `fetch_sol_usd`, `fetch_gt_ohlcv` | GeckoTerminal, ~300 requests, rate-limited client |
 | **Solana RPC** | `v05`–`v08`, `v1_*`, `v2_*`, `r1_*`, `a8_wallet_horde`, `09_bundle_snipe` | `HELIUS_API_KEYS` (free tier) |
 | **Unpublished raw corpus** | `v01`–`v04`, `make_public_data` | `PUMP_PRIVATE_ROOT` |
-| **Deposit address** | `expl_ledger` | `EXPL_LEDGER_ADDR` **and** `HELIUS_API_KEYS` (a populated `data/cache/` replaces the key, never the address — which is published, see below) |
+| **Deposit address** | `expl_ledger` | `EXPL_LEDGER_ADDR` **and** `HELIUS_API_KEYS` (a populated `data/cache/` replaces the key, never the address, which is published, see below) |
 | **Figures** | `f_*` | `matplotlib`, the only third-party package anywhere |
 
 ```bash
@@ -138,7 +137,7 @@ and `settings.redact_key()` strips them from anything printed. Several keys can
 be given comma-separated: the clients rotate round-robin and fail over on
 429/5xx, which is what lets the deep history walks finish.
 
-**Call budget.** `v05` 42 `getBlock`; `v06`/`v07` ~860 `getTransaction`;
+Call budget: `v05` 42 `getBlock`; `v06`/`v07` ~860 `getTransaction`;
 `v08` a backward `getSignaturesForAddress` walk capped at 40 pages per address
 (a wallet past the cap is flagged `censure=true`, so its birth date is reported
 as an *upper bound* rather than silently truncated); `r1_*` paginate the
@@ -148,12 +147,11 @@ enhanced-transactions endpoint. Everything is cached on first fetch.
 
 ## The deposit-wallet ledger (`expl_ledger.py`)
 
-The one measurement in this repository whose subject is the author's own money
-rather than someone else's chain. It answers a single question — *what actually
-landed on the exchange deposit address between 2024-10-01 and 2025-02-02?* — and
-it exists because five figures in the root `README.md` were asserted rather than
-measured. They are now measured, and the prose moved onto the measurement rather
-than the measurement onto the prose.
+The one measurement here whose subject is the author's own money rather than
+someone else's chain. It answers one question: *what actually landed on the
+exchange deposit address between 2024-10-01 and 2025-02-02?* Five figures in the
+root `README.md` used to be asserted rather than measured. They are measured
+now, and the prose was moved onto the measurement.
 
 ```bash
 export EXPL_LEDGER_ADDR=6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU   # published, see below
@@ -164,61 +162,58 @@ python3 code/expl_ledger.py                # -> docs/out/expl_ledger.json
 | | |
 |---|---|
 | **Incoming** | the deposit wallet's own *positive* balance delta on a successful transaction. 259 transfers, 1 226.4663 SOL, 244 315.58 USD over the window |
-| **Outgoing** | the exchange's sweeps, 190 of them, 1 226.4566 SOL — reported **separately and excluded** from proceeds |
+| **Outgoing** | the exchange's sweeps, 190 of them, 1 226.4566 SOL, reported **separately and excluded** from proceeds |
 | **Pass-through check** | 1 226.4663 in vs 1 226.4566 out, residual 0.0098 SOL. A deposit address holds no balance, and that is what validates the model |
-| **Price** | Binance `SOLUSDT` **daily close, per transfer, on that transfer's own UTC day** — never one average price over the window. `missing_price_days` is `[]`, and a missing day would raise rather than default |
+| **Price** | Binance `SOLUSDT` **daily close, per transfer, on that transfer's own UTC day**, never one average price over the window. `missing_price_days` is `[]`, and a missing day would raise rather than default |
 | **Cache** | every RPC response and the kline series land in `data/cache/` (git-ignored, 455 files). After the first run the script needs the address but no key and no network, and reproduces the artefact byte for byte |
 
-**The total is the net of every incoming transfer, winners and losers alike.**
-There is no best-trades table anywhere and there will not be one: the number is
-strong *because* it already absorbs the losing trades.
+The total is the net of every incoming transfer, winners and losers alike.
+There is no best-trades table anywhere and there will not be one: the figure
+already absorbs the losing trades.
 
-**What the artefact publishes, and what it refuses to.** Per-month SOL/USD/n,
-window totals, sweep totals, counts — and nothing else. No transaction
-signature (one is enough to identify the wallet), no sender address. For the 80
-distinct senders, the **count** is published, never the list. Most are the
-author's own trading wallets, but the same heuristic resolves four of them to
-third-party exchange hot wallets this repository labels elsewhere, so ownership
-is not claimed: the artefact files any identity behind a sender under
-`NON_ETABLI`.
+The artefact publishes per-month SOL/USD/n, window totals, sweep totals and
+counts, and nothing else. No transaction signature (one is enough to identify
+the wallet), no sender address. For the 80 distinct senders, the count is
+published, never the list. Most are the author's own trading wallets, but the
+same heuristic resolves four of them to third-party exchange hot wallets this
+repository labels elsewhere, so ownership is not claimed: the artefact files any
+identity behind a sender under `NON_ETABLI`.
 
-Two limits are stated in the artefact itself rather than left for a reader to
-discover. Sender attribution is a **heuristic** — the counterparty with the most
-negative delta in the same transaction — so it bounds the distinct-sender count
-but is not an exact transfer-level decomposition; this is why the *counts* are
-weaker than the *money*. And an incoming transfer is not provably proceeds: SOL
-sent back from the exchange and re-deposited would be capital returning. Every
-positive delta is counted (that is the measurement), and the number of incoming
-transfers whose heuristic sender is also a sweep recipient — the only
-return-of-capital signature visible from this wallet — is measured and published
-so a reader can subtract it. It is 0.
+The artefact states its own two limits. Sender attribution is a heuristic, the
+counterparty with the most negative delta in the same transaction, so it bounds
+the distinct-sender count without being an exact transfer-level decomposition;
+this is why the *counts* are weaker than the *money*. And an incoming transfer
+is not provably proceeds: SOL sent back from the exchange and re-deposited would
+be capital returning. Every positive delta is counted (that is the measurement),
+and the number of incoming transfers whose heuristic sender is also a sweep
+recipient, the only return-of-capital signature visible from this wallet, is
+measured and published so it can be subtracted. It is 0.
 
-**The address is published.** It is a KYC'd exchange deposit address —
-`6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU` — so publishing it attaches the
-author's legal identity to this dossier permanently; that is a deliberate
-trade, made in 2026-08 (see the root `README.md`, *Author*): in exchange, the
-ledger stops being an attested artefact and becomes verifiable by anyone
-against the chain. Until then the address was redacted behind a salted-HMAC
-label, `RDCT-838bf381fe` (a plain hash would have been an enumeration oracle —
-anyone could shortlist candidate deposit addresses from the published
-fingerprints and confirm them by hashing); that scheme is retired, and the
-`map_hmac` block was removed from `code/redactions.json` (its `history` field
-records the change). The address is still read
-from `$EXPL_LEDGER_ADDR` exactly like `PUMP_PRIVATE_ROOT`
-(`settings.expl_ledger_addr()`, clear error when unset): the script measures
-the address it is given, and the artefact records which one that was. It
-appears verbatim in the artefact and in the cache filenames; every write path
-still runs through `redact` inside `pumplib.emit`, so re-adding an entry to
-`code/redactions.json` would scrub it again with no other change. Note what
-publishing implies: the artefact keeps publishing **aggregates only** — no
-signature, no sender list — but with the address in the clear both are one
-explorer query away, so that is a statement of scope, not a privacy defence.
+The address is published. `6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU` is a
+KYC'd exchange deposit address, so publishing it attaches the author's legal
+identity to this dossier permanently. That trade was made deliberately in
+2026-08 (see the root `README.md`, *Author*): in exchange, the ledger stops
+being an attested artefact and becomes verifiable by anyone against the chain.
+Until then the address was redacted behind a salted-HMAC label,
+`RDCT-838bf381fe` (a plain hash would have been an enumeration oracle: anyone
+could shortlist candidate deposit addresses from the published fingerprints and
+confirm them by hashing). That scheme is retired, and the `map_hmac` block was
+removed from `code/redactions.json`, whose `history` field records the change.
+The address is still read from `$EXPL_LEDGER_ADDR` exactly like
+`PUMP_PRIVATE_ROOT` (`settings.expl_ledger_addr()`, clear error when unset): the
+script measures the address it is given, and the artefact records which one that
+was. It appears verbatim in the artefact and in the cache filenames; every write
+path still runs through `redact` inside `pumplib.emit`, so re-adding an entry to
+`code/redactions.json` would scrub it again with no other change. The artefact
+keeps publishing aggregates only, no signature and no sender list, but with the
+address in the clear both are one explorer query away: that is a statement of
+scope, not a privacy defence.
 
 `run_all.py` lists it as `[addr+net]` and skips it with the missing condition
-named — `needs $EXPL_LEDGER_ADDR (published in README.md, 'Author')` or `needs
-$HELIUS_API_KEYS or a populated data/cache/` — so a clean clone reports a
-reason instead of a failure. Its
-artefact lives in `docs/out/`, so `--strict` byte-compares it like every other.
+named, `needs $EXPL_LEDGER_ADDR (published in README.md, 'Author')` or `needs
+$HELIUS_API_KEYS or a populated data/cache/`, so a clean clone reports a reason
+instead of a failure. Its artefact lives in `docs/out/`, so `--strict`
+byte-compares it like every other.
 
 ---
 
@@ -228,14 +223,14 @@ artefact lives in `docs/out/`, so `--strict` byte-compares it like every other.
 `data/floor_capture_public.jsonl.gz` (293 captures, 511 508 swaps, committed).
 Set `PUMP_PRIVATE_ROOT` and the exact same code reads the 645 raw capture files
 instead. The published corpus is rounded to 6 significant digits on `sol` and 8
-on `tokens`/`price` — **T1 comes out bit-identical either way**, all 15 policies,
-which is the empirical answer to "does your rounding matter". Rejection counts
-are reported identically too: the 352 empty captures dropped at publication time
-are read back from `data/MANIFEST.json` rather than silently disappearing.
+on `tokens`/`price`, and T1 comes out bit-identical either way, all 15 policies.
+Rejection counts are reported identically too: the 352 empty captures dropped at
+publication time are read back from `data/MANIFEST.json` rather than silently
+disappearing.
 
-**Determinism was a bug, then a fix.** `Counter.most_common` leaves ties in
-insertion order, which depends on hash randomisation — two runs of `m4` could
-swap two addresses tied at 14 tokens. Sorting explicitly on `(-count, address)`
+**Determinism.** `Counter.most_common` leaves ties in insertion order, which
+depends on hash randomisation: two runs of `m4` could swap two addresses tied at
+14 tokens. Sorting explicitly on `(-count, address)`
 made the output stable across `PYTHONHASHSEED`. The rejection dictionary printed
 in the table footers was sorted for the same reason.
 
@@ -245,16 +240,16 @@ in the table footers was sorted for the same reason.
 default output is redirected to `data/sample/`, so a 20-token run can never
 silently replace a 289-token table.
 
-**Interpreter pin for byte-exactness.** The random resampling is
-version-independent by construction (an explicit LCG, not `random`), so every
-count reproduces on any CPython. Two *floating-point aggregates* do not: the
-log-log ATH/MC elasticity in `t2` and the mean-based cluster-bootstrap CI in
-`m5` differ in their last ~1e-15 across libm builds, so their committed JSON is
-byte-identical on **CPython 3.12 and 3.13** but not on 3.9-3.11 (where the code
-still runs and every rounded figure is unchanged). CI therefore pins the
-`--strict` byte comparison to 3.12/3.13; that is the honest scope of "byte for
-byte", and the fix if you want the full 3.9+ matrix green is to round those two
-15-digit values to a meaningful precision.
+**Interpreter pin.** The random resampling is version-independent by
+construction (an explicit LCG, not `random`), so every count reproduces on any
+CPython. Two *floating-point aggregates* do not: the log-log ATH/MC elasticity
+in `t2` and the mean-based cluster-bootstrap CI in `m5` differ in their last
+~1e-15 across libm builds, so their committed JSON is byte-identical on
+**CPython 3.12 and 3.13** but not on 3.9-3.11 (where the code still runs and
+every rounded figure is unchanged). CI therefore pins the `--strict` byte
+comparison to 3.12/3.13. That is the scope of "byte for byte" here; to get the
+full 3.9+ matrix green, round those two 15-digit values to a meaningful
+precision.
 
 ---
 
@@ -265,20 +260,20 @@ python3 code/check_no_secrets.py [--identity personal_strings.txt]
 ```
 
 Exits non-zero on: 32-hex/UUID/`sk-` literals, Telegram tokens and bot handles,
-`api-key=` in a URL query string, absolute home paths (`/Users/...`, `/home/...`), credential files
-(`.env`, `*.pem`, session dumps), any key currently live in the environment,
-personal strings from an out-of-band list, oversized files, and unapplied
-redactions. `"I checked"` becomes a command with an exit code.
+`api-key=` in a URL query string, absolute home paths (`/Users/...`,
+`/home/...`), credential files (`.env`, `*.pem`, session dumps), any key
+currently live in the environment, personal strings from an out-of-band list,
+oversized files, and unapplied redactions.
 
-Two deliberate refinements, each from a false result it produced:
+Two refinements, each of them from a false positive it produced:
 
 * `11111111111111111111111111111111` is the Solana System Program id and matches
-  "32 hex" in every account dump — matches made of ≤ 2 distinct characters are
+  "32 hex" in every account dump, so matches made of ≤ 2 distinct characters are
   not keys;
-* the scanner's own pattern table matches its own patterns — lines carrying
+* the scanner's own pattern table matches its own patterns, so lines carrying
   `# noqa: leakscan` are exempt, rather than exempting the whole file.
 
-### Redaction — one narrow exception to publishing addresses in the clear
+### Redaction: one narrow exception to publishing addresses in the clear
 
 Addresses and mints are public chain data and are published unmasked on
 purpose: masking them would make every claim unverifiable. The exception is that
@@ -290,25 +285,25 @@ hashes only**: the repository holds neither the offending strings nor the word
 list used to find them (that list is passed to `build_redactions.py --wordlist`
 from outside the repo). Anyone already holding an address can confirm what it
 became by hashing it. Labels contain a hyphen, so they can never be read as
-base58, and the substitution is injective — every count, cluster and graph
+base58, and the substitution is injective, so every count, cluster and graph
 measure is unchanged. 43 identifiers out of 212 201 scanned (0.02 %), none of
 them in the operator clusters the dossier analyses.
 
 A 44th entry used to be there for **privacy rather than decency**: the exchange
 deposit address measured by `expl_ledger.py`, behind a salted-HMAC label. It was
-removed in 2026-08 when the author chose to publish the address in the clear —
+removed in 2026-08 when the author chose to publish the address in the clear;
 see *The deposit-wallet ledger* above. The `map_hmac` machinery in
 `code/redact.py` remains, currently mapping nothing.
 
 Redaction is applied **at write time**, inside `common.dump_json`,
-`pumplib.emit`, `lib_verif.save` and `r1lib.save` — not as a post-hoc pass. A
+`pumplib.emit`, `lib_verif.save` and `r1lib.save`, not as a post-hoc pass. A
 re-run from the raw network cache, which still holds the original strings,
 therefore cannot undo it. `sanitize_data.py --check` verifies the invariant.
 
-> The first version of this got it wrong in an instructive way. A Solana
-> *signature* is 87–88 base58 characters, so a plain `{32,44}` pattern matched a
-> 44-character **window inside** a signature — and a slur can occur by chance
-> inside an 88-character random string. The scrubber duly rewrote that window
+> The first version got this wrong. A Solana *signature* is 87–88 base58
+> characters, so a plain `{32,44}` pattern matched a 44-character window inside
+> a signature, and a slur can occur by chance inside an 88-character random
+> string. The scrubber duly rewrote that window
 > and silently corrupted the signature, leaving it unverifiable on any explorer.
 > The pattern is now anchored on both ends, and `sanitize_data.py` fails hard if
 > it ever finds a label welded to base58 characters, because that failure is
@@ -335,7 +330,7 @@ therefore cannot undo it. `sanitize_data.py --check` verifies the invariant.
 | `p0_pitfalls_check.py` | recomputes every figure quoted in `docs/PITFALLS.md` from `data/` alone |
 | `m1_corpus.py` | corpus perimeter: what is in, what was dropped, why |
 | `m2_entry_price.py` | price actually paid vs pool price |
-| `m3_operators.py` | operator clusters by shared wallets — **and the three attacks on that result** |
+| `m3_operators.py` | operator clusters by shared wallets, **and the three attacks on that result** |
 | `m4_infra_ubiquity.py` | shared infrastructure, and how much of the graph it fabricates on its own |
 | `m5_roundtrip.py` | round trip under 10 exit policies |
 | `m6_horizon.py` | +1 h/+2 h/+4 h/+24 h, matched subset vs cross-section stated separately |
@@ -343,7 +338,7 @@ therefore cannot undo it. `sanitize_data.py --check` verifies the invariant.
 | `v01`–`v08` | on-chain verification chain, creation slot → curve → exit → wallet age |
 | `v1_probe_addresses.py` | existence and activity of every infrastructure address the dossier quotes |
 | `v2_dispatcher_burst.py`, `r1_*` | funding-burst geometry, and the dust/funding separation that kills "N wallets funded in T seconds" |
-| `a1_null_model.py` | how often the split detector's own criteria fire on random wallet groups — **the measurement that retired criterion C** |
+| `a1_null_model.py` | how often the split detector's own criteria fire on random wallet groups: **the measurement that retired criterion C** |
 | `a2_recount.py` | every phase-1 token recounted under the criteria that survive `a1`, plus Fisher's exact test against both control groups |
 | `a3_hub_origin.py` | phase-1 distribution hub: genesis, fan-out shape, and the upstream addresses that stay out of reach |
 | `a4_selection_bias.py` | how far the phase-1 cohort is from a random sample, and which claims that forbids |
@@ -351,7 +346,7 @@ therefore cannot undo it. `sanitize_data.py --check` verifies the invariant.
 | `a6_gateway_chains.py` | dated chains swap gateway -> distributor -> fresh wallets |
 | `a7_cross_token_links.py` | are the per-token operations linked to each other? |
 | `exit_ladder.py` | a mechanical exit policy stated as executable code and measured |
-| `a9_g2y_prelaunch.py` | act I: the pre-launch funding burst — nine wallets, one amount to nine decimals, 343 s — and the two collections of that token that disagree |
+| `a9_g2y_prelaunch.py` | act I: the pre-launch funding burst (nine wallets, one amount to nine decimals, 343 s) and the two collections of that token that disagree |
 | `expl_ledger.py` | what actually landed on the exchange deposit address, 2024-10-01 → 2025-02-02: every incoming SOL transfer, valued at its own UTC day's close, plus the pass-through check against the exchange's sweeps |
 | `p1_readme_check.py` | recomputes every figure quoted in the root `README.md` from the committed artefacts; **exits non-zero on disagreement** |
 | `make_public_data.py` | builds `data/` from the raw corpus; published so the reduction is auditable |
