@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""ETAPE 0 — la liste des 9 temoins, recopiee telle quelle de cibles.json.
+"""Etape 0 : la liste des 9 temoins, recopiee telle quelle de cibles.json.
 
-AUCUN CHOIX N'EST FAIT ICI. La selection des temoins a ete pre-enregistree en amont
-(fenetre de +-200 slots autour de trois ancres, exclusion de `complete` et de KOTH, 3 par fenetre) et
-elle ne portait que sur la date de creation et la performance de marche. On la prend en bloc, y
-compris les temoins pauvres en acheteurs : retirer B&D (2 acheteurs) apres avoir vu les resultats
-serait un choix dependant du resultat, exactement ce que le pre-enregistrement interdit.
+Aucun choix n'est fait ici. La selection est figee en amont (fenetre de +-200 slots
+autour de trois ancres, exclusion de `complete` et de KOTH, 3 par fenetre) et ne
+portait que sur la date de creation et la performance de marche. On la prend en bloc,
+temoins pauvres en acheteurs compris : retirer B&D (2 acheteurs) apres avoir vu les
+resultats serait un choix dependant du resultat, ce que le pre-enregistrement interdit.
 
-Les etiquettes ASCII sont uniquement des noms de fichiers ; le mint reste la seule identite.
+Les etiquettes ASCII sont des noms de fichiers ; le mint reste la seule identite.
 """
 from __future__ import annotations
 import json, os
