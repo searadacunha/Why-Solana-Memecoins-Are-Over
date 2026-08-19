@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""LANCEUR — applique aux 9 temoins la procedure des cibles, sans en changer un seuil.
+"""Lanceur : applique aux 9 temoins la procedure des cibles, sans en changer un seuil.
 
 Les trois etapes sont les scripts des cibles recopies a l'identique (t1_/t2_/t3_ = etape1_/etape2_/
 etape3_ de trace_optimus). Aucun parametre n'est touche : N_BUYERS=40, MIN_INFLOW=0.05,
 PREBUY_DAYS=21, REL_TOL=1e-4, WINDOW_S=3600, MIN_CLUSTER=3, MAX_PAGES=400.
 
+Lit t0_temoins.json. Chaque etape ecrit ses fichiers e1/e2/e3 a cote du script, et sa sortie console
+est recopiee dans t_<label>.log.
+
 Deux temoins (Calm, faith) ont deja ete passes par cette meme procedure pendant l'analyse des cibles.
-Leurs fichiers e1/e2 sont repris tels quels — les recalculer donnerait le meme resultat et
+Leurs fichiers e1/e2 sont repris tels quels, les recalculer donnerait le meme resultat et
 consommerait le budget de requetes. Le drapeau `deja_mesure_pendant_les_cibles` le dit dans la
 synthese.
 
-USAGE
+Usage :
     python3 t_run_all.py                 # tous les temoins
     python3 t_run_all.py --only CREEKS BandD
 """

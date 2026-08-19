@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
-"""ETAPE 9 — d'ou vient l'argent des bailleurs des premiers acheteurs d'OPTIMUS ?
+"""Etape 9 : d'ou vient l'argent des bailleurs des premiers acheteurs d'OPTIMUS ?
 
-DIFFERENCE AVEC L'ETAPE 4
--------------------------
-L'etape 4 remontait deux ou trois graines a la fois, en serie, avec une pagination a 60 000 pages :
-elle n'a jamais fini. Ici on remonte TOUS les bailleurs prives des 40 premiers acheteurs, en
-parallele sur les cles disponibles, avec des bornes DECLAREES. Un noeud dont la pagination bute sur
-le plafond est rendu avec `genesis_reached=false` : ses sources ne valent alors que comme
-« au moins ceci », jamais comme « voici tout ».
+Lit e8_funding_complet_OPTIMUS.json, ecrit e9_origine_OPTIMUS.json.
 
-CE QU'ON CHERCHE
-----------------
+Difference avec l'etape 4 : celle-ci remontait deux ou trois graines a la fois, en serie, avec une
+pagination a 60 000 pages, et n'a jamais fini. Ici on remonte tous les bailleurs prives des 40
+premiers acheteurs, en parallele sur les cles disponibles, avec des bornes declarees. Un noeud dont
+la pagination bute sur le plafond est rendu avec `genesis_reached=false` : ses sources ne valent
+alors que comme « au moins ceci », jamais comme « voici tout ».
+
+Ce qu'on cherche :
 1. G2Y (G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t) parmi les contreparties, a n'importe quel
-   niveau. Precaution : G2Y n'est mesuree active que de decembre 2025 a avril 2026 ; OPTIMUS date
-   d'octobre 2024. Son absence sur des chaines de 2024 est ATTENDUE et suggere une autre adresse a
-   l'epoque — ce n'est pas un echec de l'hypothese.
-2. Tout autre terminal connu (echange, service de swap, pont). Aboutir la est un FAIT DE ROUTAGE,
+   niveau. Precaution : G2Y n'est mesuree active que de decembre 2025 a avril 2026, OPTIMUS date
+   d'octobre 2024. Son absence sur des chaines de 2024 est attendue et suggere une autre adresse a
+   l'epoque, ce n'est pas un echec de l'hypothese.
+2. Tout autre terminal connu (echange, service de swap, pont). Aboutir la est un fait de routage,
    pas une preuve d'implication du service.
-3. Les bailleurs PRIVES communs a plusieurs premiers acheteurs : ce sont eux qui portent la
+3. Les bailleurs prives communs a plusieurs premiers acheteurs : ce sont eux qui portent la
    signature de coordination.
 
-USAGE
+Usage :
     python3 etape9_origine_parallele.py [--depth 2] [--max-pages 60] [--workers 5]
 """
 from __future__ import annotations
@@ -132,7 +131,7 @@ def main():
     keys = load_keys()
     d = json.load(open(a.funding))
 
-    # graines : tous les bailleurs PRIVES (hors terminaux connus) des 40 premiers acheteurs
+    # graines : tous les bailleurs prives (hors terminaux connus) des 40 premiers acheteurs
     seeds, funded_by = [], defaultdict(set)
     for w in d["wallets"]:
         for f in w["inflows"]:

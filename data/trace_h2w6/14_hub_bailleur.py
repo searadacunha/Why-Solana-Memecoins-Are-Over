@@ -1,25 +1,22 @@
 #!/usr/bin/env python3
-"""Que FAIT le bailleur ? Cartographie ancree dans le temps, via l'API PARSEE de Helius.
+"""Que fait le bailleur ? Cartographie ancree dans le temps, via l'API parsee de Helius.
 
-POURQUOI CETTE MESURE EST NECESSAIRE
-------------------------------------
-Trouver qu'un bailleur a finance 9 des 40 premiers acheteurs ne dit pas ce qu'IL est. Deux lectures
-opposees restent ouvertes :
-  (a) c'est un distributeur DEDIE : il n'alimente qu'une petite flotte, avec des montants repetes ;
-  (b) c'est un SERVICE (routeur de bot, depot d'echange) : il alimente des milliers d'adresses sans
-      lien entre elles, et croiser 9 de ses clients parmi 40 acheteurs ne prouve rien.
-Seule la distribution de ses sorties tranche. On la mesure sur une fenetre ANCREE dans l'epoque du
-token, pas sur son activite d'aujourd'hui.
+Qu'un bailleur ait finance 9 des 40 premiers acheteurs ne dit pas ce qu'il est. Deux lectures
+restent ouvertes :
+  (a) distributeur dedie : il n'alimente qu'une petite flotte, avec des montants repetes ;
+  (b) service (routeur de bot, depot d'echange) : il alimente des milliers d'adresses sans lien
+      entre elles, et croiser 9 de ses clients parmi 40 acheteurs ne prouve rien.
+Seule la distribution de ses sorties tranche, mesuree sur une fenetre ancree dans l'epoque du token
+et non sur son activite d'aujourd'hui.
 
-METHODE
--------
-`GET /v0/addresses/{addr}/transactions` rend 100 transactions PARSEES par appel et accepte `before=
-<signature>`. On part de la signature datee du virement de decembre 2024 : on atterrit dans l'epoque
-utile sans traverser les millions de transactions de 2025-2026 (piege nº1).
-Mesure par DELTA DE SOLDE (`accountData[].nativeBalanceChange`), jamais par les seuls transferts.
+`GET /v0/addresses/{addr}/transactions` rend 100 transactions parsees par appel et accepte
+`before=<signature>`. On part de la signature datee du virement de decembre 2024 pour atterrir dans
+l'epoque utile sans traverser les millions de transactions de 2025-2026 (piege nº1). Mesure par
+delta de solde (`accountData[].nativeBalanceChange`), jamais par les seuls transferts.
 
-USAGE
-    python3 14_hub_bailleur.py --addr <ADDR> --anchor <SIG> --pages 40 --label G9X7F4Jz
+Ecrit le profil du hub en JSON vers --out (defaut e5_hub_<label>.json).
+
+Usage : python3 14_hub_bailleur.py --addr <ADDR> --anchor <SIG> --pages 40 --label G9X7F4Jz
 """
 from __future__ import annotations
 import argparse, json, time

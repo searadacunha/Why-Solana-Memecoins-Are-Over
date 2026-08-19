@@ -12,6 +12,10 @@ Reads ONLY the published files in ./data/ (no network, no private state):
 
 Usage:  python3 code/p0_pitfalls_check.py
 Every printed line is quoted verbatim in docs/PITFALLS.md.
+
+TODO ce script IMPRIME, il ne verifie rien. p1 lit README.md et sort non nul
+quand la prose a derive ; ici la comparaison avec PITFALLS.md se fait a l'oeil.
+Meme mecanique que p1 a faire, ou alors dire clairement que ce n'est pas un gate.
 """
 import bisect
 import collections

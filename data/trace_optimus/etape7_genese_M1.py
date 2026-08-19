@@ -1,31 +1,29 @@
 #!/usr/bin/env python3
-"""ETAPE 7 — aller CHERCHER les geneses manquantes des premiers acheteurs d'OPTIMUS.
+"""Etape 7 : aller chercher les geneses manquantes des premiers acheteurs d'OPTIMUS.
 
-POURQUOI CETTE ETAPE EXISTE
----------------------------
-A l'etape 2, la pagination s'arretait des que la FENETRE PRE-ACHAT (21 jours) etait couverte
-(`stop_ts` dans lib_trace.all_signatures). C'est une optimisation legitime pour la mesure M2, mais
-elle a un effet secondaire grave sur le rapport : 17 portefeuilles sur 40 ressortaient avec
-`genesis_reached=False` alors que, pour 16 d'entre eux, la genese n'etait PAS hors de portee — on
-avait simplement cesse de paginer. Or c'est la mesure M1 (financement de NAISSANCE) qui porte la
-signature du cas ODIN : plusieurs portefeuilles nes dans la meme transaction, quelques jours avant
-le token. Tant que la genese n'est pas atteinte, cette signature n'est pas TESTEE — et un « aucun
-decoupage » ne vaut rien sur ces portefeuilles.
+Lit e2_funding_<label>.json et le cache de pagination cache_sigs/, ecrit cache_sigs_full/ et
+e7_genese_M1_<label>.json.
 
-CE QUE FAIT LE SCRIPT
----------------------
-Il REPREND la pagination la ou le cache de l'etape 2 l'a laissee (parametre `before` = plus ancienne
-signature deja vue), jusqu'a ce qu'une page revienne incomplete — la genese — ou jusqu'a un plafond
-declare. Chaque portefeuille est rapporte avec son drapeau `genesis_reached` final. Aucun portefeuille
-n'est declare « sans financement de naissance » si sa genese n'est pas atteinte.
+A l'etape 2 la pagination s'arretait des que la fenetre pre-achat (21 jours) etait couverte
+(`stop_ts` dans lib_trace.all_signatures). Legitime pour la mesure M2, mais 17 portefeuilles sur 40
+ressortaient avec `genesis_reached=False` alors que, pour 16 d'entre eux, la genese n'etait pas hors
+de portee : on avait simplement cesse de paginer. Or c'est la mesure M1 (financement de naissance)
+qui porte la signature du cas ODIN, plusieurs portefeuilles nes dans la meme transaction quelques
+jours avant le token. Tant que la genese n'est pas atteinte, cette signature n'est pas testee et un
+« aucun decoupage » ne vaut rien sur ces portefeuilles.
 
-Puis, pour ceux dont la genese est atteinte, il lit les PREMIERES transactions de leur vie et en
-extrait les entrees de SOL par DELTA DE SOLDE (piege nº2 : un financement livre par fermeture de
+Le script reprend la pagination la ou le cache de l'etape 2 l'a laissee (parametre `before` = plus
+ancienne signature deja vue), jusqu'a ce qu'une page revienne incomplete (la genese) ou jusqu'a un
+plafond declare. Chaque portefeuille est rapporte avec son drapeau `genesis_reached` final. Aucun
+portefeuille n'est declare « sans financement de naissance » si sa genese n'est pas atteinte.
+
+Puis, pour ceux dont la genese est atteinte, il lit les premieres transactions de leur vie et en
+extrait les entrees de SOL par delta de solde (piege nº2 : un financement livre par fermeture de
 compte wrappe ne produit aucun transfert systeme).
 
-Les cles viennent de ~/Downloads/.env et ne sont JAMAIS ecrites dans un fichier du depot.
+Les cles viennent de ~/Downloads/.env et ne sont jamais ecrites dans un fichier du depot.
 
-USAGE
+Usage :
     python3 etape7_genese_M1.py [--max-pages 3000] [--budget-s 900] [--workers 5]
 """
 from __future__ import annotations
@@ -88,7 +86,7 @@ def resume_pagination(w, url, max_pages, budget_s):
 
     Rend (sigs tries du plus ancien au plus recent, genesis_reached, pages_ajoutees, motif_arret).
     `genesis_reached=True` signifie qu'une page est revenue incomplete ou vide : le debut de
-    l'historique a REELLEMENT ete vu. Tout autre motif d'arret laisse le drapeau a False et la
+    l'historique a reellement ete vu. Tout autre motif d'arret laisse le drapeau a False et la
     mesure M1 est declaree non testee pour ce portefeuille.
     """
     p_in = os.path.join(CACHE_IN, f"{w}.json")

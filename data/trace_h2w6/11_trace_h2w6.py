@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""h2w6gm6jz — premiers ACHETEURS, genese de chaque portefeuille, financement, decoupages.
+"""h2w6gm6jz : premiers acheteurs, genese de chaque portefeuille, financement, decoupages.
 
 Derive de 04_early_buyers_funding.py, avec trois corrections imposees par les pieges deja
 rencontres :
 
-1. Les premiers acheteurs sont lus sur le compte BONDING CURVE (toutes les tx de la courbe y
+1. Les premiers acheteurs sont lus sur le compte bonding curve (toutes les tx de la courbe y
    passent), pas sur le mint. Pagination menee jusqu'a page incomplete = genese garantie.
-2. Un acheteur est identifie par un test explicite : delta SOL du signataire < -0.002 ET solde en
-   token du signataire en HAUSSE. Un simple signataire n'est pas un acheteur.
-3. Le financement est mesure par DELTA DE SOLDE (pre/postBalances), jamais par les seuls transferts
+2. Un acheteur est identifie par un test explicite : delta SOL du signataire < -0.002 et solde en
+   token du signataire en hausse. Un simple signataire n'est pas un acheteur.
+3. Le financement est mesure par delta de solde (pre/postBalances), jamais par les seuls transferts
    systeme : la fermeture d'un compte wrappe ne produit aucun transfert systeme.
 
-Sortie : JSON complet + resume texte. Pour CHAQUE portefeuille on reporte si sa genese a ete
-atteinte. Un "aucun decoupage" n'est valable que si toutes les geneses le sont.
+Lit la courbe de bonding, ecrit le JSON complet vers --out et un resume texte sur la sortie
+standard. Pour chaque portefeuille on reporte si sa genese a ete atteinte : un "aucun decoupage"
+n'est valable que si toutes les geneses le sont.
 """
 from __future__ import annotations
 import argparse, json, os, sys, time, urllib.request, datetime as dt
@@ -89,7 +90,7 @@ def get_txs(sigs, chunk=20):
 
 
 def all_signatures(addr, max_pages=300, label=""):
-    """TOUTES les signatures, de la plus ancienne a la plus recente.
+    """Toutes les signatures, de la plus ancienne a la plus recente.
 
     On s'arrete uniquement sur une page incomplete (ou vide) : c'est la seule preuve que la genese
     est atteinte. Si le plafond de pages est touche avant, genese_atteinte = False et le resultat
@@ -120,7 +121,7 @@ def all_signatures(addr, max_pages=300, label=""):
 # ----------------------------------------------------------------------------- acheteurs precoces
 
 def deltas(tx):
-    """{compte: delta SOL} par difference de solde — insensible a l'obfuscation par compte wrappe."""
+    """{compte: delta SOL} par difference de solde, insensible a l'obfuscation par compte wrappe."""
     keys = [k["pubkey"] for k in tx["transaction"]["message"]["accountKeys"]]
     pre, post = tx["meta"]["preBalances"], tx["meta"]["postBalances"]
     return {k: (post[i] - pre[i]) / LAMPORTS for i, k in enumerate(keys) if i < len(pre)}

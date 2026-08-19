@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""Etape 2 — pour chaque SOURCE de financement des premiers acheteurs de h2w6gm6jz :
-qui est-elle, combien de portefeuilles finance-t-elle, avec quels montants repetes,
-et d'ou vient SON argent (remontee vers un service de swap / echange) ?
+"""Etape 2 : pour chaque source de financement des premiers acheteurs de h2w6gm6jz, qui est-elle,
+combien de portefeuilles finance-t-elle, avec quels montants repetes, et d'ou vient son argent
+(remontee vers un service de swap ou un echange).
 
-On utilise l'API de transactions PARSEES de Helius (100 tx par appel) : sur des adresses actives,
-getTransaction une par une est impraticable et toute pagination bornee ne rend que le present.
-On declare explicitement, pour chaque adresse, si la genese a ete atteinte.
+Lit le JSON de l'etape 1, ecrit les generations de profils de sources vers --out.
 
-Distinction imposee par la consigne :
-- montant ROND (3.000000000) = versement delibere -> distributeur intermediaire
+La lecture passe par l'API de transactions parsees de Helius (100 tx par appel) : getTransaction
+une par une est impraticable sur des adresses actives, et toute pagination bornee ne rend que le
+present. Pour chaque adresse, la genese atteinte ou non est declaree explicitement.
+
+Calibre des montants :
+- montant rond (3.000000000) = versement delibere -> distributeur intermediaire
 - montant a la 9e decimale (1.393934883) = sortie de conversion -> service de swap
 
-USAGE
-    python3 12_trace_sources.py --in h2w6_early_funding.json --gen 3
+Usage : python3 12_trace_sources.py --in h2w6_early_funding.json --gen 3
 """
 from __future__ import annotations
 import argparse, json, os, sys, time, urllib.request, datetime as dt

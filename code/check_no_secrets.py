@@ -44,7 +44,7 @@ matching finding is reported as "allowed", never as a failure. This is the
 deliberate counterpart to --identity: a denylist of what must never appear, and
 an allowlist of what is meant to.
 
-The point is not that a scanner can prove a repository clean. The point is that
+A scanner cannot prove a repository clean. What it gives is that
 "I checked" becomes a command with an exit code instead of an assertion.
 """
 from __future__ import annotations

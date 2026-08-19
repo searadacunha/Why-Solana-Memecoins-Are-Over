@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""ETAPE 8 — le taux de base change-t-il quand on force la couverture ?
+"""Etape 8 : le taux de base change-t-il quand on force la couverture ?
 
-Relance le detecteur INCHANGE sur les fichiers rattrapes (e2r_funding_*.json) et compare, token par
-token, avec la mesure principale. Deux issues possibles, toutes deux informatives :
+Relance le detecteur inchange (t3_decoupage.py) sur les fichiers rattrapes e2r_funding_*.json et
+compare, token par token, avec la mesure principale. Deux issues possibles, toutes deux
+informatives :
 
  - le taux de base ne bouge pas : la couverture manquante n'y etait pour rien, et les negatifs
-   deviennent des negatifs PLEINEMENT VALIDES au lieu d'echecs de mesure ;
+   deviennent des negatifs pleinement valides au lieu d'echecs de mesure ;
  - le taux de base monte : la mesure principale sous-estimait le taux de faux positifs, ce qui
-   AFFAIBLIT encore les cibles.
+   affaiblit encore les cibles.
 
-Le journal de rattrapage est reconstruit depuis les journaux d'execution jobC.out / jobD.out, car les
-deux passages paralleles ecrivent le meme fichier journal et le second ecrase le premier.
+Ecrit e3r_splits_<token>.json, t8_journal_rattrapage_consolide.json et t8_apres_rattrapage.json.
+
+Piege : le journal de rattrapage est reconstruit depuis les journaux d'execution jobC.out et
+jobD.out, car les deux passages paralleles ecrivent le meme fichier journal et le second ecrase le
+premier.
 """
 from __future__ import annotations
 import glob, json, os, re, subprocess, sys
