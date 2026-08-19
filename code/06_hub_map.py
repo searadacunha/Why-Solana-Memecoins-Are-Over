@@ -1,31 +1,25 @@
 #!/usr/bin/env python3
 """Cartographie un hub de distribution : d'où vient l'argent, où il va, et qui le lui renvoie.
 
-POURQUOI CE SCRIPT EXISTE
--------------------------
 Lire l'historique d'un hub transaction par transaction est impraticable : ces adresses cumulent des
 dizaines de milliers d'opérations, et toute pagination bornée échoue en silence en ne rendant que
 les plus récentes. On utilise donc l'API de transactions *parsées* de Helius, qui renvoie les
-transferts déjà décodés par paquets de cent — deux ordres de grandeur plus efficace.
+transferts déjà décodés par paquets de cent, deux ordres de grandeur plus efficace.
 
-CE QU'IL MESURE
----------------
-- Les ENTRÉES : qui alimente le hub, pour combien, et quand pour la première fois.
-- Les SORTIES : combien de portefeuilles distincts il finance, et avec quels montants.
-- Les MONTANTS RÉPÉTÉS : un même montant versé à plusieurs destinataires est la signature d'un
-  découpage. On les classe par nombre de répétitions.
-- Le RECYCLAGE : les adresses qui apparaissent à la fois en entrée et en sortie, c'est-à-dire les
+Ce que le script mesure :
+- les entrées : qui alimente le hub, pour combien, et quand pour la première fois ;
+- les sorties : combien de portefeuilles distincts il finance, et avec quels montants ;
+- les montants répétés : un même montant versé à plusieurs destinataires est la signature d'un
+  découpage. On les classe par nombre de répétitions ;
+- le recyclage : les adresses qui apparaissent à la fois en entrée et en sortie, c'est-à-dire les
   satellites qui renvoient des fonds au hub.
 
-USAGE
------
+Usage:
     python3 06_hub_map.py --addr <ADDR> --pages 30
 
-CLIENT
-------
 Client Helius unique (rpc_client.py, API enhanced) : les clés viennent de
-l'environnement ($HELIUS_API_KEYS, ou .env non versionné — voir settings.py) et
-**un échec réseau LÈVE** au lieu de se déguiser en pagination vide
+l'environnement ($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un
+échec réseau lève au lieu de se déguiser en pagination vide
 (docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée dans ce dépôt.
 """
 from __future__ import annotations
