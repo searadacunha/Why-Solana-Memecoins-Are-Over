@@ -14,12 +14,8 @@ retrying a key that just reported its quota does not simply confirm it again.
         outage or a quota hit must interrupt the measurement, not silently
         truncate it into a clean-looking zero (see docs/PITFALLS.md).
 
-Before this module the repository carried a dozen ad-hoc clients with three
-different error conventions: some raised, some returned an {"_error": ...}
-dict, and hlib.py returned an empty list on failure -- indistinguishable from
-a genuinely empty page, the exact trap that once produced a false "0 of 14".
-hlib.py / lib_verif.py / r1lib.py are now thin adapters over this module and
-keep only their own cache location and their non-network helpers.
+hlib.py / lib_verif.py / r1lib.py are thin adapters over this module; they keep
+only their own cache location and their non-network helpers.
 
 Two endpoints:
   JSON-RPC   https://mainnet.helius-rpc.com/?api-key=  (getSignaturesForAddress,
@@ -52,8 +48,8 @@ _COOLDOWN: dict[str, float] = {}   # key -> earliest time it may be reused
 
 
 class HeliusError(RuntimeError):
-    """A network or RPC-level failure. Raised, never returned: a caller that
-    does not catch it stops, which is the point."""
+    """A network or RPC-level failure. Raised, never returned, so a caller that
+    does not catch it stops."""
 
 
 def _next_key() -> str:
@@ -125,6 +121,8 @@ def _http_rotating(build_url: Callable[[str], str],
         except HeliusError as e:
             last = str(e)
             if "429" in last:
+                # 6 s : empirique. Helius ne documente pas la fenetre de quota,
+                # c'est la plus courte valeur qui arretait le ping-pong 429.
                 _COOLDOWN[key] = time.time() + 6.0
                 STATS["retry"] += 1
                 time.sleep(0.25)
@@ -164,7 +162,7 @@ def rpc(method: str, params: list[Any], tolerate_codes: tuple[int, ...] = ()) ->
 
 def sigs(addr: str, limit: int = 1000, before: Optional[str] = None) -> list[Any]:
     """One page of getSignaturesForAddress, oldest-last. Raises if the RPC
-    returns null (a null is a failure here, not an empty page)."""
+    returns null: that is a failure, not an empty page."""
     p: dict[str, Any] = {"limit": limit}
     if before:
         p["before"] = before
@@ -178,7 +176,11 @@ def walk_sigs(addr: str, until_ts: Optional[int] = None, max_pages: int = 400,
               verbose: bool = False) -> tuple[list[Any], int]:
     """Full backward history (or down to until_ts, exclusive), newest to
     oldest. Raises if max_pages runs out before genesis or until_ts is
-    reached -- no silent truncation."""
+    reached, rather than truncating silently.
+
+    max_pages=400 is 400k signatures. Never hit on this corpus; it is a
+    guard rail, not a measured bound.
+    """
     out: list[Any] = []
     before: Optional[str] = None
     pages = 0
