@@ -8,11 +8,10 @@ None-filtering median / quantile, which previously existed in four and three
 near-copies respectively (common.py, pumplib.py, lib_verif.py,
 09_bundle_snipe.py, f_signature_gros_tokens.py).
 
-Deliberately NOT here: the bootstrap / cluster-bootstrap confidence intervals.
-Those are not duplicates -- they differ by construction (a cross-version LCG in
-pumplib vs random.Random in common/t1, different seeds, B, and estimators) and
-merging them would silently change published numbers. They stay with the module
-that owns their exact procedure.
+Not here: the bootstrap and cluster-bootstrap CIs. They are not duplicates,
+they differ by construction (cross-version LCG in pumplib vs random.Random in
+common/t1, different seeds, B and estimators), and merging them would change
+published numbers. They stay with the module that owns their procedure.
 
 Stdlib only.
 """
