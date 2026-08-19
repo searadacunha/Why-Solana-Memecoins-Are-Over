@@ -37,6 +37,12 @@ def main():
     first_buy_ts = tgt["first_buy_ts"]
     start = first_buy_ts - PREBUY_DAYS * 86400
 
+    if not os.path.exists(CACHE):
+        raise SystemExit(
+            "%s absent.\n"
+            "  cache_sigs_full/ est un miroir de signatures git-ignore, il n'existe\n"
+            "  pas dans un clone. Rejouer la collecte amont pour le reconstituer."
+            % CACHE)
     c = json.load(open(CACHE))
     if not c.get("genesis"):
         sys.exit("le cache complet n'a pas la genese : ne pas conclure sur ce portefeuille")
