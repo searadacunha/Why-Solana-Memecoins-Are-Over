@@ -1,29 +1,25 @@
 #!/usr/bin/env python3
-"""ETAPE 4bis — d'ou vient l'argent des BAILLEURS des premiers acheteurs de h2w6gm6jz ?
+"""Etape 4bis : d'ou vient l'argent des bailleurs des premiers acheteurs de h2w6gm6jz.
 
-LE PROBLEME QUE CE SCRIPT RESOUD
---------------------------------
-Le bailleur principal (G9X7F4Jz…) emet ~20 000 transactions par jour et est encore actif
-aujourd'hui. `getSignaturesForAddress` ne remonte que du present vers le passe : remonter jusqu'a
-decembre 2024 demanderait des milliers de pages. Une pagination bornee ne rendrait que 2026 et
-ferait conclure a tort (piege nº1).
+Lit les couples adresse:signature passes en --seeds, ecrit la trace JSON vers --out.
 
-LA SOLUTION : ANCRAGE PAR SIGNATURE CONNUE.
-Le parametre `before` de getSignaturesForAddress accepte une SIGNATURE. On connait deja, pour chaque
-bailleur, la signature exacte du virement qu'il a fait a un premier acheteur en decembre 2024. On
-pagine donc EN PARTANT DE CETTE SIGNATURE : on atterrit directement dans l'epoque utile, et chaque
-page suivante recule dans le passe. Le plafond de pagination ne s'applique plus a l'intervalle
-2024→2026, qui n'est pas parcouru.
+Le bailleur principal (G9X7F4Jz…) emet ~20 000 transactions par jour et est encore actif.
+`getSignaturesForAddress` ne remonte que du present vers le passe : remonter jusqu'a decembre 2024
+demanderait des milliers de pages, et une pagination bornee ne rendrait que 2026 (piege nº1).
 
-Ce que le script rend explicitement pour chaque adresse :
-  - `genesis_reached` : une page revenue incomplete AVANT l'ancre => on a vu sa naissance.
-  - `oldest_seen_utc` : jusqu'ou on est remonte. Sans genese, un negatif est un ECHEC DE MESURE.
+D'ou l'ancrage par signature connue. Le parametre `before` accepte une signature, et on connait
+pour chaque bailleur la signature exacte du virement fait a un premier acheteur en decembre 2024.
+En paginant depuis cette signature on atterrit dans l'epoque utile, chaque page suivante reculant
+dans le passe. L'intervalle 2024→2026 n'est jamais parcouru.
+
+Rendu explicitement pour chaque adresse :
+  - `genesis_reached` : une page revenue incomplete avant l'ancre => sa naissance a ete vue.
+  - `oldest_seen_utc` : jusqu'ou on est remonte. Sans genese, un negatif est un echec de mesure.
   - `calibre` de chaque entree : rond = versement delibere (distributeur) ;
     precis a la 9e decimale = sortie de conversion (service de swap).
-  - toute apparition d'un TERMINAL connu (dont G2Y) parmi TOUTES les contreparties.
+  - toute apparition d'un terminal connu (dont G2Y) parmi les contreparties.
 
-USAGE
-    python3 13_origine_bailleurs.py --seeds 'ADDR:SIG,ADDR:SIG' --depth 3
+Usage : python3 13_origine_bailleurs.py --seeds 'ADDR:SIG,ADDR:SIG' --depth 3
 """
 from __future__ import annotations
 import argparse, json, os, time, datetime as dt
@@ -48,7 +44,7 @@ def roundness(x):
 
 
 def back_from(addr, anchor_sig, max_pages, label=""):
-    """Pagine vers le PASSE en partant d'une signature d'ancrage datee.
+    """Pagine vers le passe en partant d'une signature d'ancrage datee.
 
     Rend (signatures triees du plus ancien au plus recent, genesis_reached, pages).
     genesis_reached=True uniquement si une page est revenue incomplete ou vide : on a alors vu la

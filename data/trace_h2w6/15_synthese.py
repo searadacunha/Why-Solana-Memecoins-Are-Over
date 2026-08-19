@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""SYNTHESE h2w6gm6jz — assemble les mesures des etapes 1 a 4bis en un seul fichier.
+"""Synthese h2w6gm6jz : assemble les mesures des etapes 1 a 4bis en un seul fichier.
 
-Ce script ne mesure rien de neuf : il rassemble, et il calcule les DENOMINATEURS. Aucun chiffre de
-couverture n'est arrondi a l'avantage de la conclusion — pour chaque portefeuille on garde le drapeau
-de genese, et le verdict est borne a la portee effectivement couverte.
+Ne mesure rien de neuf. Lit e1_buyers, e2_funding, e3_splits, e4b_origine_bailleurs et e8_fenetres
+dans le repertoire courant, ecrit SYNTHESE_h2w6gm6jz.json. Calcule les denominateurs : aucun chiffre
+de couverture n'est arrondi a l'avantage de la conclusion, le drapeau de genese est garde par
+portefeuille, et le verdict reste borne a la portee effectivement couverte.
 """
 from __future__ import annotations
 import json, datetime as dt

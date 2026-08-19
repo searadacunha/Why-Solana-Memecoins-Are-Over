@@ -1,31 +1,27 @@
 #!/usr/bin/env python3
-"""ETAPE 4 — LE TAUX DE BASE. Combien de temoins montrent aussi un « decoupage » ?
+"""Etape 4 : le taux de base. Combien de temoins montrent aussi un "decoupage" ?
 
-CE QUE CE SCRIPT NE FAIT PAS
-----------------------------
-Il ne recalcule rien et n'ajuste aucun seuil. Il lit les fichiers e3_splits_*.json produits par le
-detecteur des cibles, recopie a l'identique, et compte. Tout reglage fait ici, apres avoir vu les
-resultats, serait un seuil choisi pour obtenir la conclusion voulue.
+Ne recalcule rien et n'ajuste aucun seuil. Lit les sorties du detecteur des cibles, recopie a
+l'identique, et compte. Tout reglage fait ici, apres avoir vu les resultats, serait un seuil choisi
+pour obtenir la conclusion voulue.
 
-TROIS TAUX SEPARES, PAS UN
---------------------------
-Le detecteur rend trois signatures de force tres inegale (A meme transaction, B meme montant/meme
-moment, C bailleur prive commun) et son verdict global declare « DECOUPAGE DETECTE » des que l'UNE
-d'elles est presente. Agreger les trois en un seul taux de base masquerait l'essentiel : une
-signature dont le taux de base est eleve ne vaut rien, meme si une autre reste a zero. On rend donc
-un taux par signature.
+Lit t0_temoins.json, e3_splits_<label>.json et e2_funding_<label>.json a cote du script, plus les
+memes fichiers pour les cibles dans data/trace_optimus. Ecrit t4_taux_de_base.json.
 
-DENOMINATEUR : LE PORTEFEUILLE, PAS LE TOKEN
---------------------------------------------
-Cinq temoins sur neuf ont moins de dix premiers acheteurs (B&D en a deux). Compter par token
-donnerait a un temoin a 2 acheteurs le meme poids qu'a un temoin a 40. On rend donc les deux
-denominateurs, et le taux par portefeuille est celui qui compte.
+Trois taux separes, pas un. Le detecteur rend trois signatures de force tres inegale (A meme
+transaction, B meme montant et meme moment, C bailleur prive commun) et son verdict global declare
+"DECOUPAGE DETECTE" des que l'une d'elles est presente. Agreger les trois en un seul taux de base
+masquerait l'essentiel : une signature dont le taux de base est eleve ne vaut rien, meme si une
+autre reste a zero. On rend donc un taux par signature.
 
-COUVERTURE : UN NEGATIF NON COUVERT N'EST PAS UN NEGATIF
--------------------------------------------------------
-Pour chaque portefeuille on rend `genesis_reached` (naissance vue) et `prebuy_window_reached`
-(21 jours precedant le premier achat couverts). Le taux de base est calcule DEUX FOIS : sur tous les
-portefeuilles, et sur le seul sous-ensemble effectivement couvert. Le second est le seul defendable.
+Denominateur : le portefeuille, pas le token. Cinq temoins sur neuf ont moins de dix premiers
+acheteurs (B&D en a deux). Compter par token donnerait a un temoin a 2 acheteurs le meme poids qu'a
+un temoin a 40. Les deux denominateurs sont rendus, le taux par portefeuille est celui qui compte.
+
+Couverture : un negatif non couvert n'est pas un negatif. Pour chaque portefeuille on rend
+`genesis_reached` (naissance vue) et `prebuy_window_reached` (21 jours precedant le premier achat
+couverts). Le taux de base est calcule deux fois, sur tous les portefeuilles et sur le seul
+sous-ensemble effectivement couvert. Le second est le seul defendable.
 """
 from __future__ import annotations
 import glob, json, os

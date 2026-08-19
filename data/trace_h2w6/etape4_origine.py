@@ -1,29 +1,25 @@
 #!/usr/bin/env python3
-"""ETAPE 4 — d'ou vient l'argent des bailleurs ? Remontee vers un service de swap.
+"""Etape 4 : d'ou vient l'argent des bailleurs ? Remontee vers un service de swap.
 
-CE QU'ON CHERCHE
-----------------
+Lit les adresses de --seeds, ecrit e4_origine_<label>.json.
+
 Les bailleurs identifies a l'etape 3 ont eux-memes ete finances. On remonte de generation en
-generation jusqu'a rencontrer un TERMINAL connu (service de swap, echange, pont). G2Y
+generation jusqu'a rencontrer un terminal connu (service de swap, echange, pont). G2Y
 (G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t) est le terminal qui interesse l'enquete.
 
-DEUX PRECAUTIONS
-----------------
-1. Aboutir a un terminal est un FAIT DE ROUTAGE, pas une preuve d'implication du service : tout
+Deux precautions :
+1. Aboutir a un terminal est un fait de routage, pas une preuve d'implication du service, tout
    capital entrant sur Solana franchit une telle porte.
-2. G2Y n'est mesuree active que de decembre 2025 a avril 2026. OPTIMUS date d'octobre 2024. Si les
+2. G2Y n'est mesuree active que de decembre 2025 a avril 2026, OPTIMUS date d'octobre 2024. Si les
    chaines de 2024 n'aboutissent pas a G2Y, l'hypothese a tester est que le service operait alors
-   depuis une AUTRE adresse — ce n'est pas un echec.
+   depuis une autre adresse, ce n'est pas un echec.
 
-METHODE
--------
-Pour chaque adresse : pagination jusqu'a la genese (drapeau rendu), puis lecture des N plus anciennes
-transactions et des N plus recentes avant la date du token. Les entrees sont mesurees par DELTA DE
-SOLDE. On signale en outre toute apparition d'un terminal connu parmi TOUTES les contreparties vues,
-pas seulement parmi les sources majeures.
+Pour chaque adresse : pagination jusqu'a la genese (drapeau rendu), puis lecture des N plus
+anciennes transactions et des N plus recentes avant la date du token. Entrees mesurees par delta de
+solde. Toute apparition d'un terminal connu est signalee parmi toutes les contreparties vues, pas
+seulement parmi les sources majeures.
 
-USAGE
-    python3 etape4_origine.py --seeds A,B,C --depth 2 --label OPTIMUS
+Usage : python3 etape4_origine.py --seeds A,B,C --depth 2 --label OPTIMUS
 """
 from __future__ import annotations
 import argparse, json, os, time

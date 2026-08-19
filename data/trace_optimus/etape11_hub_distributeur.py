@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
-"""ETAPE 11 — cartographie COMPLETE d'un distributeur, et test de son lien avec G2Y.
+"""Etape 11 : cartographie complete d'un distributeur, et test de son lien avec G2Y.
 
-POURQUOI CELUI-LA
------------------
-Le rattrapage des geneses (etape 7) a fait apparaitre un bailleur qui n'etait pas visible avant :
-9zqLjpSvvvreWyhQBSPquwo7LTotH5eoJWhWLCm6qcde finance la NAISSANCE de deux des quarante premiers
-acheteurs d'OPTIMUS, pour des montants RONDS (47.000000000 SOL le 2024-03-14 et 10.000000000 SOL le
+Prend une adresse en argument, ecrit e11_hub_<label>.json.
+
+Le rattrapage des geneses (etape 7) a fait apparaitre un bailleur invisible auparavant :
+9zqLjpSvvvreWyhQBSPquwo7LTotH5eoJWhWLCm6qcde finance la naissance de deux des quarante premiers
+acheteurs d'OPTIMUS, pour des montants ronds (47.000000000 SOL le 2024-03-14 et 10.000000000 SOL le
 2024-06-07). Un montant rond est un versement delibere : signature d'un distributeur intermediaire,
-pas d'un service de swap (piege nº3).
+pas d'un service de swap (piege nº3). Cette adresse est petite (~2 300 transactions), sa genese est
+atteinte et son historique peut etre lu integralement : c'est le seul noeud de la chaine ou une
+conclusion negative aurait valeur de negatif.
 
-Cette adresse est petite (~2 300 transactions) : sa genese est atteinte et son historique peut etre
-lu INTEGRALEMENT. C'est donc le seul noeud de la chaine ou une conclusion negative aurait vraiment
-valeur de negatif.
-
-CE QUE LE SCRIPT MESURE
------------------------
+Ce que le script mesure :
 - toutes ses entrees et sorties de SOL, par delta de solde ;
 - ses destinataires, avec les montants repetes (signature d'un decoupage systematique) ;
-- toute apparition d'un terminal connu, G2Y en particulier, AVEC le delta de solde associe : une
+- toute apparition d'un terminal connu, G2Y en particulier, avec le delta de solde associe : une
   apparition a delta nul est une simple mention de compte dans une route, pas un flux de valeur.
 
-USAGE
+Usage :
     python3 etape11_hub_distributeur.py --addr <ADRESSE> [--label nom]
 """
 from __future__ import annotations

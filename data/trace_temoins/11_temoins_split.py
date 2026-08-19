@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""GROUPE TEMOIN — taux de base du decoupage chez les premiers acheteurs.
+"""Groupe temoin : taux de base du decoupage chez les premiers acheteurs.
 
-CE QUE FAIT CE SCRIPT
----------------------
-Il applique aux 9 tokens temoins EXACTEMENT la procedure de `code/04_early_buyers_funding.py`,
-celle qui a produit le cas ODIN (4 portefeuilles nes de 12,0001 SOL decoupes en 4 x 3,000000000 SOL).
-Aucun seuil n'est ajuste. Les constantes ci-dessous sont recopiees a l'identique de 04 :
+Applique aux 9 tokens temoins la procedure de `code/04_early_buyers_funding.py`, celle qui a
+produit le cas ODIN (4 portefeuilles nes de 12,0001 SOL decoupes en 4 x 3,000000000 SOL).
+Aucun seuil n'est ajuste, les constantes ci-dessous sont recopiees a l'identique de 04 :
 
     MIN_SOL = 0.5, MAX_SOL = 50.0      fenetre de montants d'une entree de financement
     REL_TOL = 1e-4                     tolerance d'egalite des montants (0,01 %)
@@ -16,27 +14,29 @@ Aucun seuil n'est ajuste. Les constantes ci-dessous sont recopiees a l'identique
     FIRST_TX_PER_WALLET = 40           nb de premieres tx inspectees par portefeuille
     MAX_PAGES_WALLET = 60              plafond de pagination par portefeuille (= 60 000 sigs)
 
-SEULE DIFFERENCE AVEC 04 : la parallelisation (pool de threads + rotation de cles Helius).
-Elle ne change aucune donnee mesuree, seulement le debit des appels RPC.
+Seule difference avec 04 : la parallelisation (pool de threads, rotation de cles Helius). Elle
+ne change aucune donnee mesuree, seulement le debit des appels RPC.
 
-PIEGES TRAITES
---------------
-1. PAGINATION SILENCIEUSE — chaque pagination s'arrete sur une page INCOMPLETE (genese atteinte)
-   ou sur le plafond de pages. Le drapeau `genese_atteinte` est rapporte POUR CHAQUE PORTEFEUILLE
-   et pour chaque mint. Un "aucun decoupage" sur un portefeuille dont la genese n'est pas atteinte
-   n'est PAS un negatif : c'est un echec de mesure, et il est compte comme tel.
-2. FINANCEMENT OBFUSQUE — les entrees sont mesurees par DELTA DE SOLDE (postBalances -
-   preBalances), jamais par les transferts systeme, qui n'apparaissent pas lors d'une fermeture
-   de compte wrappe.
-3. MONTANT ROND vs MONTANT DE SWAP — chaque cluster detecte est classe : "rond" (versement
-   delibere d'un distributeur) ou "issu d'une conversion" (>= 4 decimales significatives,
-   signature d'un service de swap).
-4. GROUPE TEMOIN — c'est precisement l'objet de ce script : il mesure le TAUX DE BASE.
+Lit data/cibles/cibles.json. Ecrit data/trace_temoins/temoins_split.json (option --out), reecrit
+apres chaque token. Les cles viennent de ~/Downloads/.env (lignes HELIUS_KEY), aucune cle n'est
+ecrite dans le depot.
 
-USAGE
+Pieges traites :
+1. Pagination silencieuse : une pagination s'arrete sur une page incomplete (genese atteinte) ou
+   sur le plafond de pages. Le drapeau `genese_atteinte` est rapporte pour chaque portefeuille et
+   pour chaque mint. Un "aucun decoupage" sur un portefeuille dont la genese n'est pas atteinte
+   n'est pas un negatif, c'est un echec de mesure, et il est compte comme tel.
+2. Financement obfusque : les entrees sont mesurees par delta de solde (postBalances moins
+   preBalances), jamais par les transferts systeme, qui n'apparaissent pas lors d'une fermeture de
+   compte wrappe.
+3. Montant rond contre montant de swap : chaque cluster detecte est classe rond (versement
+   delibere d'un distributeur) ou issu d'une conversion (>= 4 decimales significatives, signature
+   d'un service de swap).
+4. Groupe temoin : c'est l'objet du script, il mesure le taux de base.
+
+Usage :
     python3 11_temoins_split.py --roles temoin
     python3 11_temoins_split.py --roles temoin,cible      # les deux, meme procedure
-Les cles viennent de ~/Downloads/.env (lignes HELIUS_KEY). Aucune cle n'est ecrite dans le depot.
 """
 from __future__ import annotations
 import argparse, json, os, sys, threading, time, urllib.request, urllib.error

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""ETAPE 10 — synthese finale OPTIMUS, avec couverture de mesure declaree.
+"""Etape 10 : synthese finale OPTIMUS, avec couverture de mesure declaree.
 
-Elle remplace l'etape 5 sur un seul point, mais decisif : elle accepte des paires
-(financement, decoupage) explicites, ce qui permet de comparer la cible et les temoins sur des
-mesures de MEME PROFONDEUR. Comparer une cible dont les geneses ont ete rattrapees a des temoins dont
-elles ne l'ont pas ete fabriquerait un ecart artificiel — la cible aurait simplement ete mieux
-mesuree. La colonne `gen` doit donc etre lue avant toute autre.
+Lit des paires (fichier de financement, fichier de decoupage) passees en argument, ecrit
+e10_synthese.json.
 
-Le temoin POSITIF (ODIN) valide le detecteur : s'il ne ressort pas, aucun negatif ne vaut.
+Remplace l'etape 5 sur un point : elle accepte des paires explicites, ce qui permet de comparer la
+cible et les temoins sur des mesures de meme profondeur. Comparer une cible dont les geneses ont ete
+rattrapees a des temoins dont elles ne l'ont pas ete fabriquerait un ecart artificiel, la cible
+aurait simplement ete mieux mesuree. La colonne `gen` doit donc etre lue avant toute autre.
 
-USAGE
+Le temoin positif (ODIN) valide le detecteur : s'il ne ressort pas, aucun negatif ne vaut.
+
+Usage :
     python3 etape10_synthese.py --pair OPTIMUS:e8_funding_complet_OPTIMUS.json:e8_splits_OPTIMUS.json \
                                 --pair Calm:...:... [--out e10_synthese.json]
 """

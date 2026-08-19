@@ -211,6 +211,9 @@ def sol_usd(ts=None):
 # --------------------------------------------------------------- stats ------
 # med / q / wilson are defined once in statlib.py; kept under their historical
 # names here so the t-series keeps calling common.med / common.wilson unchanged.
+# TODO ces trois alias sont de la dette. Renommer les appels dans t1..t5 et les
+# retirer, mais ca touche des scripts qui produisent des tables byte-comparees,
+# donc a faire seul, pas au milieu d'autre chose.
 from statlib import median as med  # noqa: E402,F401
 from statlib import quantile as q  # noqa: E402,F401
 from statlib import wilson  # noqa: E402,F401

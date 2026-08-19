@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
-"""ETAPE 2 — comment chaque premier acheteur a-t-il ete finance, et par QUI.
+"""Etape 2 : comment chaque premier acheteur a-t-il ete finance, et par qui.
 
-DEUX MESURES DISTINCTES, parce qu'elles ne portent pas sur la meme chose
------------------------------------------------------------------------
-M1 — FINANCEMENT DE NAISSANCE. Les premieres transactions de la vie du portefeuille. C'est la mesure
-     du cas ODIN : quatre portefeuilles nes dans la meme transaction, cinq jours avant le token.
-     Elle n'a de sens que si la GENESE est atteinte.
-M2 — FINANCEMENT PRE-ACHAT. Les entrees de fonds dans la fenetre qui precede immediatement le
-     premier achat (par defaut 21 jours). Un portefeuille ancien et tres actif peut avoir ete
-     re-approvisionne juste avant l'operation sans etre « ne » pour elle. Cette mesure reste
-     accessible meme quand la genese est hors de portee, tant que la pagination atteint la fenetre.
+Lit e1_buyers_<label>.json, ecrit e2_funding_<label>.json et met la pagination en cache dans
+cache_sigs/.
 
-POURQUOI SEPARER — ET POURQUOI C'EST LE PIEGE Nº1
--------------------------------------------------
-`getSignaturesForAddress` ne remonte que du present vers le passe. Les portefeuilles les PLUS actifs
-sont donc les plus difficiles a remonter : le biais va systematiquement contre les bots de sniping,
-c'est-a-dire contre les acteurs importants. On rend trois drapeaux explicites par portefeuille :
-`genesis_reached`, `prebuy_window_reached`, `pages_paginated`. Un « aucun financement trouve » sur un
-portefeuille dont la fenetre n'est pas atteinte est un ECHEC DE MESURE, jamais un resultat negatif.
+Deux mesures distinctes, qui ne portent pas sur la meme chose :
+M1, financement de naissance. Les premieres transactions de la vie du portefeuille. C'est la mesure
+    du cas ODIN, quatre portefeuilles nes dans la meme transaction, cinq jours avant le token. Elle
+    n'a de sens que si la genese est atteinte.
+M2, financement pre-achat. Les entrees de fonds dans la fenetre qui precede immediatement le
+    premier achat (par defaut 21 jours). Un portefeuille ancien et tres actif peut avoir ete
+    re-approvisionne juste avant l'operation sans etre « ne » pour elle. Cette mesure reste
+    accessible meme quand la genese est hors de portee, tant que la pagination atteint la fenetre.
 
-MESURE PAR DELTA DE SOLDE
--------------------------
-Un financement livre par fermeture d'un compte wrappe ne produit AUCUN transfert systeme alors que
-les soldes bougent. On lit donc `accountData[].nativeBalanceChange`, jamais les seuls transferts.
+Piege nº1 : `getSignaturesForAddress` ne remonte que du present vers le passe, donc les
+portefeuilles les plus actifs sont les plus difficiles a remonter et le biais va contre les bots de
+sniping. Trois drapeaux sont rendus par portefeuille : `genesis_reached`, `prebuy_window_reached`,
+`pages_paginated`. Un « aucun financement trouve » sur un portefeuille dont la fenetre n'est pas
+atteinte est un echec de mesure, jamais un resultat negatif.
 
-USAGE
+Piege nº2 : un financement livre par fermeture d'un compte wrappe ne produit aucun transfert
+systeme alors que les soldes bougent. On lit donc `accountData[].nativeBalanceChange`, jamais les
+seuls transferts.
+
+Usage :
     python3 etape2_financement.py --buyers e1_buyers_OPTIMUS.json
 """
 from __future__ import annotations
@@ -40,8 +39,8 @@ PREBUY_MAX_TX = 150
 def roundness(x):
     """Etiquette le calibre d'un montant.
 
-    Un montant precis a la neuvieme decimale sort d'une CONVERSION : signature d'un service de swap.
-    Un montant rond est un versement DELIBERE : signature d'un distributeur intermediaire.
+    Un montant precis a la neuvieme decimale sort d'une conversion : signature d'un service de swap.
+    Un montant rond est un versement delibere : signature d'un distributeur intermediaire.
     """
     lam = round(x * L.LAMPORTS)
     if lam % L.LAMPORTS == 0:
@@ -56,13 +55,13 @@ def roundness(x):
 
 
 def token_sold(tx, wallet):
-    """Le portefeuille a-t-il CEDE des jetons dans cette transaction ?
+    """Le portefeuille a-t-il cede des jetons dans cette transaction ?
 
     Distinction indispensable. Un bot de sniping encaisse des centaines de rentrees de SOL par jour
-    qui sont des PRODUITS DE VENTE, pas des financements. Les compter comme financements ferait
-    apparaitre des « decoupages » partout : des ventes simultanees de deux bots sur la meme courbe
-    produisent mecaniquement des montants voisins au meme instant. C'est un generateur de faux
-    positifs, exactement le piege que le groupe temoin doit mesurer — autant l'eliminer a la source.
+    qui sont des produits de vente, pas des financements. Les compter comme financements ferait
+    apparaitre des « decoupages » partout : deux bots qui vendent au meme instant sur la meme courbe
+    produisent mecaniquement des montants voisins au meme moment. Generateur de faux positifs
+    elimine a la source.
     """
     for ad in (tx.get("accountData") or []):
         for tb in (ad.get("tokenBalanceChanges") or []):
@@ -91,7 +90,7 @@ def inflows_from(txs, sig_list, wallet, min_inflow, phase, rank_offset=0):
                        if k != wallet and d <= -min_inflow and k not in L.SYSTEM_ACCOUNTS),
                       key=lambda kv: -kv[1])
         # Nature de la rentree. On garde tout, mais etiquete : l'etape 3 ne cherche le decoupage
-        # que dans les FINANCEMENTS.
+        # que dans les financements.
         if token_sold(tx, wallet):
             nature = "produit_de_vente"
         elif tx.get("type") == "TRANSFER":
@@ -117,9 +116,9 @@ SIGCACHE = "cache_sigs"
 
 
 def paginate_cached(w, prebuy_start):
-    """Pagination mise en cache sur disque : c'est le poste de cout dominant (jusqu'a 400 appels
-    pour un bot), et il ne doit etre paye qu'une fois. Seul un resultat COUVRANT la fenetre est
-    mis en cache — un echec est toujours retente."""
+    """Pagination mise en cache sur disque, poste de cout dominant (jusqu'a 400 appels pour un
+    bot), a ne payer qu'une fois. Seul un resultat couvrant la fenetre est mis en cache, un echec
+    est toujours retente."""
     os.makedirs(SIGCACHE, exist_ok=True)
     p = os.path.join(SIGCACHE, f"{w}.json")
     if os.path.exists(p):
@@ -142,9 +141,9 @@ def paginate_cached(w, prebuy_start):
 
 def analyse_wallet(w, first_buy_ts, head_tx, min_inflow):
     prebuy_start = first_buy_ts - PREBUY_DAYS * 86400
-    # On pagine jusqu'a la genese OU jusqu'a depasser le debut de la fenetre pre-achat, selon ce qui
+    # On pagine jusqu'a la genese ou jusqu'a depasser le debut de la fenetre pre-achat, selon ce qui
     # arrive d'abord. Un bot a 300 000 transactions ne sera pas remonte jusqu'a sa naissance, mais la
-    # fenetre datee sera entierement couverte — et les deux cas sont rapportes separement.
+    # fenetre datee sera entierement couverte, et les deux cas sont rapportes separement.
     sigs, genesis, pages, hyper_flag = paginate_cached(w, prebuy_start)
     oldest = sigs[0].get("blockTime") if sigs else None
     hyperactif = hyper_flag
@@ -209,7 +208,7 @@ def main():
     if os.path.exists(out):
         try:
             for w in json.load(open(out))["wallets"]:
-                # On ne remet en cache qu'une mesure REUSSIE : la fenetre visee a ete atteinte et
+                # On ne remet en cache qu'une mesure reussie : la fenetre visee a ete atteinte et
                 # l'adresse a bien rendu des signatures. Un echec est toujours retente.
                 if (w.get("n_signatures_total") or 0) > 0 and w.get("prebuy_window_reached"):
                     cache[w["wallet"]] = w
