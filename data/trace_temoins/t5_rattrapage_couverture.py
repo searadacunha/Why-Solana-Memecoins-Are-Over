@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
-"""ETAPE 5 — RATTRAPAGE DE COUVERTURE. Analyse de sensibilite, PAS la mesure principale.
+"""Etape 5 : rattrapage de couverture. Analyse de sensibilite, pas la mesure principale.
 
-LE PROBLEME QU'ELLE TRAITE
---------------------------
-La mesure principale laisse une partie des portefeuilles hors couverture, et pour ceux-la
-« aucun decoupage » est un echec de mesure. La cause n'est pas la nature de ces portefeuilles mais
-un plafond : `MAX_PAGES=400` dans etape2, plus un arret par projection qui se declenche quand il
-faudrait plus de 1,5 x (plafond restant) pages. En pratique ces bots s'arretent a QUINZE PAGES de
-couvrir leur fenetre — la mesure est perdue pour presque rien.
+La mesure principale laisse une partie des portefeuilles hors couverture, et pour ceux-la "aucun
+decoupage" est un echec de mesure. La cause n'est pas la nature de ces portefeuilles mais un
+plafond : `MAX_PAGES=400` dans etape2, plus un arret par projection qui se declenche quand il
+faudrait plus de 1,5 x (plafond restant) pages. En pratique ces bots s'arretent a quinze pages de
+couvrir leur fenetre, la mesure est perdue pour presque rien.
 
-POURQUOI CE N'EST PAS UN AJUSTEMENT DE SEUIL
---------------------------------------------
+Lit les e2_funding_*.json des temoins et ceux des cibles dans data/trace_optimus. Ecrit un
+e2r_funding_<label>.json par token, plus le journal t5_rattrapage_journal.json.
+
+Ce n'est pas un ajustement de seuil :
 1. La mesure principale (t4_taux_de_base.json) reste inchangee et reste la reference.
-2. Le plafond releve ne touche AUCUN critere de detection : ni REL_TOL, ni WINDOW_S, ni MIN_CLUSTER,
-   ni MIN_INFLOW. Il n'agit que sur la QUANTITE D'HISTORIQUE LUE. Il ne peut donc pas rendre positif
-   un portefeuille deja couvert : il ne peut qu'ajouter des donnees la ou il n'y en avait pas.
-3. Il est applique SYMETRIQUEMENT aux temoins ET aux cibles, dans le meme passage. Ne rattraper que
-   les temoins gonflerait le taux de base ; ne rattraper que les cibles le deprimerait. Les deux
+2. Le plafond releve ne touche aucun critere de detection, ni REL_TOL, ni WINDOW_S, ni MIN_CLUSTER,
+   ni MIN_INFLOW. Il n'agit que sur la quantite d'historique lue. Il ne peut donc pas rendre positif
+   un portefeuille deja couvert, seulement ajouter des donnees la ou il n'y en avait pas.
+3. Il est applique symetriquement aux temoins et aux cibles, dans le meme passage. Ne rattraper que
+   les temoins gonflerait le taux de base, ne rattraper que les cibles le deprimerait. Les deux
    seraient une fraude.
 
-USAGE
+Usage :
     python3 t5_rattrapage_couverture.py --max-pages 900
 """
 from __future__ import annotations
@@ -32,7 +32,7 @@ CIBLE_DIR = "data/trace_optimus"
 
 
 def repagine(w, prebuy_start, max_pages):
-    """Pagination SANS arret par projection et avec un plafond releve.
+    """Pagination sans arret par projection et avec un plafond releve.
 
     L'arret par projection est neutralise en passant un plafond tres grand a la fonction : la
     condition `need > 1.5 * (max_pages - pages)` ne peut plus se declencher tant que la marge reste

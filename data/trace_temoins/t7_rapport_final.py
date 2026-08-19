@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""ETAPE 7 — rapport consolide : taux de base par signature, bornes, couverture, rattrapage.
+"""Etape 7 : rapport consolide. Taux de base par signature, bornes, couverture, rattrapage.
 
-CE QU'IL AJOUTE A t4
---------------------
-1. Des BORNES, pas seulement des points. « 0 sur 9 » n'est pas « zero » : la borne superieure
-   exacte a 95 % (Clopper-Pearson, cas 0 succes : 1 - 0.05^(1/n)) dit ce que l'echantillon permet
-   d'exclure. Avec neuf temoins on ne peut pas exclure un taux de base de 28 % par token.
-2. Le resultat du RATTRAPAGE de couverture (t5), qui distingue deux choses tres differentes :
-   un portefeuille non remonte parce que le plafond etait bas, et un portefeuille STRUCTURELLEMENT
-   hors d'atteinte de `getSignaturesForAddress`.
-3. Le PROFIL des bailleurs communs prives (t6), sans lequel la signature C n'est pas interpretable.
+Lit t4_taux_de_base.json, plus t5_rattrapage_journal.json et t6_profil_bailleurs.json s'ils
+existent. Ecrit t7_rapport_final.json a cote du script.
+
+Ce qu'il ajoute a t4 :
+1. Des bornes, pas seulement des points. "0 sur 9" n'est pas "zero" : la borne superieure exacte a
+   95 % (Clopper-Pearson, cas 0 succes : 1 - 0.05^(1/n)) dit ce que l'echantillon permet d'exclure.
+   Avec neuf temoins on ne peut pas exclure un taux de base de 28 % par token.
+2. Le resultat du rattrapage de couverture (t5), qui distingue deux choses tres differentes : un
+   portefeuille non remonte parce que le plafond etait bas, et un portefeuille structurellement hors
+   d'atteinte de `getSignaturesForAddress`.
+3. Le profil des bailleurs communs prives (t6), sans lequel la signature C n'est pas interpretable.
 """
 from __future__ import annotations
 import json, math, os
@@ -19,7 +21,7 @@ OUT = os.path.join(HERE, "t7_rapport_final.json")
 
 
 def borne_sup_95_zero(n):
-    """Borne superieure exacte a 95 % du taux, quand on a observe ZERO positif sur n essais."""
+    """Borne superieure exacte a 95 % du taux, quand on a observe zero positif sur n essais."""
     return None if not n else round(1 - math.exp(math.log(0.05) / n), 4)
 
 

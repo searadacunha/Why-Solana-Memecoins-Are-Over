@@ -130,6 +130,9 @@ def main():
               " fourni :" % a.sol_usd)
         for h in H:
             print("    %-6s x%.3f" % (h, abs_mult[h]))
+        # FIXME le "%%" ci-dessous sort tel quel : ce print n'applique aucun
+        # operateur %. Corriger l'affichage change la sortie, donc a faire en
+        # meme temps que la regeneration de docs/out/m6_horizon.json.
         print("    [DEPEND D'UNE CONSTANTE EXTERNE : non reproductible sans"
               " elle, et\n     sensible a 100 %% a sa valeur. A ne pas citer"
               " comme une mesure.]")

@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
-"""Deuxieme passe : forcer la GENESE des portefeuilles restes non resolus a la passe 1.
+"""Deuxieme passe : forcer la genese des portefeuilles restes non resolus a la passe 1.
 
-POURQUOI CETTE PASSE
---------------------
-Dans `11_temoins_split.py`, le plafond de pagination est celui de 04 (60 pages = 60 000 signatures).
-54 occurrences de portefeuilles (32 adresses distinctes) ont touche ce plafond : pour eux, les
-"40 premieres transactions" inspectees ne sont PAS les vraies premieres, donc leur absence de
-decoupage n'est pas un negatif mais un ECHEC DE MESURE.
+Dans `11_temoins_split.py`, le plafond de pagination est celui de 04 (60 pages = 60 000
+signatures). 54 occurrences de portefeuilles (32 adresses distinctes) ont touche ce plafond : pour
+elles, les "40 premieres transactions" inspectees ne sont pas les vraies premieres, donc leur
+absence de decoupage n'est pas un negatif mais un echec de mesure.
 
-Cette passe repousse le plafond a MAX_PAGES=600 (600 000 signatures) UNIQUEMENT pour ces adresses.
-Ce n'est pas un ajustement de seuil de detection : aucune des constantes du detecteur
-(MIN_SOL, MAX_SOL, REL_TOL, WINDOW_S, MIN_CLUSTER) ne change. On corrige le piege n.1
-(pagination silencieuse), rien d'autre.
+Cette passe repousse le plafond a MAX_PAGES_DEEP = 600 (600 000 signatures) pour ces seules
+adresses. Ce n'est pas un ajustement de seuil de detection : aucune des constantes du detecteur
+(MIN_SOL, MAX_SOL, REL_TOL, WINDOW_S, MIN_CLUSTER) ne change. On corrige le piege n.1 (pagination
+silencieuse), rien d'autre.
 
-RESULTAT ATTENDU pour chaque adresse, l'un des deux :
-  - genese ATTEINTE  -> ses 40 premieres vraies tx sont inspectees, le negatif devient valide ;
-  - plafond touche   -> on DECLARE le nombre de signatures parcourues comme borne inferieure de
-                        son activite. C'est une adresse industrielle, pas un portefeuille de flotte.
+Lit temoins_split.json, ecrit temoins_deep_genese.json, tous deux a cote du script.
+
+Deux issues possibles par adresse :
+  - genese atteinte : ses 40 premieres vraies tx sont inspectees, le negatif devient valide ;
+  - plafond touche : le nombre de signatures parcourues est declare comme borne inferieure de son
+    activite. C'est une adresse industrielle, pas un portefeuille de flotte.
 """
 from __future__ import annotations
 import json, os, sys, time, datetime as dt
