@@ -92,12 +92,12 @@ def get_transactions(signatures, chunk=100, pause=0.12, progress=None):
     """
     if not HELIUS_KEY:
         sys.exit("HELIUS_API_KEY non defini.")
-    # CORRECTIF INFRA (2026-07-30). L'hote `api.helius.xyz` renvoie « HTTP 403 / error code: 1010 »
-    # pour TOUTES les cles : c'est un blocage Cloudflare de l'HOTE, pas un refus d'authentification.
-    # Le meme corps de requete, la meme cle, sur `api-mainnet.helius-rpc.com`, repond 200. Ne pas
-    # rediagnostiquer ca en "cle invalide", c'est le mauvais hote.
-    # Sans ce correctif, _post rend None sur 403 et get_transactions rend {} SANS LEVER D'ERREUR,
-    # ce qui produit « 0 acheteur » partout — exactement le zero silencieux que l'on traque.
+    # 2026-07-30 : api.helius.xyz repond 403 (error code 1010) sur toutes les cles.
+    # C'est Cloudflare qui bloque l'hote, pas un refus d'auth : meme requete, meme
+    # cle, sur api-mainnet.helius-rpc.com, ca passe. Ne pas rediagnostiquer ca en
+    # "cle invalide", c'est le mauvais hote.
+    # Sans le correctif, _post rend None sur 403, get_transactions rend {} sans
+    # lever, et on lit "0 acheteur" partout. Zero silencieux.
     url = f"https://api-mainnet.helius-rpc.com/v0/transactions?api-key={HELIUS_KEY}"
     got, n_chunks_failed = {}, 0
     for i in range(0, len(signatures), chunk):
