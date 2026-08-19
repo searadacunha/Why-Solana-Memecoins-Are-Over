@@ -12,7 +12,9 @@ Les etiquettes ASCII sont des noms de fichiers ; le mint reste la seule identite
 from __future__ import annotations
 import json, os
 
-CIBLES = ("data/cibles/cibles.json")
+CIBLES = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "data", "cibles", "cibles.json")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "t0_temoins.json")
 
 # Etiquette de fichier ASCII -> symbole reel. Le seul cas non ASCII est le temoin 3.

@@ -28,7 +28,7 @@ import lib_trace as L
 import t2_financement as T2
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CIBLE_DIR = "data/trace_optimus"
+CIBLE_DIR = os.path.join(os.path.dirname(HERE), "trace_optimus")
 
 
 def repagine(w, prebuy_start, max_pages):
