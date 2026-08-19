@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""v03 - VERIFICATION ON-CHAIN, TRANSACTION PAR TRANSACTION.
+"""v03 - verification on-chain, transaction par transaction.
 
 Pour chaque lancement des flottes re-derivees en v02, on retelecharge depuis
 Helius (RPC public Solana) les transactions de la fenetre de creation et on
 mesure, sans passer par aucun fichier d'analyse anterieur :
 
-  - le SLOT de la transaction de creation du mint
-  - le SLOT de chaque achat de la flotte  -> identiques ?
+  - le slot de la transaction de creation du mint
+  - le slot de chaque achat de la flotte  -> identiques ?
   - le SOL debourse par chaque wallet (delta de lamports du signataire, hors frais)
   - le nombre de tokens recus (delta de postTokenBalances de son ATA)
   - la part de la supply (1e9) captee par la flotte dans le slot de creation

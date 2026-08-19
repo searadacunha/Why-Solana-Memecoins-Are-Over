@@ -10,7 +10,7 @@ inside one hour, >= 3 distinct wallets) fired 0 times in 5 000 draws.
 This script therefore recomputes every verdict using A and B only, side by side with the original
 A-or-B-or-C verdict, and runs Fisher's exact test on the corrected counts.
 
-USAGE
+Usage:
     python3 code/a2_recount.py
 Reads only files already published under ./data/. No network access, no key.
 """
@@ -81,9 +81,9 @@ for role, patterns in GROUPS.items():
 
 rows.sort(key=lambda r: (r["role"], r["label"]))
 
-# The reference case is the observation the hypothesis was BUILT from. Leaving it in the test set
-# would be scoring the hypothesis on the data that suggested it — the discovery sample is not a
-# test sample. It is reported on its own, and excluded from every p-value below.
+# The reference case is the observation the hypothesis was built from. Leaving it in the test set
+# would score the hypothesis on the sample that suggested it. It is reported on its own, and
+# excluded from every p-value below.
 DECOUVERTE = {"ODIN_POSITIF"}
 for r in rows:
     r["role_test"] = "cas_de_decouverte" if r["label"] in DECOUVERTE else r["role"]
@@ -98,9 +98,9 @@ for r in rows:
     print(f"{r['role_test']:<18} {r['label']:<14} {r['n_A']:>3} {r['n_B']:>3} {r['n_C']:>3}   "
           f"{'+' if r['positif_ABC'] else '-'}    {'+' if r['positif_AB'] else '-'}")
 
-# Two comparisons, and the second is the one that counts. Against dead tokens, targets differ by
-# outcome as much as by the exposure under test; against graduated tokens of the same window, the
-# outcome is held fixed and only the exposure varies.
+# Two comparisons. The second is the one that counts: against dead tokens, targets differ by
+# outcome as much as by the exposure under test, whereas against graduated tokens of the same
+# window the outcome is held fixed and only the exposure varies.
 tests = {}
 for tem, tem_name in ((mort, "temoins_morts"), (grad, "temoins_gradues")):
     if not tem:

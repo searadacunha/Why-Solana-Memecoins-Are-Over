@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""v08 - AGE ET NAISSANCE DES WALLETS.
+"""v08 - age et naissance des wallets.
 
-Deux populations, meme mesure : la signature la PLUS ANCIENNE de l'adresse
+Deux populations, meme mesure : la signature la plus ancienne de l'adresse
 (getSignaturesForAddress pagine en arriere jusqu'a epuisement), c'est-a-dire la
 date de premiere activite on-chain = naissance du wallet.
 
-  A. les wallets du BLOC de creation (les 4 snipeurs de chaque quad)
-  B. les CREATEURS des memes tokens (deployeurs du mint)
+  A. les wallets du bloc de creation (les 4 snipeurs de chaque quad)
+  B. les createurs des memes tokens (deployeurs du mint)
 
 On mesure : date de naissance, ecart de naissance intra-flotte (naissance en
 lot ?), age au moment du 1er lancement observe (vieillissement).
 
-Limite honnete : la pagination est plafonnee (CAP pages x 1000 signatures). Un
-wallet plus actif que le plafond est marque `censure=true` : sa naissance est
-alors une BORNE SUPERIEURE de date (donc son age une BORNE INFERIEURE).
+Limite : la pagination est plafonnee (CAP pages x 1000 signatures). Un wallet
+plus actif que le plafond est marque `censure=true` : sa naissance est alors
+une borne superieure de date (donc son age une borne inferieure).
 
 Sortie: data/v08_ages.json
 """

@@ -100,7 +100,7 @@
     "part_de_la_population": 0.0074
    }
   ],
-  "lecture": "If the top funder only covers a marginal share of the population, C's firing rate does not come from a handful of unlabelled infrastructure addresses: it comes from the number of PAIRS that 40 wallets form. That is a birthday problem, and extending the list of known terminals would change nothing."
+  "lecture": "If the top funder only covers a marginal share of the population, C's firing rate does not come from a handful of unlabelled infrastructure addresses: it comes from the number of pairs that 40 wallets form. That is a birthday problem, and extending the list of known terminals would change nothing."
  },
  "portee": "This rate measures the detector's propensity to fire by chance on the era's wallet population. It does not correct the selection bias of the target cohort, which is a separate defect."
 }

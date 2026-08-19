@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""v02 - RE-DERIVATION INDEPENDANTE DES FLOTTES D'OPERATEURS.
+"""v02 - re-derivation independante des flottes d'operateurs.
 
-On ne reprend AUCUNE liste de wallets de l'analyse anterieure. On repart de la
-geometrie brute de la fenetre de creation (cache snipe_*.json, derive de Helius,
-1 ligne par wallet ayant achete <=12s apres le mint) et on reconstruit les
-flottes par co-occurrence.
+On ne reprend pas une seule liste de wallets de l'analyse anterieure. On repart
+de la geometrie brute de la fenetre de creation (cache snipe_*.json, derive de
+Helius, 1 ligne par wallet ayant achete <=12s apres le mint) et on reconstruit
+les flottes par co-occurrence.
 
 Definitions (arbitraires mais fixees a l'avance et explicites) :
-  NOYAU d'un token   = wallets ayant engage >= 5 SOL dans la fenetre de creation
-  INFRA (a exclure)  = wallet present dans >= 25 tokens sur 282 (>8.9%) : bot
+  noyau d'un token   = wallets ayant engage >= 5 SOL dans la fenetre de creation
+  infra (a exclure)  = wallet present dans >= 25 tokens sur 282 (>8.9%) : bot
                        ubiquitaire, ne peut pas etre la flotte d'un operateur
-  ARETE flotte       = paire de wallets de noyau co-presentes sur >= 3 tokens
-                       ET Jaccard >= 0.50
-  FLOTTE             = composante connexe >= 3 wallets
+  arete flotte       = paire de wallets de noyau co-presentes sur >= 3 tokens
+                       et Jaccard >= 0.50
+  flotte             = composante connexe >= 3 wallets
 
 Sortie: data/v02_fleets.json
 """

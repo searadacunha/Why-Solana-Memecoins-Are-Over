@@ -1,70 +1,47 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-09_bundle_snipe.py -- la courbe est-elle rachetee dans le SLOT DE CREATION,
-et cette proportion depend-elle de la DATE ?
+La courbe est-elle rachetee des le slot de creation, et cela depend-il de la date ?
 
-CE QUE MESURE CE SCRIPT
------------------------
-Pour un token pump.fun donne, on lit les toutes premieres signatures de sa
-bonding curve, on identifie le slot de creation, et on additionne le SOL qui
-entre dans la courbe :
+Pour un token pump.fun, on lit les premieres signatures de sa bonding curve, on
+identifie le slot de creation et on somme le SOL qui y entre : sol_first_slot (pendant
+le slot de creation), sol_window_30s (dans les 30 s suivant la 1re transaction),
+n_buyers_* (portefeuilles distincts a l'origine de ce SOL). La courbe se remplit avec
+~85 SOL avant de migrer ; a partir de FULL_SNIPE_SOL (60 SOL des le slot de creation)
+elle est deja prise au moment ou la creation devient visible. Seuil en SOL et non en
+dollars, pour rester comparable entre epoques.
 
-    sol_first_slot   SOL verse dans la courbe PENDANT LE SLOT DE CREATION
-    sol_window_30s   SOL verse dans les 30 s qui suivent la 1re transaction
-    n_buyers_*       nombre de PORTEFEUILLES DISTINCTS a l'origine de ce SOL
+<< La Matrice >> designe les flottes de portefeuilles partageant une origine de
+financement, une methode d'execution et des circuits de sortie : une infrastructure
+observee, pas une personne ni une organisation identifiee. Plusieurs operateurs
+distincts appliquent la meme methode ; savoir s'ils partagent un controle unique
+depasse ce que la chaine permet d'etablir.
 
-La courbe pump.fun se remplit avec ~85 SOL avant de migrer. Un token dont la
-courbe recoit >= 60 SOL dans le SLOT DE CREATION n'a jamais ete achetable :
-au moment ou la creation devient visible, la courbe est deja prise. C'est la
-definition operationnelle retenue ici (seuil FULL_SNIPE_SOL, en SOL et non en
-dollars, pour rester comparable entre epoques ou le SOL ne vaut pas la meme
-chose).
+Trois echantillons aux biais differents, tenus separes :
+  L  legacy, n=70, ATH >= 500 k$, crees du 2026-06-27 au 2026-07-04 ; corpus local du
+     collecteur, selection non aleatoire (ordre du fichier source).
+  F  cadre stratifie par mois de creation dans le classement all-time de l'API pump
+     (sort=ath_market_cap) ; utilisable de 2025-05 a 2026-07, avant quoi le champ
+     ath_market_cap n'existe pas (plus ancien ath_market_cap_timestamp : mai 2025).
+  C  serie de cas : les 46 tokens du meme classement crees avant 2025-05. Leur ATH
+     d'API est un pic de 2025-2026, pas leur pic de lancement ; ils figurent au
+     classement parce qu'ils ont survecu. Serie de cas, donc, et pas un taux.
 
-Nous appelons << la Matrice >> l'ensemble des flottes de portefeuilles qui
-partagent une origine de financement, une methode d'execution et des circuits
-de sortie communs. Ce terme designe une INFRASTRUCTURE OBSERVEE, pas une
-personne ni une organisation identifiee. Les donnees montrent plusieurs
-operateurs distincts appliquant une methode identique ; savoir s'ils partagent
-un controle unique depasse ce que la chaine permet d'etablir.
+Limites : le script ne dit pas qui achete, ni si les acheteurs d'un meme slot relevent
+du meme operateur (chapitres 3 et 6) ; un rachat au slot 0 n'est pas en soi une
+infraction, seulement une mesure de ce qui reste achetable par un tiers ; aucune des
+trois populations n'est un tirage aleatoire dans les tokens >= 500 k$, donc les taux se
+comparent entre mois d'un meme echantillon et pas d'un echantillon a l'autre.
 
-TROIS ECHANTILLONS, TROIS BIAIS DIFFERENTS -- ils sont tenus SEPARES
---------------------------------------------------------------------
-  L  << legacy >>  n=70, ATH >= 500 k$, crees du 2026-06-27 au 2026-07-04.
-                   Population : le corpus local du collecteur. Selection non
-                   aleatoire (ordre du fichier source).
-  F  << frame  >>  echantillon stratifie PAR MOIS DE CREATION tire du
-                   classement all-time de l'API pump (sort=ath_market_cap).
-                   Utilisable de 2025-05 a 2026-07 : au-dela, le champ
-                   ath_market_cap de l'API n'existe pas (le plus ancien
-                   ath_market_cap_timestamp du classement est de mai 2025).
-  C  << serie de cas >>  les 46 tokens du meme classement crees AVANT
-                   2025-05. Pour eux, l'ATH enregistre par l'API est un pic
-                   de 2025-2026, pas leur pic de lancement : ils figurent au
-                   classement PARCE QU'ILS ONT SURVECU. Ce n'est donc PAS un
-                   taux, c'est une serie de cas, et elle est presentee comme
-                   telle.
-
-CE QUE LE SCRIPT NE MESURE PAS
-------------------------------
-  - il ne dit pas QUI achete, ni si les acheteurs d'un meme slot appartiennent
-    a un meme operateur (c'est l'objet des chapitres 3 et 6) ;
-  - un rachat au slot 0 n'est pas en soi une infraction : c'est une mesure de
-    ce qui reste achetable par un tiers, rien de plus ;
-  - aucune des trois populations n'est un tirage aleatoire dans
-    << les tokens >= 500 k$ >>. Les taux se comparent ENTRE MOIS D'UN MEME
-    ECHANTILLON, jamais d'un echantillon a l'autre.
-
-USAGE
------
+Usage:
     python3 code/09_bundle_snipe.py                 # rapport, hors ligne
     python3 code/09_bundle_snipe.py --frame         # (re)telecharge le cadre
     python3 code/09_bundle_snipe.py --measure       # mesure on-chain (Helius)
     python3 code/09_bundle_snipe.py --measure --per-month 12 --workers 10
 
-La mesure on-chain est mise en cache token par token dans data/bundle/cache/ :
-une re-execution ne redemande que ce qui manque. Les fichiers publies dans
-data/bundle/ suffisent a refaire tous les chiffres du rapport sans reseau.
+Mesure on-chain mise en cache token par token dans data/bundle/cache/ : une re-execution
+ne redemande que ce qui manque. Les fichiers publies dans data/bundle/ suffisent a
+refaire tous les chiffres du rapport sans reseau.
 """
 
 import argparse
@@ -117,7 +94,7 @@ NON_PARTICIPANT = {
 
 
 # --------------------------------------------------------------------------- #
-# base58 + PDA (pur stdlib) : permet de VERIFIER que l'adresse de courbe
+# base58 + PDA (pur stdlib) : permet de verifier que l'adresse de courbe
 # fournie par l'API pump est bien PDA(["bonding-curve", mint], programme pump).
 # --------------------------------------------------------------------------- #
 _B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -146,7 +123,7 @@ _D = (-121665 * pow(121666, _P - 2, _P)) % _P
 
 
 def _on_curve(b):
-    """True si les 32 octets encodent un point ed25519 valide (donc PAS une PDA)."""
+    """True si les 32 octets encodent un point ed25519 valide (donc pas une PDA)."""
     y = int.from_bytes(b, "little") & ((1 << 255) - 1)
     if y >= _P:
         return False
@@ -185,8 +162,8 @@ class Rpc:
 
     def _throttle(self):
         """Espacement local entre appels (rate-limit par instance) + compteur
-        d'appels pour l'affichage de progression. Le transport lui-meme -- envoi,
-        rotation des cles, cooldown 429, reprises 5xx -- appartient a rpc_client."""
+        d'appels pour l'affichage de progression. Le transport lui-meme (envoi,
+        rotation des cles, cooldown 429, reprises 5xx) appartient a rpc_client."""
         with self.lock:
             gap = self.min_gap - (time.time() - self.last)
             if gap > 0:
@@ -196,15 +173,15 @@ class Rpc:
 
     def call(self, method, params, tries=7):
         # Transport delegue a rpc_client : il possede la rotation des cles, le
-        # cooldown apres un 429 et les reprises bornees, et surtout il LEVE
-        # HeliusError -- jamais un None/[]/{} confondu avec un vide. On ne garde
+        # cooldown apres un 429 et les reprises bornees, et il leve HeliusError
+        # plutot que de rendre un None/[]/{} confondable avec un vide. On ne garde
         # ici que le petit espacement local entre appels. tries reste dans la
-        # signature pour ne pas toucher aux appelants mais n'est plus utilise.
+        # signature pour ne pas toucher aux appelants, mais n'est plus utilise.
         self._throttle()
         return rpc_client.rpc(method, params)
 
     def sigs(self, addr, before=None):
-        # rpc_client.sigs LEVE si le RPC renvoie null (un null est une panne, pas
+        # rpc_client.sigs leve si le RPC renvoie null (un null est une panne, pas
         # une page vide) ; une page reellement vide reste []. Plus de "or []" qui
         # transformait une panne de quota en "courbe sans transaction".
         self._throttle()
@@ -240,8 +217,8 @@ def buyers_of_tx(tx, bc):
     """{portefeuille: lamports} pour tout SOL entrant dans la bonding curve.
 
     On somme les transferts System vers la courbe plutot que de retenir le seul
-    signataire : un bundle pump.fun est frequemment UNE transaction co-signee
-    par plusieurs portefeuilles, qui payent chacun leur part.
+    signataire : un bundle pump.fun est frequemment une seule transaction
+    co-signee par plusieurs portefeuilles, qui payent chacun leur part.
     """
     out = {}
     for ix in _instructions(tx):
@@ -270,9 +247,9 @@ def buyers_of_tx(tx, bc):
 def oldest_sigs(rpc, addr, stop_ts):
     """Pagine vers le passe jusqu'a depasser stop_ts. Retourne (sigs_asc, complet).
 
-    C'EST LE PIEGE DU CHAPITRE : sur une courbe tres active, une pagination
-    bornee a deux pages ne lit que des transactions RECENTES et conclut a tort
-    << aucun achat initial >>. On ne s'arrete qu'une fois la creation atteinte.
+    Piege : sur une courbe tres active, une pagination bornee a deux pages ne lit
+    que des transactions recentes et conclut a tort a l'absence d'achat initial.
+    On ne s'arrete donc qu'une fois la creation atteinte.
     """
     out, before, complete = [], None, False
     for _ in range(MAX_SIG_PAGES):
@@ -312,7 +289,7 @@ def measure(rpc, rec):
         return {**base, "status": "pagination_incomplete"}
     base["dt_created"] = (t0 - created) if created else None
     window = [s for s in sigs if (s.get("blockTime") or 0) <= t0 + SNIPE_WINDOW]
-    # on decode d'abord TOUTES les signatures du slot de creation, puis on
+    # on decode d'abord toutes les signatures du slot de creation, puis on
     # complete avec le reste de la fenetre : le chiffre << slot 0 >> ne peut
     # donc pas etre tronque par la borne de cout.
     in_slot0 = [s for s in window if s.get("slot") == slot0]
@@ -397,7 +374,7 @@ def month_of(ts):
 
 
 # 2025-05 = premier mois ou le champ ath_market_cap de l'API existe : avant, un
-# token ne figure au classement que s'il a connu un pic BIEN APRES son
+# token ne figure au classement que s'il a connu un pic bien apres son
 # lancement, ce qui est une selection par la survie.
 FRAME_START = "2025-05"
 

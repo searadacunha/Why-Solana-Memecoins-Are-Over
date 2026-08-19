@@ -1,57 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-01_ancrage.py -- ancrage du recit dans des tokens REELS et chronologie du marche.
+"""Ancre le recit dans des tokens reels et date le marche pump.fun.
 
-Ce script repond a trois questions, et a elles seules :
+(A) symboles : les tokens nommes par le recit (EPEP, TEST, la famille
+<< orbit >>) existent-ils, combien de mints distincts portent chaque symbole,
+lequel atteint la capitalisation maximale annoncee. Resultat frequent : des
+dizaines d'homonymes, aucun conforme. C'est une mesure, pas un echec.
+(B) faits on-chain par candidat retenu : date de creation lue sur la chaine
+(plus ancienne signature du compte de mint), programme d'origine, statut. La
+chaine est la seule source qui remonte a 2024, les API tierces s'arretent
+avant (docs/ancrage_sources.md, champ `couverture_api` du rapport).
+(C) chronologie mensuelle depuis janvier 2024 : creations par mois, part
+graduee, distribution d'ATH.
 
-  (A) SYMBOLES CITES. Les tokens nommes dans le recit (EPEP, TEST, la famille
-      << orbit >>) existent-ils ? Combien de mints DISTINCTS portent chacun de
-      ces symboles ? Lequel, s'il y en a un, correspond a la capitalisation
-      maximale annoncee ? La reponse est souvent << plusieurs dizaines de
-      candidats, aucun ne correspond >> : c'est une MESURE, pas un echec, et
-      c'est deja le materiau du chapitre sur les leurres.
+Methode de (C) : aucune API publique ne rend le nombre de tokens crees dans un
+mois donne, et la pagination par offset de pump.fun ne remonte pas a 2024 (il
+faudrait des millions de pages). Mais chaque creation pump.fun fait intervenir
+l'autorite de mint du programme (PDA constant, cf. MINT_AUTHORITY), donc les
+signatures de ce seul compte sont l'index exhaustif des creations, en ordre
+chronologique inverse. Une page de getSignaturesForAddress prise avant une
+signature S rend les 1000 creations qui precedent S, dont l'ecart de temps
+donne un taux instantane ; `before` accepte n'importe quelle signature du
+ledger, ce qui permet de s'ancrer sur une date (date -> slot -> signature
+quelconque de ce bloc). Le total mensuel est donc une extrapolation,
+l'integration des taux mesures a N ancres reparties dans le mois, avec la
+dispersion inter-ancres rapportee. Les mints echantillonnes a ces ancres sont
+en revanche un tirage sans biais de selection, pris dans l'index tel quel et
+non dans une liste << top >> d'API.
 
-  (B) FAITS ON-CHAIN. Pour chaque candidat retenu : date de creation lue sur la
-      chaine (plus ancienne signature du compte de mint), programme d'origine,
-      statut. La chaine est la seule source qui remonte a 2024 : verifie a la
-      main que les API tierces ne couvrent pas cette periode (voir
-      docs/ancrage_sources.md et le champ `couverture_api` du rapport).
-
-  (C) CHRONOLOGIE MENSUELLE. Combien de tokens crees par mois, quelle part
-      graduee, quelle distribution d'ATH -- de janvier 2024 a aujourd'hui.
-      Objectif : situer les << epoques >> du recit sur une base chiffree.
-
-METHODE DE LA CHRONOLOGIE (le point non evident)
-------------------------------------------------
-Aucune API publique ne rend le nombre de tokens crees un mois donne, et la
-pagination par offset de l'API pump.fun ne permet pas de remonter a 2024
-(il faudrait des millions de pages). On passe donc par la chaine.
-
-Toute creation de token pump.fun signe une instruction ou intervient l'autorite
-de mint du programme (PDA constant, cf. MINT_AUTHORITY). L'historique des
-signatures de ce seul compte EST donc l'index exhaustif des creations, dans
-l'ordre chronologique inverse. Deux consequences :
-
-  * getSignaturesForAddress(MINT_AUTHORITY, before=S) rend les 1000 creations
-    qui precedent immediatement la signature S. L'ecart de temps entre la
-    premiere et la derniere de ces 1000 creations donne un TAUX DE CREATION
-    instantane, mesure, sans echantillonnage biaise.
-  * `before` accepte n'importe quelle signature du ledger, pas seulement une
-    du compte interroge. On peut donc s'ancrer sur une DATE : on convertit la
-    date en slot, on lit une signature quelconque de ce bloc, et on s'en sert
-    d'ancre. C'est ce qui rend la mesure possible a n'importe quelle profondeur.
-
-Le total mensuel est donc une ESTIMATION par integration de taux mesures a
-N ancres reparties dans le mois, pas un comptage exhaustif ; l'incertitude est
-rapportee (dispersion inter-ancres). Les tokens echantillonnes a ces memes
-ancres sont, eux, un tirage sans biais de selection : on prend les creations
-telles qu'elles se presentent dans l'index, jamais une liste << top >> d'une API.
-
-NIVEAUX DE PREUVE
-  [MESURE]  recalcule par ce script depuis la chaine ou une API publique.
-  [ESTIME]  extrapolation explicite d'une mesure (totaux mensuels).
-  [NON ETABLI] jamais chiffre comme un fait.
+Niveaux de preuve : [MESURE] recalcule par ce script depuis la chaine ou une
+API publique, [ESTIME] extrapolation explicite d'une mesure (totaux mensuels),
+[NON ETABLI] jamais chiffre comme un fait.
 
 Usage :
     python3 code/01_ancrage.py search     # (A) symboles cites
@@ -85,7 +64,7 @@ os.makedirs(OUT, exist_ok=True)
 os.makedirs(CACHE, exist_ok=True)
 
 # ------------------------------------------------------------------ constants
-# PDA autorite de mint du programme pump.fun. Present dans CHAQUE creation de
+# PDA autorite de mint du programme pump.fun. Present dans chaque creation de
 # token pump.fun et (verifie plus bas, cf. `verif_creations`) dans rien d'autre.
 MINT_AUTHORITY = "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM"
 
@@ -105,7 +84,7 @@ REGIME1 = (dt.datetime(2024, 10, 1, tzinfo=dt.timezone.utc),
            dt.datetime(2025, 3, 1, tzinfo=dt.timezone.utc))
 
 # Symboles a ancrer. `attendu_usd` = capitalisation maximale annoncee par le
-# temoignage ; sert UNIQUEMENT de cible a confronter, jamais de filtre.
+# temoignage ; sert de cible a confronter, jamais de filtre.
 CIBLES = [
     {"terme": "EPEP", "symbole": "EPEP", "attendu_usd": 40e6},
     {"terme": "TEST", "symbole": "TEST", "attendu_usd": 10e6},
@@ -135,10 +114,10 @@ class Http:
     partage rpc_client (rotation de cles, cooldown apres 429, reprises bornees) ;
     on ne conserve ici que la traduction vers le contrat (resultat, erreur)
     attendu par les appelants, plus le petit GET web() vers les frontends
-    pump/dexscreener/jup, qui ne sont PAS des endpoints Helius.
+    pump/dexscreener/jup, qui ne sont pas des endpoints Helius.
 
-    Le comptage n'est pas cosmetique : le budget d'appels est rapporte dans la
-    sortie pour que le cout de reproduction soit connu avant de relancer.
+    Les appels sont comptes et le total est rapporte dans la sortie, pour que
+    le cout de reproduction soit connu avant de relancer.
     """
 
     def __init__(self):
@@ -147,9 +126,9 @@ class Http:
 
     # -- Solana JSON-RPC (transport delegue a rpc_client) -------------------
     def rpc(self, method, params):
-        """Rend (resultat, erreur). L'erreur n'est JAMAIS confondue avec une
-        reponse vide : c'est exactement le piege qui a fait croire, en cours de
-        mise au point, que l'historique du mint EPEP s'arretait en 2024-12.
+        """Rend (resultat, erreur). Une erreur ne doit pas se confondre avec
+        une reponse vide : cette confusion a fait croire, en cours de mise au
+        point, que l'historique du mint EPEP s'arretait en 2024-12.
         rpc_client.rpc leve HeliusError sur un echec (transport ou objet `error`
         JSON-RPC) ; on le retraduit en tuple pour ne rien changer aux appelants."""
         self.n_rpc += 1
@@ -165,12 +144,12 @@ class Http:
         except rpc_client.HeliusError as e:
             return None, settings.redact_key(str(e))
 
-    # -- web (frontends pump/dexscreener/jup ; PAS un endpoint Helius) -------
+    # -- web (frontends pump/dexscreener/jup ; pas un endpoint Helius) -------
     def web(self, url, tries=5, timeout=60):
         """Petit GET local. Retente 429/5xx et erreurs de transport ; rend
         {"_error": ...} sur un statut HTTP definitif non rejouable (ex. 404 =
-        token absent : une reponse, pas une panne), mais LEVE quand les essais
-        sont epuises -- une panne reseau ne doit pas se cacher en page vide."""
+        token absent : une reponse, pas une panne), mais leve quand les essais
+        sont epuises, une panne reseau ne devant pas se cacher en page vide."""
         self.n_web += 1
         last = None
         for t in range(tries):
@@ -224,10 +203,10 @@ def dump(obj, name):
 def pump_search(term, max_pages=40, limit=50):
     """Tous les mints pump.fun dont le nom ou le symbole contient `term`.
 
-    L'API pump.fun expose une recherche plein-texte paginee qui, elle, couvre
-    TOUT l'historique du programme (verifie : des tokens de mars 2024
-    remontent). C'est la seule source qui rende `ath_market_cap`, la
-    capitalisation maximale atteinte, pour un token mort depuis longtemps.
+    La recherche plein-texte paginee de l'API pump.fun couvre tout l'historique
+    du programme (verifie : des tokens de mars 2024 remontent). C'est la seule
+    source qui rende `ath_market_cap`, la capitalisation maximale atteinte,
+    pour un token mort depuis longtemps.
     """
     out, off = {}, 0
     for _ in range(max_pages):
@@ -427,10 +406,10 @@ def genese(addr, max_pages=400):
     """Plus ancienne signature d'un compte = sa creation on-chain.
 
     Pagination profonde obligatoire : une seule page (1000 signatures) ne
-    remonte PAS a la genese d'un compte actif, et s'arreter la produit une date
-    de creation fausse -- de plusieurs mois sur les mints etudies ici.
+    remonte pas a la genese d'un compte actif, et s'arreter la produit une date
+    de creation fausse, de plusieurs mois sur les mints etudies ici.
     `n_pages_epuise` dit si la marche s'est arretee faute de pages, auquel cas
-    la date rendue est une BORNE SUPERIEURE, pas la genese.
+    la date rendue est une borne superieure, pas la genese.
     """
     def _f():
         before, total, pages, old = None, 0, 0, None
@@ -475,9 +454,9 @@ def mint_de_creation(t):
 
     On lit `meta.postTokenBalances`, et non les cles de compte : la position du
     mint dans la liste des comptes a change entre les versions successives de
-    l'instruction (Create, CreateV2), et beaucoup de mints de 2024 ne se
-    terminent pas par << pump >> -- l'heuristique du suffixe rate justement les
-    tokens les plus anciens, ceux qui nous interessent.
+    l'instruction (Create, CreateV2). Beaucoup de mints de 2024 ne se terminent
+    pas par << pump >>, si bien que l'heuristique du suffixe rate les tokens les
+    plus anciens, ceux qui nous interessent.
     """
     for b in ((t.get("meta") or {}).get("postTokenBalances") or []):
         m = b.get("mint")

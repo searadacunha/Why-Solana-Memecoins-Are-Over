@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v01 - INVENTAIRE DU CORPUS. Aucune interpretation, que des comptages.
+"""v01 - inventaire du corpus. Aucune interpretation, que des comptages.
 
 Sortie: data/v01_corpus.json
 """

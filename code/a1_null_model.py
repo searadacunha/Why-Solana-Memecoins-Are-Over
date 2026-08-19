@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 """Adversarial null model: how often does the split detector fire on a random group of wallets?
 
-WHY THIS EXISTS
----------------
 The detector flags a token when its early buyers share a funding transaction (A), receive the same
-amount within an hour (B), or share a private funder (C). Reporting "the detector fired on the
-targets" means nothing until we know how often it fires on wallets that were never coordinated.
+amount within an hour (B), or share a private funder (C). Reporting that the detector fired on the
+targets means nothing until we know how often it fires on wallets that were never coordinated.
 
 The control tokens supply that population: 136 early-buyer wallets drawn from tokens selected on
-creation slot alone, with their funding events already measured by the exact same code. We pool
-those wallets, draw random groups of the same size as a target's buyer set, and re-run the three
-criteria unchanged. The share of draws that fire is the false-positive rate of the detector on this
-era's wallet population.
+creation slot alone, with their funding events already measured by the same code. We pool those
+wallets, draw random groups of the same size as a target's buyer set, and re-run the three criteria
+unchanged. The share of draws that fire is the false-positive rate of the detector on this era's
+wallet population.
 
 Resampling deliberately destroys within-token co-occurrence. A hit in a resampled group is
 therefore a genuine coincidence: two unrelated wallets that happen to share a funder, or to have
 received near-identical amounts within the same hour.
 
-WHAT IT DOES NOT DO
--------------------
-It does not correct the selection bias of the target cohort (tokens picked by the author because
-they were profitable). That is a separate defect, quantified in the same output and discussed in
-docs/PITFALLS.md. A low false-positive rate makes a positive harder to dismiss; it does not make a
-selected sample representative.
+Limits: it does not correct the selection bias of the target cohort (tokens picked by the author
+because they were profitable). That is a separate defect, quantified in the same output and
+discussed in docs/PITFALLS.md. A low false-positive rate makes a positive harder to dismiss, but
+it does not make a selected sample representative.
 
-USAGE
+Usage:
     python3 code/a1_null_model.py [--draws 5000] [--seed 12345]
 Reads only files already published under ./data/. No network access, no key.
 """
@@ -70,16 +66,16 @@ def detect(group):
     detector's definitions. B is the split-grouping of splitlib.find_splits with
     the same parameters, reduced to a boolean: does at least one cluster of
     MIN_CLUSTER distinct wallets exist? For that boolean the `used` bookkeeping
-    of find_splits is provably irrelevant — find_splits only marks events used
-    when a cluster VALIDATES, so up to its first validated cluster the set is
+    of find_splits is provably irrelevant: find_splits only marks events used
+    when a cluster validates, so up to its first validated cluster the set is
     empty and every seed is scanned exactly as below. Equivalence with
     find_splits is enforced by tests/test_splitlib.py.
 
     An earlier version of this function marked events used while scanning, even
-    for clusters below MIN_CLUSTER — a semantics find_splits does not have,
-    which could hide a real cluster behind a failed seed and understate the
-    false-positive rate. It also claimed to be splitlib "unchanged", which was
-    not true. Both are fixed here; the committed artefact is regenerated.
+    for clusters below MIN_CLUSTER, a semantics find_splits does not have. It
+    could hide a real cluster behind a failed seed and understate the
+    false-positive rate. It also claimed to be splitlib "unchanged", which it
+    was not. Both are fixed here; the committed artefact is regenerated.
     """
     rows = [(g["wallet"], a, t, s, sig) for g in group for a, t, s, sig in g["events"]]
 
@@ -88,7 +84,7 @@ def detect(group):
         by_sig[sig].add(w)
     A = any(len(ws) >= 2 for ws in by_sig.values())
 
-    # B: find_splits semantics — events sorted by amount alone (stable), every
+    # B: find_splits semantics. Events sorted by amount alone (stable), every
     # seed scanned, cluster = distinct wallets within REL_TOL and WINDOW_S.
     events = [(w, a, t) for w, a, t, s, sig in rows]
     events.sort(key=lambda e: e[1])
@@ -166,8 +162,8 @@ def main():
         print(f"\n  restricted to the {len(pool_g)} wallets whose genesis was reached: "
               f"{res_g['P_au_moins_un_critere']:.4f}")
 
-    # Why does C fail? Two explanations have different lessons. Either funders are simply too few
-    # for 40 wallets to avoid a collision — a birthday problem, irreducible — or a handful of
+    # Why does C fail? The two explanations have different lessons. Either funders are simply too
+    # few for 40 wallets to avoid a collision (a birthday problem, irreducible), or a handful of
     # unlabelled infrastructure addresses fund half the population, in which case the fix is to
     # extend the KNOWN list rather than to retire the criterion. Rank them and see.
     fund_wallets = defaultdict(set)
@@ -185,7 +181,7 @@ def main():
         "top_bailleurs": top,
         "lecture": "If the top funder only covers a marginal share of the population, C's firing "
                    "rate does not come from a handful of unlabelled infrastructure addresses: it "
-                   "comes from the number of PAIRS that 40 wallets form. That is a birthday "
+                   "comes from the number of pairs that 40 wallets form. That is a birthday "
                    "problem, and extending the list of known terminals would change nothing.",
     }
     print(f"\n  distinct private funders in the population : {len(ranked)}")

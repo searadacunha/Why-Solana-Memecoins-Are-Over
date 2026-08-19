@@ -1,6 +1,6 @@
 {
  "objet": "Les operations observees sur des tokens differents sont-elles liees entre elles, ou seulement a un point d'entree commun ?",
- "prealable": "Un split est un acteur : une transaction payant N portefeuilles au meme montant a un signataire et une decision. Ce qui reste a etablir, c'est si les splits de tokens DIFFERENTS sont le meme acteur, un meme outil, ou des utilisateurs distincts du meme guichet.",
+ "prealable": "Un split est un acteur : une transaction payant N portefeuilles au meme montant a un signataire et une decision. Ce qui reste a etablir, c'est si les splits de tokens differents sont le meme acteur, un meme outil, ou des utilisateurs distincts du meme guichet.",
  "n_tokens_mesures": 13,
  "n_paiements": 75,
  "n_paiements_avant_token": 25,

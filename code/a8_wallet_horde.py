@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-"""Disposable wallets, or a reusable fleet? — the question of what happens AFTER the trade.
+"""Disposable wallets, or a reusable fleet? What happens to a buying wallet after the trade.
 
-Every other measurement in this repository looks upstream: who funded the buyer. This one looks the
-other way, and it is the direction that turned out to matter.
+Other measurements here look upstream, at who funded the buyer. This one looks downstream.
 
-TWO MODELS, DIFFERENT PREDICTIONS
-- DISPOSABLE : the wallet receives, buys, sells, dies. Few transactions after the trade, and no
-               outgoing payments to accounts that did not already exist.
-- FLEET      : the wallet is kept, reactivated later, and used to FUND fresh wallets — which in
-               turn fund others. That predicts outgoing payments to addresses whose FIRST activity
-               is the payment itself: generations.
+Two models, different predictions:
+- disposable: the wallet receives, buys, sells, dies. Few transactions after the trade, and no
+              outgoing payments to accounts that did not already exist.
+- fleet: the wallet is kept, reactivated later, and used to fund fresh wallets, which in turn
+         fund others. That predicts outgoing payments to addresses whose first activity is the
+         payment itself: generations.
 
 For each identified wallet this measures how long it stayed alive after its trade, how many
-distinct addresses it went on to fund, and — the discriminating number — how many of those were
-NEW at the moment of payment (first activity within an hour of receiving). A payment to an address
-that is born on receipt is not a transfer between existing accounts; it is a wallet being created.
+distinct addresses it went on to fund, and the discriminating number, how many of those were new
+at the moment of payment (first activity within an hour of receiving). A payment to an address
+born on receipt is a wallet being created, not a transfer between existing accounts.
 
-USAGE
+Usage:
     export HELIUS_API_KEYS=key1[,key2,...]
     python3 code/a8_wallet_horde.py
 Needs the network. Its output, data/split/horde.json, is committed so the finding is checkable
@@ -43,12 +42,12 @@ class Echec(Exception):
 
 # Le transport Helius (JSON-RPC + transactions parsees) est delegue au client
 # partage rpc_client : rotation de cles, cooldown apres un 429, reprises bornees,
-# et surtout UNE seule regle d'erreur -- il LEVE HeliusError, il ne rend jamais
-# [] ou None pour dire "echec". On conserve ici les fines enveloppes
-# rpc()/parsed() qui retraduisent HeliusError en Echec, afin de ne rien changer
-# aux appelants (naissance/etudie attrapent deja Echec). Les parametres ki/tries
-# subsistent pour la compatibilite d'appel mais ne servent plus : rpc_client
-# possede desormais la rotation et les reprises.
+# et une seule regle d'erreur, il leve HeliusError et ne rend jamais [] ou None
+# pour signaler un echec. On conserve ici les fines enveloppes rpc()/parsed()
+# qui retraduisent HeliusError en Echec, afin de ne rien changer aux appelants
+# (naissance/etudie attrapent deja Echec). Les parametres ki/tries subsistent
+# pour la compatibilite d'appel mais ne servent plus : la rotation et les
+# reprises appartiennent desormais a rpc_client.
 def rpc(method, params, ki=0, tries=8):
     try:
         return rpc_client.rpc(method, params)
@@ -66,9 +65,9 @@ def parsed(addr, ki=0, before=None, tries=5):
 def naissance(addr, ki=0):
     """Premiere activite d'une adresse. None si hors de portee.
 
-    Une panne reseau/quota LEVE Echec (elle ne doit surtout pas passer pour
-    "aucune naissance trouvee") ; seul un resultat legitimement vide -- aucune
-    signature, ou genese hors du budget de pagination -- rend None.
+    Une panne reseau ou de quota leve Echec : elle ne doit pas passer pour
+    "aucune naissance trouvee". Seul un resultat legitimement vide (aucune
+    signature, ou genese hors du budget de pagination) rend None.
     """
     before, oldest = None, None
     for _ in range(6):
@@ -112,7 +111,7 @@ def etudie(args):
         before = batch[-1].get("signature")
         time.sleep(0.05)
 
-    # Une sortie vers une adresse NEUVE = generation suivante.
+    # Une sortie vers une adresse neuve = generation suivante.
     neuves = {}
     for d, e in sorted(sorties.items(), key=lambda kv: -kv[1]["sol"])[:25]:
         nb = naissance(d, ki=idx)
