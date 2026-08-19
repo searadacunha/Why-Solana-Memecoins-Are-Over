@@ -1,9 +1,9 @@
-# Content license — CC BY-NC-ND 4.0
+# Content license: CC BY-NC-ND 4.0
 
 **Copyright (c) 2026 Benjamin Da Cunha. All rights reserved except as licensed below.**
 
-The written analysis and its artefacts in this repository — `README.md`, every
-document under `docs/`, and every image under `figures/` — are licensed under the
+The written analysis and its artefacts in this repository (`README.md`, every
+document under `docs/`, and every image under `figures/`) are licensed under the
 **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International**
 licence (**CC BY-NC-ND 4.0**).
 
@@ -21,8 +21,8 @@ format — under these terms:
   not distribute the modified material.
 
 **What this is for.** The intent is that the analysis stays verifiable and
-quotable — you may read it, cite it, and check every number against the code —
-while the text itself is not repackaged, altered, or sold as someone else's. It
+quotable, you may read it, cite it and check every number against the code, while
+the text itself is not repackaged, altered, or sold as someone else's. It
 does **not** restrict *reading*, *quoting with attribution*, or *running the code*
 to reproduce the figures.
 
