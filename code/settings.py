@@ -13,7 +13,7 @@ depends on the machine the code was written on.
       data/     <- published inputs (see data/MANIFEST.json)
       docs/     <- generated tables and reports
 
-Three classes of input, deliberately kept apart:
+Four kinds of input, kept apart on purpose:
 
   PUBLIC      data/ , shipped with the repo, no credentials, no network.
               Everything a reader needs to re-derive the headline numbers.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pumplib.py — bibliotheque commune. Stdlib uniquement (json, gzip, math,
+pumplib.py : bibliotheque commune. Stdlib uniquement (json, gzip, math,
 bisect, statistics). Aucune dependance externe, aucun reseau, aucune cle.
 
 Conventions partagees par toutes les mesures :
@@ -17,7 +17,7 @@ Conventions partagees par toutes les mesures :
                   (reserve virtuelle initiale). C'est le prix auquel le token
                   demarre, avant tout achat. Verifiable hors de ce depot.
 
-NIVEAUX DE PREUVE utilises dans les sorties :
+Niveaux de preuve utilises dans les sorties :
   [MESURE]      chiffre recalcule par le script a partir de data/.
   [INFERE]      deduction a partir de mesures, explicitement signalee.
   [NON ETABLI]  hypothese, jamais chiffree comme un fait.
