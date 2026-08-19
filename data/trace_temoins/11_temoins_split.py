@@ -56,7 +56,9 @@ FIRST_TX_PER_WALLET = 40
 MAX_PAGES_WALLET = 60
 MAX_PAGES_MINT = 400
 
-BASE = ".."
+# racine du depot, deduite de ce fichier : le script marchait seulement
+# depuis data/, il marche maintenant depuis n'importe ou.
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CIBLES = f"{BASE}/data/cibles/cibles.json"
 OUTDIR = f"{BASE}/data/trace_temoins"
 
