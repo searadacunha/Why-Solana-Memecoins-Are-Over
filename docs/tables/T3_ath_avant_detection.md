@@ -13,8 +13,8 @@
 
 
 n = 1243 tokens | 123 clusters | 20 UTC days | clean population B.
-`detect_ts` = first outside visibility (token `complete` seen <= 12 s after creation). A LOWER bound on a human buyer's latency.
-A NEGATIVE median delay means that, within the band, the typical token peaked before it existed for the observer.
+`detect_ts` = first outside visibility (token `complete` seen <= 12 s after creation). A lower bound on a human buyer's latency.
+A negative median delay means that, within the band, the typical token peaked before it existed for the observer.
 Limit: `o_ath_ts` (pump.fun API) and `detect_ts` (local clock) can differ by a few seconds; the three thresholds are published for that reason.
 
 Regenerate: `python3 code/t3_ath_avant_detection.py`

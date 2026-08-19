@@ -1,27 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M2 — LE PRIX EST DEJA PARTI QUAND LE MARCHE S'OUVRE.
+M2 : le prix est deja parti quand le marche s'ouvre.
 
 Affirmation testee : au premier instant ou un acheteur ordinaire peut executer
 un ordre, le prix a deja monte d'un facteur important par rapport au prix de
-lancement du token. Autrement dit, la hausse n'est pas quelque chose a quoi on
-peut participer : elle est deja consommee.
+lancement du token. La hausse est deja consommee avant le marche.
 
 Definitions, toutes verifiables :
-  - Prix de lancement = constante de la courbe pump.fun, MC = 27,96 SOL. Ce
-    n'est pas une estimation : c'est le parametre de la reserve virtuelle
-    initiale, identique pour tous les tokens.
+  - Prix de lancement = constante de la courbe pump.fun, MC = 27,96 SOL, soit
+    le parametre de reserve virtuelle initiale, identique pour tous les tokens.
+    Ce n'est pas une estimation.
   - Premier instant executable = premier swap enregistre d'au moins 0,05 SOL.
     Le seuil ecarte les swaps de poussiere (0,002 SOL) dont le prix implicite
     est domine par les arrondis. Sensibilite a ce seuil : voir la sortie.
   - Prix execute = sol / tokens. Controle croise avec `price` (prix de pool).
   - Part du parcours deja consommee = log(MC_premier / MC_lancement)
-    / log(MC_pic / MC_lancement). Mesure en log parce que c'est un processus
-    multiplicatif : 1 -> 2 et 10 -> 20 sont le meme mouvement. Le pic est pris
-    sur la serie de prix ROBUSTE (pumplib.robust_series), pas sur le max brut :
-    le max brut est domine par les swaps de poussiere et donne des valeurs
-    physiquement impossibles (jusqu'a 8,9e8 SOL de MC).
+    / log(MC_pic / MC_lancement). En log parce que le processus est
+    multiplicatif : 1 -> 2 et 10 -> 20 sont le meme mouvement. Le pic vient de
+    la serie de prix robuste (pumplib.robust_series), pas du max brut : domine
+    par les swaps de poussiere, celui-ci donne des valeurs physiquement
+    impossibles (jusqu'a 8,9e8 SOL de MC).
 
 Usage :  python3 m2_entry_price.py [--data ...] [--min-sol 0.05]
 """
@@ -42,7 +41,7 @@ def main():
     a = ap.parse_args()
 
     caps = P.load_captures(a.data)
-    P.head("M2 — PRIX AU PREMIER INSTANT EXECUTABLE", "MESURE")
+    P.head("M2 : PRIX AU PREMIER INSTANT EXECUTABLE", "MESURE")
 
     mc_exec, mc_pool, consumed, first_src, lags = [], [], [], collections.Counter(), []
     rows = []
@@ -62,7 +61,7 @@ def main():
         first_src[f["src"]] += 1
         lags.append(f["ts"] - d["created"])
 
-        # pic mesure sur la serie de prix ROBUSTE (cf. pumplib.robust_series) :
+        # pic mesure sur la serie de prix robuste (cf. pumplib.robust_series) :
         # le max brut est domine par les swaps de poussiere et n'a pas de sens.
         ser = P.robust_series(sw)
         if ser:
@@ -79,10 +78,10 @@ def main():
 
     P.kv("MC de lancement (constante de courbe)", "%.2f SOL" % P.LAUNCH_MC_SOL)
     print()
-    P.kv("MC au 1er swap executable — p10", "%.1f SOL" % P.quantile(mc_exec, 0.10), n=n)
-    P.kv("MC au 1er swap executable — mediane", "%.1f SOL" % med, n=n,
+    P.kv("MC au 1er swap executable, p10", "%.1f SOL" % P.quantile(mc_exec, 0.10), n=n)
+    P.kv("MC au 1er swap executable, mediane", "%.1f SOL" % med, n=n,
          note="IC95 [%.0f ; %.0f]" % (lo, hi))
-    P.kv("MC au 1er swap executable — p90", "%.1f SOL" % P.quantile(mc_exec, 0.90), n=n)
+    P.kv("MC au 1er swap executable, p90", "%.1f SOL" % P.quantile(mc_exec, 0.90), n=n)
     print()
     P.kv("=> multiple median deja realise", "x%.1f" % (med / P.LAUNCH_MC_SOL), n=n)
     P.kv("   au 10e centile (le cas le plus favorable sur 10)",
@@ -96,14 +95,14 @@ def main():
              note="IC95 [%.1f ; %.1f]" % (100 * w[0], 100 * w[1]))
 
     print()
-    P.kv("part du parcours (en log) deja consommee — mediane",
+    P.kv("part du parcours (en log) deja consommee, mediane",
          "%.3f" % P.median(consumed), n=len(consumed))
     k = sum(1 for c in consumed if c >= 0.5)
     P.kv("part des tokens dont >= 50 %% du parcours est fait",
          "%.1f %%" % (100.0 * k / len(consumed)), n=len(consumed))
 
     print()
-    P.kv("delai 1er swap executable - creation — mediane", "%.0f s" % P.median(lags), n=n)
+    P.kv("delai 1er swap executable - creation, mediane", "%.0f s" % P.median(lags), n=n)
     print("\n  Type du 1er swap executable (source du routeur) :")
     for s, c in first_src.most_common():
         print("    %-18s %4d   %5.1f %%" % (s, c, 100.0 * c / n))
@@ -120,7 +119,7 @@ def main():
      mediane, un multiple a deux chiffres du prix de lancement. [MESURE]
    - Ce n'est pas un effet de latence de l'observateur : le delai median entre
      la creation et ce premier swap est de quelques secondes. Le prix a saute
-     AVANT, pendant la phase de courbe, invisible depuis le pool. [MESURE]
+     avant, pendant la phase de courbe, invisible depuis le pool. [MESURE]
    - Ce qui a produit ce saut est identifie en M3 : les adresses listees dans
      snipers[], qui achetent la courbe avant l'ouverture du pool. [MESURE]
    - Conclusion structurelle : la question "a quel moment fallait-il acheter"

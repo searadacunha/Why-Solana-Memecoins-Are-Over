@@ -66,7 +66,7 @@ def finish(fig, name):
 
 
 # --------------------------------------------------------------------------
-# F1 — The capitalisation staircase of a launch (n = 42 quad launches)
+# F1. The capitalisation staircase of a launch (n = 42 quad launches)
 # --------------------------------------------------------------------------
 def fig1():
     v5 = jload(os.path.join(DATA, "v05_creation_block.json"))["agregats"]
@@ -75,10 +75,10 @@ def fig1():
     m2 = jload(os.path.join(OUT, "m2_entry_price.json"))
     sol_usd = v6["sol_usd_reference"]
 
-    # Four steps, ALL in USD capitalisation (no mixing with a purchase
+    # Four steps, all in USD capitalisation (no mixing with a purchase
     # amount: the dev-buy is a ticket, not a capitalisation).
     #
-    # CAUTION — the AMM open is taken from v06, NOT from v05. Both scripts
+    # Careful: the AMM open comes from v06, not from v05. Both scripts
     # compute the same quantity and disagree on 42/42 launches (medians
     # $46,147 vs $53,985, unit-level gaps up to x100). v06 is the corrected
     # implementation: it takes the median of the PUMP_AMM swaps >= 0.1 SOL of
@@ -105,7 +105,7 @@ def fig1():
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels(labels, fontsize=8)
     ax.set_ylabel("Median capitalisation (USD, log scale)")
-    ax.set_title("F1 — The price staircase is already climbed when the market opens\n"
+    ax.set_title("F1. The price staircase is already climbed when the market opens\n"
                  "n = 42 launches verified on-chain (4 fleets)", fontsize=9.5, loc="left")
     ax.grid(axis="y", color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)
@@ -119,7 +119,7 @@ def fig1():
 
 
 # --------------------------------------------------------------------------
-# F2 — The buyer's cost: 15 exit policies (T1)
+# F2. The buyer's cost: 15 exit policies (T1)
 # --------------------------------------------------------------------------
 def fig2():
     m5 = jload(os.path.join(OUT, "m5_roundtrip.json"))["matrice"]
@@ -143,7 +143,7 @@ def fig2():
     ax.set_yticklabels([names[k] for k in order], fontsize=8.5)
     ax.invert_yaxis()
     ax.set_xlabel("Net PnL per round-trip (%), 5.82 % costs already deducted")
-    ax.set_title("F2 — No exit policy has a positive expectation\n"
+    ax.set_title("F2. No exit policy has a positive expectation\n"
                  "n = 196 tokens, 20 clusters, systematic entry at t0+120 s",
                  fontsize=9.5, loc="left")
     ax.set_xlim(-32, 14)
@@ -160,10 +160,10 @@ def fig2():
 
 
 # --------------------------------------------------------------------------
-# F3 — The decay: median multiple at 1 h / 2 h / 4 h / 24 h (T5)
+# F3. The decay: median multiple at 1 h / 2 h / 4 h / 24 h (T5)
 # --------------------------------------------------------------------------
 def fig3():
-    # Read from the committed T5 artefact — never hardcoded here: an earlier
+    # Read from the committed T5 artefact, never hardcoded here: an earlier
     # version of this figure asserted stale values (n = 128, 0.45x/0.22x).
     t5 = jload(os.path.join(DATA, "cout_acheteur", "t5_horizon_1h_24h.json"))
     hs = ["1", "2", "4", "24"]
@@ -190,7 +190,7 @@ def fig3():
     ax.set_xticklabels(hz)
     ax.set_ylim(0, 1.32)
     ax.set_ylabel("Median multiple of the entry price")
-    ax.set_title("F3 — Buying at ~t0+20 min: what is left after N hours\n"
+    ax.set_title("F3. Buying at ~t0+20 min: what is left after N hours\n"
                  f"n = {n_tot} tokens, {nclu} clusters; bootstrap 95% CI",
                  fontsize=9.5, loc="left")
     ax.legend(frameon=False, fontsize=8, loc="upper right", bbox_to_anchor=(1.0, 0.93))
@@ -204,7 +204,7 @@ def fig3():
 
 
 # --------------------------------------------------------------------------
-# F4 — The operator graph and its trap: collapse of the giant component
+# F4. The operator graph and its trap: collapse of the giant component
 # --------------------------------------------------------------------------
 def fig4():
     m4 = jload(os.path.join(OUT, "m4_infra.json"))
@@ -226,7 +226,7 @@ def fig4():
     ax.set_xticklabels(["raw graph", "infra removed"], fontsize=8.5)
     ax.set_ylim(0, 85)
     ax.set_ylabel("Giant connected component (% of 282 tokens)")
-    ax.set_title("F4a — The 'giant network' is an artefact", fontsize=9, loc="left")
+    ax.set_title("F4a. The 'giant network' is an artefact", fontsize=9, loc="left")
     ax.grid(axis="y", color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)
 
@@ -244,11 +244,11 @@ def fig4():
     ax.invert_yaxis()
     ax.set_xlim(0, 72)
     ax.set_xlabel("Share of the 282 tokens sniped by the address (%)")
-    ax.set_title("F4b — Ubiquity: a service, not an operator", fontsize=9, loc="left")
+    ax.set_title("F4b. Ubiquity marks a shared service, not an operator", fontsize=9, loc="left")
     ax.grid(axis="x", color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)
 
-    fig.suptitle("F4 — Clean the graph before interpreting it (n = 282 tokens, edge = >= 3 shared snipers)",
+    fig.suptitle("F4. Clean the graph before interpreting it (n = 282 tokens, edge = >= 3 shared snipers)",
                  fontsize=9.5, x=0.01, ha="left")
     finish(fig, "f4_graphe_infra.png")
 

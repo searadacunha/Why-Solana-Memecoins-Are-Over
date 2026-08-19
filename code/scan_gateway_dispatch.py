@@ -1,37 +1,32 @@
 #!/usr/bin/env python3
 """Live detector for the gateway-dispatch funding pattern on a pump.fun launch.
 
-WHAT IT DOES
-------------
 Given a mint, it reads every buyer on the bonding curve, works out which of them are freshly
-created wallets, and reports those funded by a swap gateway before the token existed — with the
-amount, the timestamp and the counterparty for each. It also groups wallets that received the same
-amount in one burst, which is the strongest form of the signal.
+created wallets, and reports those funded by a swap gateway before the token existed, with the
+amount, the timestamp and the counterparty for each. Wallets that received the same amount in one
+burst are grouped: that is the strongest form of the signal. By hand, the same check means opening
+each wallet in an explorer, one at a time.
 
-This automates a check that is otherwise done by hand, one wallet at a time, in an explorer.
-
-WHAT MAKES IT A MEASUREMENT AND NOT A GUESS
--------------------------------------------
 Four rules, each of which exists because breaking it produced a wrong answer in this project:
 
-1. **Page to genesis, or say you did not.** `getSignaturesForAddress` walks present -> past. Bounded
-   too short it returns only recent history and fails *without an error*. A wallet's funding lives
+1. Page to genesis, or say you did not. `getSignaturesForAddress` walks present -> past. Bounded
+   too short it returns only recent history and fails without an error. A wallet's funding lives
    in its first transactions, so a partial walk reports "no funding" for a funded wallet. Every
    wallet here carries an explicit status: measured, or unreadable.
 
-2. **Errors raise.** A client returning None on error, with a caller writing `or []`, turns an
+2. Errors raise. A client returning None on error, with a caller writing `or []`, turns an
    exhausted quota into "this curve has no transactions". That produced a clean `0/14 tokens` in
    this project, from a wrong hostname. Here a failed call raises and the token is reported
-   UNMEASURABLE, never as a zero.
+   unmeasurable, never as a zero.
 
-3. **Chronology is enforced.** A gateway payment landing after the token was created cannot have
+3. Chronology is enforced. A gateway payment landing after the token was created cannot have
    funded its launch. Those are counted separately, never mixed into the total.
 
-4. **Report the calibre, never require it.** A conversion output (nine significant decimals) and a
+4. Report the calibre, never require it. A conversion output (nine significant decimals) and a
    round payment from an intermediate distributor are two links of one chain. Requiring the first
    misses every case that runs through the second.
 
-USAGE
+Usage:
     export HELIUS_API_KEYS=key1[,key2,...]
     python3 code/scan_gateway_dispatch.py --mint <MINT> [--created 2024-12-13] [--json out.json]
     python3 code/scan_gateway_dispatch.py --mint <MINT> --gateway <ADDR> --fresh-days 7
@@ -58,7 +53,7 @@ DEFAULT_GATEWAY = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"
 
 
 class RpcError(Exception):
-    """A call that did not complete. DISTINCT from an empty answer — see rule 2."""
+    """A call that did not complete, distinct from an empty answer (see rule 2)."""
 
 
 def keys():
@@ -73,7 +68,7 @@ KEYS = None
 
 def rpc(method, params, ki=0, tries=6):
     """Transport delegue a rpc_client (rotation de cles, cooldown 429, reprises
-    bornees). On conserve RpcError : un echec LEVE, jamais un None confondu avec
+    bornees). On conserve RpcError : un echec leve, jamais un None confondu avec
     un vide (regle 2). ki/tries sont ignores -- rpc_client possede la rotation --
     mais gardes pour ne pas toucher aux appelants."""
     try:
@@ -112,7 +107,7 @@ def bonding_curve(mint):
         ts = d.get("created_timestamp")
         return d.get("bonding_curve"), (ts / 1000 if ts else None), d.get("symbol")
     except (urllib.error.URLError, TimeoutError, ValueError):
-        # None ici = repli VOULU vers le drapeau --created (l'API pump ne repond
+        # None ici = repli voulu vers le drapeau --created (l'API pump ne repond
         # pas ou ne connait pas ce mint), pas une mesure a zero silencieuse.
         return None, None, None
 
@@ -126,7 +121,7 @@ def curve_buyers(curve):
         raise RpcError(f"courbe {curve[:12]}… : {e}")
     if not sigs:
         raise RpcError(f"courbe {curve[:12]}… : zero signature. Une courbe active en a "
-                       f"des centaines — c'est une panne, pas une mesure.")
+                       f"des centaines : c'est une panne, pas une mesure.")
     sigs.sort(key=lambda s: s.get("blockTime") or 0)
 
     seen, order = set(), []
@@ -215,7 +210,7 @@ def calibre(a):
 
 
 def bursts(rows, rel_tol=1e-3, window_s=3600, min_wallets=2):
-    """Wallets that received the same amount inside one window — the strongest form of the signal."""
+    """Wallets that received the same amount inside one window, the strongest form of the signal."""
     flat = sorted([(w, h["sol"], h["ts"], h["utc"]) for w, hs in rows for h in hs],
                   key=lambda r: (r[1], r[2]))
     out, used = [], set()
@@ -259,7 +254,7 @@ def main():
         created_ts = dt.datetime.strptime(a.created, "%Y-%m-%d").replace(
             tzinfo=dt.UTC).timestamp()
     if not curve or not created_ts:
-        sys.exit("courbe ou date de creation introuvable — passer --created, ou mint hors pump.fun")
+        sys.exit("courbe ou date de creation introuvable : passer --created, ou mint hors pump.fun")
 
     cut_token = int(created_ts)
     cut_fresh = cut_token - int(a.fresh_days * 86400)

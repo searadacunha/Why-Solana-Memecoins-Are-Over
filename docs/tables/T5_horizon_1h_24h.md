@@ -7,8 +7,8 @@
 
 
 n = 191 tokens | 27 clusters. Bought at the robust price of the last 120 seconds of the capture (~t0+20 min), converted to USD; sold at the `close` of the nearest hourly candle (90 min tolerance).
-`high median` = median of the expiry candle's high: an OPTIMISTIC bound (it assumes selling at the hour's high).
-`whole-population median` counts as 0.00x the tokens that no longer have ANY candle at expiry, i.e. no trading left at all: the honest convention for an asset that can no longer be sold.
+`high median` = median of the expiry candle's high: an optimistic bound (it assumes selling at the hour's high).
+`whole-population median` counts as 0.00x the tokens with no candle at all at expiry, i.e. no trading left: an asset that can no longer be sold is priced at zero rather than dropped from the sample.
 Units control (GT price in USD / swap price in SOL) / (SOL in USD) = **0.850** median on n=277 tokens. Close to 1: the SOL->USD conversion is correct. Without it, every multiple in this table would be multiplied by ~76.
 
 Prerequisites: `python3 code/fetch_sol_usd.py` then `python3 code/fetch_gt_ohlcv.py`.

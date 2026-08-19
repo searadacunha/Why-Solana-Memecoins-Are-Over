@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M1 — RECENSEMENT DU CORPUS.
+M1 : recensement du corpus.
 
-Ce que ce script etablit : la taille reelle du corpus, sa fenetre, et ses
-limites. Il est volontairement le premier : toute affirmation du dossier se lit
-avec ces n-la en tete.
+Ce que le script etablit : la taille reelle du corpus, sa fenetre et ses
+limites. Il vient en premier parce que toute affirmation du dossier se lit avec
+ces n-la en tete.
 
 Point d'honnetete central : le collecteur a produit 645 fichiers mais 352 sont
-VIDES (aucun swap enregistre — pannes du fournisseur RPC, pas un phenomene de
+vides (aucun swap enregistre, pannes du fournisseur RPC, pas un phenomene de
 marche). Le n exploitable est 293, soit 2,2x moins que le nombre de fichiers.
 Tout chiffre annonce "sur 645 captures" serait faux.
 
@@ -28,15 +28,15 @@ def main():
     ap.add_argument("--out", default=os.path.join(P.HERE, "..", "docs", "out", "m1_corpus.json"))
     a = ap.parse_args()
 
-    # Garde-fou : avec --data (jeu d'exemple), on n'ecrase PAS l'artefact
-    # publie. Un tableau du dossier ne doit jamais pouvoir etre remplace par le
-    # resultat d'un echantillon de 20 tokens sans que personne s'en apercoive.
+    # Garde-fou : avec --data (jeu d'exemple), on n'ecrase pas l'artefact
+    # publie. Un tableau du dossier ne doit pas pouvoir etre remplace en
+    # silence par le resultat d'un echantillon de 20 tokens.
     if a.data and a.out == ap.get_default("out"):
         a.out = os.path.join(P.HERE, "..", "data", "sample",
                              os.path.basename(a.out))
 
     caps = P.load_captures(a.data)
-    P.head("M1 — RECENSEMENT DU CORPUS", "MESURE")
+    P.head("M1 : RECENSEMENT DU CORPUS", "MESURE")
 
     n = len(caps)
     with_snipers = sum(1 for d in caps if d.get("snipers"))
@@ -56,8 +56,8 @@ def main():
     P.kv("tokens avec liste snipers[] non vide", with_snipers,
          note="%.1f %%" % (100.0 * with_snipers / n))
     P.kv("swaps exploitables au total", n_swaps)
-    P.kv("swaps par token — mediane", per_len[len(per_len) // 2])
-    P.kv("swaps par token — min / max", "%d / %d" % (per_len[0], per_len[-1]))
+    P.kv("swaps par token, mediane", per_len[len(per_len) // 2])
+    P.kv("swaps par token, min / max", "%d / %d" % (per_len[0], per_len[-1]))
     P.kv("adresses distinctes vues en swap", len(traders))
     P.kv("fenetre de creation (UTC)", "%s -> %s" % (
         P.utc(t_min, "%Y-%m-%d %H:%M"), P.utc(t_max, "%Y-%m-%d %H:%M")))
@@ -78,8 +78,8 @@ def main():
    - Le collecteur n'observe pas tout le flux : il capte les tokens qu'il a
      detectes, pas la population complete des lancements. Le corpus
      sur-echantillonne donc les tokens qui ont bouge. Consequence sur le sens
-     des resultats : elle joue CONTRE la these du dossier (un echantillon
-     enrichi en gagnants devrait rendre l'achat MOINS perdant qu'il ne l'est
+     des resultats : elle joue contre la these du dossier (un echantillon
+     enrichi en gagnants devrait rendre l'achat moins perdant qu'il ne l'est
      reellement). [INFERE]
    - Les swaps enregistres sont ceux du pool AMM. Les achats effectues sur la
      courbe de bonding avant graduation n'y figurent pas : ils sont dans

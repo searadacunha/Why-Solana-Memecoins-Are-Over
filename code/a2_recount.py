@@ -98,9 +98,9 @@ for r in rows:
     print(f"{r['role_test']:<18} {r['label']:<14} {r['n_A']:>3} {r['n_B']:>3} {r['n_C']:>3}   "
           f"{'+' if r['positif_ABC'] else '-'}    {'+' if r['positif_AB'] else '-'}")
 
-# Two comparisons. The second is the one that counts: against dead tokens, targets differ by
-# outcome as much as by the exposure under test, whereas against graduated tokens of the same
-# window the outcome is held fixed and only the exposure varies.
+# Two comparisons. Against dead tokens, targets differ by outcome as much as by the exposure
+# under test; against graduated tokens of the same window the outcome is held fixed and only the
+# exposure varies, so that second comparison carries the information.
 tests = {}
 for tem, tem_name in ((mort, "temoins_morts"), (grad, "temoins_gradues")):
     if not tem:
@@ -131,7 +131,7 @@ TEST_LIB = {
     "A_ou_B_ou_C_verdict_dorigine__contre_temoins_gradues":
         "original verdict (A or B or **C**) vs graduated controls",
     "A_ou_B_apres_retrait_de_C__contre_temoins_gradues":
-        "**A or B only** vs graduated controls — *the comparison that counts*",
+        "**A or B only** vs graduated controls",
     "A_seul_le_critere_le_plus_specifique__contre_temoins_morts":
         "A alone (zero false positives in the null) vs dead controls",
     "A_seul_le_critere_le_plus_specifique__contre_temoins_gradues":

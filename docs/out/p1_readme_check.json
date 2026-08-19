@@ -265,7 +265,7 @@
   },
   {
    "present_dans_readme": false,
-   "raison": "exit tranche size: no source. The x10 level was part of the automated configuration; the share sold there was never recorded. code/exit_ladder.py states 15 % \u2014 two unsourced figures that also disagree. Not to be resolved by picking one",
+   "raison": "exit tranche size: no source. The x10 level was part of the automated configuration; the share sold there was never recorded. code/exit_ladder.py states 15 %, two unsourced figures that also disagree. Not to be resolved by picking one",
    "section": "2 Exploiting the pattern",
    "texte": "10% at 10\u00d7"
   },

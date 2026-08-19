@@ -1,35 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TABLEAU 2 — Probabilite d'un x2 selon le PRIX D'ENTREE.
+Tableau 2 : probabilite d'un x2 selon le prix d'entree.
 
-PANNEAU A (principal) — contrefactuel de prix.
-    Le lot de tokens est fixe. On fait varier le SEUL parametre que l'acheteur
-    ne choisit pas : le prix auquel il peut entrer.
-        x2(P) = part des tokens dont l'ATH pump.fun atteint au moins 2 x P.
-    C'est exactement la fonction de survie de la distribution des ATH,
-    reparametree : x2(P) = P(ATH >= 2P). Il n'y a aucun degre de liberte, aucun
-    filtre, aucun modele. Le prix P_90 tel que x2(P_90) = 90 % vaut, par
-    construction, le 10e percentile des ATH divise par 2.
+Panneau A (principal), contrefactuel de prix. Le lot de tokens est fixe, seul
+varie le parametre que l'acheteur ne choisit pas, le prix auquel il peut
+entrer : x2(P) = part des tokens dont l'ATH pump.fun atteint au moins 2 x P,
+soit la fonction de survie des ATH reparametree, x2(P) = P(ATH >= 2P), sans
+degre de liberte, sans filtre et sans modele. Le prix P_90 tel que
+x2(P_90) = 90 % vaut par construction le 10e percentile des ATH divise par 2.
 
-PANNEAU B (controle) — bandes de prix reellement observees.
-    Meme mesure, mais restreinte aux tokens qui ont effectivement ete detectes
-    dans la bande. Le taux de x2 y est QUASI PLAT (42-58 % de 20k a 300k). Ce
-    panneau est publie parce qu'il empeche une lecture abusive du panneau A :
-    les tokens qui apparaissent bas sont AUSSI ceux dont l'ATH est bas. Le
-    panneau A ne dit donc pas << les tokens achetes bas sont meilleurs >>, il dit
-    << pour un token donne, le prix paye fixe le multiple >>.
+Panneau B (controle), bandes de prix reellement observees. Meme mesure,
+restreinte aux tokens effectivement detectes dans la bande. Le taux de x2 y est
+quasi plat (42-58 % de 20k a 300k), ce qui bloque une lecture abusive du
+panneau A : les tokens qui apparaissent bas sont aussi ceux dont l'ATH est bas.
+Le panneau A porte sur le prix paye pour un token donne, pas sur une
+superiorite des tokens achetes bas.
 
-TROIS AVERTISSEMENTS, repris en pied de tableau :
- 1. Borne SUPERIEURE de la chance de doubler, pas un PnL : atteindre l'ATH n'est
-    pas vendre a l'ATH. Le PnL executable est au tableau 1, et il est negatif.
- 2. mc est au denominateur : artefact de denominateur ASSUME et mesure
+Trois avertissements, repris en pied de tableau :
+ 1. Borne superieure de la chance de doubler, pas un PnL : atteindre l'ATH
+    n'est pas vendre a l'ATH. Le PnL executable est au tableau 1, negatif.
+ 2. mc est au denominateur : artefact de denominateur assume et mesure
     (elasticite log-log publiee).
  3. La colonne << x2 devant soi >> (panneau B) exige en plus que l'ATH survienne
     au moins 60 s apres la detection.
 
-Population : socle B (fast-grad) PROPRE = regime MC sain (2026-06-27..2026-07-18)
-ET 5 000 < detect_mc < 300 000 ET ATH connu. Sensibilite sur B entier publiee.
+Population : socle B (fast-grad) propre, soit regime MC sain
+(2026-06-27..2026-07-18), 5 000 < detect_mc < 300 000 et ATH connu.
+Sensibilite sur B entier publiee.
 
 Usage : python3 code/t2_x2_par_prix_entree.py
 Sorties : docs/tables/T2a_x2_contrefactuel.md, docs/tables/T2b_x2_bandes.md,
@@ -125,7 +123,7 @@ def main():
          f"**Entry price that yields a 90 % x2 rate: {p90:,.0f} USD** "
          f"(= 10th percentile of ATHs / 2; {p90_all:,.0f} USD on all of B)."
          .replace(",", " "),
-         "An UPPER bound: reaching the ATH is not selling at the ATH.",
+         "An upper bound: reaching the ATH is not selling at the ATH.",
          "", "Regenerate: `python3 code/t2_x2_par_prix_entree.py`"])
 
     # ---------------- panneau B : bandes observees
@@ -160,7 +158,7 @@ def main():
         tabB,
         ["",
          f"n = {len(rows)} tokens | {nclu} clusters | {ndays} UTC days | clean population B.",
-         "Here the denominator is the price ACTUALLY observed at detection. The x2 "
+         "Here the denominator is the price actually observed at detection. The x2 "
          "rate is nearly flat: tokens that appear low also have a low ATH.",
          f"Elasticity log10(ATH) ~ log10(mc), demeaned by day: **b = {el:.3f}** "
          f"(n={len(rows)}). b < 1 => entering higher genuinely degrades the multiple.",
@@ -168,7 +166,7 @@ def main():
          "the entry MC (errors-in-variables) pulls the slope below 1; and the nearly "
          "flat x2 rate of this panel is in tension with a causal reading. Mechanical "
          "decomposition: measured. Economic claim: indicative, NON ETABLI.",
-         "`x2 ahead` = x2 AND the ATH occurring >= 60 s after detection.",
+         "`x2 ahead` = x2 and the ATH occurring >= 60 s after detection.",
          "", "Regenerate: `python3 code/t2_x2_par_prix_entree.py`"])
 
     dump_json({"n": len(rows), "n_clusters": nclu, "n_jours": ndays,
