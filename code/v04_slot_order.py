@@ -19,7 +19,14 @@ import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import rpc, load_snipe, load_floor, save, med, DATA, CACHE
 
-SOLUSD = json.load(open(f"{CACHE}/solusd_window.json"))["median_close"]
+_SOLUSD_P = f"{CACHE}/solusd_window.json"
+if not os.path.exists(_SOLUSD_P):
+    raise SystemExit(
+        "data/cache/solusd_window.json absent.\n"
+        "  Ce script rejoue une capture reseau et le cache est git-ignore, donc\n"
+        "  il n'existe pas dans un clone. Les mesures publiees se recalculent\n"
+        "  sans lui : python3 code/run_all.py --strict")
+SOLUSD = json.load(open(_SOLUSD_P))["median_close"]
 S = load_snipe()
 F = load_floor()
 ON = json.load(open(f"{DATA}/v03_onchain.json"))

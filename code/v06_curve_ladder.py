@@ -17,7 +17,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import save, med, DATA, CACHE
 
 SEUIL = 5.0
-SOLUSD = json.load(open(f"{CACHE}/solusd_window.json"))["median_close"]
+_SOLUSD_P = f"{CACHE}/solusd_window.json"
+if not os.path.exists(_SOLUSD_P):
+    raise SystemExit(
+        "data/cache/solusd_window.json absent.\n"
+        "  Ce script rejoue une capture reseau et le cache est git-ignore, donc\n"
+        "  il n'existe pas dans un clone. Les mesures publiees se recalculent\n"
+        "  sans lui : python3 code/run_all.py --strict")
+SOLUSD = json.load(open(_SOLUSD_P))["median_close"]
 V4 = json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]
 
 # --- prix d'ouverture AMM, robuste : mediane des prix des swaps PUMP_AMM

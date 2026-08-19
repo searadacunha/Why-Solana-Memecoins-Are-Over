@@ -101,6 +101,10 @@ def enrich(mint: str) -> dict:
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        raise SystemExit(
+            "usage: python3 code/08_enrich_mints.py <harvest_*.json>\n"
+            "  le fichier de mints est produit par 07_harvest_creations.py")
     mints = json.load(open(sys.argv[1]))
     with ThreadPoolExecutor(max_workers=8) as ex:
         rows = list(ex.map(enrich, mints))
