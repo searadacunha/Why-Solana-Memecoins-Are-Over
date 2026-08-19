@@ -29,7 +29,14 @@ TARGETS = {
 MIN_TX = 30
 N_PER_WINDOW = 3
 
-enr = {x["mint"]: x for x in json.load(open(f"{S}/enriched.json"))}
+_ENR = f"{S}/enriched.json"
+if not os.path.exists(_ENR):
+    raise SystemExit(
+        "enriched.json introuvable dans %s\n"
+        "  Ce script consomme les sorties de 07_harvest_creations.py et\n"
+        "  08_enrich_mints.py. Donner leur repertoire en argument :\n"
+        "      python3 code/10_select_temoins.py <repertoire>" % S)
+enr = {x["mint"]: x for x in json.load(open(_ENR))}
 anchors = {}
 for f in glob.glob(f"{S}/harvest_*.json"):
     d = json.load(open(f))
