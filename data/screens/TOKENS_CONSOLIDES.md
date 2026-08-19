@@ -1,6 +1,6 @@
-# Tokens extracted from the 39 trade screenshots — consolidated list
+# Tokens extracted from the 39 trade screenshots, consolidated list
 
-Source: the 39 screenshots read by 6 agents (files `lot1.json` to `lot6.json`).
+Source: the 39 screenshots, transcribed in six batches (`lot1.json` to `lot6.json`).
 35 entries, **18 distinct tokens**. Every readable date falls inside the
 **October 2024 → February 2025** window (the exploitation phase of the split pattern).
 
@@ -25,14 +25,14 @@ Source: the 39 screenshots read by 6 agents (files `lot1.json` to `lot6.json`).
 | POLMRKTBOT | `GzcqHzszqpcHqKa68Wwe225ZmBcRHph1H1C1vC5Qpump` | 2024-12-15T17:04:54Z |
 | ODIN (reference case) | `odinyvt9FgWWxw9BwZFjf7Agcch6Pk9mKubszw4izAG` | 2024-11-22T23:49Z |
 
-## Partial fragments — mint to be completed on-chain
+## Partial fragments, mint to be completed on-chain
 
 | symbol | fragment | screenshot date |
 |---|---|---|
 | MIKU | `48BVWSkY5Yx79HvaKot2kAYviP9qP…` | 2025-01-01 |
 | bwick | `4V56nShpR2RvX1337B71vnx6kHRq…` | — |
 
-## Symbols without a mint — to be resolved by symbol + date (homonymy risk)
+## Symbols without a mint, to be resolved by symbol + date (homonymy risk)
 
 | symbol | screenshot date | gain |
 |---|---|---|

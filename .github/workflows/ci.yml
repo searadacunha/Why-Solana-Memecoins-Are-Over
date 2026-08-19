@@ -1,19 +1,9 @@
 name: ci
 
-# The badge this produces is the public proof that the dossier still holds:
-# every committed artefact regenerates byte-for-byte, the README's figures match
-# the measurements, the shared libraries type-check, the unit tests pass, and the
-# publication gate finds no leak. It runs on every push and pull request.
-#
-# BYTE-EXACT PIN. The --strict byte comparison is pinned to CPython 3.12 and
-# 3.13, on which the committed artefacts reproduce exactly. The code is
-# stdlib-only and runs on 3.9+ (requirements.txt), but two aggregates -- the
-# log-log ATH/MC elasticity (t2) and the mean-based cluster bootstrap CI (m5) --
-# differ in their last ~1e-15 across older CPython/libm builds (3.9-3.11). That
-# is float noise in the final aggregation, not a logic difference: the LCG
-# resampling itself is identical across versions. Rather than assert a
-# cross-version byte-identity that libm does not give, CI pins the interpreters
-# on which "byte for byte" is literally true. See code/README.md, Reproducibility.
+# Python pinned to 3.12/3.13: that is where --strict reproduces the committed
+# artefacts byte for byte. The code runs on 3.9+, but t2's log-log elasticity and
+# m5's bootstrap CI drift in the last ~1e-15 on older libm builds. Float noise in
+# the final aggregation, not a logic difference. See code/README.md.
 
 on:
   push:
@@ -36,8 +26,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      # code/ is stdlib-only by design; mypy and pytest are dev-only tools,
-      # never imported by any measurement (run_all.py --deps enforces that).
+      # dev-only; no measurement imports them (--deps enforces it)
       - name: Install dev tools
         run: python -m pip install --upgrade pip mypy pytest
 
