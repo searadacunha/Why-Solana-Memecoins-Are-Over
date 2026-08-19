@@ -1,24 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M4 — LES ADRESSES D'INFRASTRUCTURE, ET POURQUOI ELLES DOIVENT ETRE EXCLUES.
+M4 : pourquoi les adresses d'infrastructure doivent etre exclues.
 
-Ce script existe pour une raison methodologique, pas rhetorique.
+Un petit nombre d'adresses snipe une fraction enorme de tous les lancements.
+Ce ne sont pas des operateurs mais un service utilise par tout le monde.
+Laissees dans un calcul de lien entre tokens, elles relient artificiellement a
+peu pres n'importe quelle paire, et le reseau geant qu'on croit decouvrir
+n'est qu'un artefact. C'est le piege le plus facile a manquer sur ces donnees :
+une these appuyee sur le graphe non nettoye serait fausse.
 
-Un petit nombre d'adresses snipe une fraction enorme de TOUS les lancements.
-Elles ne sont pas des operateurs : elles sont un service utilise par tout le
-monde. Si on les laisse dans un calcul de lien entre tokens, elles relient
-artificiellement a peu pres n'importe quelle paire, et on "decouvre" un reseau
-geant qui n'est qu'un artefact.
+Le test : taille de la composante connexe geante du graphe token-token (deux
+tokens relies s'ils partagent au moins k snipeurs), avec et sans ces adresses.
+Si la composante s'effondre quand on les retire, elles servaient de ponts
+artificiels.
 
-Le test est direct : on mesure la taille de la composante connexe geante du
-graphe token-token (deux tokens relies s'ils partagent au moins k snipeurs),
-avec et sans ces adresses. Si la composante s'effondre en les retirant, elles
-etaient bien des ponts artificiels.
-
-C'est le piege dans lequel il est le plus facile de tomber en analysant ces
-donnees, et le dossier le documente exprès : une these qui reposerait sur ce
-graphe non nettoye serait fausse.
+Lit les captures, ecrit docs/out/m4_infra.json.
 
 Usage :  python3 m4_infra_ubiquity.py [--data ...] [--k 3]
 """
@@ -73,7 +70,7 @@ def main():
 
     caps = [d for d in P.load_captures(a.data) if d.get("snipers")]
     N = len(caps)
-    P.head("M4 — UBIQUITE DES ADRESSES D'INFRASTRUCTURE", "MESURE")
+    P.head("M4 : UBIQUITE DES ADRESSES D'INFRASTRUCTURE", "MESURE")
     P.kv("tokens du corpus", N)
 
     freq = collections.Counter()
@@ -113,15 +110,15 @@ def main():
     print("""
   LECTURE :
    - Une seule adresse snipe une part a deux chiffres du corpus entier. Ce
-     n'est pas un operateur de lancement, c'est un service partage. [MESURE]
+     n'est pas un operateur de lancement mais un service partage. [MESURE]
    - Retirer ces adresses fait chuter la composante geante de plusieurs
      dizaines de points : les liens qu'elles creaient etaient artificiels.
      [MESURE]
    - Consequence sur le dossier : toute affirmation de type "ces tokens sont
      lies" qui n'exclut pas ces adresses est sans valeur. Les flottes de M3
-     sont mesurees APRES exclusion. [MESURE]
+     sont mesurees apres exclusion. [MESURE]
    - Ce que ces adresses sont exactement (bot de volume, service de snipe
-     revendu, teneur de marche) n'est PAS etabli par ce corpus. [NON ETABLI]""")
+     revendu, teneur de marche) n'est pas etabli par ce corpus. [NON ETABLI]""")
 
     P.emit({"n_tokens": N, "k": a.k,
             "top_ubiquite": [{"adresse": w, "tokens": c, "part": c / N,

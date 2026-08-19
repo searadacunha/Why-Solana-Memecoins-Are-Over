@@ -1,31 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M6 — CE QUE DEVIENT LE TOKEN APRES LA PREMIERE HEURE.
+M6 : ce que devient le token apres la premiere heure.
 
-Source : data/horizon.json — prix horaires releves a +1 h, +2 h, +4 h et +24 h
+Source : data/horizon.json, prix horaires releves a +1 h, +2 h, +4 h et +24 h
 apres la fin de la capture, pour 193 tokens, via l'API publique GeckoTerminal.
 
-AVERTISSEMENT D'UNITE, ET CORRECTION D'UNE ERREUR.
-Le prix d'entree de ce fichier est en SOL par token (il vient des swaps).
-Les prix horaires de GeckoTerminal sont en USD par token. Le rapport brut
-close/entree MELANGE DONC DEUX UNITES et ne veut rien dire en valeur absolue :
-il vaut le vrai multiple multiplie par le taux SOL/USD de l'epoque.
+Avertissement d'unite. Le prix d'entree vient des swaps et est en SOL par
+token ; les prix horaires de GeckoTerminal sont en USD par token. Le rapport
+brut close/entree melange donc deux unites et ne veut rien dire en valeur
+absolue : il vaut le vrai multiple multiplie par le taux SOL/USD de l'epoque.
+Un chiffre du type "mediane 0,35x a +1 h" suppose donc un taux qui ne figure
+pas dans les donnees, n'est pas reproductible en l'etat, et n'est pas publie
+ici comme un fait.
 
-Consequence : tout chiffre du type "mediane 0,35x a +1 h" suppose un taux
-SOL/USD qui ne figure pas dans les donnees. Il n'est donc PAS reproductible
-en l'etat, et ce script ne le publie pas comme un fait.
+Ce qui est reproductible sans constante externe, c'est la decroissance
+relative : le rapport entre deux horizons elimine le taux de change, qui se
+simplifie. C'est la mesure principale. Le multiple absolu reste disponible via
+--sol-usd <taux>, etiquete comme dependant d'une constante fournie par
+l'utilisateur.
 
-Ce qui EST reproductible sans aucune constante externe, c'est la DECROISSANCE
-RELATIVE : le rapport entre deux horizons elimine le taux de change, qui se
-simplifie. C'est la mesure principale ci-dessous.
-Le multiple absolu est disponible via --sol-usd <taux>, explicitement etiquete
-comme dependant d'une constante fournie par l'utilisateur.
-
-SURVIVANCE. Les quatre horizons ne sont pas disponibles pour les memes tokens :
-un token sans bougie a +24 h a disparu, et l'exclure ameliore artificiellement
-le resultat. La mesure principale porte donc sur le SOUS-ENSEMBLE APPARIE
-(tokens ayant les quatre horizons), qui est le plus favorable au marche. Le
+Survivance : les quatre horizons ne couvrent pas les memes tokens. Un token
+sans bougie a +24 h a disparu, et l'exclure ameliore artificiellement le
+resultat. La mesure principale porte donc sur le sous-ensemble apparie (les
+tokens ayant les quatre horizons), le plus favorable au marche ; le
 sous-ensemble non apparie est donne en sensibilite.
 
 Usage :  python3 m6_horizon.py [--sol-usd 150]
@@ -48,24 +46,24 @@ def main():
     a = ap.parse_args()
 
     rows = P.load_json("horizon.json")
-    P.head("M6 — TRAJECTOIRE APRES LA PREMIERE HEURE", "MESURE")
+    P.head("M6 : TRAJECTOIRE APRES LA PREMIERE HEURE", "MESURE")
     P.kv("tokens instrumentes", len(rows))
 
     no_data = [r for r in rows if r.get("status") != "ok"]
-    P.kv("tokens SANS aucune bougie horaire", len(no_data),
-         note="%.1f %% — plus aucun volume echange" % (100.0 * len(no_data) / len(rows)))
+    P.kv("tokens sans aucune bougie horaire", len(no_data),
+         note="%.1f %%, plus aucun volume echange" % (100.0 * len(no_data) / len(rows)))
     w = P.wilson(len(no_data), len(rows))
     P.kv("   IC95 de cette part", "[%.1f ; %.1f] %%" % (100 * w[0], 100 * w[1]))
 
     ok = [r for r in rows if r.get("entry_price")]
     full = [r for r in ok if all(r.get("close_" + h) for h in H)]
 
-    print("\n  PRINCIPAL — sous-ensemble APPARIE (les 4 horizons disponibles).")
+    print("\n  PRINCIPAL : sous-ensemble apparie (les 4 horizons disponibles).")
     P.kv("n", len(full), note="%.1f %% des tokens instrumentes"
                               % (100.0 * len(full) / len(rows)))
 
-    # (1) LA statistique par token : ce que subit un detenteur donne.
-    print("\n  (1) Evolution PAR TOKEN, depuis +1 h. C'est ce que subit un"
+    # (1) La statistique par token : ce que subit un detenteur donne.
+    print("\n  (1) Evolution par token depuis +1 h, ce que subit un"
           " detenteur.\n      Sans unite : le taux SOL/USD se simplifie dans"
           " le rapport.")
     print("      %-8s %8s %8s %8s %8s %8s   %s"
@@ -83,16 +81,16 @@ def main():
                  t["pct_baisse"]))
     t24 = per_tok["24h"]
     lo, hi = P.bootstrap_median_ci([r["close_24h"] / r["close_1h"] for r in full])
-    print("\n      Le token MEDIAN survivant termine a x%.3f de son niveau de"
+    print("\n      Le token median survivant termine a x%.3f de son niveau de"
           " +1 h\n      (IC95 [%.3f ; %.3f]) : il ne s'effondre pas."
           " Mais le quart inferieur\n      perd %.0f %% et le decile inferieur"
           " perd %.0f %%. La perte n'est pas\n      typique, elle est"
-          " CONCENTREE — et elle est totale quand elle arrive."
+          " concentree, et totale quand elle arrive."
           % (t24["med"], lo, hi, 100 * (1 - t24["p25"]), 100 * (1 - t24["p10"])))
 
     # (2) La statistique transversale : le niveau de prix de la population.
-    print("\n  (2) Niveau de prix TRANSVERSAL de la population (mediane des"
-          " prix a chaque\n      horizon, normalisee a +1 h). Ce n'est PAS le"
+    print("\n  (2) Niveau de prix transversal de la population (mediane des"
+          " prix a chaque\n      horizon, normalisee a +1 h). Ce n'est pas le"
           " parcours d'un token :\n      le token median a +24 h n'est pas le"
           " meme que le token median a +1 h.")
     ratios = {h: [r["close_" + h] / r["entry_price"] for r in full] for h in H}
@@ -101,17 +99,17 @@ def main():
     print("      %-8s %14s" % ("horizon", "niveau relatif"))
     for h in H:
         print("      %-8s %14.3f" % (h, med[h] / base))
-    print("      Ces deux series (1) et (2) different fortement (x%.3f contre"
-          " x%.3f a\n      +24 h) et ce n'est pas une erreur : les tokens les"
-          " plus HAUTS sont ceux\n      qui s'effondrent le plus, ce qui"
+    print("      Les series (1) et (2) different fortement (x%.3f contre"
+          " x%.3f a\n      +24 h) sans qu'il y ait d'erreur : les tokens les"
+          " plus hauts sont ceux\n      qui s'effondrent le plus, ce qui"
           " ecrase la mediane transversale sans que\n      le token median"
-          " ait beaucoup bouge. Confondre les deux — citer x%.2f\n      comme"
-          " 'ce que perd un detenteur' — serait une erreur. Le dossier cite"
-          "\n      (1) pour le detenteur et (2) pour la population, jamais"
-          " l'un pour l'autre."
+          " ait beaucoup bouge. Citer x%.2f comme 'ce que perd\n      un"
+          " detenteur' confondrait les deux. Le dossier cite (1) pour le"
+          "\n      detenteur et (2) pour la population, jamais l'un pour"
+          " l'autre."
           % (t24["med"], med["24h"] / base, med["24h"] / base))
 
-    print("\n  SENSIBILITE — sous-ensemble NON apparie (chaque horizon son n) :")
+    print("\n  SENSIBILITE : sous-ensemble non apparie (chaque horizon son n) :")
     print("    %-6s %5s %14s" % ("horizon", "n", "niveau relatif"))
     unm = {}
     for h in H:
@@ -121,32 +119,32 @@ def main():
     for h in H:
         print("    %-6s %5d %14.3f" % (h, unm[h]["n"], unm[h]["med"] / b2))
     print("    Ecart avec le sous-ensemble apparie : la version non appariee"
-          " parait\n     PIRE a +2 h et MEILLEURE a +24 h. C'est un effet de"
+          " parait\n     pire a +2 h et meilleure a +24 h. C'est un effet de"
           " composition, pas un\n     resultat. Seule la version appariee est"
           " citee par le dossier.")
 
     abs_mult = None
     if a.sol_usd:
         abs_mult = {h: med[h] / a.sol_usd for h in H}
-        print("\n  MULTIPLE ABSOLU, avec le taux SOL/USD = %.2f que VOUS avez"
+        print("\n  MULTIPLE ABSOLU, avec le taux SOL/USD = %.2f que vous avez"
               " fourni :" % a.sol_usd)
         for h in H:
             print("    %-6s x%.3f" % (h, abs_mult[h]))
-        print("    [DEPEND D'UNE CONSTANTE EXTERNE — non reproductible sans"
+        print("    [DEPEND D'UNE CONSTANTE EXTERNE : non reproductible sans"
               " elle, et\n     sensible a 100 %% a sa valeur. A ne pas citer"
               " comme une mesure.]")
 
     print("""
   LECTURE :
-   - La moitie des tokens instrumentes n'a AUCUNE bougie horaire : passe la
+   - La moitie des tokens instrumentes n'a aucune bougie horaire : passe la
      premiere phase, il ne s'echange plus rien du tout. Un detenteur ne peut
      pas vendre faute de contrepartie. [MESURE, sans unite]
    - Sur ceux qui vivent encore, le niveau median a +24 h ne represente qu'une
      fraction du niveau de +1 h. [MESURE, sans unite]
-   - Ces deux effets vont dans le meme sens et se cumulent : le sous-ensemble
-     mesure est celui des SURVIVANTS. La population entiere fait pire.
+   - Ces deux effets se cumulent : le sous-ensemble mesure est celui des
+     survivants, et la population entiere fait pire.
      [INFERE, direction certaine, ampleur non mesuree ici]
-   - Le multiple absolu (0,35x, 0,08x, etc.) n'est PAS reproductible a partir
+   - Le multiple absolu (0,35x, 0,08x, etc.) n'est pas reproductible a partir
      de ces donnees seules : il exige un taux SOL/USD externe. [NON ETABLI en
      l'etat]""")
 

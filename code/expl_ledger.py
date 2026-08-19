@@ -1,61 +1,42 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-expl_ledger.py -- the exchange-deposit ledger, reconstructed from the chain.
+expl_ledger.py, the exchange-deposit ledger rebuilt from the chain.
 
-WHAT IT ESTABLISHES [MESURE]
-    Every SOL transfer that LANDED on the author's exchange deposit address
-    over 2024-10-01 .. 2025-02-02 (UTC, half-open), valued transfer by
-    transfer at the SOL/USD close of that transfer's own UTC day -- never at
-    a window average. The total is the NET of every incoming transfer in the
-    window, winners and losers alike: the number is strong precisely because
-    it already absorbs the losses. Outgoing transfers (the exchange's sweeps)
-    are reported separately and EXCLUDED from proceeds. The pass-through
-    check (SOL in ~= SOL swept out, residual ~0) validates the model: a
-    deposit address holds no balance.
+[MESURE] Every SOL transfer that landed on the author's exchange deposit
+address over 2024-10-01 .. 2025-02-02 (UTC, half-open), valued transfer by
+transfer at the SOL/USD close of its own UTC day, never at a window average.
+The total is the net of every incoming transfer, losing trades included.
+Outgoing transfers (the exchange's sweeps) are reported separately and
+excluded from proceeds; the pass-through check (SOL in ~= SOL swept out,
+residual ~0) validates the model, since a deposit address holds no balance.
 
-WHAT IT READS
-    $EXPL_LEDGER_ADDR   the deposit address, from the environment like the
-                        other external inputs (settings.expl_ledger_addr).
-                        It is the author's KYC'd exchange deposit address and
-                        since 2026-08 it is PUBLISHED --
-                        6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU, see
-                        README.md ("Author"). It stays an environment input
-                        so the script measures the address it is given and
-                        the artefact records which one that was, rather than
-                        the code silently assuming one.
-    Helius RPC          getSignaturesForAddress + getTransaction (jsonParsed
-                        balance deltas), key from the environment
-                        (settings.py). Every response is cached under
-                        data/cache/ (git-ignored): once the cache exists a
-                        re-run needs the address but no key and no network,
-                        and reproduces the artefact byte for byte.
-    Binance             SOLUSDT daily klines, keyless public endpoint,
-                        cached the same way.
+Reads $EXPL_LEDGER_ADDR (settings.expl_ledger_addr), the author's KYC'd
+deposit address, published since 2026-08 as
+6tmiM84AxMzmXzRByq7m1dgNkHtn9wp671e1GMe2ZmWU (README.md, "Author"); it stays
+an environment input so the artefact records which address was measured
+instead of the code assuming one. Balance deltas come from Helius
+(getSignaturesForAddress + getTransaction, jsonParsed, key from settings.py),
+prices from Binance SOLUSDT daily klines (keyless). Both are cached under
+data/cache/ (git-ignored), so a re-run with the cache in place needs the
+address but no key and no network, and reproduces the artefact byte for byte.
 
-WHAT IT WRITES
-    docs/out/expl_ledger.json -- the deposit address, plus aggregates:
-    per-month SOL/USD/n, window totals, sweep totals, counts. No transaction
-    signature and no sender address appears IN THE ARTEFACT -- but with the
-    deposit address published, both are one explorer query away, so
-    aggregates-only is a statement of the artefact's scope, not a privacy
-    defence. The sender wallets: their COUNT is published, never the list.
-    Most are the author's own trading wallets, but the heuristic also
-    resolves a few to third-party exchange hot wallets, so ownership is NOT
-    claimed -- the artefact files any identity behind a sender under
-    NON_ETABLI.
+Writes docs/out/expl_ledger.json: the address plus aggregates (per-month
+SOL/USD/n, window totals, sweep totals, counts). Signatures and sender
+addresses stay out of it, but the published address puts both one explorer
+query away, so that is a statement of scope, not a privacy defence. Senders
+are counted, never listed: mostly the author's own trading wallets, a few
+resolved by the heuristic to third-party exchange hot wallets, so ownership
+is not claimed and any identity behind a sender is filed under NON_ETABLI.
 
-WHAT IT DOES NOT ESTABLISH
-    - The transfer count and the distinct-sender count are method-dependent
-      (see the sender heuristic below); the MONEY columns are not.
-    - Per-trade P&L: a deposit ledger sees proceeds arriving, not trades.
-    - That every incoming transfer is trading proceeds: SOL sent back from
-      the exchange to a trading wallet and deposited again would be capital
-      returning, not new proceeds. Treatment: every positive balance delta
-      is counted (that is the measurement), and the number of incoming
-      transfers whose heuristic sender is also a sweep recipient -- the only
-      return-of-capital signature visible from this wallet -- is measured
-      and published so a reader can subtract it.
+Limits: the transfer and distinct-sender counts depend on the sender
+heuristic below, the money columns do not. Per-trade P&L is out of reach, a
+deposit ledger sees proceeds arriving, not the trades behind them. An
+incoming transfer can also be capital returning, SOL sent back from the
+exchange to a trading wallet and deposited again; every positive delta is
+counted anyway (that is the measurement), and the transfers whose heuristic
+sender is also a sweep recipient, the only return-of-capital signature
+visible from this wallet, are published so a reader can subtract them.
 
 Usage:
     EXPL_LEDGER_ADDR=... [HELIUS_API_KEY=...] python3 code/expl_ledger.py [--out ...]
@@ -84,9 +65,9 @@ PRICE_SOURCE = ("Binance SOLUSDT daily close (api.binance.com /api/v3/klines, "
 
 
 def http_get_json(url, tries=6):
-    """GET a public JSON endpoint. A failure RAISES -- it never becomes a
-    silent zero (see docs/PITFALLS.md: a network outage must not disguise
-    itself as a clean result)."""
+    """GET a public JSON endpoint. A failure raises, it never becomes a silent
+    zero (see docs/PITFALLS.md: a network outage must not disguise itself as a
+    clean result)."""
     last = None
     for a in range(tries):
         try:
@@ -119,10 +100,10 @@ def get_tx(sig):
 
 def wallet_view(tx, addr, sig):
     """The deposit wallet's own balance delta on one successful transaction,
-    plus the counterparty HEURISTIC: sender = the account with the most
-    negative delta in the same tx (recipient = the most positive, for
-    sweeps). Good enough to BOUND the distinct-sender count; NOT an exact
-    transfer-level decomposition -- the counts are weaker than the money."""
+    plus the counterparty heuristic: sender = the account with the most
+    negative delta in the same tx (recipient = the most positive, for sweeps).
+    Enough to bound the distinct-sender count, not an exact transfer-level
+    decomposition, so the counts are weaker than the money."""
     meta = tx.get("meta") or {}
     if meta.get("err") is not None:
         return None
@@ -144,7 +125,7 @@ def wallet_view(tx, addr, sig):
 
 
 def sol_usd_daily():
-    """SOLUSDT daily close keyed by YYYY-MM-DD (UTC). Cached; empty RAISES."""
+    """SOLUSDT daily close keyed by YYYY-MM-DD (UTC). Cached; an empty answer raises."""
     def fetch():
         url = ("https://api.binance.com/api/v3/klines?symbol=SOLUSDT&interval=1d"
                "&startTime=%d&endTime=%d&limit=1000" % (WINDOW_LO * 1000, WINDOW_HI * 1000))
@@ -169,7 +150,7 @@ def main():
     # so re-adding an entry to code/redactions.json would scrub it again
     # with no change here.
 
-    P.head("EXPL — DEPOSIT-WALLET LEDGER, 2024-10-01 .. 2025-02-02 (%s)" % addr,
+    P.head("EXPL : DEPOSIT-WALLET LEDGER, 2024-10-01 .. 2025-02-02 (%s)" % addr,
            "MESURE")
 
     sigs = [s for s in all_signatures(addr)
@@ -217,7 +198,7 @@ def main():
             "distinct_senders": len(good_senders)}
 
     # Return-of-capital candidates: an incoming transfer whose heuristic
-    # sender is also a sweep RECIPIENT is the one visible signature of money
+    # sender is also a sweep recipient is the one visible signature of money
     # coming back from the exchange side. Counted in the totals (the
     # measurement is "what landed"), published so a reader can subtract.
     sweep_dst = {o["recipient"] for o in outgoing if o["recipient"]}
@@ -245,7 +226,7 @@ def main():
   CONCLUSION:
    - %.4f SOL landed on the deposit address over the window, %.2f USD at
      each transfer's own-day close; %.4f SOL of it in 2024-10..12. The total
-     is the NET of every incoming transfer -- it already absorbs the losing
+     is the net of every incoming transfer, it already absorbs the losing
      trades. [MESURE]
    - The wallet is a pass-through: %.4f SOL in vs %.4f SOL swept out,
      residual ~0, as expected of a deposit address. [MESURE]

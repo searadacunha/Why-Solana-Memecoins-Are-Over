@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TABLEAU 4 — Entrer APRES le snipe : le retracement se paie-t-il ?
+Tableau 4 : entrer apres le snipe, le retracement se paie-t-il ?
 
-Le rachat de la courbe se fait dans le bloc de creation : personne d'autre ne
-peut acheter a ce prix-la. La seule question restante pour un acheteur ordinaire
-est donc : << et si j'attends que ca redescende ? >>
+Le rachat de la courbe se fait dans le bloc de creation, hors d'atteinte pour
+tout autre acheteur. Reste la question de l'acheteur ordinaire : << et si
+j'attends que ca redescende ? >>
 
-Regles testees (toutes LIVE-SAFE : la decision n'utilise que du passe) :
+Regles testees, toutes live-safe (la decision n'utilise que du passe) :
   retrace_X   on suit le maximum courant du prix robuste depuis la creation ;
-              des qu'un bucket de 30 s cote a X % ou plus SOUS ce maximum, on
+              des qu'un bucket de 30 s cote a X % ou plus sous ce maximum, on
               achete. La decision prise sur le bucket k s'execute a t0+30(k+1),
               donc jamais avec le prix qui l'a declenchee.
-  graduation  achat des que le flux est exploitable (t0 + 120 s), sans condition
-              — c'est la ligne de reference du tableau 1.
+  graduation  achat des que le flux est exploitable (t0 + 120 s), sans
+              condition. C'est la ligne de reference du tableau 1.
 
 Sortie commune : conservation jusqu'a t_safe (= dernier swap - 120 s), soit au
-plus les 20 minutes de la capture. Ordre AU MARCHE, credite a
+plus les 20 minutes de la capture. Ordre au marche, credite a
 min(prix robuste, profondeur du carnet a 0.5 SOL) ; non remplie = -100 %.
 
-Deux colonnes de resultat, pour qu'aucune convention ne soit cachee :
-  multiple BRUT  prix de sortie / prix d'entree, hors frais
-  PnL NET        le meme, moins 5,8241 % de frais + slippage aller-retour
+Deux colonnes de resultat :
+  multiple brut  prix de sortie / prix d'entree, hors frais
+  PnL net        le meme, moins 5,8241 % de frais + slippage aller-retour
 
 Biais declares :
  1. La regle ne se declenche pas sur tous les tokens (un token qui monte tout
     droit n'offre jamais son retracement). Le n de chaque ligne est donc
-    different et il est publie. Ce n'est PAS une selection sur l'outcome : la
+    different, et il est publie. Ce n'est pas une selection sur l'outcome : la
     condition de declenchement est mesuree strictement avant l'achat.
  2. L'horizon est plafonne a 20 minutes par la duree des captures. C'est la
     limite de cette table ; le tableau 5 la leve avec les bougies horaires.
@@ -93,7 +93,7 @@ def run_rule(d, rule, param):
             if p is None:
                 continue
             if run_max is not None and p <= (1 - param) * run_max:
-                t_dec = t + BUCKET          # execution au bucket SUIVANT
+                t_dec = t + BUCKET          # execution au bucket suivant
                 break
             run_max = p if run_max is None else max(run_max, p)
         if t_dec is None:
@@ -174,7 +174,7 @@ def main():
          f"Source: `{source_label()}` ({nfiles} files, "
          f"{len(caps)} usable captures). Common exit: hold until the usable "
          f"end of the capture (<= 20 min).",
-         "`median multiple` is GROSS (before fees); `net PnL` deducts 5.8241 % "
+         "`median multiple` is gross (before fees); `net PnL` deducts 5.8241 % "
          "round-trip.",
          "Every rule is live-safe: a decision taken on a 30 s bucket executes on "
          "the next bucket, never at the price that triggered it.",
@@ -184,13 +184,12 @@ def main():
          f"[{best['mult_ic95'][0]:.2f}, {best['mult_ic95'][1]:.2f}], n={best['n']}).",
          "`never triggered` = the token never offered the requested retracement "
          "during the capture; those tokens count in no column.",
-         "**Not to be over-read**: the MEAN turns positive on deep retracements "
-         "(-40 % to -70 %). That is not an edge. Two controls show it, and both "
-         "are in the table: (a) the 95% CI of the mean, bootstrapped at the "
-         "CLUSTER level, crosses zero on every one of those rows; (b) removing "
-         "the SINGLE best token flips all those means back negative. It is a "
-         "fat right tail carried by a handful of tokens, not a positive "
-         "expectation.",
+         "**Do not read the mean as an edge**: it turns positive on deep "
+         "retracements (-40 % to -70 %), but two controls in the table rule "
+         "that out. (a) The 95% CI of the mean, bootstrapped at the cluster "
+         "level, crosses zero on every one of those rows. (b) Removing the "
+         "single best token flips all those means back negative. The right "
+         "tail is fat and carried by a handful of tokens.",
          "", "Regenerate: `python3 code/t4_entree_post_snipe_20min.py`"])
     print(txt)
     dump_json({"n_fichiers": nfiles, "n_captures": len(caps), "regles": out},
