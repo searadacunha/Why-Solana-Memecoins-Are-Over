@@ -17,14 +17,14 @@
 | hold_t_safe | 196 | -23.8    | [-42.1, -12.7]  | -10.2  | [-20.6, +10.2]          | 37.8      | 18.9       | -7.9          | 7/20       | 1/6        |
 
 
-n = 196 tokens | 20 clusters | 6 UTC days | entry at t0+120 s, NO entry filter.
+n = 196 tokens | 20 clusters | 6 UTC days | entry at t0+120 s, no entry filter.
 Source: `data/floor_capture_public.jsonl.gz` (645 files, 289 usable captures, rejects {'aucun_buy': 1, 'capture_vide': 352, 'span_swaps_lt_2min': 3}).
 Costs: 1 % fees + 2 % adverse slippage per leg = **5.8241 % round-trip**, already deducted.
-`median excl` = same computation DROPPING unfilled exits (an optimistic convention, published to show what it manufactures).
+`median excl` = same computation, dropping unfilled exits. An optimistic convention, published to show how much return it manufactures.
 **Negative mean on 15/15 policies.** Negative median on 12/15 (9/10 on the canonical 28/07 grid).
-**No policy is positive in both median and mean (0/15).** The few positive medians are tight take-profit policies: they often win a little and rarely lose a lot, so their EXPECTATION is the worst of the table (tp30: median +22 %, mean -16 %).
-No policy has a 95% CI of the mean (CLUSTER-level bootstrap) entirely above zero: 0/15.
+**No policy is positive in both median and mean (0/15).** The few positive medians come from tight take-profit policies, which often win a little and rarely lose a lot, so their expectation is the worst of the table (tp30: median +22 %, mean -16 %).
+No policy has a 95% CI of the mean (cluster-level bootstrap) entirely above zero: 0/15.
 Mean of means over the 15 policies: **-11.3 %** per round-trip.
-No multiplicity correction is needed here: the result is NEGATIVE everywhere, and sweeping more policies can only make a negative result harder to obtain by chance.
+No multiplicity correction: the result is negative everywhere, and sweeping more policies only makes a negative result harder to obtain by chance.
 
 Regenerate: `python3 code/t1_base_rate_sorties.py`

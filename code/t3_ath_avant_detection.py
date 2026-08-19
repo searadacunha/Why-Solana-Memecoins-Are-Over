@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TABLEAU 3 — Part des tokens dont l'ATH est DEJA PASSE quand ils deviennent
+Tableau 3 : part des tokens dont l'ATH est deja passe quand ils deviennent
 visibles.
 
 Mesure : pour chaque token, on compare l'horodatage de l'ATH pump.fun
-(`ath_market_cap` + son ts) a l'horodatage de la DETECTION (premiere fois ou le
-token existe pour un observateur exterieur : un token `complete` vu par le
-detecteur au plus tard 12 s apres sa creation — c'est une borne BASSE de la
-latence de n'importe quel acheteur humain, qui voit le token bien plus tard).
+(`ath_market_cap` et son ts) a celui de la detection, premiere fois ou le token
+existe pour un observateur exterieur (un token `complete` vu par le detecteur au
+plus tard 12 s apres sa creation). C'est une borne basse de la latence de
+n'importe quel acheteur humain, qui voit le token bien plus tard.
 
-Trois seuils, publies ensemble parce qu'ils repondent a trois questions
+Trois seuils, publies ensemble parce qu'ils repondent a des questions
 differentes :
     ATH <= detect_ts        : le sommet est deja derriere au moment ou le token
                               apparait
     ATH < detect_ts + 60 s  : le sommet est derriere avant qu'on ait pu decider
     ATH < detect_ts + 120 s : idem avec 2 minutes de reaction
 
-Decoupage par bande de capitalisation a la detection : c'est la seule facon de
-montrer que le phenomene est CONCENTRE sur les tokens qui apparaissent bas —
-c'est-a-dire exactement ceux qui ont l'air d'une bonne affaire.
+Decoupage par bande de capitalisation a la detection : le phenomene se concentre
+sur les tokens qui apparaissent bas, ceux qui ont l'air d'une bonne affaire.
 
-LIMITE DECLAREE : `o_ath_ts` vient de l'API pump.fun, resolution a la seconde,
-et `detect_ts` est l'horloge locale du detecteur. Un ecart d'horloge de quelques
-secondes est possible ; c'est pourquoi les trois seuils sont publies et pourquoi
-la conclusion ne repose pas sur le seuil le plus serre.
+Limite : `o_ath_ts` vient de l'API pump.fun (resolution a la seconde) et
+`detect_ts` de l'horloge locale du detecteur ; un ecart de quelques secondes est
+possible. D'ou les trois seuils, et une conclusion qui ne repose pas sur le plus
+serre.
 
 Population : socle B propre (regime MC sain, 5k < mc < 300k, ATH connu).
 
@@ -103,8 +102,8 @@ def main():
         ["",
          f"n = {len(rows)} tokens | {nclu} clusters | {ndays} UTC days | clean population B.",
          "`detect_ts` = first outside visibility (token `complete` seen <= 12 s "
-         "after creation). A LOWER bound on a human buyer's latency.",
-         "A NEGATIVE median delay means that, within the band, the typical token "
+         "after creation). A lower bound on a human buyer's latency.",
+         "A negative median delay means that, within the band, the typical token "
          "peaked before it existed for the observer.",
          "Limit: `o_ath_ts` (pump.fun API) and `detect_ts` (local clock) can differ "
          "by a few seconds; the three thresholds are published for that reason.",

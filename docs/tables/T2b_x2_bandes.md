@@ -12,9 +12,9 @@
 
 
 n = 1243 tokens | 123 clusters | 20 UTC days | clean population B.
-Here the denominator is the price ACTUALLY observed at detection. The x2 rate is nearly flat: tokens that appear low also have a low ATH.
+Here the denominator is the price actually observed at detection. The x2 rate is nearly flat: tokens that appear low also have a low ATH.
 Elasticity log10(ATH) ~ log10(mc), demeaned by day: **b = 0.884** (n=1243). b < 1 => entering higher genuinely degrades the multiple.
 Limit (added on review): b is published without SE/CI; measurement error on the entry MC (errors-in-variables) pulls the slope below 1; and the nearly flat x2 rate of this panel is in tension with a causal reading. Mechanical decomposition: measured. Economic claim: indicative, NON ETABLI.
-`x2 ahead` = x2 AND the ATH occurring >= 60 s after detection.
+`x2 ahead` = x2 and the ATH occurring >= 60 s after detection.
 
 Regenerate: `python3 code/t2_x2_par_prix_entree.py`

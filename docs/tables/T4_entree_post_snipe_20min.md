@@ -10,10 +10,10 @@
 
 
 Source: `data/floor_capture_public.jsonl.gz` (645 files, 289 usable captures). Common exit: hold until the usable end of the capture (<= 20 min).
-`median multiple` is GROSS (before fees); `net PnL` deducts 5.8241 % round-trip.
+`median multiple` is gross (before fees); `net PnL` deducts 5.8241 % round-trip.
 Every rule is live-safe: a decision taken on a 30 s bucket executes on the next bucket, never at the price that triggered it.
 **No post-snipe entry rule reaches a median multiple of 1 on this horizon**; the best is `graduation (+120 s)` at 0.81x (95% CI [0.61, 0.93], n=196).
 `never triggered` = the token never offered the requested retracement during the capture; those tokens count in no column.
-**Not to be over-read**: the MEAN turns positive on deep retracements (-40 % to -70 %). That is not an edge. Two controls show it, and both are in the table: (a) the 95% CI of the mean, bootstrapped at the CLUSTER level, crosses zero on every one of those rows; (b) removing the SINGLE best token flips all those means back negative. It is a fat right tail carried by a handful of tokens, not a positive expectation.
+**Do not read the mean as an edge**: it turns positive on deep retracements (-40 % to -70 %), but two controls in the table rule that out. (a) The 95% CI of the mean, bootstrapped at the cluster level, crosses zero on every one of those rows. (b) Removing the single best token flips all those means back negative. The right tail is fat and carried by a handful of tokens.
 
 Regenerate: `python3 code/t4_entree_post_snipe_20min.py`
