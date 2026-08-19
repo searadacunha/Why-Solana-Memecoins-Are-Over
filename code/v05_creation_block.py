@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""v05 - LE BLOC D'ACHAT DU SLOT DE CREATION, mesure NON CIRCULAIRE.
+"""v05 - le bloc d'achat du slot de creation, mesure non circulaire.
 
 v03/v04 partaient des wallets de la flotte. Ici on oublie l'identite : sur les
-memes 42 slots de creation, on enumere TOUS les achats reussis du bloc et on
+memes 42 slots de creation, on enumere tous les achats reussis du bloc et on
 appelle "bloc d'achat" l'ensemble des acheteurs a >= 5 SOL, quels qu'ils soient.
-La seule chose que l'identite sert encore a faire, c'est CHOISIR les tokens.
+L'identite ne sert plus qu'a choisir les tokens.
 
 Cela corrige aussi les 2 lancements ou un wallet de rechange (present 1 seule
 fois dans tout le corpus, meme ticket que le noyau) remplacait un titulaire.

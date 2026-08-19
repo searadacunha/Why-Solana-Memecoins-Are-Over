@@ -1,8 +1,8 @@
 {
  "objet": "Chaines datees guichet de swap -> distributeur -> portefeuilles frais -> premiers achats, sur les tokens tradés.",
  "guichet": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
- "regle_temporelle": "Tout lien posterieur a la creation du token est ECARTE et compte a part : un versement qui arrive apres le lancement ne peut pas l'avoir finance.",
- "portee": "Presence, pas prevalence. La couverture est partielle et rapportee par token : un portefeuille dont l'historique n'a pas ete remonte jusqu'a la genese a une origine INCONNUE, et un negatif ne vaut rien pour lui.",
+ "regle_temporelle": "Tout lien posterieur a la creation du token est ecarte et compte a part : un versement qui arrive apres le lancement ne peut pas l'avoir finance.",
+ "portee": "Presence, pas prevalence. La couverture est partielle et rapportee par token : un portefeuille dont l'historique n'a pas ete remonte jusqu'a la genese a une origine inconnue, et un negatif ne vaut rien pour lui.",
  "n_tokens": 15,
  "n_guichet_en_amont": 8,
  "n_adresses_amont_a_historique_incomplet": 409,
@@ -272,7 +272,7 @@
       "ts": 1734117947,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -287,7 +287,7 @@
       "ts": 1734117947,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -302,7 +302,7 @@
       "ts": 1734117947,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -366,7 +366,7 @@
       "ts": 1738568054,
       "n_versements": 1
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -506,7 +506,7 @@
       "ts": 1737407998,
       "n_versements": 1
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -521,7 +521,7 @@
       "ts": 1737407998,
       "n_versements": 1
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -536,7 +536,7 @@
       "ts": 1737407998,
       "n_versements": 1
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -638,7 +638,7 @@
       "ts": 1728948909,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -653,7 +653,7 @@
       "ts": 1728948909,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -668,7 +668,7 @@
       "ts": 1728948909,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     },
     {
      "niveau": 1,
@@ -683,7 +683,7 @@
       "ts": 1728948909,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -792,7 +792,7 @@
       "ts": 1726912734,
       "n_versements": 2
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -823,7 +823,7 @@
       "ts": 1737761731,
       "n_versements": 5
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },
@@ -869,7 +869,7 @@
       "ts": 1715623470,
       "n_versements": 3
      },
-     "motif_rejet": "guichet paie le distributeur APRES que celui-ci ait paye le portefeuille : ordre impossible"
+     "motif_rejet": "guichet paie le distributeur apres que celui-ci ait paye le portefeuille : ordre impossible"
     }
    ]
   },

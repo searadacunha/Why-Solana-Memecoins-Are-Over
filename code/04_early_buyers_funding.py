@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Premiers acheteurs d'un token, puis recherche d'un SPLIT dans leur financement.
+"""Premiers acheteurs d'un token, puis recherche d'un split dans leur financement.
 
-DÉMARCHE
---------
 Les principaux détenteurs *actuels* d'un token ancien ne disent rien de son lancement : la supply a
-changé de mains depuis. On remonte donc aux PREMIÈRES transactions du mint pour identifier ceux qui
+changé de mains depuis. On remonte donc aux premières transactions du mint pour identifier ceux qui
 étaient là au début, puis on regarde comment ces portefeuilles ont été financés.
 
 Si un opérateur a découpé une somme via un service de swap pour alimenter N portefeuilles, ceux-ci
 ont reçu des montants quasi identiques dans un intervalle court. C'est cette signature qu'on cherche.
 
-USAGE
------
+Usage:
     python3 04_early_buyers_funding.py --mint <MINT> --created 2024-11-22 --n-early 40
 
 Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
@@ -37,10 +34,9 @@ MIN_SOL, MAX_SOL = 0.5, 50.0
 
 
 def oldest_signatures(addr: str, stop_ts: int, max_pages: int = 400) -> list:
-    """Pagine jusqu'à atteindre stop_ts, du plus ancien au plus récent. Indispensable : une
-    pagination bornée trop court ne remonte jamais à la création sur une adresse active, et fait
-    conclure à tort — un budget de pages épuisé LÈVE donc au lieu de rendre un historique
-    partiel."""
+    """Pagine jusqu'à atteindre stop_ts, du plus ancien au plus récent. Une pagination bornée trop
+    court ne remonte jamais à la création sur une adresse active et fait conclure à tort : un budget
+    de pages épuisé lève donc au lieu de rendre un historique partiel."""
     out, _ = rpc_client.walk_sigs(addr, until_ts=stop_ts, max_pages=max_pages)
     return sorted(out, key=lambda s: s.get("blockTime") or 0)
 
@@ -73,12 +69,12 @@ def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -
 
 
 def all_signatures(addr: str, max_pages: int = 60) -> tuple:
-    """TOUTES les signatures d'une adresse, de la plus ancienne à la plus récente.
+    """Toutes les signatures d'une adresse, de la plus ancienne à la plus récente.
 
-    ⚠️ Ne pas borner cette pagination trop court. Le financement initial d'un portefeuille se trouve
-    dans ses PREMIÈRES transactions ; une pagination partielle ne rend que les plus récentes et fait
-    conclure à tort à l'absence de financement. On s'arrête quand une page revient incomplète —
-    signe qu'on a atteint la genèse — et on signale si le plafond a été touché avant.
+    Ne pas borner cette pagination trop court : le financement initial d'un portefeuille se trouve
+    dans ses premières transactions, et une pagination partielle ne rend que les plus récentes, ce
+    qui fait conclure à tort à l'absence de financement. On s'arrête quand une page revient
+    incomplète, signe que la genèse est atteinte, et on signale si le plafond a été touché avant.
     """
     out, before, complete = [], None, False
     for _ in range(max_pages):
@@ -98,7 +94,7 @@ def all_signatures(addr: str, max_pages: int = 60) -> tuple:
 def funding_events(wallet: str) -> list:
     """Entrées de SOL notables d'un portefeuille, mesurées par delta de solde.
 
-    On lit les 40 PREMIÈRES transactions de son existence : c'est là que se trouve son financement.
+    On lit les 40 premières transactions de son existence : c'est là que se trouve son financement.
     """
     sigs, complete = all_signatures(wallet)
     if not complete:

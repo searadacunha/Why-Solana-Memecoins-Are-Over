@@ -1,9 +1,9 @@
 """
-v2_dispatcher_burst.py — geometry of a mass-funding burst.
+v2_dispatcher_burst.py: geometry of a mass-funding burst.
 
-For each address given, walks its FULL signature history (getSignaturesForAddress,
-paged backwards) and its FULL parsed history (Helius enhanced, paged backwards),
-then MEASURES:
+For each address given, walks the whole signature history
+(getSignaturesForAddress, paged backwards) and the whole parsed history
+(Helius enhanced, paged backwards), then measures:
 
   n_sig_total        total signatures over the account's whole life
   life_s             last_ts - first_ts (seconds)

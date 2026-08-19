@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""v06 - L'ECHELLE DE PRIX DE LA COURBE (bonding curve), acheteur par acheteur.
+"""v06 - l'echelle de prix de la courbe (bonding curve), acheteur par acheteur.
 
 Filtre strict : on ne compte comme "achat de courbe" qu'une transaction ou
-LE COMPTE DE COURBE (identifie dans la tx de creation comme le compte recevant
-~99 % de la supply) PERD des tokens et ou le signataire en GAGNE. Cela elimine
+le compte de courbe (identifie dans la tx de creation comme le compte recevant
+~99 % de la supply) perd des tokens et ou le signataire en gagne. Cela elimine
 les swaps AMM, les arbitrages et les tx multi-legs qui polluaient v05.
 
 On sort, par lancement, la sequence ordonnee des achats de courbe avec le prix
-paye, ce qui donne l'echelle exacte : combien paie le bloc de creation, combien
-paie le suivant, combien paie le dernier avant graduation.
+paye, ce qui donne l'echelle exacte : combien paie le bloc de creation, puis le
+suivant, puis le dernier avant graduation.
 
 Sortie: data/v06_curve_ladder.json
 """
@@ -74,7 +74,7 @@ for L in V4:
     for r in rs[1:]:
         d = r["tok"].get(curve, 0.0)
         g = r["tok"].get(r["signer"], 0.0)
-        # achat de courbe PROPRE : la courbe perd, le signataire gagne, et il
+        # achat de courbe propre : la courbe perd, le signataire gagne, et il
         # gagne >=85% de ce que la courbe perd (sinon tx multi-leg -> prix faux)
         if d < -1 and g > 1 and g >= 0.85 * (-d) and r["sol"] > 0.0005:
             ladder.append({"idx": r["idx"], "signer": r["signer"], "sig": r["sig"],

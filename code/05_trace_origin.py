@@ -1,28 +1,23 @@
 #!/usr/bin/env python3
 """Remonte l'origine d'un portefeuille distributeur, en contournant le plafond de pagination.
 
-LE PROBLÈME
------------
 `getSignaturesForAddress` ne remonte que du présent vers le passé, mille signatures par appel. Sur un
 distributeur qui cumule 80 000 transactions ou plus, atteindre sa genèse par pagination complète est
-hors de portée — et une pagination bornée rend les transactions RÉCENTES en faisant croire, en
+hors de portée, et une pagination bornée rend les transactions récentes en laissant croire, en
 silence, qu'on a vu le début. Ce piège a produit quatre conclusions fausses en une journée.
 
-LA MÉTHODE
-----------
-On ne cherche pas TOUT l'historique : on cherche les ENTRÉES de fonds significatives. Deux stratégies
-complémentaires, dont on garde la meilleure :
+On ne remonte donc pas l'historique entier, seulement les entrées de fonds significatives. Deux
+stratégies complémentaires, on garde la meilleure :
 
-1. `--strategy deep` : pagination profonde jusqu'à la genèse, avec plafond explicite. On sait
-   toujours si la genèse a été atteinte ou non — jamais de zéro silencieux.
+1. `--strategy deep` : pagination profonde jusqu'à la genèse, avec plafond explicite. Le résultat dit
+   toujours si la genèse a été atteinte, il n'y a pas de zéro silencieux.
 2. `--strategy sample` : échantillonnage en profondeur. On saute des pages par grands bonds pour
    atteindre rapidement les zones anciennes, et on n'inspecte que les transactions où le solde du
-   portefeuille AUGMENTE fortement (ses financements). Coût constant, quelle que soit l'activité.
+   portefeuille augmente fortement (ses financements). Coût constant, quelle que soit l'activité.
 
-À chaque niveau, on retient les sources majeures et on recommence — sur N générations.
+À chaque niveau, on retient les sources majeures et on recommence, sur N générations.
 
-USAGE
------
+Usage:
     python3 05_trace_origin.py --addr <ADDR> --depth 3 --strategy sample
 
 Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
@@ -46,7 +41,7 @@ LAMPORTS = 1_000_000_000
 MIN_INFLOW_SOL = 1.0          # en dessous, c'est du bruit opérationnel
 
 # Terminaux connus : au-delà, on est dans l'infrastructure publique (échange, pont, service de swap).
-# Une chaîne qui aboutit ici est un FAIT DE ROUTAGE, pas une preuve d'implication du service.
+# Une chaîne qui aboutit ici est un fait de routage, pas une preuve d'implication du service.
 KNOWN = {
     "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t": "service de swap (G2Y)",
     "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9": "echange (hot wallet)",

@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-r1_burst_window.py — geometrie d'une salve de financement, sur une FENETRE
-TEMPORELLE donnee, avec le montant comme critere.
+r1_burst_window.py : geometrie d'une salve de financement sur une fenetre
+temporelle donnee, avec le montant comme critere.
 
 Etape 1 : on remonte l'historique de signatures de l'adresse (pages de 1000,
           du plus recent au plus ancien) jusqu'a depasser le debut de la
           fenetre. Une page vide distingue "fin de l'historique" d'une coupure
           de quota : r1lib leve sur erreur, donc aucune troncature muette.
-Etape 2 : on repart de la premiere signature POSTERIEURE a la fenetre et on
-          descend en transactions parsees jusqu'a sortir de la fenetre par le
-          bas ; on garde tous les transferts natifs sortants.
-Etape 3 : on mesure -- destinataires distincts, distribution des tickets,
-          separation poussiere/financement (memes seuils que r1_dust_vs_funding),
-          fenetre la plus courte contenant 90 % des envois FINANCES, debit.
+Etape 2 : on repart de la signature la plus ancienne encore situee apres la
+          fenetre et on descend en transactions parsees jusqu'a sortir de la
+          fenetre par le bas ; on garde tous les transferts natifs sortants.
+Etape 3 : on mesure les destinataires distincts, la distribution des tickets,
+          la separation poussiere/financement (memes seuils que
+          r1_dust_vs_funding), la fenetre la plus courte contenant 90 % des
+          envois de financement, et le debit.
 
 Sortie : data/r1_burst_<addr8>_<ts0>.json  (+ liste des destinataires finances)
 Usage  : python3 r1_burst_window.py <adresse> <ts_debut> <ts_fin>
@@ -38,7 +39,7 @@ def fenetre_la_plus_courte(ts, frac=0.90):
 
 
 def signature_avant(addr, ts_fin):
-    """Signature la plus ancienne encore POSTERIEURE a ts_fin, en remontant."""
+    """Signature la plus ancienne encore situee apres ts_fin, en remontant."""
     sigs, before, pages = [], None, 0
     while pages < 400:
         page = R.sig_page(addr, 1000, before)

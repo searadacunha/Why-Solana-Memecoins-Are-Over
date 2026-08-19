@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-r1_dust_vs_funding.py — un envoi de SOL n'est un FINANCEMENT que si le montant
-permet d'acheter. Ce script mesure la distribution des tickets sortants des
-adresses que les notes d'enquete de mai 2026 appellent "dispatchers de masse",
-et separe :
+r1_dust_vs_funding.py : un envoi de SOL ne finance le destinataire que si le
+montant lui permet d'acheter. Ce script mesure la distribution des tickets
+sortants des adresses que les notes d'enquete de mai 2026 appellent
+"dispatchers de masse", et separe :
 
-  POUSSIERE (dusting)  ticket < 0.00089088 SOL  = sous le minimum de rente d'un
+  poussiere (dusting)  ticket < 0.00089088 SOL, sous le minimum de rente d'un
                        compte systeme. Le destinataire ne peut rien signer :
-                       il ne peut meme pas payer les 0.000005 SOL de frais de
-                       base 179 fois. C'est un marquage d'adresse, pas un
+                       le montant ne couvre meme pas 179 fois les 0.000005 SOL
+                       de frais de base. C'est un marquage d'adresse, pas un
                        financement.
-  FINANCEMENT          ticket >= 0.01 SOL = de quoi payer frais + priorite et
+  financement          ticket >= 0.01 SOL, de quoi payer frais + priorite et
                        acheter sur la courbe.
 
-Le point est METHODOLOGIQUE : "N wallets finances en T secondes" ne veut rien
-dire tant qu'on n'a pas regarde le MONTANT. Un spray de poussiere touche par
-construction les adresses ACTIVES (c'est la liste de diffusion du spammeur) ;
-retrouver ensuite ces adresses parmi les gros acheteurs d'un token n'etablit
-aucun lien d'operation.
+"N wallets finances en T secondes" ne veut rien dire tant qu'on n'a pas regarde
+le montant. Un spray de poussiere touche par construction des adresses deja
+actives (c'est la liste de diffusion du spammeur) ; retrouver ensuite ces
+adresses parmi les gros acheteurs d'un token n'etablit aucun lien d'operation.
 
 Sortie : data/r1_dust_vs_funding.json
 Usage  : python3 r1_dust_vs_funding.py [adresse ...]
