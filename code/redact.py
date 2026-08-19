@@ -3,52 +3,40 @@
 """
 redact.py -- stable pseudonymisation of a small set of on-chain identifiers.
 
-WHY THIS EXISTS
----------------
-Solana addresses and mints are public data, and this dossier publishes them
-unmasked on purpose: masking them would make every claim unverifiable. One
-exception remains in force; a second existed and was retired.
+Addresses and mints are public data and this dossier publishes them unmasked:
+masking them would make the claims unverifiable. One exception is still in
+force, a second was retired.
 
-1. SLUR-VANITY IDENTIFIERS (plain SHA-256).
-   A vanity address is *chosen* by whoever generated it, and a handful of
-   identifiers in this corpus were generated to carry a racial slur in their
-   first characters. Reproducing those strings would republish the slur, so
-   they are replaced by a stable neutral label. The map is committed as
-   sha256(identifier) -> label, which lets anyone who already holds such an
-   address confirm what it became by hashing it -- decency, not secrecy, so
-   public confirmability is a feature and a plain hash is the right tool.
+1. Slur-vanity identifiers (plain SHA-256). A vanity address is chosen by
+   whoever generated it, and a handful in this corpus carry a racial slur in
+   their first characters. Reproducing them would republish the slur, so they
+   get a stable neutral label. The map is committed as sha256(id) -> label, so
+   anyone already holding such an address can confirm what it became by hashing
+   it. A plain hash is deliberate: it has to stay checkable by a third party.
 
-2. RETIRED: THE AUTHOR'S KYC'D EXCHANGE DEPOSIT ADDRESS (salted HMAC-SHA256).
-   Until 2026-08 that one address was redacted for privacy under a second
-   scheme, keyed by HMAC-SHA256(salt, address) under an UNCOMMITTED salt, so
-   that it could not be confirmed by hashing candidate addresses against the
-   committed map (an enumeration oracle, which a plain sha256 map would be).
-   The author has since chosen to publish the address in the clear as part of
-   the dossier's attribution (see README.md, "Author"), and the `map_hmac`
-   block was removed from code/redactions.json (its "history" field records
-   the change). The machinery below stays: re-adding a `map_hmac` entry
-   re-redacts the address on every write path with no other change.
+2. Retired: the author's KYC'd exchange deposit address (salted HMAC-SHA256).
+   Until 2026-08 it was redacted under a second scheme, keyed by
+   HMAC-SHA256(salt, address) with an UNCOMMITTED salt, so it could not be
+   confirmed by hashing candidates against the committed map (a plain sha256
+   map would be an enumeration oracle). The address is published since
+   (README.md, "Author") and the `map_hmac` block was dropped from
+   code/redactions.json; its "history" field records the change. The machinery
+   stays: re-adding a `map_hmac` entry re-redacts on every write path.
 
-THE RULE FOR THE SLUR SET (mechanical, applied once, auditable)
----------------------------------------------------------------
-An identifier is redacted iff its first 8 characters contain a term from a
-hard-slur word list. The rule is applied by build_redactions.py, which takes
-the word list as an external file: **the list is never committed**, and this
-repository therefore contains neither the offending addresses nor the words
-used to find them.
+The rule: an identifier is redacted iff its first 8 characters contain a term
+from a hard-slur word list. build_redactions.py applies it and reads that list
+from an external file which is never committed, so the repo holds neither the
+offending addresses nor the words used to find them.
 
-WHAT IS COMMITTED is code/redactions.json:
-  * "map" : sha256(identifier) -> label            (the slur set)
-It contains hashes only, not a single one of the redacted strings. (A second
-block, "map_hmac" : HMAC-SHA256(salt, identifier) -> label, held the KYC
-address until 2026-08; the loader still reads it whenever it is present.)
+Committed is code/redactions.json, "map" = sha256(id) -> label. Hashes only,
+not one of the redacted strings. (A "map_hmac" block held the KYC address until
+2026-08; the loader still reads it when present.)
 
-Labels are of the form  RDCT-<10 hex>. They contain a hyphen, so they can never
-be mistaken for a base58 address, and they are stable across files: a
-substitution injective on identifiers leaves every count invariant.
+Labels look like RDCT-<10 hex>. The hyphen makes them impossible to mistake for
+base58, and the substitution is injective, so every count stays invariant.
 
-Redacted identifiers are a rounding error in the corpus: 43 of 212 201 scanned
-(all slur-vanity), none of them in the operator clusters the dossier analyses.
+43 redacted out of 212 201 scanned, all slur-vanity, none in the operator
+clusters the dossier analyses.
 """
 from __future__ import annotations
 

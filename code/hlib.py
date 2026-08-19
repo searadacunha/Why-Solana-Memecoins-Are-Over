@@ -6,11 +6,9 @@ v2_dispatcher_burst.py). The client itself now lives in rpc_client.py; this
 module only re-exports it under the historical names and keeps the base58
 pubkey check.
 
-It used to be a second, weaker client: sigs() returned [] and rpc() returned
-None on failure, so a quota-truncated page was indistinguishable from a
-genuinely empty one -- the exact trap r1lib.py was written to avoid. That
-silent-failure client is gone. Every call here now raises HeliusError on
-failure, exactly like everywhere else (see rpc_client.py).
+It used to be a second, weaker client that returned [] / None on failure, so a
+quota-truncated page looked like an empty one. Every call now raises
+HeliusError (see rpc_client.py).
 """
 from __future__ import annotations
 
@@ -37,6 +35,9 @@ def cached(name: str, fn: Any) -> Any:
 B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 
+# TODO len(n.to_bytes(32, "big")) vaut toujours 32 sous la garde n < 2**256,
+# donc la derniere ligne se reduit a `n < 2**256`. Couvert par test_pubkey.py,
+# je ne touche pas maintenant, mais c'est a simplifier.
 def is_b58_pubkey(s: str) -> bool:
     if not (32 <= len(s) <= 44):
         return False
