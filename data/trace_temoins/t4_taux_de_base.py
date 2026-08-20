@@ -120,8 +120,11 @@ def main():
             continue
         cibles.append(charge(json.load(open(p3)), json.load(open(p2))))
 
-    couvert_prebuy = lambda w: w["fenetre_prebuy_atteinte"]
-    couvert_genese = lambda w: w["genese_atteinte"]
+    def couvert_prebuy(w):
+        return w["fenetre_prebuy_atteinte"]
+
+    def couvert_genese(w):
+        return w["genese_atteinte"]
 
     res = {
         "objet": "Taux de base du DECOUPAGE chez les premiers acheteurs de tokens pump.fun temoins",

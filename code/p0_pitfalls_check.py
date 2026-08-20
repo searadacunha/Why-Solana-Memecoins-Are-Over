@@ -44,7 +44,10 @@ def rate(rows, key):
 def fisher_two_sided(a, b, c, d):
     """Exact two-sided Fisher test on a 2x2 table."""
     n, r1, r2, c1 = a + b + c + d, a + b, c + d, a + c
-    hp = lambda x: comb(r1, x) * comb(r2, c1 - x) / comb(n, c1)
+    def hp(x):
+        """Hypergeometric probability of exactly x in the top-left cell."""
+        return comb(r1, x) * comb(r2, c1 - x) / comb(n, c1)
+
     p0 = hp(a)
     return sum(hp(x) for x in range(max(0, c1 - r2), min(r1, c1) + 1)
                if hp(x) <= p0 + 1e-12)
