@@ -1,39 +1,40 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tableau 4 : entrer apres le snipe, le retracement se paie-t-il ?
+Table 4: entering after the snipe, does the retracement pay?
 
-Le rachat de la courbe se fait dans le bloc de creation, hors d'atteinte pour
-tout autre acheteur. Reste la question de l'acheteur ordinaire : << et si
-j'attends que ca redescende ? >>
+The curve is bought back inside the creation block, out of reach for any other
+buyer. That leaves the ordinary buyer's question: "what if I wait for it to come
+back down?"
 
-Regles testees, toutes live-safe (la decision n'utilise que du passe) :
-  retrace_X   on suit le maximum courant du prix robuste depuis la creation ;
-              des qu'un bucket de 30 s cote a X % ou plus sous ce maximum, on
-              achete. La decision prise sur le bucket k s'execute a t0+30(k+1),
-              donc jamais avec le prix qui l'a declenchee.
-  graduation  achat des que le flux est exploitable (t0 + 120 s), sans
-              condition. C'est la ligne de reference du tableau 1.
+The rules under test, all live-safe, meaning the decision uses only the past:
+  retrace_X   the running maximum of the robust price since creation is
+              tracked; the moment a 30 s bucket quotes X % or more below that
+              maximum, the token is bought. A decision taken on bucket k
+              executes at t0+30(k+1), so never at the price that triggered it.
+  graduation  buy as soon as the flow is usable, t0 + 120 s, with no condition.
+              This is table 1's reference line.
 
-Sortie commune : conservation jusqu'a t_safe (= dernier swap - 120 s), soit au
-plus les 20 minutes de la capture. Ordre au marche, credite a
-min(prix robuste, profondeur du carnet a 0.5 SOL) ; non remplie = -100 %.
+A shared exit: hold until t_safe, the last swap minus 120 s, so at most the 20
+minutes of the capture. A market order, credited at min(robust price, book depth
+at 0.5 SOL); not filled counts as -100 %.
 
-Deux colonnes de resultat :
-  multiple brut  prix de sortie / prix d'entree, hors frais
-  PnL net        le meme, moins 5,8241 % de frais + slippage aller-retour
+Two result columns:
+  gross multiple  exit price over entry price, before costs
+  net PnL         the same, less the 5.8241 % of fees and slippage over the
+                  round trip
 
-Biais declares :
- 1. La regle ne se declenche pas sur tous les tokens (un token qui monte tout
-    droit n'offre jamais son retracement). Le n de chaque ligne est donc
-    different, et il est publie. Ce n'est pas une selection sur l'outcome : la
-    condition de declenchement est mesuree strictement avant l'achat.
- 2. L'horizon est plafonne a 20 minutes par la duree des captures. C'est la
-    limite de cette table ; le tableau 5 la leve avec les bougies horaires.
+Declared biases:
+ 1. The rule does not fire on every token, since a token that only goes up never
+    offers its retracement. The n of each row therefore differs, and it is
+    published. This is not selection on the outcome: the trigger condition is
+    measured strictly before the buy.
+ 2. The horizon is capped at 20 minutes by the length of the captures. That is
+    this table's limit; table 5 lifts it with hourly candles.
 
-Usage : python3 code/t4_entree_post_snipe_20min.py
-Sorties : docs/tables/T4_entree_post_snipe_20min.md
-          data/cout_acheteur/t4_entree_post_snipe_20min.json
+Usage: python3 code/t4_entree_post_snipe_20min.py
+Outputs: docs/tables/T4_entree_post_snipe_20min.md
+         data/cout_acheteur/t4_entree_post_snipe_20min.json
 """
 import math
 import os
@@ -75,7 +76,7 @@ def exit_at(bk, t_x):
 
 
 def run_rule(d, rule, param):
-    """rule in {'retrace','graduation'} -> dict ou None si pas de declenchement."""
+    """rule in {'retrace', 'graduation'} -> a dict, or None if it never fired."""
     bk = Book(d["_sw"])
     t0 = d["_created"]
     t_safe = bk.t_last - SAFE_MARGIN
