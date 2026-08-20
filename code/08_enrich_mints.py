@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
-"""Enrichit les mints recoltes via l'API pump + mesure d'activite on-chain.
+"""Enrich the harvested mints through the pump API, and measure their on-chain
+activity.
 
-Deux mesures independantes de la performance :
-  - pump API : complete (= courbe terminee -> Raydium), king_of_the_hill, reply_count,
-    usd_market_cap actuel. NB: ath_market_cap de l'API est un maximum RECENT, pas l'ATH
-    historique de 2024 (verifie : tous les ath_market_cap_timestamp tombent en 2026).
-  - on-chain : nombre TOTAL de transactions sur le compte bonding_curve, pagine
-    JUSQU'A LA GENESE (une page incomplete). C'est la mesure d'activite reelle du token
-    sur toute sa vie, et elle dit si le token a assez d'acheteurs pour etre analysable.
+Two independent measurements of performance:
+  - pump API: complete (the curve finished, so it moved to Raydium),
+    king_of_the_hill, reply_count, current usd_market_cap. Note that the API's
+    ath_market_cap is a RECENT maximum, not the historical 2024 high; this was
+    checked, every ath_market_cap_timestamp falls in 2026.
+  - on-chain: the TOTAL number of transactions on the bonding_curve account,
+    paginated ALL THE WAY TO GENESIS, meaning until a page comes back
+    incomplete. That is the token's real activity over its whole life, and it
+    says whether the token has enough buyers to be analysable at all.
 
 CLIENT
 ------
-Le comptage on-chain passe par le client Helius unique (rpc_client.py) : les clés
-viennent de l'environnement ($HELIUS_API_KEYS, ou .env non versionné, voir
-settings.py) et **un échec réseau LÈVE** au lieu de se déguiser en « compte trop
-actif » (docs/PITFALLS.md, règle n°2). L'API frontend pump.fun n'est PAS Helius :
-elle garde un petit GET local, qui lève lui aussi à l'épuisement des essais.
+The on-chain count goes through the single Helius client (rpc_client.py): the
+keys come from the environment, $HELIUS_API_KEYS or the uncommitted .env, see
+settings.py, and a network failure RAISES instead of disguising itself as an
+"account too active" (docs/PITFALLS.md, rule 2). The pump.fun frontend API is
+NOT Helius: it keeps a small local GET, which also raises once its attempts are
+exhausted.
 """
 from __future__ import annotations
 import datetime as dt, json, os, sys, time, urllib.request
@@ -29,13 +33,17 @@ UA = "Mozilla/5.0"
 
 
 class PumpError(RuntimeError):
-    """Échec de l'API frontend pump.fun (endpoint non-Helius). Levée, jamais rendue
-    en None : une panne réseau doit interrompre la mesure, pas la vider en silence."""
+    """A failure of the pump.fun frontend API, a non-Helius endpoint. Raised, never
+    returned as None: a network outage must interrupt the measurement, not empty
+    it in silence.
+    """
 
 
 def pump_get(url: str, timeout: int = 30, retries: int = 4) -> Any:
-    """GET JSON sur le frontend pump.fun (endpoint NON-Helius, hors rpc_client).
-    Retourne le JSON décodé, ou LÈVE PumpError une fois les essais épuisés."""
+    """JSON GET against the pump.fun frontend, a NON-Helius endpoint outside
+    rpc_client. Returns the decoded JSON, or RAISES PumpError once the attempts
+    are exhausted.
+    """
     last: Optional[str] = None
     for i in range(retries):
         try:
@@ -49,12 +57,12 @@ def pump_get(url: str, timeout: int = 30, retries: int = 4) -> Any:
 
 
 def count_txs(addr: str, cap_pages: int = 30) -> tuple[int, bool, Optional[int]]:
-    """Nombre total de tx d'un compte, pagine jusqu'a la genese.
+    """The total number of transactions on an account, paginated to genesis.
 
-    Renvoie (n, genese_atteinte, first_ts). genese_atteinte=False => plafond de
-    pagination touche, le compte est TROP ACTIF pour etre compte ici (donc pas un
-    token mort). Un echec reseau LEVE (rpc_client) au lieu de se faire passer pour
-    ce plafond.
+    Returns (n, genesis_reached, first_ts). genesis_reached=False means the
+    pagination cap was hit and the account is TOO ACTIVE to be counted here, so
+    it is not a dead token. A network failure RAISES (rpc_client) instead of
+    passing itself off as that cap.
     """
     n, before, pages = 0, None, 0
     first_ts: Optional[int] = None
