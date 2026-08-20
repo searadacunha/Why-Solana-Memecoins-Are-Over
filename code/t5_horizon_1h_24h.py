@@ -34,7 +34,6 @@ Sorties : docs/tables/T5_horizon_1h_24h.md
 """
 import json
 import os
-import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

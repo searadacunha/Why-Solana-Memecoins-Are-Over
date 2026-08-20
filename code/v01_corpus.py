@@ -3,7 +3,7 @@
 
 Sortie: data/v01_corpus.json
 """
-import sys, os, json, statistics as st
+import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import load_floor, load_snipe, load_socle, save
 

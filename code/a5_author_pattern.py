@@ -27,7 +27,6 @@ Reads only committed files under ./data/. No network, no key.
 """
 from __future__ import annotations
 import glob, json, os
-from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

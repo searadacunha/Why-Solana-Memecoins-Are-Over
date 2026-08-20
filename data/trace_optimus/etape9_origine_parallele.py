@@ -23,7 +23,7 @@ Usage :
     python3 etape9_origine_parallele.py [--depth 2] [--max-pages 60] [--workers 5]
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, threading
+import argparse, json, os, sys
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 

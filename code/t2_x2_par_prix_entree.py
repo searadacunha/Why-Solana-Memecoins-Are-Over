@@ -34,7 +34,6 @@ Sorties : docs/tables/T2a_x2_contrefactuel.md, docs/tables/T2b_x2_bandes.md,
           data/t2_x2_par_prix_entree.json
 """
 import collections
-import json
 import math
 import os
 import statistics as st
