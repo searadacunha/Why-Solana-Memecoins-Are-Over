@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Selection deterministe du groupe temoin + ecriture de data/cibles/cibles.json.
+"""Deterministic selection of the control group, and the write of
+data/cibles/cibles.json.
 
-REGLE PRE-ENREGISTREE (fixee avant toute mesure de financement) :
- 1. Univers    : tout mint pump.fun dont la TRANSACTION DE CREATION tombe dans la
-                 fenetre +/-200 slots autour du slot de creation d'une cible.
- 2. Exclusion  : complete==true (courbe terminee / graduation) OU koth==true.
- 3. Analysable : bc_tx_total >= 30 et genese de pagination atteinte.
- 4. Classement : |slot - slot_ancre| croissant. On prend les 3 premiers par fenetre.
+PRE-REGISTERED RULE, fixed before any funding was measured:
+ 1. Universe   : every pump.fun mint whose CREATION TRANSACTION falls within
+                 +/-200 slots of a target's creation slot.
+ 2. Exclusion  : complete==true (the curve finished, so it graduated) OR
+                 koth==true.
+ 3. Analysable : bc_tx_total >= 30 and the pagination reached genesis.
+ 4. Ranking    : by increasing |slot - anchor_slot|. The first 3 per window are
+                 taken.
 
-Aucun critere ne porte sur le financement, l'origine des portefeuilles, ni G2Y.
+No criterion touches funding, wallet origin, or G2Y.
 """
 import json, glob, os, datetime as dt
 

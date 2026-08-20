@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Premiers acheteurs d'un token, puis recherche d'un split dans leur financement.
+"""A token's early buyers, then the search for a split in how they were funded.
 
-Les principaux détenteurs *actuels* d'un token ancien ne disent rien de son lancement : la supply a
-changé de mains depuis. On remonte donc aux premières transactions du mint pour identifier ceux qui
-étaient là au début, puis on regarde comment ces portefeuilles ont été financés.
+An old token's main holders today say nothing about its launch: the supply has
+changed hands since. So this walks back to the mint's first transactions to
+identify who was there at the start, then looks at how those wallets were
+funded.
 
-Si un opérateur a découpé une somme via un service de swap pour alimenter N portefeuilles, ceux-ci
-ont reçu des montants quasi identiques dans un intervalle court. C'est cette signature qu'on cherche.
-
-Usage:
-    python3 04_early_buyers_funding.py --mint <MINT> --created 2024-11-22 --n-early 40
-
-Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
+If an operator split a sum through a swap service to feed N wallets, those
+wallets received near-identical amounts within a short interval. That is the
+signature being looked for.
 """
 from __future__ import annotations
 
@@ -28,21 +25,24 @@ import settings
 from splitlib import find_splits
 
 LAMPORTS = 1_000_000_000
-# Bande d'entrées plus large ici : on ne connaît pas le calibre de l'époque. Ce filtre local
-# reste ; le regroupement (REL_TOL / WINDOW_S / MIN_CLUSTER) vit désormais dans splitlib.
+# A wider incoming band here: the calibre of the time is not known. This local
+# filter stays; the grouping (REL_TOL / WINDOW_S / MIN_CLUSTER) now lives in
+# splitlib.
 MIN_SOL, MAX_SOL = 0.5, 50.0
 
 
 def oldest_signatures(addr: str, stop_ts: int, max_pages: int = 400) -> list:
-    """Pagine jusqu'à atteindre stop_ts, du plus ancien au plus récent. Une pagination bornée trop
-    court ne remonte jamais à la création sur une adresse active et fait conclure à tort : un budget
-    de pages épuisé lève donc au lieu de rendre un historique partiel."""
+    """Paginate until stop_ts is reached, oldest to newest. A pagination bounded
+    too tightly never reaches creation on an active address and leads to a wrong
+    conclusion, so an exhausted page budget raises instead of returning a
+    partial history.
+    """
     out, _ = rpc_client.walk_sigs(addr, until_ts=stop_ts, max_pages=max_pages)
     return sorted(out, key=lambda s: s.get("blockTime") or 0)
 
 
 def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -> tuple:
-    """Signataires des premières transactions touchant le mint."""
+    """The signers of the first transactions touching the mint."""
     sigs = oldest_signatures(mint, created_ts - 3600)
     if not sigs:
         return [], None
@@ -69,12 +69,13 @@ def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -
 
 
 def all_signatures(addr: str, max_pages: int = 60) -> tuple:
-    """Toutes les signatures d'une adresse, de la plus ancienne à la plus récente.
+    """Every signature of an address, oldest to newest.
 
-    Ne pas borner cette pagination trop court : le financement initial d'un portefeuille se trouve
-    dans ses premières transactions, et une pagination partielle ne rend que les plus récentes, ce
-    qui fait conclure à tort à l'absence de financement. On s'arrête quand une page revient
-    incomplète, signe que la genèse est atteinte, et on signale si le plafond a été touché avant.
+    Do not bound this pagination too tightly: a wallet's initial funding sits in its
+    first transactions, and a partial pagination returns only the most recent ones,
+    which leads to wrongly concluding there was no funding. It stops when a page
+    comes back incomplete, the sign that genesis has been reached, and it reports
+    whether the cap was hit before that.
     """
     out, before, complete = [], None, False
     for _ in range(max_pages):
@@ -92,9 +93,10 @@ def all_signatures(addr: str, max_pages: int = 60) -> tuple:
 
 
 def funding_events(wallet: str) -> list:
-    """Entrées de SOL notables d'un portefeuille, mesurées par delta de solde.
+    """A wallet's notable incoming SOL, measured by balance delta.
 
-    On lit les 40 premières transactions de son existence : c'est là que se trouve son financement.
+    The first 40 transactions of its existence are read: that is where its funding
+    is.
     """
     sigs, complete = all_signatures(wallet)
     if not complete:

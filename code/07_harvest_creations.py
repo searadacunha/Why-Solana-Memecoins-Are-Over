@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Recolte de mints pump.fun crees dans une fenetre de slots donnee.
+"""Harvest the pump.fun mints created inside a given slot window.
 
-Principe : dans une transaction de creation pump.fun, la keypair du mint signe la
-transaction. Un compte signataire dont l'adresse se termine par "pump" est donc un
-mint pump.fun en train d'etre cree. On lit les blocs avec transactionDetails="accounts"
-(leger : pas d'instructions, juste les cles de comptes + drapeaux signataire).
+The principle: in a pump.fun creation transaction, the mint's keypair signs the
+transaction. A signing account whose address ends in "pump" is therefore a
+pump.fun mint being created. The blocks are read with
+transactionDetails="accounts", which is light: no instructions, only the account
+keys and their signer flags.
 
-Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
-($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un échec réseau lève
-au lieu de se déguiser en bloc sauté. Les slots sautés, eux, renvoient une erreur
-JSON-RPC qui est une réponse légitime (« slot skipped »), tolérée en None via
-tolerate_codes (docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée ici.
+One Helius client (rpc_client.py): the keys come from the environment,
+$HELIUS_API_KEYS or the uncommitted .env, see settings.py, and a network failure
+raises instead of disguising itself as a skipped slot. Skipped slots themselves
+return a JSON-RPC error that is a legitimate answer ("slot skipped"), tolerated
+as None through tolerate_codes (docs/PITFALLS.md, rule 2). No key is stored
+here.
 """
 from __future__ import annotations
 import datetime as dt, json, os, sys
@@ -22,21 +24,21 @@ import rpc_client
 
 PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 
-# getBlock / getBlockTime sur un slot saute renvoie une erreur JSON-RPC qui est une
-# reponse legitime (« slot skipped »), pas une panne : on la tolere en None.
+# getBlock / getBlockTime on a skipped slot returns a JSON-RPC error that is a
+# legitimate answer ("slot skipped"), not a failure: it is tolerated as None.
 SKIPPED_SLOT_CODES = (-32007, -32009, -32004)
 
 
 def slot_for_ts(target_ts: int, lo: int = 1,
                 hi: Optional[int] = None) -> Optional[tuple[int, int]]:
-    """Binary search slot -> blockTime. Renvoie le slot dont le temps <= target_ts."""
+    """Binary search slot -> blockTime. Returns the slot whose time is <= target_ts."""
     if hi is None:
         hi = rpc_client.rpc("getSlot", [])
     best: Optional[tuple[int, int]] = None
     while lo < hi:
         mid = (lo + hi) // 2
         t = None
-        # les slots sautes n'ont pas de blockTime : on decale
+        # Skipped slots have no blockTime, so step along
         for d in range(0, 60):
             t = rpc_client.rpc("getBlockTime", [mid + d],
                                tolerate_codes=SKIPPED_SLOT_CODES)
@@ -55,7 +57,7 @@ def slot_for_ts(target_ts: int, lo: int = 1,
 
 
 def block_pump_mints(slot: int) -> Optional[list[tuple[str, Optional[str]]]]:
-    """Renvoie [(mint, signature)] des mints pump.fun crees dans ce bloc."""
+    """Return [(mint, signature)] for the pump.fun mints created in this block."""
     b = rpc_client.rpc("getBlock", [slot, {
         "encoding": "json", "transactionDetails": "accounts",
         "rewards": False, "maxSupportedTransactionVersion": 0}],

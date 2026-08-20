@@ -1,30 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Détecteur de split, la pièce centrale du dépôt.
+"""The split detector, the central piece of the repository.
 
-Hypothèse testée : un opérateur qui veut faire passer N portefeuilles pour N acheteurs
-indépendants doit d'abord les financer. S'il découpe une somme via un service de swap, les
-portefeuilles reçoivent des montants quasi identiques dans une fenêtre temporelle courte. Un
-montant précis à la neuvième décimale (ex. 1.393934883 SOL) répété sur plusieurs adresses ne
-se produit pas par hasard : c'est la signature d'un découpage unique.
+The hypothesis under test: an operator wanting N wallets to pass for N
+independent buyers has to fund them first. Splitting a sum through a swap
+service leaves those wallets receiving near-identical amounts inside a short
+window. An amount precise to the ninth decimal, say 1.393934883 SOL, repeated
+across several addresses does not happen by chance: it is the signature of a
+single split.
 
-Le script fait deux choses. Pour un ensemble de portefeuilles (ex. les principaux détenteurs
-d'un token), il collecte les entrées de SOL et les regroupe par quasi-égalité de montant et
-proximité temporelle (splitlib). Il mesure ensuite le taux de faux positifs sur un groupe
-témoin de portefeuilles sans lien : sans cette mesure, le nombre de splits ne veut rien dire,
-des montants proches se produisent naturellement.
+The script does two things. For a set of wallets, for instance a token's main
+holders, it collects the incoming SOL and groups it by near-equal amount and
+temporal proximity (splitlib). It then measures the false-positive rate on a
+control group of unrelated wallets: without that measurement the number of
+splits means nothing, since near-equal amounts occur naturally.
 
-Outil exploratoire, hors du pipeline reproductible (absent de run_all.py). La mesure publiée
-du signal de split est docs/SPLIT_PHASE1.md + a1_null_model.py / a2_recount.py.
+An exploratory tool, outside the reproducible pipeline and absent from
+run_all.py. The published measurement of the split signal is docs/SPLIT_PHASE1.md
+together with a1_null_model.py and a2_recount.py.
 
-Client Helius unique (rpc_client.py) : les clés viennent de l'environnement
-($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un échec réseau lève au lieu
-de se déguiser en résultat vide (docs/PITFALLS.md, règle n°2).
+One Helius client (rpc_client.py): the keys come from the environment,
+$HELIUS_API_KEYS or the uncommitted .env, see settings.py, and a network failure
+raises instead of disguising itself as an empty result (docs/PITFALLS.md,
+rule 2).
 
-Usage :
+Usage:
     python3 code/03_split_detector.py --mint <MINT> --top 30
     python3 code/03_split_detector.py --wallets w1,w2,w3
-    python3 code/03_split_detector.py --mint <MINT> --control 40   # + groupe témoin
+    python3 code/03_split_detector.py --mint <MINT> --control 40   # + control group
 """
 from __future__ import annotations
 
@@ -44,11 +47,11 @@ from splitlib import MIN_CLUSTER, REL_TOL, WINDOW_S, find_splits
 LAMPORTS = 1_000_000_000
 
 # Fenêtre de montants retenue : en dessous, on capte le bruit (dust, frais) ;
-# au-dessus, les transferts deviennent trop rares et hétérogènes pour former un split.
+# above it, transfers become too rare and too heterogeneous to form a split.
 MIN_SOL, MAX_SOL = 1.0, 20.0
 
-# getBlock sur un slot sauté renvoie une erreur JSON-RPC qui est une réponse
-# légitime (« slot skipped »), pas une panne : on la tolère en None.
+# getBlock on a skipped slot returns a JSON-RPC error that is a legitimate
+# answer ("slot skipped"), not a failure: it is tolerated as None.
 SKIPPED_SLOT_CODES = (-32007, -32009, -32004)
 
 
@@ -67,11 +70,11 @@ def top_holders(mint: str, n: int) -> list[str]:
 
 
 def incoming_sol(wallet: str, max_pages: int = 3) -> list[tuple[float, int]]:
-    """Entrées de SOL d'un portefeuille : [(montant_sol, timestamp)].
+    """SOL entering a wallet: [(amount_sol, timestamp)].
 
-    On lit le delta de solde du portefeuille dans chaque transaction plutôt que les transferts
-    système : le financement est souvent obfusqué (closeAccount d'un compte wrappé), auquel cas
-    aucun transfert système n'apparaît alors que le solde augmente bien.
+    The wallet's balance delta in each transaction is read rather than the system
+    transfers: funding is often obfuscated, by a closeAccount on a wrapped account,
+    in which case no system transfer appears at all while the balance does rise.
     """
     sigs: list[dict] = []
     before: Optional[str] = None
@@ -133,8 +136,8 @@ def main() -> None:
               "params": {"min_sol": MIN_SOL, "max_sol": MAX_SOL, "rel_tol": REL_TOL,
                          "window_s": WINDOW_S, "min_cluster": MIN_CLUSTER}}
 
-    # Groupe témoin : des portefeuilles pris au hasard parmi des transactions récentes non liées.
-    # C'est lui qui donne le taux de faux positifs.
+    # Control group: wallets drawn at random from recent, unrelated transactions.
+    # This is what gives the false-positive rate.
     if a.control:
         slot = rpc_client.rpc("getSlot", [])
         blk = rpc_client.rpc(

@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
-"""Cartographie un hub de distribution : d'où vient l'argent, où il va, et qui le lui renvoie.
+"""Map a distribution hub: where the money comes from, where it goes, and who
+sends it back.
 
-Lire l'historique d'un hub transaction par transaction est impraticable : ces adresses cumulent des
-dizaines de milliers d'opérations, et toute pagination bornée échoue en silence en ne rendant que
-les plus récentes. On utilise donc l'API de transactions *parsées* de Helius, qui renvoie les
-transferts déjà décodés par paquets de cent, deux ordres de grandeur plus efficace.
+Reading a hub's history transaction by transaction is impractical: these
+addresses accumulate tens of thousands of operations, and any bounded pagination
+fails silently by returning only the most recent ones. So this uses Helius's
+parsed-transaction API, which returns the transfers already decoded in batches
+of a hundred, two orders of magnitude more efficient.
 
-Ce que le script mesure :
-- les entrées : qui alimente le hub, pour combien, et quand pour la première fois ;
-- les sorties : combien de portefeuilles distincts il finance, et avec quels montants ;
-- les montants répétés : un même montant versé à plusieurs destinataires est la signature d'un
-  découpage. On les classe par nombre de répétitions ;
-- le recyclage : les adresses qui apparaissent à la fois en entrée et en sortie, c'est-à-dire les
-  satellites qui renvoient des fonds au hub.
+What the script measures:
+- inflows: who feeds the hub, for how much, and when for the first time;
+- outflows: how many distinct wallets it funds, and with what amounts;
+- repeated amounts: one amount paid to several recipients is the signature of a
+  split, and they are ranked by how often they repeat;
+- recycling: the addresses appearing both in and out, that is, the satellites
+  that send funds back to the hub.
 
 Usage:
     python3 06_hub_map.py --addr <ADDR> --pages 30
 
-Client Helius unique (rpc_client.py, API enhanced) : les clés viennent de
-l'environnement ($HELIUS_API_KEYS, ou .env non versionné, voir settings.py) et un
-échec réseau lève au lieu de se déguiser en pagination vide
-(docs/PITFALLS.md, règle n°2). Aucune clé n'est stockée dans ce dépôt.
+One Helius client (rpc_client.py, the enhanced API): the keys come from the
+environment, $HELIUS_API_KEYS or the uncommitted .env, see settings.py, and a
+network failure raises instead of disguising itself as an empty pagination
+(docs/PITFALLS.md, rule 2). No key is stored in this repository.
 """
 from __future__ import annotations
 import argparse, datetime as dt, json, os, sys, time
