@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M1 : recensement du corpus.
+M1: what the corpus actually contains.
 
-Ce que le script etablit : la taille reelle du corpus, sa fenetre et ses
-limites. Il vient en premier parce que toute affirmation du dossier se lit avec
-ces n-la en tete.
+What this establishes: the real size of the corpus, its window and its limits.
+It comes first because every claim in the dossier is read against these n.
 
-Point d'honnetete central : le collecteur a produit 645 fichiers mais 352 sont
-vides (aucun swap enregistre, pannes du fournisseur RPC, pas un phenomene de
-marche). Le n exploitable est 293, soit 2,2x moins que le nombre de fichiers.
-Tout chiffre annonce "sur 645 captures" serait faux.
+The central honesty point: the collector produced 645 files, of which 352 are
+empty. No swap was recorded in them, which is a provider outage and not a market
+phenomenon. The usable n is 293, 2.2 times fewer than the file count. Any figure
+announced "over 645 captures" would be false.
 
-Usage :  python3 m1_corpus.py [--data <chemin .jsonl[.gz]>]
+Usage:  python3 m1_corpus.py [--data <path .jsonl[.gz]>]
 """
 
 import argparse
@@ -28,8 +27,8 @@ def main():
     ap.add_argument("--out", default=os.path.join(P.HERE, "..", "docs", "out", "m1_corpus.json"))
     a = ap.parse_args()
 
-    # Garde-fou : avec --data (jeu d'exemple), on n'ecrase pas l'artefact
-    # publie. Un tableau du dossier ne doit pas pouvoir etre remplace en
+    # Guard: with --data, a sample set, the published artefact is not
+    # overwritten. A table of the dossier must not be replaceable by
     # silence par le resultat d'un echantillon de 20 tokens.
     if a.data and a.out == ap.get_default("out"):
         a.out = os.path.join(P.HERE, "..", "data", "sample",

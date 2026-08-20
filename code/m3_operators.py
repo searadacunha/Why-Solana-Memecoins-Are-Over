@@ -1,34 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M3 : six flottes distinctes, une seule methode.
+M3: six distinct fleets, one single method.
 
-Le script tranche entre deux affirmations opposees.
+This script decides between two opposing claims.
 
-  H_unique  : "tout est controle par une seule entite".
-  H_methode : "plusieurs entites distinctes appliquent la meme methode".
+  H_unique  : "one entity controls all of it".
+  H_methode : "several distinct entities apply the same method".
 
-Le depart se fait sur des criteres mesurables, pas sur une intuition :
-  - des adresses ou des tokens partages entre flottes font gagner du terrain a
-    H_unique.
-  - des flottes strictement disjointes mais de geometrie identique (meme
-    nombre d'adresses par lancement, meme co-occurrence parfaite) soutiennent
-    H_methode et laissent H_unique non etablie.
+The split is made on measurable criteria, not on an intuition:
+  - addresses or tokens shared between fleets gain ground for H_unique.
+  - fleets that are strictly disjoint but identical in geometry, the same number
+    of addresses per launch and the same perfect co-occurrence, support
+    H_methode and leave H_unique unestablished.
 
-Sur ce corpus, le resultat mesure soutient H_methode, et le dossier n'affirme
-rien de plus. Une infrastructure mutualisee en amont (financeurs communs, hubs
-de sortie communs) reste possible et est signalee comme [INFERE] ailleurs :
-elle ne se mesure pas dans ce corpus, qui ne contient pas les transferts.
+On this corpus the measurement supports H_methode, and the dossier claims
+nothing beyond that. Shared infrastructure upstream, common funders or common
+exit hubs, remains possible and is flagged [INFERE] elsewhere: it cannot be
+measured in this corpus, which holds no transfers.
 
-Donnee utilisee : le champ `snipers[]` de chaque capture, soit les adresses
-ayant achete le token avant l'ouverture du pool observable, sur la courbe de
-bonding. Elles n'apparaissent donc pas (ou peu) dans le flux de swaps, ce qui
-est l'objet du dossier.
+The data used is the `snipers[]` field of each capture, the addresses that
+bought the token on the bonding curve before the observable pool opened. They
+therefore barely appear in the swap flow, which is the subject of the dossier.
 
-Les adresses de flotte ci-dessous sont publiques et verifiables sur n'importe
-quel explorateur Solana. Elles designent des adresses, jamais des personnes.
+The fleet addresses below are public and checkable on any Solana explorer. They
+name addresses, never people.
 
-Usage :  python3 m3_operators.py [--data ...]
+Usage:  python3 m3_operators.py [--data ...]
 """
 
 import argparse
@@ -40,10 +38,10 @@ import os
 import pumplib as P
 
 # --------------------------------------------------------------------------
-# Adresses de flotte. Etablies par la forensique amont ; ce script ne les
-# suppose pas correctes, il les teste (comptes, disjonction, co-occurrence).
-# Une flotte dont la co-occurrence ne serait pas significative apparaitrait
-# comme telle dans la sortie.
+# Fleet addresses, established by the forensics upstream. This script does not
+# assume they are right, it tests them: counts, disjointness, co-occurrence. A
+# fleet whose co-occurrence were not significant would show up as such in the
+# output.
 # --------------------------------------------------------------------------
 FLEETS = {
     "F002": ["22vL22PcYcoAVCwYN8iDW9VrFEYq93TCtr7a6avNVyjL",
@@ -71,7 +69,7 @@ FLEETS = {
 
 # Adresses d'infrastructure partagee, a exclure de tout calcul de lien : elles
 # snipent une part enorme du corpus et relient artificiellement n'importe quelle
-# paire de tokens. Leur ubiquite est mesuree par m4_infra_ubiquity.py.
+# pair of tokens. m4_infra_ubiquity.py measures how ubiquitous they are.
 INFRA = {
     "RDCT-d4fb6b1f86",
     "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
@@ -86,10 +84,11 @@ INFRA = {
 
 
 def hyper_pval(k, a, b, N):
-    """P(X >= k) sous la loi hypergeometrique : deux adresses vues dans a et b
-    tokens sur N, combien de tokens en commun au hasard. Sert a dire si une
-    co-occurrence est surprenante. Calcul exact en entiers (stdlib), rendu en
-    probabilite brute, pas en log."""
+    """P(X >= k) under the hypergeometric law: two addresses seen in a and b
+    tokens out of N, how many tokens would they share by chance. This is what
+    says whether a co-occurrence is surprising. Exact integer arithmetic
+    (stdlib), returned as a raw probability, not a log.
+    """
     tot = math.comb(N, b)
     s = 0
     for i in range(k, min(a, b) + 1):
@@ -108,7 +107,7 @@ def main():
     P.head("M3 : FLOTTES D'OPERATEURS", "MESURE")
     P.kv("tokens avec liste snipers[] exploitable", N)
 
-    # frequence de chaque adresse dans le corpus
+    # How often each address appears in the corpus
     freq = collections.Counter()
     for d in caps:
         for w in set(d["snipers"]):
@@ -219,7 +218,8 @@ def main():
                 vals.append(len(cur & prv) / len(cur))
         if vals:
             reuse[name] = sum(vals) / len(vals)
-    # base : meme calcul sur les snipers ordinaires (hors infra, hors flottes)
+    # Baseline: the same computation on ordinary snipers, excluding the
+    # infrastructure addresses and the fleets
     fleet_all = set().union(*[set(v) for v in FLEETS.values()])
     caps_s = sorted(caps, key=lambda d: d["created"])
     base_vals = []
