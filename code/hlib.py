@@ -12,7 +12,7 @@ HeliusError (see rpc_client.py).
 """
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 import settings
 from rpc_client import (  # noqa: F401  (re-exported for importers)
@@ -35,10 +35,12 @@ def cached(name: str, fn: Any) -> Any:
 B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 
-# TODO len(n.to_bytes(32, "big")) vaut toujours 32 sous la garde n < 2**256,
-# donc la derniere ligne se reduit a `n < 2**256`. Couvert par test_pubkey.py,
-# je ne touche pas maintenant, mais c'est a simplifier.
 def is_b58_pubkey(s: str) -> bool:
+    """True for a base58 string that decodes to a 32-byte Solana pubkey.
+
+    The length window rejects the obvious non-keys; the final bound is the real
+    test, since 32 bytes is exactly the integers below 2**256.
+    """
     if not (32 <= len(s) <= 44):
         return False
     n = 0
@@ -46,4 +48,4 @@ def is_b58_pubkey(s: str) -> bool:
         if c not in B58:
             return False
         n = n * 58 + B58.index(c)
-    return len(n.to_bytes(32, "big")) == 32 if n < 2 ** 256 else False
+    return n < 2 ** 256
