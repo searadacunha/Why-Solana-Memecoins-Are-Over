@@ -59,7 +59,7 @@ def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -
         try:
             keys = tx["transaction"]["message"]["accountKeys"]
             signer = next(k["pubkey"] for k in keys if k.get("signer"))
-        except Exception:
+        except (KeyError, TypeError, StopIteration):
             continue
         if signer not in buyers:
             buyers[signer] = s.get("blockTime")
@@ -109,7 +109,7 @@ def funding_events(wallet: str) -> list:
             keys = [k["pubkey"] for k in tx["transaction"]["message"]["accountKeys"]]
             i = keys.index(wallet)
             d = (tx["meta"]["postBalances"][i] - tx["meta"]["preBalances"][i]) / LAMPORTS
-        except Exception:
+        except (KeyError, TypeError, ValueError, IndexError):
             continue
         if MIN_SOL <= d <= MAX_SOL:
             out.append((d, tx.get("blockTime") or 0))

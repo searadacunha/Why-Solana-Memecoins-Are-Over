@@ -99,7 +99,9 @@ def outflows_of_tx(tx: dict, addr: str) -> list:
                 for k in tx["transaction"]["message"]["accountKeys"]]
         pre, post = tx["meta"]["preBalances"], tx["meta"]["postBalances"]
         i = keys.index(addr)
-    except Exception:
+    # ValueError: addr n'est pas dans cette transaction, cas normal. Les autres
+    # signalent un champ absent, que le filtre laisse passer comme "pas de sortie".
+    except (KeyError, TypeError, ValueError, IndexError):
         return []
     if post[i] - pre[i] >= 0:
         return []                                   # ce n'est pas une sortie

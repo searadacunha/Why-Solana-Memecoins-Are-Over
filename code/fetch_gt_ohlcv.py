@@ -58,7 +58,7 @@ def get(url, tries=6):
             if e.code == 404:
                 return {"__404__": True}
             time.sleep(3 * (a + 1))
-        except Exception:
+        except Exception:  # noqa: BLE001  (transport / decode ; la boucle rejoue)
             time.sleep(3 * (a + 1))
     return None
 
@@ -102,7 +102,7 @@ def main():
                     a = x.get("attributes", {})
                     try:
                         res = float(a.get("reserve_in_usd") or 0)
-                    except Exception:
+                    except (TypeError, ValueError):
                         res = 0.0
                     pools.append({"address": a.get("address"), "reserve_usd": res})
             rec["pools"] = pools
