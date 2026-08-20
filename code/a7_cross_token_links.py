@@ -90,7 +90,7 @@ for p in tri:
 if cur:
     sessions.append(cur)
 multi = [s for s in sessions if len({p[0] for p in s}) >= 2]
-print(f"\n3. SESSIONS DE FINANCEMENT (paiements espaces de moins de 6 h)")
+print("\n3. SESSIONS DE FINANCEMENT (paiements espaces de moins de 6 h)")
 print(f"   {len(sessions)} sessions, dont {len(multi)} touchant plusieurs tokens")
 for s in multi:
     toks = sorted({p[0] for p in s})

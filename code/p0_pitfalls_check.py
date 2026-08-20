@@ -119,10 +119,13 @@ ys = [math.log10(r["t_mult"]) for r in use]
 mx, my = st.mean(xs), st.mean(ys)
 slope = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs)
 print(f"  slope log10(multiple) ~ log10(entry MC) = {slope:+.4f}  (= beta - 1, mechanical)")
-print(f"  spearman(entry MC, ATH)      = {spearman([r['detect_mc'] for r in use], [r['o_ath_true'] for r in use]):+.3f}")
+print(f"  spearman(entry MC, ATH)      = "
+      f"{spearman([r['detect_mc'] for r in use], [r['o_ath_true'] for r in use]):+.3f}")
 print(f"  spearman(entry MC, multiple) = {spearman([r['detect_mc'] for r in use], [r['t_mult'] for r in use]):+.3f}")
 res = [r for r in use if r.get("t_resid_logath") is not None]
-print(f"  spearman(entry MC, residual) = {spearman([r['detect_mc'] for r in res], [r['t_resid_logath'] for r in res]):+.3f}  (n={len(res)})")
+print(f"  spearman(entry MC, residual) = "
+      f"{spearman([r['detect_mc'] for r in res], [r['t_resid_logath'] for r in res]):+.3f}"
+      f"  (n={len(res)})")
 
 srt = sorted(use, key=lambda r: r["detect_mc"])
 k = len(srt) // 10

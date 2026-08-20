@@ -116,7 +116,9 @@ for L in (V6[:LIM] if LIM else V6):
           "tokens_transferes": round(sum(-e["dtok"] for e in tr), 2),
           "tokens_vendus": round(sum(-e["dtok"] for e in sl), 2),
           "sol_vendu": round(sum(e["dsol"] for e in sl), 4),
-          "premier_transfert_delai_s": ((tr[0]["ts"] - buy["ts"]) if (tr and buy and tr[0]["ts"] and buy["ts"]) else None),
+          "premier_transfert_delai_s": ((tr[0]["ts"] - buy["ts"])
+                                        if (tr and buy and tr[0]["ts"] and buy["ts"])
+                                        else None),
           "premier_transfert_sig": tr[0]["sig"] if tr else None,
           "collecteur": tr[0]["dest"] if tr else None,
         })
