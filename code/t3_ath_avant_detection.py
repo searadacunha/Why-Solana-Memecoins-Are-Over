@@ -30,7 +30,6 @@ Population : socle B propre (regime MC sain, 5k < mc < 300k, ATH connu).
 Usage : python3 code/t3_ath_avant_detection.py
 Sorties : docs/tables/T3_ath_avant_detection.md, data/t3_ath_avant_detection.json
 """
-import json
 import os
 import statistics as st
 import sys

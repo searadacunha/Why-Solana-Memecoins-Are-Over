@@ -19,7 +19,6 @@ median PLUS ELEVE que ceux qui l'ont.
 """
 
 import json
-import math
 import os
 import statistics as st
 

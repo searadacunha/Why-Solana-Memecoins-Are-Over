@@ -15,7 +15,7 @@ USAGE
 Reads only published files under ./data/. No network, no key.
 """
 from __future__ import annotations
-import json, math, os
+import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), "data")

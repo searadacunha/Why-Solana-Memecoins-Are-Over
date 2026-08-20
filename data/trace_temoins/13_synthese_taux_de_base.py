@@ -19,7 +19,7 @@ Lit temoins_split.json, plus temoins_deep_genese.json et temoins_corrections.jso
 Ecrit synthese_taux_de_base.json a cote du script.
 """
 from __future__ import annotations
-import json, os, math, datetime as dt
+import json, os, datetime as dt
 from collections import defaultdict
 
 D = os.path.dirname(os.path.abspath(__file__))

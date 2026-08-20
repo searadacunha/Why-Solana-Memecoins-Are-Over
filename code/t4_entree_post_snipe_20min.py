@@ -35,7 +35,6 @@ Usage : python3 code/t4_entree_post_snipe_20min.py
 Sorties : docs/tables/T4_entree_post_snipe_20min.md
           data/cout_acheteur/t4_entree_post_snipe_20min.json
 """
-import json
 import math
 import os
 import statistics as st

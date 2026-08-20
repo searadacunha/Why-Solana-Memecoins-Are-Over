@@ -16,7 +16,7 @@ Definitions (arbitraires mais fixees a l'avance et explicites) :
 
 Sortie: data/v02_fleets.json
 """
-import sys, os, json, itertools, statistics as st
+import sys, os, itertools
 from collections import defaultdict, Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import load_snipe, save, cv, med

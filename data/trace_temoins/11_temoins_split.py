@@ -41,7 +41,6 @@ Usage :
 from __future__ import annotations
 import argparse, json, os, sys, threading, time, urllib.request, urllib.error
 import datetime as dt
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
 # --- constantes recopiees a l'identique de 04_early_buyers_funding.py ----------------------------
