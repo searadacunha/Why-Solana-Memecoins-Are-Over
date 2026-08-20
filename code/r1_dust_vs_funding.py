@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-r1_dust_vs_funding.py : un envoi de SOL ne finance le destinataire que si le
-montant lui permet d'acheter. Ce script mesure la distribution des tickets
-sortants des adresses que les notes d'enquete de mai 2026 appellent
-"dispatchers de masse", et separe :
+r1_dust_vs_funding.py -- a send of SOL only funds its recipient if the amount
+lets them buy. This measures the distribution of outgoing tickets from the
+addresses the May 2026 investigation notes call "mass dispatchers", and
+separates:
 
-  poussiere (dusting)  ticket < 0.00089088 SOL, sous le minimum de rente d'un
-                       compte systeme. Le destinataire ne peut rien signer :
-                       le montant ne couvre meme pas 179 fois les 0.000005 SOL
-                       de frais de base. C'est un marquage d'adresse, pas un
-                       financement.
-  financement          ticket >= 0.01 SOL, de quoi payer frais + priorite et
-                       acheter sur la courbe.
+  dusting     a ticket under 0.00089088 SOL, below the rent minimum of a system
+              account. The recipient can sign nothing: the amount does not even
+              cover 179 times the 0.000005 SOL base fee. This marks an address,
+              it does not fund it.
+  funding     a ticket of 0.01 SOL or more, enough to pay fees and priority and
+              to buy on the curve.
 
-"N wallets finances en T secondes" ne veut rien dire tant qu'on n'a pas regarde
-le montant. Un spray de poussiere touche par construction des adresses deja
-actives (c'est la liste de diffusion du spammeur) ; retrouver ensuite ces
-adresses parmi les gros acheteurs d'un token n'etablit aucun lien d'operation.
+"N wallets funded in T seconds" means nothing until the amount has been looked
+at. A dust spray reaches, by construction, addresses that are already active,
+since that is the spammer's mailing list; finding those addresses again among a
+token's large buyers establishes no operational link at all.
 
-Sortie : data/r1_dust_vs_funding.json
-Usage  : python3 r1_dust_vs_funding.py [adresse ...]
+Output: data/r1_dust_vs_funding.json
+Usage:  python3 r1_dust_vs_funding.py [address ...]
 """
 import json
 import os
@@ -31,7 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import r1lib as R
 
 # adresses citees par les notes d'enquete comme "dispatchers de masse".
-# claim = ce que la note affirme ; rien n'est suppose vrai.
+# claim is what the note asserts; nothing here is assumed true.
 CIBLES = {
     "4KHPw3QDsXe6HFJPNA4SiBi6Qe3mrziDFgyYToeEWGu4":
         "note price_movers : dispatcher A, aurait mass-funde 194 wallets en 7 s",
@@ -83,7 +82,7 @@ def profil(addr, claim):
     tickets = sorted(x[2] for x in outs)
     ts_all = [t for t, _, _ in outs]
 
-    # d'ou vient le SOL de cette adresse, et ou repart le solde ?
+    # Where does this address's SOL come from, and where does the balance go?
     par_src = {}
     for ts, fr, sol in ins:
         par_src[fr] = round(par_src.get(fr, 0.0) + sol, 9)
