@@ -13,7 +13,7 @@ def _run(text, allow=()):
 
 
 def test_planted_key_and_path_are_findings():
-    f = _run("k = 0123456789abcdef0123456789abcdef\npath = /Users/someone/secret")  # noqa: leakscan
+    f = _run("k = 0123456789abcdef0123456789abcdef\npath = /Users/someone/secret")  # leakscan: skip
     kinds = " ".join(k for k, *_ in f)
     assert "api key (32 hex)" in kinds
     assert "local path" in kinds
@@ -33,7 +33,7 @@ def test_allowlisted_reflink_is_routed_to_allowed_not_leak():
 
 def test_real_secret_not_allowed_by_a_nearby_handle():
     # An allowed word on the line must NOT whitelist a genuine key fragment.
-    line = "teamdacunha key=0123456789abcdef0123456789abcdef"  # noqa: leakscan
+    line = "teamdacunha key=0123456789abcdef0123456789abcdef"  # leakscan: skip
     f = _run(line, allow=["teamdacunha"])
     assert any(k == "api key (32 hex)" and not k.startswith("ALLOWED") for k, *_ in f)
 
