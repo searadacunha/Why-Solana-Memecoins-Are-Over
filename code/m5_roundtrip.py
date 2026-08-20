@@ -279,8 +279,8 @@ def main():
     a = ap.parse_args()
 
     # Guard: with --data, a sample set, the published artefact is not
-    # overwritten, so a table of the dossier cannot be replaced by
-    # silence par le resultat d'un echantillon de 20 tokens.
+    # overwritten, so a table of the dossier cannot be silently replaced by the
+    # result of a 20-token sample.
     if a.data and a.out == ap.get_default("out"):
         a.out = os.path.join(P.HERE, "..", "data", "sample",
                              os.path.basename(a.out))

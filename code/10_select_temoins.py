@@ -17,7 +17,7 @@ import json, glob, os, datetime as dt
 
 import sys
 S = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
-#   S = repertoire contenant harvest_*.json et enriched.json (sorties des scripts 07 et 08)
+#   S = the directory holding harvest_*.json and enriched.json, the outputs of 07 and 08
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                    "data", "cibles", "cibles.json")
 

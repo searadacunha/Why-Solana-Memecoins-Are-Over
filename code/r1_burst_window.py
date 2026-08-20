@@ -39,7 +39,7 @@ def fenetre_la_plus_courte(ts, frac=0.90):
 
 
 def signature_avant(addr, ts_fin):
-    """Signature la plus ancienne encore situee apres ts_fin, en remontant."""
+    """The oldest signature still after ts_fin, walking backwards."""
     sigs, before, pages = [], None, 0
     while pages < 400:
         page = R.sig_page(addr, 1000, before)

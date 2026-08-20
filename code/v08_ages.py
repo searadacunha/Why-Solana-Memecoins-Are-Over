@@ -36,7 +36,7 @@ for L in V6:
     for x in L["ladder"]:
         if x["sol"] >= 5.0:
             bloc_w.setdefault(x["signer"], []).append(L["slot"])
-    # createur : signataire de la tx de creation -> depuis v04
+    # Creator: the signer of the creation tx, taken from v04
 V4 = {o["mint"]: o for o in json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]}
 for L in V6:
     c = V4[L["mint"]]["creator"]
