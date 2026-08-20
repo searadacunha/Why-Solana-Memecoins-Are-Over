@@ -177,7 +177,7 @@ def fig3():
     x = list(range(len(hz)))
 
     fig, ax = plt.subplots(figsize=(6.6, 3.9))
-    ax.errorbar(x, med, yerr=[[m - l for m, l in zip(med, lo)],
+    ax.errorbar(x, med, yerr=[[m - low for m, low in zip(med, lo)],
                               [h - m for m, h in zip(med, hi)]],
                 fmt="o-", color=NEUTRE, capsize=4, linewidth=1.8, markersize=6,
                 label="median multiple (tokens still trading)")
