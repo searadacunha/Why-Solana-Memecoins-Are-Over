@@ -38,7 +38,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (DATA, boot_ci_median_tokens, clusters, load_captures,  # noqa: E402
-                    med, q, robust_price, sol_usd, wilson, write_table, dump_json)
+                    robust_price, sol_usd, write_table, dump_json)
+from statlib import median, quantile, wilson  # noqa: E402
 
 GT_RAW = os.path.join(DATA, "cout_acheteur", "gt_raw.json")
 TOL = 5400          # tolerance de 90 min autour de l'echeance
@@ -81,8 +82,8 @@ def main():
         p_usd = first[1] or first[4]                # open, sinon close
         if p_usd and p_sol:
             ratios.append((p_usd / p_sol) / sol_usd(t0))
-    ctrl = {"n": len(ratios), "mediane_rapport": med(ratios),
-            "p25": q(ratios, 0.25), "p75": q(ratios, 0.75)}
+    ctrl = {"n": len(ratios), "mediane_rapport": median(ratios),
+            "p25": quantile(ratios, 0.25), "p75": quantile(ratios, 0.75)}
     print(f"CONTROLE D'UNITES : (prix GT USD / prix swap SOL) / (SOL en USD) "
           f"-> mediane {ctrl['mediane_rapport']:.3f} "
           f"[p25 {ctrl['p25']:.2f}, p75 {ctrl['p75']:.2f}] sur n={ctrl['n']} tokens. "
@@ -124,11 +125,11 @@ def main():
                "sans_bougie": absent,
                "sans_bougie_pct": 100 * absent / n_tot,
                "sans_bougie_ic95_pct": [100 * wl, 100 * wh],
-               "mult_median": med(v), "mult_ic95": [lo, hi],
-               "mult_p25": q(v, 0.25), "mult_p75": q(v, 0.75),
+               "mult_median": median(v), "mult_ic95": [lo, hi],
+               "mult_p25": quantile(v, 0.25), "mult_p75": quantile(v, 0.75),
                "pct_sup_1": 100 * sum(1 for x in v if x > 1) / len(v),
-               "high_median": med(vh),
-               "mult_median_pop_entiere": med(
+               "high_median": median(vh),
+               "mult_median_pop_entiere": median(
                    [r["ratios"][h] if r["ratios"][h] is not None else 0.0
                     for r in rows])}
         out[h] = rec

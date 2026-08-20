@@ -55,8 +55,9 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import settings  # noqa: E402
 from common import (DATA, DEPTH_MIN_SOL, FEE_IN, FEE_OUT, MIN_SOL_PRICE,  # noqa: E402
-                    POS_SOL, boot_ci_median_tokens, clusters, load_captures, med,
+                    POS_SOL, boot_ci_median_tokens, clusters, load_captures,
                     source_label, write_table, dump_json)
+from statlib import median  # noqa: E402
 
 BUCKET = 30
 FILL_H = 120
@@ -288,13 +289,13 @@ def main():
         jpos = sum(1 for x in byday.values() if st.median(x) > 0)
         lo, hi = boot_ci_median_tokens(v)
         clo, chi = boot_ci_mean_cluster(byclu)
-        rec = {"n": len(v), "mediane_pct": 100 * med(v), "moyenne_pct": 100 * st.mean(v),
+        rec = {"n": len(v), "mediane_pct": 100 * median(v), "moyenne_pct": 100 * st.mean(v),
                "mediane_ic95_pct": [100 * lo, 100 * hi],
                "moyenne_ic95_cluster_pct": [100 * clo, 100 * chi],
                "S_cluster_pct": 100 * s_clu,
                "pct_gagnants": 100 * sum(1 for x in v if x > 0) / len(v),
                "pct_non_remplies": 100 * nf / len(v),
-               "mediane_excl_pct": 100 * med(vx) if vx else None,
+               "mediane_excl_pct": 100 * median(vx) if vx else None,
                "clusters_positifs": f"{sum(1 for x in byclu.values() if st.mean(x)>0)}/{len(byclu)}",
                "jours_mediane_positive": f"{jpos}/{len(byday)}"}
         res[pol] = rec
