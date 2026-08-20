@@ -194,15 +194,6 @@ class Rpc:
 # --------------------------------------------------------------------------- #
 # decodage d'une transaction : qui envoie du SOL DANS la courbe
 # --------------------------------------------------------------------------- #
-def _keys(tx):
-    out = []
-    msg = (tx.get("transaction") or {}).get("message") or {}
-    for k in msg.get("accountKeys") or []:
-        out.append(k["pubkey"] if isinstance(k, dict) else k)
-    la = (tx.get("meta") or {}).get("loadedAddresses") or {}
-    return out + (la.get("writable") or []) + (la.get("readonly") or [])
-
-
 def _instructions(tx):
     msg = (tx.get("transaction") or {}).get("message") or {}
     for ix in msg.get("instructions") or []:
