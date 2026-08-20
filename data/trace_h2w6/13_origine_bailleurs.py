@@ -22,7 +22,7 @@ Rendu explicitement pour chaque adresse :
 Usage : python3 13_origine_bailleurs.py --seeds 'ADDR:SIG,ADDR:SIG' --depth 3
 """
 from __future__ import annotations
-import argparse, json, os, time, datetime as dt
+import argparse, json, time
 from collections import defaultdict
 import lib_trace as L
 

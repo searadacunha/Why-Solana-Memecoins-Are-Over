@@ -7,7 +7,7 @@ de couverture n'est arrondi a l'avantage de la conclusion, le drapeau de genese 
 portefeuille, et le verdict reste borne a la portee effectivement couverte.
 """
 from __future__ import annotations
-import json, datetime as dt
+import json
 
 D = "."
 G2Y = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"

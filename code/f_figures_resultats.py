@@ -16,7 +16,6 @@ neutral identifier W1 (see docs/RESULTATS.md, note 2).
 
 import json
 import os
-import statistics as st
 
 import matplotlib
 

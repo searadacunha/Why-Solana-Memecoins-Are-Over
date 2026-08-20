@@ -23,7 +23,6 @@ Niveaux de preuve utilises dans les sorties :
   [NON ETABLI]  hypothese, jamais chiffree comme un fait.
 """
 
-import bisect
 import datetime as _dt
 import gzip
 import json
