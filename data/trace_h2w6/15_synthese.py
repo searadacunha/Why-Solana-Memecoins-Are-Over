@@ -2,21 +2,33 @@
 """Synthese h2w6gm6jz : assemble les mesures des etapes 1 a 4bis en un seul fichier.
 
 Ne mesure rien de neuf. Lit e1_buyers, e2_funding, e3_splits, e4b_origine_bailleurs et e8_fenetres
-dans le repertoire courant, ecrit SYNTHESE_h2w6gm6jz.json. Calcule les denominateurs : aucun chiffre
+a cote du script, ecrit SYNTHESE_h2w6gm6jz.json. Calcule les denominateurs : aucun chiffre
 de couverture n'est arrondi a l'avantage de la conclusion, le drapeau de genese est garde par
 portefeuille, et le verdict reste borne a la portee effectivement couverte.
 """
 from __future__ import annotations
-import json
+import json, os
 
-D = "."
+D = os.path.dirname(os.path.abspath(__file__))
 G2Y = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"
 
-e1 = json.load(open(f"{D}/e1_buyers_h2w6gm6jz.json"))
-e2 = json.load(open(f"{D}/e2_funding_h2w6gm6jz.json"))
-e3 = json.load(open(f"{D}/e3_splits_h2w6gm6jz.json"))
-e4b = json.load(open(f"{D}/e4b_origine_bailleurs.json"))
-e8 = json.load(open(f"{D}/e8_fenetres_G9X7F4Jz.json"))
+
+def read(name):
+    p = f"{D}/{name}"
+    if not os.path.exists(p):
+        raise SystemExit(
+            "%s absent.\n"
+            "  Cette etape n'assemble que des mesures deja faites : rejouer\n"
+            "  l'etape qui produit ce fichier avant de relancer la synthese."
+            % p)
+    return json.load(open(p))
+
+
+e1 = read("e1_buyers_h2w6gm6jz.json")
+e2 = read("e2_funding_h2w6gm6jz.json")
+e3 = read("e3_splits_h2w6gm6jz.json")
+e4b = read("e4b_origine_bailleurs.json")
+e8 = read("e8_fenetres_G9X7F4Jz.json")
 
 by_rank = {w["buy_rank"]: w for w in e2["wallets"]}
 
