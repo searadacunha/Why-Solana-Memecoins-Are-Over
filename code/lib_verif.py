@@ -133,11 +133,6 @@ def load_socle() -> Any:
     return json.load(open(SOCLE))
 
 
-def med(x: list[Any]) -> Optional[float]:
-    from statlib import median
-    return median(x)
-
-
 def cv(x: list[Any]) -> float:
     if len(x) < 2:
         return 0.0

@@ -19,7 +19,8 @@ Sortie: data/v08_ages.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import first_signature, load_floor, save, med, DATA, CACHE
+from lib_verif import first_signature, load_floor, save, DATA, CACHE
+from statlib import median
 
 V6 = json.load(open(f"{DATA}/v06_curve_ladder.json"))["lancements"]
 V2 = json.load(open(f"{DATA}/v02_fleets.json"))["flottes"]
@@ -94,10 +95,10 @@ ageA = [x["age_j_au_1er_lancement"] for x in A if x["age_j_au_1er_lancement"] is
 ageB = [x["age_min_au_1er_token"] for x in B if x["age_min_au_1er_token"] is not None and not x["censure"]]
 agg = {
  "n_wallets_bloc": len(A), "n_bloc_censure": sum(1 for x in A if x["censure"]),
- "age_j_bloc_med": round(med(ageA), 1) if ageA else None, "n_age_bloc": len(ageA),
+ "age_j_bloc_med": round(median(ageA), 1) if ageA else None, "n_age_bloc": len(ageA),
  "age_j_bloc_min_max": [min(ageA), max(ageA)] if ageA else None,
  "n_createurs": len(B), "n_createurs_censure": sum(1 for x in B if x["censure"]),
- "age_min_createur_med": round(med(ageB), 1) if ageB else None, "n_age_createur": len(ageB),
+ "age_min_createur_med": round(median(ageB), 1) if ageB else None, "n_age_createur": len(ageB),
  "age_min_createur_q1q3": [round(st.quantiles(ageB, n=4)[0], 1),
                            round(st.quantiles(ageB, n=4)[2], 1)] if len(ageB) > 3 else None,
  "part_createurs_moins_24h": round(sum(1 for x in ageB if x < 1440) / len(ageB), 3) if ageB else None,

@@ -17,7 +17,8 @@ Sortie: data/v07_exit.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import get_tx, get_sigs, save, med, DATA
+from lib_verif import get_tx, get_sigs, save, DATA
+from statlib import median
 
 V6 = json.load(open(f"{DATA}/v06_curve_ladder.json"))["lancements"]
 LIM = int(os.environ.get("LIM", "0"))
@@ -132,7 +133,7 @@ for L in (V6[:LIM] if LIM else V6):
                 "n_avec_vente_directe": sum(1 for p in per if p["n_ventes_directes"]),
                 "tokens_transferes": round(tt, 2), "tokens_vendus_directement": round(tv, 2),
                 "part_transferee": round(tt / (tt + tv), 4) if (tt + tv) else None,
-                "delai_transfert_s_med": med(dl), "delai_transfert_s_min_max": [min(dl), max(dl)] if dl else None,
+                "delai_transfert_s_med": median(dl), "delai_transfert_s_min_max": [min(dl), max(dl)] if dl else None,
                 "collecteurs": sorted({p["collecteur"] for p in per if p["collecteur"]}),
                 "wallets": per})
     print(f"{mint[:12]:14s} n={len(per)} transf={res[-1]['n_avec_transfert']} "
@@ -146,9 +147,9 @@ agg = {
  "n_lancements": len(res), "n_wallets_bloc": nw,
  "n_wallets_avec_transfert": sum(r["n_avec_transfert"] for r in res),
  "n_wallets_avec_vente_directe": sum(r["n_avec_vente_directe"] for r in res),
- "part_supply_transferee_med": round(med([r["part_transferee"] for r in res
+ "part_supply_transferee_med": round(median([r["part_transferee"] for r in res
                                           if r["part_transferee"] is not None]), 4),
- "delai_transfert_s_med": med(alld), "n_delais": len(alld),
+ "delai_transfert_s_med": median(alld), "n_delais": len(alld),
  "delai_transfert_s_q1q3": [round(st.quantiles(alld, n=4)[0], 1),
                             round(st.quantiles(alld, n=4)[2], 1)] if len(alld) > 3 else None,
  "delai_transfert_s_min_max": [min(alld), max(alld)] if alld else None,

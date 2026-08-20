@@ -17,7 +17,8 @@ Sortie: data/v04_slot_order.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import rpc, load_snipe, load_floor, save, med, DATA, CACHE
+from lib_verif import rpc, load_snipe, load_floor, save, DATA, CACHE
+from statlib import median
 
 _SOLUSD_P = f"{CACHE}/solusd_window.json"
 if not os.path.exists(_SOLUSD_P):
@@ -148,17 +149,17 @@ agg = {
  "n_creation_juste_avant": sum(1 for o in out if o["idx_creation_juste_avant"]),
  "n_zero_acheteur_externe_avant": sum(1 for o in out if o["n_acheteurs_externes_avant_fin_bloc_op"] == 0),
  "total_acheteurs_externes_avant": sum(o["n_acheteurs_externes_avant_fin_bloc_op"] for o in out),
- "mc_operateur_usd_med": round(med([o["mc_operateur_usd"] for o in out]), 0),
+ "mc_operateur_usd_med": round(median([o["mc_operateur_usd"] for o in out]), 0),
  "mc_operateur_usd_q1q3": [round(st.quantiles([o["mc_operateur_usd"] for o in out], n=4)[0]),
                            round(st.quantiles([o["mc_operateur_usd"] for o in out], n=4)[2])],
- "mc_premier_externe_usd_med": round(med([o["mc_premier_externe_usd"] for o in out
+ "mc_premier_externe_usd_med": round(median([o["mc_premier_externe_usd"] for o in out
                                           if o["mc_premier_externe_usd"]]), 0),
- "ratio_premier_externe_med": round(med(R), 3), "ratio_premier_externe_n": len(R),
+ "ratio_premier_externe_med": round(median(R), 3), "ratio_premier_externe_n": len(R),
  "ratio_premier_externe_min_max": [min(R), max(R)],
  "n_ratio_sup_2": sum(1 for x in R if x >= 2.0),
  "n_ratio_sup_3": sum(1 for x in R if x >= 3.0),
- "ratio_amm_ouverture_med": round(med(RA), 3) if RA else None, "ratio_amm_n": len(RA),
- "mc_amm_ouverture_usd_med": round(med([o["mc_amm_ouverture_usd"] for o in out
+ "ratio_amm_ouverture_med": round(median(RA), 3) if RA else None, "ratio_amm_n": len(RA),
+ "mc_amm_ouverture_usd_med": round(median([o["mc_amm_ouverture_usd"] for o in out
                                         if o["mc_amm_ouverture_usd"]]), 0) if RA else None,
 }
 save("v04_slot_order.json", {"agregats": agg, "lancements": out})

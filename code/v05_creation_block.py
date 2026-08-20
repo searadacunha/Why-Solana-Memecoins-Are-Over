@@ -16,7 +16,8 @@ Sortie: data/v05_creation_block.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import save, med, cv, DATA, CACHE
+from lib_verif import save, cv, DATA, CACHE
+from statlib import median
 
 SEUIL = 5.0
 _SOLUSD_P = f"{CACHE}/solusd_window.json"
@@ -109,23 +110,23 @@ agg = {
  "n_bloc_egal_4": len(n4),
  "distribution_n_bloc": {str(k): sum(1 for o in out if o["n_bloc"] == k)
                          for k in sorted({o["n_bloc"] for o in out})},
- "sol_bloc_med": round(med(sols), 3),
+ "sol_bloc_med": round(median(sols), 3),
  "sol_bloc_q1q3": [round(st.quantiles(sols, n=4)[0], 2), round(st.quantiles(sols, n=4)[2], 2)],
  "sol_bloc_min_max": [round(min(sols), 2), round(max(sols), 2)],
- "part_supply_med": round(med(parts), 5),
+ "part_supply_med": round(median(parts), 5),
  "part_supply_q1q3": [round(st.quantiles(parts, n=4)[0], 5), round(st.quantiles(parts, n=4)[2], 5)],
  "part_supply_min_max": [round(min(parts), 5), round(max(parts), 5)],
- "ticket_cv_intra_med": round(med([o["ticket_cv"] for o in out]), 4),
+ "ticket_cv_intra_med": round(median([o["ticket_cv"] for o in out]), 4),
  "n_zero_petit_acheteur_avant": sum(1 for o in out if o["n_petits_acheteurs_avant"] == 0),
- "sol_petits_avant_med": round(med([o["sol_petits_avant"] for o in out]), 4),
+ "sol_petits_avant_med": round(median([o["sol_petits_avant"] for o in out]), 4),
  "sol_petits_avant_max": round(max(o["sol_petits_avant"] for o in out), 4),
- "mc_bloc_usd_med": round(med([o["mc_bloc_usd"] for o in out])),
- "mc_dernier_ticket_usd_med": round(med([o["mc_dernier_ticket_usd"] for o in out])),
- "mc_amm_ouverture_usd_med": round(med([o["mc_amm_ouverture_usd"] for o in out if o["mc_amm_ouverture_usd"]])),
- "ratio_premier_externe_med": round(med(R), 3), "n_ratio": len(R),
+ "mc_bloc_usd_med": round(median([o["mc_bloc_usd"] for o in out])),
+ "mc_dernier_ticket_usd_med": round(median([o["mc_dernier_ticket_usd"] for o in out])),
+ "mc_amm_ouverture_usd_med": round(median([o["mc_amm_ouverture_usd"] for o in out if o["mc_amm_ouverture_usd"]])),
+ "ratio_premier_externe_med": round(median(R), 3), "n_ratio": len(R),
  "ratio_premier_externe_min_max": [min(R), max(R)],
  "n_ratio_ge_3": sum(1 for x in R if x >= 3),
- "ratio_amm_med": round(med([o["ratio_amm"] for o in out if o["ratio_amm"]]), 3),
+ "ratio_amm_med": round(median([o["ratio_amm"] for o in out if o["ratio_amm"]]), 3),
  "sol_usd_reference": SOLUSD,
 }
 save("v05_creation_block.json", {"agregats": agg, "lancements": out})

@@ -19,7 +19,8 @@ Sortie: data/v02_fleets.json
 import sys, os, itertools
 from collections import defaultdict, Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import load_snipe, save, cv, med
+from lib_verif import load_snipe, save, cv
+from statlib import median
 
 MIN_SOL   = 5.0
 INFRA_N   = 25
@@ -95,7 +96,7 @@ for wl in sorted(fleets, key=lambda x: -len({m for w in x for m in w2t[w]})):
             "sol_noyau_total": round(sum(c.values()), 4),
             "sol_fenetre_total": round(sum((v.get("sol") or 0.0)
                                            for v in rows.values()), 4),
-            "ticket_med": round(med(tickets), 4),
+            "ticket_med": round(median(tickets), 4),
             "ticket_cv": round(cv(list(mem.values())), 4),
             "ts_span_s": (max(ts) - min(ts)) if ts else None,
             "tickets": [round(x, 4) for x in tickets],
@@ -109,13 +110,13 @@ for wl in sorted(fleets, key=lambda x: -len({m for w in x for m in w2t[w]})):
         "wallets": wl,
         "n_tokens": len(launches),
         "n_membres_mode": Counter(memb_n).most_common(1)[0],
-        "sol_flotte_med": round(med([launch["sol_flotte"] for launch in launches]), 3),
+        "sol_flotte_med": round(median([launch["sol_flotte"] for launch in launches]), 3),
         "sol_flotte_min_max": [min(launch["sol_flotte"] for launch in launches),
                                max(launch["sol_flotte"] for launch in launches)],
         "cv_inter_lancements": round(cv([launch["sol_flotte"] for launch in launches]), 4),
-        "ticket_cv_intra_med": round(med([launch["ticket_cv"] for launch in launches]), 4),
+        "ticket_cv_intra_med": round(median([launch["ticket_cv"] for launch in launches]), 4),
         "ts_span_s_max": max([launch["ts_span_s"] for launch in launches if launch["ts_span_s"] is not None] or [None]),
-        "part_sol_fenetre_med": round(med([launch["sol_flotte"] / launch["sol_fenetre_total"]
+        "part_sol_fenetre_med": round(median([launch["sol_flotte"] / launch["sol_fenetre_total"]
                                            for launch in launches if launch["sol_fenetre_total"] > 0]), 4),
         "span_h": round((launches[-1]["created"] - launches[0]["created"]) / 3600, 1),
         "launches": launches,
