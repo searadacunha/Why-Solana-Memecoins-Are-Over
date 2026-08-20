@@ -86,7 +86,8 @@ def main() -> None:
 
     recycl = sorted(set(inflow) & set(outflow),
                     key=lambda w: -(inflow[w]["sol"] + outflow[w]["sol"]))
-    fmt = lambda t: dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m-%d") if t else "?"
+    def fmt(t):
+        return dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m-%d") if t else "?"
 
     print(f"\n=== HUB {a.addr} ===")
     print(f"  {n_tx} transactions lues, du {fmt(oldest)} au {fmt(newest)}")
