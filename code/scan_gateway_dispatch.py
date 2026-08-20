@@ -88,7 +88,7 @@ def post_parsed(sigs, ki=0, tries=5):
                 headers={"Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=60) as r:
                 return json.load(r)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001  (transport ; releve apres N essais)
             last = e
             time.sleep(2.0 * (i + 1))
     raise RpcError(f"decodage d'un lot de {len(sigs)} tx impossible : {last}")
@@ -300,7 +300,7 @@ def main():
 
     b = bursts([(w, hs) for w, hs in avant.items()])
     if b:
-        print(f"\n  RAFALES (meme montant, meme fenetre) :")
+        print("\n  RAFALES (meme montant, meme fenetre) :")
         for c in b:
             print(f"      {c['n_portefeuilles']} portefeuilles x {c['montant_sol']:.9f} SOL "
                   f"en {c['etendue_s']} s  [{c['calibre']}]  {c['premier']}")

@@ -339,7 +339,7 @@ def build_frame():
     for off in range(0, 4000, 50):
         try:
             d = http_json(base % off)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001  (transport ; l'arret est annonce)
             print("  arret offset=%d : %s" % (off, e))
             break
         if not d:
@@ -454,7 +454,7 @@ def run_measure(per_month, workers, only=None):
     def one(t):
         try:
             m = measure(rpc, t)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001  (l'echec est ecrit dans status:)
             m = {"mint": t["mint"], "created": t.get("created"), "month": t.get("month"),
                  "sample": t.get("sample"), "ath_api": t.get("ath_api"),
                  "status": "err:" + settings.redact_key(str(e))[:90]}

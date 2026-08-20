@@ -69,7 +69,7 @@ def _raw_captures():
             for fp in files:
                 try:
                     yield json.load(open(fp))
-                except Exception:
+                except (OSError, ValueError):
                     yield None
         return gen(), len(files), 0
 
