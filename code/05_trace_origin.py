@@ -118,7 +118,7 @@ def inflows(addr: str, sigs: list, max_tx: int) -> list:
                     for k in tx["transaction"]["message"]["accountKeys"]]
             pre, post = tx["meta"]["preBalances"], tx["meta"]["postBalances"]
             i = keys.index(addr)
-        except Exception:
+        except (KeyError, TypeError, ValueError, IndexError):
             continue
         gain = (post[i] - pre[i]) / LAMPORTS
         if gain < MIN_INFLOW_SOL:

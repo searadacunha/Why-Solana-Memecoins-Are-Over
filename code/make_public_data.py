@@ -119,7 +119,7 @@ def main():
     for fp in files:
         try:
             d = json.load(open(fp))
-        except Exception:
+        except (OSError, ValueError):
             n_empty += 1
             continue
         if not d.get("swaps"):
