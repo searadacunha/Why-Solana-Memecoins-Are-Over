@@ -56,10 +56,15 @@ import struct
 import subprocess
 import sys
 import zlib
-from typing import Optional
+from typing import Iterator, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import settings  # noqa: E402
+
+# One finding: (kind, path relative to the root, line number, the offending
+# fragment). Line 0 means the match is not tied to a line (image metadata,
+# a whole-file verdict).
+Findings = list[tuple[str, str, int, str]]
 
 SKIP_DIRS = {".git", "__pycache__", "cache", "cache_r1", "transition", "node_modules"}
 BINARY_EXT = {".gz", ".zip", ".png", ".jpg", ".jpeg", ".pdf", ".webp", ".mp4"}
@@ -111,7 +116,7 @@ def read_list(path: Optional[str]) -> list[str]:
                 if l.strip() and not l.startswith("#")]
 
 
-def tracked_files(root: str, max_mb: float):
+def tracked_files(root: str, max_mb: float) -> Iterator[tuple[str, str, int]]:
     """Every file that a `git add .` would pick up, big ones flagged.
 
     Asks git rather than walking the tree, so that .gitignore is the single source of truth for
@@ -215,7 +220,8 @@ def image_meta_text(path: str) -> str:
 
 
 # --------------------------------------------------------------------- scanning
-def scan_blob(rel: str, text: str, source: str, findings: list, allow: list[str]) -> None:
+def scan_blob(rel: str, text: str, source: str, findings: Findings,
+              allow: list[str]) -> None:
     """Run the leak PATTERNS over a blob of text (file body or image metadata),
     routing anything on the allowlist to the 'allowed' bucket instead."""
     for line_no, line in enumerate(text.splitlines(), 1):
@@ -246,8 +252,9 @@ def scan_blob(rel: str, text: str, source: str, findings: list, allow: list[str]
                 findings.append((tag, rel, line_no, frag[:60]))
 
 
-def scan_identity(rel: str, text: str, source: str, findings: list,
-                  identity: list[str], live_keys: list[str], allow: list[str]) -> None:
+def scan_identity(rel: str, text: str, source: str, findings: Findings,
+                  identity: list[str], live_keys: list[str],
+                  allow: list[str]) -> None:
     low = text.lower()
     suffix = " [%s]" % source if source else ""
     for k in live_keys:
@@ -281,9 +288,8 @@ def main() -> None:
                          "(enforces the README's 'checked by code in this same commit')")
     a = ap.parse_args()
     root = settings.ROOT
-    findings: list = []
-    allowed: list = []
-    oversized: list = []
+    findings: Findings = []
+    oversized: list[tuple[str, float]] = []
 
     identity = read_list(a.identity)
     allow = read_list(a.allow)
@@ -313,7 +319,7 @@ def main() -> None:
             scan_identity(rel, text, "", findings, identity, live_keys, allow)
 
     # Split allowed (intentional) from real findings.
-    allowed = [f for f in findings if f[0].startswith("ALLOWED")]
+    allowed: Findings = [f for f in findings if f[0].startswith("ALLOWED")]
     findings = [f for f in findings if not f[0].startswith("ALLOWED")]
 
     print("scanned %s" % root)

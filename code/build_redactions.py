@@ -34,9 +34,9 @@ import settings  # noqa: E402
 from redact import label_of  # noqa: E402
 
 
-def corpus_identifiers(path):
+def corpus_identifiers(path: str) -> set[str]:
     """Every mint and every trader of the published capture corpus."""
-    seen = set()
+    seen: set[str] = set()
     op = gzip.open if path.endswith(".gz") else open
     with op(path, "rt") as f:
         for line in f:
@@ -52,14 +52,14 @@ def corpus_identifiers(path):
     return seen
 
 
-def json_identifiers(path):
+def json_identifiers(path: str) -> set[str]:
     """Every base58-looking string of a derived JSON file."""
     from redact import B58_RE
     with open(path) as f:
         return set(B58_RE.findall(f.read()))
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--wordlist", required=True,
                     help="external file, one lowercase term per line (not committed)")

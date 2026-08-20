@@ -16,6 +16,8 @@ of chain data, they weigh ~470 MB and they are git-ignored.
 Usage:
     python3 code/sanitize_data.py [--check]
 """
+from __future__ import annotations
+
 import argparse
 import gzip
 import hashlib
@@ -23,6 +25,7 @@ import json
 import os
 import re
 import sys
+from typing import Iterator
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import redact  # noqa: E402
@@ -32,7 +35,7 @@ SKIP_DIRS = {"cache", "cache_r1", "transition", "__pycache__", ".git"}
 TEXT_EXT = {".json", ".jsonl", ".md", ".py", ".txt", ".log", ".csv"}
 
 
-def iter_files():
+def iter_files() -> Iterator[str]:
     for base in (settings.DATA, settings.DOCS, settings.CODE):
         for root, dirs, names in os.walk(base):
             dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
@@ -44,7 +47,7 @@ def iter_files():
                     yield os.path.join(root, n)
 
 
-def process(path, write):
+def process(path: str, write: bool) -> int:
     """Returns the number of substitutions that were (or would be) applied."""
     gz = path.endswith(".gz")
     op = gzip.open if gz else open
@@ -73,7 +76,7 @@ GLUED_RE = re.compile(r"[1-9A-HJ-NP-Za-km-z]RDCT-[0-9a-f]{10}"
                       r"|RDCT-[0-9a-f]{10}[1-9A-HJ-NP-Za-km-z]")
 
 
-def glued(path):
+def glued(path: str) -> bool:
     """A label welded to base58 characters means a substitution happened INSIDE
     a longer token -- typically an 87/88-character transaction signature that a
     non-anchored pattern chopped into a 44-character window. The signature is
@@ -87,7 +90,7 @@ def glued(path):
         return False
 
 
-def sha256(path):
+def sha256(path: str) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
@@ -95,7 +98,7 @@ def sha256(path):
     return h.hexdigest()
 
 
-def refresh_manifest():
+def refresh_manifest() -> None:
     p = os.path.join(settings.DATA, "MANIFEST.json")
     if not os.path.exists(p):
         return
@@ -119,7 +122,7 @@ def refresh_manifest():
     print("MANIFEST.json refreshed")
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true",
                     help="report only; exit 1 if a redacted identifier is still present")
@@ -127,7 +130,9 @@ def main():
     if not redact.MAP:
         sys.exit("code/redactions.json is missing or empty -- run build_redactions.py")
 
-    total, touched, broken = 0, [], []
+    total = 0
+    touched: list[str] = []
+    broken: list[str] = []
     for path in sorted(iter_files()):
         n = process(path, write=not a.check)
         if n:
