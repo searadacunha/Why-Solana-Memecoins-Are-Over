@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
-"""Remonte l'origine d'un portefeuille distributeur, en contournant le plafond de pagination.
+"""Trace a distributor wallet's origin, working around the pagination cap.
 
-`getSignaturesForAddress` ne remonte que du présent vers le passé, mille signatures par appel. Sur un
-distributeur qui cumule 80 000 transactions ou plus, atteindre sa genèse par pagination complète est
-hors de portée, et une pagination bornée rend les transactions récentes en laissant croire, en
-silence, qu'on a vu le début. Ce piège a produit quatre conclusions fausses en une journée.
+`getSignaturesForAddress` only walks from the present backwards, a thousand
+signatures per call. On a distributor accumulating 80 000 transactions or more,
+reaching its genesis by full pagination is out of reach, and a bounded
+pagination returns the recent transactions while silently suggesting the
+beginning has been seen. That trap produced four false conclusions in one day.
 
-On ne remonte donc pas l'historique entier, seulement les entrées de fonds significatives. Deux
-stratégies complémentaires, on garde la meilleure :
+So the whole history is not walked, only the significant incoming funds. Two
+complementary strategies, and the better result is kept:
 
-1. `--strategy deep` : pagination profonde jusqu'à la genèse, avec plafond explicite. Le résultat dit
-   toujours si la genèse a été atteinte, il n'y a pas de zéro silencieux.
-2. `--strategy sample` : échantillonnage en profondeur. On saute des pages par grands bonds pour
-   atteindre rapidement les zones anciennes, et on n'inspecte que les transactions où le solde du
-   portefeuille augmente fortement (ses financements). Coût constant, quelle que soit l'activité.
+1. `--strategy deep`: deep pagination to genesis, with an explicit cap. The
+   result always says whether genesis was reached; there is no silent zero.
+2. `--strategy sample`: sampling in depth. Pages are skipped in large jumps to
+   reach the old regions quickly, and only the transactions where the wallet's
+   balance rises sharply, its fundings, are inspected. Constant cost, whatever
+   the level of activity.
 
-À chaque niveau, on retient les sources majeures et on recommence, sur N générations.
+At each level the major sources are kept and the walk starts again, over N
+generations.
 
 Usage:
     python3 05_trace_origin.py --addr <ADDR> --depth 3 --strategy sample
 
-Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
+One Helius client: rpc_client.py, keys from $HELIUS_API_KEYS or .env, see
+settings.py.
 """
 from __future__ import annotations
 
@@ -40,8 +44,9 @@ import settings
 LAMPORTS = 1_000_000_000
 MIN_INFLOW_SOL = 1.0          # en dessous, c'est du bruit opérationnel
 
-# Terminaux connus : au-delà, on est dans l'infrastructure publique (échange, pont, service de swap).
-# Une chaîne qui aboutit ici est un fait de routage, pas une preuve d'implication du service.
+# Known terminals: past these, one is in public infrastructure, an exchange, a
+# bridge, a swap service. A chain ending here is a fact about routing, not
+# evidence that the service was involved.
 KNOWN = {
     "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t": "service de swap (G2Y)",
     "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9": "echange (hot wallet)",
@@ -79,9 +84,9 @@ def deep_signatures(addr: str, max_pages: int) -> tuple:
 
 
 def sampled_signatures(addr: str, max_pages: int, keep_per_page: int = 60) -> tuple:
-    """Échantillonnage : on traverse l'historique par bonds, en gardant un extrait de chaque page.
+    """Sampling: cross the history in jumps, keeping an excerpt of each page.
 
-    On ne cherche pas l'exhaustivité mais les zones anciennes, atteintes à coût constant.
+    Exhaustiveness is not the goal; the old regions are, reached at constant cost.
     """
     out, before = [], None
     for i in range(max_pages):
@@ -102,10 +107,11 @@ def sampled_signatures(addr: str, max_pages: int, keep_per_page: int = 60) -> tu
 
 
 def inflows(addr: str, sigs: list, max_tx: int) -> list:
-    """Entrées de SOL notables : [(source, montant, ts, signature)].
+    """Notable incoming SOL: [(source, amount, ts, signature)].
 
-    Mesure par delta de solde : le financement est souvent obfusqué (fermeture d'un compte wrappé),
-    auquel cas aucun transfert système n'apparaît alors que les soldes bougent.
+    Measured by balance delta: funding is often obfuscated, by closing a wrapped
+    account, in which case no system transfer appears at all while the balances
+    do move.
     """
     found, n = [], 0
     for s in sigs[:max_tx]:

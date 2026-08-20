@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
-"""Cherche les SPLITS dans les sorties d'une adresse, sur une FENÊTRE DE DATES donnée.
+"""Find the SPLITS in one address's outflows, over a given DATE WINDOW.
 
-On part de la SOURCE plutôt que des détenteurs : toutes les sorties de l'adresse sur la période
-visée sont collectées, puis regroupées par montant quasi identique reçu dans un intervalle court.
-Chaque groupe est un découpage, donc un ensemble de portefeuilles vraisemblablement contrôlés par
-la même main.
+This starts from the SOURCE rather than from the holders: every outflow of the
+address over the period is collected, then grouped by near-identical amounts
+received within a short interval. Each group is a split, so a set of wallets
+plausibly under one hand.
 
-POURQUOI LE FILTRE DE DATES EST ESSENTIEL
------------------------------------------
-Lire une signature coûte 1/1000e d'appel (elles arrivent par pages de 1000) ; lire une transaction
-coûte un appel entier. Sur une adresse de service qui traite ~200 000 transactions par mois, tout
-lire est hors de portée. On pagine donc les signatures (c'est rapide) en ne retenant que celles
-de la fenêtre, et on ne lit en détail QUE celles-là.
+WHY THE DATE FILTER IS ESSENTIAL
+--------------------------------
+Reading a signature costs a thousandth of a call, since they arrive in pages of
+1000; reading a transaction costs a whole call. On a service address handling
+some 200 000 transactions a month, reading everything is out of reach. So the
+signatures are paginated, which is fast, keeping only those inside the window,
+and ONLY those are read in detail.
 
 USAGE
 -----
-    # explorer le débit d'une adresse, sans rien lire en détail
+    # explore an address's throughput, without reading anything in detail
     python3 02_cn_outflows.py --addr <ADDR> --from 2024-10-01 --to 2025-02-28
 
-    # collecter les sorties de la fenêtre et détecter les splits
+    # collect the window's outflows and detect the splits
     python3 02_cn_outflows.py --addr <ADDR> --from 2025-12-01 --to 2025-12-08 --collect
 
-Client Helius unique : rpc_client.py (clés depuis $HELIUS_API_KEYS / .env, voir settings.py).
+One Helius client: rpc_client.py, keys from $HELIUS_API_KEYS or .env, see
+settings.py.
 """
 from __future__ import annotations
 
@@ -40,9 +42,9 @@ from splitlib import find_splits
 
 LAMPORTS = 1_000_000_000
 
-# Fenêtre de montants : en dessous on capte le bruit (dust, frais), au-dessus les transferts
-# deviennent trop rares et hétérogènes pour former un découpage. Ce filtre local reste ici ;
-# le regroupement (REL_TOL / WINDOW_S / MIN_CLUSTER) vit désormais dans splitlib.
+# Amount window: below it, noise is caught (dust, fees); above it, transfers
+# become too rare and too heterogeneous to form a split. This local filter stays
+# here; the grouping (REL_TOL / WINDOW_S / MIN_CLUSTER) now lives in splitlib.
 MIN_SOL, MAX_SOL = 1.0, 20.0
 
 
@@ -54,10 +56,11 @@ def ts_of(date_str: str, end: bool = False) -> int:
 
 
 def signatures_in_window(addr: str, t_from: int, t_to: int, max_pages: int) -> tuple:
-    """Signatures de l'adresse comprises dans [t_from, t_to].
+    """The address's signatures falling inside [t_from, t_to].
 
-    L'API ne sait remonter que du présent vers le passé : on pagine en sautant ce qui est trop
-    récent (sans le lire), on garde la fenêtre, et on s'arrête dès qu'on est passé sous t_from.
+    The API can only walk from the present backwards, so pagination skips what is
+    too recent without reading it, keeps the window, and stops as soon as it has
+    dropped below t_from.
     """
     before, kept, scanned, per_month = None, [], 0, defaultdict(int)
     reached, oldest = False, None
@@ -88,19 +91,19 @@ def signatures_in_window(addr: str, t_from: int, t_to: int, max_pages: int) -> t
 
 
 def outflows_of_tx(tx: dict, addr: str) -> list:
-    """Sorties de SOL depuis addr dans une transaction : [(destinataire, montant, ts)].
+    """SOL leaving addr in one transaction: [(recipient, amount, ts)].
 
-    On lit les deltas de solde plutôt que les transferts système : le financement est souvent
-    obfusqué (fermeture d'un compte wrappé), auquel cas aucun transfert n'apparaît alors que les
-    soldes bougent bien.
+    Balance deltas are read rather than system transfers: funding is often
+    obfuscated, by closing a wrapped account, in which case no transfer appears at
+    all while the balances do move.
     """
     try:
         keys = [k["pubkey"] if isinstance(k, dict) else k
                 for k in tx["transaction"]["message"]["accountKeys"]]
         pre, post = tx["meta"]["preBalances"], tx["meta"]["postBalances"]
         i = keys.index(addr)
-    # ValueError: addr n'est pas dans cette transaction, cas normal. Les autres
-    # signalent un champ absent, que le filtre laisse passer comme "pas de sortie".
+    # ValueError: addr is not in this transaction, the normal case. The others
+    # mean a field is missing, which this filter would pass off as "no outflow".
     except (KeyError, TypeError, ValueError, IndexError):
         return []
     if post[i] - pre[i] >= 0:
@@ -165,7 +168,7 @@ def main() -> None:
             print(f"  {n}/{min(len(kept), a.max_tx)} transactions lues, {len(rows)} sorties", flush=True)
         time.sleep(0.1)
 
-    # splitlib regroupe par portefeuille -> [(montant, ts)] : on convertit la liste plate des sorties.
+    # splitlib groups by wallet -> [(amount, ts)], so the flat outflow list is converted.
     funding: dict[str, list[tuple[float, int]]] = defaultdict(list)
     for w, amt, ts in rows:
         funding[w].append((amt, ts))

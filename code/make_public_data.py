@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-make_public_data.py : construit data/ a partir du corpus prive (lecture seule).
+make_public_data.py -- build data/ from the private corpus, read-only.
 
-Publie pour rendre la reduction auditable : il documente ce qui a ete garde,
-jete et arrondi entre le corpus de travail et le corpus publie. Il n'est pas
-necessaire pour reproduire les mesures, data/ est deja dans le depot. Il sert
-a verifier que data/ derive bien du corpus prive, et a mettre au format un
-autre corpus pour qui en possede un.
+Published so the reduction can be audited: it documents what was kept, dropped
+and rounded between the working corpus and the published one. It is not needed
+to reproduce the measurements, since data/ is already in the repository. It is
+here to check that data/ does derive from the private corpus, and to put another
+corpus into the same format for whoever holds one.
 
-Source (jamais publiee telle quelle, lecture seule) :
-    <PRIVATE>/state/floor_capture/*.json      645 fichiers, 171 Mo
+Source, never published as such, read-only:
+    <PRIVATE>/state/floor_capture/*.json      645 files, 171 MB
     <PRIVATE>/analysis_fullsnipe/socle/dataset.json
     <PRIVATE>/analysis_supervision/horizon.json
     <PRIVATE>/state/snipe_log.json
 
-Sortie (publiee) :
+Output, published:
     data/floor_capture_public.jsonl.gz
     data/dataset_socle.json
     data/horizon.json
@@ -23,27 +23,26 @@ Sortie (publiee) :
     data/sample/floor_capture_sample.jsonl
     data/MANIFEST.json
 
-Transformations appliquees, exhaustivement :
-  1. Les 352 fichiers sans aucun swap sont ecartes (captures vides = pannes du
-     collecteur, pas un phenomene de marche). 293 fichiers conserves.
-  2. Champ `fees` (liste de wallets payeurs de frais) supprime : non utilise par
-     les mesures publiees, ~40 Mo.
-  3. Champ `sig` (signature de transaction) conserve pour les seuls swaps a
-     t <= created + 30 s, ceux qui servent d'ancre de verification on-chain.
-     Supprime au-dela (~500 000 signatures inutiles).
-  4. `sol` arrondi a 6 chiffres significatifs, `tokens` et `price` a 8. L'effet
-     sur les resultats avait ete mesure a moins de 1e-6 d'ecart cellule a cellule
-     en PnL relatif. Le script de ce controle n'est pas dans le dossier : le
-     chiffre est rapporte, il n'est pas reproductible ici.
-  5. Aucune anonymisation d'adresse. Mints, wallets et signatures sont des
-     donnees publiques Solana, les masquer rendrait le dossier inverifiable.
-     Choix assume : le dossier ne parle donc que d'adresses, jamais de
-     personnes.
-  6. Aucun chemin local, aucune cle, aucun identifiant de compte ne transite :
-     verifie par check_no_secrets.py, qui echoue si quoi que ce soit passe.
+The transformations applied, exhaustively:
+  1. The 352 files holding no swap at all are dropped. An empty capture is a
+     collector outage, not a market phenomenon. 293 files are kept.
+  2. The `fees` field, a list of fee-paying wallets, is removed: unused by the
+     published measurements, and worth about 40 MB.
+  3. The `sig` field, a transaction signature, is kept only for the swaps at
+     t <= created + 30 s, the ones serving as on-chain verification anchors.
+     Removed beyond that, some 500 000 useless signatures.
+  4. `sol` is rounded to 6 significant figures, `tokens` and `price` to 8. The
+     effect on the results had been measured at under 1e-6 of cell-to-cell
+     difference in relative PnL. The script for that check is not in the
+     dossier: the figure is reported, it is not reproducible here.
+  5. No address is anonymised. Mints, wallets and signatures are public Solana
+     data, and masking them would make the dossier uncheckable. An accepted
+     choice: the dossier therefore speaks only of addresses, never of people.
+  6. No local path, no key and no account identifier goes through: checked by
+     check_no_secrets.py, which fails if anything does.
 
-Usage :
-    python3 make_public_data.py --private /chemin/vers/pump_bundle_detector
+Usage:
+    python3 make_public_data.py --private /path/to/pump_bundle_detector
 """
 
 import argparse
@@ -134,9 +133,9 @@ def main():
         for r in kept:
             g.write(json.dumps(r, separators=(",", ":"), sort_keys=True) + "\n")
 
-    # echantillon lisible : 20 tokens espaces dans la fenetre, swaps tronques a
-    # created+300 s, non compresse. Sert au test a froid (m*.py --data ...) et a
-    # inspecter le format a l'oeil. Ne sert a aucune mesure publiee.
+    # A readable sample: 20 tokens spread across the window, swaps truncated at
+    # created + 300 s, uncompressed. It serves the cold test (m*.py --data ...)
+    # and lets the format be inspected by eye. No published measurement uses it.
     smp = os.path.join(out, "sample", "floor_capture_sample.jsonl")
     step = max(1, len(kept) // SAMPLE_N)
     with open(smp, "w") as f:
