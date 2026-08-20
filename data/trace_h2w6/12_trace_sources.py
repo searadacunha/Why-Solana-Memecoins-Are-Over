@@ -96,7 +96,9 @@ def profile(addr, targets):
                 e = outflow[dst]; e[0] += amt; e[1] += 1
                 e[2] = ts if e[2] is None else min(e[2], ts)
                 out_amts[round(amt, 9)] += 1
-    fmt = lambda t: dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m-%d %H:%M:%S") if t else None
+    def fmt(t):
+        return (dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m-%d %H:%M:%S")
+                if t else None)
     top_in = sorted(inflow.items(), key=lambda kv: -kv[1][0])[:25]
     return {
         "addr": addr, "known": KNOWN.get(addr),
