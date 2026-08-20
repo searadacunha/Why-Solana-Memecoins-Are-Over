@@ -1,37 +1,39 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tableau 2 : probabilite d'un x2 selon le prix d'entree.
+Table 2: the probability of a 2x, by entry price.
 
-Panneau A (principal), contrefactuel de prix. Le lot de tokens est fixe, seul
-varie le parametre que l'acheteur ne choisit pas, le prix auquel il peut
-entrer : x2(P) = part des tokens dont l'ATH pump.fun atteint au moins 2 x P,
-soit la fonction de survie des ATH reparametree, x2(P) = P(ATH >= 2P), sans
-degre de liberte, sans filtre et sans modele. Le prix P_90 tel que
-x2(P_90) = 90 % vaut par construction le 10e percentile des ATH divise par 2.
+Panel A, the headline, is a price counterfactual. The set of tokens is fixed and
+the only thing that varies is the parameter the buyer does not choose, the price
+at which they can enter: x2(P) is the share of tokens whose pump.fun all-time
+high reaches at least 2 x P, that is the survival function of the highs
+reparameterised, x2(P) = P(ATH >= 2P). No degree of freedom, no filter, no
+model. The price P_90 such that x2(P_90) = 90 % is by construction the 10th
+percentile of the highs divided by two.
 
-Panneau B (controle), bandes de prix reellement observees. Meme mesure,
-restreinte aux tokens effectivement detectes dans la bande. Le taux de x2 y est
-quasi plat (42-58 % de 20k a 300k), ce qui bloque une lecture abusive du
-panneau A : les tokens qui apparaissent bas sont aussi ceux dont l'ATH est bas.
-Le panneau A porte sur le prix paye pour un token donne, pas sur une
-superiorite des tokens achetes bas.
+Panel B, the control, uses the price bands actually observed. The same
+measurement, restricted to the tokens genuinely detected in the band. The 2x
+rate there is nearly flat, 42 to 58 % from 20k to 300k, which blocks an abusive
+reading of panel A: the tokens that appear low are also the ones whose high is
+low. Panel A is about the price paid for a given token, not about tokens bought
+low being better.
 
-Trois avertissements, repris en pied de tableau :
- 1. Borne superieure de la chance de doubler, pas un PnL : atteindre l'ATH
-    n'est pas vendre a l'ATH. Le PnL executable est au tableau 1, negatif.
- 2. mc est au denominateur : artefact de denominateur assume et mesure
-    (elasticite log-log publiee).
- 3. La colonne << x2 devant soi >> (panneau B) exige en plus que l'ATH survienne
-    au moins 60 s apres la detection.
+Three warnings, repeated in the table's footer:
+ 1. This is an upper bound on the chance of doubling, not a PnL: reaching the
+    high is not selling at the high. The executable PnL is in table 1, and it
+    is negative.
+ 2. mc is in the denominator: a denominator artefact, accepted and measured,
+    with the log-log elasticity published.
+ 3. The "2x still ahead" column of panel B additionally requires the high to
+    occur at least 60 s after detection.
 
-Population : socle B (fast-grad) propre, soit regime MC sain
-(2026-06-27..2026-07-18), 5 000 < detect_mc < 300 000 et ATH connu.
-Sensibilite sur B entier publiee.
+Population: the clean B socle (fast-grad), meaning a healthy MC regime
+(2026-06-27..2026-07-18), 5 000 < detect_mc < 300 000 and a known high. The
+sensitivity over the whole of B is published.
 
-Usage : python3 code/t2_x2_par_prix_entree.py
-Sorties : docs/tables/T2a_x2_contrefactuel.md, docs/tables/T2b_x2_bandes.md,
-          data/t2_x2_par_prix_entree.json
+Usage: python3 code/t2_x2_par_prix_entree.py
+Outputs: docs/tables/T2a_x2_contrefactuel.md, docs/tables/T2b_x2_bandes.md,
+         data/t2_x2_par_prix_entree.json
 """
 import collections
 import math
