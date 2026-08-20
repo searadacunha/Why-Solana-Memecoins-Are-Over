@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-r1lib.py -- adapter pour la verification du "regime 1" (financement de flottes
-de wallets vierges via dispatchers, avant juin 2026).
+r1lib.py -- the adapter for verifying "regime 1": fleets of fresh wallets
+funded through dispatchers, before June 2026.
 
-Le client robuste que ce module portait est devenu rpc_client.py, le client
-unique du depot : meme rotation de cles, meme cooldown 429, meme regle "on LEVE
-sur echec, jamais de page vide silencieuse". Ce fichier n'en garde que :
-  - son cache propre (data/cache_r1/), separe de data/cache/ ;
-  - l'ecriture atomique + pseudonymisee des sorties (save) ;
-  - les constantes pump.fun utilisees par r1_*.
+The robust client this module used to carry became rpc_client.py, the single
+client of the repository: same key rotation, same 429 cooldown, same rule that
+a failure RAISES and never returns a silently empty page. What is left here:
+  - its own cache, data/cache_r1/, kept apart from data/cache/;
+  - the atomic, pseudonymised write of the outputs (save);
+  - the pump.fun constants the r1_* scripts use.
 
-Cles : lues dans l'environnement ($HELIUS_API_KEYS, ou .env non versionne a la
-racine du depot -- voir settings.py). Lecture seule.
+Keys are read from the environment, $HELIUS_API_KEYS or the uncommitted .env at
+the repository root; see settings.py. Read-only.
 """
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ os.makedirs(CACHE, exist_ok=True)
 
 
 def sig_page(addr: str, limit: int = 1000, before: Optional[str] = None) -> list[Any]:
-    """Une page de signatures ; leve si l'appel renvoie null (== rpc_client.sigs)."""
+    """One page of signatures. Raises if the call returns null (rpc_client.sigs)."""
     return rpc_client.sigs(addr, limit, before)
 
 
@@ -65,8 +65,8 @@ PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 PUMP_AMM = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA"
 SYS_PROGRAM = "11111111111111111111111111111111"
 LAMPORT = 1e-9
-# minimum de rente d'un compte systeme vide (0.00089088 SOL) : en dessous, un
-# wallet ne peut meme pas exister durablement, a fortiori signer un achat.
+# Rent minimum of an empty system account, 0.00089088 SOL. Below it a wallet
+# cannot even persist, let alone sign a buy.
 RENT_MIN_SOL = 0.00089088
-# frais de base d'une transaction Solana : 5000 lamports.
+# Base fee of a Solana transaction: 5000 lamports.
 TX_FEE_SOL = 0.000005

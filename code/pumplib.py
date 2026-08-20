@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pumplib.py : bibliotheque commune. Stdlib uniquement (json, gzip, math,
-bisect, statistics). Aucune dependance externe, aucun reseau, aucune cle.
+pumplib.py -- the shared library of the measurement series. Stdlib only (json,
+gzip, math, bisect, statistics): no external dependency, no network, no key.
 
-Conventions partagees par toutes les mesures :
+Conventions every measurement shares:
 
-  t0            = `created`, l'horodatage de creation du token (secondes UNIX).
-  swap          = {ts, side, trader, sol, tokens, price, src, progs[, sig]}
-  prix execute  = sol / tokens  (ce que l'acheteur paie reellement, frais de
-                  routeur inclus dans `sol`). On ne se sert de `price` (prix de
-                  pool) que pour controle : les deux donnent le meme resultat a
-                  la 3e decimale (voir m2).
-  MC en SOL     = prix * supply. La supply pump.fun est constante a 1e9.
-  MC de lancement = 27.96 SOL : constante de la courbe de bonding pump.fun
-                  (reserve virtuelle initiale). C'est le prix auquel le token
-                  demarre, avant tout achat. Verifiable hors de ce depot.
+  t0             = `created`, the token's creation timestamp (UNIX seconds).
+  swap           = {ts, side, trader, sol, tokens, price, src, progs[, sig]}
+  executed price = sol / tokens, what the buyer actually paid, router fees
+                   included in `sol`. The pool price in `price` is used as a
+                   cross-check only: the two agree to the third decimal (m2).
+  MC in SOL      = price * supply. pump.fun supply is constant at 1e9.
+  launch MC      = 27.96 SOL, a constant of the pump.fun bonding curve (its
+                   initial virtual reserve). That is where a token starts,
+                   before any buy, and it is verifiable outside this repository.
 
-Niveaux de preuve utilises dans les sorties :
-  [MESURE]      chiffre recalcule par le script a partir de data/.
-  [INFERE]      deduction a partir de mesures, explicitement signalee.
-  [NON ETABLI]  hypothese, jamais chiffree comme un fait.
+The three evidence levels the outputs carry:
+  [MESURE]      recomputed by the script from data/.
+  [INFERE]      derived from measurements, and flagged as derived.
+  [NON ETABLI]  a hypothesis, never quoted as a fact.
 """
 
 import datetime as _dt
@@ -31,21 +30,21 @@ import statistics
 
 
 def utc(ts, fmt="%Y-%m-%d"):
-    """Horodatage UNIX -> chaine UTC. Centralise ici pour que toutes les
-    mesures partagent exactement la meme convention de jour."""
+    """UNIX timestamp to a UTC string, defined here so that every measurement
+    shares one definition of what a day is."""
     return _dt.datetime.fromtimestamp(ts, _dt.timezone.utc).strftime(fmt)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.abspath(os.path.join(HERE, "..", "data"))
 
-# Constante de la courbe pump.fun : market cap au lancement, en SOL.
+# pump.fun curve constant: the market cap a token launches at, in SOL.
 LAUNCH_MC_SOL = 27.96
 PUMP_SUPPLY = 1e9
 
 
-# ------------------------------------------------------------------ chargement
+# ------------------------------------------------------------------- loading
 def load_captures(path=None):
-    """Charge le corpus de capture. Accepte .jsonl.gz ou .jsonl."""
+    """Load the capture corpus. Accepts .jsonl.gz or .jsonl."""
     if path is None:
         path = os.path.join(DATA, "floor_capture_public.jsonl.gz")
     op = gzip.open if path.endswith(".gz") else open
@@ -65,8 +64,8 @@ def load_json(name):
 
 
 def clean_swaps(d):
-    """Swaps exploitables, tries. Meme filtre partout : sol>0, tokens>0,
-    side dans {buy,sell}. Ajoute le prix execute `p`."""
+    """The usable swaps, sorted. One filter everywhere: sol > 0, tokens > 0,
+    side in {buy, sell}. Adds the executed price as `p`."""
     out = []
     for s in d.get("swaps") or []:
         tok = s.get("tokens") or 0.0
@@ -83,22 +82,24 @@ def clean_swaps(d):
     return out
 
 
-MIN_SOL_PRICE = 0.3   # taille minimale d'un swap pour compter dans un prix
-BUCKET = 30           # granularite de la grille de prix, en secondes
+MIN_SOL_PRICE = 0.3   # smallest swap that counts towards a price
+BUCKET = 30           # granularity of the price grid, in seconds
 
 
 def robust_series(sw, bucket=BUCKET, min_sol=MIN_SOL_PRICE, t0=None):
-    """Serie de prix ROBUSTE : pour chaque bucket de `bucket` secondes, la
-    mediane des prix executes des swaps d'au moins `min_sol`.
+    """The robust price series: per bucket of `bucket` seconds, the median
+    executed price of the swaps worth at least `min_sol`.
 
-    Pourquoi pas simplement max(prix) : les swaps de poussiere (0,002 SOL) ont
-    un prix implicite domine par les arrondis d'unites et produisent des
-    valeurs aberrantes de plusieurs ordres de grandeur (mesure : le max brut
-    donne une MC de 8,9e8 SOL, physiquement impossible). La mediane par bucket
-    sur les swaps >= 0,3 SOL elimine l'artefact sans choisir a la main.
-    Cette definition est celle du moteur d'aller-retour (M5) : les deux
-    mesures partagent donc exactement la meme notion de prix.
-    Retourne [(t_debut_bucket, prix), ...] tries."""
+    Why not simply max(price): a dust swap of 0.002 SOL carries an implicit
+    price dominated by unit rounding, and produces outliers several orders of
+    magnitude out. Measured, the raw maximum gives a market cap of 8.9e8 SOL,
+    which is physically impossible. Taking the median per bucket over swaps of
+    at least 0.3 SOL removes the artefact without picking anything by hand.
+
+    This is the same definition the round-trip engine (M5) uses, so the two
+    measurements share one notion of price rather than two.
+
+    Returns [(bucket_start_ts, price), ...], sorted."""
     big = [s for s in sw if s["sol"] >= min_sol]
     if not big:
         return []
@@ -112,10 +113,12 @@ def robust_series(sw, bucket=BUCKET, min_sol=MIN_SOL_PRICE, t0=None):
 
 
 def clusters(caps, gap_s=1800):
-    """Assigne un id de grappe temporelle. Deux tokens crees a moins de
-    `gap_s` l'un de l'autre sont dans la meme grappe. Sert d'unite de
-    re-echantillonnage : les tokens d'une meme grappe partagent le regime de
-    marche, les compter comme independants surestime la puissance."""
+    """Assign a temporal cluster id: two tokens created less than `gap_s`
+    apart belong to the same cluster.
+
+    This is the resampling unit. Tokens of one cluster share a market regime,
+    so counting them as independent overstates the power of any test built
+    on them."""
     cid, prev, out = 0, None, {}
     for d in sorted(caps, key=lambda x: x["created"]):
         c = d["created"]
@@ -133,12 +136,13 @@ from statlib import median, quantile, wilson  # noqa: E402,F401
 
 
 def bootstrap_median_ci(xs, n_boot=2000, seed=12345, alpha=0.05):
-    """IC de la mediane par bootstrap. Generateur congruentiel explicite pour
-    que le resultat soit identique sur toute machine et toute version de
-    Python (random.seed ne le garantit pas entre versions). La variante par
-    token a random.Random est common.boot_ci_median_tokens ; volontairement
-    distinctes (en-tete de statlib.py : fusionner changerait les nombres
-    publies)."""
+    """Bootstrap confidence interval of the median.
+
+    The congruential generator is written out here so the interval is the same
+    on any machine and any version of Python; random.seed does not guarantee
+    that across versions. The per-token variant built on random.Random is
+    common.boot_ci_median_tokens, and the two are deliberately distinct: see
+    the statlib.py header, merging them would change published numbers."""
     xs = [x for x in xs if x is not None]
     if len(xs) < 3:
         return (None, None)
@@ -159,15 +163,15 @@ def bootstrap_median_ci(xs, n_boot=2000, seed=12345, alpha=0.05):
 
 
 def cluster_bootstrap_mean_ci(values_by_cluster, n_boot=2000, seed=999, alpha=0.05):
-    """IC en re-echantillonnant les GRAPPES, pas les tokens. Les tokens d'une
-    meme grappe partagent le regime de marche : les traiter comme independants
-    surestimerait la precision.
+    """Confidence interval obtained by resampling the clusters, not the
+    tokens. Tokens of one cluster share a market regime, and treating them as
+    independent would overstate the precision.
 
-    L'estimateur re-echantillonne est la MOYENNE DES MOYENNES DE GRAPPE, le
-    meme que le point estime rapporte a cote. Re-echantillonner les grappes
-    puis moyenner les tokens mis en commun donnerait un autre estimateur (une
-    moyenne ponderee par la taille des grappes) et produirait un IC qui ne
-    contient pas son propre point estime."""
+    The statistic resampled is the mean of the cluster means, the same one
+    reported as the point estimate beside it. Resampling clusters and then
+    averaging the pooled tokens would estimate something else, a mean weighted
+    by cluster size, and would return an interval that does not contain its
+    own point estimate."""
     keys = sorted(values_by_cluster)
     if len(keys) < 3:
         return (None, None)
@@ -186,7 +190,7 @@ def cluster_bootstrap_mean_ci(values_by_cluster, n_boot=2000, seed=999, alpha=0.
             out[int((1 - alpha / 2) * (len(out) - 1))])
 
 
-# ------------------------------------------------------------------ affichage
+# ------------------------------------------------------------------ printing
 def head(title, level=None):
     bar = "=" * 78
     print(bar)
@@ -204,7 +208,7 @@ def kv(label, value, unit="", n=None, note=""):
 
 
 def emit(obj, path):
-    """Ecrit le resultat machine-lisible a cote du texte."""
+    """Write the machine-readable result beside the printed text."""
     import redact
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
