@@ -271,7 +271,7 @@ Two refinements, each of them from a false positive it produced:
   "32 hex" in every account dump, so matches made of ≤ 2 distinct characters are
   not keys;
 * the scanner's own pattern table matches its own patterns, so lines carrying
-  `# noqa: leakscan` are exempt, rather than exempting the whole file.
+  `# leakscan: skip` are exempt, rather than exempting the whole file.
 
 ### Redaction: one narrow exception to publishing addresses in the clear
 
