@@ -1,47 +1,49 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-La courbe est-elle rachetee des le slot de creation, et cela depend-il de la date ?
+Is the curve bought back in the creation slot itself, and does that depend on
+the date?
 
-Pour un token pump.fun, on lit les premieres signatures de sa bonding curve, on
-identifie le slot de creation et on somme le SOL qui y entre : sol_first_slot (pendant
-le slot de creation), sol_window_30s (dans les 30 s suivant la 1re transaction),
-n_buyers_* (portefeuilles distincts a l'origine de ce SOL). La courbe se remplit avec
-~85 SOL avant de migrer ; a partir de FULL_SNIPE_SOL (60 SOL des le slot de creation)
-elle est deja prise au moment ou la creation devient visible. Seuil en SOL et non en
-dollars, pour rester comparable entre epoques.
+For a pump.fun token, the first signatures of its bonding curve are read, the
+creation slot is identified, and the SOL entering it is summed: sol_first_slot
+during the creation slot, sol_window_30s within 30 s of the first transaction,
+n_buyers_* for the distinct wallets that SOL came from. The curve fills with
+about 85 SOL before it migrates; from FULL_SNIPE_SOL onwards, 60 SOL in the
+creation slot alone, it is already taken by the time the creation becomes
+visible. The threshold is in SOL, not dollars, so it stays comparable across
+periods.
 
-<< La Matrice >> designe les flottes de portefeuilles partageant une origine de
-financement, une methode d'execution et des circuits de sortie : une infrastructure
-observee, pas une personne ni une organisation identifiee. Plusieurs operateurs
-distincts appliquent la meme methode ; savoir s'ils partagent un controle unique
-depasse ce que la chaine permet d'etablir.
+"The Matrix" names the fleets of wallets sharing a funding origin, an execution
+method and exit routes: an observed infrastructure, not a person and not an
+identified organisation. Several distinct operators apply the same method;
+whether they share a single controller is beyond what the chain can establish.
 
-Trois echantillons aux biais differents, tenus separes :
-  L  legacy, n=70, ATH >= 500 k$, crees du 2026-06-27 au 2026-07-04 ; corpus local du
-     collecteur, selection non aleatoire (ordre du fichier source).
-  F  cadre stratifie par mois de creation dans le classement all-time de l'API pump
-     (sort=ath_market_cap) ; utilisable de 2025-05 a 2026-07, avant quoi le champ
-     ath_market_cap n'existe pas (plus ancien ath_market_cap_timestamp : mai 2025).
-  C  serie de cas : les 46 tokens du meme classement crees avant 2025-05. Leur ATH
-     d'API est un pic de 2025-2026, pas leur pic de lancement ; ils figurent au
-     classement parce qu'ils ont survecu. Serie de cas, donc, et pas un taux.
+Three samples with different biases, kept apart:
+  L  legacy, n=70, highs of 500 k$ or more, created 2026-06-27 to 2026-07-04.
+     The collector's local corpus, a non-random selection, in source-file order.
+  F  a frame stratified by month of creation within the pump API's all-time
+     ranking (sort=ath_market_cap). Usable from 2025-05 to 2026-07, before which
+     the ath_market_cap field does not exist; the oldest
+     ath_market_cap_timestamp is May 2025.
+  C  a case series: the 46 tokens of that same ranking created before 2025-05.
+     Their API high is a 2025-2026 peak, not their launch peak, and they are in
+     the ranking because they survived. A case series, then, and not a rate.
 
-Limites : le script ne dit pas qui achete, ni si les acheteurs d'un meme slot relevent
-du meme operateur (chapitres 3 et 6) ; un rachat au slot 0 n'est pas en soi une
-infraction, seulement une mesure de ce qui reste achetable par un tiers ; aucune des
-trois populations n'est un tirage aleatoire dans les tokens >= 500 k$, donc les taux se
-comparent entre mois d'un meme echantillon et pas d'un echantillon a l'autre.
+Limits: this script does not say who buys, nor whether the buyers of one slot
+belong to the same operator (chapters 3 and 6); a buyback at slot 0 is not in
+itself an offence, only a measurement of what is left for a third party to buy;
+and none of the three populations is a random draw among tokens over 500 k$, so
+the rates compare between months of one sample, not from one sample to another.
 
 Usage:
-    python3 code/09_bundle_snipe.py                 # rapport, hors ligne
-    python3 code/09_bundle_snipe.py --frame         # (re)telecharge le cadre
-    python3 code/09_bundle_snipe.py --measure       # mesure on-chain (Helius)
+    python3 code/09_bundle_snipe.py                 # report, offline
+    python3 code/09_bundle_snipe.py --frame         # (re)download the frame
+    python3 code/09_bundle_snipe.py --measure       # on-chain measurement (Helius)
     python3 code/09_bundle_snipe.py --measure --per-month 12 --workers 10
 
-Mesure on-chain mise en cache token par token dans data/bundle/cache/ : une re-execution
-ne redemande que ce qui manque. Les fichiers publies dans data/bundle/ suffisent a
-refaire tous les chiffres du rapport sans reseau.
+The on-chain measurement is cached token by token under data/bundle/cache/, so a
+re-run only asks for what is missing. The files published in data/bundle/ are
+enough to redo every figure of the report with no network at all.
 """
 
 import argparse
@@ -71,7 +73,7 @@ LEGACY = os.path.join(OUTDIR, "legacy_70.json")
 MEASURES = os.path.join(OUTDIR, "measures.json")
 REPORT = os.path.join(OUTDIR, "09_bundle_snipe.json")
 
-# --- definition de la mesure (identique a la mesure gelee du 2026-07-29) -----
+# --- the measurement's definition, identical to the frozen one of 2026-07-29 -
 SNIPE_WINDOW = 30        # s apres la 1re transaction de la courbe
 FULL_SNIPE_SOL = 60.0    # seuil << courbe rachetee >> (la courbe entiere ~85 SOL)
 MAX_TX_PARSED = 60       # nb max de transactions decodees par token
@@ -82,7 +84,7 @@ PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
-# Comptes qui ne sont jamais un acheteur humain (programmes, vaults de pourboire).
+# Accounts that are never a human buyer: programs, tip vaults.
 NON_PARTICIPANT = {
     "11111111111111111111111111111111",
     "ComputeBudget111111111111111111111111111111",
@@ -93,8 +95,8 @@ NON_PARTICIPANT = {
 
 
 # --------------------------------------------------------------------------- #
-# base58 + PDA (pur stdlib) : permet de verifier que l'adresse de courbe
-# fournie par l'API pump est bien PDA(["bonding-curve", mint], programme pump).
+# base58 + PDA, pure stdlib: lets us check that the curve address the pump API
+# hands back really is PDA(["bonding-curve", mint], pump program).
 # --------------------------------------------------------------------------- #
 _B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
@@ -122,7 +124,7 @@ _D = (-121665 * pow(121666, _P - 2, _P)) % _P
 
 
 def _on_curve(b):
-    """True si les 32 octets encodent un point ed25519 valide (donc pas une PDA)."""
+    """True if the 32 bytes encode a valid ed25519 point, so not a PDA."""
     y = int.from_bytes(b, "little") & ((1 << 255) - 1)
     if y >= _P:
         return False
@@ -148,7 +150,7 @@ def bonding_curve_pda(mint):
 
 
 # --------------------------------------------------------------------------- #
-# client Helius : stdlib, rotation des cles, backoff sur 429/5xx
+# Helius client: stdlib, key rotation, backoff on 429 and 5xx
 # --------------------------------------------------------------------------- #
 class Rpc:
     def __init__(self, rps=12.0):
@@ -160,9 +162,10 @@ class Rpc:
         self.n_calls = 0
 
     def _throttle(self):
-        """Espacement local entre appels (rate-limit par instance) + compteur
-        d'appels pour l'affichage de progression. Le transport lui-meme (envoi,
-        rotation des cles, cooldown 429, reprises 5xx) appartient a rpc_client."""
+        """Local spacing between calls, a per-instance rate limit, plus a call counter
+        for the progress display. The transport itself, sending, key rotation, the
+        429 cooldown and 5xx retries, belongs to rpc_client.
+        """
         with self.lock:
             gap = self.min_gap - (time.time() - self.last)
             if gap > 0:
@@ -171,18 +174,19 @@ class Rpc:
             self.n_calls += 1
 
     def call(self, method, params, tries=7):
-        # Transport delegue a rpc_client : il possede la rotation des cles, le
-        # cooldown apres un 429 et les reprises bornees, et il leve HeliusError
-        # plutot que de rendre un None/[]/{} confondable avec un vide. On ne garde
-        # ici que le petit espacement local entre appels. tries reste dans la
-        # signature pour ne pas toucher aux appelants, mais n'est plus utilise.
+        # Transport is delegated to rpc_client: it owns key rotation, the
+        # cooldown after a 429 and the bounded retries, and it raises
+        # HeliusError rather than returning a None/[]/{} indistinguishable from
+        # an empty result. What is kept here is the small local spacing between
+        # calls. tries stays in the signature so the callers do not change, but
+        # it is no longer used.
         self._throttle()
         return rpc_client.rpc(method, params)
 
     def sigs(self, addr, before=None):
-        # rpc_client.sigs leve si le RPC renvoie null (un null est une panne, pas
-        # une page vide) ; une page reellement vide reste []. Plus de "or []" qui
-        # transformait une panne de quota en "courbe sans transaction".
+        # rpc_client.sigs raises when the RPC returns null, since a null is an
+        # outage and not an empty page; a genuinely empty page stays []. No more
+        # "or []" turning a quota outage into "a curve with no transaction".
         self._throttle()
         return rpc_client.sigs(addr, 1000, before)
 
@@ -192,7 +196,7 @@ class Rpc:
 
 
 # --------------------------------------------------------------------------- #
-# decodage d'une transaction : qui envoie du SOL DANS la courbe
+# Decoding a transaction: who sends SOL INTO the curve
 # --------------------------------------------------------------------------- #
 def _instructions(tx):
     msg = (tx.get("transaction") or {}).get("message") or {}
@@ -204,11 +208,11 @@ def _instructions(tx):
 
 
 def buyers_of_tx(tx, bc):
-    """{portefeuille: lamports} pour tout SOL entrant dans la bonding curve.
+    """{wallet: lamports} for all SOL entering the bonding curve.
 
-    On somme les transferts System vers la courbe plutot que de retenir le seul
-    signataire : un bundle pump.fun est frequemment une seule transaction
-    co-signee par plusieurs portefeuilles, qui payent chacun leur part.
+    The System transfers towards the curve are summed rather than crediting the
+    signer alone: a pump.fun bundle is frequently one transaction co-signed by
+    several wallets, each paying its share.
     """
     out = {}
     for ix in _instructions(tx):
@@ -235,11 +239,11 @@ def buyers_of_tx(tx, bc):
 # mesure d'un token
 # --------------------------------------------------------------------------- #
 def oldest_sigs(rpc, addr, stop_ts):
-    """Pagine vers le passe jusqu'a depasser stop_ts. Retourne (sigs_asc, complet).
+    """Paginate into the past until stop_ts is passed. Returns (sigs_asc, complete).
 
-    Piege : sur une courbe tres active, une pagination bornee a deux pages ne lit
-    que des transactions recentes et conclut a tort a l'absence d'achat initial.
-    On ne s'arrete donc qu'une fois la creation atteinte.
+    The trap: on a very active curve, a pagination bounded at two pages reads
+    only recent transactions and wrongly concludes there was no initial buy. So
+    it stops only once creation has been reached.
     """
     out, before, complete = [], None, False
     for _ in range(MAX_SIG_PAGES):
@@ -275,13 +279,13 @@ def measure(rpc, rec):
     if not t0:
         return {**base, "status": "no_blocktime"}
     if not complete:
-        # on n'a pas atteint la genese : la 1re signature lue n'est pas la creation
+        # Genesis was not reached: the first signature read is not the creation
         return {**base, "status": "pagination_incomplete"}
     base["dt_created"] = (t0 - created) if created else None
     window = [s for s in sigs if (s.get("blockTime") or 0) <= t0 + SNIPE_WINDOW]
-    # on decode d'abord toutes les signatures du slot de creation, puis on
-    # complete avec le reste de la fenetre : le chiffre << slot 0 >> ne peut
-    # donc pas etre tronque par la borne de cout.
+    # Every signature of the creation slot is decoded first, then the rest of
+    # the window is filled in, so the "slot 0" figure cannot be truncated by the
+    # cost bound.
     in_slot0 = [s for s in window if s.get("slot") == slot0]
     rest = [s for s in window if s.get("slot") != slot0]
     todo = (in_slot0 + rest)[:MAX_TX_PARSED]
@@ -318,11 +322,11 @@ def http_json(url, timeout=30):
 
 
 def build_frame():
-    """Classement all-time de l'API pump, pagine jusqu'a epuisement (~1050).
+    """The pump API's all-time ranking, paginated to exhaustion, about 1050 rows.
 
-    C'est le seul point d'entree gratuit qui remonte au-dela de quelques
-    dizaines de minutes : le listing par date de creation est plafonne a
-    offset ~1000, soit environ 30 minutes de passe.
+    It is the only free entry point reaching back beyond a few tens of minutes:
+    the listing by creation date is capped at an offset of about 1000, roughly
+    30 minutes of the past.
     """
     base = ("https://frontend-api-v3.pump.fun/coins"
             "?sort=ath_market_cap&order=DESC&limit=50&offset=%d")
@@ -363,14 +367,14 @@ def month_of(ts):
     return dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime("%Y-%m")
 
 
-# 2025-05 = premier mois ou le champ ath_market_cap de l'API existe : avant, un
-# token ne figure au classement que s'il a connu un pic bien apres son
-# lancement, ce qui est une selection par la survie.
+# 2025-05 is the first month the API's ath_market_cap field exists. Before it, a
+# token only appears in the ranking if it peaked well after its launch, which is
+# selection by survival.
 FRAME_START = "2025-05"
 
 
 def select_targets(per_month, seed=20260729):
-    """Cibles = serie de cas (avant FRAME_START) + tirage par mois ensuite."""
+    """Targets: the case series before FRAME_START, then a draw per month."""
     doc = json.load(open(FRAME))
     by = defaultdict(list)
     for r in doc["tokens"]:
@@ -390,10 +394,11 @@ def select_targets(per_month, seed=20260729):
 
 
 def load_legacy():
-    """Les 70 tokens ATH >= 500 k$ deja mesures (re-mesures ici au meme protocole).
+    """The 70 tokens with highs of 500 k$ or more already measured, re-measured
+    here under the same protocol.
 
-    Lus depuis data/bundle/legacy_70.json (publie). Le fichier est reconstruit
-    depuis l'etat brut du collecteur si $PUMP_PRIVATE_ROOT est defini.
+    Read from data/bundle/legacy_70.json, which is published. The file is
+    rebuilt from the collector's raw state when $PUMP_PRIVATE_ROOT is set.
     """
     if not os.path.exists(LEGACY):
         priv = settings.private_root(required=True)
@@ -463,7 +468,7 @@ def run_measure(per_month, workers, only=None):
 
 
 def collect(targets=None):
-    """Rassemble le cache token par token dans data/bundle/measures.json."""
+    """Gather the token-by-token cache into data/bundle/measures.json."""
     if targets is None:
         targets = select_targets(12)
         for r in load_legacy():
@@ -576,7 +581,7 @@ def report():
             print("\n[%s]  n_cibles=%d  AUCUN mesurable  %s"
                   % (s, d["n_cibles"], d.get("rejets", "")))
 
-    # ---- taux par mois de creation, sur le cadre F uniquement ----
+    # ---- rate by month of creation, over frame F only ----
     frame = [r for r in rows if r.get("sample") == "F_cadre"]
     bym = defaultdict(list)
     for r in frame:
@@ -597,7 +602,7 @@ def report():
         else:
             print("%-9s %5d %5d       -" % (m, d["n_cibles"], d["n_mesurables"]))
 
-    # ---- meme chose regroupee par trimestre (n par cellule plus utile) ----
+    # ---- the same, grouped by quarter, where n per cell is more useful ----
     def quarter(m):
         y, mo = m.split("-")
         return "%s-T%d" % (y, (int(mo) - 1) // 3 + 1)
@@ -615,7 +620,7 @@ def report():
                   % (q, d["n_slot0"], d["n_mesurables"], d["pct_slot0"],
                      d["ic95"][0], d["ic95"][1], d["med_n_buyers_slot0"]))
 
-    # ---- premier vs dernier semestre du cadre : y a-t-il une tendance ? ----
+    # ---- the frame's first half against its last: is there a trend? ----
     qs = sorted(k for k, v in out["par_trimestre_cadre"].items() if v.get("n_mesurables"))
     if len(qs) >= 2:
         first = [r for r in frame if quarter(r["month"]) in qs[:len(qs) // 2] and measurable(r)]
@@ -631,7 +636,7 @@ def report():
               % (",".join(qs[:len(qs) // 2]), ",".join(qs[len(qs) // 2:]),
                  a, len(first), c, len(last), p))
 
-    # ---- serie de cas : tokens crees avant l'existence du champ ATH ----
+    # ---- case series: tokens created before the ATH field existed ----
     cas = sorted([r for r in rows if r.get("sample") == "C_serie_cas"],
                  key=lambda r: r.get("created") or 0)
     print("\n" + "-" * 78)

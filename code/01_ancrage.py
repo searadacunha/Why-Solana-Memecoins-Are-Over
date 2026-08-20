@@ -1,45 +1,44 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Ancre le recit dans des tokens reels et date le marche pump.fun.
+"""Anchor the account in real tokens, and date the pump.fun market.
 
-(A) symboles : les tokens nommes par le recit (EPEP, TEST, la famille
-<< orbit >>) existent-ils, combien de mints distincts portent chaque symbole,
-lequel atteint la capitalisation maximale annoncee. Resultat frequent : des
-dizaines d'homonymes, aucun conforme. C'est une mesure, pas un echec.
-(B) faits on-chain par candidat retenu : date de creation lue sur la chaine
-(plus ancienne signature du compte de mint), programme d'origine, statut. La
-chaine est la seule source qui remonte a 2024, les API tierces s'arretent
-avant (champ `couverture_api` du rapport).
-(C) chronologie mensuelle depuis janvier 2024 : creations par mois, part
-graduee, distribution d'ATH.
+(A) symbols: do the tokens the account names (EPEP, TEST, the "orbit" family)
+exist, how many distinct mints carry each symbol, and which one reaches the
+market cap being claimed. The frequent result is dozens of homonyms and none
+that matches. That is a measurement, not a failure.
+(B) on-chain facts per retained candidate: the creation date read from the chain
+(the mint account's oldest signature), the originating program, and the status.
+The chain is the only source reaching back to 2024, third-party APIs stop before
+it (the report's `couverture_api` field).
+(C) monthly chronology since January 2024: creations per month, share graduated,
+distribution of highs.
 
-Methode de (C) : aucune API publique ne rend le nombre de tokens crees dans un
-mois donne, et la pagination par offset de pump.fun ne remonte pas a 2024 (il
-faudrait des millions de pages). Mais chaque creation pump.fun fait intervenir
-l'autorite de mint du programme (PDA constant, cf. MINT_AUTHORITY), donc les
-signatures de ce seul compte sont l'index exhaustif des creations, en ordre
-chronologique inverse. Une page de getSignaturesForAddress prise avant une
-signature S rend les 1000 creations qui precedent S, dont l'ecart de temps
-donne un taux instantane ; `before` accepte n'importe quelle signature du
-ledger, ce qui permet de s'ancrer sur une date (date -> slot -> signature
-quelconque de ce bloc). Le total mensuel est donc une extrapolation,
-l'integration des taux mesures a N ancres reparties dans le mois, avec la
-dispersion inter-ancres rapportee. Les mints echantillonnes a ces ancres sont
-en revanche un tirage sans biais de selection, pris dans l'index tel quel et
-non dans une liste << top >> d'API.
+The method behind (C): no public API returns how many tokens were created in a
+given month, and pump.fun's offset pagination does not reach 2024, which would
+take millions of pages. But every pump.fun creation involves the program's mint
+authority, a constant PDA (see MINT_AUTHORITY), so the signatures of that single
+account are the exhaustive index of creations, in reverse chronological order. A
+page of getSignaturesForAddress taken before a signature S returns the 1000
+creations preceding S, and the time they span gives an instantaneous rate;
+`before` accepts any signature on the ledger, which is what allows anchoring to
+a date (date -> slot -> any signature in that block). The monthly total is
+therefore an extrapolation, the integration of rates measured at N anchors
+spread through the month, with the dispersion between anchors reported. The
+mints sampled at those anchors, on the other hand, are drawn with no selection
+bias: taken from the index as it comes, not from some API's "top" list.
 
-Niveaux de preuve : [MESURE] recalcule par ce script depuis la chaine ou une
-API publique, [ESTIME] extrapolation explicite d'une mesure (totaux mensuels),
-[NON ETABLI] jamais chiffre comme un fait.
+Evidence levels: [MESURE] recomputed by this script from the chain or a public
+API, [ESTIME] an explicit extrapolation from a measurement (the monthly totals),
+[NON ETABLI] never quoted as a fact.
 
-Usage :
-    python3 code/01_ancrage.py search     # (A) symboles cites
-    python3 code/01_ancrage.py onchain    # (B) faits on-chain des candidats
-    python3 code/01_ancrage.py chrono     # (C) chronologie mensuelle
-    python3 code/01_ancrage.py report     # assemble data/ancrage/ancrage.json
+Usage:
+    python3 code/01_ancrage.py search     # (A) the symbols quoted
+    python3 code/01_ancrage.py onchain    # (B) the candidates' on-chain facts
+    python3 code/01_ancrage.py chrono     # (C) the monthly chronology
+    python3 code/01_ancrage.py report     # assembles data/ancrage/ancrage.json
     python3 code/01_ancrage.py all
 
-Aucune cle n'est ecrite sur disque ni dans les sorties (cf. settings.py).
+No key is written to disk or into any output (see settings.py).
 """
 from __future__ import annotations
 
@@ -64,35 +63,34 @@ os.makedirs(OUT, exist_ok=True)
 os.makedirs(CACHE, exist_ok=True)
 
 # ------------------------------------------------------------------ constants
-# PDA autorite de mint du programme pump.fun. Present dans chaque creation de
-# token pump.fun et (verifie plus bas, cf. `verif_creations`) dans rien d'autre.
+# The pump.fun program's mint-authority PDA. Present in every pump.fun token
+# creation and, as `verif_creations` checks below, in nothing else.
 MINT_AUTHORITY = "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM"
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
-# Deux ancres slot/temps mesurees sur la chaine, servant d'amorce a la
-# conversion date -> slot. Elles sont raffinees par getBlockTime a chaque appel :
-# une derive de l'estimation initiale n'introduit aucune erreur, seulement des
-# iterations supplementaires.
+# Two slot/time anchors measured on the chain, seeding the date -> slot
+# conversion. getBlockTime refines them on every call, so a drift in the initial
+# estimate introduces no error, only extra iterations.
 ANCHOR_HI = (435964490, 1785335387)
 ANCHOR_LO = (306215569, 1733674757)
 SLOTS_PER_SEC = (ANCHOR_HI[0] - ANCHOR_LO[0]) / (ANCHOR_HI[1] - ANCHOR_LO[1])
 
-# Fenetre du << regime 1 >> telle que decrite par le temoignage, en UTC.
+# The window of "regime 1" as the account describes it, in UTC.
 REGIME1 = (dt.datetime(2024, 10, 1, tzinfo=dt.timezone.utc),
            dt.datetime(2025, 3, 1, tzinfo=dt.timezone.utc))
 
-# Symboles a ancrer. `attendu_usd` = capitalisation maximale annoncee par le
-# temoignage ; sert de cible a confronter, jamais de filtre.
+# Symbols to anchor. `attendu_usd` is the highest market cap the account
+# claims; it is a target to confront, never a filter.
 CIBLES = [
     {"terme": "EPEP", "symbole": "EPEP", "attendu_usd": 40e6},
     {"terme": "TEST", "symbole": "TEST", "attendu_usd": 10e6},
     {"terme": "orbit", "symbole": None, "attendu_usd": 100e6},
 ]
-# Familles temoins : des mots aussi banals que << orbit >>, tires d'un champ
-# lexical sans rapport (objets, nature), pour disposer d'un taux de base du
-# nombre de mints homonymes et de la forme de la distribution d'ATH.
+# Control families: words as ordinary as "orbit", drawn from an unrelated
+# lexical field of objects and nature, to have a base rate for the number of
+# homonymous mints and for the shape of the distribution of highs.
 FAMILLES_TEMOIN = ["lantern", "pebble", "marble", "willow", "compass"]
 
 
@@ -106,14 +104,14 @@ def iso(ts):
 
 # ------------------------------------------------------------------ http ----
 class Http:
-    """Adaptateur mince. Le transport Solana JSON-RPC est delegue au client
-    partage rpc_client (rotation de cles, cooldown apres 429, reprises bornees) ;
-    on ne conserve ici que la traduction vers le contrat (resultat, erreur)
-    attendu par les appelants, plus le petit GET web() vers les frontends
-    pump/dexscreener/jup, qui ne sont pas des endpoints Helius.
+    """A thin adapter. The Solana JSON-RPC transport is delegated to the shared
+    rpc_client (key rotation, cooldown after a 429, bounded retries); what is
+    kept here is the translation to the (result, error) contract the callers
+    expect, plus the small web() GET towards the pump, dexscreener and jup
+    frontends, which are not Helius endpoints.
 
-    Les appels sont comptes et le total est rapporte dans la sortie, pour que
-    le cout de reproduction soit connu avant de relancer.
+    The calls are counted and the total is reported in the output, so that the
+    cost of reproducing this is known before anyone re-runs it.
     """
 
     def __init__(self):
@@ -122,11 +120,12 @@ class Http:
 
     # -- Solana JSON-RPC (transport delegue a rpc_client) -------------------
     def rpc(self, method, params):
-        """Rend (resultat, erreur). Une erreur ne doit pas se confondre avec
-        une reponse vide : cette confusion a fait croire, en cours de mise au
-        point, que l'historique du mint EPEP s'arretait en 2024-12.
-        rpc_client.rpc leve HeliusError sur un echec (transport ou objet `error`
-        JSON-RPC) ; on le retraduit en tuple pour ne rien changer aux appelants."""
+        """Returns (result, error). An error must not be confused with an empty
+        answer: that confusion made it look, while this was being written, as
+        though the EPEP mint's history stopped in 2024-12. rpc_client.rpc raises
+        HeliusError on a failure, whether transport or a JSON-RPC `error` object,
+        and it is translated back into a tuple so the callers do not change.
+        """
         self.n_rpc += 1
         try:
             return rpc_client.rpc(method, params), None
@@ -140,12 +139,14 @@ class Http:
         except rpc_client.HeliusError as e:
             return None, settings.redact_key(str(e))
 
-    # -- web (frontends pump/dexscreener/jup ; pas un endpoint Helius) -------
+    # -- web (the pump / dexscreener / jup frontends, not a Helius endpoint) --
     def web(self, url, tries=5, timeout=60):
-        """Petit GET local. Retente 429/5xx et erreurs de transport ; rend
-        {"_error": ...} sur un statut HTTP definitif non rejouable (ex. 404 =
-        token absent : une reponse, pas une panne), mais leve quand les essais
-        sont epuises, une panne reseau ne devant pas se cacher en page vide."""
+        """A small local GET. It retries on 429, 5xx and transport errors, returns
+        {"_error": ...} on a final HTTP status that cannot be replayed (404, for
+        instance: an absent token is an answer, not an outage), but raises once the
+        attempts are exhausted, a network outage having no business hiding as an
+        empty page.
+        """
         self.n_web += 1
         last = None
         for t in range(tries):
@@ -170,8 +171,9 @@ H = Http()
 
 
 def cached(name, fn):
-    """Cache disque des appels reseau (data/cache/, non publie : c'est un
-    miroir exact de donnees publiques)."""
+    """Disk cache of the network calls, under data/cache/, which is not published:
+    it is an exact mirror of public data.
+    """
     p = os.path.join(CACHE, name + ".json")
     if os.path.exists(p):
         try:
@@ -197,12 +199,12 @@ def dump(obj, name):
 
 # ============================================================== (A) SYMBOLES =
 def pump_search(term, max_pages=40, limit=50):
-    """Tous les mints pump.fun dont le nom ou le symbole contient `term`.
+    """Every pump.fun mint whose name or symbol contains `term`.
 
-    La recherche plein-texte paginee de l'API pump.fun couvre tout l'historique
-    du programme (verifie : des tokens de mars 2024 remontent). C'est la seule
-    source qui rende `ath_market_cap`, la capitalisation maximale atteinte,
-    pour un token mort depuis longtemps.
+    The pump.fun API's paginated full-text search covers the whole history of
+    the program; this was checked, tokens from March 2024 come back. It is the
+    only source that returns `ath_market_cap`, the highest market cap reached,
+    for a token long dead.
     """
     out, off = {}, 0
     for _ in range(max_pages):
@@ -242,8 +244,9 @@ def jup_search(term):
 
 
 def _slim(c):
-    """Champs retenus d'un token pump.fun. On ne recopie pas la reponse brute :
-    elle contient des URLs d'images et des descriptions libres."""
+    """The fields kept from a pump.fun token. The raw reply is not copied over:
+    it carries image URLs and free-text descriptions.
+    """
     ts = (c.get("created_timestamp") or 0) / 1000.0
     return {
         "mint": c.get("mint"),
@@ -259,7 +262,7 @@ def _slim(c):
 
 
 def cmd_search():
-    """(A) Enumere les candidats pour chaque symbole cite, toutes sources."""
+    """(A) Enumerate the candidates for each symbol quoted, across all sources."""
     res = {"cibles": [], "familles_temoin": []}
 
     for cible in CIBLES:
@@ -276,8 +279,8 @@ def cmd_search():
         dans_fenetre = [r for r in rows
                         if REGIME1[0].timestamp() <= r["cree_ts"] < REGIME1[1].timestamp()]
 
-        # sources hors pump.fun : un token de 2024 pouvait etre lance
-        # directement sur Raydium, auquel cas il n'est dans aucune API pump.
+        # Sources outside pump.fun: a 2024 token could have been launched
+        # straight on Raydium, in which case it is in no pump API at all.
         dex = []
         for p in dexscreener_search(terme):
             if p.get("chainId") != "solana":
@@ -355,11 +358,11 @@ def cmd_search():
 
 # ============================================================== (B) ON-CHAIN =
 def slot_for_ts(ts, tol=90):
-    """Slot dont l'horodatage est a moins de `tol` secondes de `ts`.
+    """The slot whose timestamp is within `tol` seconds of `ts`.
 
-    Iteration point-fixe sur getBlockTime : le taux de slots par seconde est
-    localement stable, deux a quatre iterations suffisent. Les slots sautes
-    (pas de bloc produit) rendent None : on recule d'un slot et on recommence.
+    A fixed-point iteration on getBlockTime: the slots-per-second rate is
+    locally stable, so two to four iterations suffice. Skipped slots, where no
+    block was produced, return None: step back one slot and try again.
     """
     def _f():
         s = int(ANCHOR_HI[0] + (ts - ANCHOR_HI[1]) * SLOTS_PER_SEC)
@@ -377,9 +380,10 @@ def slot_for_ts(ts, tol=90):
 
 
 def sig_at_ts(ts):
-    """Une signature quelconque du ledger proche de `ts`, utilisable comme
-    borne `before`. Elle n'a aucun rapport avec les comptes interroges : elle
-    ne sert qu'a positionner la recherche dans le temps."""
+    """Any signature on the ledger near `ts`, usable as a `before` bound. It has
+    no relation to the accounts being queried: it only positions the search in
+    time.
+    """
     def _f():
         sl = slot_for_ts(ts)
         s = sl["slot"]
@@ -399,13 +403,13 @@ def sig_at_ts(ts):
 
 
 def genese(addr, max_pages=400):
-    """Plus ancienne signature d'un compte = sa creation on-chain.
+    """An account's oldest signature, which is its on-chain creation.
 
-    Pagination profonde obligatoire : une seule page (1000 signatures) ne
-    remonte pas a la genese d'un compte actif, et s'arreter la produit une date
-    de creation fausse, de plusieurs mois sur les mints etudies ici.
-    `n_pages_epuise` dit si la marche s'est arretee faute de pages, auquel cas
-    la date rendue est une borne superieure, pas la genese.
+    Deep pagination is mandatory: a single page of 1000 signatures does not
+    reach the genesis of an active account, and stopping there produces a false
+    creation date, off by several months on the mints studied here.
+    `n_pages_epuise` says whether the walk stopped for want of pages, in which
+    case the date returned is an upper bound, not the genesis.
     """
     def _f():
         before, total, pages, old = None, 0, 0, None
@@ -446,13 +450,13 @@ def tx(sig, parsed=True):
 
 
 def mint_de_creation(t):
-    """Mint cree par une transaction de creation pump.fun.
+    """The mint created by a pump.fun creation transaction.
 
-    On lit `meta.postTokenBalances`, et non les cles de compte : la position du
-    mint dans la liste des comptes a change entre les versions successives de
-    l'instruction (Create, CreateV2). Beaucoup de mints de 2024 ne se terminent
-    pas par << pump >>, si bien que l'heuristique du suffixe rate les tokens les
-    plus anciens, ceux qui nous interessent.
+    `meta.postTokenBalances` is read rather than the account keys: the mint's
+    position in the account list changed between successive versions of the
+    instruction, Create and CreateV2. Many 2024 mints do not end in "pump", so
+    the suffix heuristic misses the oldest tokens, which are the ones of
+    interest here.
     """
     for b in ((t.get("meta") or {}).get("postTokenBalances") or []):
         m = b.get("mint")
@@ -462,13 +466,13 @@ def mint_de_creation(t):
 
 
 def cmd_onchain():
-    """(B) Faits on-chain des candidats retenus."""
+    """(B) The on-chain facts of the retained candidates."""
     src = json.load(open(os.path.join(OUT, "symboles.json")))
     cands = []
     for c in src["cibles"]:
-        # 3 meilleurs ATH pump.fun + tous les mints hors pump.fun trouves :
-        # ce sont les seuls candidats plausibles pour une capitalisation de
-        # plusieurs dizaines de millions.
+        # The 3 best pump.fun highs plus every non-pump.fun mint found: those
+        # are the only plausible candidates for a market cap of several tens of
+        # millions.
         for r in c["top15_par_ath"][:3]:
             cands.append({"terme": c["terme"], "source": "pump.fun", **r})
         for r in c["hors_pump"]:
@@ -496,7 +500,7 @@ def cmd_onchain():
         if bt:
             rec["dans_fenetre_regime1"] = (
                 REGIME1[0].timestamp() <= bt < REGIME1[1].timestamp())
-        # que dit le premier tx du compte ?
+        # What does the account's first transaction say?
         if pa.get("signature"):
             t = tx(pa["signature"])
             logs = [line for line in ((t.get("meta") or {}).get("logMessages") or [])
@@ -513,8 +517,9 @@ def cmd_onchain():
 
 # =========================================================== (C) CHRONOLOGIE =
 def ancres_du_mois(y, m, n=6):
-    """n instants repartis dans le mois, a distance des bords (un ancrage le
-    1er a 00:00 tomberait sur la queue du mois precedent)."""
+    """n instants spread through the month, away from its edges: an anchor on the
+    1st at 00:00 would land in the tail of the previous month.
+    """
     d0 = dt.datetime(y, m, 1, tzinfo=dt.timezone.utc)
     d1 = (dt.datetime(y + (m == 12), (m % 12) + 1, 1, tzinfo=dt.timezone.utc))
     t0, t1 = d0.timestamp(), d1.timestamp()
@@ -523,12 +528,12 @@ def ancres_du_mois(y, m, n=6):
 
 
 def mesure_ancre(ts, n_ech):
-    """Taux de creation instantane + echantillon de mints, a l'instant `ts`.
+    """The instantaneous creation rate and a sample of mints, at instant `ts`.
 
-    Le taux est mesure sur 1000 creations consecutives : c'est un comptage
-    exact sur une petite fenetre, pas une estimation. La fenetre couverte par
-    ces 1000 creations est rendue (`fenetre_s`) : quand elle depasse quelques
-    heures, le taux est plutot celui de la journee que de l'instant.
+    The rate is measured over 1000 consecutive creations: an exact count over a
+    small window, not an estimate. The span those 1000 creations cover is
+    returned (`fenetre_s`); once it exceeds a few hours, the rate is the day's
+    rather than the instant's.
     """
     def _f():
         a = sig_at_ts(ts)
@@ -596,8 +601,8 @@ def cmd_chrono(debut="2024-01", fin=None, n_ancres=6, n_ech=18):
         t1e = min(t1, now.timestamp())
         total_est = taux_med * (t1e - t0)
 
-        # echantillon de mints : resoudre les signatures -> mint, puis
-        # interroger l'API pump pour ATH / graduation.
+        # Sample of mints: resolve the signatures to mints, then query the
+        # pump API for the high and for graduation.
         mints, echecs = [], 0
         for s in sigs_ech:
             t = tx(s)
