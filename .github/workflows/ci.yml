@@ -42,11 +42,13 @@ jobs:
       - name: Unit tests
         run: python -m pytest -q
 
-      - name: Type-check the shared libraries (mypy --strict)
+      - name: Type-check the shared libraries and the tooling (mypy --strict)
         run: >
           mypy --strict --config-file mypy.ini
           code/rpc_client.py code/statlib.py code/splitlib.py code/redact.py
           code/settings.py code/lib_verif.py code/hlib.py code/r1lib.py
+          code/run_all.py code/check_no_secrets.py code/build_redactions.py
+          code/sanitize_data.py
 
       - name: Publication gate (no secrets; working tree clean)
         run: python code/check_no_secrets.py --require-clean
