@@ -42,10 +42,10 @@ from concurrent.futures import ThreadPoolExecutor
 import rpc_client
 import settings
 
-# Endpoint de decodage par LOT de signatures (POST /v0/transactions). Il n'a pas
-# d'equivalent dans rpc_client (qui expose l'enhanced PAR ADRESSE, pas le lot par
-# signatures), donc post_parsed() reste local. Le JSON-RPC et l'enhanced par
-# adresse, eux, passent desormais par rpc_client.
+# Endpoint decoding a BATCH of signatures (POST /v0/transactions). It has no
+# equivalent in rpc_client, which exposes the enhanced API BY ADDRESS and not the
+# batch by signatures, so post_parsed() stays local. The JSON-RPC and the
+# by-address enhanced calls do go through rpc_client now.
 PARSED_TX = "https://api-mainnet.helius-rpc.com/v0/transactions?api-key={key}"
 LAMPORTS = 1e9
 PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
@@ -67,10 +67,11 @@ KEYS = None
 
 
 def rpc(method, params, ki=0, tries=6):
-    """Transport delegue a rpc_client (rotation de cles, cooldown 429, reprises
-    bornees). On conserve RpcError : un echec leve, jamais un None confondu avec
-    un vide (regle 2). ki/tries sont ignores -- rpc_client possede la rotation --
-    mais gardes pour ne pas toucher aux appelants."""
+    """Transport delegated to rpc_client (key rotation, 429 cooldown, bounded
+    retries). RpcError is kept: a failure raises, never a None to be mistaken
+    for an empty result (rule 2). ki and tries are ignored, since rpc_client
+    owns the rotation, but they stay so the callers do not change.
+    """
     try:
         return rpc_client.rpc(method, params)
     except rpc_client.HeliusError as e:
@@ -107,8 +108,9 @@ def bonding_curve(mint):
         ts = d.get("created_timestamp")
         return d.get("bonding_curve"), (ts / 1000 if ts else None), d.get("symbol")
     except (urllib.error.URLError, TimeoutError, ValueError):
-        # None ici = repli voulu vers le drapeau --created (l'API pump ne repond
-        # pas ou ne connait pas ce mint), pas une mesure a zero silencieuse.
+        # None here is the intended fallback to the --created flag, because the
+        # pump API did not answer or does not know this mint. It is not a silent
+        # zero.
         return None, None, None
 
 

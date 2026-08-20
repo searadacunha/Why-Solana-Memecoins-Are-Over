@@ -98,18 +98,19 @@ ARTEFACT_DIRS = [settings.TABLES, settings.OUT,
 # Listed as files (not dirs) so we cover exactly these and do not drag in the
 # read-only siblings that share their directory (e.g. the network/priv-built
 # JSONs alongside hrs6_synthese.json in data/split/).
-# TODO ce que --strict ne compare pas, mesure plutot que suppose.
+# TODO what --strict does not compare, measured rather than assumed.
 #
-# Il compare 30 artefacts suivis. Lancer chaque script du depot hors ligne en
-# reecrit 13 qu'il ne compare jamais : data/ancrage/symboles.json (01_ancrage.py),
-# data/cibles/cibles.json (10_select_temoins.py), data/sol_usd_hourly.json
-# (fetch_sol_usd.py), data/bundle/09_bundle_snipe.json (09_bundle_snipe.py) et
-# neuf sorties des scripts archives de data/. Aucun de ces scripts n'est dans le
-# bloc hors ligne de PLAN, donc une derive y passerait inapercue.
+# It compares 30 tracked artefacts. Running every script of the repository
+# offline rewrites 13 that it never compares: data/ancrage/symboles.json
+# (01_ancrage.py), data/cibles/cibles.json (10_select_temoins.py),
+# data/sol_usd_hourly.json (fetch_sol_usd.py), data/bundle/09_bundle_snipe.json
+# (09_bundle_snipe.py) and nine outputs of the archived scripts under data/. None
+# of those scripts is in PLAN's offline block, so a drift there would go
+# unnoticed.
 #
-# 09_bundle_snipe.py est le cas instructif : rejoue depuis les seules entrees
-# committees, il reproduit 385 de ses 385 valeurs, et seul son champ genere_le
-# bouge. C'est ce champ, pas la mesure, qui empeche la comparaison a l'octet.
+# 09_bundle_snipe.py is the instructive case: replayed from the committed inputs
+# alone, it reproduces 385 of its 385 values and only its genere_le field moves.
+# It is that field, not the measurement, that keeps it out of a byte comparison.
 ARTEFACT_FILES = [
     os.path.join(settings.DATA, "split", "hrs6_synthese.json"),
     os.path.join(settings.DATA, "t2_x2_par_prix_entree.json"),

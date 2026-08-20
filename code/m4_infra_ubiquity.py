@@ -79,10 +79,10 @@ def main():
 
     print("\n  Les 12 adresses les plus ubiquitaires du corpus :")
     print("    %-46s %6s %8s %s" % ("adresse", "tokens", "part", "classee infra ?"))
-    # Counter.most_common leaves ties in insertion order, which
-    # depend du hachage : deux executions pouvaient permuter deux adresses a
-    # egalite de comptage. Tri explicite (compte decroissant, puis adresse) =
-    # sortie reproductible bit a bit.
+    # Counter.most_common leaves ties in insertion order, which depends on
+    # hashing: two runs could swap two addresses on an equal count. Sorting
+    # explicitly, by decreasing count then by address, makes the output
+    # reproducible bit for bit.
     top = sorted(freq.items(), key=lambda kv: (-kv[1], kv[0]))[:12]
     for w, c in top:
         print("    %-46s %6d %7.1f %% %s"
