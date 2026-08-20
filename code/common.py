@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Primitives partagees du volet << cout pour l'acheteur >> (tableaux T1 a T5).
+common.py -- the primitives shared by the buyer-cost tables, T1 to T5.
 
-SOURCE PAR DEFAUT : data/floor_capture_public.jsonl.gz, publie avec le depot.
-Aucun reseau, aucune cle, aucun chemin absolu. Le corpus brut non publie
-(645 fichiers, 171 Mo) reste utilisable en posant $PUMP_PRIVATE_ROOT ; les deux
-chemins de lecture donnent les memes tableaux (cf. code/README.md, section
-"Reproductibilite"), le corpus publie etant simplement arrondi (6 chiffres
-significatifs sur `sol`, 8 sur `tokens`/`price`).
+Default source: data/floor_capture_public.jsonl.gz, published with the
+repository. No network, no key, no absolute path. The unpublished raw corpus
+(645 files, 171 MB) still works if $PUMP_PRIVATE_ROOT is set, and both reading
+paths give the same tables (code/README.md, "Reproducibility"): the published
+corpus is simply rounded, to 6 significant figures on `sol` and 8 on
+`tokens` / `price`.
 
-Conventions d'unites (VERIFIEES) :
-  - captures : champ `price` et `sol/tokens` = SOL par token.
-  - captures : champ `detect_mc`             = USD.
-  - GeckoTerminal OHLCV : prix               = USD par token.
-  => tout ratio qui melange les deux SANS conversion est faux d'un facteur
-     egal au prix du SOL (~73 USD sur la fenetre). Voir sol_usd().
+Unit conventions, and they have been verified:
+  - captures: `price` and `sol / tokens`  = SOL per token.
+  - captures: `detect_mc`                 = USD.
+  - GeckoTerminal OHLCV: price            = USD per token.
+Any ratio mixing the two without converting is wrong by a factor equal to the
+price of SOL, about 73 USD over this window. See sol_usd().
 """
 import bisect
 import glob
@@ -32,32 +32,33 @@ ROOT = settings.ROOT
 DATA = settings.DATA
 DOCS = settings.DOCS
 
-# Socle de features par token (populations A / B / C), publie dans data/.
+# Per-token feature socle, populations A / B / C, published under data/.
 SOCLE = settings.data("dataset_socle.json")
 
-# --- parametres de simulation (identiques au socle canonique reconcilie) -----
-MIN_SOL_PRICE = 0.3     # taille mini d'un swap pour compter dans le prix robuste
-DEPTH_MIN_SOL = 0.05    # taille mini d'un ordre pour compter dans le carnet
-POS_SOL = 0.5           # taille de la position simulee
-FEE_SIDE = 0.01         # frais par jambe
-SLIP_SIDE = 0.02        # slippage adverse par jambe
+# --- simulation parameters, identical to the reconciled canonical socle ------
+MIN_SOL_PRICE = 0.3     # smallest swap that counts towards the robust price
+DEPTH_MIN_SOL = 0.05    # smallest order that counts towards the book
+POS_SOL = 0.5           # size of the simulated position
+FEE_SIDE = 0.01         # fee per leg
+SLIP_SIDE = 0.02        # adverse slippage per leg
 FEE_IN = (1 + SLIP_SIDE) * (1 + FEE_SIDE)
 FEE_OUT = (1 - SLIP_SIDE) * (1 - FEE_SIDE)
-DRAG = 1 - FEE_OUT / FEE_IN          # = 5.8241 % aller-retour
-MIN_USEFUL = 120        # duree utile minimale d'une capture
-CLUSTER_GAP = 1800      # 30 min : deux lancements separes de plus = 2 clusters
+DRAG = 1 - FEE_OUT / FEE_IN          # = 5.8241 % over the round trip
+MIN_USEFUL = 120        # shortest useful duration of a capture
+CLUSTER_GAP = 1800      # 30 min: two launches further apart are two clusters
 
 
 # --------------------------------------------------------------- captures ---
 def _raw_captures():
-    """Itere les captures brutes + (n_fichiers_source, n_vides_deja_ecartees).
+    """Iterate the raw captures, with (n_source_files, n_empty_already_dropped).
 
-    Deux sources possibles, interchangeables :
-      1. data/floor_capture_public.jsonl.gz  (defaut, publie)
-      2. $PUMP_PRIVATE_ROOT/state/floor_capture/*.json  (corpus brut)
-    Le corpus publie a deja perdu les 352 captures sans aucun swap ; on relit
-    leur nombre dans data/MANIFEST.json pour que les comptes de rejets affiches
-    soient identiques quelle que soit la source.
+    Two interchangeable sources:
+      1. data/floor_capture_public.jsonl.gz            (default, published)
+      2. $PUMP_PRIVATE_ROOT/state/floor_capture/*.json (raw corpus)
+
+    The published corpus has already lost the 352 captures holding no swap at
+    all. Their count is read back from data/MANIFEST.json so that the rejection
+    tallies printed are the same whichever source was used.
     """
     priv = settings.private_root()
     if priv:
@@ -97,12 +98,13 @@ def _raw_captures():
 
 
 def load_captures(verbose=False):
-    """Charge les captures exploitables.
+    """Load the usable captures.
 
-    Filtres (union des rejets des deux socles, cf. merge.py X11) :
-      capture vide ; span des swaps < 120 s ; (dernier swap - created) < 120 s ;
-      aucun buy ; aucun swap >= 0.3 SOL.
-    Retourne (liste, dict_rejets, n_fichiers).
+    Filters, the union of what both socles reject (see merge.py X11): an empty
+    capture; a swap span under 120 s; a last swap less than 120 s after
+    `created`; no buy at all; no swap of 0.3 SOL or more.
+
+    Returns (captures, rejections_by_reason, n_files).
     """
     stream, n_files, n_empty = _raw_captures()
     kept, rej = [], defaultdict(int)
@@ -150,22 +152,23 @@ def load_captures(verbose=False):
         kept.append(d)
     kept.sort(key=lambda d: (d["_created"], d["mint"]))
     n_files = n_files or (len(kept) + sum(rej.values()))
-    # tri des cles : le dict de rejets finit imprime dans les tableaux publies,
-    # et l'ordre d'insertion dependait de la source. Sortie reproductible.
+    # Sort the keys: this rejection dict ends up printed in the published
+    # tables, and its insertion order depended on which source was read.
     rej = dict(sorted(rej.items()))
     if verbose:
         print(f"fichiers={n_files}  exploitables={len(kept)}  rejets={rej}")
     return kept, rej, n_files
 
 
-# Nom de la source cite dans les notes de bas de tableau.
+# The source name quoted in the tables' footnotes.
 def source_label():
     return ("$PUMP_PRIVATE_ROOT/state/floor_capture/*.json"
             if settings.private_root() else "data/floor_capture_public.jsonl.gz")
 
 
 def clusters(caps, gap=CLUSTER_GAP):
-    """Numerote les captures en clusters (gap > 30 min sur `created`)."""
+    """Number the captures into clusters, splitting on a gap of over 30 min
+    between two `created` timestamps."""
     out, cid, prev = {}, 0, None
     for d in sorted(caps, key=lambda x: x["_created"]):
         if prev is not None and d["_created"] - prev > gap:
@@ -176,8 +179,8 @@ def clusters(caps, gap=CLUSTER_GAP):
 
 
 def robust_price(sw, t0, t1, min_sol=MIN_SOL_PRICE):
-    """Prix robuste = mediane des prix des swaps >= min_sol sur [t0, t1).
-    Aucune interpolation : None se propage."""
+    """The robust price: median price of the swaps of at least min_sol over
+    [t0, t1). Nothing is interpolated, None propagates."""
     p = [s["p"] for s in sw if t0 <= s["ts"] < t1 and s["sol"] >= min_sol]
     return st.median(p) if p else None
 
@@ -187,10 +190,11 @@ _SOL = None
 
 
 def sol_usd(ts=None):
-    """Prix du SOL en USD (serie horaire GeckoTerminal, pool SOL/USDC Raydium).
+    """The price of SOL in USD, hourly, from the Raydium SOL/USDC pool via
+    GeckoTerminal.
 
-    Fichier data/sol_usd_hourly.json produit par code/fetch_sol_usd.py.
-    Sans argument : retourne (mediane, n, ts_min, ts_max).
+    Reads data/sol_usd_hourly.json, which code/fetch_sol_usd.py produces.
+    Called without an argument, returns (median, n, ts_min, ts_max).
     """
     global _SOL
     if _SOL is None:
@@ -210,14 +214,17 @@ def sol_usd(ts=None):
 
 # --------------------------------------------------------------- stats ------
 def boot_ci_median_tokens(v, B=4000, seed=12345):
-    """IC95 bootstrap de la mediane (percentile), re-echantillonnage PAR TOKEN
-    avec random.Random. Deux limites assumees : les tokens d'une meme grappe
-    sont traites comme independants, donc l'IC est plus etroit que la realite
-    (cf. METHODOLOGY §3.1, n effectif ~5,5), et random.Random n'est pas
-    byte-identique entre versions de Python. Le moteur LCG cross-version est
-    pumplib.bootstrap_median_ci ; les deux sont volontairement distincts
-    (en-tete de statlib.py : fusionner changerait les nombres publies).
-    Retourne (lo, hi)."""
+    """Percentile bootstrap 95 % interval of the median, resampling per TOKEN
+    with random.Random.
+
+    Two limits are accepted rather than hidden. Tokens of one cluster are
+    treated as independent, so the interval is narrower than reality
+    (METHODOLOGY 3.1, effective n around 5.5); and random.Random is not
+    byte-identical across Python versions. The cross-version LCG engine is
+    pumplib.bootstrap_median_ci, and the two are deliberately distinct: see the
+    statlib.py header, merging them would change published numbers.
+
+    Returns (lo, hi)."""
     import random
     if len(v) < 5:
         return (None, None)
@@ -235,7 +242,7 @@ def load_socle():
 
 
 def write_table(name, header, rows, notes=()):
-    """Ecrit un tableau Markdown dans docs/tables/NAME.md et le renvoie."""
+    """Write a Markdown table to docs/tables/NAME.md, and return it."""
     d = os.path.join(DOCS, "tables")
     os.makedirs(d, exist_ok=True)
     w = [max(len(str(header[i])), *(len(str(r[i])) for r in rows)) if rows
@@ -252,11 +259,11 @@ def write_table(name, header, rows, notes=()):
 
 
 def dump_json(obj, path, **kw):
-    """Unique point d'ecriture JSON des mesures.
+    """The single point where a measurement is written as JSON.
 
-    Passe par redact.scrub : la pseudonymisation des quelques identifiants a
-    prefixe vanity injurieux est appliquee A L'ECRITURE, pas apres coup. Une
-    re-execution depuis le cache reseau brut ne peut donc pas la defaire.
+    It goes through redact.scrub, so the pseudonymisation of the handful of
+    identifiers carrying an abusive vanity prefix is applied AT WRITE TIME, not
+    afterwards. A re-run from the raw network cache therefore cannot undo it.
     """
     os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
     kw.setdefault("indent", 1)
