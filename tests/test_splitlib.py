@@ -45,9 +45,9 @@ def test_time_window_excludes_far_apart_transfers():
 # published data alone. A copy is only a copy if it behaves identically: these
 # tests pin detect()'s B to "find_splits returns at least one cluster".
 
-import random
+import random  # noqa: E402
 
-import a1_null_model
+import a1_null_model  # noqa: E402
 
 
 def _as_group(funding):

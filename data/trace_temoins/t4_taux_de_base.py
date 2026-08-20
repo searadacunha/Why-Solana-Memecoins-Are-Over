@@ -33,7 +33,6 @@ OUT = os.path.join(HERE, "t4_taux_de_base.json")
 
 def charge(d3, d2):
     """Un token : verdict du detecteur + couverture portefeuille par portefeuille."""
-    wal = {w["wallet"]: w for w in d2["wallets"]}
     in_A = {w for c in d3["A_meme_transaction"] for w in c["wallets"]}
     in_B = {w for c in d3["B_meme_montant_meme_moment"] for w in c["wallets"]}
     in_C = {w for c in d3["C_bailleurs_communs_PRIVES"] for w in c["wallets"]}

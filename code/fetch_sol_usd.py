@@ -35,7 +35,7 @@ def get(url, tries=6):
             if e.code == 404:
                 return None
             time.sleep(3 * (a + 1))
-        except Exception:
+        except Exception:  # noqa: BLE001  (transport / decode ; la boucle rejoue)
             time.sleep(3 * (a + 1))
     return None
 
@@ -54,7 +54,8 @@ def main():
            "hourly_close": hourly}
     p = os.path.join(DATA, "sol_usd_hourly.json")
     json.dump(out, open(p, "w"))
-    print("%d bougies horaires -> %s" % (len(hourly), os.path.relpath(p, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    print("%d bougies horaires -> %s" % (len(hourly), os.path.relpath(p, root)))
     print(f"  min {min(c for _, c in hourly):.2f} USD   "
           f"max {max(c for _, c in hourly):.2f} USD")
 
