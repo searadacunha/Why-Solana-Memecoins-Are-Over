@@ -1,0 +1,41 @@
+# Lint configuration.
+#
+# It exists because the repository already carried some sixty `# noqa` comments
+# and no linter: annotations addressed to nobody, which read as a claim that a
+# tool had been run. Either the comments go or the tool arrives. The tool
+# arrives, and every one of those comments now suppresses something real.
+#
+# ruff is a dev tool, like mypy and pytest. No measurement imports it, which is
+# what `python3 code/run_all.py --deps` enforces: the dossier itself stays on
+# the standard library alone.
+
+line-length = 120        # above the 99th percentile of what this code writes
+target-version = "py39"
+
+[lint]
+# Selected, in the order the repository cares about them:
+#   F     pyflakes: undefined names, unused imports, unused variables.
+#   E9    syntax and IO errors.
+#   E402  an import that follows code. True and deliberate here, since every
+#         script does sys.path.insert(0, code/) before importing its siblings,
+#         so each site says so with a noqa -- and a new one has to say so too.
+#   E501  the line-length ceiling above.
+#   BLE   a blind `except Exception`, which is how a failure becomes a zero
+#         (docs/PITFALLS.md, rule 2). Where the catch is right, the noqa states
+#         why in one word: retransmission, or the error written into the output.
+select = ["F", "E9", "E402", "E501", "BLE"]
+
+# NOT selected. These are choices this code made on purpose, and enforcing them
+# would mean rewriting 13 000 lines to please a tool rather than a reader:
+#   E401  `import json, os` on a single line          76 sites
+#   E702  `a = 1; b = 2`                              40 sites
+#   E741  `l` used as a name                          19 sites
+#   E731  a lambda bound to a name                     5 sites
+#   E701  `if x: return`                               4 sites
+
+[lint.per-file-ignores]
+# data/ is an archive: exploration scripts frozen together with the outputs they
+# produced, which nothing re-runs and whose correspondence to those outputs is
+# the point. Blind excepts there are recorded by this comment rather than edited
+# away; the rule applies to code/, which is still executed.
+"data/**" = ["BLE001"]
