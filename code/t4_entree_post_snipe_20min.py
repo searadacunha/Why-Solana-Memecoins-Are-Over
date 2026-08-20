@@ -44,7 +44,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from t1_base_rate_sorties import (BUCKET, SAFE_MARGIN, Book, boot_ci_mean_cluster,  # noqa: E402
                                   pnl)
 from common import (DATA, POS_SOL, boot_ci_median_tokens, clusters,  # noqa: E402
-                    load_captures, med, q, source_label, write_table, dump_json)
+                    load_captures, source_label, write_table, dump_json)
+from statlib import median, quantile  # noqa: E402
 
 RETRACES = [0.20, 0.30, 0.40, 0.50, 0.60, 0.70]
 MIN_ENTRY_LAG = 120        # on ne peut de toute facon pas acheter plus tot
@@ -139,16 +140,16 @@ def main():
         net_sans1 = st.mean(srt[1:]) if len(srt) > 1 else float("nan")
         rec = {"regle": nom, "n": len(ok), "n_clusters": nclu,
                "jamais_declenche": never,
-               "mult_median": med(mult), "mult_ic95": [lo, hi],
-               "mult_p25": q(mult, 0.25), "mult_p75": q(mult, 0.75),
+               "mult_median": median(mult), "mult_ic95": [lo, hi],
+               "mult_p25": quantile(mult, 0.25), "mult_p75": quantile(mult, 0.75),
                "pct_mult_sup_1": 100 * sum(1 for x in mult if x > 1) / len(mult),
-               "pnl_net_median_pct": 100 * med(net),
+               "pnl_net_median_pct": 100 * median(net),
                "pnl_net_moyen_pct": 100 * st.mean(net),
                "pnl_net_moyen_ic95_cluster_pct": [100 * mlo, 100 * mhi],
                "pnl_net_moyen_sans_meilleur_pct": 100 * net_sans1,
                "meilleur_token_pnl_pct": 100 * srt[0],
-               "t_entree_median_s": med([r["t_entree_rel"] for _, r in ok]),
-               "detention_mediane_min": med([r["duree_detention_s"] for _, r in ok]) / 60.0}
+               "t_entree_median_s": median([r["t_entree_rel"] for _, r in ok]),
+               "detention_mediane_min": median([r["duree_detention_s"] for _, r in ok]) / 60.0}
         out[nom] = rec
         table.append([nom, rec["n"], nclu, never,
                       f"{rec['t_entree_median_s']:.0f}",
