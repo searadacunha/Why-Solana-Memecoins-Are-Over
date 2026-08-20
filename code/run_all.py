@@ -98,10 +98,18 @@ ARTEFACT_DIRS = [settings.TABLES, settings.OUT,
 # Listed as files (not dirs) so we cover exactly these and do not drag in the
 # read-only siblings that share their directory (e.g. the network/priv-built
 # JSONs alongside hrs6_synthese.json in data/split/).
-# TODO 01_ancrage.py et 10_select_temoins.py ecrivent aussi des artefacts suivis
-# (data/ancrage/symboles.json, data/cibles/cibles.json) mais ne sont pas dans PLAN,
-# donc --strict ne les compare jamais. Les deux demandent du reseau, d'ou leur
-# absence, mais le trou est reel : une derive y passerait inapercue.
+# TODO ce que --strict ne compare pas, mesure plutot que suppose.
+#
+# Il compare 30 artefacts suivis. Lancer chaque script du depot hors ligne en
+# reecrit 13 qu'il ne compare jamais : data/ancrage/symboles.json (01_ancrage.py),
+# data/cibles/cibles.json (10_select_temoins.py), data/sol_usd_hourly.json
+# (fetch_sol_usd.py), data/bundle/09_bundle_snipe.json (09_bundle_snipe.py) et
+# neuf sorties des scripts archives de data/. Aucun de ces scripts n'est dans le
+# bloc hors ligne de PLAN, donc une derive y passerait inapercue.
+#
+# 09_bundle_snipe.py est le cas instructif : rejoue depuis les seules entrees
+# committees, il reproduit 385 de ses 385 valeurs, et seul son champ genere_le
+# bouge. C'est ce champ, pas la mesure, qui empeche la comparaison a l'octet.
 ARTEFACT_FILES = [
     os.path.join(settings.DATA, "split", "hrs6_synthese.json"),
     os.path.join(settings.DATA, "t2_x2_par_prix_entree.json"),
