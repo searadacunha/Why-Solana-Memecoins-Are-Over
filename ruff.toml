@@ -23,14 +23,16 @@ target-version = "py39"
 #   BLE   a blind `except Exception`, which is how a failure becomes a zero
 #         (docs/PITFALLS.md, rule 2). Where the catch is right, the noqa states
 #         why in one word: retransmission, or the error written into the output.
-select = ["F", "E9", "E402", "E501", "BLE"]
+#   E741  `l` as a name, which in this font is a 1. Nineteen sites, all of them
+#         a loop variable, now named after what they hold.
+#   E731  a lambda bound to a name, which loses the name in a traceback. Five
+#         sites, now def.
+select = ["F", "E9", "E402", "E501", "E731", "E741", "BLE"]
 
 # NOT selected. These are choices this code made on purpose, and enforcing them
 # would mean rewriting 13 000 lines to please a tool rather than a reader:
 #   E401  `import json, os` on a single line          76 sites
 #   E702  `a = 1; b = 2`                              40 sites
-#   E741  `l` used as a name                          19 sites
-#   E731  a lambda bound to a name                     5 sites
 #   E701  `if x: return`                               4 sites
 
 [lint.per-file-ignores]
