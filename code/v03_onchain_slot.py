@@ -25,7 +25,7 @@ S = load_snipe()
 FL = json.load(open(f"{DATA}/v02_fleets.json"))
 
 def tx_facts(sig, mint):
-    """extrait d'une tx: slot, ts, lamports nets par compte, tokens recus par owner"""
+    """From one tx: slot, ts, net lamports per account, tokens received per owner."""
     t = get_tx(sig)
     if not t:
         return None

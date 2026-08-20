@@ -151,9 +151,9 @@ for k, v in tests.items():
               f"{v['temoins_positifs']}/{v['temoins_total']} | {v['p_unilateral_fisher']:.4f} |")
 table_md = "\n".join(md)
 
-# Attention : ce bloc REECRIT SPLIT_PHASE1.md entre les deux marqueurs a chaque
-# run. Ne rien editer a la main la-dedans, ce serait ecrase et l'arbre deviendrait
-# sale, donc check_no_secrets --require-clean passerait au rouge.
+# Careful: this block REWRITES SPLIT_PHASE1.md between the two markers on every
+# run. Edit nothing by hand in there, it would be overwritten, the tree would go
+# dirty, and check_no_secrets --require-clean would turn red.
 doc = os.path.join(ROOT, "docs", "SPLIT_PHASE1.md")
 if os.path.exists(doc):
     txt = open(doc).read()
