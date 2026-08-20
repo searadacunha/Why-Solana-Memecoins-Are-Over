@@ -14,7 +14,8 @@ Sortie: data/v06_curve_ladder.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import save, med, DATA, CACHE
+from lib_verif import save, DATA, CACHE
+from statlib import median
 
 SEUIL = 5.0
 _SOLUSD_P = f"{CACHE}/solusd_window.json"
@@ -123,23 +124,23 @@ agg = {
  "n_lancements": len(res), "sol_usd_reference": SOLUSD,
  "n_zero_achat_courbe_avant_bloc": sum(1 for r in res if r["n_avant_bloc"] == 0),
  "sol_courbe_avant_bloc_max": max(r["sol_avant_bloc"] for r in res),
- "part_courbe_captee_med": round(med([r["part_courbe_bloc"] for r in res]), 4),
+ "part_courbe_captee_med": round(median([r["part_courbe_bloc"] for r in res]), 4),
  "part_courbe_captee_min_max": [min(r["part_courbe_bloc"] for r in res),
                                 max(r["part_courbe_bloc"] for r in res)],
- "part_supply_captee_med": round(med([r["part_supply_bloc"] for r in res]), 5),
- "sol_bloc_med": round(med([r["sol_bloc"] for r in res]), 3),
- "part_sol_courbe_captee_med": round(med([r["sol_bloc"] / (r["sol_bloc"] + r["sol_apres_bloc"])
+ "part_supply_captee_med": round(median([r["part_supply_bloc"] for r in res]), 5),
+ "sol_bloc_med": round(median([r["sol_bloc"] for r in res]), 3),
+ "part_sol_courbe_captee_med": round(median([r["sol_bloc"] / (r["sol_bloc"] + r["sol_apres_bloc"])
                                           for r in res]), 4),
- "dev_buy_sol_med": round(med([r["dev_buy_sol"] for r in res]), 4),
- "mc_bloc_usd_med": round(med([r["mc_bloc_usd"] for r in res])),
- "mc_premier_apres_usd_med": round(med([r["premier_apres"]["mc_usd"] for r in res
+ "dev_buy_sol_med": round(median([r["dev_buy_sol"] for r in res]), 4),
+ "mc_bloc_usd_med": round(median([r["mc_bloc_usd"] for r in res])),
+ "mc_premier_apres_usd_med": round(median([r["premier_apres"]["mc_usd"] for r in res
                                         if r["premier_apres"]])),
- "ratio_premier_apres_med": round(med(R1), 3), "n_ratio1": len(R1),
+ "ratio_premier_apres_med": round(median(R1), 3), "n_ratio1": len(R1),
  "ratio_premier_apres_min_max": [min(R1), max(R1)],
  "n_ratio1_ge_3": sum(1 for x in R1 if x >= 3), "n_ratio1_ge_2": sum(1 for x in R1 if x >= 2),
- "mc_amm_ouverture_usd_med": round(med([r["mc_amm_ouverture_usd"] for r in res
+ "mc_amm_ouverture_usd_med": round(median([r["mc_amm_ouverture_usd"] for r in res
                                         if r["mc_amm_ouverture_usd"]])),
- "ratio_amm_med": round(med(RA), 3), "n_ratio_amm": len(RA),
+ "ratio_amm_med": round(median(RA), 3), "n_ratio_amm": len(RA),
  "ratio_amm_min_max": [min(RA), max(RA)],
  "n_ratio_amm_ge_3": sum(1 for x in RA if x >= 3),
 }

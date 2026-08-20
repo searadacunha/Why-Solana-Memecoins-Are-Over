@@ -82,8 +82,3 @@ def test_cv_is_the_population_dispersion_over_the_mean():
     # pstdev([2, 4]) = 1, mean = 3
     assert lib_verif.cv([2.0, 4.0]) == 1 / 3
     assert lib_verif.cv([5.0, 5.0, 5.0]) == 0.0
-
-def test_med_filters_none_like_statlib():
-    assert lib_verif.med([3.0, None, 1.0, 2.0]) == 2.0
-    assert lib_verif.med([]) is None
-    assert lib_verif.med([None]) is None

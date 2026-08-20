@@ -16,7 +16,8 @@ Sortie: data/v03_onchain.json  (+ cache/tx_*.json : reponses RPC brutes)
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import load_snipe, get_tx, save, med, DATA
+from lib_verif import load_snipe, get_tx, save, DATA
+from statlib import median
 
 S = load_snipe()
 FL = json.load(open(f"{DATA}/v02_fleets.json"))
@@ -100,10 +101,10 @@ agg = {
  "n_lancements": len(out),
  "n_slot_unique": sum(1 for o in out if o["slot_unique"]),
  "n_slot_egal_creation": sum(1 for o in out if o["slot_egal_creation"]),
- "sol_total_med": round(med([o["sol_total_net"] for o in out]), 3),
+ "sol_total_med": round(median([o["sol_total_net"] for o in out]), 3),
  "sol_total_min_max": [round(min(o["sol_total_net"] for o in out), 2),
                        round(max(o["sol_total_net"] for o in out), 2)],
- "part_supply_med": round(med([o["part_supply_1e9"] for o in out]), 5),
+ "part_supply_med": round(median([o["part_supply_1e9"] for o in out]), 5),
  "part_supply_min_max": [round(min(o["part_supply_1e9"] for o in out), 5),
                          round(max(o["part_supply_1e9"] for o in out), 5)],
  "part_supply_q1_q3": [round(st.quantiles([o["part_supply_1e9"] for o in out], n=4)[0], 5),
