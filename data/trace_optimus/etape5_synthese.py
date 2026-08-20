@@ -99,8 +99,8 @@ def main():
               f"{r['prebuy_reached']}/{r['n_early_buyers']:<4} "
               f"{r['n_A_meme_tx']:>3} {r['n_B_meme_montant']:>3} {r['n_C_bailleurs_prives']:>3} "
               f"{str(r['pct_wallets_in_split']):>7} {str(r['pct_wallets_sharing_funder']):>9}")
-    print(f"\n  A = financements dans une meme transaction · B = meme montant/meme moment"
-          f" · C = bailleur commun a >= 2 acheteurs")
+    print("\n  A = financements dans une meme transaction · B = meme montant/meme moment"
+          " · C = bailleur commun a >= 2 acheteurs")
     print(f"  temoins exploitables : {len(usable)}/{len(tem)}"
           f"  (ecartes, < 10 acheteurs : {concl['temoins_ecartes_trop_pauvres']})")
     print(f"  temoins presentant A : {concl['temoins_avec_decoupage_A']}/{len(usable)} · "

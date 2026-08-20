@@ -24,10 +24,12 @@ from collections import defaultdict
 
 D = os.path.dirname(os.path.abspath(__file__))
 P1 = json.load(open(f"{D}/temoins_split.json"))
-P2 = json.load(open(f"{D}/temoins_deep_genese.json")) if os.path.exists(f"{D}/temoins_deep_genese.json") else {"adresses": []}
+P2 = (json.load(open(f"{D}/temoins_deep_genese.json"))
+      if os.path.exists(f"{D}/temoins_deep_genese.json") else {"adresses": []})
 DEEP = {a["wallet"]: a for a in P2.get("adresses", [])}
 # Passe 3 : corrige les arrets sur page vide (voir 14_corrige_pages_vides.py). Priorite maximale.
-P3 = json.load(open(f"{D}/temoins_corrections.json")) if os.path.exists(f"{D}/temoins_corrections.json") else {"adresses": []}
+P3 = (json.load(open(f"{D}/temoins_corrections.json"))
+      if os.path.exists(f"{D}/temoins_corrections.json") else {"adresses": []})
 CORR = {a["wallet"]: a for a in P3.get("adresses", [])}
 DEEP.update(CORR)
 
