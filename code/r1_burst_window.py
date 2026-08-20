@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-r1_burst_window.py : geometrie d'une salve de financement sur une fenetre
-temporelle donnee, avec le montant comme critere.
+r1_burst_window.py -- the geometry of a funding burst over a given time window,
+with the amount as the criterion.
 
-Etape 1 : on remonte l'historique de signatures de l'adresse (pages de 1000,
-          du plus recent au plus ancien) jusqu'a depasser le debut de la
-          fenetre. Une page vide distingue "fin de l'historique" d'une coupure
-          de quota : r1lib leve sur erreur, donc aucune troncature muette.
-Etape 2 : on repart de la signature la plus ancienne encore situee apres la
-          fenetre et on descend en transactions parsees jusqu'a sortir de la
-          fenetre par le bas ; on garde tous les transferts natifs sortants.
-Etape 3 : on mesure les destinataires distincts, la distribution des tickets,
-          la separation poussiere/financement (memes seuils que
-          r1_dust_vs_funding), la fenetre la plus courte contenant 90 % des
-          envois de financement, et le debit.
+Step 1: walk back the address's signature history, in pages of 1000 from newest
+        to oldest, until the start of the window is passed. An empty page tells
+        "end of history" apart from a quota cut: r1lib raises on error, so
+        nothing is silently truncated.
+Step 2: start again from the oldest signature still after the window and walk
+        down through parsed transactions until dropping out of the window from
+        below, keeping every outgoing native transfer.
+Step 3: measure the distinct recipients, the distribution of tickets, the
+        dust-versus-funding separation (the same thresholds as
+        r1_dust_vs_funding), the shortest window containing 90 % of the funding
+        sends, and the rate.
 
-Sortie : data/r1_burst_<addr8>_<ts0>.json  (+ liste des destinataires finances)
-Usage  : python3 r1_burst_window.py <adresse> <ts_debut> <ts_fin>
+Output: data/r1_burst_<addr8>_<ts0>.json, plus the list of funded recipients.
+Usage:  python3 r1_burst_window.py <address> <ts_start> <ts_end>
 """
 import json
 import os

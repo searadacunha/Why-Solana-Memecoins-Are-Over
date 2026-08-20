@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""v07 - la sortie : transfert du sac vers un collecteur, puis liquidation.
+"""v07 -- the exit: the bag transferred to a collector, then liquidated.
 
-Chaine mesuree, 100 % on-chain :
-  1. depuis la tx d'achat du bloc, on releve le compte de token (ATA) de chaque
-     wallet du bloc pour ce mint ;
-  2. getSignaturesForAddress(ATA) donne toute la vie de ce compte : l'achat,
-     puis ce qui sort ;
-  3. on classe chaque tx : SELL (l'ATA perd des tokens et le proprietaire gagne
-     du SOL) ou TRANSFERT (l'ATA perd des tokens, un autre proprietaire en gagne
-     autant, le proprietaire ne gagne pas de SOL) ;
-  4. pour le premier TRANSFERT, on note le delai depuis l'achat et le
-     destinataire (le "collecteur"), puis on compte les tranches de vente du
-     collecteur sur le meme mint.
+The chain measured, entirely on-chain:
+  1. from the block's buy transaction, each block wallet's token account (ATA)
+     for that mint is read;
+  2. getSignaturesForAddress(ATA) gives that account's whole life: the buy, then
+     whatever leaves;
+  3. each transaction is classified as a SELL (the ATA loses tokens and its
+     owner gains SOL) or a TRANSFER (the ATA loses tokens, another owner gains
+     as many, and the owner gains no SOL);
+  4. for the first TRANSFER, the delay since the buy and the recipient (the
+     "collector") are recorded, then the collector's sale tranches on the same
+     mint are counted.
 
-Sortie: data/v07_exit.json
+Output: data/v07_exit.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

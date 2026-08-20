@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""v04 - ordre d'execution dans le slot de creation + echelle de prix.
+"""v04 -- execution order within the creation slot, and the price ladder.
 
-On telecharge le bloc entier du slot de creation (getBlock) et on enumere
-*toutes* les transactions qui touchent le mint, dans l'ordre du bloc. C'est une
-enumeration exhaustive : rien ne peut se cacher entre deux index.
+The whole block of the creation slot is downloaded (getBlock) and every
+transaction touching the mint is enumerated in block order. The enumeration is
+exhaustive: nothing can hide between two indices.
 
-On mesure alors, par lancement :
-  - index de la tx de creation, index des achats de la flotte, contiguite
-  - nombre d'acheteurs non-operateur executes avant le dernier achat de la flotte
-  - VWAP de la flotte (SOL/token)  -> MC d'entree (prix x 1e9)
-  - prix du premier acheteur non-operateur non-createur -> MC d'ouverture publique
-  - ratio MC_ouverture / MC_flotte
-  - prix d'ouverture du pool AMM (1er swap PUMP_AMM de floor_capture)
+Measured, per launch:
+  - the index of the creation tx, the indices of the fleet's buys, contiguity
+  - how many non-operator buyers executed before the fleet's last buy
+  - the fleet's VWAP (SOL per token), hence its entry market cap (price x 1e9)
+  - the price of the first non-operator, non-creator buyer, hence the public
+    opening market cap
+  - the ratio of opening market cap to fleet market cap
+  - the AMM pool's opening price, the first PUMP_AMM swap of floor_capture
 
-Sortie: data/v04_slot_order.json
+Output: data/v04_slot_order.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +41,7 @@ def get_block(slot):
                                 "maxSupportedTransactionVersion": 0,
                                 "transactionDetails": "full", "rewards": False}],
             timeout=180)
-    # on ne garde que les tx touchant un mint pump (allege le cache)
+    # Keep only the transactions touching a pump mint, which keeps the cache small
     json.dump(b, open(p, "w"))
     return b
 
@@ -89,7 +90,7 @@ for L in ON["lancements"]:
     if not op_idx:
         continue
     last_op = max(op_idx)
-    # acheteurs (token recu > 0 pour le signataire, SOL depense) avant la fin du bloc operateur
+    # Buyers (tokens received > 0 for the signer, SOL spent) before the operator block ends
     def is_buy(r):
         return (not r["err"]) and r["tok"].get(r["signer"], 0) > 0 and r["dsol"] < -0.0005
     before = [r for r in rows if r["idx"] < last_op and is_buy(r)

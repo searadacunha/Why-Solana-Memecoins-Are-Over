@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""v08 - age et naissance des wallets.
+"""v08 -- the age and birth of the wallets.
 
-Deux populations, meme mesure : la signature la plus ancienne de l'adresse
-(getSignaturesForAddress pagine en arriere jusqu'a epuisement), c'est-a-dire la
-date de premiere activite on-chain = naissance du wallet.
+Two populations, one measurement: the address's oldest signature
+(getSignaturesForAddress paginated backwards until exhausted), that is, the date
+of first on-chain activity, which is the wallet's birth.
 
-  A. les wallets du bloc de creation (les 4 snipeurs de chaque quad)
-  B. les createurs des memes tokens (deployeurs du mint)
+  A. the wallets of the creation block, the 4 snipers of each quad
+  B. the creators of the same tokens, the mint deployers
 
-On mesure : date de naissance, ecart de naissance intra-flotte (naissance en
-lot ?), age au moment du 1er lancement observe (vieillissement).
+Measured: the birth date, the spread of births within a fleet (were they born in
+one batch?), and the age at the first observed launch (ageing).
 
-Limite : la pagination est plafonnee (CAP pages x 1000 signatures). Un wallet
-plus actif que le plafond est marque `censure=true` : sa naissance est alors
-une borne superieure de date (donc son age une borne inferieure).
+Limit: the pagination is capped, at CAP pages of 1000 signatures. A wallet more
+active than the cap is marked `censure=true`: its birth is then an upper bound
+on the date, so its age is a lower bound.
 
-Sortie: data/v08_ages.json
+Output: data/v08_ages.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +43,7 @@ for L in V6:
     if c:
         creators[c] = V4[L["mint"]]["created"] if "created" in V4[L["mint"]] else None
 
-# date de creation de chaque token, pour dater l'age du wallet au lancement
+# Each token's creation date, to date a wallet's age at the launch
 FC = {m: d.get("created") for m, d in load_floor().items()}
 
 def birth(addr):
