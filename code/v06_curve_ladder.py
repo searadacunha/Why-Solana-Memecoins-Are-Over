@@ -31,7 +31,7 @@ V4 = json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]
 #     de >= 0.1 SOL dans les 60 premieres secondes (les swaps poussiere de
 #     0,002 SOL portent un prix aberrant et sont exclus).
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import load_floor
+from lib_verif import load_floor  # noqa: E402
 _F = load_floor()
 AMM = {}
 for _m, _d in _F.items():

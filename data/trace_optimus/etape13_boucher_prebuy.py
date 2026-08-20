@@ -21,9 +21,9 @@ import json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import lib_trace as L
-from etape2_financement import inflows_from, MIN_INFLOW, PREBUY_DAYS, PREBUY_MAX_TX
-from etape7_genese_M1 import load_keys, get_transactions_with, log
+import lib_trace as L  # noqa: E402
+from etape2_financement import inflows_from, MIN_INFLOW, PREBUY_DAYS, PREBUY_MAX_TX  # noqa: E402
+from etape7_genese_M1 import load_keys, get_transactions_with, log  # noqa: E402
 
 W = "nya666pQkP3PzWxi7JngU3rRMHuc7zbLK8c8wxQ4qpT"
 E2 = os.path.join(HERE, "e2_funding_OPTIMUS.json")

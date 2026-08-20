@@ -33,8 +33,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import lib_trace as L
-from etape2_financement import inflows_from, MIN_INFLOW
+import lib_trace as L  # noqa: E402
+from etape2_financement import inflows_from, MIN_INFLOW  # noqa: E402
 
 CACHE_IN = os.path.join(HERE, "cache_sigs")
 CACHE_OUT = os.path.join(HERE, "cache_sigs_full")

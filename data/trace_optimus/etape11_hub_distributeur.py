@@ -26,8 +26,8 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import lib_trace as L
-from etape7_genese_M1 import load_keys, rpc_with, get_transactions_with, log
+import lib_trace as L  # noqa: E402
+from etape7_genese_M1 import load_keys, rpc_with, get_transactions_with, log  # noqa: E402
 
 G2Y = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"
 MIN = 0.05
@@ -132,7 +132,7 @@ def main():
     json.dump(res, open(out, "w"), indent=1)
 
     log(f"  {len(ins)} sources · {len(outs)} destinataires")
-    log(f"  montants de sortie les plus repetes : "
+    log("  montants de sortie les plus repetes : "
         + ", ".join(f"{amt:.9f}x{n}" for amt, n in rep[:6]))
     log(f"  G2Y : {len(g2y_flux)} flux de valeur, {len(g2y_mention)} mentions a delta nul")
     log(f"  terminaux croises : {res['terminaux_connus_croises']}")

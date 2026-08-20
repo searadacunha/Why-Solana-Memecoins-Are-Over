@@ -75,7 +75,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--addresses", nargs="*")
     a = ap.parse_args()
-    cibles = [(f"ad-hoc", x) for x in a.addresses] if a.addresses else DEFAUT
+    cibles = [("ad-hoc", x) for x in a.addresses] if a.addresses else DEFAUT
     res = []
     for nom, ad in cibles:
         print(f"\n=== {nom} : {ad}", flush=True)

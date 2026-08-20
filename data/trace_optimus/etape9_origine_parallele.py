@@ -29,8 +29,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import lib_trace as L
-from etape7_genese_M1 import load_keys, rpc_with, get_transactions_with, log
+import lib_trace as L  # noqa: E402
+from etape7_genese_M1 import load_keys, rpc_with, get_transactions_with, log  # noqa: E402
 
 G2Y = "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t"
 MIN_INFLOW = 0.2

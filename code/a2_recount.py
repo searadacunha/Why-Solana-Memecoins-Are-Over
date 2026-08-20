@@ -164,7 +164,7 @@ if os.path.exists(doc):
         head = txt.split(start)[0]
         tail = txt.split(end)[1] if end in txt else txt.split(start)[1].split("\n", 1)[1]
         open(doc, "w").write(head + block + tail)
-        print(f"\ntable injectee dans docs/SPLIT_PHASE1.md")
+        print("\ntable injectee dans docs/SPLIT_PHASE1.md")
 
 out = os.path.join(DATA, "adverse", "a2_recount.json")
 os.makedirs(os.path.dirname(out), exist_ok=True)

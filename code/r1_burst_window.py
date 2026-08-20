@@ -51,9 +51,6 @@ def signature_avant(addr, ts_fin):
         sys.stderr.write("  sigs page %d n=%d oldest=%s\n" % (pages, len(sigs), old))
         before = page[-1]["signature"]
         if old < ts_fin:
-            for s in page:
-                if (s.get("blockTime") or 0) > ts_fin:
-                    dernier = s
             cand = [s for s in sigs if (s.get("blockTime") or 0) > ts_fin]
             return (cand[-1]["signature"] if cand else None), sigs, pages, False
         if len(page) < 1000:
