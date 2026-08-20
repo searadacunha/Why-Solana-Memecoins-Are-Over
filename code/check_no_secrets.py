@@ -78,7 +78,7 @@ PATTERNS = [
     ("telegram bot token", re.compile(r"\b\d{8,10}:[A-Za-z0-9_-]{30,}\b")),
     ("telegram handle", re.compile(r"@[A-Za-z0-9_]{4,}bot\b", re.I)),
     ("telegram reflink", re.compile(r"t\.me/[A-Za-z0-9_]+\?start=[A-Za-z0-9_-]+", re.I)),
-    ("local path", re.compile(r"(/Users/|/home/[a-z]|[A-Z]:\\\\Users\\\\)")),  # noqa: leakscan
+    ("local path", re.compile(r"(/Users/|/home/[a-z]|[A-Z]:\\\\Users\\\\)")),  # leakscan: skip
     ("query-string key", re.compile(r"api[-_]?key=[A-Za-z0-9-]{8,}")),
     ("webhook", re.compile(r"https://hooks\.[A-Za-z0-9.]+/[A-Za-z0-9/_-]+")),
 ]
@@ -87,7 +87,7 @@ PATTERNS = [
 ALLOW = re.compile(
     r"api[-_]?key=(\"|'|<|%s|\+\s*_next_key|&|$)"      # documented URL templates
     r"|api[-_]?key=[A-Za-z0-9-]*<"
-    r"|/Users/\.\.\."                                   # noqa: leakscan
+    r"|/Users/\.\.\."                                   # leakscan: skip
 )
 
 FORBIDDEN_NAMES = re.compile(
@@ -225,7 +225,7 @@ def scan_blob(rel: str, text: str, source: str, findings: Findings,
     """Run the leak PATTERNS over a blob of text (file body or image metadata),
     routing anything on the allowlist to the 'allowed' bucket instead."""
     for line_no, line in enumerate(text.splitlines(), 1):
-        if "noqa: leakscan" in line:
+        if "leakscan: skip" in line:
             continue
         for name, rx in PATTERNS:
             m = rx.search(line)
