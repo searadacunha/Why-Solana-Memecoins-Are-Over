@@ -37,9 +37,9 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import (DATA, boot_ci_median_tokens, clusters, load_captures,  # noqa: E402
+from common import (DATA, boot_ci_median_tokens, clusters, load_captures,
                     robust_price, sol_usd, write_table, dump_json)
-from statlib import median, quantile, wilson  # noqa: E402
+from statlib import median, quantile, wilson
 
 GT_RAW = os.path.join(DATA, "cout_acheteur", "gt_raw.json")
 TOL = 5400          # tolerance de 90 min autour de l'echeance

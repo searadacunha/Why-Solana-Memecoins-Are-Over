@@ -27,7 +27,7 @@ import argparse, datetime as dt, json, os, sys, time
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rpc_client  # noqa: E402
+import rpc_client
 
 MIN_SOL = 0.5
 

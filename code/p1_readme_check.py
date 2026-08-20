@@ -62,8 +62,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import settings  # noqa: E402
-import pumplib as P  # noqa: E402
+import settings
+import pumplib as P
 
 # Number words, so a derived value can be compared to prose that spells its
 # figures out ("three seconds", "at least six wallets"). Presentation only.

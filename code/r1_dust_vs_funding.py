@@ -28,7 +28,7 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import r1lib as R  # noqa: E402
+import r1lib as R
 
 # adresses citees par les notes d'enquete comme "dispatchers de masse".
 # claim = ce que la note affirme ; rien n'est suppose vrai.

@@ -28,8 +28,8 @@ import sys
 from typing import Iterator
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import redact  # noqa: E402
-import settings  # noqa: E402
+import redact
+import settings
 
 SKIP_DIRS = {"cache", "cache_r1", "transition", "__pycache__", ".git"}
 TEXT_EXT = {".json", ".jsonl", ".md", ".py", ".txt", ".log", ".csv"}

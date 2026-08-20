@@ -35,8 +35,8 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DATA, dump_json, load_socle, write_table  # noqa: E402
-from statlib import wilson  # noqa: E402
+from common import DATA, dump_json, load_socle, write_table
+from statlib import wilson
 
 BANDS = [(5000, 20000), (20000, 30000), (30000, 40000), (40000, 50000),
          (50000, 65000), (65000, 85000), (85000, 120000), (120000, 300000)]

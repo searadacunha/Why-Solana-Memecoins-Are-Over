@@ -34,8 +34,8 @@ from collections import defaultdict
 from typing import Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rpc_client  # noqa: E402
-import settings  # noqa: E402
+import rpc_client
+import settings
 
 LAMPORTS = 1_000_000_000
 MIN_INFLOW_SOL = 1.0          # en dessous, c'est du bruit opérationnel

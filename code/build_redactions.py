@@ -30,8 +30,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import settings  # noqa: E402
-from redact import label_of  # noqa: E402
+import settings
+from redact import label_of
 
 
 def corpus_identifiers(path: str) -> set[str]:

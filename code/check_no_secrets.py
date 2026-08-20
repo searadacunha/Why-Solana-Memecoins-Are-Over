@@ -59,7 +59,7 @@ import zlib
 from typing import Iterator, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import settings  # noqa: E402
+import settings
 
 # One finding: (kind, path relative to the root, line number, the offending
 # fragment). Line 0 means the match is not tied to a line (image metadata,

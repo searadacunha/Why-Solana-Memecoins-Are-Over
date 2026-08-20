@@ -23,7 +23,7 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rpc_client  # noqa: E402
+import rpc_client
 
 UA = "Mozilla/5.0"
 

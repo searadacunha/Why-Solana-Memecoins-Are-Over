@@ -29,7 +29,7 @@ import tempfile
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import settings  # noqa: E402
+import settings
 
 # (script, needs, one-line description)
 #   needs: "" offline | "net" Helius key | "priv" unpublished corpus

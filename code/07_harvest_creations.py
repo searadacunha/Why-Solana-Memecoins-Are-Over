@@ -18,7 +18,7 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rpc_client  # noqa: E402
+import rpc_client
 
 PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
 
