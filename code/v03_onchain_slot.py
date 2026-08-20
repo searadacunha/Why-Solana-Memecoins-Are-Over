@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""v03 - verification on-chain, transaction par transaction.
+"""v03 -- on-chain verification, transaction by transaction.
 
-Pour chaque lancement des flottes re-derivees en v02, on retelecharge depuis
-Helius (RPC public Solana) les transactions de la fenetre de creation et on
-mesure, sans passer par aucun fichier d'analyse anterieur :
+For each launch of the fleets re-derived in v02, the transactions of the
+creation window are downloaded again from Helius (public Solana RPC) and
+measured without going through any file of the earlier analysis:
 
-  - le slot de la transaction de creation du mint
-  - le slot de chaque achat de la flotte  -> identiques ?
-  - le SOL debourse par chaque wallet (delta de lamports du signataire, hors frais)
-  - le nombre de tokens recus (delta de postTokenBalances de son ATA)
-  - la part de la supply (1e9) captee par la flotte dans le slot de creation
-  - le prix moyen paye (SOL/token) et le prix marginal apres leurs achats
+  - the slot of the mint's creation transaction
+  - the slot of each of the fleet's buys, and whether they are identical
+  - the SOL each wallet spent (the signer's lamport delta, fees excluded)
+  - the number of tokens received (the postTokenBalances delta of its ATA)
+  - the share of the 1e9 supply the fleet captured in the creation slot
+  - the average price paid (SOL per token) and the marginal price after
+    their buys
 
-Sortie: data/v03_onchain.json  (+ cache/tx_*.json : reponses RPC brutes)
+Output: data/v03_onchain.json, plus cache/tx_*.json holding the raw RPC
+replies.
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

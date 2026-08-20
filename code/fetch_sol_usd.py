@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recupere la serie horaire du prix du SOL en USD (GeckoTerminal, pool
-SOL/USDC Raydium 58oQChx4...). Necessaire parce que les swaps de floor_capture
-sont libelles en SOL/token alors que GeckoTerminal renvoie des USD/token.
+"""Fetch the hourly series of the price of SOL in USD, from GeckoTerminal's
+Raydium SOL/USDC pool 58oQChx4. Needed because the floor_capture swaps are
+denominated in SOL per token while GeckoTerminal returns USD per token.
 
-Sortie : data/sol_usd_hourly.json
+Output: data/sol_usd_hourly.json
 """
 import json
 import os

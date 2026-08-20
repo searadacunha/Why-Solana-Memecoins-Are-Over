@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
-"""v02 - re-derivation independante des flottes d'operateurs.
+"""v02 -- an independent re-derivation of the operator fleets.
 
-On ne reprend pas une seule liste de wallets de l'analyse anterieure. On repart
-de la geometrie brute de la fenetre de creation (cache snipe_*.json, derive de
-Helius, 1 ligne par wallet ayant achete <=12s apres le mint) et on reconstruit
-les flottes par co-occurrence.
+Not one wallet list is carried over from the earlier analysis. This starts again
+from the raw geometry of the creation window (the snipe_*.json cache derived
+from Helius, one row per wallet having bought at most 12 s after the mint) and
+rebuilds the fleets from co-occurrence.
 
-Definitions (arbitraires mais fixees a l'avance et explicites) :
-  noyau d'un token   = wallets ayant engage >= 5 SOL dans la fenetre de creation
-  infra (a exclure)  = wallet present dans >= 25 tokens sur 282 (>8.9%) : bot
-                       ubiquitaire, ne peut pas etre la flotte d'un operateur
-  arete flotte       = paire de wallets de noyau co-presentes sur >= 3 tokens
-                       et Jaccard >= 0.50
-  flotte             = composante connexe >= 3 wallets
+Definitions, arbitrary but fixed in advance and stated:
+  a token's core   = the wallets that committed at least 5 SOL in the creation
+                     window
+  infrastructure   = a wallet present in at least 25 tokens out of 282, over
+  (to exclude)       8.9 %: a ubiquitous bot, which cannot be one operator's
+                     fleet
+  fleet edge       = a pair of core wallets co-present on at least 3 tokens
+                     with a Jaccard index of at least 0.50
+  fleet            = a connected component of at least 3 wallets
 
-Sortie: data/v02_fleets.json
+Output: data/v02_fleets.json
 """
 import sys, os, itertools
 from collections import defaultdict, Counter

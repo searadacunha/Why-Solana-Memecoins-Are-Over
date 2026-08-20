@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""v05 - le bloc d'achat du slot de creation, mesure non circulaire.
+"""v05 -- the buy block of the creation slot, measured without circularity.
 
-v03/v04 partaient des wallets de la flotte. Ici on oublie l'identite : sur les
-memes 42 slots de creation, on enumere tous les achats reussis du bloc et on
-appelle "bloc d'achat" l'ensemble des acheteurs a >= 5 SOL, quels qu'ils soient.
-L'identite ne sert plus qu'a choisir les tokens.
+v03 and v04 started from the fleet's wallets. Here identity is forgotten: over
+the same 42 creation slots, every successful buy of the block is enumerated and
+the "buy block" is defined as the set of buyers of at least 5 SOL, whoever they
+are. Identity now only serves to choose the tokens.
 
-Cela corrige aussi les 2 lancements ou un wallet de rechange (present 1 seule
-fois dans tout le corpus, meme ticket que le noyau) remplacait un titulaire.
+This also corrects the 2 launches where a spare wallet, present once in the
+whole corpus and buying the same ticket as the core, stood in for a regular.
 
-Mesures : n acheteurs du bloc, SOL total, tokens, part de supply, span de slots,
-rang du 1er acheteur externe, prix.
+Measured: the number of buyers in the block, total SOL, tokens, share of supply,
+slot span, the rank of the first external buyer, and prices.
 
-Sortie: data/v05_creation_block.json
+Output: data/v05_creation_block.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

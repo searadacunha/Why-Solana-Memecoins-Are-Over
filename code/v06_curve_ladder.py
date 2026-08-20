@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""v06 - l'echelle de prix de la courbe (bonding curve), acheteur par acheteur.
+"""v06 -- the bonding curve's price ladder, buyer by buyer.
 
-Filtre strict : on ne compte comme "achat de courbe" qu'une transaction ou
-le compte de courbe (identifie dans la tx de creation comme le compte recevant
-~99 % de la supply) perd des tokens et ou le signataire en gagne. Cela elimine
-les swaps AMM, les arbitrages et les tx multi-legs qui polluaient v05.
+A strict filter: a transaction only counts as a "curve buy" when the curve
+account, identified in the creation tx as the account receiving about 99 % of
+the supply, loses tokens and the signer gains them. That removes the AMM swaps,
+the arbitrages and the multi-leg transactions that polluted v05.
 
-On sort, par lancement, la sequence ordonnee des achats de courbe avec le prix
-paye, ce qui donne l'echelle exacte : combien paie le bloc de creation, puis le
-suivant, puis le dernier avant graduation.
+The output is, per launch, the ordered sequence of curve buys with the price
+paid, which gives the exact ladder: what the creation block pays, then the next
+one, then the last before graduation.
 
-Sortie: data/v06_curve_ladder.json
+Output: data/v06_curve_ladder.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -28,8 +28,8 @@ if not os.path.exists(_SOLUSD_P):
 SOLUSD = json.load(open(_SOLUSD_P))["median_close"]
 V4 = json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]
 
-# --- prix d'ouverture AMM, robuste : mediane des prix des swaps PUMP_AMM
-#     de >= 0.1 SOL dans les 60 premieres secondes (les swaps poussiere de
+# --- Robust AMM opening price: the median price of the PUMP_AMM swaps of at
+#     least 0.1 SOL in the first 60 seconds. The dust swaps of
 #     0,002 SOL portent un prix aberrant et sont exclus).
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import load_floor  # noqa: E402
@@ -82,8 +82,9 @@ for L in V4:
     for r in rs[1:]:
         d = r["tok"].get(curve, 0.0)
         g = r["tok"].get(r["signer"], 0.0)
-        # achat de courbe propre : la courbe perd, le signataire gagne, et il
-        # gagne >=85% de ce que la courbe perd (sinon tx multi-leg -> prix faux)
+        # A clean curve buy: the curve loses, the signer gains, and gains at
+        # least 85 % of what the curve loses. Otherwise it is a multi-leg tx,
+        # and the price would be wrong.
         if d < -1 and g > 1 and g >= 0.85 * (-d) and r["sol"] > 0.0005:
             ladder.append({"idx": r["idx"], "signer": r["signer"], "sig": r["sig"],
                            "sol": round(r["sol"], 4), "tokens": round(g, 2),
