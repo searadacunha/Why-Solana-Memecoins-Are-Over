@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M4 : pourquoi les adresses d'infrastructure doivent etre exclues.
+M4: why the infrastructure addresses have to be excluded.
 
-Un petit nombre d'adresses snipe une fraction enorme de tous les lancements.
-Ce ne sont pas des operateurs mais un service utilise par tout le monde.
-Laissees dans un calcul de lien entre tokens, elles relient artificiellement a
-peu pres n'importe quelle paire, et le reseau geant qu'on croit decouvrir
-n'est qu'un artefact. C'est le piege le plus facile a manquer sur ces donnees :
-une these appuyee sur le graphe non nettoye serait fausse.
+A handful of addresses snipe an enormous share of every launch. They are not
+operators, they are a service everyone uses. Left inside a computation of links
+between tokens, they connect almost any pair artificially, and the giant network
+one believes one has found is only an artefact. This is the easiest trap to walk
+into on this data: a thesis resting on the uncleaned graph would be false.
 
-Le test : taille de la composante connexe geante du graphe token-token (deux
-tokens relies s'ils partagent au moins k snipeurs), avec et sans ces adresses.
-Si la composante s'effondre quand on les retire, elles servaient de ponts
-artificiels.
+The test: the size of the giant connected component of the token-token graph,
+where two tokens are linked when they share at least k snipers, with and without
+those addresses. If the component collapses when they are removed, they were
+serving as artificial bridges.
 
-Lit les captures, ecrit docs/out/m4_infra.json.
+Reads the captures, writes docs/out/m4_infra.json.
 
-Usage :  python3 m4_infra_ubiquity.py [--data ...] [--k 3]
+Usage:  python3 m4_infra_ubiquity.py [--data ...] [--k 3]
 """
 
 import argparse
@@ -43,7 +42,7 @@ def giant_component(caps, exclude=(), k=3):
             x = parent[x]
         return x
 
-    # index inverse pour ne pas comparer toutes les paires
+    # Inverted index, so that not every pair has to be compared
     by_w = collections.defaultdict(list)
     for m, s in sets:
         for w in s:
@@ -80,7 +79,7 @@ def main():
 
     print("\n  Les 12 adresses les plus ubiquitaires du corpus :")
     print("    %-46s %6s %8s %s" % ("adresse", "tokens", "part", "classee infra ?"))
-    # Counter.most_common laisse les ex aequo dans l'ordre d'insertion, qui
+    # Counter.most_common leaves ties in insertion order, which
     # depend du hachage : deux executions pouvaient permuter deux adresses a
     # egalite de comptage. Tri explicite (compte decroissant, puis adresse) =
     # sortie reproductible bit a bit.

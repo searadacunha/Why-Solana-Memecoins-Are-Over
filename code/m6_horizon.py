@@ -1,32 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M6 : ce que devient le token apres la premiere heure.
+M6: what becomes of the token after the first hour.
 
-Source : data/horizon.json, prix horaires releves a +1 h, +2 h, +4 h et +24 h
-apres la fin de la capture, pour 193 tokens, via l'API publique GeckoTerminal.
+Source: data/horizon.json, hourly prices read at +1 h, +2 h, +4 h and +24 h
+after the capture ends, for 193 tokens, through the public GeckoTerminal API.
 
-Avertissement d'unite. Le prix d'entree vient des swaps et est en SOL par
-token ; les prix horaires de GeckoTerminal sont en USD par token. Le rapport
-brut close/entree melange donc deux unites et ne veut rien dire en valeur
-absolue : il vaut le vrai multiple multiplie par le taux SOL/USD de l'epoque.
-Un chiffre du type "mediane 0,35x a +1 h" suppose donc un taux qui ne figure
-pas dans les donnees, n'est pas reproductible en l'etat, et n'est pas publie
-ici comme un fait.
+A warning about units. The entry price comes from the swaps and is in SOL per
+token; GeckoTerminal's hourly prices are in USD per token. The raw close/entry
+ratio therefore mixes two units and means nothing in absolute terms: it equals
+the true multiple times the SOL/USD rate of the time. A figure of the form
+"median 0.35x at +1 h" thus assumes a rate that is not in the data, is not
+reproducible as it stands, and is not published here as a fact.
 
-Ce qui est reproductible sans constante externe, c'est la decroissance
-relative : le rapport entre deux horizons elimine le taux de change, qui se
-simplifie. C'est la mesure principale. Le multiple absolu reste disponible via
---sol-usd <taux>, etiquete comme dependant d'une constante fournie par
-l'utilisateur.
+What is reproducible without an external constant is the relative decay: the
+ratio between two horizons cancels the exchange rate. That is the headline
+measurement. The absolute multiple stays available through --sol-usd <rate>,
+labelled as depending on a constant the user supplied.
 
-Survivance : les quatre horizons ne couvrent pas les memes tokens. Un token
-sans bougie a +24 h a disparu, et l'exclure ameliore artificiellement le
-resultat. La mesure principale porte donc sur le sous-ensemble apparie (les
-tokens ayant les quatre horizons), le plus favorable au marche ; le
-sous-ensemble non apparie est donne en sensibilite.
+Survivorship: the four horizons do not cover the same tokens. A token with no
+candle at +24 h has disappeared, and excluding it improves the result
+artificially. The headline measurement therefore runs on the matched subset,
+the tokens having all four horizons, which is the most favourable to the
+market; the unmatched subset is given as a sensitivity.
 
-Usage :  python3 m6_horizon.py [--sol-usd 150]
+Usage:  python3 m6_horizon.py [--sol-usd 150]
 """
 
 import argparse
@@ -62,7 +60,7 @@ def main():
     P.kv("n", len(full), note="%.1f %% des tokens instrumentes"
                               % (100.0 * len(full) / len(rows)))
 
-    # (1) La statistique par token : ce que subit un detenteur donne.
+    # (1) The per-token statistic: what one given holder goes through.
     print("\n  (1) Evolution par token depuis +1 h, ce que subit un"
           " detenteur.\n      Sans unite : le taux SOL/USD se simplifie dans"
           " le rapport.")
@@ -88,7 +86,7 @@ def main():
           " concentree, et totale quand elle arrive."
           % (t24["med"], lo, hi, 100 * (1 - t24["p25"]), 100 * (1 - t24["p10"])))
 
-    # (2) La statistique transversale : le niveau de prix de la population.
+    # (2) The cross-sectional statistic: the price level of the population.
     print("\n  (2) Niveau de prix transversal de la population (mediane des"
           " prix a chaque\n      horizon, normalisee a +1 h). Ce n'est pas le"
           " parcours d'un token :\n      le token median a +24 h n'est pas le"

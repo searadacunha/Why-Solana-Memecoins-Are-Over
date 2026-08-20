@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-M2 : le prix est deja parti quand le marche s'ouvre.
+M2: the price has already moved by the time the market opens.
 
-Affirmation testee : au premier instant ou un acheteur ordinaire peut executer
-un ordre, le prix a deja monte d'un facteur important par rapport au prix de
-lancement du token. La hausse est deja consommee avant le marche.
+The claim under test: at the first instant an ordinary buyer can execute an
+order, the price has already risen by a large factor over the token's launch
+price. The rise is consumed before the market exists.
 
-Definitions, toutes verifiables :
-  - Prix de lancement = constante de la courbe pump.fun, MC = 27,96 SOL, soit
-    le parametre de reserve virtuelle initiale, identique pour tous les tokens.
-    Ce n'est pas une estimation.
-  - Premier instant executable = premier swap enregistre d'au moins 0,05 SOL.
-    Le seuil ecarte les swaps de poussiere (0,002 SOL) dont le prix implicite
-    est domine par les arrondis. Sensibilite a ce seuil : voir la sortie.
-  - Prix execute = sol / tokens. Controle croise avec `price` (prix de pool).
-  - Part du parcours deja consommee = log(MC_premier / MC_lancement)
-    / log(MC_pic / MC_lancement). En log parce que le processus est
-    multiplicatif : 1 -> 2 et 10 -> 20 sont le meme mouvement. Le pic vient de
-    la serie de prix robuste (pumplib.robust_series), pas du max brut : domine
-    par les swaps de poussiere, celui-ci donne des valeurs physiquement
-    impossibles (jusqu'a 8,9e8 SOL de MC).
+Every definition here is checkable:
+  - Launch price is a constant of the pump.fun curve, MC = 27.96 SOL, the
+    initial virtual reserve parameter, the same for every token. It is not an
+    estimate.
+  - First executable instant is the first recorded swap of at least 0.05 SOL.
+    The threshold discards dust swaps of 0.002 SOL, whose implicit price is
+    dominated by rounding. The sensitivity to that threshold is in the output.
+  - Executed price is sol / tokens, cross-checked against the pool price.
+  - Share of the move already consumed is log(MC_first / MC_launch) divided by
+    log(MC_peak / MC_launch). In logs because the process is multiplicative:
+    1 to 2 and 10 to 20 are the same move. The peak comes from the robust price
+    series (pumplib.robust_series), not from the raw maximum, which dust swaps
+    dominate and which returns physically impossible values, up to 8.9e8 SOL of
+    market cap.
 
-Usage :  python3 m2_entry_price.py [--data ...] [--min-sol 0.05]
+Usage:  python3 m2_entry_price.py [--data ...] [--min-sol 0.05]
 """
 
 import argparse
@@ -62,7 +62,7 @@ def main():
         lags.append(f["ts"] - d["created"])
 
         # pic mesure sur la serie de prix robuste (cf. pumplib.robust_series) :
-        # le max brut est domine par les swaps de poussiere et n'a pas de sens.
+        # The raw maximum is dominated by dust swaps and means nothing.
         ser = P.robust_series(sw)
         if ser:
             peak = max(p for _, p in ser) * supply
@@ -107,7 +107,7 @@ def main():
     for s, c in first_src.most_common():
         print("    %-18s %4d   %5.1f %%" % (s, c, 100.0 * c / n))
 
-    # controle : le prix de pool doit donner le meme resultat que le prix execute
+    # Cross-check: the pool price must give the same result as the executed one
     if mc_pool:
         P.kv("\n  controle prix de pool vs prix execute (mediane)",
              "%.1f vs %.1f SOL" % (P.median(mc_pool), med), n=len(mc_pool),
