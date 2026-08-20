@@ -11,11 +11,12 @@ Reads ONLY the published files in ./data/ (no network, no private state):
     data/floor_capture_public.jsonl.gz   swap-level captures (optional, P12)
 
 Usage:  python3 code/p0_pitfalls_check.py
-Every printed line is quoted verbatim in docs/PITFALLS.md.
 
-TODO ce script IMPRIME, il ne verifie rien. p1 lit README.md et sort non nul
-quand la prose a derive ; ici la comparaison avec PITFALLS.md se fait a l'oeil.
-Meme mecanique que p1 a faire, ou alors dire clairement que ce n'est pas un gate.
+This script PRINTS; it verifies nothing, and it is NOT a gate. p1_readme_check.py
+reads README.md and exits non-zero the moment the prose disagrees with a committed
+artefact; there is no equivalent here. docs/PITFALLS.md quotes a subset of the
+figures below, reformatted rather than copied, so no verbatim comparison is
+possible either: reading the two side by side is what checks them.
 """
 import bisect
 import collections
