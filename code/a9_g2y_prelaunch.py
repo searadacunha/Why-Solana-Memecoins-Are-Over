@@ -192,9 +192,9 @@ def main():
                                                   "a9_g2y_prelaunch.json"))
     a = ap.parse_args()
 
-    # Garde-fou : avec --data (jeu d'exemple), la sortie part dans data/sample/ au lieu
-    # d'ecraser l'artefact publie. Un tableau du dossier remplace en silence par le
-    # resultat d'un echantillon de 20 tokens passerait inapercu.
+    # Guard: with --data, a sample set, the output goes to data/sample/ instead
+    # of overwriting the published artefact. A table of the dossier silently
+    # replaced by the result of a 20-token sample would go unnoticed.
     if a.data and a.out == ap.get_default("out"):
         a.out = os.path.join(P.HERE, "..", "data", "sample",
                              os.path.basename(a.out))

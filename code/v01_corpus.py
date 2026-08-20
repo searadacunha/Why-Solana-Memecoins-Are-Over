@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""v01 - inventaire du corpus. Aucune interpretation, que des comptages.
+"""v01 -- an inventory of the corpus. No interpretation, only counts.
 
-Sortie: data/v01_corpus.json
+Output: data/v01_corpus.json
 """
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

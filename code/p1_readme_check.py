@@ -159,8 +159,8 @@ def d_trades_plage(a):
     g = [t["gain_pct"] for t in a["trades"]]
     if len(g) != a["n"]:
         raise Absent("index.json: n=%d but %d trades listed" % (a["n"], len(g)))
-    # tronque, pas arrondi : le README ecrit +100 % pour 100.06 et
-    # +28 465 % pour 28465.63.
+    # Truncated, not rounded: the README writes +100 % for 100.06 and
+    # +28 465 % for 28465.63.
     return "%d (+%d%% to +%s%%)" % (a["n"], int(min(g)), format(int(max(g)), ","))
 
 

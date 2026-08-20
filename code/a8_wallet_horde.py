@@ -40,14 +40,14 @@ class Echec(Exception):
     pass
 
 
-# Le transport Helius (JSON-RPC + transactions parsees) est delegue au client
-# partage rpc_client : rotation de cles, cooldown apres un 429, reprises bornees,
-# et une seule regle d'erreur, il leve HeliusError et ne rend jamais [] ou None
-# pour signaler un echec. On conserve ici les fines enveloppes rpc()/parsed()
-# qui retraduisent HeliusError en Echec, afin de ne rien changer aux appelants
-# (naissance/etudie attrapent deja Echec). Les parametres ki/tries subsistent
-# pour la compatibilite d'appel mais ne servent plus : la rotation et les
-# reprises appartiennent desormais a rpc_client.
+# The Helius transport, JSON-RPC and parsed transactions, is delegated to the
+# shared rpc_client: key rotation, a cooldown after a 429, bounded retries, and
+# one error rule, it raises HeliusError and never returns [] or None to signal a
+# failure. What is kept here are the thin rpc() and parsed() wrappers that
+# translate HeliusError back into Echec, so the callers do not change (naissance
+# and etudie already catch Echec). The ki and tries parameters survive for call
+# compatibility but no longer serve: rotation and retries belong to rpc_client
+# now.
 def rpc(method, params, ki=0, tries=8):
     try:
         return rpc_client.rpc(method, params)
@@ -63,11 +63,11 @@ def parsed(addr, ki=0, before=None, tries=5):
 
 
 def naissance(addr, ki=0):
-    """Premiere activite d'une adresse. None si hors de portee.
+    """An address's first activity. None when it is out of reach.
 
-    Une panne reseau ou de quota leve Echec : elle ne doit pas passer pour
-    "aucune naissance trouvee". Seul un resultat legitimement vide (aucune
-    signature, ou genese hors du budget de pagination) rend None.
+    A network or quota failure raises Echec: it must not pass for "no birth
+    found". Only a legitimately empty result, no signature at all or a genesis
+    outside the pagination budget, returns None.
     """
     before, oldest = None, None
     for _ in range(6):
@@ -111,7 +111,7 @@ def etudie(args):
         before = batch[-1].get("signature")
         time.sleep(0.05)
 
-    # Une sortie vers une adresse neuve = generation suivante.
+    # An outflow to a fresh address is the next generation.
     neuves = {}
     for d, e in sorted(sorties.items(), key=lambda kv: -kv[1]["sol"])[:25]:
         nb = naissance(d, ki=idx)

@@ -121,8 +121,8 @@ def _http_rotating(build_url: Callable[[str], str],
         except HeliusError as e:
             last = str(e)
             if "429" in last:
-                # 6 s : empirique. Helius ne documente pas la fenetre de quota,
-                # c'est la plus courte valeur qui arretait le ping-pong 429.
+                # 6 s is empirical. Helius does not document its quota window,
+                # and this was the shortest value that stopped the 429 ping-pong.
                 _COOLDOWN[key] = time.time() + 6.0
                 STATS["retry"] += 1
                 time.sleep(0.25)

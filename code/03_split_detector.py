@@ -46,7 +46,7 @@ from splitlib import MIN_CLUSTER, REL_TOL, WINDOW_S, find_splits
 
 LAMPORTS = 1_000_000_000
 
-# Fenêtre de montants retenue : en dessous, on capte le bruit (dust, frais) ;
+# Amount window kept: below it, noise is caught (dust, fees);
 # above it, transfers become too rare and too heterogeneous to form a split.
 MIN_SOL, MAX_SOL = 1.0, 20.0
 
@@ -56,7 +56,7 @@ SKIPPED_SLOT_CODES = (-32007, -32009, -32004)
 
 
 def top_holders(mint: str, n: int) -> list[str]:
-    """Principaux détenteurs d'un token, via leurs comptes de token."""
+    """A token's main holders, through their token accounts."""
     res = rpc_client.rpc("getTokenLargestAccounts", [mint]) or {}
     owners: list[str] = []
     for acc in (res.get("value") or [])[:n]:

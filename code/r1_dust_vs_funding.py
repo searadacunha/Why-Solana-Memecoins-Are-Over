@@ -29,7 +29,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import r1lib as R
 
-# adresses citees par les notes d'enquete comme "dispatchers de masse".
+# The addresses the investigation notes call "mass dispatchers".
 # claim is what the note asserts; nothing here is assumed true.
 CIBLES = {
     "4KHPw3QDsXe6HFJPNA4SiBi6Qe3mrziDFgyYToeEWGu4":
@@ -133,7 +133,7 @@ def main():
         q.pop("_destinataires")
         print(json.dumps(q, indent=1, ensure_ascii=False)[:2600])
 
-    # recoupement des deux listes de diffusion
+    # Where the two mailing lists overlap
     croise = None
     if len(profs) == 2:
         a, b = set(profs[0]["_destinataires"]), set(profs[1]["_destinataires"])

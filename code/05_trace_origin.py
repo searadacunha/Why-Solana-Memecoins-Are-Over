@@ -65,7 +65,7 @@ def page(addr: str, before: Optional[str] = None) -> list:
 
 
 def deep_signatures(addr: str, max_pages: int) -> tuple:
-    """Pagination continue. Rend (signatures triées, genese_atteinte)."""
+    """Continuous pagination. Returns (sorted signatures, genesis_reached)."""
     out, before = [], None
     for i in range(max_pages):
         pg = page(addr, before)

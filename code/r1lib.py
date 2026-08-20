@@ -49,7 +49,7 @@ def cached(name: str, fn: Any) -> Any:
 
 
 def save(name: str, obj: Any) -> str:
-    """Ecriture atomique + pseudonymisation a l'ecriture (voir redact.py)."""
+    """Atomic write, pseudonymised at write time (see redact.py)."""
     import redact
     p = os.path.join(DATA, name)
     tmp = p + ".tmp"

@@ -29,8 +29,8 @@ SOLUSD = json.load(open(_SOLUSD_P))["median_close"]
 V4 = json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]
 
 # --- Robust AMM opening price: the median price of the PUMP_AMM swaps of at
-#     least 0.1 SOL in the first 60 seconds. The dust swaps of
-#     0,002 SOL portent un prix aberrant et sont exclus).
+#     least 0.1 SOL in the first 60 seconds. The 0.002 SOL dust swaps carry an
+#     aberrant price and are excluded.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib_verif import load_floor  # noqa: E402
 _F = load_floor()

@@ -67,8 +67,8 @@ FLEETS = {
     "OP2":  ["GeBJSHK4WsGrz2HRvTbqvWGx4JRMpHfJG2ikzrYBDuwR"],
 }
 
-# Adresses d'infrastructure partagee, a exclure de tout calcul de lien : elles
-# snipent une part enorme du corpus et relient artificiellement n'importe quelle
+# Shared infrastructure addresses, to be excluded from any computation of links:
+# they snipe an enormous share of the corpus and artificially connect almost any
 # pair of tokens. m4_infra_ubiquity.py measures how ubiquitous they are.
 INFRA = {
     "RDCT-d4fb6b1f86",
@@ -176,7 +176,7 @@ def main():
              "%d / %d" % (dist.get(1, 0), res[name]["n_tokens"]),
              n=res[name]["n_tokens"])
 
-    # co-occurrence : est-ce du hasard ?
+    # Co-occurrence: is it chance?
     print("\n  La co-occurrence des adresses d'une meme flotte est-elle fortuite ?")
     print("    (loi hypergeometrique : deux adresses vues dans a et b tokens sur"
           " N=%d)" % N)
@@ -203,7 +203,7 @@ def main():
                  note="%d/%d paires a p<1e-3 ; p le moins bon %.1e"
                       % (strong, len(pairs), worst["p"]))
 
-    # taux de reutilisation du noyau, contre une base mesuree
+    # Core reuse rate, against a measured baseline
     print("\n  Reutilisation : une flotte reprend-elle les memes adresses d'un"
           " lancement au suivant ?")
     reuse = {}
