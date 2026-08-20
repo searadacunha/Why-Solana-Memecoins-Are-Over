@@ -23,7 +23,7 @@ Usage :
     python3 t5_rattrapage_couverture.py --max-pages 900
 """
 from __future__ import annotations
-import argparse, json, os, sys, time
+import argparse, json, os, time
 import lib_trace as L
 import t2_financement as T2
 

@@ -23,7 +23,7 @@ Usage :
     python3 etape4_origine.py --seeds A,B,C --depth 2 --label OPTIMUS
 """
 from __future__ import annotations
-import argparse, json, os, time
+import argparse, json
 from collections import defaultdict
 import lib_trace as L
 

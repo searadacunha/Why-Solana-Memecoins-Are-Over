@@ -50,7 +50,6 @@ A scanner cannot prove a repository clean. What it gives is that
 from __future__ import annotations
 
 import argparse
-import gzip
 import os
 import re
 import struct

@@ -17,7 +17,7 @@ Sortie: data/v07_exit.json
 """
 import sys, os, json, statistics as st
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib_verif import rpc, get_tx, get_sigs, save, med, DATA, CACHE
+from lib_verif import get_tx, get_sigs, save, med, DATA
 
 V6 = json.load(open(f"{DATA}/v06_curve_ladder.json"))["lancements"]
 LIM = int(os.environ.get("LIM", "0"))

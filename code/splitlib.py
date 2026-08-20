@@ -16,7 +16,7 @@ run_all.py --strict; do not route a1 through this module.
 """
 from __future__ import annotations
 
-from typing import Any, Iterable
+from typing import Any
 
 # Defaults shared by 02/03; 04 widens the amount band in its own incoming filter.
 REL_TOL = 1e-4        # relative amount-equality tolerance (0.01 %)

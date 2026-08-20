@@ -21,7 +21,7 @@ Usage :
     python3 etape11_hub_distributeur.py --addr <ADRESSE> [--label nom]
 """
 from __future__ import annotations
-import argparse, json, os, sys, time
+import argparse, json, os, sys
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
