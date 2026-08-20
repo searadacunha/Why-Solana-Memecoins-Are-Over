@@ -100,10 +100,6 @@ def utcday(ts):
     return dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime("%Y-%m-%d")
 
 
-def utcmonth(ts):
-    return dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime("%Y-%m")
-
-
 def iso(ts):
     return dt.datetime.fromtimestamp(ts, dt.timezone.utc).isoformat()
 
@@ -503,8 +499,8 @@ def cmd_onchain():
         # que dit le premier tx du compte ?
         if pa.get("signature"):
             t = tx(pa["signature"])
-            logs = [l for l in ((t.get("meta") or {}).get("logMessages") or [])
-                    if "Instruction:" in l][:6]
+            logs = [line for line in ((t.get("meta") or {}).get("logMessages") or [])
+                    if "Instruction:" in line][:6]
             rec["genese_instructions"] = logs
         out.append(rec)
         time.sleep(0.1)

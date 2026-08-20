@@ -27,9 +27,9 @@ def run(cmd, log):
           flush=True)
     p = subprocess.run(cmd, cwd=HERE, capture_output=True, text=True)
     open(log, "a").write(p.stdout + p.stderr)
-    tail = [l for l in (p.stdout or "").splitlines() if l.strip()][-6:]
-    for l in tail:
-        print("    | " + l, flush=True)
+    tail = [line for line in (p.stdout or "").splitlines() if line.strip()][-6:]
+    for line in tail:
+        print("    | " + line, flush=True)
     if p.returncode != 0:
         print("    !! code " + str(p.returncode) + " : " + (p.stderr or "")[-400:], flush=True)
     return p.returncode == 0

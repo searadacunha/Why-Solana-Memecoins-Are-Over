@@ -102,21 +102,21 @@ for wl in sorted(fleets, key=lambda x: -len({m for w in x for m in w2t[w]})):
         })
     if not launches:
         continue
-    memb_n = [l["n_membres"] for l in launches]
+    memb_n = [launch["n_membres"] for launch in launches]
     out.append({
         "lead": wl[0],
         "n_wallets": len(wl),
         "wallets": wl,
         "n_tokens": len(launches),
         "n_membres_mode": Counter(memb_n).most_common(1)[0],
-        "sol_flotte_med": round(med([l["sol_flotte"] for l in launches]), 3),
-        "sol_flotte_min_max": [min(l["sol_flotte"] for l in launches),
-                               max(l["sol_flotte"] for l in launches)],
-        "cv_inter_lancements": round(cv([l["sol_flotte"] for l in launches]), 4),
-        "ticket_cv_intra_med": round(med([l["ticket_cv"] for l in launches]), 4),
-        "ts_span_s_max": max([l["ts_span_s"] for l in launches if l["ts_span_s"] is not None] or [None]),
-        "part_sol_fenetre_med": round(med([l["sol_flotte"] / l["sol_fenetre_total"]
-                                           for l in launches if l["sol_fenetre_total"] > 0]), 4),
+        "sol_flotte_med": round(med([launch["sol_flotte"] for launch in launches]), 3),
+        "sol_flotte_min_max": [min(launch["sol_flotte"] for launch in launches),
+                               max(launch["sol_flotte"] for launch in launches)],
+        "cv_inter_lancements": round(cv([launch["sol_flotte"] for launch in launches]), 4),
+        "ticket_cv_intra_med": round(med([launch["ticket_cv"] for launch in launches]), 4),
+        "ts_span_s_max": max([launch["ts_span_s"] for launch in launches if launch["ts_span_s"] is not None] or [None]),
+        "part_sol_fenetre_med": round(med([launch["sol_flotte"] / launch["sol_fenetre_total"]
+                                           for launch in launches if launch["sol_fenetre_total"] > 0]), 4),
         "span_h": round((launches[-1]["created"] - launches[0]["created"]) / 3600, 1),
         "launches": launches,
     })
@@ -127,7 +127,7 @@ r = {
  "infra_exclue": sorted([{"wallet": w, "n_tokens": freq[w]} for w in INFRA],
                         key=lambda x: -x["n_tokens"]),
  "n_flottes": len(out),
- "n_tokens_couverts": len({l["mint"] for f in out for l in f["launches"]}),
+ "n_tokens_couverts": len({launch["mint"] for f in out for launch in f["launches"]}),
  "flottes": out,
 }
 save("v02_fleets.json", r)
