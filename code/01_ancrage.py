@@ -9,7 +9,7 @@ dizaines d'homonymes, aucun conforme. C'est une mesure, pas un echec.
 (B) faits on-chain par candidat retenu : date de creation lue sur la chaine
 (plus ancienne signature du compte de mint), programme d'origine, statut. La
 chaine est la seule source qui remonte a 2024, les API tierces s'arretent
-avant (docs/ancrage_sources.md, champ `couverture_api` du rapport).
+avant (champ `couverture_api` du rapport).
 (C) chronologie mensuelle depuis janvier 2024 : creations par mois, part
 graduee, distribution d'ATH.
 
