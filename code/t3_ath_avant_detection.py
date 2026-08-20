@@ -1,34 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tableau 3 : part des tokens dont l'ATH est deja passe quand ils deviennent
-visibles.
+Table 3: the share of tokens whose all-time high is already behind them by the
+time they become visible.
 
-Mesure : pour chaque token, on compare l'horodatage de l'ATH pump.fun
-(`ath_market_cap` et son ts) a celui de la detection, premiere fois ou le token
-existe pour un observateur exterieur (un token `complete` vu par le detecteur au
-plus tard 12 s apres sa creation). C'est une borne basse de la latence de
-n'importe quel acheteur humain, qui voit le token bien plus tard.
+The measurement: for each token, the timestamp of the pump.fun high
+(`ath_market_cap` and its ts) is compared with the timestamp of detection, the
+first moment the token exists for an outside observer (a `complete` token seen
+by the detector at most 12 s after its creation). That is a lower bound on any
+human buyer's latency, since a human sees the token much later.
 
-Trois seuils, publies ensemble parce qu'ils repondent a des questions
-differentes :
-    ATH <= detect_ts        : le sommet est deja derriere au moment ou le token
-                              apparait
-    ATH < detect_ts + 60 s  : le sommet est derriere avant qu'on ait pu decider
-    ATH < detect_ts + 120 s : idem avec 2 minutes de reaction
+Three thresholds, published together because they answer different questions:
+    ATH <= detect_ts        : the peak is already behind when the token appears
+    ATH < detect_ts + 60 s  : the peak is behind before one could decide
+    ATH < detect_ts + 120 s : the same, with two minutes to react
 
-Decoupage par bande de capitalisation a la detection : le phenomene se concentre
-sur les tokens qui apparaissent bas, ceux qui ont l'air d'une bonne affaire.
+Split by market-cap band at detection: the phenomenon concentrates on the tokens
+that appear low, the ones that look like a bargain.
 
-Limite : `o_ath_ts` vient de l'API pump.fun (resolution a la seconde) et
-`detect_ts` de l'horloge locale du detecteur ; un ecart de quelques secondes est
-possible. D'ou les trois seuils, et une conclusion qui ne repose pas sur le plus
-serre.
+Limit: `o_ath_ts` comes from the pump.fun API, resolved to the second, and
+`detect_ts` from the detector's local clock; a gap of a few seconds is possible.
+Hence the three thresholds, and a conclusion that does not rest on the tightest.
 
-Population : socle B propre (regime MC sain, 5k < mc < 300k, ATH connu).
+Population: the clean B socle, healthy MC regime, 5k < mc < 300k, known high.
 
-Usage : python3 code/t3_ath_avant_detection.py
-Sorties : docs/tables/T3_ath_avant_detection.md, data/t3_ath_avant_detection.json
+Usage: python3 code/t3_ath_avant_detection.py
+Outputs: docs/tables/T3_ath_avant_detection.md, data/t3_ath_avant_detection.json
 """
 import os
 import statistics as st

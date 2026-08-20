@@ -1,48 +1,50 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tableau 1, base rate, coeur quantitatif du volet << cout pour l'acheteur >> :
-que rapporte l'achat d'un token pump.fun sans aucun filtre, selon la politique
-de sortie ? Le simulateur est reecrit ici de zero, sans dependre d'aucun
-fichier intermediaire du projet, puis confronte token par token au socle
-canonique reconcilie du 28/07 (`analysis_canonical/canonical/dataset.json`),
-accord affiche en fin de sortie. Seule entree, en lecture seule :
-`state/floor_capture/*.json`, le flux de swaps brut des 0-20 min qui suivent la
-creation du token.
+Table 1, the base rate, and the quantitative core of the buyer-cost strand:
+what does buying a pump.fun token with no filter at all return, by exit policy?
+The simulator is rewritten here from scratch, depending on no intermediate file
+of the project, then confronted token by token with the reconciled canonical
+socle of 28/07 (`analysis_canonical/canonical/dataset.json`), the agreement
+being printed at the end of the run. One input, read-only:
+`state/floor_capture/*.json`, the raw swap flow of the 0 to 20 min following the
+token's creation.
 
-Conventions du socle canonique (analysis_canonical/canonical/merge.py, resume
-dans docs/METHODOLOGY.md) :
+Conventions of the canonical socle (analysis_canonical/canonical/merge.py,
+summarised in docs/METHODOLOGY.md):
 
-  Prix : swap = sol / tokens, aucun champ pre-calcule ; prix robuste = mediane
-    des swaps >= 0.3 SOL sur [t, t+30), None se propage sans interpolation.
-  Entree : t_e = created + 120 s, p_entree = max(prix robuste, p_ask) ou p_ask
-    est le prix auquel 0.5 SOL de ventes est absorbable dans [t_e, t_e+30), on
-    paie la ou l'offre existe. Gate : >= 0.5 SOL de gros volume dans la fenetre.
-    Aucun regard vers le futur.
-  Grille de decision : buckets de 30 s. Decidee sur le bucket k, une sortie ne
-    s'execute qu'a t_e + 30(k+1), le prix du bucket n'etant connu qu'a sa fin ;
-    sinon le backtest s'offre 30 s de lookahead, soit 6.2 % de prix en mediane
-    par pas de 30 s et plus de 10 % dans un tiers des pas.
-  Sortie : TP = ordre limite, credite au niveau du TP et seulement si le carnet
-    absorbe 0.5 SOL a ce prix ou mieux ; stop, trailing et timeout = ordres au
-    marche, credites a min(prix robuste a l'instant d'execution, profondeur).
-  Profondeur : meilleur prix absorbant 0.5 SOL cote demande dans
-    [t_x, t_x+120], ordres >= 0.05 SOL. Carnet trop mince : pire prix
-    disponible. Carnet vide : non remplie.
-  Censure : t_safe = dernier swap - 120 s, aucune sortie planifiee au-dela, ce
-    qui laisse 120 s de flux futur pour verifier chaque remplissage ; un -100 %
-    ne peut donc pas venir de l'arret de l'enregistreur.
-  Non remplie : -100 % en colonne primaire. La colonne `_excl` les jette,
-    publiee pour montrer combien cette convention optimiste fabrique de
-    rendement.
-  Couts : 1 % de frais + 2 % de slippage adverse par jambe, soit 5.8241 %
-    aller-retour.
-  n : compte en clusters (lancements separes de plus de 30 min) et en jours
-    UTC, pas seulement en tokens.
+  Price: a swap is sol / tokens, no pre-computed field; the robust price is the
+    median of the swaps of at least 0.3 SOL over [t, t+30), and None propagates
+    with no interpolation.
+  Entry: t_e = created + 120 s, p_entry = max(robust price, p_ask), where p_ask
+    is the price at which 0.5 SOL of sales is absorbable within [t_e, t_e+30):
+    one pays where the offer exists. Gate: at least 0.5 SOL of large volume in
+    the window. No look at the future.
+  Decision grid: buckets of 30 s. Decided on bucket k, an exit only executes at
+    t_e + 30(k+1), since the bucket's price is not known before it ends;
+    otherwise the backtest grants itself 30 s of lookahead, worth 6.2 % of price
+    at the median per 30 s step and over 10 % in a third of the steps.
+  Exit: take-profit is a limit order, credited at the take-profit level and only
+    if the book absorbs 0.5 SOL at that price or better; stop, trailing and
+    timeout are market orders, credited at min(robust price at the instant of
+    execution, depth).
+  Depth: the best price absorbing 0.5 SOL on the ask side within
+    [t_x, t_x+120], orders of at least 0.05 SOL. Too thin a book: the worst
+    price available. An empty book: not filled.
+  Censoring: t_safe is the last swap minus 120 s and no exit is planned beyond
+    it, which leaves 120 s of future flow to verify every fill; a -100 %
+    therefore cannot come from the recorder stopping.
+  Not filled: -100 % in the primary column. The `_excl` column discards them,
+    and is published to show how much return that optimistic convention
+    manufactures.
+  Costs: 1 % fee plus 2 % adverse slippage per leg, so 5.8241 % over the round
+    trip.
+  n: counted in clusters, launches more than 30 min apart, and in UTC days, not
+    only in tokens.
 
-Usage : python3 code/t1_base_rate_sorties.py
-Sorties : docs/tables/T1_base_rate_sorties.md
-          data/cout_acheteur/t1_base_rate_sorties.json
+Usage: python3 code/t1_base_rate_sorties.py
+Outputs: docs/tables/T1_base_rate_sorties.md
+         data/cout_acheteur/t1_base_rate_sorties.json
 """
 import bisect
 import json
@@ -65,13 +67,14 @@ SAFE_MARGIN = 120
 ENTRY_OFFSET = 120
 
 def _canon_path():
-    """Socle canonique du 28/07 : la seconde implementation, ecrite
-    independamment, contre laquelle ce simulateur est confronte token par token
-    (bloc CONTROLE en fin de sortie). Elle n'est pas publiee (artefact de
-    travail de 40 Mo), donc le controle ne tourne que si le corpus brut est
-    monte ($PUMP_PRIVATE_ROOT). Son absence ne change aucun chiffre du tableau,
-    elle retire seulement le bloc de reconciliation, dont le resultat est
-    archive dans docs/PITFALLS.md, piege P2."""
+    """The canonical socle of 28/07: the second implementation, written
+    independently, against which this simulator is checked token by token (the
+    CONTROLE block at the end of the run). It is not published, being a 40 MB
+    working artefact, so the check only runs when the raw corpus is mounted
+    ($PUMP_PRIVATE_ROOT). Its absence changes no figure of the table, it only
+    removes the reconciliation block, whose result is archived in
+    docs/PITFALLS.md, pitfall P2.
+    """
     priv = settings.private_root()
     if not priv:
         return None
@@ -141,13 +144,14 @@ def pnl(p_in, p_out):
 
 
 def boot_ci_mean_cluster(byclu, B=4000, seed=777):
-    """IC95 de la moyenne, bootstrap au niveau cluster : on retire des clusters
-    entiers et pas des tokens, deux tokens du meme lancement n'etant pas des
-    observations independantes. L'estimateur re-echantillonne est la moyenne
-    pooled des tokens des clusters tires, coherent avec le point estime pooled
-    de T1 ; pumplib.cluster_bootstrap_mean_ci re-echantillonne la moyenne des
-    moyennes de grappe, coherent avec le point estime de m5. Deux estimateurs,
-    deux moteurs, volontairement non fusionnes (en-tete de statlib.py)."""
+    """95 % interval of the mean, bootstrapped at the cluster level: whole
+    clusters are drawn rather than tokens, two tokens of one launch not being
+    independent observations. The statistic resampled is the pooled mean of the
+    tokens of the drawn clusters, consistent with T1's pooled point estimate;
+    pumplib.cluster_bootstrap_mean_ci resamples the mean of the cluster means,
+    consistent with m5's point estimate. Two estimators, two engines,
+    deliberately not merged (statlib.py header).
+    """
     import random
     ks = list(byclu.keys())
     if len(ks) < 3:

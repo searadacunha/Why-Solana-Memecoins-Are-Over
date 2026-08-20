@@ -1,36 +1,37 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tableau 5 : au-dela des 20 minutes, +1 h, +2 h, +4 h, +24 h.
+Table 5: beyond the 20 minutes, at +1 h, +2 h, +4 h and +24 h.
 
-Les captures `floor_capture` s'arretent a 20 minutes, le tableau 4 ne peut donc
-pas repondre a << et si j'attendais plus longtemps ? >>. Cette table leve la
-limite avec les bougies horaires GeckoTerminal (1000 bougies = 41 jours, ce qui
-couvre toute la fenetre d'observation).
+The `floor_capture` captures stop at 20 minutes, so table 4 cannot answer "what
+if I had waited longer?". This table lifts the limit with GeckoTerminal's hourly
+candles: 1000 candles is 41 days, which covers the whole observation window.
 
-Achat : a la fin de la capture (dernier swap enregistre), au prix robuste des
-120 dernieres secondes (mediane des swaps >= 0.3 SOL). Vente : au `close` de la
-bougie horaire la plus proche de l'echeance, tolerance 90 minutes.
+Buy: at the end of the capture, meaning the last recorded swap, at the robust
+price of the final 120 seconds, the median of the swaps of at least 0.3 SOL.
+Sell: at the `close` of the hourly candle nearest the horizon, with a tolerance
+of 90 minutes.
 
-Piege d'unites, la raison d'etre de ce script : les swaps de `floor_capture`
-sont libelles en **SOL par token**, GeckoTerminal renvoie des **USD par token**.
-Diviser l'un par l'autre sans conversion gonfle tous les multiples d'un facteur
-egal au prix du SOL, soit ~73x sur la fenetre. Le fichier
-`analysis_supervision/horizon.json` du 29/07 affirme d'ailleurs en commentaire
-que << les prix GT et les prix de swap sont dans la meme unite (SOL/token) >> :
-c'est faux. Ici :
-  - le prix d'entree en SOL est converti en USD via la serie horaire SOL/USDC
-    (data/sol_usd_hourly.json) ;
-  - la conversion est ensuite verifiee contre les donnees elles-memes : pour
-    chaque token on compare l'ouverture de sa premiere bougie GT (USD) au prix
-    robuste de ses premieres secondes de swaps (SOL). Le rapport doit reproduire
-    le prix du SOL. Le controle est imprime a chaque execution.
+The unit trap, which is this script's reason to exist: the swaps of
+`floor_capture` are denominated in SOL per token, and GeckoTerminal returns USD
+per token. Dividing one by the other without converting inflates every multiple
+by a factor equal to the price of SOL, about 73x over this window. The file
+`analysis_supervision/horizon.json` of 29/07 states in a comment that "the GT
+prices and the swap prices are in the same unit (SOL/token)", and that is false.
+Here:
+  - the entry price in SOL is converted to USD through the hourly SOL/USDC
+    series (data/sol_usd_hourly.json);
+  - the conversion is then checked against the data itself: for each token, the
+    open of its first GT candle (USD) is compared with the robust price of its
+    first seconds of swaps (SOL). The ratio must reproduce the price of SOL.
+    That check is printed on every run.
 
-Prerequis : `python3 code/fetch_sol_usd.py` puis `python3 code/fetch_gt_ohlcv.py`.
+Prerequisites: `python3 code/fetch_sol_usd.py`, then
+`python3 code/fetch_gt_ohlcv.py`.
 
-Usage : python3 code/t5_horizon_1h_24h.py
-Sorties : docs/tables/T5_horizon_1h_24h.md
-          data/cout_acheteur/t5_horizon_1h_24h.json
+Usage: python3 code/t5_horizon_1h_24h.py
+Outputs: docs/tables/T5_horizon_1h_24h.md
+         data/cout_acheteur/t5_horizon_1h_24h.json
 """
 import json
 import os
@@ -47,7 +48,7 @@ HORIZONS = [1, 2, 4, 24]
 
 
 def candle_at(series, target, tol=TOL):
-    """(close, high, volume) de la bougie la plus proche de `target`, ou None."""
+    """(close, high, volume) of the candle nearest `target`, or None."""
     cand = [(abs(c[0] - target), c) for c in series if abs(c[0] - target) <= tol]
     if not cand:
         return None
