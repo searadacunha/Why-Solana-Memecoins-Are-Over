@@ -112,8 +112,8 @@ def read_list(path: Optional[str]) -> list[str]:
     if not path or not os.path.exists(path):
         return []
     with open(path, encoding="utf-8") as f:
-        return [l.strip().lower() for l in f
-                if l.strip() and not l.startswith("#")]
+        return [line.strip().lower() for line in f
+                if line.strip() and not line.startswith("#")]
 
 
 def tracked_files(root: str, max_mb: float) -> Iterator[tuple[str, str, int]]:

@@ -43,7 +43,7 @@ def decs(x):
 
 def find_splits(funding):
     rows = sorted([(w, e["sol"], e["ts"], e.get("source_probable"))
-                   for w, l in funding.items() for e in l], key=lambda r: r[1])
+                   for w, entries in funding.items() for e in entries], key=lambda r: r[1])
     out, used = [], set()
     for i, (w, amt, ts, src) in enumerate(rows):
         if i in used:
