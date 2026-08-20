@@ -40,8 +40,8 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DATA, dump_json, load_socle, write_table  # noqa: E402
-from statlib import wilson  # noqa: E402
+from common import DATA, dump_json, load_socle, write_table
+from statlib import wilson
 
 PRIX = [16000, 20000, 23000, 25000, 30000, 40000, 47000, 50000,
         65000, 85000, 100000, 120000, 150000]
