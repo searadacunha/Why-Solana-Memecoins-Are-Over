@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-La signature d'ouverture de courbe sur les gros tokens (ATH >= 500 k$).
+The curve-opening signature on the large tokens, those with an all-time high of
+500 k$ or more.
 
-Question : quand un token pump.fun atteint une capitalisation elevee, sa courbe
-a-t-elle ete rachetee en bloc dans le slot de creation ?
+The question: when a pump.fun token reaches a high market cap, was its curve
+bought back as a block in the creation slot?
 
-Ce script ne fait AUCUN appel reseau : il recompte sur l'echantillon gele
-data/v09_signature_gros_tokens.json (n = 70, fige le 2026-07-29). La collecte
-on-chain qui l'a produit lit les premieres signatures de la bonding-curve PDA
-de chaque mint et mesure le SOL engage dans les 30 premieres secondes.
+This script makes NO network call. It recounts over the frozen sample
+data/v09_signature_gros_tokens.json (n = 70, frozen on 2026-07-29). The on-chain
+collection that produced it reads the first signatures of each mint's
+bonding-curve PDA and measures the SOL committed in the first 30 seconds.
 
-Le script imprime aussi les deux controles qui limitent la portee du chiffre :
-l'echantillon n'est pas aleatoire, et les tokens SANS la signature ont un ATH
-median PLUS ELEVE que ceux qui l'ont.
+The script also prints the two controls that limit how far the figure reaches:
+the sample is not random, and the tokens WITHOUT the signature have a HIGHER
+median high than the ones with it.
 
   python3 code/f_signature_gros_tokens.py
 """
@@ -28,8 +29,9 @@ SRC = os.path.join(ROOT, "data", "v09_signature_gros_tokens.json")
 
 
 def wilson(k, n, z=1.96):
-    """IC95 de Wilson en pourcentage. L'intervalle est defini une seule fois
-    dans statlib.wilson ; on ne fait ici que le passer en pourcentage."""
+    """Wilson 95 % interval, as a percentage. The interval itself is defined once
+    in statlib.wilson; all this does is scale it.
+    """
     from statlib import wilson as _wilson_frac
     lo, hi = _wilson_frac(k, n, z)
     if lo is None:
@@ -55,7 +57,7 @@ def main():
     print(f"Courbe rachetee (>= 60 SOL) DANS LE SLOT DE CREATION : {k}/{n} = "
           f"{100*k/n:.1f} %  IC95 Wilson [{lo:.1f} ; {hi:.1f}]")
 
-    # Le fait le plus net : les deux definitions coincident exactement.
+    # The cleanest fact here: the two definitions coincide exactly.
     accord = sum(1 for r in rows if r["full_snipe"] == r["snipe_in_first_slot"])
     print(f"Accord 'rachat en 30 s' vs 'rachat dans le slot de creation' : {accord}/{n}")
     print("  -> quand la courbe est rachetee dans les 30 s, elle l'est entierement")

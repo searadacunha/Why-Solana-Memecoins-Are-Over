@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recupere, pour chaque capture floor_capture exploitable, la serie OHLCV
-HORAIRE GeckoTerminal (limit=1000 bougies = 41 jours) du pool du token.
+"""Fetch, for every usable floor_capture capture, the HOURLY GeckoTerminal OHLCV
+series of the token's pool (limit=1000 candles, which is 41 days).
 
-Pourquoi re-fetcher au lieu de reutiliser analysis_supervision/horizon.json :
-ce fichier marque 97/193 tokens << no_ohlcv >>, mais un sondage manuel montre
-que plusieurs de ces mints ONT des bougies (ex. 9f9k4eap : 50 bougies,
-J8QqdEur : 21). Le fetch d'origine abandonnait apres 4 essais sur HTTP 429 :
-ses << no_ohlcv >> melangent absence de volume et echec reseau. Toute
-statistique << X % de tokens sans volume >> batie dessus serait fausse.
+Why re-fetch instead of reusing analysis_supervision/horizon.json: that file
+marks 97 of 193 tokens "no_ohlcv", but a manual probe shows several of those
+mints DO have candles (9f9k4eap has 50, J8QqdEur has 21). The original fetch
+gave up after 4 attempts on HTTP 429, so its "no_ohlcv" conflates an absence of
+volume with a network failure. Any statistic of the form "X % of tokens with no
+volume" built on it would be false.
 
-Strategie d'appel (economie de quota) :
-  1. on essaie directement le pool inscrit dans la capture (`pool`) ;
-     controle prealable : sur les 193 tokens de horizon.json, ce pool est
-     identique au pool que GeckoTerminal designe dans 188 cas sur 193.
-  2. seulement s'il ne rend AUCUNE bougie, on interroge
-     /tokens/{mint}/pools et on retente avec le pool le plus profond.
-Statuts finaux distingues :
-     ok           : bougies horaires presentes
-     zero_bougie  : pool(s) connu(s) mais aucune bougie indexee
-     pool_absent  : GeckoTerminal ne connait aucun pool pour ce mint
-     echec_reseau : abandon (sera retente au prochain lancement)
+Call strategy, to spend as little quota as possible:
+  1. try the pool recorded in the capture (`pool`) directly. Checked
+     beforehand: over the 193 tokens of horizon.json, that pool is the same as
+     the one GeckoTerminal designates in 188 cases out of 193.
+  2. only if it returns NO candle at all, query /tokens/{mint}/pools and retry
+     with the deepest pool.
 
-Reprise automatique. Sortie : data/cout_acheteur/gt_raw.json
+The final statuses are kept distinct:
+     ok           : hourly candles are present
+     zero_bougie  : the pool or pools are known, but no candle is indexed
+     pool_absent  : GeckoTerminal knows no pool for this mint
+     echec_reseau : gave up, and it will be retried on the next run
+
+Resumes on its own. Output: data/cout_acheteur/gt_raw.json
 """
 import json
 import os
