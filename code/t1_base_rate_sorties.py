@@ -53,11 +53,11 @@ import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import settings  # noqa: E402
-from common import (DATA, DEPTH_MIN_SOL, FEE_IN, FEE_OUT, MIN_SOL_PRICE,  # noqa: E402
+import settings
+from common import (DATA, DEPTH_MIN_SOL, FEE_IN, FEE_OUT, MIN_SOL_PRICE,
                     POS_SOL, boot_ci_median_tokens, clusters, load_captures,
                     source_label, write_table, dump_json)
-from statlib import median  # noqa: E402
+from statlib import median
 
 BUCKET = 30
 FILL_H = 120

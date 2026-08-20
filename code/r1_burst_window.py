@@ -25,7 +25,7 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import r1lib as R  # noqa: E402
+import r1lib as R
 
 SEUIL_FIN = 0.01  # SOL : au-dela, le destinataire peut effectivement acheter
 

@@ -41,11 +41,11 @@ import statistics as st
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from t1_base_rate_sorties import (BUCKET, SAFE_MARGIN, Book, boot_ci_mean_cluster,  # noqa: E402
+from t1_base_rate_sorties import (BUCKET, SAFE_MARGIN, Book, boot_ci_mean_cluster,
                                   pnl)
-from common import (DATA, POS_SOL, boot_ci_median_tokens, clusters,  # noqa: E402
+from common import (DATA, POS_SOL, boot_ci_median_tokens, clusters,
                     load_captures, source_label, write_table, dump_json)
-from statlib import median, quantile  # noqa: E402
+from statlib import median, quantile
 
 RETRACES = [0.20, 0.30, 0.40, 0.50, 0.60, 0.70]
 MIN_ENTRY_LAG = 120        # on ne peut de toute facon pas acheter plus tot

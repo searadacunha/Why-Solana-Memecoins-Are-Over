@@ -50,10 +50,10 @@ import urllib.request
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import pumplib as P  # noqa: E402
-import settings  # noqa: E402
-from lib_verif import cached, rpc  # noqa: E402
-from rpc_client import walk_sigs  # noqa: E402
+import pumplib as P
+import settings
+from lib_verif import cached, rpc
+from rpc_client import walk_sigs
 
 LAMPORTS = 1e9
 WINDOW_LO = 1727740800   # 2024-10-01 00:00 UTC, inclusive

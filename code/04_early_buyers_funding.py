@@ -23,9 +23,9 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import rpc_client  # noqa: E402
-import settings  # noqa: E402
-from splitlib import find_splits  # noqa: E402
+import rpc_client
+import settings
+from splitlib import find_splits
 
 LAMPORTS = 1_000_000_000
 # Bande d'entrées plus large ici : on ne connaît pas le calibre de l'époque. Ce filtre local
