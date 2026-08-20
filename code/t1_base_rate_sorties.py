@@ -11,7 +11,7 @@ accord affiche en fin de sortie. Seule entree, en lecture seule :
 creation du token.
 
 Conventions du socle canonique (analysis_canonical/canonical/merge.py, resume
-dans docs/CONVENTIONS.md) :
+dans docs/METHODOLOGY.md) :
 
   Prix : swap = sol / tokens, aucun champ pre-calcule ; prix robuste = mediane
     des swaps >= 0.3 SOL sur [t, t+30), None se propage sans interpolation.

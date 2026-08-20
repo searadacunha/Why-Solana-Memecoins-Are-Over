@@ -31,9 +31,10 @@ Transformations appliquees, exhaustivement :
   3. Champ `sig` (signature de transaction) conserve pour les seuls swaps a
      t <= created + 30 s, ceux qui servent d'ancre de verification on-chain.
      Supprime au-dela (~500 000 signatures inutiles).
-  4. `sol` arrondi a 6 chiffres significatifs, `tokens` et `price` a 8. Effet
-     mesure sur les resultats : voir m5_roundtrip_policies.py --check-rounding
-     (ecart max cellule a cellule < 1e-6 en PnL relatif).
+  4. `sol` arrondi a 6 chiffres significatifs, `tokens` et `price` a 8. L'effet
+     sur les resultats avait ete mesure a moins de 1e-6 d'ecart cellule a cellule
+     en PnL relatif. Le script de ce controle n'est pas dans le dossier : le
+     chiffre est rapporte, il n'est pas reproductible ici.
   5. Aucune anonymisation d'adresse. Mints, wallets et signatures sont des
      donnees publiques Solana, les masquer rendrait le dossier inverifiable.
      Choix assume : le dossier ne parle donc que d'adresses, jamais de
