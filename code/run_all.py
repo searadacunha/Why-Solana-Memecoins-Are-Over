@@ -18,6 +18,7 @@ Scripts needing the network or the unpublished corpus are listed but skipped;
 their committed outputs are what the offline scripts consume.
 """
 import argparse
+import ast
 import filecmp
 import glob
 import os
@@ -108,7 +109,7 @@ ARTEFACT_FILES = [
 ]
 
 
-def expl_cache_ready():
+def expl_cache_ready() -> bool:
     """True when data/cache/ already holds the deposit-ledger fetches.
 
     expl_ledger.py then re-runs with no key and no network -- but still with
@@ -119,7 +120,7 @@ def expl_cache_ready():
     return bool(glob.glob(os.path.join(settings.CACHE, "expl_sigs_*.json")))
 
 
-def snapshot(dst):
+def snapshot(dst: str) -> None:
     for d in ARTEFACT_DIRS:
         if os.path.isdir(d):
             shutil.copytree(d, os.path.join(dst, os.path.basename(d)),
@@ -131,8 +132,8 @@ def snapshot(dst):
             shutil.copy2(f, dstf)
 
 
-def compare(snap):
-    changed = []
+def compare(snap: str) -> list[str]:
+    changed: list[str] = []
     for d in ARTEFACT_DIRS:
         base = os.path.join(snap, os.path.basename(d))
         if not os.path.isdir(base):
@@ -155,19 +156,18 @@ def compare(snap):
 OPTIONAL = {"matplotlib": "figures only (code/f_*.py); no measurement uses it"}
 
 
-def deps():
+def deps() -> int:
     """Confirm no unexpected third-party import anywhere in code/."""
-    import ast
     local = {os.path.splitext(f)[0] for f in os.listdir(settings.CODE)
              if f.endswith(".py")}
     stdlib = set(getattr(sys, "stdlib_module_names", ())) or set()
-    third = {}
+    third: dict[str, list[str]] = {}
     for f in sorted(os.listdir(settings.CODE)):
         if not f.endswith(".py"):
             continue
         tree = ast.parse(open(os.path.join(settings.CODE, f)).read())
         for node in ast.walk(tree):
-            names = []
+            names: list[str] = []
             if isinstance(node, ast.Import):
                 names = [a.name.split(".")[0] for a in node.names]
             elif isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
@@ -189,7 +189,7 @@ def deps():
     return 0
 
 
-def main():
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--deps", action="store_true")
@@ -220,7 +220,9 @@ def main():
     if snap:
         snapshot(snap)
 
-    ran, skipped, failed = [], [], []
+    ran: list[tuple[str, float]] = []
+    skipped: list[tuple[str, str]] = []
+    failed: list[tuple[str, list[str]]] = []
     for name, need, _desc in PLAN:
         if need == "priv" and not has_priv:
             skipped.append((name, "needs $PUMP_PRIVATE_ROOT"))
