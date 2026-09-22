@@ -2,21 +2,23 @@
 
 > **Seven-day measurement of pump.fun fast-graduation launches on Solana.**
 >
-> This document reports three empirical results:
+> This document reports three empirical findings:
 >
 > 1. **Launch mechanics:** the bonding curve is acquired inside the token's creation slot, before an external buyer can transact.
-> 2. **Operator clusters:** repeated buyer structures exist, but graph connectivity is heavily distorted by shared infrastructure.
-> 3. **Buyer economics:** after the initial move, systematic entry and exit policies produce negative results across the tested sample.
+> 2. **Buyer structures:** repeated early-buyer structures exist, but graph connectivity is heavily distorted by shared infrastructure.
+> 3. **Buyer economics:** after the initial repricing, the tested entry and exit policies produce negative results across the measured sample.
 >
-> The analysis deliberately separates what is **measured** from what is **inferred**, and what is **not established**.
+> Throughout the analysis, a strict distinction is maintained between what is **measured**, what is **inferred**, and what is **not established**.
 
 ---
 
-## Executive Summary
+# Executive Summary
 
-### 1. Launch mechanics
+## 1. Launch Mechanics
 
-Across **42 launches reconstructed transaction by transaction**, the bonding curve is bought inside the **creation slot itself**.
+Across **42 launches reconstructed transaction by transaction**, the bonding curve is acquired inside the **creation slot itself**.
+
+Key measurements:
 
 * Median capital committed: **85.2 SOL**
 * Median supply acquired: **79.0%**
@@ -24,60 +26,100 @@ Across **42 launches reconstructed transaction by transaction**, the bonding cur
 * Median transfer of the acquired position: **t+17.5 s**
 * Median market cap:
 
-  * Launch: **~$2,158**
-  * First point at which an external buyer can transact: **~$53,985**
-  * Increase before the market opens: **×25.0**
+  * launch: **~$2,158**
+  * first point at which an external buyer can transact: **~$53,985**
+  * increase before external access: **×25.0**
 
-On a separate frozen sample of **70 tokens that reached ≥$500k ATH**, **58/70 (82.9%)** carry the same creation-slot signature, with a Wilson 95% CI of **72.4–89.9%**.
+A separate frozen sample of **70 tokens that reached ≥$500k ATH** contains the same creation-slot signature in:
 
-This does **not** establish that the signature causes tokens to succeed. The ≥$500k population is selected on outcome, and the tokens without the signature actually reached a higher median ATH in that sample.
+**58/70 = 82.9%**
 
-### 2. Operator clusters
+with a Wilson 95% CI of **72.4–89.9%**.
 
-A token–token graph built from shared early buyers initially produces a giant component containing **180/282 tokens (63.8%)**.
+This does **not** establish that the signature causes tokens to succeed.
 
-That structure is largely explained by a small number of highly reused infrastructure addresses.
+The ≥$500k population is selected on outcome, and the tokens without the signature actually reached a higher median ATH in that selected sample.
+
+---
+
+## 2. Buyer Structures and Operator Clusters
+
+A token–token graph constructed from shared early buyers initially produces a giant component containing:
+
+**180/282 tokens = 63.8%**
+
+That connectivity is substantially explained by a small number of highly reused infrastructure addresses.
 
 Removing nine such addresses reduces the giant component to:
 
-**180 → 57 tokens (63.8% → 20.2%)**
+**57/282 = 20.2%**
+
+or:
+
+**63.8% → 20.2%**
 
 After cleaning, six disjoint clusters remain, covering:
 
-**76/282 tokens = 27.0%**
+**76/282 = 27.0%**
 
-Their intra-cluster wallet reuse ranges from **0.904 to 1.000**, compared with a base rate of **0.0191**.
+Their intra-cluster wallet reuse ranges from:
 
-However, the graph does **not** provide predictive power over subsequent token performance. Operator identity explains the tested outcome at **p = 1.000**, and the identified clusters perform below the market baseline.
+**0.904–1.000**
 
-### 3. Cost to a buyer
+against a base rate of:
 
-At first external visibility, the move is already substantially advanced:
+**0.0191**
 
-* **21.3%** of tokens have already reached their ATH.
-* **43.8%** reach ATH within 60 seconds.
+The graph does not provide predictive power over subsequent token performance in the tested sample.
+
+Operator identity explains the tested outcome at:
+
+**p = 1.000**
+
+and the identified clusters perform below the market baseline.
+
+---
+
+## 3. Cost to a Buyer
+
+By the time the launch becomes externally visible, the initial move is already substantially advanced:
+
+* **21.3%** of tokens have already reached their ATH;
+* **43.8%** reach ATH within 60 seconds;
 * **50.0%** reach ATH within 120 seconds.
 
 Across **15 exit policies** applied to **196 tokens / 20 clusters**:
 
-* **15/15** have negative mean returns.
-* **12/15** have negative median returns.
-* **0/15** have a cluster-bootstrap 95% CI above zero.
-* Mean return across policies: **−11.3%** per round trip.
+* **15/15** have negative mean returns;
+* **12/15** have negative median returns;
+* **0/15** have a cluster-bootstrap 95% CI above zero;
+* mean return across policies: **−11.3%** per round trip.
 
-## At longer horizons, the median multiple falls to **0.20× at +24h**, or **0.03×** when tokens without a tradable candle are counted as zero.
+At longer horizons, the median multiple falls to:
+
+**0.20× at +24h**
+
+or:
+
+**0.03×**
+
+when tokens without a tradable candle are counted as zero.
+
+---
 
 # 0. Corpus and Scope
 
-## 0.1 Capture window
+## 0.1 Capture Window
 
 **Window:** 2026-06-27 → 2026-07-04
 **Duration:** 7 UTC days
-**Scope:** pump.fun launches classified as *fast-grad*, i.e. rapid graduation to the AMM.
+**Scope:** pump.fun launches classified as *fast-grad*, meaning rapid graduation to the AMM.
 
-All addresses and transaction signatures referenced here are public technical identifiers verifiable on a Solana explorer.
+All addresses and transaction signatures referenced here are public technical identifiers that can be independently verified on a Solana explorer.
 
 This document makes **no attribution of identity, intent, or person**. It describes observable market microstructure.
+
+---
 
 ## 0.2 Corpus
 
@@ -88,12 +130,14 @@ This document makes **no attribution of identity, intent, or person**. It descri
 | Captures with identified early buyers             |         282 | idem                                  |
 | Raw swaps                                         | **511,508** | idem                                  |
 | Distinct addresses                                |      91,353 | idem                                  |
-| Distinct sniper wallets                           |       1,616 |                                       |
-| Sniper-wallet occurrences                         |       2,894 |                                       |
+| Distinct sniper wallets                           |       1,616 | —                                     |
+| Sniper-wallet occurrences                         |       2,894 | —                                     |
 | Launches reconstructed transaction-by-transaction |      **42** | `data/v05`, `v06`, `v07`              |
 | Tokens ≥$500k re-audited on-chain                 |      **70** | `data/v09_signature_gros_tokens.json` |
 
-## 0.3 Published-count discrepancy
+---
+
+## 0.3 Published-Count Discrepancy
 
 A separate output, `docs/out/m1_corpus.json`, reports:
 
@@ -105,42 +149,52 @@ The raw recount used in this document gives:
 * **511,508 swaps**
 * **91,353 addresses**
 
-The difference is approximately 7%.
+The difference is approximately **7%**.
 
-`m1` applies an additional filter whose definition is not documented in its header. Both figures remain published rather than silently reconciled.
+`m1` applies an additional filter whose definition is not documented in its header.
 
-Importantly, **no result in this document depends on the disputed total**; the count is used only to describe corpus size.
+Both figures remain published rather than being silently reconciled.
 
-## 0.4 Sensor coverage and selection
+Importantly:
+
+> **No result in this document depends on the disputed total.**
+
+The count is used only to describe corpus size.
+
+---
+
+## 0.4 Sensor Coverage and Selection
 
 The capture system does not observe the complete fast-grad market.
 
-`floor_capture` observes:
+Within its own window, `floor_capture` observes:
 
 **282 / 749 = 37.7%**
 
-of fast-grad tokens in its own window.
+of fast-grad tokens.
 
 Captured tokens are also more likely to be winners:
 
 * ATH ≥$200k among captured tokens: **33.7%**
 * ATH ≥$200k among non-captured tokens: **25.5%**
 
-Combined with the cluster-attribution rate of **18.1%**, the effective end-to-end coverage is estimated at:
+Combined with the cluster-attribution rate of **18.1%**, effective end-to-end coverage is estimated at:
 
 **6.8%**
 
-The corpus is therefore **not representative of the full flow**. It is biased toward launches that entered the capture pipeline successfully, and all results must be interpreted accordingly.
+The corpus is therefore **not representative of the full flow**.
+
+It is biased toward launches that entered the capture pipeline successfully, and all results must be interpreted within that sampling frame.
 
 ---
 
 # 1. Reconstructing the Launch Mechanism
 
-## 1.1 The creation-slot event
+## 1.1 The Creation-Slot Event
 
-On the 42 launches reconstructed transaction by transaction, the bonding curve is acquired essentially in full **inside the token's creation slot**, before an external buyer can transact.
+Across the 42 transaction-level reconstructions, the bonding curve is acquired essentially in full **inside the token's creation slot**, before an external buyer can transact.
 
-### Table A — Creation-block measurements
+### Table A — Creation-Block Measurements
 
 | Measurement                     |                 Median |        Q1–Q3 |      Min–Max |
 | ------------------------------- | ---------------------: | -----------: | -----------: |
@@ -156,13 +210,17 @@ On the 42 launches reconstructed transaction by transaction, the bonding curve i
 
 Two measurements are particularly important.
 
-### No pre-block purchase
+### No Pre-Block Purchase
 
-There are **zero curve purchases before the creation block in all 42 launches**.
+There are:
 
-This means the mechanism is not simply a matter of executing faster than competitors. There is no measurable purchase window between token creation and the observed curve acquisition.
+**zero curve purchases before the creation block in all 42 launches.**
 
-### No intra-block gap
+This means the measured mechanism is not simply a matter of executing faster than competitors.
+
+There is no observed purchase window between token creation and the measured curve acquisition.
+
+### No Intra-Block Gap
 
 The core purchases occur at:
 
@@ -170,11 +228,13 @@ The core purchases occur at:
 
 on all 42 launches.
 
-The four or five purchases therefore occupy the same Solana slot. A conventional external observer cannot insert a transaction between those observed purchases merely by reducing monitoring latency.
+The four or five purchases therefore occupy the same Solana slot.
+
+A conventional external observer cannot insert a transaction between those observed purchases merely by reducing monitoring latency.
 
 ---
 
-## 1.2 The price staircase
+# 1.2 The Price Staircase
 
 The measured market-cap progression is:
 
@@ -189,7 +249,9 @@ The median ratio between AMM-open market cap and creation-block execution is:
 
 **×6.54**
 
-with **40/42 launches at ≥×3**.
+with:
+
+**40/42 launches at ≥×3**.
 
 An independent measurement on the 293 captures produces a median first externally observable market cap equivalent to:
 
@@ -197,15 +259,17 @@ An independent measurement on the 293 captures produces a median first externall
 
 relative to the 27.96 SOL launch constant.
 
-The same measurement estimates that **90% of the launch-to-peak log-run has already been consumed at that point**, in median terms. The two measurements differ by only 0.2× despite using separate code paths.
+The same measurement estimates that **90% of the launch-to-peak log-run has already been consumed at that point**, in median terms.
+
+The two measurements differ by only 0.2× despite using separate code paths.
 
 ### Interpretation
 
-The observable economic effect is therefore not simply:
+The measured effect is therefore more precise than simply saying:
 
 > “The actors bought early.”
 
-The stronger measured statement is:
+The stronger empirical statement is:
 
 > **The observable external market opens after a substantial portion of the launch repricing has already occurred.**
 
@@ -227,7 +291,7 @@ The five tokens have **five distinct creators**.
 
 None of the creators is reused.
 
-This is important because it rules out the simple interpretation that the buyer clusters are the creators of the tokens they purchase.
+This rules out the simple interpretation that the buyer clusters are simply the creators of the tokens they purchase.
 
 ---
 
@@ -235,13 +299,13 @@ This is important because it rules out the simple interpretation that the buyer 
 
 During verification, five launches associated with C2 exhibited values identical to the fourth decimal:
 
-* same four ticket sizes
-* same token quantity
-* same supply share
+* same four ticket sizes;
+* same token quantity;
+* same supply share.
 
-At first glance, such exact repetition is a plausible data-duplication failure.
+At first glance, exact repetition could indicate duplicated data.
 
-The duplication hypothesis was tested.
+That hypothesis was tested.
 
 | Check                                   | Result           | Interpretation                          |
 | --------------------------------------- | ---------------- | --------------------------------------- |
@@ -251,13 +315,13 @@ The duplication hypothesis was tested.
 | Dev-buy in tokens                       | Identical        | Explains identical starting curve state |
 | Distinct `tokens_bloc` values across 42 | 35/42            | Repetition is local                     |
 
-The explanation is a deterministic execution template rather than duplicated data.
+The evidence is consistent with a deterministic execution template rather than duplicated records.
 
 The creator dev-buy establishes an identical curve state, after which a fixed ticket ladder expressed in token quantities produces effectively identical SOL costs.
 
 C2's inter-launch coefficient of variation is:
 
-**0.0075**.
+**0.0075**
 
 ---
 
@@ -274,7 +338,7 @@ Across the 42 reconstructed launches:
 * Range: **0–80 seconds**
 * Second-tier collectors: **41**
 
-The dominant pattern is therefore:
+The dominant observed pattern is therefore:
 
 **purchase → transfer → secondary liquidation**
 
@@ -284,9 +348,9 @@ rather than:
 
 The forensic track measures approximately **119–194 liquidation tranches**, depending on cluster, with individual tranches of approximately 4 SOL spaced around 1.5 seconds apart.
 
-These counts are aggregated per cluster rather than per launch and should therefore be treated as an **order of magnitude**, not as a precise per-launch measurement.
+These counts are aggregated per cluster rather than per launch and should therefore be interpreted as an **order of magnitude**, not as precise per-launch measurements.
 
-### Wallet age
+### Wallet Age
 
 | Population        |   n | Median age at first snipe |
 | ----------------- | --: | ------------------------: |
@@ -319,15 +383,17 @@ A separate frozen population of **70 tokens with ATH ≥$500k** was audited inde
 
 The 70/70 agreement is notable:
 
-> Every token whose curve buyback occurs within the tested short window also has that buyback inside the creation slot.
+> **Every token whose curve buyback occurs within the tested short window also has that buyback inside the creation slot.**
 
-### Three critical limitations
+### Three Critical Limitations
 
 #### 1. The sample is not random
 
 The 70 tokens are the first 70 qualifying tokens in the source file.
 
-The confidence interval quantifies sampling error **within this selected population**. It does not correct for selection bias.
+The confidence interval quantifies sampling error **within this selected population**.
+
+It does not correct for selection bias.
 
 #### 2. The signature does not predict price trajectory
 
@@ -372,11 +438,13 @@ The cause was identified:
 
 `v06` explicitly documents this correction and is therefore the authoritative implementation.
 
-The final document uses the `v06` value of **$53,985**.
+The final document uses the `v06` value:
+
+**$53,985**
 
 This reconciliation illustrates an important principle:
 
-> A reproduced number is not necessarily a validated number. The measurement definition itself must be audited.
+> **A reproduced number is not necessarily a validated number. The measurement definition itself must be audited.**
 
 ---
 
@@ -394,11 +462,11 @@ belonged to one giant component.
 
 A naive interpretation would be that a single network spans almost two thirds of the observed market.
 
-That interpretation is incorrect.
+That interpretation is not supported after infrastructure controls.
 
 A small number of highly reused addresses act as shared infrastructure and bridge otherwise unrelated tokens.
 
-### Infrastructure ubiquity
+### Infrastructure Ubiquity
 
 | Address | Tokens sniped |     Share |
 | ------- | ------------: | --------: |
@@ -423,7 +491,7 @@ Two classification errors were also corrected:
 * W1 had been classified as a single-mint volume bot, but its last 500 transactions span **45 distinct mints**, with a dominant mint representing only 4.0%.
 * `GeBJSHK4…` had been classified as infrastructure even though it is a creator of **51 tokens**, buying its own tokens.
 
-The second error demonstrates the cost of an infrastructure filter that is too broad: it can remove genuine structure along with noise.
+The second error demonstrates the cost of an infrastructure filter that is too broad: it can remove genuine structure together with noise.
 
 ---
 
@@ -444,14 +512,14 @@ Comparison base rate:
 
 **0.0191**
 
-The strongest structural signals are:
+The strongest structural measurements are:
 
-* intra-cluster reuse of **0.904–1.000**
-* base rate of **0.0191**
-* C1 core-pair lift of approximately **×20–×22**
-* no shared token between the six clusters
-* no shared address between the six clusters
-* persistence of the four quad clusters beyond the capture window
+* intra-cluster reuse of **0.904–1.000**;
+* base rate of **0.0191**;
+* C1 core-pair lift of approximately **×20–×22**;
+* no shared token between the six clusters;
+* no shared address between the six clusters;
+* persistence of the four quad clusters beyond the capture window.
 
 The six clusters cover:
 
@@ -459,7 +527,11 @@ The six clusters cover:
 
 of captured tokens.
 
-The remainder is highly fragmented: **1,062/1,183 creators (90%)** launched only one token in the mapped population.
+The remainder is highly fragmented:
+
+**1,062/1,183 creators (90%)**
+
+launched only one token in the mapped population.
 
 ---
 
@@ -471,11 +543,11 @@ Across the 42 transaction-level launches:
 
 The C1–C4 buying clusters have no connection to the wallets creating the tokens they purchase.
 
-This refutes the initial hypothesis that these clusters are simply token creators buying their own launches.
+This rules out the simple interpretation that these clusters are simply token creators buying their own launches.
 
 The measured structure is instead consistent with **demand-side actors buying tokens created by others**.
 
-### “Bundle” is not an accurate technical description
+## “Bundle” Is Not an Accurate Technical Description
 
 The dominant signer represents exactly **1/n** of the observed transactions.
 
@@ -515,7 +587,7 @@ Two clusters sharing:
 
 nevertheless execute with the same byte-level characteristics.
 
-The evidence therefore supports the existence of a **shared or sold software tool** more directly than it supports an attribution to the same human operator.
+The evidence therefore supports the existence of a **shared or sold software tool** more directly than it supports attribution to the same human operator.
 
 ---
 
@@ -525,7 +597,7 @@ A co-occurrence graph can generate apparently meaningful clusters even from nois
 
 Three adversarial tests were therefore applied.
 
-## Attack A — Time-aware null model
+## Attack A — Time-Aware Null Model
 
 The initial Chung–Lu degree-preserving null ignored temporal co-presence.
 
@@ -533,7 +605,7 @@ A time-preserving null instead generated:
 
 * **1,502 false-positive pairs / 6,024 = 25%**
 * null giant component: **564 wallets**
-* observed giant component: 668 wallets
+* observed giant component: **668 wallets**
 
 Only the perfect quad structures survived:
 
@@ -542,7 +614,9 @@ Only the perfect quad structures survived:
 
 The six clusters reported above are therefore the survivors of the stronger temporal null test.
 
-## Attack B — Operator identity
+---
+
+## Attack B — Operator Identity
 
 Operator identity does not explain the tested price outcome.
 
@@ -560,7 +634,9 @@ The identified clusters' tokens perform below the market baseline.
 
 Their measured economic advantage comes from the **entry → AMM-open repricing gap**, not from demonstrated ability to push the subsequent price higher.
 
-## Attack C — Selecting the “best operator”
+---
+
+## Attack C — Selecting the “Best Operator”
 
 A walk-forward rule requiring **k ≥ 8 tokens** initially produced an apparent rate of:
 
@@ -610,11 +686,11 @@ At first external detection:
 | $120k–300k              |       165 |               9.7% |     17.6% |     23.0% |     36.1 min |
 | **Whole population**    | **1,243** |          **21.3%** | **43.8%** | **50.0%** |  **2.0 min** |
 
-The central result is therefore:
+The central result is:
 
 > **21.3% of tokens have already reached their maximum by the time they become externally visible, and half reach their maximum within 120 seconds.**
 
-This measurement does not require a predictive model. It is fundamentally a **latency measurement**.
+This is fundamentally a **latency measurement**, not a predictive-model result.
 
 An earlier working note reported 67%.
 
@@ -654,14 +730,14 @@ Decisions are live-safe: a signal observed in a 30-second bucket executes on the
 | 95% cluster-bootstrap CI above zero |   **0/15** |
 | Mean of means                       | **−11.3%** |
 
-A particularly important distributional effect is visible in `tp30`:
+A particularly important distributional effect appears in `tp30`:
 
 * median: **+22.4%**
 * mean: **−16.4%**
 
-The median alone would therefore give the wrong economic impression.
+The median alone would therefore give a misleading economic impression.
 
-This is a fat-tailed distribution in which frequent small gains coexist with less frequent but substantially larger losses.
+The distribution is fat-tailed: frequent smaller gains coexist with less frequent but substantially larger losses.
 
 ---
 
@@ -726,7 +802,7 @@ Consequently:
 
 ---
 
-## Unit validation
+## Unit Validation
 
 A dedicated units control compares:
 
@@ -738,7 +814,9 @@ Median ratio:
 
 **0.850**
 
-on **n=277**.
+on:
+
+**n=277**
 
 This provides a direct sanity check on the conversion.
 
@@ -750,8 +828,8 @@ Published values:
 
 * +1h: **0.48×**
 * +24h: **0.20×**
-* Whole population at +24h: **0.03×**
-* No candle at +24h: **25%**
+* whole population at +24h: **0.03×**
+* no candle at +24h: **25%**
 
 ---
 
@@ -763,7 +841,7 @@ A natural metric is:
 
 But using that quantity as the primary target can manufacture apparent predictive relationships.
 
-## Denominator artefact
+## Denominator Artefact
 
 When the target is mechanically defined as ATH divided by entry market cap, variables correlated with entry market cap can appear predictive even if they have no independent predictive effect.
 
@@ -775,15 +853,19 @@ with:
 
 **b = 0.884**
 
-on **n=1,243**, after demeaning by day.
+on:
+
+**n=1,243**
+
+after demeaning by day.
 
 The adopted correction is to use the **residual of log(ATH) after regression on log(MC)** and prohibit `t_mult*` variables as primary targets.
 
-### Important limitation
+### Important Limitation
 
 The slope below one is a measured relationship, but its economic interpretation is **not established**.
 
-No standard error or confidence interval is reported for b.
+No standard error or confidence interval is reported for `b`.
 
 Measurement error in entry market cap can itself bias an OLS slope downward, and the band-level results do not provide clean support for a causal interpretation.
 
@@ -819,7 +901,9 @@ Finally:
 
 > **Reaching the ATH is not equivalent to selling at the ATH.**
 
-All ATH-multiple measurements are therefore **upper bounds**, not directly executable returns. The latency analysis in §3.1 is the more economically relevant measure.
+All ATH-multiple measurements are therefore **upper bounds**, not directly executable returns.
+
+The latency analysis in §3.1 is the more economically relevant measure.
 
 ---
 
@@ -850,7 +934,9 @@ The earlier reported median-ATH gap is also corrected:
 * earlier: **310k vs 48k = ×6.4**
 * reproduced: **272k vs 62k = ×4.39**
 
-The mechanism survives; the original magnitude does not.
+The mechanism survives.
+
+The original magnitude does not.
 
 ---
 
@@ -860,7 +946,7 @@ The mechanism survives; the original magnitude does not.
 
 The following findings are supported by the measurements documented above.
 
-### 1. Creation-slot acquisition
+### 1. Creation-Slot Acquisition
 
 Across 42 transaction-level reconstructions:
 
@@ -868,9 +954,9 @@ Across 42 transaction-level reconstructions:
 * there are **0 prior purchases in 42/42**;
 * the position is transferred at a median **t+17.5s**.
 
-### 2. Large repricing before external access
+### 2. Large Repricing Before External Access
 
-Median market cap rises from approximately:
+Median market cap rises approximately:
 
 **$2,158 → $53,985**
 
@@ -878,7 +964,7 @@ before an external buyer can transact.
 
 The same phenomenon is independently measured at **×25.2** on 293 captures.
 
-### 3. Signature among large tokens
+### 3. Signature Among Large Tokens
 
 Among the frozen ≥$500k population:
 
@@ -890,7 +976,7 @@ carry the creation-slot signature, with Wilson 95% CI:
 
 and perfect agreement between the two tested timing definitions.
 
-### 4. Persistent buyer structures
+### 4. Persistent Buyer Structures
 
 Six disjoint buyer clusters are identified, with:
 
@@ -902,7 +988,7 @@ against a:
 
 and persistence beyond the original capture window.
 
-### 5. Negative buyer economics
+### 5. Negative Buyer Economics
 
 For buyers entering after the initial move:
 
@@ -917,11 +1003,11 @@ For buyers entering after the initial move:
 
 The analysis does **not** establish:
 
-### Historical market evolution
+### Historical Market Evolution
 
 The available historical depth is insufficient to date an evolution from sequential purchases to atomic execution.
 
-### Predictive power of cluster identity
+### Predictive Power of Cluster Identity
 
 Cluster identity does not predict token trajectory in the tested data:
 
@@ -929,21 +1015,21 @@ Cluster identity does not predict token trajectory in the tested data:
 
 and the identified clusters perform below baseline.
 
-### A profitable strategy
+### A Profitable Strategy
 
 No trading strategy is proposed.
 
 The principal economic result is negative.
 
-### Identity or intent
+### Identity or Intent
 
 No address is attributed to a person, organization, or intent.
 
 The analysis concerns public technical identifiers and observable transaction patterns.
 
-### Generalisation to the entire market
+### Generalisation to the Entire Market
 
-The effective sensor coverage is approximately:
+Effective sensor coverage is approximately:
 
 **6.8%**
 
@@ -955,7 +1041,7 @@ The findings therefore describe the observed corpus, not the entire pump.fun mar
 
 # 5. Reproduction
 
-All figures and tables are designed to regenerate offline from `code/` and `data/`.
+The principal figures and tables are designed to regenerate offline from `code/` and `data/`.
 
 ```bash
 python3 code/f_figures_resultats.py
@@ -975,16 +1061,20 @@ The scripts above do not make network calls and do not require an API key.
 
 Infrastructure addresses are represented as `W1`–`W5` in this document and in the figures.
 
-This is a presentation-level redaction rather than a claim that the addresses are private: the underlying identifiers are public and appear elsewhere in the repository.
+This is a presentation-level redaction, not a claim that the addresses are private. The underlying identifiers are public and appear elsewhere in the repository.
 
-W1 is specifically redacted because its prefix constitutes a racial slur. Reproducing that identifier would add no analytical value.
+W1 is specifically redacted because its prefix constitutes a racial slur. Reproducing that identifier adds no analytical value.
 
 W1 remains recoverable through its published metrics:
 
-* 165 tokens
-* 58.5% of the corpus
+* **165 tokens**
+* **58.5% of the corpus**
 
-The other infrastructure addresses are anonymised here for presentation consistency but remain available in `docs/out/m4_infra.json`.
+The other infrastructure addresses are anonymised here for presentation consistency but remain available in:
+
+```text
+docs/out/m4_infra.json
+```
 
 ---
 
@@ -1024,7 +1114,7 @@ It is that the **observable launch mechanics are highly structured**, while the 
 The data support three distinct conclusions:
 
 1. **A reproducible creation-slot execution pattern exists.**
-2. **Persistent buyer structures exist, but graph connectivity must be aggressively cleaned for shared infrastructure and temporal co-occurrence.**
+2. **Persistent buyer structures exist, but graph connectivity must be aggressively controlled for shared infrastructure and temporal co-occurrence.**
 3. **The observed early-entry advantage does not translate into demonstrated predictive power over subsequent token trajectories or positive post-detection trading returns.**
 
 The analysis therefore treats the forensic signature as a **measured market-microstructure phenomenon**, not as proof of identity, intent, future price direction, or a profitable strategy.
