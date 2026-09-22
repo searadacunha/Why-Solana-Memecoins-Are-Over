@@ -2,27 +2,26 @@
 
 ## Fifteen ways this investigation could have been wrong
 
-This file is not a list of caveats added after the fact.
+This document is not a collection of caveats added after the analysis.
 
-It is the record of the investigation trying to **break its own conclusions**.
+It is the record of the investigation attempting to **break its own conclusions**.
 
 Fifteen claims emerged during the analysis. For each one, the same question was asked:
 
 > **What would have to be true for this result to be an artefact?**
 
-Then the test was built.
+A dedicated test was then built.
 
-The outcome was uncomfortable:
+The outcome was deliberately uncomfortable:
 
-**11 of the 15 claims died.**
+* **11 of 15 claims failed under their own validation tests.**
+* One additional negative finding was invalidated in the opposite direction: what initially looked like a negative result was ultimately traced to a broken data connection.
 
-One more died in the opposite direction: what looked like a negative result turned out to be a broken data connection.
-
-That is the point of this file.
+That is the purpose of this document.
 
 A pipeline that only confirms its author is not an investigation.
 
-Everything reported elsewhere in this repository is what remained **after these failure modes were actively attacked**.
+Everything reported elsewhere in this repository is what remained **after these failure modes were actively tested**.
 
 Every figure below is reproducible from the published dataset with:
 
@@ -30,11 +29,11 @@ Every figure below is reproducible from the published dataset with:
 python3 code/p0_pitfalls_check.py
 ```
 
-Three figures from internal notes could not be reproduced from the published data. They are documented at the end rather than quietly deleted.
+Three figures from internal notes could not be reproduced from the published dataset. They are documented explicitly at the end rather than silently removed.
 
 ---
 
-# Reference populations
+# 1. Reference Populations
 
 | ID            | Definition                                                     |     n | Clusters | Days |
 | ------------- | -------------------------------------------------------------- | ----: | -------: | ---: |
@@ -45,11 +44,11 @@ Three figures from internal notes could not be reproduced from the published dat
 
 Clusters are launches separated by ≤30 minutes.
 
-The nominal row count is therefore not the effective number of independent observations. Rates are always reported with their population context.
+The nominal row count is therefore not the effective number of independent observations. Rates are always reported together with their population context.
 
 ---
 
-# The investigation in one table
+# 2. The Investigation in One Table
 
 | #       | Failure mode                  | What initially appeared true          | What survived                                             |
 | ------- | ----------------------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -59,19 +58,19 @@ The nominal row count is therefore not the effective number of independent obser
 | **P4**  | Confounding variable          | +30.0 points, p=0.0032                | Adjusted OR **1.22**, p=0.97                              |
 | **P5**  | Peak ≠ executable price       | Median peak = 1.87x entry             | **0/10 exit policies profitable**                         |
 | **P6**  | Instrumentation errors        | +1h = 29.97x, 91.5% profitable        | **0.394x, 14.9% profitable**                              |
-| **P7**  | Broken monitoring             | "Process alive" = healthy             | CPU/IO deltas exposed failures                            |
+| **P7**  | Broken monitoring             | “Process alive” = healthy             | CPU/IO deltas exposed failures                            |
 | **P8**  | Missing-exit convention       | +31.5% median                         | **+3.3%** under hard convention                           |
 | **P9**  | Lookahead                     | Trough entry = +14.7%                 | **−2.8% live-safe mirror**                                |
 | **P10** | Multiple-testing winner       | Best of 38 = +7.26%                   | Max-null critical value **+26.3%**                        |
 | **P11** | Missingness                   | 54.6% of captures lost                | Time-clustered, outcome-neutral                           |
 | **P12** | Shared infrastructure         | Giant component = 63.8%               | **17.0%** after hub control                               |
-| **P13** | Detector without its own null | Shared funder separates targets       | Fires on **88.9%** of random groups                       |
+| **P13** | Detector without its own null | Shared funder separates targets       | Fires on **88.9% of random groups**                       |
 | **P14** | Wrong control group           | p=0.0007                              | Graduated controls: **p=0.4371**                          |
 | **P15** | Transport failure             | 0/14 carry the pattern                | **3/9 measured; 5 impossible to measure**                 |
 
 ---
 
-# P1 — Selection on the outcome
+# 3. P1 — Selection on the Outcome
 
 ## A variable that secretly knew the answer
 
@@ -106,11 +105,11 @@ peak_ts >= detect_ts + 60s
 
 A token whose peak occurred immediately after detection was included.
 
-A token that peaked before detection was excluded.
+A token whose peak occurred before detection was excluded.
 
-The filter therefore used the future outcome to decide which observations belonged in the sample.
+The filter therefore used future outcome information to decide which observations belonged in the sample.
 
-It was not identifying "buyable" tokens.
+It was not identifying “buyable” tokens.
 
 It was identifying tokens that **went up after detection**.
 
@@ -122,7 +121,7 @@ It cannot be used as:
 
 * an entry criterion;
 * a model input;
-* or a headline selection filter.
+* a headline selection filter.
 
 ### What survived
 
@@ -142,7 +141,7 @@ Any variable containing information from after the decision point is an outcome,
 
 ---
 
-# P2 — The denominator artefact
+# 4. P2 — The Denominator Artefact
 
 ## When the denominator manufactures the signal
 
@@ -154,13 +153,13 @@ peak MC / entry MC
 
 It looked reasonable.
 
-It created misleading signals.
+It also created misleading signals.
 
 ### The symptom
 
-Variables correlated with low entry market cap appeared predictive of large multiples.
+Variables associated with low entry market cap appeared predictive of large multiples.
 
-An operator whose launches happened to be detected early could therefore look like an operator whose launches performed better.
+An operator whose launches happened to be detected early could therefore appear to have better-performing launches when the effect was partly created by the denominator.
 
 ### The diagnosis
 
@@ -178,13 +177,13 @@ log10(entry MC)
 
 within day.
 
-The measured elasticity was:
+Measured elasticity:
 
 * **0.884** on B;
 * **0.673** on A;
 * **0.761** on C.
 
-Therefore:
+Because:
 
 ```text
 log10(multiple)
@@ -194,7 +193,7 @@ log10(peak)
 log10(entry MC)
 ```
 
-and the expected slope becomes:
+the expected slope of the multiple against entry MC is:
 
 ```text
 beta - 1 = -0.126
@@ -229,7 +228,7 @@ log10(peak)
 within-day OLS fit of log10(peak) on log10(entry MC)
 ```
 
-Then binarised at the within-day upper tercile.
+It was then binarised at the within-day upper tercile.
 
 ### What survived
 
@@ -247,7 +246,7 @@ If the elasticity is not 1, the ratio contains information about the denominator
 
 ---
 
-# P3 — Silent default values
+# 5. P3 — Silent Default Values
 
 ## Ten rows were capable of writing the story
 
@@ -258,7 +257,7 @@ Population A initially showed:
 
 The top outcomes looked spectacular:
 
-8.4x, 9.1x, 9.3x, 9.5x, 12.6x, 12.9x.
+**8.4x, 9.1x, 9.3x, 9.5x, 12.6x, 12.9x.**
 
 ### The diagnosis
 
@@ -271,7 +270,7 @@ detect_mc = 15000
 
 Those were not measurements.
 
-They were placeholders written when the real market cap fetch failed.
+They were placeholders written when the real market-cap fetch failed.
 
 Across the raw detector log:
 
@@ -289,7 +288,7 @@ while the placeholder was frozen at:
 
 **15,000**
 
-An ordinary token could therefore acquire a spectacular artificial multiple.
+An ordinary token could therefore acquire an artificially large multiple.
 
 ### The correction
 
@@ -319,7 +318,7 @@ More importantly, measure how much of the **positive class** they supply.
 
 ---
 
-# P4 — The confounder wearing a technical label
+# 6. P4 — The Confounder Wearing a Technical Label
 
 A bot-family label initially looked like the strongest discriminator in the project.
 
@@ -375,7 +374,7 @@ Categorical effects are now reported stratified by entry MC.
 
 ---
 
-# P5 — Touched is not cashed
+# 7. P5 — Touched Is Not Cashed
 
 ## A peak is not an executable trade
 
@@ -387,9 +386,9 @@ and:
 
 **46.3% reaching 2x**
 
-That sounds interesting until you ask a more basic question:
+That sounds interesting until a more basic question is asked:
 
-> Could the buyer actually have captured that price?
+> **Could the buyer actually have captured that price?**
 
 ### The diagnosis
 
@@ -405,7 +404,7 @@ It is not a realised trading opportunity.
 
 ### The correction
 
-Replace peak multiples with an executable round-trip model:
+Peak multiples are replaced by an executable round-trip model:
 
 * entry = creation +120s;
 * 0.5 SOL position;
@@ -417,11 +416,11 @@ Replace peak multiples with an executable round-trip model:
 
 ### What survived
 
-On:
+Across:
 
 **196 executable tokens**
 
-across:
+and:
 
 **20 clusters / 6 days**
 
@@ -447,7 +446,7 @@ The question was whether anything observable at purchase time could locate it.
 
 ---
 
-# P6 — Instrumentation can silently rewrite the answer
+# 8. P6 — Instrumentation Can Silently Rewrite the Answer
 
 Four independent instrumentation failures were found.
 
@@ -457,7 +456,7 @@ The important property they shared:
 
 ---
 
-## P6a — Mixed units
+## P6a — Mixed Units
 
 ### The false result
 
@@ -475,15 +474,15 @@ At +24h:
 
 ### The bug
 
-Swap captures:
+Swap captures were expressed as:
 
 **SOL / token**
 
-OHLCV:
+while OHLCV data was:
 
 **USD / token**
 
-Every ratio was therefore multiplied by the SOL/USD price.
+Every ratio was therefore multiplied by the SOL/USD exchange rate.
 
 ### The correction
 
@@ -506,13 +505,13 @@ The conclusion reversed completely.
 
 ---
 
-## P6b — HTTP 403 became "no data"
+## P6b — HTTP 403 Became “No Data”
 
 The provider rejected the default Python User-Agent.
 
 The fetch wrapper interpreted the failure as retryable and eventually returned `None`.
 
-A transport failure became an empty dataset.
+A transport failure therefore became an empty dataset.
 
 ### Correction
 
@@ -527,13 +526,13 @@ The fetch layer distinguishes:
 
 ---
 
-## P6c — Provider history was mistaken for full history
+## P6c — Provider History Was Mistaken for Full History
 
 The provider caps results at approximately:
 
 **1,000 candles**
 
-That means:
+Therefore:
 
 * hourly = **41.6 days**
 * minute = **16.7 hours**
@@ -550,7 +549,7 @@ Every row records:
 
 ---
 
-## P6d — Running maximum was a censored outcome
+## P6d — Running Maximum Was a Censored Outcome
 
 A detector field stored a running maximum at the moment the row was written.
 
@@ -584,19 +583,19 @@ Treat incrementally written outcomes as censored until proven otherwise.
 
 ---
 
-# P7 — The watchdog was watching the wrong thing
+# 9. P7 — The Watchdog Was Watching the Wrong Thing
 
 Two monitoring probes were wrong within one hour.
 
 Neither raised an error.
 
-### Failure 1 — process detection
+### Failure 1 — Process detection
 
 `pgrep -f` matched the monitoring shell itself.
 
 The monitor was therefore watching an inert wrapper rather than the actual process.
 
-### Failure 2 — unsupported timestamp syntax
+### Failure 2 — Unsupported timestamp syntax
 
 The local `find` implementation rejected the timestamp expression.
 
@@ -606,9 +605,9 @@ The monitor interpreted an error as:
 
 > no recent files.
 
-### Failure 3 — existence ≠ liveness
+### Failure 3 — Existence ≠ Liveness
 
-A process can keep its PID while being completely frozen.
+A process can retain its PID while being completely frozen.
 
 That happened for two days.
 
@@ -621,11 +620,11 @@ Liveness is now measured through deltas:
 
 Both must stop before the watchdog raises an alarm.
 
-### Failure 4 — decorative health endpoints
+### Failure 4 — Decorative health endpoints
 
-A provider health endpoint could return "OK" even with an exhausted quota.
+A provider health endpoint could return “OK” even with an exhausted quota.
 
-A health check that cannot return "unhealthy" is not a useful health check.
+A health check that cannot return “unhealthy” is not a useful health check.
 
 ### Transferable lesson
 
@@ -635,9 +634,9 @@ Test them with deliberate failures.
 
 ---
 
-# P8 — One line of missing-data policy created three fake winners
+# 10. P8 — One Line of Missing-Data Policy Created Three Fake Winners
 
-When an exit has no bid, there are several possible conventions.
+When an exit has no bid, several conventions are possible.
 
 The simulator initially compared:
 
@@ -660,9 +659,9 @@ Three policies switched from losing to apparently winning.
 
 The missing exits were not random.
 
-A token with no bid is likely a token that is dead.
+A token with no bid is likely to be dead.
 
-Dropping it removes exactly the worst outcomes.
+Dropping it therefore removes exactly the worst outcomes.
 
 ### Correction
 
@@ -670,7 +669,7 @@ The canonical convention is:
 
 **unfilled = −100%**
 
-Sensitivity remains published alongside the hard result.
+Sensitivity results remain published alongside the hard result.
 
 ### Transferable lesson
 
@@ -678,7 +677,7 @@ Sensitivity remains published alongside the hard result.
 
 ---
 
-# P9 — Pricing the lookahead
+# 11. P9 — Pricing the Lookahead
 
 ## The +14.7% strategy that disappeared when time became real
 
@@ -690,7 +689,7 @@ Entering 120 seconds after the price trough looked promising:
 
 ### The problem
 
-You only know a price was the trough after prices following it have already occurred.
+You only know that a price was the trough after subsequent prices have already occurred.
 
 That is future information.
 
@@ -698,7 +697,7 @@ That is future information.
 
 Build the exact live-safe mirror:
 
-> enter when the current bucket is the running minimum so far and the last closed bucket has recovered.
+> Enter when the current bucket is the running minimum so far and the last closed bucket has recovered.
 
 Same costs.
 
@@ -711,7 +710,7 @@ Same corpus.
 | Retrospective trough | **+14.7%** |  +3.3% |
 | Live-safe mirror     |  **−2.8%** | −12.9% |
 
-The lookahead is:
+The lookahead accounts for:
 
 **17.5 percentage points of median performance.**
 
@@ -723,7 +722,7 @@ The performance difference is the measurable cost of the leak.
 
 ---
 
-# P10 — The winner of 38 tests is not a normal test
+# 12. P10 — The Winner of 38 Tests Is Not a Normal Test
 
 A sweep of 38 exit policies produced:
 
@@ -731,7 +730,9 @@ A sweep of 38 exit policies produced:
 
 A plausible winner.
 
-But the statistic selected was not "one policy".
+But the statistic selected was not:
+
+> one policy
 
 It was:
 
@@ -752,7 +753,7 @@ Results:
 * Bonferroni = **1.000**
 * 5% max-null critical value = **+26.3%**
 
-The observed +7.26% is well below the level routinely produced by the maximum of noisy alternatives.
+The observed +7.26% is below the level routinely generated by the maximum of noisy alternatives under the null.
 
 ### Transferable lesson
 
@@ -762,7 +763,7 @@ If you searched 38 times, your null must search 38 times too.
 
 ---
 
-# P11 — Missingness: what disappeared?
+# 13. P11 — Missingness: What Disappeared?
 
 ## 352 captures did not fail randomly
 
@@ -774,13 +775,13 @@ or:
 
 **54.6%**
 
-### Axis 1 — time
+### Axis 1 — Time
 
 Runs test:
 
 **10 observed runs**
 
-vs
+versus:
 
 **320.8 expected**
 
@@ -793,7 +794,7 @@ Longest gaps:
 
 These were outages.
 
-### Axis 2 — outcome
+### Axis 2 — Outcome
 
 Using an independent outcome source:
 
@@ -811,17 +812,17 @@ Median entry MC:
 
 **p = 0.21**
 
-The missingness is therefore strongly time-clustered but not measurably outcome-dependent on the independent source.
+Missingness is therefore strongly time-clustered but not measurably outcome-dependent on the independent source.
 
-### Axis 3 — the trap
+### Axis 3 — The Trap
 
-Using labels generated by the failing pipeline produced a huge apparent difference.
+Using labels generated by the failing pipeline produced a large apparent difference.
 
 That comparison was invalid.
 
 The variable existed only when the pipeline succeeded.
 
-It measured coverage.
+It therefore measured coverage.
 
 Not signal.
 
@@ -831,7 +832,7 @@ Not signal.
 
 ---
 
-# P12 — Shared infrastructure fabricates graph structure
+# 14. P12 — Shared Infrastructure Fabricates Graph Structure
 
 ## The giant component that was mostly infrastructure
 
@@ -859,7 +860,7 @@ The most frequent addresses appeared on:
 
 of tokens.
 
-Shared infrastructure connects otherwise unrelated launches.
+Shared infrastructure can therefore connect otherwise unrelated launches.
 
 ### Correction
 
@@ -885,7 +886,7 @@ One address was classified as infrastructure because of ubiquity, although it wa
 
 Therefore:
 
-> ubiquity is evidence of sharing, not proof of infrastructure.
+> **Ubiquity is evidence of sharing, not proof of infrastructure.**
 
 ### Transferable lesson
 
@@ -901,7 +902,7 @@ Then interpret the remaining structure.
 
 ---
 
-# P13 — A detector needs its own null
+# 15. P13 — A Detector Needs Its Own Null
 
 The funding detector used three criteria:
 
@@ -923,13 +924,13 @@ as the verdict.
 
 None of the three criteria had its own null distribution.
 
-So a "hit" had no known false-positive rate.
+A “hit” therefore had no measured false-positive rate.
 
 ### The test
 
-Using the control wallet population:
+Using the control-wallet population:
 
-5,000 random groups were generated.
+**5,000 random groups** were generated.
 
 | Criterion                    |   n=10 |   n=20 |      n=40 |
 | ---------------------------- | -----: | -----: | --------: |
@@ -959,17 +960,17 @@ With enough wallets drawn from a finite funding pool, shared funders become comm
 
 Criterion C was retired.
 
-The verdict is now based on A/B only.
+The detector verdict is now based on A/B only.
 
 ### Transferable lesson
 
 > **A detector cannot be stronger than the null distribution of its weakest criterion.**
 
-"Rare on controls" is meaningless until you know how often the detector fires on random groups.
+“Rare on controls” is meaningless until you know how often the detector fires on random groups.
 
 ---
 
-# P14 — The control group answered a different question
+# 16. P14 — The Control Group Answered a Different Question
 
 Even after removing criterion C, the detector appeared to separate targets from controls.
 
@@ -1031,11 +1032,11 @@ The generalisation does not.
 
 > **A control group must differ from the target on the variable you are testing — not on the outcome itself.**
 
-If your targets succeeded and your controls failed, a low p-value may simply be detecting success.
+If targets succeeded and controls failed, a low p-value may simply be detecting success.
 
 ---
 
-# P15 — A network failure can look like a scientific result
+# 17. P15 — A Network Failure Can Look Like a Scientific Result
 
 The scan of bonding-curve buyers returned:
 
@@ -1055,11 +1056,11 @@ Three transport failures were found:
 
 | Failure | Actual problem                                            | Apparent result                 |
 | ------- | --------------------------------------------------------- | ------------------------------- |
-| 1       | Batch decode endpoint returned HTTP 403                   | "No curve buyers"               |
-| 2       | `rpc()` returned `None`; caller converted it with `or []` | "No transactions"               |
-| 3       | Signature pagination hit HTTP 429                         | "Genesis reached, 0 signatures" |
+| 1       | Batch decode endpoint returned HTTP 403                   | “No curve buyers”               |
+| 2       | `rpc()` returned `None`; caller converted it with `or []` | “No transactions”               |
+| 3       | Signature pagination hit HTTP 429                         | “Genesis reached, 0 signatures” |
 
-The common pattern was:
+The common failure pattern was:
 
 ```text
 error
@@ -1085,7 +1086,7 @@ cannot simultaneously provide:
 
 without an explanation.
 
-A result contradicting the definition of its own population is a bug until proven otherwise.
+A result that contradicts the definition of its own population is a bug until proven otherwise.
 
 ### Correction
 
@@ -1119,13 +1120,13 @@ A client that turns an error into `[]` can eventually turn an outage into a scie
 
 ---
 
-# What did not reproduce
+# 18. What Did Not Reproduce
 
 Three figures from internal notes could not be regenerated from the published dataset.
 
 They are recorded here rather than silently removed.
 
-### 1. "Peak 310k vs 48k, factor 6.4"
+## 18.1 “Peak 310k vs 48k, factor 6.4”
 
 Recomputation gives factors between:
 
@@ -1137,7 +1138,9 @@ The qualitative P1 failure reproduces.
 
 The original pair of numbers does not.
 
-### 2. "93% success manufactured by the buyable filter"
+---
+
+## 18.2 “93% success manufactured by the buyable filter”
 
 The 93% figure belongs to a different episode involving a second-wave concentration filter.
 
@@ -1147,7 +1150,9 @@ The reproducible `t_buyable` inflation is:
 
 **69.8% vs 46.3%**
 
-### 3. "67% peaked before detection"
+---
+
+## 18.3 “67% peaked before detection”
 
 The published populations give:
 
@@ -1163,41 +1168,47 @@ The 67% figure is therefore not used.
 
 ---
 
-# What these failures taught me
+# 19. What These Failures Taught Me
 
-## 1. Audit definitions, not names
+## 19.1 Audit definitions, not names
 
 P1, P5 and P6d all involved variables whose names described their intended meaning while their formulas described something else.
 
-## 2. Turn methodological concerns into measurements
+The implementation wins over the label.
+
+---
+
+## 19.2 Turn methodological concerns into measurements
 
 Instead of saying:
 
-> "There may be lookahead."
+> “There may be lookahead.”
 
-measure:
+Measure:
 
 > **17.5 points of median performance.**
 
 Instead of saying:
 
-> "The denominator may matter."
+> “The denominator may matter.”
 
-measure:
+Measure:
 
 > **elasticity = 0.884.**
 
 Instead of saying:
 
-> "Multiple testing may be a problem."
+> “Multiple testing may be a problem.”
 
-measure:
+Measure:
 
 > **max-null critical value = +26.3%.**
 
-A methodological objection becomes much more useful once it has a number.
+A methodological objection becomes substantially more useful once it has a measurable consequence.
 
-## 3. Stratify on the dominant covariate
+---
+
+## 19.3 Stratify on the dominant covariate
 
 Here, entry market cap dominated many apparent categorical effects.
 
@@ -1205,43 +1216,53 @@ The crude effect can look enormous.
 
 The adjusted effect can disappear completely.
 
-## 4. Missing-data policy is part of the model
+---
 
-"Drop N/A" is not neutral.
+## 19.4 Missing-data policy is part of the model
+
+“Drop N/A” is not neutral.
 
 Every missing value has a mechanism.
 
 That mechanism needs to be measured.
 
-## 5. Infrastructure is part of the measurement system
+---
+
+## 19.5 Infrastructure is part of the measurement system
 
 Units, APIs, provider limits, transport errors and censored fields changed results by:
 
-* factors of ~75;
-* 100% of the apparent dataset;
+* factors of approximately 75;
+* effectively 100% of an apparent dataset in one failure mode;
 * or 15 percentage points.
 
 None initially produced an obvious error.
 
-## 6. Monitoring deserves the same scepticism as analysis
+---
+
+## 19.6 Monitoring deserves the same scepticism as analysis
 
 Two monitoring probes were wrong on first use.
 
 Both failed toward **false confidence**.
 
-## 7. Null results are deliverables
+A monitoring system that reports “healthy” while its underlying process is frozen is itself a source of measurement error.
+
+---
+
+## 19.7 Null results are deliverables
 
 Eleven of fifteen findings died under their own tests.
 
 That is not a failure of the investigation.
 
-That **is** the investigation.
+**That is the investigation.**
 
-The final conclusions became defensible precisely because the attractive explanations were repeatedly given opportunities to fail.
+The final conclusions became more defensible precisely because attractive explanations were repeatedly given opportunities to fail.
 
 ---
 
-# Final principle
+# Final Principle
 
 > **Do not ask whether the data supports your hypothesis.**
 >
