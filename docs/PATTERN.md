@@ -1,70 +1,144 @@
-# The gateway dispatch: a launch-funding pattern, and how to detect it
+# The Gateway Dispatch: A Launch-Funding Pattern
 
-This chapter describes one funding mechanism visible on the Solana chain during the 2024–2025
-window, works through six examples with transaction-level evidence, and gives the code that detects
-it automatically.
+> **A transaction-level reconstruction of a launch-funding mechanism on Solana, and the detector built to find it.**
 
-It is not a prevalence estimate. The tokens below were selected on their outcome, so nothing
-here supports a statement of the form *"X % of launches work this way"*: see
-[`SPLIT_PHASE1.md`](SPLIT_PHASE1.md) §5 and `code/a4_selection_bias.py`. Presence is established,
-frequency is not.
+This chapter documents a funding mechanism observed on Solana during the **2024–2025 window**.
 
-> Every address, amount and timestamp is a public technical identifier, verifiable on any Solana
-> explorer. The gateway address, written **G2Y** for brevity, is
-> `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, publicly attributed to a hot wallet of the swap
-> service **ChangeNOW** by two independent sources: a [2025 research study on Solana
-> mixers](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a)
-> whose author observed his own test funds land there, and an [earlier public
-> attribution](https://x.com/CrypticZK/status/1616072613356535808). Neither is an official exchange
-> label; the identification is reported as **publicly attributed, not officially confirmed**.
->
-> Reaching it is a **routing fact**. Capital entering Solana passes through some such service by
-> necessity, a swap service processes what its users send it, and nothing measured here concerns
-> what the service knew, intended or permitted. No involvement or wrongdoing is attributed to any
-> service, company or person.
+It does four things:
 
----
+1. defines the mechanism from observable on-chain properties;
+2. reconstructs it through transaction-level examples;
+3. describes the detector used to identify it automatically;
+4. tests how far the evidence can support attribution across tokens.
 
-## 1. The mechanism
+The analysis deliberately separates:
 
-Four properties, required together:
+* **presence** from **frequency**;
+* **technical linkage** from **identity**;
+* **measured facts** from interpretation;
+* **unmeasurable cases** from genuine negative results.
 
-| # | property | why it matters |
-|---|---|---|
-| 1 | the buyer wallet is **fresh**, created shortly before it buys, no prior history | a wallet with a past is a trader; a wallet born days before a launch was made for it |
-| 2 | it is funded **directly by the swap service** | the entry point onto the chain, one hop from the buy, and the point at which prior provenance stops being traceable |
-| 3 | the amount is a **conversion output**: nine significant decimals, not a round figure | `2.976816` is what a swap leaves; `3.000000000` is what someone chooses to send |
-| 4 | the payment lands **before the token exists** | a payment after the launch cannot have funded it |
+### Scope limitation
 
-Properties 3 and 4 are what separate this from coincidence. Any active week produces two wallets
-that happen to share a funder; it does not produce five wallets receiving the *same nine-decimal
-amount* from the same gateway inside four minutes, hours before a token that does not yet exist.
+This is **not a prevalence estimate**.
 
-### Two layers, one hop apart
+The tokens in this chapter were selected on their observed outcome, so the data cannot support a statement such as:
 
-The gateway does not always pay the buying wallets. Sometimes it pays an intermediate address which
-then fans the money out in **round** parts:
+> “X% of launches use this mechanism.”
 
-```
-gateway ──(conversion output)──► distributor ──(round amounts)──► fresh wallets ──► buys
-```
+Presence is established; frequency is not.
 
-Both layers are real. A detector that requires a conversion output at the wallet layer will miss
-every case that runs through a distributor: the first version of the detector here did exactly that
-and returned zero on all fifteen tokens, including the reference case. Hence the rule: **report the
-calibre, never require it.**
+See `SPLIT_PHASE1.md` §5 and `code/a4_selection_bias.py` for the selection-bias analysis.
 
 ---
 
-## 2. Six worked examples
+# 1. The Mechanism
 
-### h2w6gm6jz: nine wallets, one amount, 343 seconds
+The pattern is defined by **four properties occurring together**.
 
-Token created **2024-12-13 14:50 UTC**. Seven and a half hours earlier, **nine freshly created
-wallets each received exactly 2.976815600 SOL** from the gateway:
+| # | Property                                                                                                          | Why it matters                                                                                                                                |
+| - | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | The buyer wallet is **fresh** and was created shortly before the purchase                                         | A wallet with an established history is an existing participant; a newly created wallet may have been provisioned specifically for the launch |
+| 2 | The wallet is funded **directly by the swap gateway**                                                             | This is the observable entry point onto Solana and the point at which upstream provenance becomes difficult to trace                          |
+| 3 | The funding amount is a **conversion output**, with nine significant decimals rather than a round transfer amount | `2.976815600` is consistent with a swap output; `3.000000000` is consistent with an intentionally specified transfer                          |
+| 4 | The funding arrives **before the token exists**                                                                   | A payment after token creation cannot have funded the initial purchase                                                                        |
 
-| wallet | amount (SOL) | time (UTC) |
-|---|---|---|
+The third and fourth properties are particularly discriminating.
+
+An active period can naturally produce wallets that share a funder.
+
+It is substantially more specific to observe multiple fresh wallets receiving the **same nine-decimal amount from the same gateway within a short interval**, hours before the target token exists.
+
+---
+
+## 1.1 Gateway Attribution
+
+The gateway address is represented here as:
+
+**G2Y**
+
+Full address:
+
+`G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`
+
+The source document reports that this address has been publicly attributed to a hot wallet of **ChangeNOW** by two independent public sources:
+
+* a 2025 research study in which the author reports observing test funds arrive there;
+* an earlier public attribution.
+
+Neither source is presented as an official exchange label.
+
+The identification is therefore treated as:
+
+> **Publicly attributed, not officially confirmed.**
+
+Reaching the gateway is a **routing observation**.
+
+This analysis does not establish what any service knew, intended, permitted, or prohibited.
+
+No involvement or wrongdoing is attributed to the service, company, or any person.
+
+---
+
+# 1.2 Two Layers, One Hop Apart
+
+The gateway does not always fund the final buyer wallets directly.
+
+In some cases it first funds an intermediate distributor, which subsequently distributes the capital in round amounts:
+
+```text
+gateway
+   │
+   │ conversion output
+   ▼
+distributor
+   │
+   │ round amounts
+   ▼
+fresh wallets
+   │
+   ▼
+buys
+```
+
+Both layers are part of the observed mechanism.
+
+This distinction matters for detection.
+
+A detector that requires the **conversion-output signature to appear directly at the buyer-wallet layer** will miss cases routed through a distributor.
+
+The first implementation did exactly that: it returned zero on all 15 tested tokens, including the reference case.
+
+The resulting rule is:
+
+> **Report the amount structure when present; do not require it as a hard criterion.**
+
+---
+
+# 2. Transaction-Level Examples
+
+The following cases illustrate the mechanism from different angles.
+
+They are not presented as a statistical sample.
+
+They are forensic examples showing how the pattern manifests on-chain.
+
+---
+
+## 2.1 h2w6gm6jz — Nine Wallets, One Amount
+
+Token creation:
+
+**2024-12-13 14:50 UTC**
+
+Approximately 7.5 hours earlier, nine fresh wallets each received exactly:
+
+**2.976815600 SOL**
+
+from the gateway.
+
+| Wallet                                         |      Amount | Time UTC |
+| ---------------------------------------------- | ----------: | -------- |
 | `Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW` | 2.976815600 | 07:07:49 |
 | `BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA` | 2.976815600 | 07:08:02 |
 | `AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY` | 2.976815600 | 07:09:04 |
@@ -75,255 +149,757 @@ wallets each received exactly 2.976815600 SOL** from the gateway:
 | `BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe` | 2.976815600 | 07:11:53 |
 | `5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6` | 2.976815600 | 07:13:32 |
 
-Nine wallets, one amount to nine decimal places, 343 seconds end to end, from a single gateway,
-hours before the token existed. The amount is a conversion output, not a figure anyone types.
+The sequence has four simultaneous characteristics:
 
-### The same amount, on another token, a month earlier
+* nine fresh wallets;
+* identical nine-decimal funding;
+* one gateway;
+* 343 seconds from first to last funding;
+* all funding occurs hours before token creation.
 
-**2.976815600 SOL** also lands on a fresh wallet of **SAFFRON** (`wbzkg9ftnVEMzeCL6wW8bpNTPDQWhBBnKo3JWJe3wh5`)
-on **2024-11-12 13:16:45**, thirty-one days before the h2w6gm6jz burst and from the same gateway.
-
-An identical nine-decimal amount recurring across two unrelated tokens a month apart is not what a
-conversion produces by chance: a swap output depends on the size, the route and the price at that
-instant. Repetition of the exact figure points to a repeated operation rather than a repeated
-coincidence. That is an observation, and nothing further is inferred from it here.
-
-### ACID: found only by dropping the 40-buyer cap
-
-Token created **2024-12-09 09:47**. Three fresh wallets, gateway-funded in the week before:
-
-| wallet | amount (SOL) | time (UTC) |
-|---|---|---|
-| `DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq` | 1.526056960 | 2024-12-02 09:53:14 |
-| `DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq` | 0.739421380 | 2024-12-03 07:27:43 |
-| `RwdMax1heLzDiBSk3g3MgvRuJkQYz7tnj96RFpbxxVA` | 1.958393160 | 2024-12-08 10:18:22 |
-| `D3JwQSGkn8YUzCDkMphDhVbsEeK9qbttU971cqmFEKRM` | 1.504465720 | 2024-12-08 21:39:19 |
-
-ACID measured **zero** in every earlier pass. Those passes stopped at the first 40 buyers; this
-token has **743**, and the relevant wallets sit further down the curve. The cap produced the zero,
-not the token.
-
-### SAFFRON: one wallet funded four times before the launch
-
-Token created **2024-11-12 22:54**. Three fresh gateway-funded wallets, and one of them
-(`wbzkg9ftnVEMzeCL…`) received **four separate payments in the nine hours before creation**:
-2.976815600 at 13:16:45, 2.380415590 at 13:53:56, 9.894826000 at 14:16:27, 7.778694250 at 21:27:20.
-Two others were funded the day before, 1.982815600 and 8.624207890 SOL.
-
-Repeated top-ups into one fresh wallet on the day of a launch is a variant of the same mechanism:
-the amounts differ, the direction and the timing do not.
-
-### QAMI: two wallets, the day before
-
-Token created **2024-12-31 23:41**. `6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K` received
-4.949823400 SOL on 2024-12-30 17:31:45; `E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab` received
-0.481875600 SOL on 2024-12-31 17:19:21, six hours before the token existed.
-
-### sumiko: two wallets, seven minutes apart, the day of the launch
-
-Token created **2024-12-26 13:25**. `AJq5My8GFG6Jo7Pq…` received 1.446086 SOL at **12:55:43** and
-`FYG2cyAmhKGyRnH5…` received 0.739785 SOL at **13:02:00**. Both fresh, both from the gateway, the
-first twenty-nine minutes before the token existed.
-
-### CHOCO: two layers of the mechanism on one token
-
-Token created **2024-10-10 13:35**. Two fresh wallets gateway-funded beforehand:
-`Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho` (1.207495600 SOL at 09:24:43 the same morning) and
-`4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5` (2.307396470 SOL three days earlier).
-
-The same token also carries the **distributor** layer: an address created that morning at 09:26,
-paid by the gateway at 13:26, which at 13:31 fanned out to **20 fresh wallets at 0.300000000 SOL
-each in a single transaction**, then was never used again, 30 signatures in its entire life. Two
-layers of one mechanism on one token, four hours apart.
+The repeated amount is treated as a conversion output rather than an arbitrary manually specified transfer.
 
 ---
 
-## 3. Detecting it automatically
+## 2.2 The Same Conversion Output on Another Token
 
-Four scripts, stdlib-only, no key needed for the offline ones.
+The exact amount:
 
-| script | what it does |
-|---|---|
-| `code/a5_author_pattern.py` | scans the funding of a token's buyers for fresh wallets receiving near-identical amounts in one burst; sweeps both free thresholds instead of picking one |
-| `code/a6_gateway_chains.py` | rebuilds the dated chain gateway → distributor → wallets, and drops any link that is chronologically impossible |
-| `code/a1_null_model.py` | how often each criterion fires on random wallets; run this **before** trusting any detector output |
-| `code/a3_hub_origin.py` | walks a distributor back to its own genesis, declaring whether the genesis was reached |
+**2.976815600 SOL**
 
-```bash
-python3 code/a5_author_pattern.py      # burst detection, with a threshold sweep
-python3 code/a6_gateway_chains.py      # dated chains, chronology enforced
+also appears on a fresh SAFFRON wallet:
+
+`wbzkg9ftnVEMzeCL6wW8bpNTPDQWhBBnKo3JWJe3wh5`
+
+Timestamp:
+
+**2024-11-12 13:16:45**
+
+This is 31 days before the h2w6gm6jz burst and originates from the same gateway.
+
+A swap output depends on the input size, route, and price at execution.
+
+The recurrence of the exact nine-decimal amount across two unrelated launches is therefore treated as evidence of a repeated operation rather than a repeated coincidence.
+
+No further attribution is made from this observation alone.
+
+---
+
+## 2.3 ACID — The 40-Buyer Limit Hid the Pattern
+
+Token creation:
+
+**2024-12-09 09:47**
+
+Three relevant fresh wallets were gateway-funded during the preceding week:
+
+| Wallet                                          |      Amount | Time UTC            |
+| ----------------------------------------------- | ----------: | ------------------- |
+| `DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq`  | 1.526056960 | 2024-12-02 09:53:14 |
+| `DrL5h6A1CyH1XDVsFd78Fnn4Nkx37GrQzqcPiKAaoFiq`  | 0.739421380 | 2024-12-03 07:27:43 |
+| `RwdMax1heLzDiBSk3g3MgvRuJkQYz7tnj96RFpbxxVA`   | 1.958393160 | 2024-12-08 10:18:22 |
+| `D3JwQSGkn8YUzCDKDMphDhVbsEeK9qbttU971cqmFEKRM` | 1.504465720 | 2024-12-08 21:39:19 |
+
+ACID returned zero in earlier detector runs.
+
+The reason was not absence of the pattern.
+
+The earlier scan stopped after the first **40 buyers**.
+
+ACID had **743 buyers**, and the relevant wallets appeared later in the curve.
+
+The cap produced the false negative.
+
+This is why the final scanner walks the complete buyer population rather than assuming the first 40 buyers are sufficient.
+
+---
+
+## 2.4 SAFFRON — One Wallet Funded Four Times
+
+Token creation:
+
+**2024-11-12 22:54**
+
+Three fresh gateway-funded wallets were identified.
+
+One wallet,
+
+`wbzkg9ftnVEMzeCL…`
+
+received four separate payments during the preceding nine hours:
+
+| Time     |          Amount |
+| -------- | --------------: |
+| 13:16:45 | 2.976815600 SOL |
+| 13:53:56 | 2.380415590 SOL |
+| 14:16:27 | 9.894826000 SOL |
+| 21:27:20 | 7.778694250 SOL |
+
+Two additional wallets received:
+
+* 1.982815600 SOL
+* 8.624207890 SOL
+
+on the preceding day.
+
+The amounts vary, but the observed structure remains:
+
+**fresh wallet → gateway funding → launch**
+
+Repeated top-ups into the same fresh wallet before creation are therefore treated as a variant of the mechanism rather than requiring identical amounts.
+
+---
+
+## 2.5 QAMI — Two Wallets the Day Before
+
+Token creation:
+
+**2024-12-31 23:41**
+
+Two fresh wallets received gateway funding the previous day:
+
+* `6nGLeqP1BW1MWrMsC7EYA57iei1V5XfpEW7YqdgFNA4K`
+
+  * 4.949823400 SOL
+  * 2024-12-30 17:31:45
+
+* `E2wJyPwoJAydxYpvKSv1uRSS9GdEzX8gpfqeWsaVHcab`
+
+  * 0.481875600 SOL
+  * 2024-12-31 17:19:21
+
+The second payment occurs approximately six hours before token creation.
+
+---
+
+## 2.6 sumiko — Two Wallets Seven Minutes Apart
+
+Token creation:
+
+**2024-12-26 13:25**
+
+Two fresh wallets received gateway funding shortly before creation:
+
+* `AJq5My8GFG6Jo7Pq…`
+
+  * 1.446086 SOL
+  * 12:55:43
+
+* `FYG2cyAmhKGyRnH5…`
+
+  * 0.739785 SOL
+  * 13:02:00
+
+The first payment occurred 29 minutes before the token existed.
+
+Both wallets are fresh and both are gateway-funded.
+
+---
+
+## 2.7 CHOCO — Both Layers on One Token
+
+Token creation:
+
+**2024-10-10 13:35**
+
+Two fresh wallets were funded directly by the gateway:
+
+* `Edx7xy6RG8nchSE833xJNGjNBL4QdZV587Zk8GZ3Kpho`
+
+  * 1.207495600 SOL
+  * 09:24:43
+
+* `4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5`
+
+  * 2.307396470 SOL
+  * three days earlier
+
+The same token also contains the **distributor layer**.
+
+A distributor created that morning was funded by the gateway at **13:26** and, five minutes later, distributed:
+
+**20 × 0.300000000 SOL**
+
+to 20 fresh wallets in a single transaction.
+
+The distributor was never used again and has only 30 signatures in its lifetime.
+
+This token therefore contains both observed layers of the mechanism:
+
+```text
+gateway → fresh buyer wallets
 ```
 
-### Four rules that separate a detector from a random-number generator
+and:
 
-**Page to genesis, or declare that you did not.** `getSignaturesForAddress` walks present → past,
-1 000 per call. Bounded too short it returns only *recent* history and fails **without an error**:
-a wallet's funding lives in its *first* transactions, so a partial walk reports "no funding found"
-for a wallet that was funded. Every negative must carry the scope it was measured on.
-
-**Make failures loud.** A client that returns `None` on error, with a caller writing `or []`, turns
-an exhausted quota into "this curve has no transactions". That produced a clean `0/14 tokens` in
-this project, from a wrong hostname. Errors raise; unmeasurable tokens are counted separately from
-tokens measured negative. Full episode: `PITFALLS.md` P15.
-
-**Give every criterion a null distribution first.** Pool wallets that were never coordinated, draw
-random groups, run the criterion unchanged. The most intuitive criterion here, *these buyers share
-a funder*, fires on **88.9 %** of random 40-wallet groups. It was retired. `PITFALLS.md` P13.
-
-**Enforce chronology inside the chain.** The gateway must pay the distributor *before* the
-distributor pays the wallet, and the whole chain must precede the token. Without the first check the
-chain builder here reported a gateway payment in 2024 feeding a wallet payment from 2022.
-
-### Cheap trick that makes a full-curve scan feasible
-
-A fresh wallet has, by definition, no activity before the window. So page its history backwards and
-**stop the moment you see a transaction older than (creation − N days)**: the wallet is old, cannot
-be fresh, and its funding is irrelevant. Hyperactive wallets with hundreds of thousands of
-signatures exit in one page. That makes scanning *every* buyer on a curve tractable rather than only
-the first forty, and dropping the cap is what surfaced ACID.
+```text
+gateway → distributor → fresh buyer wallets
+```
 
 ---
 
-## 4. One actor per split, and how far that goes
+# 3. Automatic Detection
 
-A split is one actor. A transaction paying twenty wallets an identical amount has one signer behind
-it, by construction rather than by inference: **each dispatch observed here was performed by a
-single actor.**
+The repository implements the analysis through four scripts.
 
-The open question is different: are the dispatches on *different* tokens the same actor, the same
-tool, or unrelated users of the same gateway? Three tests (`code/a7_cross_token_links.py`), across
-13 measured tokens and 75 gateway payments:
+All are standard-library based; the offline components require no key.
 
-The first test looks for a recurring exact amount, and returns one hit. `2.976815600 SOL` appears
-on two tokens 31 days apart: once on a SAFFRON wallet (2024-11-12 13:16:45) and nine times on
-h2w6gm6jz wallets (2024-12-13, 07:07:49 → 07:13:32). A swap output depends on the size, the route
-and the price at that instant, so the same nine-decimal figure recurring across two unrelated
-launches is not what conversions produce by chance. It is the strongest cross-token link in the
-corpus.
+| Script                      | Function                                                                                                                                       |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `code/a5_author_pattern.py` | Scans buyer funding for fresh wallets receiving near-identical amounts in a burst; sweeps thresholds instead of selecting one arbitrary cutoff |
+| `code/a6_gateway_chains.py` | Reconstructs dated gateway → distributor → wallet chains while enforcing chronology                                                            |
+| `code/a1_null_model.py`     | Measures how frequently each criterion fires on random wallets                                                                                 |
+| `code/a3_hub_origin.py`     | Traces a distributor toward its genesis and records whether genesis is reached                                                                 |
 
-The second looks for shared wallets, and returns one that is weaker than it looks.
-`GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h` bought on both ACID and symx, but its gateway payment
-is dated 2025-01-23, *after* both tokens existed, so it links the two launches as a **buyer**
-without supporting the funding pattern on either. It is reported at that strength.
+Primary commands:
 
-A null result would have meant little here: an operator who burns addresses leaves no shared wallets
-by construction, so few shared wallets is equally consistent with one careful actor and with many
-unrelated ones. The test can raise the link, not lower it.
+```bash
+python3 code/a5_author_pattern.py
+python3 code/a6_gateway_chains.py
+```
 
-The third groups payments separated by less than six hours into funding sessions. That gives 14
-sessions, **none** touching more than one token: the dispatches are not batched together.
+---
 
-### How far the three tests go
+# 3.1 Four Requirements for a Reliable Detector
 
-Two of the thirteen token pairs are linked by hard on-chain evidence. That is more than "unrelated
-users of a common gateway" and less than "one person wrote all of it".
+## 1. Reach genesis — or explicitly report that you did not
 
-The alternative that survives is a shared tool, and it is not hypothetical: this repository already
-documents two operator clusters that share *no wallet and no token* and nonetheless share a
-byte-level execution fingerprint, the same software run by different hands. Getting from a repeated
-method to a repeated person requires an artefact that identifies the hand rather than the technique,
-and none of the three tests above produces one.
+`getSignaturesForAddress` retrieves history backwards in pages of 1,000.
 
-The measured position, then: the dispatches are performed by single actors, at least two of the
-operations are linked to each other, and the identity behind them is not established.
+If the walk is arbitrarily truncated, the scanner may see only recent activity.
 
-## 5. What the wallets do next: a standing fleet
+That creates a dangerous false negative:
 
-Every measurement above looks *upstream*, at who funded the buyer. Looking the other way corrects
-something this repository had wrong.
+> “No funding found”
 
-Two models predict different things. A **disposable** wallet receives, buys, sells and dies: no
-outgoing payments to accounts that did not already exist. A **fleet** wallet is kept, reactivated,
-and used to fund fresh wallets that go on to fund others. The discriminating measurement is how many
-of a wallet's later payment recipients were **born on receipt**, first activity within an hour of
-the payment. Paying an address that comes into existence at that moment is a wallet being created,
-not a transfer between accounts.
+when the actual result is:
 
-`code/a8_wallet_horde.py`, on the 14 readable gateway-funded wallets:
+> “Funding not found within the portion of history inspected.”
 
-| | |
-|---|---|
-| wallets that went on to fund at least one **brand-new** address | **14 of 14** |
-| new addresses spawned in total | **129** |
-| median lifetime after the trade | 3.9 days |
-| longest still active | **+356 days** |
+Because funding often occurs near a wallet's first transactions, every negative result must carry the scope of the historical search.
 
-Fourteen out of fourteen: not a tendency but the behaviour of every wallet measured.
+---
 
-At the extreme, `4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5`, a CHOCO buyer, ran to
-**1 880 transactions** and was still active **356 days** after its trade, funding **150 addresses of
-which 19 were newly born**, including 120.8 SOL to an address created that same week.
-`291vRVW6QcL8Lj3F…` (SAFFRON) funded **47 addresses, 19 of them new**. These are not the account
-histories of someone who bought a memecoin.
+## 2. Make transport failures loud
 
-The h2w6gm6jz batch behaves as one object. The nine wallets that received an identical
-2.976815600 SOL within 343 seconds do not merely start together: the six whose history is readable
-all **stop on the same day, 2024-12-17**, exactly 3.9 days after the launch, each having spawned
-between 6 and 9 new addresses in the interval:
+A client that returns `None` on error, followed by code such as:
 
-| wallet | last activity | addresses funded | of which newborn |
-|---|---|---:|---:|
-| `CDvfNWiamAR1B84G…` | 2024-12-17 | 21 | 8 |
-| `BmkuX6DaZUp9UCeR…` | 2024-12-17 | 19 | 6 |
-| `6QMshP9zwFXKbpLP…` | 2024-12-17 | 22 | 7 |
-| `5ibajLyeBmJhDfyZ…` | 2024-12-17 | 20 | 6 |
-| `AwQqcqdQQ3zydrtW…` | 2024-12-17 | 23 | 9 |
-| `3bBaA1MpQZuQpHjW…` | 2024-12-17 | 18 | 7 |
+```python
+result = response or []
+```
 
-Six wallets funded in the same burst, retired on the same day, each leaving behind a similar number
-of children. Independent users do not synchronise their last transaction.
+can silently transform:
 
-### The correction this forces
+**API failure → empty dataset → false negative**
 
-Section 4 reports no shared funder between the per-token distributors and concludes that the
-operations are linked only in pairs. That test looked **upstream only**, and upstream is where a
-careful operator leaves nothing: each launch gets its own distributor precisely so the ancestry does
-not converge.
+This happened in the project.
 
-Downstream, it converges anyway. The wallets are not consumed by the launch. They survive it and
-become funders themselves, which means the addresses buying later launches can be the descendants of
-the ones that bought earlier. That is a materially different structure from "unrelated users of a
-common gateway": a standing population, replenished from within.
+A wrong hostname produced:
 
-What it still does not establish is a hand. A fleet of thousands of addresses spawning generations
-is equally the signature of one operator with a script and of a tool many operators run. Section 4's
-verdict stands; its *reasoning* was wrong, because it looked only one way.
+**0/14 tokens**
 
-## 6. What was scanned
+instead of an error.
 
-Every buyer on the curve, not a sample: 3 963 distinct buyers across thirteen tokens. One token
-could not be read at all and is reported as unmeasurable rather than as a zero.
+The corrected rule is:
 
-| token | curve buyers | fresh | unreadable | **gateway-funded before launch** |
-|---|---:|---:|---:|---:|
-| `h2w6gm6jz` | 223 | 67 | 90 | **9** |
-| `ACID` | 743 | 188 | 0 | **3** |
-| `SAFFRON` | 265 | 57 | 105 | **3** |
-| `CHOCO` | 289 | 78 | 114 | **2** |
-| `QAMI` | 266 | 59 | 107 | **2** |
-| `sumiko` | 290 | 96 | 116 | **2** |
-| `BLT` | 194 | 89 | 0 | 0 |
-| `LEXICON` | 80 | 17 | 32 | 0 |
-| `MIKU` | 804 | 173 | 322 | 0 |
-| `OPTIMUS` | 246 | 53 | 99 | 0 |
-| `POLMRKTBOT` | 315 | 67 | 126 | 0 |
-| `RAO` | 143 | 42 | 58 | 0 |
-| `symx` | 105 | 31 | 42 | 0 |
-| `VISUALIZE` | - | - | - | *unmeasurable (HTTP 429)* |
+> **Errors raise. Unmeasurable tokens are reported separately from measured negatives.**
 
-**Six of thirteen** measured tokens carry the pattern.
+The complete incident is documented in `PITFALLS.md` P15.
 
-The **unreadable** column decides what a zero is worth. Those wallets could not be paged back to
-their first transaction, so their funding origin is unknown. `MIKU` has 322 of them and `OPTIMUS`
-99, which makes their zeros weak. `BLT` has none, so its zero is a real negative; `ACID` has none
-either and is positive. On the two tokens where the scan is complete, one is negative and one is
-positive, and both statements are worth something. Everywhere else the answer is partly "not
-measured".
+---
 
-One token produced no measurement at all and is marked as such rather than counted as negative. The
-distinction between *measured negative* and *not measurable* is the subject of `PITFALLS.md` P15,
-and it is not bookkeeping: collapsing the two produced a clean, entirely false `0/14` in this
-project.
+## 3. Define a null distribution before trusting a detector
 
-Full per-wallet detail: `data/split/all_buyers_g2y.json`. The separate question of whether this
-mechanism also appears on tokens nobody traded is kept in [`SPLIT_PHASE1.md`](SPLIT_PHASE1.md) §6.
+Every criterion must first be tested on a population where coordination is not known to exist.
+
+The procedure is:
+
+1. pool wallets outside the target structure;
+2. randomly draw groups;
+3. apply the exact detector criterion unchanged;
+4. measure its baseline firing rate.
+
+The intuitive criterion:
+
+> “These buyers share a funder”
+
+fires on:
+
+**88.9% of random 40-wallet groups.**
+
+That criterion was therefore retired.
+
+A detector that fires on most random groups is not a detector of the phenomenon.
+
+---
+
+## 4. Enforce chronology
+
+The funding chain must satisfy:
+
+```text
+gateway payment
+       ↓
+distributor payment
+       ↓
+wallet
+       ↓
+token purchase
+```
+
+in chronological order.
+
+Without this constraint, the chain builder produced impossible histories, including a gateway payment in 2024 apparently feeding a wallet payment from 2022.
+
+Chronology is therefore a hard validity condition, not an optional annotation.
+
+---
+
+# 3.2 Making a Full-Curve Scan Tractable
+
+Scanning every buyer is more expensive than scanning the first few buyers.
+
+Freshness provides a useful early stopping condition.
+
+A wallet that has activity older than:
+
+**creation time − N days**
+
+is no longer eligible to be classified as fresh.
+
+The scanner can therefore walk backwards through the wallet's history and stop as soon as it encounters activity older than the freshness window.
+
+This produces two benefits:
+
+* old, high-activity wallets can be rejected quickly;
+* the scan can cover the **entire buyer population** rather than an arbitrary first-40 subset.
+
+Dropping the buyer cap is what exposed the ACID case.
+
+---
+
+# 4. Cross-Token Attribution: How Far Does the Evidence Go?
+
+A separate question is whether dispatches observed on different tokens correspond to:
+
+1. the same actor;
+2. the same software/tool;
+3. unrelated users of the same gateway.
+
+Three tests were applied through:
+
+`code/a7_cross_token_links.py`
+
+Population:
+
+**13 measured tokens / 75 gateway payments**.
+
+---
+
+## 4.1 Exact Amount Recurrence
+
+The strongest cross-token link is the recurrence of:
+
+**2.976815600 SOL**
+
+It appears:
+
+* once on a SAFFRON wallet on 2024-11-12;
+* nine times on h2w6gm6jz wallets on 2024-12-13.
+
+The events are separated by 31 days.
+
+Because a swap output depends on its input, route, and execution price, exact recurrence across unrelated launches is treated as evidence of a repeated operation.
+
+This is the strongest cross-token linkage observed in the corpus.
+
+---
+
+## 4.2 Shared Wallet
+
+One wallet:
+
+`GbYqi5jYdzNf6iKvfP1KWg7FyHhECMsZ5yYd7micig8h`
+
+bought on both ACID and symx.
+
+However, its gateway funding is dated:
+
+**2025-01-23**
+
+which is after both tokens existed.
+
+Therefore the wallet creates a link between the launches as a **buyer**, but does not support the specific pre-launch funding mechanism for either token.
+
+The evidence is consequently reported at that weaker strength.
+
+---
+
+## 4.3 Funding Sessions
+
+Gateway payments separated by less than six hours were grouped into funding sessions.
+
+Result:
+
+**14 sessions**
+
+None touches more than one token.
+
+The observed dispatches are therefore not batched across multiple tokens within the tested six-hour session definition.
+
+---
+
+# 4.4 Attribution Boundary
+
+The three tests support a deliberately narrow conclusion.
+
+**Two of the thirteen token pairs are linked by hard on-chain evidence.**
+
+That is stronger than:
+
+> “These are unrelated users of a common gateway.”
+
+But it is weaker than:
+
+> “One person or organization executed all of them.”
+
+The surviving alternative is a **shared tool or execution method**.
+
+This interpretation is consistent with a separate finding in the repository: two operator clusters that share neither wallet nor token nevertheless exhibit the same byte-level execution fingerprint.
+
+A repeated technique does not establish a repeated human operator.
+
+To cross that boundary would require an artefact identifying the actor rather than merely the method.
+
+No such artefact is produced by these three tests.
+
+### Measured position
+
+The evidence supports:
+
+* dispatches are executed by single actors at the transaction level;
+* at least two operations are linked by hard on-chain evidence;
+* the identity behind those operations is **not established**.
+
+---
+
+# 5. The Downstream Structure: A Standing Wallet Fleet
+
+The upstream analysis asks:
+
+> **Who funded the buyer?**
+
+The downstream analysis asks:
+
+> **What happens to the buyer wallet after the launch?**
+
+This distinction materially changes the interpretation.
+
+Two models make different predictions.
+
+### Disposable wallet
+
+A disposable wallet:
+
+1. receives funds;
+2. buys;
+3. sells;
+4. disappears.
+
+It does not subsequently fund newly created addresses.
+
+### Fleet wallet
+
+A fleet wallet:
+
+1. is provisioned;
+2. participates in a launch;
+3. remains active;
+4. funds newly created wallets;
+5. those wallets can subsequently participate in further activity.
+
+The discriminating measurement is therefore:
+
+> How many later payment recipients were **born on receipt**?
+
+An address whose first activity occurs within approximately one hour of receiving funds is treated as newly created rather than as an established account receiving a normal transfer.
+
+---
+
+## 5.1 The 14 Readable Gateway-Funded Wallets
+
+`code/a8_wallet_horde.py` was applied to 14 readable gateway-funded wallets.
+
+| Measurement                                    |        Result |
+| ---------------------------------------------- | ------------: |
+| Wallets that later funded ≥1 brand-new address |     **14/14** |
+| New addresses spawned                          |       **129** |
+| Median lifetime after trade                    |      3.9 days |
+| Longest still active                           | **+356 days** |
+
+The 14/14 result is notable because it is not merely a tendency across the measured wallets:
+
+> **Every readable wallet in this population subsequently funded at least one newly created address.**
+
+---
+
+## 5.2 Examples of Long-Lived Wallets
+
+One CHOCO buyer:
+
+`4f6geAMUGzekQd3HemzHKWhJN9DiquNwTTtypPZckMQ5`
+
+recorded:
+
+* **1,880 transactions**
+* activity continuing **356 days** after its trade
+* funding of **150 addresses**
+* **19 newly created addresses**
+* including a transfer of **120.8 SOL** to an address created during the same week.
+
+A SAFFRON wallet:
+
+`291vRVW6QcL8Lj3F…`
+
+funded:
+
+* **47 addresses**
+* **19 newly created**
+
+These histories are inconsistent with a simple “buy once and disappear” wallet lifecycle.
+
+---
+
+# 5.3 The h2w6gm6jz Fleet
+
+The nine wallets in the h2w6gm6jz burst exhibit coordinated downstream behaviour.
+
+Six wallets with readable histories:
+
+* received the same **2.976815600 SOL** amount;
+* received it within the same 343-second burst;
+* all stopped activity on **2024-12-17**;
+* all did so approximately **3.9 days after the launch**;
+* each subsequently spawned multiple new addresses.
+
+| Wallet              | Last activity | Addresses funded | Newborn addresses |
+| ------------------- | ------------- | ---------------: | ----------------: |
+| `CDvfNWiamAR1B84G…` | 2024-12-17    |               21 |                 8 |
+| `BmkuX6DaZUp9UCeR…` | 2024-12-17    |               19 |                 6 |
+| `6QMshP9zwFXKbpLP…` | 2024-12-17    |               22 |                 7 |
+| `5ibajLyeBmJhDfyZ…` | 2024-12-17    |               20 |                 6 |
+| `AwQqcqdQQ3zydrtW…` | 2024-12-17    |               23 |                 9 |
+| `3bBaA1MpQZuQpHjW…` | 2024-12-17    |               18 |                 7 |
+
+Six wallets therefore show the same broad lifecycle:
+
+**funded together → operate for ~3.9 days → stop together → leave behind similar numbers of child wallets**
+
+The synchronization is itself an observable property.
+
+It does not, by itself, identify the person or organization controlling them.
+
+---
+
+# 5.4 The Correction Forced by the Downstream Evidence
+
+The upstream cross-token analysis originally concluded that operations were linked only in pairs because no common funder was found.
+
+That reasoning was incomplete.
+
+It looked only **upstream**.
+
+A careful operator can deliberately prevent upstream ancestry from converging by provisioning each launch through a separate distributor.
+
+Downstream, however, the structure can converge again.
+
+The observed wallets:
+
+* survive the launch;
+* become funders themselves;
+* create additional wallets;
+* potentially produce descendants that participate in later launches.
+
+This is materially different from the hypothesis:
+
+> “Unrelated users happen to use the same gateway.”
+
+The data instead support the existence of a **standing wallet population that can replenish itself downstream**.
+
+But the identity boundary remains unchanged.
+
+A large fleet of wallets can be:
+
+* one operator running automated infrastructure;
+* or a shared tool operated by multiple actors.
+
+The fleet structure alone does not identify the controlling hand.
+
+Therefore the attribution conclusion of §4 remains unchanged, while the **reasoning that led to it is corrected**: upstream non-convergence is not sufficient evidence of unrelated operators.
+
+---
+
+# 6. Full Scan Population
+
+The final scan covers:
+
+**3,963 distinct buyers across 13 tokens**
+
+rather than a first-40 subset.
+
+One additional token could not be read and is therefore classified as **unmeasurable**, not negative.
+
+| Token        | Curve buyers | Fresh | Unreadable | Gateway-funded before launch |
+| ------------ | -----------: | ----: | ---------: | ---------------------------: |
+| `h2w6gm6jz`  |          223 |    67 |         90 |                        **9** |
+| `ACID`       |          743 |   188 |          0 |                        **3** |
+| `SAFFRON`    |          265 |    57 |        105 |                        **3** |
+| `CHOCO`      |          289 |    78 |        114 |                        **2** |
+| `QAMI`       |          266 |    59 |        107 |                        **2** |
+| `sumiko`     |          290 |    96 |        116 |                        **2** |
+| `BLT`        |          194 |    89 |          0 |                            0 |
+| `LEXICON`    |           80 |    17 |         32 |                            0 |
+| `MIKU`       |          804 |   173 |        322 |                            0 |
+| `OPTIMUS`    |          246 |    53 |         99 |                            0 |
+| `POLMRKTBOT` |          315 |    67 |        126 |                            0 |
+| `RAO`        |          143 |    42 |         58 |                            0 |
+| `symx`       |          105 |    31 |         42 |                            0 |
+| `VISUALIZE`  |            — |     — |          — |  **Unmeasurable (HTTP 429)** |
+
+### Observed result
+
+**6 of 13 measured tokens carry the pattern.**
+
+This is an observation about this deliberately selected measurement population.
+
+It is **not** a market-wide prevalence estimate.
+
+---
+
+# 6.1 Why “Zero” Is Not Always Negative
+
+The `unreadable` column determines how much confidence can be placed in a zero.
+
+Examples:
+
+* `MIKU`: **322 unreadable wallets**
+* `OPTIMUS`: **99 unreadable wallets**
+* `BLT`: **0 unreadable**
+* `ACID`: **0 unreadable**
+
+Therefore:
+
+* a zero on BLT is a genuine measured negative;
+* a positive result on ACID is fully observed;
+* zeros on MIKU and OPTIMUS are weaker because a substantial fraction of wallet histories could not be inspected.
+
+On the two tokens where the scan is complete, one is negative and one is positive.
+
+Both observations remain informative.
+
+Everywhere else, the correct statement is partly:
+
+> **Not measured.**
+
+---
+
+# 6.2 Unmeasurable Is Not Negative
+
+One token produced no measurement at all because its history could not be retrieved.
+
+It is explicitly marked:
+
+**unmeasurable**
+
+rather than counted as a negative.
+
+This distinction is methodological rather than cosmetic.
+
+Collapsing:
+
+**not measurable → negative**
+
+previously produced an apparently clean:
+
+**0/14**
+
+result that was entirely false.
+
+The incident is documented in `PITFALLS.md` P15.
+
+---
+
+# 7. Evidence Boundary
+
+The current evidence supports the following narrow conclusions.
+
+### Established
+
+* A reproducible pre-launch funding pattern exists in the measured population.
+* The pattern can involve direct gateway → wallet funding.
+* It can also involve gateway → distributor → wallet funding.
+* Fresh wallets, pre-launch funding, repeated conversion-output amounts, and chronology provide the core observable structure.
+* The pattern appears on **6/13 measured tokens** in the scanned population.
+* One case was initially hidden by an arbitrary 40-buyer scan limit.
+* The downstream behaviour of the 14 readable gateway-funded wallets is consistent with a **standing wallet fleet**: all 14 subsequently funded at least one newly created address.
+* At least two token pairs have hard on-chain links through recurring funding evidence.
+* The identity behind those linked operations is **not established**.
+
+### Not established
+
+* The percentage of all pump.fun launches using the mechanism.
+* That all observed dispatches belong to one operator.
+* That the gateway service itself is involved in or aware of the activity.
+* That identical execution implies identical human ownership.
+* That absence of a shared upstream funder implies unrelated operators.
+* That a shared gateway alone demonstrates coordination.
+* That an observed wallet fleet identifies a specific person or organization.
+
+---
+
+# 8. Reproducibility
+
+The core analysis is implemented in the repository through:
+
+```text
+code/a5_author_pattern.py
+code/a6_gateway_chains.py
+code/a1_null_model.py
+code/a3_hub_origin.py
+code/a7_cross_token_links.py
+code/a8_wallet_horde.py
+```
+
+The full per-wallet dataset is:
+
+```text
+data/split/all_buyers_g2y.json
+```
+
+The separate question of whether the mechanism also appears on tokens that nobody traded is handled in:
+
+```text
+SPLIT_PHASE1.md §6
+```
+
+---
+
+# Conclusion
+
+The most defensible description of the pattern is not:
+
+> “A known operator funds its bots through a swap service.”
+
+The evidence does not establish that level of attribution.
+
+The defensible description is narrower:
+
+> **A reproducible pre-launch funding mechanism exists in which fresh buyer wallets can be provisioned through a common gateway, sometimes through an intermediate distributor, with repeated conversion-output amounts and strict pre-launch chronology. The resulting wallets can persist and themselves become funders of newly created addresses.**
+
+The evidence links some operations across tokens, but does not identify the controlling actor.
+
+The downstream fleet analysis strengthens the case for a **persistent provisioning system** while leaving the identity question open.
+
+That distinction is the point of the investigation:
+
+**the transaction structure is observable; the human behind it is not established.**
