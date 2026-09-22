@@ -1,279 +1,665 @@
-# The 2024–2025 split: what the chain shows, and what it does not
+# The 2024–2025 Split: What the Chain Shows, and What It Does Not
 
-This chapter covers the era before the creation-slot buyback closed the window, roughly October 2024
-to February 2025, when capital was routed to fresh wallets, cut into near-identical amounts, and
-spent in sequence. It reports one confirmed reference case, a hub traced to its own genesis, two
-control groups, a null distribution for the detector itself, and a target cohort that cannot support
-the claim it was assembled to support.
+This chapter examines the **2024–2025 phase**, approximately October 2024 through February 2025, before the later creation-slot acquisition compressed the observable trading window.
 
-The detector comes before its output here. An earlier draft read the output first and got the
-headline backwards.
+During this period, the investigated mechanism involved capital being routed to fresh wallets, divided into near-identical amounts, and subsequently deployed in sequence.
 
-> *The Matrix*, here, names the coordinated infrastructure observed on chain: addresses sharing
-> funding origins and execution patterns. It is a label for a measured structure and never an actor.
-> Every address quoted is a public technical identifier. Reaching a swap service or a bridge is a
-> **routing fact** (all capital entering this chain passes through such a gateway), and no
-> involvement by any service, company, or person is asserted or implied.
+The investigation covers:
 
----
+* one confirmed reference case;
+* a funding hub traced to its own genesis;
+* two control populations;
+* a null distribution for the detector;
+* a target cohort whose original interpretation does **not** survive the corrected controls.
 
-## 1. The reference case
+The detector is presented before its aggregate output.
 
-One token, created 2024-11-22 at 23:49 UTC, has four first buyers that share an unusual property:
-all four wallets were **born in the same transaction**, five days earlier, on 2024-11-17 at 23:55
-UTC. That transaction moved 12.0001 SOL out as **4 × 3.000000000 SOL**, one per wallet, from a
-single hub address. All four wallet histories were paged back to their first signature (genesis
-reached, 4 of 4), so this is an observation, not the residue of a bounded walk.
-
-Two properties carry the weight. The amount is **round to nine decimals**, where a conversion would
-leave something like 1.393934883, and it is **identical across four recipients inside one
-transaction**, which independent deposits do not produce. Round amount plus shared transaction is
-the signature; either alone is much weaker (see `docs/PITFALLS.md`, mixed calibres).
-
-## 2. The hub, traced to its own genesis
-
-Earlier work could not say where the hub itself got its funds. The walk had been bounded and
-returned only recent history: the silent pagination failure, which arrives as a plausible-looking
-answer rather than an error.
-
-Redone without bound (`code/a3_hub_origin.py`, from two unbounded walks):
-
-| | |
-|---|---|
-| signatures read | **217 615** |
-| genesis reached | **yes** |
-| first operation | 2024-10-22, **0.01 SOL** (an account activation) |
-| real activity begins | 2024-11-06, two weeks later |
-| fan-outs observed in the first events | 4 |
-
-The usage pattern is a **fan-out**: the hub receives an amount and pays the same amount out within
-the minute, cut into round parts across several recipients. It does not hold a balance. Four
-examples from its first day of real activity:
-
-| received | paid out to | amounts |
-|---|---|---|
-| 1.5001 SOL | 8 addresses | 0.1 ×6, 0.2, 0.3 |
-| 15.0001 SOL | 6 addresses | 1, 1, 2, 3, 3, 5 |
-| 16.0001 SOL | 3 addresses | 2, 6, 8 |
-| 15.0001 SOL | 3 addresses | 5, 5, 5 |
-
-Upstream, three funders were paged to genesis and two were not:
-
-| address role | signatures | genesis | active since |
-|---|---|---|---|
-| principal funder | 219 104 | reached | **2022-03-14** |
-| first notable transfer | 14 798 | reached | 2023-01-01 |
-| secondary funder | 109 | reached | 2024-11-06 |
-| commission recipient | 400 000 read | **not reached** | - |
-| account activator | 400 000 read | **not reached** | - |
-
-The hub account is new at the opening of the studied window, and its shape of use is distribution
-rather than trading. Its principal funder is *not* new: that account dates to 2022 with its genesis
-reached, which rules out infrastructure built for this window alone.
-
-The last two rows are reported as **out of reach**, not as unfunded. An address whose history
-exceeds the pagination ceiling has an unmeasured origin, and writing "no funding found" for it would
-report a measurement failure as a result. And a wallet that pays out what it receives is equally
-consistent with an operation's distributor and with a third-party service's relay: the *shape* is
-established, the *intent* is not.
+That ordering is deliberate: an earlier draft examined the output first and consequently overstated what the evidence supported.
 
 ---
 
-## 3. The detector, and its null distribution
+## Terminology and attribution boundary
 
-The split detector declares a token positive when any of three criteria fires on its first forty
-buyers:
+The term **“Matrix”**, where used in this phase of the research, refers only to the coordinated infrastructure observed on-chain:
 
-- **A**: two or more are funded inside the **same transaction**;
-- **B**: three or more receive amounts equal to within 1e-4 relative, inside **one hour**;
-- **C**: two or more share a **private funder** (known exchange and bridge terminals excluded,
-  since a shared hot wallet is a deposit, not a coordination).
+> addresses sharing funding origins and/or execution patterns.
 
-Each criterion first has to be asked how often it fires on wallets that were never coordinated. The
-control group supplies the population: 136 early-buyer wallets from tokens selected on creation slot
-alone, with funding measured by identical code. Pooling them and drawing random groups destroys
-within-token co-occurrence, so any hit in a drawn group is a coincidence by construction.
+It is a label for a **measured structure**, not for an actor.
 
-Over 5 000 draws (`code/a1_null_model.py`):
+Every address quoted in this chapter is a public technical identifier.
 
-| criterion | group of 10 | group of 20 | group of 40 |
-|---|---|---|---|
-| **A** same funding transaction | 0.0000 | 0.0000 | 0.0000 |
-| **B** same amount within one hour | 0.0000 | 0.0000 | 0.0000 |
-| **C** shared private funder | 0.151 | 0.461 | **0.889** |
+Reaching a swap service, bridge, exchange, or other gateway establishes a **routing fact**. It does not establish involvement by that service, company, employee, or person.
 
-Restricted to the 70 wallets whose genesis was actually reached, the only subset on which a negative
-is admissible, **C fires on 99.5 %** of draws.
-
-Criterion C is retired. Its rate climbs with group size the way a birthday problem does: more
-wallets, more pairs, funders drawn from a finite pool. It cannot enter a disjunctive verdict,
-because at 88.9 % it *is* the verdict. Criteria A and B fired 0 times in 5 000 draws at every size.
-They demand a coincidence in identity **and** in time, a much narrower target.
-
-Every token was therefore recounted under **A and B only** (`code/a2_recount.py`). The full episode,
-including which conclusion this reversed, is card 13 of `docs/PITFALLS.md`.
+No service, company, or individual is attributed with participation, knowledge, intent, or wrongdoing by this analysis.
 
 ---
 
-## 4. Two control groups, and why one was not enough
+# 1. The Reference Case
 
-**Control group 1, matched on creation slot (n = 9).** Every pump.fun mint created within ±200
-slots of a target, selection depending only on creation slot and market outcome, with the rule fixed
-before any funding was measured. Bonding-curve pagination reached genesis for all 171 harvested
-mints.
+One token, created on:
 
-That group leaves one confound wide open: the targets all graduated, and these controls are all dead
-tokens. A difference between the two groups can come from **success** rather than from coordination.
-Sophisticated buyers cluster on tokens that go somewhere; that alone could produce coordinated-looking
-funding without any operation behind it.
+**2024-11-22 at 23:49 UTC**
 
-**Control group 2, matched on the outcome (n = 12).** Graduated pump.fun tokens from the same
-window that the author never traded, drawn by systematic sampling across the full capitalisation
-range of the reachable pool (`data/trace_gradues/t0_gradues.json`), with the retention rule fixed
-before measurement. This is the comparison that carries weight; group 1 is kept to show how far the
-confound moves the answer.
+has four first buyers sharing an unusual funding structure.
 
-The reachable pool is itself survivor-selected, drawn from a capitalisation-ranked listing, so these
-controls did, on average, *better* than the targets. That bias runs **against** the hypothesis under
-test, which makes a negative among them more informative, not less.
+All four wallets were created in the **same transaction**, five days earlier:
 
----
+**2024-11-17 at 23:55 UTC**
 
-## 5. The target cohort, and the claim it cannot support
+That transaction moved:
 
-The targets are tokens their author traded and screenshotted. That is selection on the outcome twice
-over: once because the token went somewhere worth trading, once because the trade went well enough
-to screenshot. `code/a4_selection_bias.py` puts a number on it:
+**12.0001 SOL**
 
-| | |
-|---|---|
-| graduation rate of the era, five neutral term families | 32 / 2 740 = **1.17 %** |
-| graduation rate, slot-matched creation windows | 6 / 171 = 3.51 % |
-| target cohort | **11 / 11 = 100 %** |
-| probability of that under random sampling | **~5 × 10⁻²²** |
+as:
 
-Mint resolution is uneven and is labelled as such: 8 read directly from a capture, 2 resolved by
-symbol *and* date, 1 by symbol alone. **Six symbols could not be resolved** to a mint with any
-confidence, since homonyms are endemic on pump.fun, which is itself part of the subject; they are
-left marked AMBIGUOUS rather than guessed. One fragment resolved to a mint sharing its first nine
-characters with a pool created on the capture's own date; the differences are consistent with OCR,
-and it is recorded at that level of confidence, not higher.
+**4 × 3.000000000 SOL**
 
-The cohort can answer two questions. Among graduated tokens of the same window, do the traded ones
-carry the signature more often than the others? And a presence test: is the signature observable
-where the author says it was?
+with one allocation to each wallet from a single hub address.
 
-It cannot answer prevalence. *"X % of tokens carry the signature"* is not derivable from a sample
-selected on the outcome, however carefully the sentence is worded. Nor profitability: the captures
-are winning trades, and the losing ones are not in the dossier and cannot be.
+All four wallet histories were paged back to their first signature:
+
+**4/4 genesis reached**
+
+This matters because the observation is not merely the residue of a bounded historical search.
 
 ---
 
-## 6. Result: the signature does not survive its own control group
+## 1.1 The distinguishing signature
 
-Against dead tokens, the split signature separates the traded tokens from the rest with p = 0.0007.
-Against graduated tokens of the same window, it separates nothing: p = 0.44. The apparent effect was
-the difference between a token that went somewhere and a token that did not, not the difference
-between a coordinated launch and an ordinary one.
+Two properties carry most of the evidentiary weight:
 
-The four rows of the second table, in order, each strip away one thing that was doing the work:
+1. the amount is **round to nine decimals**;
+2. the same amount is distributed to four recipients **inside one transaction**.
 
-1. **Original verdict, dead controls: 12/14 vs 1/9, p = 0.0007.** The number the project would have
-   published. It rests on criterion C, which §3 showed fires on 88.9 % of random groups.
-2. **A or B only, dead controls: 5/14 vs 0/9, p = 0.060.** Removing the worthless criterion costs
-   most of the effect and all of the significance.
-3. **Original verdict, graduated controls: 12/14 vs 8/12, p = 0.25.** Holding the outcome fixed, two
-   thirds of *untraded* graduated tokens also "carry the signature". Criterion C is not detecting
-   coordination; it is detecting that a token had buyers.
-4. **A or B only, graduated controls: 5/14 vs 3/12, p = 0.44.** Both corrections applied. Nothing
-   remains.
+A conversion-derived amount would normally contain a non-round output such as:
 
-The strongest criterion tells the same story more quietly. Criterion A, two early buyers funded
-inside the *same transaction*, the one that fired 0 times in 5 000 null draws, appears on exactly
-**one** target out of fourteen and on **none** of the twelve graduated controls (p = 0.54). That is
-one case, not a rate.
-
-**What stands.** The reference case is real: four wallets born in one transaction, four identical
-round amounts, five days before the token, genesis reached on all four. So is the second instance
-found among the targets. So is the hub, its fan-out shape, and its 2022 funder. These are
-observations, and they are not withdrawn.
-
-**What falls.** The claim these observations were assembled to support, that the tokens this author
-traded were systematically launched on split-funded wallets, does not survive the comparison with
-graduated tokens he never touched. Coordinated-looking funding is **ordinary among tokens that
-graduate**, not a marker of the traded subset.
-
-A pattern confirmed on the case that suggested it, then found at the same rate in a properly matched
-control group, is a false discovery that a weaker protocol would have shipped. Two control groups
-were needed to see it: the first answered a question nobody asked, *do traded tokens differ from
-dead ones?*, to which the answer is yes and uninformative. The confound is P4 of `docs/PITFALLS.md`
-recurring in a new domain. Knowing a pitfall by name does not stop you walking into it.
-
-Nothing in this repository asserts that the phase-1 window was systematically coordinated. It
-documents a mechanism that demonstrably existed in at least two measured cases, a distribution hub
-traced to its genesis, and a test that failed to show the mechanism was general.
-
-<!-- RESULTS-TABLE -->
-
-| group | token | A | B | C | verdict A-or-B-or-C | verdict A-or-B |
-|---|---|---:|---:|---:|:-:|:-:|
-| target | `ACID` | 0 | 0 | 1 | + | – |
-| target | `BLT` | 0 | 4 | 4 | + | **+** |
-| target | `CHOCO` | 3 | 3 | 2 | + | **+** |
-| target | `LEXICON` | 0 | 1 | 2 | + | **+** |
-| target | `MIKU` | 0 | 0 | 1 | + | – |
-| **discovery case** (excluded from every p below) | `ODIN_POSITIF` | 1 | 1 | 2 | + | **+** |
-| target | `OPTIMUS` | 0 | 0 | 1 | + | – |
-| target | `POLMRKTBOT` | 0 | 0 | 1 | + | – |
-| target | `QAMI` | 0 | 0 | 4 | + | – |
-| target | `RAO` | 0 | 0 | 0 | – | – |
-| target | `SAFFRON` | 0 | 0 | 1 | + | – |
-| target | `VISUALIZE` | 0 | 1 | 1 | + | **+** |
-| target | `h2w6gm6jz` | 0 | 2 | 5 | + | **+** |
-| target | `sumiko` | 0 | 0 | 1 | + | – |
-| target | `symx` | 0 | 0 | 0 | – | – |
-| control, graduated | `G_$RIF` | 0 | 0 | 0 | – | – |
-| control, graduated | `G_CHATOSHI` | 0 | 1 | 1 | + | **+** |
-| control, graduated | `G_FORK` | 0 | 0 | 0 | – | – |
-| control, graduated | `G_Fartcoin ` | 0 | 0 | 1 | + | – |
-| control, graduated | `G_GOAT` | 0 | 1 | 2 | + | **+** |
-| control, graduated | `G_TRENCH` | 0 | 0 | 0 | – | – |
-| control, graduated | `G_TULSA` | 0 | 0 | 3 | + | – |
-| control, graduated | `G_VAL` | 0 | 2 | 3 | + | **+** |
-| control, graduated | `G_WOLF` | 0 | 0 | 2 | + | – |
-| control, graduated | `G_stkr` | 0 | 0 | 2 | + | – |
-| control, graduated | `G_vvaifu` | 0 | 0 | 0 | – | – |
-| control, graduated | `G_xavier` | 0 | 0 | 1 | + | – |
-| control, dead | `BandD` | 0 | 0 | 0 | – | – |
-| control, dead | `CREEKS` | 0 | 0 | 0 | – | – |
-| control, dead | `Calm` | 0 | 0 | 0 | – | – |
-| control, dead | `DONGOE` | 0 | 0 | 0 | – | – |
-| control, dead | `GOOREUREKA` | 0 | 0 | 0 | – | – |
-| control, dead | `HLGOOFY` | 0 | 0 | 1 | + | – |
-| control, dead | `PORTAL` | 0 | 0 | 0 | – | – |
-| control, dead | `QUEENAI` | 0 | 0 | 0 | – | – |
-| control, dead | `faith` | 0 | 0 | 0 | – | – |
-
-| comparison | targets | controls | Fisher one-sided *p* |
-|---|---|---|---|
-| original verdict (A or B or **C**) vs dead controls | 12/14 | 1/9 | 0.0007 |
-| **A or B only** vs dead controls | 5/14 | 0/9 | 0.0595 |
-| A alone (zero false positives in the null) vs dead controls | 1/14 | 0/9 | 0.6087 |
-| original verdict (A or B or **C**) vs graduated controls | 12/14 | 8/12 | 0.2478 |
-| **A or B only** vs graduated controls | 5/14 | 3/12 | 0.4371 |
-| A alone (zero false positives in the null) vs graduated controls | 1/14 | 0/12 | 0.5385 |
-
-<!-- /RESULTS-TABLE -->
----
-
-## 7. Reproducing this chapter
-
-```bash
-python3 code/a1_null_model.py      # null distribution of the three criteria
-python3 code/a2_recount.py         # every token recounted under A and B, Fisher's exact test
-python3 code/a3_hub_origin.py      # hub genesis and upstream, from the two unbounded walks
-python3 code/a4_selection_bias.py  # distance between the cohort and a random sample
+```text
+1.393934883
 ```
 
-All four read only committed files under `data/`. No network, no key. The walks that produced those
-files need a Helius key and are listed in `code/run_all.py` under `--with-net`.
+whereas:
+
+```text
+3.000000000
+```
+
+is consistent with an intentionally specified transfer.
+
+The combination is therefore more informative than either property alone:
+
+> **round amount + shared transaction**
+
+An identical amount without a shared transaction is weaker.
+
+A shared transaction without an informative amount structure is also weaker.
+
+This distinction is important for the detector design and is discussed further in `docs/PITFALLS.md`.
+
+---
+
+# 2. The Hub, Traced to Its Own Genesis
+
+Earlier work could not establish where the hub itself obtained its funds.
+
+The historical walk was bounded and returned only recent activity.
+
+The failure mode was particularly dangerous because the pagination problem produced a plausible-looking result instead of an explicit error.
+
+The analysis was therefore rerun without an artificial bound using:
+
+```text id="d3r6jq"
+code/a3_hub_origin.py
+```
+
+from two independent unbounded walks.
+
+| Measurement                       |                   Result |
+| --------------------------------- | -----------------------: |
+| Signatures read                   |              **217,615** |
+| Genesis reached                   |                  **Yes** |
+| First operation                   | **2024-10-22, 0.01 SOL** |
+| Purpose of first operation        |       Account activation |
+| Real activity begins              |           **2024-11-06** |
+| Fan-outs observed in first events |                    **4** |
+
+The hub's observed behaviour is primarily a **fan-out/distribution pattern**.
+
+It receives capital and then distributes it in the same general time interval, often splitting it into round amounts across several recipients.
+
+Four examples from the first day of substantive activity:
+
+|    Received | Paid out to | Amounts          |
+| ----------: | ----------: | ---------------- |
+|  1.5001 SOL | 8 addresses | 0.1 ×6, 0.2, 0.3 |
+| 15.0001 SOL | 6 addresses | 1, 1, 2, 3, 3, 5 |
+| 16.0001 SOL | 3 addresses | 2, 6, 8          |
+| 15.0001 SOL | 3 addresses | 5, 5, 5          |
+
+The account therefore exhibits a distribution shape rather than the behaviour of a wallet simply accumulating and trading a balance.
+
+---
+
+## 2.1 Upstream funding
+
+Three upstream relationships were examined to genesis, while two could not be resolved completely.
+
+| Address role           |   Signatures | Genesis         | Active since   |
+| ---------------------- | -----------: | --------------- | -------------- |
+| Principal funder       |      219,104 | Reached         | **2022-03-14** |
+| First notable transfer |       14,798 | Reached         | **2023-01-01** |
+| Secondary funder       |          109 | Reached         | **2024-11-06** |
+| Commission recipient   | 400,000 read | **Not reached** | —              |
+| Account activator      | 400,000 read | **Not reached** | —              |
+
+The hub account itself is new relative to the opening of the studied period.
+
+Its principal funder, however, is not new: that account dates to **2022**, and its genesis was reached.
+
+This rules out the narrow interpretation that the entire upstream infrastructure was created specifically for this observation window.
+
+The two unresolved histories are explicitly reported as:
+
+> **out of reach**
+
+rather than:
+
+> **unfunded**
+
+An address whose history exceeds the available pagination/search boundary has an **unmeasured origin**.
+
+Likewise, a wallet that receives and redistributes funds is compatible with multiple roles, including:
+
+* an operational distributor;
+* a relay;
+* another intermediary service.
+
+The **shape of the activity is established**.
+
+The **intent is not**.
+
+---
+
+# 3. The Detector and Its Null Distribution
+
+The original split detector classified a token as positive when at least one of three criteria fired among its first 40 buyers.
+
+### Criterion A — Same funding transaction
+
+At least two buyers are funded inside the **same transaction**.
+
+### Criterion B — Same amount within one hour
+
+At least three buyers receive amounts equal within **1e-4 relative tolerance** inside a **one-hour window**.
+
+### Criterion C — Shared private funder
+
+At least two buyers share a **private funder**.
+
+Known exchange and bridge terminals were excluded because a shared exchange hot wallet represents a common deposit endpoint rather than evidence of coordination.
+
+---
+
+## 3.1 The detector must be tested against a null
+
+Before interpreting any criterion as evidence of coordination, it must be measured against wallets for which coordination is not known to exist.
+
+The control population contained:
+
+**136 early-buyer wallets**
+
+from tokens selected using creation-slot information alone.
+
+Funding was measured using the same code as the target population.
+
+The wallets were pooled and randomly regrouped.
+
+This destroys their original within-token co-occurrence.
+
+Any resulting detector hit is therefore a coincidence under the construction of the null.
+
+Across:
+
+**5,000 random draws**
+
+the firing rates were:
+
+| Criterion                           | Group of 10 | Group of 20 | Group of 40 |
+| ----------------------------------- | ----------: | ----------: | ----------: |
+| **A — same funding transaction**    |      0.0000 |      0.0000 |      0.0000 |
+| **B — same amount within one hour** |      0.0000 |      0.0000 |      0.0000 |
+| **C — shared private funder**       |       0.151 |       0.461 |   **0.889** |
+
+Restricting the analysis to the 70 wallets whose genesis was actually reached does not rescue criterion C:
+
+> **C fires on 99.5% of random draws.**
+
+---
+
+## 3.2 Criterion C is retired
+
+Criterion C behaves like a birthday-collision problem.
+
+As the number of wallets in a group increases, the number of possible pairwise relationships increases, while the funder population remains finite.
+
+The result is that:
+
+> **more wallets → more apparent shared-funder relationships**
+
+By a group size of 40, criterion C fires on **88.9%** of random groups.
+
+At that point, C is effectively becoming the verdict itself.
+
+It therefore cannot be included in a disjunctive detector:
+
+```text
+A OR B OR C
+```
+
+if C is already positive for most random groups.
+
+Criteria A and B, by contrast, fired:
+
+**0 times in 5,000 draws at every tested group size.**
+
+They require coincidence in both identity and timing and are consequently much narrower criteria.
+
+---
+
+## 3.3 Recount after retiring C
+
+Every token was therefore recounted using:
+
+```text
+A OR B
+```
+
+only.
+
+The corrected recount is implemented in:
+
+```text id="v3tdqf"
+code/a2_recount.py
+```
+
+The complete methodological episode is documented as card 13 in `docs/PITFALLS.md`.
+
+---
+
+# 4. Two Control Groups — and Why One Was Not Enough
+
+A major lesson from this phase is that a single control group can answer the wrong question very precisely.
+
+Two control populations were therefore constructed.
+
+---
+
+## 4.1 Control Group 1 — Matched on Creation Slot
+
+**n = 9**
+
+Each control token was selected within approximately **±200 slots** of a target.
+
+Selection depended only on creation-slot information and market outcome, with the rule fixed before funding was measured.
+
+Bonding-curve pagination reached genesis for all:
+
+**171 harvested mints**
+
+This control was useful but incomplete.
+
+The problem was that all target tokens had graduated, while all tokens in this first control group were dead.
+
+That leaves a major confound:
+
+> **success**
+
+A difference between the groups can arise because one group contains successful tokens and the other does not.
+
+Sophisticated buyers may naturally cluster around tokens that subsequently perform well.
+
+That alone can create funding structures that look coordinated.
+
+---
+
+## 4.2 Control Group 2 — Matched on Outcome
+
+**n = 12**
+
+The second control group consisted of graduated pump.fun tokens from the same period that the author did **not** trade.
+
+They were selected systematically across the full capitalization range of the reachable population:
+
+```text id="s0rq1w"
+data/trace_gradues/t0_gradues.json
+```
+
+The retention rule was fixed before measurement.
+
+This is the comparison that carries the substantive weight.
+
+The first control group remains in the document because it demonstrates how strongly the outcome confound can alter the apparent result.
+
+---
+
+## 4.3 Important limitation of the graduated controls
+
+The reachable pool itself is survivor-selected because it comes from a capitalization-ranked listing.
+
+The graduated controls consequently performed, on average, better than the target population.
+
+That selection runs against the hypothesis being tested.
+
+This does not make the controls unbiased in an absolute sense.
+
+It means the control construction does not simply reproduce the original target selection and therefore provides a more informative comparison than the dead-token controls.
+
+---
+
+# 5. The Target Cohort — and the Claim It Cannot Support
+
+The target cohort consists of tokens that the author traded and for which screenshots were retained.
+
+That introduces outcome selection twice:
+
+1. the token had to reach a level worth trading;
+2. the trade had to be successful enough to be documented.
+
+The selection-bias analysis is implemented in:
+
+```text id="v7yscp"
+code/a4_selection_bias.py
+```
+
+The resulting graduation rates are:
+
+| Population                                          |              Graduated |
+| --------------------------------------------------- | ---------------------: |
+| Era-wide estimate across five neutral term families | **32 / 2,740 = 1.17%** |
+| Slot-matched creation windows                       |    **6 / 171 = 3.51%** |
+| Target cohort                                       |     **11 / 11 = 100%** |
+| Approximate probability under random sampling       |         **~5 × 10⁻²²** |
+
+The target cohort is therefore highly selected.
+
+---
+
+## 5.1 Mint-resolution limitations
+
+Mint resolution is uneven and is explicitly labelled.
+
+* **8** tokens were resolved directly from a capture.
+* **2** were resolved using symbol **and** date.
+* **1** was resolved using symbol alone.
+* **6 symbols** could not be resolved to a mint with sufficient confidence.
+
+The unresolved symbols are retained as:
+
+> **AMBIGUOUS**
+
+rather than being guessed.
+
+One fragment resolved to a mint sharing its first nine characters with a pool created on the capture date.
+
+The differences are consistent with OCR, but the identification is retained only at that level of confidence.
+
+The principle is:
+
+> **uncertainty is preserved rather than silently converted into certainty.**
+
+---
+
+## 5.2 What the cohort can answer
+
+The cohort can support two limited questions.
+
+### Question 1
+
+Among graduated tokens from the same period, do the tokens traded by the author carry the signature more often than graduated tokens the author did not trade?
+
+### Question 2
+
+Is the signature actually observable in the cases from which the investigation originated?
+
+Those are presence/comparison questions.
+
+---
+
+## 5.3 What the cohort cannot answer
+
+The cohort cannot establish prevalence.
+
+A statement such as:
+
+> “X% of pump.fun tokens carry the signature”
+
+is not derivable from a population selected on outcome.
+
+The cohort also cannot establish profitability.
+
+The captures are selected winning trades, while losing trades are not represented in the screenshot dossier.
+
+---
+
+# 6. Result: The Signature Does Not Survive Its Own Control Group
+
+Against dead tokens, the original split signature strongly separated the traded tokens from the controls:
+
+**p = 0.0007**
+
+Against graduated tokens from the same period, the difference disappears:
+
+**p = 0.44**
+
+The apparent effect was therefore substantially explained by the difference between:
+
+> **a token that went somewhere**
+
+and:
+
+> **a token that did not.**
+
+It was not demonstrated to be a difference between:
+
+> **a coordinated launch**
+
+and:
+
+> **an ordinary successful launch.**
+
+---
+
+## 6.1 The four-stage correction
+
+Each comparison removes one source of the original apparent effect.
+
+### 1. Original verdict vs dead controls
+
+**12/14 vs 1/9**
+
+**p = 0.0007**
+
+This was the number the project could have published under the original protocol.
+
+However, it depends on criterion C, which fires on **88.9% of random groups**.
+
+---
+
+### 2. A or B only vs dead controls
+
+**5/14 vs 0/9**
+
+**p = 0.060**
+
+Removing criterion C eliminates most of the apparent effect and removes conventional statistical significance.
+
+---
+
+### 3. Original verdict vs graduated controls
+
+**12/14 vs 8/12**
+
+**p = 0.2478**
+
+Once the outcome is held approximately constant, the original detector still fires frequently among untraded graduated tokens.
+
+This demonstrates that criterion C was not specifically detecting coordination.
+
+It was detecting a property strongly associated with having a successful token and a sufficiently active buyer population.
+
+---
+
+### 4. A or B only vs graduated controls
+
+**5/14 vs 3/12**
+
+**p = 0.4371**
+
+Both corrections are now applied:
+
+* the weak null criterion C has been retired;
+* the control group is matched on graduation/outcome.
+
+No statistically distinguishable effect remains in this small measured sample.
+
+---
+
+# 6.2 Criterion A as the strongest individual test
+
+Criterion A is particularly informative because it fired:
+
+**0 times in 5,000 null draws.**
+
+It requires two or more early buyers to be funded within the **same transaction**.
+
+It appears on:
+
+**1/14 targets**
+
+and:
+
+**0/12 graduated controls**
+
+with:
+
+**p = 0.5385**
+
+The appropriate interpretation is therefore:
+
+> **One observed target case, not an estimated rate.**
+
+The null result does not invalidate the reference case.
+
+It limits what can be inferred from that case.
+
+---
+
+# 6.3 What remains established
+
+The reference case is real:
+
+* four wallets were born in one transaction;
+* all four received identical round amounts;
+* the funding occurred five days before the token;
+* genesis was reached for all four wallets.
+
+A second instance was also identified among the target cases.
+
+The distribution hub is real.
+
+Its fan-out structure is real.
+
+Its principal upstream funder is traceable to an account active since 2022.
+
+These are observations and remain valid.
+
+---
+
+# 6.4 What does not survive
+
+The broader claim that these observations were evidence that:
+
+> **the tokens traded by the author were systematically launched through split-funded wallets**
+
+does not survive comparison with graduated tokens that the author did not trade.
+
+The corrected evidence instead indicates that coordinated-looking funding structures can also occur among successful graduated tokens outside the target trading cohort.
+
+That is a materially narrower conclusion.
+
+---
+
+# 7. Final Evidence Boundary
+
+The phase-1 analysis supports the following:
+
+### Established
+
+* A split-funding mechanism demonstrably existed in at least two measured cases.
+* One reference case contains four wallets created in the same transaction and funded with four identical round amounts.
+* The relevant wallet histories were traced to genesis.
+* The hub exhibits a measurable fan-out/distribution structure.
+* The hub's principal upstream funder dates to 2022.
+* The original shared-private-funder criterion produces extremely high false-positive rates under the null and must not be used as a coordination detector.
+* Same-transaction funding and tightly synchronized equal-amount funding are substantially rarer under the tested null.
+* The target cohort is heavily selected on outcome.
+* Once outcome is controlled and the weak criterion is removed, the small target/control comparison does not establish a systematic difference.
+
+### Not established
+
+This analysis does **not** establish:
+
+* a market-wide prevalence rate;
+* that the phase-1 launch population was systematically coordinated;
+* that all target tokens shared one operator;
+* that the observed hub belonged to a particular person or organization;
+* that a shared funding origin establishes common ownership;
+* that the observed pattern implies malicious intent;
+* that the historical trading screenshots measure overall profitability;
+* that the absence of a shared upstream funder proves that operators were unrelated.
+
+---
+
+# 8. The Corrected Conclusion
+
+The strongest defensible conclusion from phase 1 is deliberately narrow:
+
+> **A reproducible split-funding mechanism existed on Solana during the 2024–2025 measurement window and can be demonstrated at transaction level in multiple cases. However, the corrected detector and outcome-matched controls do not establish that this mechanism was systematically characteristic of the tokens traded by the author.**
+
+The investigation therefore separates two claims that an earlier version had conflated:
+
+```text id="9ppgdy"
+The mechanism existed
+        ≠
+The mechanism was systematically responsible for the target cohort
+```
+
+The first survives.
+
+The second does not.
+
+That distinction is the central result of this phase.
+
+---
+
+# 9. Reproducing This Chapter
+
+All four analyses read only committed files under `data/`.
+
+No network access or API key is required for reproduction of the published outputs.
+
+```bash id="d2oy2h"
+python3 code/a1_null_model.py      # null distribution of the three criteria
+python3 code/a2_recount.py         # recount under A and B + Fisher exact tests
+python3 code/a3_hub_origin.py      # hub genesis and upstream reconstruction
+python3 code/a4_selection_bias.py  # target-cohort selection analysis
+```
+
+The historical walks that generated the committed data require a Helius key and are listed in:
+
+```text id="w3w1pd"
+code/run_all.py --with-net
+```
+
+The reproducibility boundary is therefore explicit:
+
+> **The published analysis is reproducible from committed data; regenerating the underlying historical chain extracts requires network access and the configured RPC credentials.**
