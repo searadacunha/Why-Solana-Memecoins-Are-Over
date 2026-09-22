@@ -1,675 +1,1248 @@
-# Methodological pitfalls
+# Methodological Pitfalls
 
-Fifteen claims this project held, each with the test built to break it and what was left afterwards.
-Each card carries the number first obtained, the test that exposed it, the correction, the value
-that survived, and the transferable lesson.
+## Fifteen ways this investigation could have been wrong
 
-Eleven of the fifteen died. One died in the other direction: a negative that turned out to be a
-broken connection rather than a result. Nobody has gone looking for the failure modes of a pipeline
-that only ever confirms its author. Every result elsewhere in this repository is what remains after
-this chapter was applied to it.
+This file is not a list of caveats added after the fact.
 
-`code/p0_pitfalls_check.py` recomputes every figure quoted below, reading only the published files
-in `./data/`. Run it:
+It is the record of the investigation trying to **break its own conclusions**.
 
-```
+Fifteen claims emerged during the analysis. For each one, the same question was asked:
+
+> **What would have to be true for this result to be an artefact?**
+
+Then the test was built.
+
+The outcome was uncomfortable:
+
+**11 of the 15 claims died.**
+
+One more died in the opposite direction: what looked like a negative result turned out to be a broken data connection.
+
+That is the point of this file.
+
+A pipeline that only confirms its author is not an investigation.
+
+Everything reported elsewhere in this repository is what remained **after these failure modes were actively attacked**.
+
+Every figure below is reproducible from the published dataset with:
+
+```bash
 python3 code/p0_pitfalls_check.py
 ```
 
-Three figures that circulate in the project's internal notes could **not** be reproduced from the
-published data; they are listed in [What did not reproduce](#what-did-not-reproduce) rather than
-quietly dropped.
+Three figures from internal notes could not be reproduced from the published data. They are documented at the end rather than quietly deleted.
 
 ---
 
-## Reference populations
+# Reference populations
 
-| id | definition | n | clusters | days |
-|---|---|---|---|---|
-| **A** | detector log, full-curve buyback (>= 60 SOL), after removing the corrupted rows of P3 | 93 | 34 | 3 |
-| **B** | fast-graduation tokens with a verified peak, sane MC regime | 1 243 | 123 | 20 |
-| **C** | subset of B carrying a swap-level capture (0-20 min) | 278 | - | 7 |
-| **canonical** | tokens on which a 0.5 SOL round trip is actually executable at entry+120 s | 196 | 20 | 6 |
+| ID            | Definition                                                     |     n | Clusters | Days |
+| ------------- | -------------------------------------------------------------- | ----: | -------: | ---: |
+| **A**         | Detector log, full-curve buyback ≥60 SOL                       |    93 |       34 |    3 |
+| **B**         | Fast-graduation tokens with verified peak and sane MC regime   | 1,243 |      123 |   20 |
+| **C**         | Subset of B with swap-level capture                            |   278 |        — |    7 |
+| **Canonical** | Tokens where a 0.5 SOL round trip is executable at entry +120s |   196 |       20 |    6 |
 
-Clusters are 30-minute gaps between detections. Every rate below is reported with its `n`, because on
-this corpus the effective sample size is the number of clusters and days, not the number of rows.
+Clusters are launches separated by ≤30 minutes.
 
----
-
-## Summary
-
-| # | the claim that failed | what it said | what survived the test |
-|---|---|---|---|
-| 1 | selection on the outcome | 69.8 % of tokens double | 46.3 % (the base rate) |
-| 2 | denominator artefact | any low-MC variable "predicts" the multiple | elasticity 0.88 explains it; residual target, rho 0.05 |
-| 3 | silent default value | 35.9 % reach 3x | 30.1 % |
-| 4 | confounding variable | +30.0 pt, p = 0.0032 | +5.4 / +7.7 pt, MH odds ratio 1.22, p = 0.97 |
-| 5 | touched is not cashed | median peak = 1.87x entry | 0/10 exit policies profitable |
-| 6 | mixed units | median +1 h = **29.97x**, 91.5 % profitable | **0.394x**, 14.9 % profitable |
-| 7 | broken supervision probes | "process alive" = healthy | CPU-time delta; two probes silently wrong |
-| 8 | unfilled-exit convention | tp50 median **+31.5 %** | **+3.3 %** |
-| 9 | unpriced lookahead | trough entry +14.7 % median | −2.8 % on the live-safe mirror |
-| 10 | null distribution of the maximum | best of 38 policies = +7.26 % | 5 % critical value = +26.3 % |
-| 11 | non-random missingness | 54.6 % of captures lost | loss is time-clustered, outcome-neutral |
-| 12 | shared infrastructure in a graph | giant component 63.8 % | 17.0 % |
-| 13 | criterion with no null of its own | "shared funder" separates targets from controls | it fires on 88.9 % of random groups; retired |
-| 14 | control group matched on the wrong thing | split signature, targets vs controls, p = 0.0007 | vs *graduated* controls, p = 0.44, the effect was the outcome |
-| 15 | transport failure returned as a measurement | "0/14 tokens carry the pattern" | a wrong hostname; measured properly, 3/9 with 5 unmeasurable |
+The nominal row count is therefore not the effective number of independent observations. Rates are always reported with their population context.
 
 ---
 
-# The seven core failures
+# The investigation in one table
 
-## P1. Selection on the outcome
-
-A boolean built from the outcome, used as if it were a feature.
-
-**Symptom.** A field named `t_buyable` marked a token as tradable when its all-time peak occurred at
-least 60 s *after* detection, a sane-looking executability filter. Restricted to those tokens, the
-corpus looked transformed: **69.8 %** reached 2x versus 16.3 % for the rest, and **50.3 %** reached
-a 200 k market cap versus 6.1 %. Median peak 200 314 versus 65 232, a factor **3.07**. Reproduced on
-all three populations (A: x2.59, B: x3.07, C: x3.17).
-
-**Diagnosis.** Read the definition, not the name. `t_buyable` is `peak_ts >= detect_ts + 60 s`. A
-token whose price collapsed immediately after detection has its peak *before* detection and is
-excluded **because it lost**. The filter conditions on the future: it selects tokens that went up,
-not tokens that are buyable. The give-away is the shape of the contrast. An eight-fold gap on the
-absolute target is far larger than any pre-trade feature in this project ever produced, and a filter
-that outperforms every real feature by an order of magnitude is almost always reading the answer.
-
-**Fix.** `t_buyable` was demoted from feature to diagnostic. It is allowed to appear in tables
-describing what happened; it is forbidden as an entry criterion or as a model input. All headline
-rates are reported on the whole population.
-
-**After correction.** The 2x rate on B is **46.3 %** (n = 1 243), not 69.8 %. On the absolute
-target, **30.9 %** reach 200 k, not 50.3 %.
-
-**Lesson.** Any variable whose definition contains a timestamp or a value from after the decision
-point is an outcome, whatever it is called. Audit definitions, not names.
+| #       | Failure mode                  | What initially appeared true          | What survived                                             |
+| ------- | ----------------------------- | ------------------------------------- | --------------------------------------------------------- |
+| **P1**  | Selection on the outcome      | 69.8% of tokens double                | **46.3% base rate**                                       |
+| **P2**  | Denominator artefact          | Low-MC variables predict the multiple | Elasticity **0.88**; residual target removes the artefact |
+| **P3**  | Silent default value          | 35.9% reach 3x                        | **30.1%**                                                 |
+| **P4**  | Confounding variable          | +30.0 points, p=0.0032                | Adjusted OR **1.22**, p=0.97                              |
+| **P5**  | Peak ≠ executable price       | Median peak = 1.87x entry             | **0/10 exit policies profitable**                         |
+| **P6**  | Instrumentation errors        | +1h = 29.97x, 91.5% profitable        | **0.394x, 14.9% profitable**                              |
+| **P7**  | Broken monitoring             | "Process alive" = healthy             | CPU/IO deltas exposed failures                            |
+| **P8**  | Missing-exit convention       | +31.5% median                         | **+3.3%** under hard convention                           |
+| **P9**  | Lookahead                     | Trough entry = +14.7%                 | **−2.8% live-safe mirror**                                |
+| **P10** | Multiple-testing winner       | Best of 38 = +7.26%                   | Max-null critical value **+26.3%**                        |
+| **P11** | Missingness                   | 54.6% of captures lost                | Time-clustered, outcome-neutral                           |
+| **P12** | Shared infrastructure         | Giant component = 63.8%               | **17.0%** after hub control                               |
+| **P13** | Detector without its own null | Shared funder separates targets       | Fires on **88.9%** of random groups                       |
+| **P14** | Wrong control group           | p=0.0007                              | Graduated controls: **p=0.4371**                          |
+| **P15** | Transport failure             | 0/14 carry the pattern                | **3/9 measured; 5 impossible to measure**                 |
 
 ---
 
-## P2. Denominator artefact
+# P1 — Selection on the outcome
 
-Dividing by the entry price makes the entry price look like a signal, in the wrong direction.
+## A variable that secretly knew the answer
 
-**Symptom.** The natural performance metric is the multiple `peak / entry MC`. Under it, a whole
-family of variables became "predictive": anything correlated with a low entry market cap ranked well.
-An operator whose launches happened to be detected early looked like an operator whose launches pump
-harder.
+A boolean named `t_buyable` looked like an executability filter.
 
-**Diagnosis.** Regress `log10(peak)` on `log10(entry MC)`, demeaned within day. The elasticity is
-**0.884** on B (n = 1 243), 0.673 on A, 0.761 on C. It is below 1, so by construction
+It was not.
 
-```
-log10(multiple) = log10(peak) − log10(entry MC)   ->   slope = beta − 1 = −0.126
+### The symptom
+
+Tokens satisfying the filter appeared dramatically better:
+
+* **69.8%** reached 2x;
+* **50.3%** reached 200k market cap.
+
+The rest reached 2x only **16.3%** of the time.
+
+The effect reproduced across populations.
+
+That made it look compelling.
+
+It was also wrong.
+
+### The diagnosis
+
+Read the formula instead of the variable name.
+
+`t_buyable` was defined as:
+
+```text
+peak_ts >= detect_ts + 60s
 ```
 
-measured at **−0.1263**, exactly as predicted. The multiple is *mechanically* decreasing in the
-entry MC. Two rank correlations settle it: `spearman(entry MC, peak) = +0.561`, but `spearman(entry
-MC, multiple) = −0.057`. The same corpus says "big entries reach bigger peaks" and "small entries
-have bigger multiples". Both are true, and both are statements about the denominator.
+A token whose peak occurred immediately after detection was included.
 
-The mirror image matters just as much. On the *absolute* target, the entry MC dominates everything:
+A token that peaked before detection was excluded.
 
-| entry-MC decile | median entry MC | P(peak >= 200 k) | P(multiple >= 2x) |
-|---|---|---|---|
-| D0 | 26 039 | 0.097 | 0.581 |
-| D4 | 50 061 | 0.210 | 0.484 |
-| D9 | 162 211 | **0.764** | 0.409 |
+The filter therefore used the future outcome to decide which observations belonged in the sample.
 
-A **7.9x** spread on the absolute target and a flat-to-inverted one on the multiple. Any candidate
-signal correlated with entry MC will therefore "work" on one target and "fail" on the other, with no
-information involved. In the operator audit, this accounted for **50.9 %** to **62.2 %** of the
-apparent advantage of the best-ranked launch operators.
+It was not identifying "buyable" tokens.
 
-**Fix.** A residual target: `log10(peak)` minus its within-day OLS fit on `log10(entry MC)`, then
-binarised at the within-day upper tercile. By construction the entry MC carries no information about
-it.
+It was identifying tokens that **went up after detection**.
 
-**After correction.** `spearman(entry MC, residual) = +0.048` (n = 1 243). The artefact is gone.
-Results are now reported on two targets, the absolute one and the residual one, and a candidate must
-survive both.
+### The correction
 
-**Lesson.** Before treating a ratio as an outcome, measure the elasticity of its numerator to its
-denominator. If it is not 1, the ratio encodes the denominator and every correlate of the denominator
-becomes a free "signal".
+`t_buyable` was demoted from feature to diagnostic.
 
----
+It cannot be used as:
 
-## P3. Silent default value
+* an entry criterion;
+* a model input;
+* or a headline selection filter.
 
-Ten rows out of 103 supplied a quarter of the positive class.
+### What survived
 
-**Symptom.** Population A showed **35.9 %** of full-curve buybacks reaching a 3x multiple, and
-**22.3 %** reaching 5x. The top of the distribution was dominated by a handful of spectacular
-outcomes: 8.4x, 9.1x, 9.3x, 9.5x, 12.6x, 12.9x.
+Population B:
 
-**Diagnosis.** Sort by multiple and look at the raw rows. All the extreme cases shared two values:
-`detected_at = 0` and `detect_mc = 15000`, a placeholder timestamp and a constant, written by a code
-path that had failed to fetch the real market cap. Across the raw detector log, **31 of 211 rows**
-carry that exact pair. Ten of them fall inside population A. With a denominator frozen at 15 000
-against a corpus whose true median entry MC is **60 432**, a perfectly ordinary token mechanically
-produces a 3x to 13x multiple. Observed range of the ten: **2.96x to 12.88x**, every one of them
-above the 2x threshold.
+**46.3%** reached 2x.
 
-**Fix.** A `poison_default` flag at dataset build time, and exclusion from every rate. The flag is
-kept in the published data so the contamination itself is auditable.
+For the 200k target:
 
-**After correction.**
+**30.9%**, not 50.3%.
 
-| target | positives | contaminated | rate before | rate after |
-|---|---|---|---|---|
-| >= 2x | 56 | 10 (17.9 %) | 54.4 % | **49.5 %** |
-| >= 3x | 37 | 9 (**24.3 %**) | 35.9 % | **30.1 %** |
-| >= 5x | 23 | 7 (**30.4 %**) | 22.3 % | **17.2 %** |
+### Transferable lesson
 
-The bias grows with the threshold: the tighter the criterion, the more of the positive class is pure
-artefact.
+> **Audit the formula, not the name.**
 
-**Lesson.** Placeholders survive into analysis because they are plausible. Test every field for
-suspicious constants and zero timestamps *before* computing anything, and check what share of the
-positive class each anomaly supplies, not what share of the rows it represents.
+Any variable containing information from after the decision point is an outcome, regardless of what its name says.
 
 ---
 
-## P4. Confounding variable
+# P2 — The denominator artefact
 
-A technical label that turned out to be the entry price wearing a costume.
+## When the denominator manufactures the signal
 
-**Symptom.** The detector tags some launches with a bot-family label. Tokens carrying that label
-reached a 100 k market cap **83.3 %** of the time versus **53.3 %** for the rest, a **+30.0 point**
-gap on n = 93, Fisher exact **p = 0.0032**, crude odds ratio **4.38**. It looked like the single
-best discriminator in the project.
+The natural performance metric was:
 
-**Diagnosis.** Ask what else the label correlates with. Median entry MC: **113 296** for labelled
-tokens versus **44 305** for the rest; the association between the label and "entry MC above median"
-is itself significant at **p = 7.1e-05**. And "reaches 100 k" is nearly deterministic once you are
-detected above 100 k. So stratify:
-
-| stratum | labelled | rest | delta |
-|---|---|---|---|
-| entry MC below median | 0.429 (n = 14) | 0.375 (n = 32) | **+5.4 pt** |
-| entry MC above median | 1.000 (n = 34) | 0.923 (n = 13) | **+7.7 pt** |
-
-Mantel-Haenszel across entry-MC quintiles: **OR = 1.22, p = 0.974**, against a crude OR of 4.38. The
-entire effect was the market cap.
-
-The sign flip is the confirmation. On the *multiple* target, the one the denominator artefact of P2
-inverts, the same label goes the other way: **41.7 % versus 57.8 %, −16.1 points**. And in the
-bottom entry-MC tercile the two groups are indistinguishable: **50.0 % versus 52.4 %**. A real
-effect does not change sign when you change the target's denominator.
-
-**Fix.** Stratified reporting on entry MC for every categorical contrast, plus a systematic check
-that the candidate variable is not a proxy for the entry price.
-
-**After correction.** No usable effect: adjusted OR 1.22, p = 0.97.
-
-**Lesson.** When a categorical variable looks strong, first test it against the dataset's dominant
-covariate. Publish the stratified table alongside the crude one; a claim that only exists unadjusted
-is not a claim.
-
----
-
-## P5. Touched is not cashed
-
-A peak that was reached is not a price that was obtainable.
-
-**Symptom.** The median token in population B peaks at **1.87x** its detection market cap, and 46.3 %
-double. Read naively, buying full-curve buybacks is a coin flip with an asymmetric payoff.
-
-**Diagnosis.** Put a clock on the peak. On B (n = 1 243), **43.8 %** of tokens reach their all-time
-peak within 60 s of detection, before an alert can be read let alone filled, and 21.3 % peak
-strictly *before* detection. The median detection-to-peak delay is **2.0 minutes**. The multiple is
-a number about the token's history, not about any reachable order.
-
-The decisive test is to stop measuring peaks and simulate a round trip: entry at creation+120 s, exit
-under ten explicit policies, 5.82 % round-trip drag (1 % fee + 2 % adverse slippage per leg), a
-0.5 SOL position, order-book depth required for the fill, and unfilled exits marked −100 %.
-
-**Fix.** Realised PnL replaces peak multiples as the primary metric. Peaks are still reported, always
-labelled "touched, not cashed".
-
-**After correction.** On the 196 executable tokens / 20 clusters / 6 days:
-
-- **0 of 10** policies positive in both median and mean.
-- Extended to a 38-policy sweep (42 measured cells): **0** with a positive mean; best **−6.1 %**.
-- The single positive median in the grid (`tp50`, +3.3 %) has the *worst* mean of the grid (−12.9 %)
-  and changes sign on every split.
-- A perfect-foresight oracle on the same corpus returns **+27 % median / +52.9 % mean**. The value
-  exists; nothing available at purchase time locates it.
-
-**Lesson.** Never let an extremum stand in for a realisable price. Measure the metric you would
-actually be paid, including fees, depth and the possibility that there is no bid.
-
----
-
-## P6. Instrumentation bugs
-
-Four, each of which silently changed the answer rather than raising an error.
-
-### 6a. Mixed units: the same number, off by a factor of 75
-
-**Symptom.** Extending the horizon beyond the 20-minute captures, a post-buyback entry held for one
-hour returned a **median 29.97x**, with **91.5 %** of tokens profitable, and still **6.86x** at +24
-h with 88.4 % profitable. That would have been the strongest result in the project by an order of
-magnitude.
-
-**Diagnosis.** The fetch script carried an explicit comment asserting that "GeckoTerminal prices and
-swap prices are in the same unit (SOL/token)". They are not: swap-level captures record **SOL per
-token**, the OHLCV endpoint returns **USD per token**. Every ratio was multiplied by the SOL price.
-The tell was the magnitude. A median 30x on a corpus whose own base rate is a 2.1x *peak* is a unit
-error, and the implied factor lands squarely on the SOL/USD quote.
-
-**Fix.** An hourly SOL/USDC series (1 000 candles, 2026-06-17 to 2026-07-29, 64.1-83.6 USD), and
-conversion of the entry price at its own timestamp before any ratio is taken. Unit conventions are now
-declared at the top of the shared library.
-
-**After correction.**
-
-| horizon | n | mixed units | converted |
-|---|---|---|---|
-| +1 h | 94 | 29.97x, 91.5 % profitable | **0.394x, 14.9 %** |
-| +2 h | 92 | 23.58x, 89.1 % | **0.325x, 15.2 %** |
-| +4 h | 86 | 19.44x, 88.4 % | **0.269x, 11.6 %** |
-| +24 h | 69 | 6.86x, 88.4 % | **0.092x, 13.0 %** |
-
-Conversion factor actually applied: 70.5 to 82.7, median **75.2**. The result reverses completely: a
-post-buyback entry loses roughly 60 % of its value in an hour and 91 % in a day.
-
-### 6b. Default User-Agent, rejected silently
-
-The OHLCV provider rejects Python's default `urllib` User-Agent. Verified live while writing this
-chapter:
-
-```
-urllib default UA : HTTP 403 Forbidden
-browser UA        : accepted (200, or 429 when rate-limited)
+```text
+peak MC / entry MC
 ```
 
-The retry wrapper treated any non-429, non-404 error as transient, slept, retried, and returned
-`None`, so a 100 % failure rate looked like an empty dataset rather than an error. **Fix:** an
-explicit browser User-Agent, and a fetch layer that distinguishes "no data" from "not allowed" and
-reports the HTTP status.
+It looked reasonable.
 
-### 6c. History depth mistaken for history
+It created misleading signals.
 
-The provider retains ~1 000 candles regardless of granularity. Verified: the hourly pull returns
-exactly **1 000 candles spanning 41.6 days**; the same cap at minute granularity is **16.7 hours**. A
-minute-level backtest over a 20-day window would have silently analysed only its last day. **Fix:**
-choose granularity from the required span, and record `n_candles` and the actual covered span in every
-row.
+### The symptom
 
-### 6d. A censored outcome field
+Variables correlated with low entry market cap appeared predictive of large multiples.
 
-The detector logs a running maximum, frozen when the row is written. Against the true peak fetched
-later: **41 of 103 rows (39.8 %)** are below it, p10 of the ratio **0.363**. Computing the 2x rate
-on the logged field gives **39.8 %** instead of **54.4 %**, a 14.6-point understatement. **Fix:**
-the field is flagged "censored, never use as an outcome" in the dataset metadata, and outcomes are
-re-fetched with a maturity requirement.
+An operator whose launches happened to be detected early could therefore look like an operator whose launches performed better.
 
-**Lesson (P6).** Instrumentation fails silently far more often than it fails loudly. Assert units at
-the boundary, test transport with a live probe rather than trusting a wrapper, record the provider's
-limits alongside the data, and treat any field that "looks fine" but is written incrementally as
-censored until proven otherwise.
+### The diagnosis
+
+Regress:
+
+```text
+log10(peak MC)
+```
+
+against:
+
+```text
+log10(entry MC)
+```
+
+within day.
+
+The measured elasticity was:
+
+* **0.884** on B;
+* **0.673** on A;
+* **0.761** on C.
+
+Therefore:
+
+```text
+log10(multiple)
+=
+log10(peak)
+-
+log10(entry MC)
+```
+
+and the expected slope becomes:
+
+```text
+beta - 1 = -0.126
+```
+
+Measured:
+
+**−0.1263**
+
+Exactly what the denominator predicts.
+
+The rank correlations tell the same story:
+
+* entry MC vs peak: **+0.561**
+* entry MC vs multiple: **−0.057**
+
+Both can be true simultaneously.
+
+Large entries reach larger absolute peaks.
+
+Small entries generate larger multiples.
+
+The ratio creates the apparent relationship.
+
+### The correction
+
+A residual target was introduced:
+
+```text
+log10(peak)
+-
+within-day OLS fit of log10(peak) on log10(entry MC)
+```
+
+Then binarised at the within-day upper tercile.
+
+### What survived
+
+Correlation between entry MC and the residual:
+
+**+0.048**
+
+The denominator artefact is effectively removed.
+
+### Transferable lesson
+
+> **Before trusting a ratio, measure the elasticity of the numerator against the denominator.**
+
+If the elasticity is not 1, the ratio contains information about the denominator.
 
 ---
 
-## P7. Broken supervision probes
+# P3 — Silent default values
 
-Two monitoring probes were wrong within one hour, and neither produced an error message.
+## Ten rows were capable of writing the story
 
-**Symptom 1: process identified by command line.** The monitor located the running job with
-`pgrep -f "<job> --auto --model"`. That pattern also matches the monitor's own shell wrappers, whose
-command lines contain the search string. It was therefore watching an inert shell (0.04 s of CPU in
-26 minutes) instead of the job, and would have declared a freeze after 20 minutes and killed a
-perfectly healthy run.
-**Fix:** select by executable name (`ps -eo pid,comm,args`, match on `comm`), never by full command
-line.
+Population A initially showed:
 
-**Symptom 2: probe unsupported by the local tool.** The freshness check used
-`find -newermt "-20 minutes"`. On this machine `find` is `bfs 4.1.1`, which rejects relative
-timestamps. Verified live: `bfs: error: Invalid timestamp.` The exit status was still 0, so the
-caller saw an empty result, i.e. "nothing recent", i.e. a fabricated alarm.
-**Fix:** compute file age from `stat -f %m` and arithmetic. A broken probe is worse than no probe: it
-converts silence into false information.
+* **35.9%** reaching 3x;
+* **22.3%** reaching 5x.
 
-**Symptom 3: liveness measured as existence.** "Process alive" cannot see a hang. A live data daemon
-had frozen for two days in July with its PID intact and the watchdog reporting healthy.
-**Fix:** liveness is a *delta*: CPU time consumed since the last check, plus files written since the
-last check. Both must stall before an alarm fires, which covers both failure modes (dead, and alive
-but stuck).
+The top outcomes looked spectacular:
 
-**Symptom 4: health endpoint that is not metered.** The data provider's `getHealth` returns "ok" on
-an API key whose quota is exhausted.
-**Fix:** validate keys against a metered endpoint that actually returns data, and treat any health
-check that cannot fail as decorative.
+8.4x, 9.1x, 9.3x, 9.5x, 12.6x, 12.9x.
 
-**After correction.** The measured consequence of the whole family is visible in P11: 352 of 645
-captures are empty because upstream failures were never surfaced. Detection would have taken minutes;
-the data loss was permanent.
+### The diagnosis
 
-**Lesson.** A probe is code and needs its own tests, ideally a deliberate failure injection. Prefer
-probes that measure *change* (CPU delta, bytes written) over probes that measure *existence*, and
-never trust a health check that has no way of returning "unhealthy".
+The extreme observations shared:
+
+```text
+detected_at = 0
+detect_mc = 15000
+```
+
+Those were not measurements.
+
+They were placeholders written when the real market cap fetch failed.
+
+Across the raw detector log:
+
+**31 / 211 rows**
+
+carried the pair.
+
+Ten entered population A.
+
+The true median entry MC was:
+
+**60,432**
+
+while the placeholder was frozen at:
+
+**15,000**
+
+An ordinary token could therefore acquire a spectacular artificial multiple.
+
+### The correction
+
+Every contaminated row receives:
+
+```text
+poison_default = true
+```
+
+The rows remain in the published data so the contamination is auditable.
+
+They are excluded from rates.
+
+### Before vs after
+
+| Target | Before |     After |
+| ------ | -----: | --------: |
+| ≥2x    |  54.4% | **49.5%** |
+| ≥3x    |  35.9% | **30.1%** |
+| ≥5x    |  22.3% | **17.2%** |
+
+### Transferable lesson
+
+> **Test suspicious constants and zero timestamps before computing the statistic.**
+
+More importantly, measure how much of the **positive class** they supply.
 
 ---
 
-# Further failures found in the same corpus
+# P4 — The confounder wearing a technical label
 
-## P8. The unfilled-exit convention: one line, three fake edges
+A bot-family label initially looked like the strongest discriminator in the project.
 
-**Symptom.** In the round-trip simulator, an exit for which no bid exists must be scored somehow. The
-hard convention scores it −100 % (you hold something unsellable). The soft convention drops the token
-from the sample. Switching conventions:
+### The symptom
 
-| policy | hard | soft | unfilled |
-|---|---|---|---|
-| tp50 (median) | **+3.3 %** | **+31.5 %** | 24.0 % |
-| time_10m (mean) | −10.3 % | **+8.5 %** | 22.4 % |
-| tp2x (mean) | −10.9 % | **+10.5 %** | 27.0 % |
-| tp2x (median) | −17.4 % | **+5.4 %** | 27.0 % |
+The labelled tokens reached 100k:
 
-Three policies flip from clearly losing to apparently winning, on a one-word change.
+**83.3% vs 53.3%**
 
-**Diagnosis.** The soft convention silently drops exactly the losers: a token has no bid because it
-is dead. Excluding it is excluding the worst outcome and calling the remainder the average. The
-mechanism is visible in the unfilled rate: the more aggressive the take-profit, the more tokens are
-dropped, and the larger the fake gain.
+Difference:
 
-**Fix.** The hard convention is canonical, stated in the method, and the sensitivity to the choice is
-printed on every run (`code/m5_roundtrip.py` reports hard / soft / strict-book side by side).
+**+30.0 points**
 
-**After correction.** tp50 median **+3.3 %**, and 0/10 policies positive on both statistics.
+Fisher exact:
 
-**Lesson.** Every "N/A" needs an explicit, documented policy, and the sensitivity to that policy must
-be published. Dropping missing outcomes is a selection filter, not a cleaning step. This one recurred
-in 3 of 4 independent analysis tracks in a single run, which is why it is now a standing check.
+**p = 0.0032**
 
-## P9. Pricing your own lookahead by building the live-safe mirror
+Crude OR:
 
-**Symptom.** Entering 120 s after the price trough looked genuinely good: **+14.7 % median** on tp50,
-60.9 % winners (n = 138).
+**4.38**
 
-**Diagnosis.** The trough is defined retrospectively: you only know it was the trough once the price
-has come back. So the rule was reimplemented as an exact mirror that uses only past data: enter when
-the current bucket is the running minimum so far and the last closed bucket has recovered. Same
-policies, same costs, same corpus.
+### The diagnosis
 
-| anchor | tp50 median | tp50 mean | n |
-|---|---|---|---|
-| retrospective trough | **+14.7 %** | +3.3 % | 138 |
-| live-safe mirror | **−2.8 %** | −12.9 % | 162 |
+The label was strongly associated with entry market cap.
 
-**17.5 points of median** is the lookahead.
+Median entry MC:
 
-**Where it goes.** The mirror identifies the true trough **78 times out of 162 (48 %)**. On those:
-tp50 **+38.0 %** median, 73.1 % winners. On the other 84: **−36.6 %**, 26.2 % winners. In 52 % of
-cases the true trough arrives *after* the trigger (median +120 s, p75 +390 s). The mixture
-reproduces the base rate exactly. What limits the strategy is the 48 % capture rate, not a filtering
-problem, and none of the 27 flow features moves it (best AUC 0.596; the hypothesis's central feature
-scores 0.495, i.e. nothing).
+* labelled: **113,296**
+* rest: **44,305**
 
-**Lesson.** Do not argue about whether a rule leaks; build its zero-lookahead mirror and subtract. The
-difference is the lookahead in the unit of the result, and the decomposition tells you whether the
-idea is wrong or merely untimely.
+Once stratified by entry MC:
 
-## P10. The null distribution of the maximum
+| Entry MC     | Labelled |  Rest | Difference |
+| ------------ | -------: | ----: | ---------: |
+| Below median |    42.9% | 37.5% |    +5.4 pt |
+| Above median |   100.0% | 92.3% |    +7.7 pt |
 
-**Symptom.** Sweeping 38 exit policies over the canonical corpus, the best returned **+7.26 %** on the
-primary statistic (mean of cluster means). A plausible-looking winner.
+Mantel-Haenszel:
 
-**Diagnosis.** The right null is not "is this policy better than zero" but "is the *best of 38* better
-than the best of 38 on noise". Cluster-level sign-flip permutation, 5 000 draws, Westfall-Young max-T
-correction:
+**OR = 1.22**
 
-- raw p of the best policy: **0.279**
-- max-T corrected p: **0.585**
-- Bonferroni over 38: **1.000**
-- 5 % critical value of the max-null: **+26.3 %**
+**p = 0.974**
 
-The observed best is a quarter of the threshold. Sweeping 38 policies over 20 clusters of pure noise
-typically produces a "best" *better* than the one actually observed.
+The apparent effect disappeared.
 
-**Lesson.** Report the number of cells swept, and test the statistic you actually selected on (the
-maximum), not the one you would have tested had you looked only once. In a related track, 115 370
-tests were run while the permutation floor at 4 000 draws was 2.5e-4 and the Bonferroni threshold
-5.6e-7: no result could have passed, by construction. Count your tests before you run them.
+### The correction
 
-## P11. Missingness: is the data you lost random?
+Categorical effects are now reported stratified by entry MC.
 
-**Symptom.** 352 of 645 swap captures are empty (**54.6 %**), all of them silent upstream API
-failures. The usable corpus is 2.2x smaller than the file count suggests, which alone invalidates
-any headline quoting "645 captures".
+### Transferable lesson
 
-**Diagnosis (three axes).**
+> **A variable that predicts the outcome may simply be predicting the dominant covariate.**
 
-1. *Are the losses random in time?* No. A runs test gives **10 observed runs against 320.8 expected**
-   under randomness, p = 0.0002; the longest gaps are 168 consecutive empty captures over 4.7 h and
-   140 over 36.5 h. These are outages, not dropout.
-2. *Are they random with respect to the outcome?* On an outcome measured by a source **independent**
-   of the capture pipeline, empty and non-empty tokens are indistinguishable: P(multiple >= 2)
-   **49.1 % vs 50.7 %**, permutation p = 0.77; median entry MC 47 897 vs 50 120, p = 0.21. The loss is
-   outage-shaped but outcome-neutral, so it costs statistical power without biasing rates.
-3. *Trap inside the trap.* Measured instead on labels produced by the **same** pipeline, the gap looks
-   enormous (+29 points). That is coverage, not signal: the label exists only when the capture
-   succeeded. Comparing groups on a variable whose availability depends on group membership measures
-   availability.
+---
 
-**Corpus selection, separately.** The captures cover only **278 of 805** eligible tokens in their
-window (34.5 %) and mildly over-sample winners: P(peak >= 200 k) **32.7 % vs 28.3 %** (+4.5 pt). Small,
-but it is why capture-based rates are reported as an upper bound.
+# P5 — Touched is not cashed
 
-**Lesson.** Quantify missingness on three axes (time, covariates, outcome) and always run the
-outcome axis on a source independent of the failing instrument. Otherwise you measure your own
-coverage.
+## A peak is not an executable trade
 
-## P12. Shared infrastructure fabricates graph structure
+Population B has:
 
-**Symptom.** Building a co-occurrence graph over tokens (edge = at least 3 shared sniper wallets)
-produced a **giant component covering 180 of 282 tokens (63.8 %)**, apparently one vast coordinated
-network.
+**median peak = 1.87x detection MC**
 
-**Diagnosis.** Rank wallets by ubiquity. The most frequent address appears on **58.5 %** of all
-tokens, the next four on 35.1 %, 32.3 %, 24.8 % and 15.6 %. These are shared bots and public
-infrastructure, not members of any single operation: they connect every token to every other token by
-construction. Removing the 14 addresses present on 14 or more tokens collapses the giant component to
-**48 of 282 (17.0 %)**.
+and:
 
-A second control matters as much: a degree-preserving (Chung-Lu) null confined within the day
-reproduced **1 502 of the 6 024** pairs meeting the clustering criterion, a **24.9 % false-positive
-rate**, and a giant component of 564 against the 668 observed. The criterion was barely above
-chance.
+**46.3% reaching 2x**
 
-The same logic produced a false negative in the other direction: one address was classified as
-"infrastructure" on ubiquity alone, when it was in fact a launch operator sniping its own 51 tokens.
-Ubiquity is evidence of sharing, not proof of it.
+That sounds interesting until you ask a more basic question:
 
-**Lesson.** In any co-occurrence graph, hub nodes must be identified and handled before the structure
-is interpreted, and the resulting structure must be compared against a degree-preserving null. A
-giant component is the default outcome of a co-occurrence graph, not a discovery.
+> Could the buyer actually have captured that price?
 
-## P13. A detection criterion with no null distribution of its own
+### The diagnosis
 
-**Symptom.** The funding-split detector declares a token positive when any one of three criteria
-fires on its first forty buyers: **A**, two or more of them are funded inside the same transaction;
-**B**, three or more receive amounts equal to within 1e-4 relative inside one hour; **C**, two or
-more share a private funder. On the first target it examined it returned `DECOUPAGE DETECTE`, and
-the matched control group returned 1 positive in 9. That reads like a clean separation.
+On B:
 
-**Diagnosis.** The three criteria were never given a null distribution. Supplying one is cheap,
-because the control group already provides the right population: 136 early-buyer wallets from tokens
-selected on creation slot alone, with their funding events measured by the identical code. Pool
-those wallets, draw random groups of forty, and re-run the criteria unchanged. Resampling destroys
-any within-token co-occurrence, so every hit in a drawn group is a coincidence by construction.
+* **43.8%** peak within 60 seconds of detection;
+* **21.3%** peak before detection;
+* median detection-to-peak delay = **2 minutes**.
 
-Over 5 000 draws (`code/a1_null_model.py`):
+The ATH is therefore a historical property of the token.
 
-| criterion | fires on a random group of 10 | of 20 | of 40 |
-|---|---|---|---|
-| **A** same funding transaction | 0.0000 | 0.0000 | 0.0000 |
-| **B** same amount within one hour | 0.0000 | 0.0000 | 0.0000 |
-| **C** shared private funder | 0.151 | 0.461 | **0.889** |
+It is not a realised trading opportunity.
 
-Restricted to the 70 wallets whose genesis was actually reached, the subset on which a negative is
-even admissible, criterion C fires on **99.5 %** of draws.
+### The correction
 
-Criterion C is the near-certain outcome of drawing forty wallets of that era. Its rate rises with
-group size the way a birthday problem does: more wallets, more pairs, funders drawn from a finite
-pool. The one control that had been recorded as positive was positive on C alone, and so was the
-first target. Both were the same artefact wearing opposite labels.
+Replace peak multiples with an executable round-trip model:
 
-One diagnosis had to be ruled out before the criterion could be retired rather than repaired. If a
-handful of *unlabelled infrastructure* addresses funded much of the population, the fix would be to
-extend the known-terminals list, not to abandon C. Ranking the funders settles it: the control
-population has **114 distinct private funders, of which only 7 fund two wallets or more**, and the
-most prolific covers **4.4 %** of it. There is no hub to exclude. Seven small overlaps are enough,
-because forty wallets make 780 pairs.
+* entry = creation +120s;
+* 0.5 SOL position;
+* actual trade depth;
+* 1% fee;
+* 2% adverse slippage per leg;
+* 5.8241% round-trip drag;
+* unfilled exits = −100%.
 
-Criteria A and B fired **0 times in 5 000 draws** at every group size. They are specific because
-they require a coincidence in identity *and* in time, not merely a shared counterparty.
+### What survived
 
-**Correction.** Every measured token was recounted under A and B only (`code/a2_recount.py`). The
-verdict on the first target flips from positive to negative, and the control base rate drops from
-1/9 to 0/9. The disjunctive verdict `A or B or C` is retired: a criterion that fires on nine random
-groups out of ten cannot enter a disjunction, because it decides the verdict on its own.
+On:
 
-**Lesson.** A detector's own criteria need a null distribution before any of their output is read,
-and the control group usually already contains the population needed to build one. "Fires on the
-targets, rarely on the controls" is not a result until you know how often it fires on nothing at
-all. The error ran in a specific direction: the criterion that felt most intuitive, *these wallets
-share a funder*, was the worthless one, and it would have carried the headline claim.
+**196 executable tokens**
 
-## P14. A control group that answers a different question
+across:
 
-**Symptom.** With criterion C retired (P13), the split signature still separated the target tokens
-from their control group: **12/14 against 1/9, Fisher one-sided p = 0.0007** on the original
-disjunctive verdict, and 5/14 against 0/9 on the corrected one. The controls had been chosen well by
-every rule the project had written down: matched on creation slot to within ±200 slots, selection
-depending on nothing but creation time and market outcome, the rule fixed in code before any funding
-was measured, pagination carried to genesis for all 171 harvested mints.
+**20 clusters / 6 days**
 
-**Diagnosis.** The controls were *dead tokens*. Every target had graduated; not one control had. Two
-things therefore differed between the groups at once: the exposure under test (coordinated funding)
-and the outcome (whether the token went anywhere). The design could not tell them apart. Tokens that
-attract buyers attract *sophisticated* buyers, bots and desks whose wallets are funded in ways that
-look coordinated whether or not anyone coordinated them.
+the result was:
 
-A second control group settles it: twelve pump.fun tokens from the same window that **graduated**
-and that the author never traded, drawn by systematic sampling across the capitalisation range of
-the reachable pool, retention rule fixed before measurement. Holding the outcome fixed:
+* **0 / 10** policies positive in both mean and median;
+* 38-policy sweep: **0 positive mean**;
+* best mean: **−6.1%**.
 
-| comparison | targets | controls | p |
-|---|---|---|---|
-| original verdict (A or B or C) vs **dead** controls | 12/14 | 1/9 | **0.0007** |
-| A or B only vs **dead** controls | 5/14 | 0/9 | 0.0595 |
-| original verdict (A or B or C) vs **graduated** controls | 12/14 | 8/12 | 0.2478 |
-| A or B only vs **graduated** controls | 5/14 | 3/12 | **0.4371** |
+The perfect-foresight oracle still produces:
 
-Two thirds of *untraded* graduated tokens carry the same signature. The effect was the outcome, not
-the exposure.
+**+27% median / +52.9% mean**
 
-The residual bias does not rescue the result. The graduated controls come from a
-capitalisation-ranked listing, so they are survivors: on average they did *better* than the targets.
-That runs against the hypothesis, and the hypothesis still fails.
+on the same corpus.
 
-**Correction.** No claim of systematic coordination is made for the phase-1 window. The reference
-case and one further instance stand as observations; the generalisation does not. Full write-up in
-`docs/SPLIT_PHASE1.md`.
+The value existed.
 
-**Lesson.** Matching on everything measurable *before* the outcome is not the same as matching on
-the outcome. When the targets were selected because they succeeded, a control group of failures
-measures success, and it will do so with a small p-value and complete conviction. Ask of every
-control group: *what single thing does this differ from my targets by?* If the answer is "two
-things", the test has not been run yet.
+The question was whether anything observable at purchase time could locate it.
 
-This is P4, confounding, recurring in a new domain eleven cards after it was first documented.
-Naming a pitfall does not immunise you against it. The only reliable defence is the mechanical habit
-of building the second control group before reading the first result.
+### Transferable lesson
 
-## P15. Three transport failures that each returned a clean number
+> **Never substitute an extremum for an executable price.**
 
-**Symptom.** A scan of every bonding-curve buyer across fourteen tokens returned **0 distinct buyers
-on all fourteen**, and the summary line read `0/14 tokens carry the pattern`. Nothing in the output
-looked broken: the curve transaction counts were right (538, 391, 587) and only the buyer column was
-zero.
+---
 
-**Diagnosis.** Three separate transport failures, found one after the other in the same session,
-each of which produced a plausible result instead of an error:
+# P6 — Instrumentation can silently rewrite the answer
 
-| # | what failed | what it looked like |
-|---|---|---|
-| 1 | batch decode endpoint returned **HTTP 403** (wrong host) | "this curve has no buyers" |
-| 2 | `rpc()` returned `None` on error, caller wrote `or []` | "this curve has no transactions" |
-| 3 | signature pagination hit **HTTP 429** under concurrency | "genesis reached, 0 signatures" |
+Four independent instrumentation failures were found.
 
-The common shape is one line of code: an exception swallowed, a falsy value returned, and a caller
-that cannot tell *nothing was found* from *the question was never asked*. Failure #2 is the purest
-form: `return None` on error, then `or []` at the call site, converts an exhausted quota into a
-measurement.
+The important property they shared:
 
-The tell was arithmetic, not technical: a **graduated** token has hundreds of curve transactions by
-definition, so zero buyers on a curve that reported 587 transactions is not a low number, it is a
-contradiction. A result that contradicts a definition is a bug until proven otherwise.
+> **None initially looked like a software error.**
 
-**Correction.** Errors now raise. `rpc()` throws `RpcEchec` after its retries instead of returning
-`None`; a curve that yields zero signatures raises rather than reporting an empty measurement; a
-failed decode batch aborts the token instead of shrinking it. Tokens that cannot be measured are
-printed as `MEASUREMENT IMPOSSIBLE` with the HTTP status, and counted separately from tokens
-measured as negative. The summary line became `3/9 measured tokens, 5 not measurable`, less tidy
-than `0/14`.
+---
 
-**What it cost, had it not been caught.** The clean `0/14` would have been reported as a refutation
-of the hypothesis under test. It was produced by a wrong hostname.
+## P6a — Mixed units
 
-**Lesson.** Distinguishing *empty* from *failed* is the measurement, not a defensive-programming
-nicety. Any client that can return a falsy value on error will eventually report a network fault as
-a scientific result, and it will do so in the format you designed for real answers. Two habits catch
-it: make the error path raise, and check every zero against what the definition of the population
-makes possible.
+### The false result
+
+At +1h:
+
+**29.97x median**
+
+**91.5% profitable**
+
+At +24h:
+
+**6.86x**
+
+**88.4% profitable**
+
+### The bug
+
+Swap captures:
+
+**SOL / token**
+
+OHLCV:
+
+**USD / token**
+
+Every ratio was therefore multiplied by the SOL/USD price.
+
+### The correction
+
+Convert the entry price using SOL/USD at its own timestamp before calculating the return.
+
+### Result
+
+| Horizon | Incorrect |    Correct |
+| ------- | --------: | ---------: |
+| +1h     |    29.97x | **0.394x** |
+| +2h     |    23.58x | **0.325x** |
+| +4h     |    19.44x | **0.269x** |
+| +24h    |     6.86x | **0.092x** |
+
+The error factor had a median of:
+
+**75.2**
+
+The conclusion reversed completely.
+
+---
+
+## P6b — HTTP 403 became "no data"
+
+The provider rejected the default Python User-Agent.
+
+The fetch wrapper interpreted the failure as retryable and eventually returned `None`.
+
+A transport failure became an empty dataset.
+
+### Correction
+
+Transport errors now remain errors.
+
+The fetch layer distinguishes:
+
+* no data;
+* forbidden;
+* rate-limited;
+* failed request.
+
+---
+
+## P6c — Provider history was mistaken for full history
+
+The provider caps results at approximately:
+
+**1,000 candles**
+
+That means:
+
+* hourly = **41.6 days**
+* minute = **16.7 hours**
+
+A minute-level backtest over 20 days could therefore silently analyse only the final 16.7 hours.
+
+### Correction
+
+Every row records:
+
+* candle count;
+* actual time span;
+* requested granularity.
+
+---
+
+## P6d — Running maximum was a censored outcome
+
+A detector field stored a running maximum at the moment the row was written.
+
+It was later compared with the true peak.
+
+**41 / 103 rows = 39.8%**
+
+were below the eventual true peak.
+
+The field was therefore censored.
+
+### Correction
+
+The field is explicitly marked:
+
+> **censored — never use as an outcome**
+
+Mature outcomes are fetched independently.
+
+### Transferable lesson
+
+> **Instrumentation fails silently more often than it fails loudly.**
+
+Assert units at boundaries.
+
+Test transport with deliberate failures.
+
+Record provider limits.
+
+Treat incrementally written outcomes as censored until proven otherwise.
+
+---
+
+# P7 — The watchdog was watching the wrong thing
+
+Two monitoring probes were wrong within one hour.
+
+Neither raised an error.
+
+### Failure 1 — process detection
+
+`pgrep -f` matched the monitoring shell itself.
+
+The monitor was therefore watching an inert wrapper rather than the actual process.
+
+### Failure 2 — unsupported timestamp syntax
+
+The local `find` implementation rejected the timestamp expression.
+
+The command still returned exit status 0.
+
+The monitor interpreted an error as:
+
+> no recent files.
+
+### Failure 3 — existence ≠ liveness
+
+A process can keep its PID while being completely frozen.
+
+That happened for two days.
+
+### Correction
+
+Liveness is now measured through deltas:
+
+* CPU time;
+* bytes written.
+
+Both must stop before the watchdog raises an alarm.
+
+### Failure 4 — decorative health endpoints
+
+A provider health endpoint could return "OK" even with an exhausted quota.
+
+A health check that cannot return "unhealthy" is not a useful health check.
+
+### Transferable lesson
+
+> **Probes are production code.**
+
+Test them with deliberate failures.
+
+---
+
+# P8 — One line of missing-data policy created three fake winners
+
+When an exit has no bid, there are several possible conventions.
+
+The simulator initially compared:
+
+* hard: −100%;
+* soft: remove the observation;
+* unfilled: track separately.
+
+### What happened
+
+| Policy        |      Hard |       Soft |
+| ------------- | --------: | ---------: |
+| tp50 median   | **+3.3%** | **+31.5%** |
+| time_10m mean |    −10.3% |  **+8.5%** |
+| tp2x mean     |    −10.9% | **+10.5%** |
+| tp2x median   |    −17.4% |  **+5.4%** |
+
+Three policies switched from losing to apparently winning.
+
+### Why
+
+The missing exits were not random.
+
+A token with no bid is likely a token that is dead.
+
+Dropping it removes exactly the worst outcomes.
+
+### Correction
+
+The canonical convention is:
+
+**unfilled = −100%**
+
+Sensitivity remains published alongside the hard result.
+
+### Transferable lesson
+
+> **Dropping missing outcomes is a selection filter, not cleaning.**
+
+---
+
+# P9 — Pricing the lookahead
+
+## The +14.7% strategy that disappeared when time became real
+
+Entering 120 seconds after the price trough looked promising:
+
+**+14.7% median**
+
+**60.9% winners**
+
+### The problem
+
+You only know a price was the trough after prices following it have already occurred.
+
+That is future information.
+
+### The correction
+
+Build the exact live-safe mirror:
+
+> enter when the current bucket is the running minimum so far and the last closed bucket has recovered.
+
+Same costs.
+
+Same policies.
+
+Same corpus.
+
+| Rule                 |     Median |   Mean |
+| -------------------- | ---------: | -----: |
+| Retrospective trough | **+14.7%** |  +3.3% |
+| Live-safe mirror     |  **−2.8%** | −12.9% |
+
+The lookahead is:
+
+**17.5 percentage points of median performance.**
+
+### Transferable lesson
+
+> **Do not debate whether a strategy leaks. Build its zero-lookahead mirror.**
+
+The performance difference is the measurable cost of the leak.
+
+---
+
+# P10 — The winner of 38 tests is not a normal test
+
+A sweep of 38 exit policies produced:
+
+**best = +7.26%**
+
+A plausible winner.
+
+But the statistic selected was not "one policy".
+
+It was:
+
+> **the best of 38 policies.**
+
+### The correct null
+
+Use:
+
+* cluster-level sign-flip permutation;
+* 5,000 draws;
+* Westfall–Young max-T.
+
+Results:
+
+* raw p = **0.279**
+* corrected p = **0.585**
+* Bonferroni = **1.000**
+* 5% max-null critical value = **+26.3%**
+
+The observed +7.26% is well below the level routinely produced by the maximum of noisy alternatives.
+
+### Transferable lesson
+
+> **Test the statistic you actually selected.**
+
+If you searched 38 times, your null must search 38 times too.
+
+---
+
+# P11 — Missingness: what disappeared?
+
+## 352 captures did not fail randomly
+
+The corpus contains:
+
+**352 / 645 empty captures**
+
+or:
+
+**54.6%**
+
+### Axis 1 — time
+
+Runs test:
+
+**10 observed runs**
+
+vs
+
+**320.8 expected**
+
+**p = 0.0002**
+
+Longest gaps:
+
+* 168 consecutive empty captures / 4.7h
+* 140 / 36.5h
+
+These were outages.
+
+### Axis 2 — outcome
+
+Using an independent outcome source:
+
+|                | Empty | Non-empty |
+| -------------- | ----: | --------: |
+| P(multiple ≥2) | 49.1% |     50.7% |
+
+Permutation:
+
+**p = 0.77**
+
+Median entry MC:
+
+**47,897 vs 50,120**
+
+**p = 0.21**
+
+The missingness is therefore strongly time-clustered but not measurably outcome-dependent on the independent source.
+
+### Axis 3 — the trap
+
+Using labels generated by the failing pipeline produced a huge apparent difference.
+
+That comparison was invalid.
+
+The variable existed only when the pipeline succeeded.
+
+It measured coverage.
+
+Not signal.
+
+### Transferable lesson
+
+> **When an instrument fails, test missingness against time, covariates and outcome — and measure the outcome independently of the failing instrument.**
+
+---
+
+# P12 — Shared infrastructure fabricates graph structure
+
+## The giant component that was mostly infrastructure
+
+A co-occurrence graph produced:
+
+**180 / 282 tokens**
+
+inside one giant component.
+
+That is:
+
+**63.8%**
+
+It looked like a vast coordinated network.
+
+### The diagnosis
+
+The most frequent addresses appeared on:
+
+* 58.5%
+* 35.1%
+* 32.3%
+* 24.8%
+* 15.6%
+
+of tokens.
+
+Shared infrastructure connects otherwise unrelated launches.
+
+### Correction
+
+Remove high-ubiquity infrastructure.
+
+The giant component falls to:
+
+**48 / 282 = 17.0%**
+
+A degree-preserving Chung–Lu null restricted within day also reproduced:
+
+**1,502 / 6,024 qualifying pairs**
+
+or:
+
+**24.9% false positives**
+
+### Important symmetry
+
+The opposite error also occurred.
+
+One address was classified as infrastructure because of ubiquity, although it was actually an operator sniping its own 51 launches.
+
+Therefore:
+
+> ubiquity is evidence of sharing, not proof of infrastructure.
+
+### Transferable lesson
+
+> **A giant component is the default output of a co-occurrence graph.**
+
+Remove hubs.
+
+Preserve degree.
+
+Preserve time.
+
+Then interpret the remaining structure.
+
+---
+
+# P13 — A detector needs its own null
+
+The funding detector used three criteria:
+
+**A** — same funding transaction
+
+**B** — same amount within one hour
+
+**C** — shared private funder
+
+The original detector treated:
+
+```text
+A OR B OR C
+```
+
+as the verdict.
+
+### The problem
+
+None of the three criteria had its own null distribution.
+
+So a "hit" had no known false-positive rate.
+
+### The test
+
+Using the control wallet population:
+
+5,000 random groups were generated.
+
+| Criterion                    |   n=10 |   n=20 |      n=40 |
+| ---------------------------- | -----: | -----: | --------: |
+| A — same funding transaction | 0.0000 | 0.0000 |    0.0000 |
+| B — same amount              | 0.0000 | 0.0000 |    0.0000 |
+| C — shared private funder    |  0.151 |  0.461 | **0.889** |
+
+Criterion C fires on:
+
+**88.9%**
+
+of random groups of 40.
+
+Restricted to the subset where the test is admissible:
+
+**99.5%**
+
+### Why
+
+Forty wallets create:
+
+**780 possible pairs.**
+
+With enough wallets drawn from a finite funding pool, shared funders become common even without coordination.
+
+### Correction
+
+Criterion C was retired.
+
+The verdict is now based on A/B only.
+
+### Transferable lesson
+
+> **A detector cannot be stronger than the null distribution of its weakest criterion.**
+
+"Rare on controls" is meaningless until you know how often the detector fires on random groups.
+
+---
+
+# P14 — The control group answered a different question
+
+Even after removing criterion C, the detector appeared to separate targets from controls.
+
+Original comparison:
+
+**12/14 vs 1/9**
+
+**p = 0.0007**
+
+It looked strong.
+
+It was not answering the intended question.
+
+### The problem
+
+All targets had graduated.
+
+None of the original controls had.
+
+The groups therefore differed in two dimensions:
+
+1. the exposure being tested;
+2. the outcome.
+
+The control group was effectively:
+
+> tokens that failed
+
+while the targets were:
+
+> tokens that succeeded.
+
+### The correction
+
+A second control group was constructed from pump.fun tokens that also graduated.
+
+| Comparison                             | Targets | Controls |          p |
+| -------------------------------------- | ------: | -------: | ---------: |
+| Original verdict vs dead controls      |   12/14 |      1/9 | **0.0007** |
+| A/B vs dead controls                   |    5/14 |      0/9 |     0.0595 |
+| Original verdict vs graduated controls |   12/14 |     8/12 | **0.2478** |
+| A/B vs graduated controls              |    5/14 |     3/12 | **0.4371** |
+
+Two-thirds of the graduated controls carried the same signature.
+
+The apparent effect was therefore associated with the outcome.
+
+Not demonstrably with the exposure.
+
+### Correction
+
+No general claim of systematic coordination is made from this phase.
+
+The individual observations remain observations.
+
+The generalisation does not.
+
+### Transferable lesson
+
+> **A control group must differ from the target on the variable you are testing — not on the outcome itself.**
+
+If your targets succeeded and your controls failed, a low p-value may simply be detecting success.
+
+---
+
+# P15 — A network failure can look like a scientific result
+
+The scan of bonding-curve buyers returned:
+
+**0 buyers across 14 tokens**
+
+The output even looked internally consistent.
+
+Curve transaction counts were correct:
+
+**538, 391, 587...**
+
+Only the buyer field was zero.
+
+### The diagnosis
+
+Three transport failures were found:
+
+| Failure | Actual problem                                            | Apparent result                 |
+| ------- | --------------------------------------------------------- | ------------------------------- |
+| 1       | Batch decode endpoint returned HTTP 403                   | "No curve buyers"               |
+| 2       | `rpc()` returned `None`; caller converted it with `or []` | "No transactions"               |
+| 3       | Signature pagination hit HTTP 429                         | "Genesis reached, 0 signatures" |
+
+The common pattern was:
+
+```text
+error
+↓
+falsy return value
+↓
+empty list
+↓
+"negative result"
+```
+
+### The contradiction
+
+A graduated token has hundreds of curve transactions by definition.
+
+A token reporting:
+
+**587 curve transactions**
+
+cannot simultaneously provide:
+
+**0 curve buyers**
+
+without an explanation.
+
+A result contradicting the definition of its own population is a bug until proven otherwise.
+
+### Correction
+
+Errors now raise.
+
+Failed measurements are reported as:
+
+```text
+MEASUREMENT IMPOSSIBLE
+```
+
+with the HTTP status.
+
+They are not counted as negative observations.
+
+The final result became:
+
+**3 / 9 measured**
+
+**5 not measurable**
+
+Less tidy.
+
+Much more honest.
+
+### Transferable lesson
+
+> **Empty and failed are different measurements.**
+
+A client that turns an error into `[]` can eventually turn an outage into a scientific conclusion.
 
 ---
 
 # What did not reproduce
 
-Three figures appearing in internal notes could not be re-derived from the published dataset. They are
-recorded here rather than repeated:
+Three figures from internal notes could not be regenerated from the published dataset.
 
-- **"peak 310 k for buyable versus 48 k for the rest, factor 6.4"** (P1). Recomputing on every
-  population gives factors of 2.55 to 4.39; the largest, 4.39, comes from the unfiltered B population
-  (272 071 vs 61 999). The pitfall is real and reproduces qualitatively on all three populations; the
-  specific pair of numbers does not. The chapter uses the recomputed B-clean figures (200 314 vs
-  65 232, factor 3.07).
-- **"a 93 % success rate manufactured by the buyable filter"** (P1). The 93 % in the project's history
-  belongs to a different episode: a second-wave concentration filter that survived permutation,
-  Bonferroni and a holdout in-sample and then returned 53 % out-of-sample. Its underlying data is not
-  in this repository, so no figure is claimed for it here. The `t_buyable` filter's actual inflation
-  is 69.8 % against a 46.3 % base rate.
-- **"67 % of tokens peaked before detection"** (P5). On the published populations the strictly-before
-  share is 16.9 % to 33.3 %, and the share peaking within 60 s of detection, the operationally
-  relevant one, is 35.5 % to 43.8 %. The chapter uses those.
+They are recorded here rather than silently removed.
 
-A number that cannot be regenerated from the published data is not a result, even when it points the
-right way.
+### 1. "Peak 310k vs 48k, factor 6.4"
+
+Recomputation gives factors between:
+
+**2.55x and 4.39x**
+
+depending on population.
+
+The qualitative P1 failure reproduces.
+
+The original pair of numbers does not.
+
+### 2. "93% success manufactured by the buyable filter"
+
+The 93% figure belongs to a different episode involving a second-wave concentration filter.
+
+Its underlying data is not published here.
+
+The reproducible `t_buyable` inflation is:
+
+**69.8% vs 46.3%**
+
+### 3. "67% peaked before detection"
+
+The published populations give:
+
+**16.9%–33.3%**
+
+strictly before detection.
+
+The operationally relevant within-60-second measure is:
+
+**35.5%–43.8%**
+
+The 67% figure is therefore not used.
 
 ---
 
-# Cross-cutting lessons
+# What these failures taught me
 
-1. **Audit definitions, never names.** P1, P5 and P6d were all fields whose name described the
-   intent and whose formula described something else.
-2. **Measure the artefact before arguing about it.** Elasticity (P2), lookahead in points of median
-   (P9) and the null of the maximum (P10) each convert a methodological worry into a number you can
-   subtract.
-3. **Stratify on the dominant covariate.** In this corpus that is the entry market cap. Almost every
-   apparent categorical effect (P4) was it.
-4. **Every convention on missing values is a hypothesis.** State it, and publish the sensitivity
-   (P8, P11).
-5. **Instruments fail quietly.** Units, transport, provider limits and censored fields (P6) changed
-   results by factors of 75, by 100 % of the data, and by 15 points. None of them raised an
-   exception.
-6. **Probes are code.** Two of two supervision probes were wrong on first use (P7), and both failed
-   toward false confidence.
-7. **A null result is a deliverable.** Eleven of these fifteen cards killed a positive finding. The
-   corpus's answer, that no exit policy is profitable in expectation and nothing observable at
-   purchase time locates the winners, only became defensible once those eleven were dead.
+## 1. Audit definitions, not names
+
+P1, P5 and P6d all involved variables whose names described their intended meaning while their formulas described something else.
+
+## 2. Turn methodological concerns into measurements
+
+Instead of saying:
+
+> "There may be lookahead."
+
+measure:
+
+> **17.5 points of median performance.**
+
+Instead of saying:
+
+> "The denominator may matter."
+
+measure:
+
+> **elasticity = 0.884.**
+
+Instead of saying:
+
+> "Multiple testing may be a problem."
+
+measure:
+
+> **max-null critical value = +26.3%.**
+
+A methodological objection becomes much more useful once it has a number.
+
+## 3. Stratify on the dominant covariate
+
+Here, entry market cap dominated many apparent categorical effects.
+
+The crude effect can look enormous.
+
+The adjusted effect can disappear completely.
+
+## 4. Missing-data policy is part of the model
+
+"Drop N/A" is not neutral.
+
+Every missing value has a mechanism.
+
+That mechanism needs to be measured.
+
+## 5. Infrastructure is part of the measurement system
+
+Units, APIs, provider limits, transport errors and censored fields changed results by:
+
+* factors of ~75;
+* 100% of the apparent dataset;
+* or 15 percentage points.
+
+None initially produced an obvious error.
+
+## 6. Monitoring deserves the same scepticism as analysis
+
+Two monitoring probes were wrong on first use.
+
+Both failed toward **false confidence**.
+
+## 7. Null results are deliverables
+
+Eleven of fifteen findings died under their own tests.
+
+That is not a failure of the investigation.
+
+That **is** the investigation.
+
+The final conclusions became defensible precisely because the attractive explanations were repeatedly given opportunities to fail.
+
+---
+
+# Final principle
+
+> **Do not ask whether the data supports your hypothesis.**
+>
+> **Ask what could make the data appear to support it — and then try to prove that explanation wrong.**
