@@ -472,10 +472,23 @@ def main() -> None:
             "exit_mode_sensitivity": "next",
         },
     }
-    with open(os.path.join(pde.TABLES, "LOCK.json"), "w", encoding="utf8") as fh:
+    path = os.path.join(pde.TABLES, "LOCK.json")
+    print("\n".join(doc))
+    if os.path.exists(path):
+        # The lock is written once. A rerun (a clone, a reviewer) recomputes it
+        # and checks that it would have locked the same thing; it never
+        # replaces the committed file, whose timestamp is the evidence.
+        old = json.load(open(path))
+        same = all(json.dumps(old[k], sort_keys=True) == json.dumps(json.loads(json.dumps(lock[k])), sort_keys=True)
+                   for k in lock if k != "locked_at_utc")
+        print("\nLOCK.json exists (locked %s UTC): recomputed lock %s." % (
+            old["locked_at_utc"], "IDENTICAL" if same else "DIFFERENT, the committed lock is kept"))
+        if not same:
+            raise SystemExit(1)
+        return
+    with open(path, "w", encoding="utf8") as fh:
         json.dump(lock, fh, indent=1)
         fh.write("\n")
-    print("\n".join(doc))
     print("\nLOCK written: %d signals" % len(locked))
 
 
