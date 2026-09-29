@@ -1,0 +1,107 @@
+{
+ "t_snap": 1790680980.0,
+ "t_snap_utc": "2026-09-29 11:23:00",
+ "frozen_at_utc": "2026-09-29 11:26:11",
+ "source": "live detector project: etat/journal.jsonl, etat/prix*.jsonl, analyse/<protocol caches>",
+ "series_files_read": [
+  "prix.jsonl"
+ ],
+ "journal_rows_kept_by_type": {
+  "_unparsable_lines": 0,
+  "alerte_lancement": 1657,
+  "cloture": 1642,
+  "courbe_introuvable": 371,
+  "demarrage": 26,
+  "echec_confirmation": 2,
+  "echec_filtre": 84,
+  "echec_suivi": 72,
+  "gel_machine": 158,
+  "outil": 112,
+  "pagination_non_atteinte": 15,
+  "prix_incoherent": 21,
+  "rejete": 7005,
+  "trou_ws": 172,
+  "verdict8_renonce": 126
+ },
+ "series": {
+  "points_kept": 1650815,
+  "points_dropped_unknown_mint": 0,
+  "points_dropped_after_t_snap": 60
+ },
+ "n_alerts": 1657,
+ "files": {
+  "journal.jsonl.gz": {
+   "bytes": 982660,
+   "sha256": "9eb0030c03e19e696aba96271eea8dc2a75a1627f92666f029d61cc061d4a53a"
+  },
+  "series.txt.gz": {
+   "bytes": 10567994,
+   "sha256": "096cc2fc1760b2a380ae411460fc3362db843299d50029fff98a938823028284"
+  },
+  "protocol400_caches/financeurs_cache.json": {
+   "bytes": 400852,
+   "sha256": "5c91e1d9c444924df7d5dd1dc910d1a553316215900735ebdc376f79dcf8482f"
+  },
+  "protocol400_caches/protocole_400_copies.json": {
+   "bytes": 5816,
+   "sha256": "f934591344fac43fa4b7025419ca2b2b46c72113098f09aa3b3cc6f3ba0112c5"
+  },
+  "protocol400_caches/protocole_400_n60.json": {
+   "bytes": 2354,
+   "sha256": "901537af9887daddbc9238e47c5498de5a4b39e525c7eb81f3635f42fe1ea909"
+  },
+  "protocol400_caches/destinations_cache.json": {
+   "bytes": 263593,
+   "sha256": "70345df4b28c2e402f6b6d533615caa7320dc549b59393613ef287a772cf1dcf"
+  },
+  "protocol400_caches/sortie_noyau_cache.json": {
+   "bytes": 392611,
+   "sha256": "da6367a2f86d8a832e1eb07cd320d4132d085d71c6a38b9790443d24d4b6f369"
+  },
+  "protocol400_caches/PROTOCOLE_400.md": {
+   "bytes": 3882,
+   "sha256": "5ba2cedbe78fcf206b3e2e8c68793a8c24be3dc1bb2ea731fe9f87bbc202ef27"
+  }
+ },
+ "redaction": "code/redact.py applied at write time (43 identifiers in the map)",
+ "rule": "immutable reference dataset of the study; future data goes to a separate test",
+ "history": [
+  {
+   "frozen_at_utc": "2026-09-29 11:23:04",
+   "files": {
+    "journal.jsonl.gz": {
+     "bytes": 982814,
+     "sha256": "d6fc5fe06f7b8b2814bab412b0e79d66fe13839eb625355d419638fcd3d18a1e"
+    },
+    "series.txt.gz": {
+     "bytes": 10567994,
+     "sha256": "294627edf29660deeae24d6f30d5eaa2a6d2d1a26ad3aae668b45fd4b79c7c47"
+    },
+    "protocol400_caches/financeurs_cache.json": {
+     "bytes": 400880,
+     "sha256": "7569078b4087b163028ba9301dccda10e56c319472fd7ed835abd84c337da39d"
+    },
+    "protocol400_caches/protocole_400_copies.json": {
+     "bytes": 5816,
+     "sha256": "f934591344fac43fa4b7025419ca2b2b46c72113098f09aa3b3cc6f3ba0112c5"
+    },
+    "protocol400_caches/protocole_400_n60.json": {
+     "bytes": 2354,
+     "sha256": "901537af9887daddbc9238e47c5498de5a4b39e525c7eb81f3635f42fe1ea909"
+    },
+    "protocol400_caches/destinations_cache.json": {
+     "bytes": 263593,
+     "sha256": "70345df4b28c2e402f6b6d533615caa7320dc549b59393613ef287a772cf1dcf"
+    },
+    "protocol400_caches/sortie_noyau_cache.json": {
+     "bytes": 392611,
+     "sha256": "da6367a2f86d8a832e1eb07cd320d4132d085d71c6a38b9790443d24d4b6f369"
+    },
+    "protocol400_caches/PROTOCOLE_400.md": {
+     "bytes": 3882,
+     "sha256": "5ba2cedbe78fcf206b3e2e8c68793a8c24be3dc1bb2ea731fe9f87bbc202ef27"
+    }
+   }
+  }
+ ]
+}
