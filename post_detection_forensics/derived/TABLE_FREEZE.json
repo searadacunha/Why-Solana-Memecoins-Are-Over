@@ -1,0 +1,27 @@
+{
+ "frozen_at_utc": "2026-09-30 17:12:47",
+ "sha256": "9d2fd31f24ce37dbb304ed35d6ee46cbfcaf496ed99df495f1f887dfdce58c06",
+ "rows": 1657,
+ "rows_by_split": {
+  "train": 1015,
+  "val": 642
+ },
+ "alerts_by_split": {
+  "train": 1015,
+  "val": 642
+ },
+ "onchain_coverage": 1.0,
+ "primary_label": "A_conf_2x_15m",
+ "primary_observed_by_split": {
+  "train": 896,
+  "val": 606
+ },
+ "safe_features": 144,
+ "cutoffs": {
+  "A": -1.0,
+  "A2": -2.0,
+  "A5": -5.0,
+  "V": 29.0
+ },
+ "note": "counts only; no rate was computed before this freeze"
+}
