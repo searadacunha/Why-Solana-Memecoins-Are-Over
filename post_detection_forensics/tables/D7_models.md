@@ -1,0 +1,18 @@
+# D7. Models by feature set (primary label, TRAIN fit, VALIDATION choice and measure)
+
+VALIDATION base 26.4 % (N 606). 11 configurations per set, 99 fits. 'screened' = the step 1 features passing BH in TRAIN, plus actor and premium: b_core_prio_sol, b_core_signers, b_core_sol, b_core_tip_sol, b_core_tx_n, b_creator_buy_sol, b_entropy, b_gini, b_hhi, b_migrated_slot0, b_other_slot0_buyers, b_other_slot0_sol, b_round_share, b_slot0_pool_buy_sol, b_ticket_cv, b_ticket_max, b_ticket_mean, b_ticket_median, b_ticket_q75, b_ticket_range, b_ticket_std, b_top1, b_top2, b_top3, b_top_half, b_tx_per_wallet, c_alerts_60m, e_prior_launches_share, f_fund_to_alert_h, f_fund_to_buy_h, f_funder_log_hist, f_hub_funded_share, g_core_fund_age_h, g_core_fund_cv, g_core_fund_sol, g_funder_prior_uses, h_core_last_in_age_h, h_core_prior_buys, h_core_tx_1h, h_core_tx_24h, h_creator_prior_buys, h_creator_prior_creates, h_creator_tx_1h, h_creator_tx_24h, h_sniper_reuse_max, m_accel, m_ata, m_buy_max, m_buy_median, m_buy_sell_ratio, m_buy_sol, m_buyers, m_buys, m_buys_10s, m_buys_5s, m_core_exit_share, m_core_exits, m_first10_sol, m_first1_sol, m_first3_sol, m_first5_sol, m_rate, m_sell_max, m_sell_sol, m_sellers, m_sells, m_tx, p_log_mc_usd, p_log_p0, p_pool_sol, p_price_max_ratio, p_velocity, w_core_log_age_h, w_core_log_prior_n, w_creator_log_age_h, w_creator_log_prior_n, w_early_err_share, c_actor_grouped, p_entry_over_operator.
+
+| feature set | features | kept | ROC-AUC | PR-AUC | Brier | ECE | precision / recall / F1 at TRAIN top 20 % | P@5 % | P@10 % | P@20 % | P@30 % |
+|---|---:|---|---:|---:|---:|---:|---|---|---|---|---|
+| bundle | 33 | logreg 100.0 | 0.695 | 0.400 | 0.1803 | 0.054 | 44.8 % / 26.9 % / 0.336 | 40.0 % (12/30) [24.6-57.7] | 50.8 % (31/61) [38.6-62.9] | 44.6 % (54/121) [36.1-53.5] | 41.8 % (76/182) [34.8-49.0] |
+| funding | 28 | logreg 100.0 | 0.646 | 0.353 | 0.1839 | 0.053 | 38.1 % / 33.1 % / 0.355 | 30.0 % (9/30) [16.7-47.9] | 37.7 % (23/61) [26.6-50.3] | 37.2 % (45/121) [29.1-46.1] | 34.6 % (63/182) [28.1-41.8] |
+| wallets + history | 36 | boost 50 | 0.655 | 0.365 | 0.1793 | 0.056 | 34.3 % / 52.5 % / 0.415 | 40.0 % (12/30) [24.6-57.7] | 42.6 % (26/61) [31.0-55.1] | 38.0 % (46/121) [29.9-46.9] | 33.5 % (61/182) [27.1-40.7] |
+| micro | 32 | logreg 100.0 | 0.673 | 0.373 | 0.1831 | 0.078 | 39.3 % / 33.1 % / 0.359 | 43.3 % (13/30) [27.4-60.8] | 39.3 % (24/61) [28.1-51.9] | 40.5 % (49/121) [32.2-49.4] | 35.7 % (65/182) [29.1-42.9] |
+| actor | 1 | logreg 1.0 | 0.632 | 0.324 | 0.1813 | 0.042 | 33.0 % / 96.9 % / 0.493 | 33.3 % (10/30) [19.2-51.2] | 32.8 % (20/61) [22.3-45.3] | 32.2 % (39/121) [24.6-41.0] | 30.2 % (55/182) [24.0-37.2] |
+| actor + premium | 2 | logreg 1.0 | 0.637 | 0.330 | 0.1813 | 0.056 | 31.5 % / 28.1 % / 0.297 | 30.0 % (9/30) [16.7-47.9] | 32.8 % (20/61) [22.3-45.3] | 31.4 % (38/121) [23.8-40.1] | 32.4 % (59/182) [26.0-39.5] |
+| price + micro | 42 | logreg 100.0 | 0.681 | 0.378 | 0.1812 | 0.070 | 37.4 % / 28.7 % / 0.325 | 46.7 % (14/30) [30.2-63.9] | 41.0 % (25/61) [29.5-53.5] | 37.2 % (45/121) [29.1-46.1] | 37.9 % (69/182) [31.2-45.1] |
+| all | 144 | logreg 1000.0 | 0.674 | 0.424 | 0.1969 | 0.122 | 47.1 % / 35.0 % / 0.401 | 53.3 % (16/30) [36.1-69.8] | 54.1 % (33/61) [41.7-66.0] | 47.1 % (57/121) [38.4-56.0] | 41.2 % (75/182) [34.3-48.5] |
+| screened | 79 | logreg 1000.0 | 0.700 | 0.403 | 0.1918 | 0.117 | 45.5 % / 31.9 % / 0.375 | 43.3 % (13/30) [27.4-60.8] | 52.5 % (32/61) [40.2-64.5] | 43.8 % (53/121) [35.3-52.7] | 40.7 % (74/182) [33.8-47.9] |
+
+- Gate: 'screened' minus 'actor + premium', VALIDATION ROC-AUC +0.063 [-0.018, +0.114] (95 % cluster bootstrap).
+- Beside the gate: 'all' minus 'actor + premium', VALIDATION ROC-AUC +0.037 [-0.056, +0.094] (95 % cluster bootstrap).
