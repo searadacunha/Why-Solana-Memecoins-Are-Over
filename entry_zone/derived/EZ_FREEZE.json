@@ -1,0 +1,124 @@
+{
+ "frozen_at_utc": "2026-09-30 17:50:24",
+ "sha256": "b6ce070cdd68a3c6fbced33fafaf486e722d090b26fb902899f640863b716779",
+ "rows": 1657,
+ "rows_by_split": {
+  "train": 1015,
+  "val": 642
+ },
+ "coverage_by_cutoff": {
+  "T0": {
+   "train_entry": 1015,
+   "train_label": 896,
+   "val_entry": 642,
+   "val_label": 606
+  },
+  "D": {
+   "train_entry": 1015,
+   "train_label": 896,
+   "val_entry": 642,
+   "val_label": 606
+  },
+  "P5": {
+   "train_entry": 830,
+   "train_label": 755,
+   "val_entry": 641,
+   "val_label": 605
+  },
+  "P10": {
+   "train_entry": 828,
+   "train_label": 753,
+   "val_entry": 639,
+   "val_label": 605
+  },
+  "P20": {
+   "train_entry": 847,
+   "train_label": 769,
+   "val_entry": 639,
+   "val_label": 605
+  },
+  "P30": {
+   "train_entry": 841,
+   "train_label": 768,
+   "val_entry": 639,
+   "val_label": 605
+  },
+  "P60": {
+   "train_entry": 831,
+   "train_label": 758,
+   "val_entry": 637,
+   "val_label": 605
+  },
+  "P120": {
+   "train_entry": 833,
+   "train_label": 765,
+   "val_entry": 637,
+   "val_label": 604
+  },
+  "P300": {
+   "train_entry": 942,
+   "train_label": 876,
+   "val_entry": 626,
+   "val_label": 597
+  }
+ },
+ "cutoffs": {
+  "T0": {
+   "entry_s": 0.0,
+   "trades_until": "slot0",
+   "price_until": null,
+   "entry_tolerance_s": 10.0
+  },
+  "D": {
+   "entry_s": 0.0,
+   "trades_until": -1.0,
+   "price_until": 0.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P5": {
+   "entry_s": 5.0,
+   "trades_until": 4.0,
+   "price_until": 4.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P10": {
+   "entry_s": 10.0,
+   "trades_until": 9.0,
+   "price_until": 9.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P20": {
+   "entry_s": 20.0,
+   "trades_until": 19.0,
+   "price_until": 19.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P30": {
+   "entry_s": 30.0,
+   "trades_until": 29.0,
+   "price_until": 29.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P60": {
+   "entry_s": 60.0,
+   "trades_until": 29.0,
+   "price_until": 59.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P120": {
+   "entry_s": 120.0,
+   "trades_until": 29.0,
+   "price_until": 119.0,
+   "entry_tolerance_s": 10.0
+  },
+  "P300": {
+   "entry_s": 300.0,
+   "trades_until": 29.0,
+   "price_until": 299.0,
+   "entry_tolerance_s": 46.0
+  }
+ },
+ "source_table_sha256": "9d2fd31f24ce37dbb304ed35d6ee46cbfcaf496ed99df495f1f887dfdce58c06",
+ "note": "counts only; no rate was computed before this freeze",
+ "build_seconds": 69
+}
