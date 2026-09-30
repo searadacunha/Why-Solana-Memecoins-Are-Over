@@ -1,0 +1,397 @@
+{
+ "market cap": {
+  "family": "market cap",
+  "cut": "P5",
+  "rule": "[P5] 3e+04 <= mc_usd < 3.5e+04",
+  "p": 0.0,
+  "val_n": 35,
+  "val_k": 11,
+  "val_base": 0.2528925619834711,
+  "val_lb": 0.18550658059782457,
+  "val_holds": false,
+  "train_n": 57,
+  "train_k": 27,
+  "val_drawdown_winners_median": -0.008827472817842907,
+  "resid": {
+   "actor": [
+    0.010516284453105623,
+    -0.22800528030574282,
+    0.1326551532018786
+   ]
+  },
+  "val_top_cluster_share": 0.5142857142857142,
+  "val_without_dominant": [
+   false,
+   0.0619101371254899,
+   0.21893491124260356,
+   17
+  ],
+  "val_single_only": [
+   false,
+   0.18550658059782457,
+   0.3162393162393162,
+   35
+  ],
+  "halves_above": [
+   true,
+   false
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ },
+ "premium": {
+  "family": "premium",
+  "cut": "D",
+  "rule": "[D] premium <= 3.299",
+  "p": 0.0,
+  "val_n": 83,
+  "val_k": 24,
+  "val_base": 0.264026402640264,
+  "val_lb": 0.20267311749093847,
+  "val_holds": false,
+  "train_n": 90,
+  "train_k": 39,
+  "val_drawdown_winners_median": -0.029830000000000023,
+  "resid": {
+   "actor": [
+    -0.02554257085416201,
+    -0.24502584861817112,
+    0.04212891542939789
+   ]
+  },
+  "val_top_cluster_share": 0.6626506024096386,
+  "val_without_dominant": [
+   false,
+   0.056989129307017855,
+   0.23031496062992127,
+   28
+  ],
+  "val_single_only": [
+   false,
+   0.2052619989088515,
+   0.3304904051172708,
+   82
+  ],
+  "halves_above": [
+   false,
+   true
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ },
+ "other price": {
+  "family": "other price",
+  "cut": "D",
+  "rule": "[D] pool_sol <= 70.61",
+  "p": 0.0,
+  "val_n": 134,
+  "val_k": 44,
+  "val_base": 0.264026402640264,
+  "val_lb": 0.2545973325798935,
+  "val_holds": false,
+  "train_n": 164,
+  "train_k": 65,
+  "val_drawdown_winners_median": -0.02734000000000003,
+  "resid": {
+   "actor": [
+    0.018618840203986027,
+    -0.12720459738745293,
+    0.08892936336665871
+   ]
+  },
+  "val_top_cluster_share": 0.4626865671641791,
+  "val_without_dominant": [
+   false,
+   0.16438921125325756,
+   0.23031496062992127,
+   72
+  ],
+  "val_single_only": [
+   false,
+   0.2545973325798935,
+   0.3304904051172708,
+   134
+  ],
+  "halves_above": [
+   true,
+   true
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ },
+ "SOL engaged": {
+  "family": "SOL engaged",
+  "cut": "P20",
+  "rule": "[P20] 97.34 < sol_total <= 101.7",
+  "p": 0.0,
+  "val_n": 43,
+  "val_k": 16,
+  "val_base": 0.2413223140495868,
+  "val_lb": 0.2437613889377433,
+  "val_holds": true,
+  "train_n": 77,
+  "train_k": 33,
+  "val_drawdown_winners_median": -0.05025989909799722,
+  "resid": {
+   "premium": [
+    0.08132760328700735,
+    -0.10182140233630224,
+    0.2539895888971907
+   ],
+   "actor": [
+    0.10192680679820859,
+    -0.07696822629015283,
+    0.2848527852232033
+   ],
+   "premium + actor": [
+    0.08112019197719829,
+    -0.10195778551155826,
+    0.25347780251808705
+   ],
+   "premium + actor + snipers + run-up": [
+    0.08472531301995154,
+    -0.09811900192234811,
+    0.2521719377575505
+   ]
+  },
+  "val_top_cluster_share": 0.2558139534883721,
+  "val_without_dominant": [
+   false,
+   0.20410233354328552,
+   0.20710059171597633,
+   32
+  ],
+  "val_single_only": [
+   false,
+   0.22988992501626865,
+   0.302771855010661,
+   42
+  ],
+  "halves_above": [
+   true,
+   true
+  ],
+  "big_wallet_holds": false,
+  "class": "PRICE/OPERATOR CONFOUNDED"
+ },
+ "counts and timing": {
+  "family": "counts and timing",
+  "cut": "P5",
+  "rule": "[P5] 30 < buys_5s <= 35",
+  "p": 0.04,
+  "val_n": 75,
+  "val_k": 22,
+  "val_base": 0.2528925619834711,
+  "val_lb": 0.2023999721815816,
+  "val_holds": false,
+  "train_n": 79,
+  "train_k": 31,
+  "val_drawdown_winners_median": -0.04003000000000001,
+  "resid": {
+   "premium": [
+    -0.0034531455629179184,
+    -0.12711877765177196,
+    0.09063112183356334
+   ],
+   "actor": [
+    -0.012607374222491075,
+    -0.1371556534885115,
+    0.07974877290873297
+   ],
+   "premium + actor": [
+    -0.013917137599139597,
+    -0.13669641033035868,
+    0.08048866980529973
+   ],
+   "premium + actor + snipers + run-up": [
+    -0.0036740369724662103,
+    -0.1274181868147275,
+    0.09288158917050643
+   ]
+  },
+  "val_top_cluster_share": 0.21333333333333335,
+  "val_without_dominant": [
+   false,
+   0.1469448625694613,
+   0.21893491124260356,
+   59
+  ],
+  "val_single_only": [
+   false,
+   0.2023999721815816,
+   0.3162393162393162,
+   75
+  ],
+  "halves_above": [
+   true,
+   false
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ },
+ "capacity": {
+  "family": "capacity",
+  "cut": "T0",
+  "rule": "[T0] 25 < cap_all_max <= 35.44",
+  "p": 0.005,
+  "val_n": 35,
+  "val_k": 12,
+  "val_base": 0.264026402640264,
+  "val_lb": 0.20831495282688925,
+  "val_holds": false,
+  "train_n": 90,
+  "train_k": 39,
+  "val_drawdown_winners_median": -0.013519999999999976,
+  "resid": {
+   "premium": [
+    0.022479091663291272,
+    -0.13542637454395773,
+    0.2872478527654959
+   ],
+   "actor": [
+    0.05082921111834264,
+    -0.09831998330783676,
+    0.31523729740687517
+   ],
+   "premium + actor": [
+    0.022970051648630217,
+    -0.13225340057504595,
+    0.28707753833610283
+   ],
+   "premium + actor + snipers + run-up": [
+    0.02324279008711039,
+    -0.1315504848992348,
+    0.2876910584876227
+   ]
+  },
+  "val_top_cluster_share": 0.22857142857142856,
+  "val_without_dominant": [
+   false,
+   0.21532287067936856,
+   0.2635135135135135,
+   27
+  ],
+  "val_single_only": [
+   false,
+   0.20410233354328552,
+   0.3304904051172708,
+   32
+  ],
+  "halves_above": [
+   true,
+   true
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ },
+ "funding": {
+  "family": "funding",
+  "cut": "P300",
+  "rule": "[P300] 0.9708 < fu_ticket_over_recv_24h_median <= 0.971",
+  "p": 0.005,
+  "val_n": 8,
+  "val_k": 5,
+  "val_base": 0.152428810720268,
+  "val_lb": 0.30573785458380187,
+  "val_holds": true,
+  "train_n": 65,
+  "train_k": 22,
+  "val_drawdown_winners_median": -0.13431576858191918,
+  "resid": {
+   "premium": [
+    0.4648253460651526,
+    0.03452850755389694,
+    0.8608901371159968
+   ],
+   "actor": [
+    0.4157355278131706,
+    0.02387614831797355,
+    0.8066028178797867
+   ],
+   "premium + actor": [
+    0.36728610111005355,
+    -0.0660475765562942,
+    0.7744118796869174
+   ],
+   "premium + actor + snipers + run-up": [
+    0.3216745376458646,
+    -0.12758704420465952,
+    0.7655347345859874
+   ]
+  },
+  "val_top_cluster_share": 0.375,
+  "val_without_dominant": [
+   true,
+   0.3755282641185388,
+   0.15151515151515152,
+   5
+  ],
+  "val_single_only": [
+   false,
+   0.0,
+   0.11496746203904555,
+   0
+  ],
+  "halves_above": [
+   true,
+   true
+  ],
+  "big_wallet_holds": null,
+  "class": "PRICE/OPERATOR CONFOUNDED"
+ },
+ "combination": {
+  "family": "combination",
+  "cut": "D",
+  "rule": "[D] premium <= 3.564 AND [D] sol_top3 < 60 AND [D] sol_hhi > 0.1667 AND [D] n_early > 40",
+  "p": 0.0,
+  "val_n": 18,
+  "val_k": 7,
+  "val_base": 0.264026402640264,
+  "val_lb": 0.20304991926931162,
+  "val_holds": false,
+  "train_n": 42,
+  "train_k": 32,
+  "val_drawdown_winners_median": -0.053039999999999976,
+  "resid": {
+   "premium": [
+    -0.008658147934046977,
+    -0.2767057332422314,
+    0.29114667158616486
+   ],
+   "actor": [
+    0.0899495819236261,
+    -0.15247066633497555,
+    0.3901804962299511
+   ],
+   "premium + actor": [
+    -0.007193259076739927,
+    -0.27728618717326625,
+    0.29262040925371546
+   ],
+   "premium + actor + snipers + run-up": [
+    -0.009437165414501299,
+    -0.2793413049811674,
+    0.2903896774775713
+   ]
+  },
+  "val_top_cluster_share": 0.2222222222222222,
+  "val_without_dominant": [
+   false,
+   0.11721187910109099,
+   0.23031496062992127,
+   14
+  ],
+  "val_single_only": [
+   false,
+   0.21610786039131383,
+   0.3304904051172708,
+   17
+  ],
+  "halves_above": [
+   true,
+   true
+  ],
+  "big_wallet_holds": null,
+  "class": "TRAIN OVERFIT"
+ }
+}
