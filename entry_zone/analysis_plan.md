@@ -132,3 +132,16 @@ same exits as the reference.
 "If I had to enter a launch, the observable conditions would be X + Y + Z, from a market cap between
 A and B" is written only from rules classified PROMISING BUT UNCONFIRMED. Otherwise the report says
 that no robust entry zone was found.
+
+## Precisions of 2026-09-30, made in the code before the search was run
+
+- The market-cap tranches (5k, 10k, 20k, 25k USD) span the TRAIN range from the 1st to the 95th
+  percentile of each cut-off (about 5k to 175k USD). P0 has a real tail to tens of millions of USD (a
+  buy on the pool inside the creation block); above the 95th percentile the deciles cover it.
+- The SOL grid (1 to 100 SOL, then steps of 25 up to the TRAIN 99th percentile) applies to the SOL
+  engaged variables only; the capacity sums and maxima use their TRAIN deciles, the capacity counts
+  the wallet-count grid.
+- "Other price" (log price, pool reserve, SOL left on the curve, run-up since the alert) is its own
+  family, so that the market-cap and premium families hold their own variable only.
+- Combinations use bound atoms only (deciles as lower and upper bounds, the grids as thresholds): an
+  interval is a pair of bounds, and pairs on one variable are allowed.
