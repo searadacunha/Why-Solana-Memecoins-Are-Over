@@ -8,10 +8,26 @@ mostly the actor label and the entry premium. This one asks a narrower question,
 > that double quickly (a 2x from the alert price confirmed by two reads within 15 minutes) from the
 > others, beyond what the actor label and the entry premium already carry?
 
-**Answer:** _to be written from `tables/D9_verdict.md` once the analysis has run._
+**Answer: NO ROBUST ON-CHAIN SEPARATION FOUND.** The price at entry and the operator family explain
+what separates; the on-chain features add some ROC-AUC on top of them, but not at the confidence the
+plan fixed before the table was frozen.
 
-The plan, its verdict rules and every amendment made before the table was frozen are in
-[analysis_plan.md](analysis_plan.md). The results, sections A to H, will be in `results.md`.
+On 1,657 alerts (2026-08-21 to 09-29), 1,502 with an observed 15-minute window:
+
+| | |
+|---|---|
+| confirmed 2x within 15 min, TRAIN / VALIDATION | 22.4 % / 26.4 % |
+| P0, entry premium, pool reserve, market cap | one variable (Spearman 0.91 to 0.98) |
+| actor label and premium | the same information (off-diagonal cells: 15 and 6 alerts) |
+| on-chain features on top of actor and premium, VALIDATION ROC-AUC | +0.063 [-0.018, +0.114] |
+| best selection, top 20 % of the screened model, VALIDATION | 45.5 % (51/112), all inside the cheap "single" corner, 71 of 112 from one operator |
+| rules evaluated / reaching 70 % in TRAIN | 1,582,590 / 0 |
+| common funding among similar launches, TRAIN / VALIDATION | +6.6 / -21.8 points: the sign flips |
+| early buyers with a fresh wallet majority | 0 alerts: they are all seasoned bots |
+
+The account, sections A to H, is in [results.md](results.md). The plan, its verdict rules and every
+amendment made before the table was frozen are in [analysis_plan.md](analysis_plan.md); the verdict is
+applied by `code/ana_90_verdict.py`, not written by hand.
 
 ## Layout
 

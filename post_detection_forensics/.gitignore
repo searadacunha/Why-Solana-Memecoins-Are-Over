@@ -3,3 +3,4 @@
 data/onchain_cache/
 __pycache__/
 derived/forensic_rows*.jsonl.gz
+tables/*.log
