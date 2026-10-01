@@ -146,11 +146,13 @@ def _instructions(t: dict[str, Any]) -> list[dict[str, Any]]:
 def txflow(t: dict[str, Any], w: str) -> dict[str, Any]:
     """One transaction from the point of view of wallet w (analysis_plan.md section 4)."""
     meta = t["meta"]
-    keys = [k["pubkey"] for k in t["transaction"]["message"]["accountKeys"]]
+    acc = t["transaction"]["message"]["accountKeys"]
+    keys = [k["pubkey"] for k in acc]
     signer = keys[0]
     fee = meta.get("fee") or 0
     rec: dict[str, Any] = {"sig": t["transaction"]["signatures"][0], "slot": t["slot"], "bt": t.get("blockTime"),
-                           "idx": t.get("transactionIndex"), "signer": signer, "err": meta.get("err") is not None}
+                           "idx": t.get("transactionIndex"), "signer": signer, "err": meta.get("err") is not None,
+                           "signers": [k["pubkey"] for k in acc if k.get("signer")]}
     tok_accts = set()
     pre: dict[tuple[str, str], float] = defaultdict(float)
     post: dict[tuple[str, str], float] = defaultdict(float)
