@@ -1,0 +1,25 @@
+{
+ "failures": {
+  "token balance differs from receipt plus changes (receipts of several snipers)": {
+   "examples": [
+    [
+     "AQcqJg75Y4sMmhL2j3bd76sVi9JLvuMi4PbLSpbne7uv",
+     "3SBc5Rcvy7esUkFtRUEVacDCbfd86YzYBPvks2HXpump",
+     19369848,
+     20514404
+    ]
+   ],
+   "n": 1
+  }
+ },
+ "price_file_opened": false,
+ "status": {
+  "branch: cycle": 3,
+  "branch: hub measured": 71,
+  "branch: known": 867,
+  "branch: retained by an unknown wallet": 35,
+  "branch: too active": 304,
+  "event: cap": 361,
+  "event: complete": 1096
+ }
+}

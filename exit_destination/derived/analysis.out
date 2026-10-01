@@ -1,0 +1,32 @@
+{
+ "events": 1457,
+ "read": 1457,
+ "status": {
+  "complete": 1096,
+  "cap": 361
+ },
+ "calls": {
+  "calls": 9757,
+  "fails": 0
+ },
+ "stopped": "None"
+}
+B {"disposal": {"sold": 1131, "mixed": 326}, "amount_shares": {"sold": 0.5560137433198895, "transferred": 0.0, "other": 0.0, "held": 0.4439862566801106}, "first_action_s_median": 81, "first_sale_s_median": 81, "multi_sniper_events": 0, "own_signed_transfers": 0, "transfers": 1280, "fee_payers": 62, "top_fee_payer_share": 0.1203125}
+C {"n_sale_events": 1457, "categories": {"C funder": {"n": 588, "sol": 7691.597522554}, "D known wallet": {"n": 7, "sol": 122.797859973}, "F hub": {"n": 179, "sol": 1811.677553513}, "H unknown recipient (followed in D)": {"n": 385, "sol": 3969.747146511}, "H untraceable (cap)": {"n": 298, "sol": 10716.935289334}}, "pooled_transfers": 0}
+D {"branches": 1280, "sol": 13645.27904956, "cats": {"H1": {"branches": 631, "sol": 7697.813565275, "direct": 631, "multi": 0, "events": 590}, "H2": {"branches": 7, "sol": 122.797859973, "direct": 7, "multi": 0, "events": 7}, "H3": {"branches": 0, "sol": 0, "direct": 0, "multi": 0, "events": 0}, "H4": {"branches": 0, "sol": 0, "direct": 0, "multi": 0, "events": 0}, "H5": {"branches": 300, "sol": 2685.014884221, "direct": 289, "multi": 11, "events": 249}, "H6": {"branches": 342, "sol": 3139.652740091, "direct": 333, "multi": 9, "events": 322}}, "stays": 296, "reasons_h6": {"too active": 304, "retained by an unknown wallet": 35, "cycle": 3}}
+F {"links": 607, "events_with_branch": 1161, "null": {"obs": 0.5228251507321274, "null_mean": 0.29125839793281655, "ci": [0.2756244616709733, 0.30749354005167956], "pct": 1.0, "p": 0.000999000999000999, "effect": 1.795056054839406}, "chains": {"2": 44, "3": 5, "5": 1, "6": 1}, "same": {"same_funder": 462, "same_snipers": 607, "same_exit_wallet": 576, "same_cluster": 607, "same_deployer_network": 0}, "dt_min_median": 18.146131320794424}
+G {"h3_branches": 0, "strict": 0, "tests": {"all": {"obs": 0.0, "null_mean": 0.0, "ci": [0.0, 0.0], "pct": 0.0, "p": 1.0, "effect": null}, "TRAIN": {"obs": 0.0, "null_mean": 0.0, "ci": [0.0, 0.0], "pct": 0.0, "p": 1.0, "effect": null}, "VALIDATION": {"obs": 0.0, "null_mean": 0.0, "ci": [0.0, 0.0], "pct": 0.0, "p": 1.0, "effect": null}}, "roles": {}}
+{
+ "capital reaches the launch funder (events)": "ROBUST STRUCTURAL EVIDENCE",
+ "same first SOL destination repeated (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+ "same terminal wallet in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+ "same return category in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+ "same funder in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+ "same cluster in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+ "capital reaches the cluster's deployer network (events)": "NULL-COMPATIBLE",
+ "capital funds a later launch (events)": "ROBUST STRUCTURAL EVIDENCE",
+ "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": "ROBUST STRUCTURAL EVIDENCE",
+ "branches ending in H1": "ROBUST STRUCTURAL EVIDENCE",
+ "branches ending in H2": "NULL-COMPATIBLE",
+ "branches ending in H3": "NULL-COMPATIBLE"
+}
