@@ -1,0 +1,265 @@
+{
+ "architectures": {
+  "A": 383,
+  "E": 263,
+  "UNRESOLVED": 149,
+  "B": 826,
+  "C": 25,
+  "D": 11
+ },
+ "clusters": {
+  "n": 320,
+  "multi": 176,
+  "fingerprints": 35
+ },
+ "nulls": {
+  "train": {
+   "shared last funder": {
+    "obs": 830.0,
+    "null_mean": 15.855,
+    "ci": [
+     9.0,
+     24.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 52.349416587827186
+   },
+   "one funding transaction for 2+ snipers": {
+    "obs": 91.0,
+    "null_mean": 0.291,
+    "ci": [
+     0.0,
+     2.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 312.7147766323024
+   },
+   "funding-time synchrony (spread, s)": {
+    "obs": 480.5814696485623,
+    "null_mean": 1123.6919052183173,
+    "ci": [
+     1112.947816826411,
+     1133.870074547391
+    ],
+    "pct": 0.0,
+    "p": 0.000999000999000999,
+    "effect": 0.4276808148361558
+   },
+   "exits in one slot (share)": {
+    "obs": 0.6485526315789474,
+    "null_mean": 0.04570975877192982,
+    "ci": [
+     0.035526315789473684,
+     0.05609649122807017
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 14.188493857841598
+   },
+   "similar exit sizes (CV)": {
+    "obs": 0.04966518411329857,
+    "null_mean": 0.1822473978434804,
+    "ci": [
+     0.17862421553490976,
+     0.18571409196885308
+    ],
+    "pct": 0.0,
+    "p": 0.000999000999000999,
+    "effect": 0.27251518924814794
+   },
+   "tokens consolidated to one recipient": {
+    "obs": 12.0,
+    "null_mean": 6.047,
+    "ci": [
+     2.0,
+     11.0
+    ],
+    "pct": 0.98,
+    "p": 0.02097902097902098,
+    "effect": 1.984455101703324
+   },
+   "proceeds back to the first funder": {
+    "obs": 0.602996254681648,
+    "null_mean": 0.016235955056179776,
+    "ci": [
+     0.00749063670411985,
+     0.024968789013732832
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 37.13956170703575
+   },
+   "returning sniper re-funded by the same funder": {
+    "obs": 0.631055900621118,
+    "null_mean": 0.04967329192546584,
+    "ci": [
+     0.037267080745341616,
+     0.06335403726708075
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 12.70412884187361
+   },
+   "recurring sniper pairs": {
+    "obs": 664.0,
+    "null_mean": 43.984,
+    "ci": [
+     32.0,
+     57.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 15.096398690432885
+   }
+  },
+  "val": {
+   "shared last funder": {
+    "obs": 506.0,
+    "null_mean": 20.025,
+    "ci": [
+     11.0,
+     29.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 25.26841448189763
+   },
+   "one funding transaction for 2+ snipers": {
+    "obs": 9.0,
+    "null_mean": 0.047,
+    "ci": [
+     0.0,
+     1.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 191.48936170212767
+   },
+   "funding-time synchrony (spread, s)": {
+    "obs": 41.95254833040422,
+    "null_mean": 1221.1683550087873,
+    "ci": [
+     1182.5887521968366,
+     1238.8084358523727
+    ],
+    "pct": 0.0,
+    "p": 0.000999000999000999,
+    "effect": 0.03435443455304927
+   },
+   "exits in one slot (share)": {
+    "obs": 0.7559108527131783,
+    "null_mean": 0.0654874031007752,
+    "ci": [
+     0.05135658914728682,
+     0.08023255813953488
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 11.542843614518443
+   },
+   "similar exit sizes (CV)": {
+    "obs": 0.09082192637796824,
+    "null_mean": 0.2071732602573607,
+    "ci": [
+     0.2024520052306838,
+     0.21200730165877066
+    ],
+    "pct": 0.0,
+    "p": 0.000999000999000999,
+    "effect": 0.43838633550075345
+   },
+   "tokens consolidated to one recipient": {
+    "obs": 2.0,
+    "null_mean": 3.769,
+    "ci": [
+     1.0,
+     8.0
+    ],
+    "pct": 0.101,
+    "p": 0.8991008991008991,
+    "effect": 0.5306447333510215
+   },
+   "proceeds back to the first funder": {
+    "obs": 0.9186351706036745,
+    "null_mean": 0.07407611548556431,
+    "ci": [
+     0.049868766404199474,
+     0.09973753280839895
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 12.40123303688481
+   },
+   "returning sniper re-funded by the same funder": {
+    "obs": 0.9389312977099237,
+    "null_mean": 0.07111450381679389,
+    "ci": [
+     0.04834605597964377,
+     0.09669211195928754
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 13.203091455560326
+   },
+   "recurring sniper pairs": {
+    "obs": 368.0,
+    "null_mean": 36.738,
+    "ci": [
+     27.0,
+     48.0
+    ],
+    "pct": 1.0,
+    "p": 0.000999000999000999,
+    "effect": 10.016876258914476
+   }
+  }
+ },
+ "robustness": {
+  "('without the dominant operator', 'train')": {
+   "shared last funder": 0.000999000999000999,
+   "one funding transaction for 2+ snipers": 0.000999000999000999,
+   "funding-time synchrony (spread, s)": 0.000999000999000999,
+   "exits in one slot (share)": 0.000999000999000999,
+   "tokens consolidated to one recipient": 0.23276723276723277,
+   "recurring sniper pairs": 0.000999000999000999
+  },
+  "('without the 10 most frequent sniper wallets', 'train')": {
+   "shared last funder": 0.000999000999000999,
+   "one funding transaction for 2+ snipers": 0.000999000999000999,
+   "funding-time synchrony (spread, s)": 0.000999000999000999,
+   "exits in one slot (share)": 0.000999000999000999,
+   "tokens consolidated to one recipient": 0.030969030969030968,
+   "recurring sniper pairs": 0.000999000999000999
+  },
+  "('without the dominant operator', 'val')": {
+   "shared last funder": 0.000999000999000999,
+   "one funding transaction for 2+ snipers": 0.000999000999000999,
+   "funding-time synchrony (spread, s)": 0.000999000999000999,
+   "exits in one slot (share)": 0.000999000999000999,
+   "tokens consolidated to one recipient": 0.9280719280719281,
+   "recurring sniper pairs": 0.000999000999000999
+  },
+  "('without the 10 most frequent sniper wallets', 'val')": {
+   "shared last funder": 0.000999000999000999,
+   "one funding transaction for 2+ snipers": 0.000999000999000999,
+   "funding-time synchrony (spread, s)": 0.000999000999000999,
+   "exits in one slot (share)": 0.000999000999000999,
+   "tokens consolidated to one recipient": 0.9150849150849151,
+   "recurring sniper pairs": 0.000999000999000999
+  },
+  "('known non-hub last funders only', 'train')": {
+   "shared funder": 0.000999000999000999
+  },
+  "('known non-hub last funders only', 'val')": {
+   "shared funder": 0.000999000999000999
+  },
+  "('genesis funders only', 'train')": {
+   "shared funder": 0.000999000999000999
+  },
+  "('genesis funders only', 'val')": {
+   "shared funder": 0.000999000999000999
+  }
+ }
+}
