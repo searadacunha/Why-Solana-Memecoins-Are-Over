@@ -67,6 +67,8 @@ class Fetch:
         self.stopped: Optional[str] = None
 
     def save(self) -> None:
+        if not self.online:
+            return
         with self.lock:
             _atomic(self.state_path, json.dumps(self.state).encode())
 
@@ -109,8 +111,10 @@ class Fetch:
         if until:
             p["until"] = until
         r = self._call("getSignaturesForAddress", [addr, p])
-        out = [{"sig": e["signature"], "slot": e["slot"], "bt": e.get("blockTime"), "err": e.get("err") is not None}
-               for e in r]
+        out = [
+            {"sig": e["signature"], "slot": e["slot"], "bt": e.get("blockTime"), "err": e.get("err") is not None}
+            for e in r
+        ]
         _atomic(path, json.dumps({"addr": addr, "before": before, "until": until, "page": out}).encode())
         return out
 
@@ -150,9 +154,15 @@ def txflow(t: dict[str, Any], w: str) -> dict[str, Any]:
     keys = [k["pubkey"] for k in acc]
     signer = keys[0]
     fee = meta.get("fee") or 0
-    rec: dict[str, Any] = {"sig": t["transaction"]["signatures"][0], "slot": t["slot"], "bt": t.get("blockTime"),
-                           "idx": t.get("transactionIndex"), "signer": signer, "err": meta.get("err") is not None,
-                           "signers": [k["pubkey"] for k in acc if k.get("signer")]}
+    rec: dict[str, Any] = {
+        "sig": t["transaction"]["signatures"][0],
+        "slot": t["slot"],
+        "bt": t.get("blockTime"),
+        "idx": t.get("transactionIndex"),
+        "signer": signer,
+        "err": meta.get("err") is not None,
+        "signers": [k["pubkey"] for k in acc if k.get("signer")],
+    }
     tok_accts = set()
     pre: dict[tuple[str, str], float] = defaultdict(float)
     post: dict[tuple[str, str], float] = defaultdict(float)
@@ -176,26 +186,42 @@ def txflow(t: dict[str, Any], w: str) -> dict[str, Any]:
     for ix in _instructions(t):
         if ix.get("programId") in VENUES:
             venue_accts |= set(ix.get("accounts") or [])
-    out: dict[str, int] = defaultdict(int)
-    inn: dict[str, int] = defaultdict(int)
-    for ix in _instructions(t):
-        if ix.get("program") != "system":
-            continue
-        p = ix.get("parsed") or {}
-        if not isinstance(p, dict) or p.get("type") not in ("transfer", "transferWithSeed"):
-            continue
-        info = p.get("info") or {}
-        src, dst, lp = info.get("source"), info.get("destination"), int(info.get("lamports") or 0)
-        if src == w and dst and dst != w and dst not in tok_accts and dst not in JITO and dst not in venue_accts:
-            out[dst] += lp
-        if dst == w and src and src != w:
-            inn[src] += lp
-    if rec["dws"] < -1e-9 and not rec["venue"]:
-        for (o, m), d in delta.items():
-            if m == WSOL and o != w and d > 1e-9:
-                out[o] += int(round(min(d, -rec["dws"]) * LAMPORTS))
-    rec["out"] = sorted(([d, v / LAMPORTS] for d, v in out.items()), key=lambda x: (-x[1], x[0]))
-    rec["inn"] = sorted(([s, v / LAMPORTS] for s, v in inn.items()), key=lambda x: (-x[1], x[0]))
+    # Section 4 of the plan, by net balance changes: a SOL transfer out is a fall of the wallet's SOL (native plus
+    # wrapped) in a transaction where its other token balances do not change; the recipient is the non-token
+    # account with the largest lamport gain (the fee added back for the fee payer, Jito tip accounts excluded), or,
+    # when the SOL stays wrapped, the owner with the largest wrapped-SOL gain. A first version took the destination
+    # of the first System transfer instead: in a one-transaction sweep through a fresh address and wrapped SOL that
+    # address is not where the SOL ends. Transfers made inside a trade are kept apart (trade_out), not followed.
+    gain = {
+        k: (v + (fee if k == signer else 0)) / LAMPORTS
+        for k, v in lam.items()
+        if k != w and k not in tok_accts and k not in JITO
+    }
+    loss = -(rec["dsol"] + rec["dws"])
+    rec["out"], rec["inn"], rec["trade_out"] = [], [], []
+    if not rec["dtok"] and loss >= 0.01:
+        best = max((k for k in gain if gain[k] > 0), key=lambda k: (gain[k], k), default=None)
+        if best is None:
+            ws = {o: d for (o, m), d in delta.items() if m == WSOL and o != w and d > 1e-9}
+            best = max(ws, key=lambda k: (ws[k], k), default=None)
+            rec["out_gain"] = ws.get(best) if best else None
+        else:
+            rec["out_gain"] = gain[best]
+        if best:
+            rec["out"] = [[best, loss]]
+    elif not rec["dtok"] and loss <= -0.01:
+        src = min((k for k in gain if gain[k] < 0), key=lambda k: (gain[k], k), default=None)
+        if src:
+            rec["inn"] = [[src, -loss]]
+    if rec["dtok"]:
+        for ix in _instructions(t):
+            p = ix.get("parsed") if ix.get("program") == "system" else None
+            if not isinstance(p, dict) or p.get("type") not in ("transfer", "transferWithSeed"):
+                continue
+            info = p.get("info") or {}
+            dst, lp = info.get("destination"), int(info.get("lamports") or 0)
+            if info.get("source") == w and dst not in tok_accts and dst not in JITO and dst not in venue_accts:
+                rec["trade_out"].append([dst, lp / LAMPORTS])
     return rec
 
 
@@ -333,8 +359,15 @@ def wallet_listing(F: Fetch, sel: dict[str, Any], events: list[dict[str, Any]]) 
         if n_before >= L.PRIOR_TX:
             break
         before = p[-1]["sig"]
-    out = {"wallet": w, "older": older, "older_pages": pages, "older_end": end, "reached_first": reached_first,
-           "newer": [], "newer_complete": None}
+    out = {
+        "wallet": w,
+        "older": older,
+        "older_pages": pages,
+        "older_end": end,
+        "reached_first": reached_first,
+        "newer": [],
+        "newer_complete": None,
+    }
     if any(e["receipt"]["bt"] + L.WINDOW_S > cur["bt"] for e in events):
         b = None
         newer: list[dict[str, Any]] = []
@@ -358,8 +391,9 @@ def _combined(lst: dict[str, Any], cur: dict[str, Any]) -> list[dict[str, Any]]:
     return newer + [mid] + lst["older"]
 
 
-def event_trace(F: Fetch, ev: dict[str, Any], sel: dict[str, Any], lst: dict[str, Any],
-                next_bt: Optional[float]) -> dict[str, Any]:
+def event_trace(
+    F: Fetch, ev: dict[str, Any], sel: dict[str, Any], lst: dict[str, Any], next_bt: Optional[float]
+) -> dict[str, Any]:
     """Section 3.3: the event window read in time order with the early stop."""
     w, m, rc = ev["wallet"], ev["mint"], ev["receipt"]
     comb = _combined(lst, sel["cursor"])
@@ -412,7 +446,7 @@ def prior_trace(F: Fetch, sel: dict[str, Any], lst: dict[str, Any]) -> dict[str,
     older = lst["older"]
     sigs = [e["sig"] for e in older]
     if first["sig"] in sigs:
-        before = older[sigs.index(first["sig"]) + 1:]
+        before = older[sigs.index(first["sig"]) + 1 :]
     else:
         before = [e for e in older if e["slot"] < first["slot"]]
     reads = [txflow(F.tx(e["sig"]), w) for e in [x for x in before if not x["err"]][: L.PRIOR_TX]]
@@ -420,8 +454,13 @@ def prior_trace(F: Fetch, sel: dict[str, Any], lst: dict[str, Any]) -> dict[str,
     gen: dict[str, Any]
     if os.path.exists(gen_p):
         d = json.load(open(gen_p))
-        gen = {"source": "cache", "hub": d.get("hub"), "funder": (d.get("funding") or {}).get("funder"),
-               "bt": (d.get("funding") or {}).get("bt"), "received": (d.get("funding") or {}).get("received")}
+        gen = {
+            "source": "cache",
+            "hub": d.get("hub"),
+            "funder": (d.get("funding") or {}).get("funder"),
+            "bt": (d.get("funding") or {}).get("bt"),
+            "received": (d.get("funding") or {}).get("received"),
+        }
     else:
         chain = list(older)
         end = lst["older_end"]
@@ -481,8 +520,13 @@ def read_node(F: Fetch, addr: str, inflow: dict[str, Any]) -> dict[str, Any]:
         n_before += len(p)
         end = len(p) < 1000
     hub = n_before >= L.HUB_N
-    res: dict[str, Any] = {"status": "hub" if hub else "read", "n_before": n_before, "history_end": end, "hub": hub,
-                           "inflow_listed": listed}
+    res: dict[str, Any] = {
+        "status": "hub" if hub else "read",
+        "n_before": n_before,
+        "history_end": end,
+        "hub": hub,
+        "inflow_listed": listed,
+    }
     if hub:
         return res
     after = [e for e in reversed(chain[: max(found, 0)]) if (e["bt"] or 0) < inflow["bt"] + L.WINDOW_S and not e["err"]]
@@ -495,8 +539,18 @@ def read_node(F: Fetch, addr: str, inflow: dict[str, Any]) -> dict[str, Any]:
 class Branch:
     """One outgoing SOL transfer of the exit wallet, followed hop by hop (section 3.4)."""
 
-    def __init__(self, ev: dict[str, Any], src: str, dst: str, sol: float, sig: str, slot: int, bt: float,
-                 after_sale: bool, pooled: bool) -> None:
+    def __init__(
+        self,
+        ev: dict[str, Any],
+        src: str,
+        dst: str,
+        sol: float,
+        sig: str,
+        slot: int,
+        bt: float,
+        after_sale: bool,
+        pooled: bool,
+    ) -> None:
         self.ev = ev
         self.path = [{"wallet": src}, {"wallet": dst, "sol": sol, "sig": sig, "slot": slot, "bt": bt}]
         self.after_sale, self.pooled = after_sale, pooled
@@ -543,11 +597,27 @@ class Branch:
         best = max(r["outs"], key=lambda o: (o[1], -(o[4] or 0)))
         for o in r["outs"]:
             if o is not best:
-                self.side.append({"hop": self.hop() + 1, "wallet": o[0], "sol": o[1], "sig": o[2], "bt": o[4],
-                                  "class": R.classify(o[0], o[4] or 0, self.ev)})
+                self.side.append(
+                    {
+                        "hop": self.hop() + 1,
+                        "wallet": o[0],
+                        "sol": o[1],
+                        "sig": o[2],
+                        "bt": o[4],
+                        "class": R.classify(o[0], o[4] or 0, self.ev),
+                    }
+                )
         self.path.append({"wallet": best[0], "sol": best[1], "sig": best[2], "slot": best[3], "bt": best[4]})
 
     def doc(self) -> dict[str, Any]:
-        return {"wallet": self.ev["wallet"], "mint": self.ev["mint"], "path": self.path, "terminal": self.terminal,
-                "reason": self.reason, "after_sale": self.after_sale, "pooled": self.pooled, "side": self.side,
-                "measured": self.measured}
+        return {
+            "wallet": self.ev["wallet"],
+            "mint": self.ev["mint"],
+            "path": self.path,
+            "terminal": self.terminal,
+            "reason": self.reason,
+            "after_sale": self.after_sale,
+            "pooled": self.pooled,
+            "side": self.side,
+            "measured": self.measured,
+        }
