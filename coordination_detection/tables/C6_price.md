@@ -1,0 +1,80 @@
+# C6. Premium and market cap, measured after the labels (never used to define them)
+
+| label | split | bundle SOL tercile | launches | premium | market cap (log10 USD) |
+|---|---|---|---:|---|---|
+|  SHARED_FUNDER | TRAIN | 1 | 256 | 3.71 (3.52-3.84) | 4.58 (4.55-4.6) |
+| not SHARED_FUNDER | TRAIN | 1 | 81 | 3.68 (3.52-3.83) | 4.57 (4.54-4.6) |
+|  SHARED_FUNDER | TRAIN | 2 | 327 | 3.84 (3.57-10.3) | 4.61 (4.57-5.06) |
+| not SHARED_FUNDER | TRAIN | 2 | 50 | 3.6 (3.31-3.79) | 4.58 (4.56-4.61) |
+|  SHARED_FUNDER | TRAIN | 3 | 207 | 8.51 (3.71-12.4) | 4.98 (4.61-5.13) |
+| not SHARED_FUNDER | TRAIN | 3 | 23 | 4.13 (3.71-8.3) | 4.66 (4.61-4.93) |
+|  SHARED_FUNDER | VAL | 1 | 100 | 3.57 (3.41-3.71) | 4.59 (4.56-4.62) |
+| not SHARED_FUNDER | VAL | 1 | 41 | 3.31 (3.12-3.57) | 4.56 (4.52-4.6) |
+|  SHARED_FUNDER | VAL | 2 | 210 | 3.82 (3.62-10.3) | 4.68 (4.64-5.09) |
+| not SHARED_FUNDER | VAL | 2 | 66 | 3.64 (3.49-3.76) | 4.65 (4.6-4.67) |
+|  SHARED_FUNDER | VAL | 3 | 144 | 3.89 (3.7-9.61) | 4.7 (4.66-5.06) |
+| not SHARED_FUNDER | VAL | 3 | 24 | 3.74 (3.63-3.85) | 4.68 (4.67-4.69) |
+|  HIGH_SYNCHRONIZATION | TRAIN | 1 | 329 | 3.7 (3.52-3.84) | 4.58 (4.55-4.6) |
+| not HIGH_SYNCHRONIZATION | TRAIN | 1 | 6 | 3.77 (3.52-3.84) | 4.57 (4.56-4.58) |
+|  HIGH_SYNCHRONIZATION | TRAIN | 2 | 369 | 3.77 (3.55-9.35) | 4.6 (4.57-5.03) |
+| not HIGH_SYNCHRONIZATION | TRAIN | 2 | 7 | 3.77 (3.33-3.86) | 4.6 (4.55-4.62) |
+|  HIGH_SYNCHRONIZATION | TRAIN | 3 | 225 | 7.46 (3.71-12.2) | 4.92 (4.61-5.13) |
+| not HIGH_SYNCHRONIZATION | TRAIN | 3 | 3 | 25.7 (5.55-5.55) | 4.79 (4.44-4.79) |
+|  HIGH_SYNCHRONIZATION | VAL | 1 | 124 | 3.56 (3.38-3.7) | 4.59 (4.56-4.62) |
+| not HIGH_SYNCHRONIZATION | VAL | 1 | 7 | 3.15 (3-3.26) | 4.52 (4.47-4.52) |
+|  HIGH_SYNCHRONIZATION | VAL | 2 | 267 | 3.76 (3.6-4.28) | 4.67 (4.64-4.72) |
+| not HIGH_SYNCHRONIZATION | VAL | 2 | 5 | 3.76 (3.37-4.17) | 4.68 (4.59-4.69) |
+|  HIGH_SYNCHRONIZATION | VAL | 3 | 164 | 3.86 (3.68-9.28) | 4.69 (4.67-5.03) |
+| not HIGH_SYNCHRONIZATION | VAL | 3 | 2 | 3.34 (2.88-2.88) | 4.57 (4.49-4.49) |
+|  FUNDING_CLUSTER | TRAIN | 1 | 254 | 3.71 (3.52-3.84) | 4.58 (4.55-4.6) |
+| not FUNDING_CLUSTER | TRAIN | 1 | 85 | 3.68 (3.51-3.83) | 4.57 (4.54-4.6) |
+|  FUNDING_CLUSTER | TRAIN | 2 | 326 | 3.84 (3.55-10.3) | 4.61 (4.57-5.06) |
+| not FUNDING_CLUSTER | TRAIN | 2 | 63 | 3.58 (3.31-3.77) | 4.58 (4.55-4.6) |
+|  FUNDING_CLUSTER | TRAIN | 3 | 248 | 6.42 (3.55-12.1) | 4.85 (4.59-5.12) |
+| not FUNDING_CLUSTER | TRAIN | 3 | 39 | 3.46 (2.98-4.12) | 4.56 (4.52-4.66) |
+|  FUNDING_CLUSTER | VAL | 1 | 127 | 3.53 (3.29-3.7) | 4.59 (4.56-4.62) |
+| not FUNDING_CLUSTER | VAL | 1 | 48 | 3.26 (2.99-3.49) | 4.56 (4.51-4.6) |
+|  FUNDING_CLUSTER | VAL | 2 | 229 | 3.77 (3.56-10.2) | 4.67 (4.63-5.06) |
+| not FUNDING_CLUSTER | VAL | 2 | 65 | 3.65 (3.5-3.76) | 4.65 (4.6-4.67) |
+|  FUNDING_CLUSTER | VAL | 3 | 151 | 3.89 (3.69-9.58) | 4.7 (4.66-5.06) |
+| not FUNDING_CLUSTER | VAL | 3 | 22 | 3.72 (3.63-3.81) | 4.68 (4.67-4.69) |
+|  RECURRING_WALLET_CLUSTER | TRAIN | 1 | 217 | 3.71 (3.53-3.86) | 4.58 (4.55-4.6) |
+| not RECURRING_WALLET_CLUSTER | TRAIN | 1 | 122 | 3.63 (3.5-3.81) | 4.57 (4.54-4.59) |
+|  RECURRING_WALLET_CLUSTER | TRAIN | 2 | 144 | 3.61 (3.45-3.85) | 4.58 (4.55-4.61) |
+| not RECURRING_WALLET_CLUSTER | TRAIN | 2 | 245 | 3.97 (3.62-10.3) | 4.62 (4.58-5.08) |
+|  RECURRING_WALLET_CLUSTER | TRAIN | 3 | 111 | 3.59 (3.38-3.95) | 4.6 (4.56-4.64) |
+| not RECURRING_WALLET_CLUSTER | TRAIN | 3 | 176 | 9.93 (3.8-13.2) | 5.03 (4.62-5.17) |
+|  RECURRING_WALLET_CLUSTER | VAL | 1 | 49 | 3.47 (3.28-3.63) | 4.57 (4.54-4.59) |
+| not RECURRING_WALLET_CLUSTER | VAL | 1 | 126 | 3.46 (3.17-3.7) | 4.6 (4.54-4.63) |
+|  RECURRING_WALLET_CLUSTER | VAL | 2 | 119 | 3.65 (3.43-3.76) | 4.65 (4.58-4.68) |
+| not RECURRING_WALLET_CLUSTER | VAL | 2 | 175 | 3.88 (3.61-10.3) | 4.68 (4.64-5.1) |
+|  RECURRING_WALLET_CLUSTER | VAL | 3 | 64 | 3.72 (3.62-3.81) | 4.67 (4.64-4.69) |
+| not RECURRING_WALLET_CLUSTER | VAL | 3 | 109 | 7.51 (3.79-9.91) | 4.97 (4.67-5.1) |
+|  MULTI-SIGNAL_COORDINATION | TRAIN | 1 | 307 | 3.71 (3.52-3.84) | 4.58 (4.55-4.6) |
+| not MULTI-SIGNAL_COORDINATION | TRAIN | 1 | 32 | 3.61 (3.49-3.78) | 4.57 (4.54-4.59) |
+|  MULTI-SIGNAL_COORDINATION | TRAIN | 2 | 344 | 3.82 (3.56-9.66) | 4.6 (4.57-5.05) |
+| not MULTI-SIGNAL_COORDINATION | TRAIN | 2 | 45 | 3.52 (3.24-3.75) | 4.57 (4.53-4.6) |
+|  MULTI-SIGNAL_COORDINATION | TRAIN | 3 | 233 | 7.21 (3.61-12.1) | 4.89 (4.6-5.12) |
+| not MULTI-SIGNAL_COORDINATION | TRAIN | 3 | 54 | 3.36 (3.15-3.71) | 4.56 (4.52-4.62) |
+|  MULTI-SIGNAL_COORDINATION | VAL | 1 | 113 | 3.56 (3.34-3.7) | 4.59 (4.56-4.61) |
+| not MULTI-SIGNAL_COORDINATION | VAL | 1 | 62 | 3.24 (2.96-3.45) | 4.57 (4.52-4.61) |
+|  MULTI-SIGNAL_COORDINATION | VAL | 2 | 239 | 3.77 (3.58-10) | 4.67 (4.63-5.05) |
+| not MULTI-SIGNAL_COORDINATION | VAL | 2 | 55 | 3.61 (3.43-3.76) | 4.64 (4.59-4.66) |
+|  MULTI-SIGNAL_COORDINATION | VAL | 3 | 168 | 3.85 (3.68-9.28) | 4.69 (4.66-5.03) |
+| not MULTI-SIGNAL_COORDINATION | VAL | 3 | 5 | 3.86 (3.81-9.36) | 4.69 (4.69-5.04) |
+|  NO_SHARED_STRUCTURE | TRAIN | 1 | 8 | 3.61 (2.73-3.84) | 4.56 (4.42-4.58) |
+| not NO_SHARED_STRUCTURE | TRAIN | 1 | 331 | 3.7 (3.52-3.84) | 4.58 (4.55-4.6) |
+|  NO_SHARED_STRUCTURE | TRAIN | 2 | 9 | 3.7 (3.33-3.81) | 4.59 (4.55-4.61) |
+| not NO_SHARED_STRUCTURE | TRAIN | 2 | 380 | 3.76 (3.54-8.92) | 4.6 (4.57-5.01) |
+|  NO_SHARED_STRUCTURE | TRAIN | 3 | 11 | 2.9 (1.66-2.99) | 4.5 (4.27-4.52) |
+| not NO_SHARED_STRUCTURE | TRAIN | 3 | 276 | 4.61 (3.54-12) | 4.8 (4.58-5.11) |
+|  NO_SHARED_STRUCTURE | VAL | 1 | 21 | 3.15 (2.9-3.23) | 4.52 (4.49-4.55) |
+| not NO_SHARED_STRUCTURE | VAL | 1 | 154 | 3.51 (3.3-3.7) | 4.59 (4.56-4.62) |
+|  NO_SHARED_STRUCTURE | VAL | 2 | 2 | 3.55 (3.35-3.35) | 4.64 (4.59-4.59) |
+| not NO_SHARED_STRUCTURE | VAL | 2 | 292 | 3.75 (3.55-4.13) | 4.67 (4.62-4.7) |
+|  NO_SHARED_STRUCTURE | VAL | 3 | 2 | 9.87 (9.36-9.36) | 5.07 (5.04-5.04) |
+| not NO_SHARED_STRUCTURE | VAL | 3 | 171 | 3.85 (3.68-9.21) | 4.69 (4.66-5.03) |
+
+TRAIN: Spearman of the premium with bundle SOL 0.33, with the bundle's supply share -0.14.
+
+VAL: Spearman of the premium with bundle SOL 0.59, with the bundle's supply share 0.11.
