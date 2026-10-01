@@ -1,0 +1,42 @@
+{
+ "failures": {
+  "duplicate signature in a wallet's reads": {
+   "examples": [
+    "7xXmSDd2hVzJesv797mP5PLP3pzYLyhfvRqnxxTBDd6F",
+    "CnzMAuz7rhBf9owqNXVYCAe8RSGb9wJ6Uyz6oxBjgQRq",
+    "8xxJcwB29JbMQw5huSqWhFrr6rM6g51PWn8dopNwQ2kc",
+    "CRXwGGzpAini61SjDYrFHA9vcr5zh6QPfSbyvFiQy7dU"
+   ],
+   "n": 4
+  },
+  "one transfer starts two branches": {
+   "examples": [
+    [
+     "472zZpuaDuhiNT3wn3kQvgoTwwohKpyNesymZczCmuTaWDQUEmKr8ouJzxJDvERr3mRJuzmqh2vSfEnHRLi17Rdj",
+     "CRXwGGzpAini61SjDYrFHA9vcr5zh6QPfSbyvFiQy7dU",
+     "GHM74EaytuAv2RxFnxZTAe1sxtgqkq8PGS7nR86CQqa"
+    ]
+   ],
+   "n": 1
+  }
+ },
+ "price_file_opened": false,
+ "status": {
+  "downstream terminal: UNRESOLVED >5 HOPS": 4,
+  "downstream terminal: circular flow": 3,
+  "downstream terminal: hub": 89,
+  "downstream terminal: hub measured": 118,
+  "downstream terminal: known": 22,
+  "downstream terminal: population": 144,
+  "downstream terminal: retained": 6,
+  "downstream terminal: unresolved": 23,
+  "end: read": 38,
+  "sample: read": 24,
+  "upstream start: hub": 7,
+  "upstream start: read": 55,
+  "upstream terminal: UNRESOLVED >5 HOPS": 1,
+  "upstream terminal: hub": 33,
+  "upstream terminal: hub measured": 19,
+  "upstream terminal: known": 2
+ }
+}
