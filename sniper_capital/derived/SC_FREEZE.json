@@ -1,0 +1,222 @@
+{
+ "frozen_at_utc": "2026-10-01 08:43:39",
+ "sha256": "84569edb30a48145e7b5de44ecd54d5c99d4b0314e370854da58171e2ad075ce",
+ "rows": 1657,
+ "rows_by_split": {
+  "train": 1015,
+  "val": 642
+ },
+ "sniper_records": 6822,
+ "coverage": {
+  "a_max": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_mean": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_med": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_min": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_p25": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_p75": {
+   "train": 1015,
+   "val": 642
+  },
+  "a_total": {
+   "train": 1015,
+   "val": 642
+  },
+  "age_max": {
+   "train": 939,
+   "val": 569
+  },
+  "age_med": {
+   "train": 939,
+   "val": 569
+  },
+  "age_min": {
+   "train": 939,
+   "val": 569
+  },
+  "age_share_lt_1h": {
+   "train": 939,
+   "val": 569
+  },
+  "age_share_lt_5min": {
+   "train": 939,
+   "val": 569
+  },
+  "amt_hhi": {
+   "train": 939,
+   "val": 569
+  },
+  "amt_max": {
+   "train": 939,
+   "val": 569
+  },
+  "amt_med": {
+   "train": 939,
+   "val": 569
+  },
+  "amt_min": {
+   "train": 939,
+   "val": 569
+  },
+  "amt_sum": {
+   "train": 939,
+   "val": 569
+  },
+  "fc_med": {
+   "train": 939,
+   "val": 569
+  },
+  "fit_n_90_100": {
+   "train": 939,
+   "val": 569
+  },
+  "fit_share_90_100": {
+   "train": 939,
+   "val": 569
+  },
+  "fit_share_above_1": {
+   "train": 939,
+   "val": 569
+  },
+  "fund_time_spread_s": {
+   "train": 939,
+   "val": 569
+  },
+  "g_max": {
+   "train": 1015,
+   "val": 642
+  },
+  "g_mean": {
+   "train": 1015,
+   "val": 642
+  },
+  "g_med": {
+   "train": 1015,
+   "val": 642
+  },
+  "g_min": {
+   "train": 1015,
+   "val": 642
+  },
+  "gen_max_share": {
+   "train": 827,
+   "val": 560
+  },
+  "gen_n_funders": {
+   "train": 827,
+   "val": 560
+  },
+  "gen_same": {
+   "train": 827,
+   "val": 560
+  },
+  "gen_share_hub": {
+   "train": 827,
+   "val": 560
+  },
+  "hhi_capital": {
+   "train": 1015,
+   "val": 642
+  },
+  "hhi_ticket": {
+   "train": 1015,
+   "val": 642
+  },
+  "last_max_share": {
+   "train": 939,
+   "val": 569
+  },
+  "last_n_funders": {
+   "train": 939,
+   "val": 569
+  },
+  "last_same": {
+   "train": 939,
+   "val": 569
+  },
+  "n_a_ge25": {
+   "train": 1015,
+   "val": 642
+  },
+  "n_a_ge50": {
+   "train": 1015,
+   "val": 642
+  },
+  "n_a_ge75": {
+   "train": 1015,
+   "val": 642
+  },
+  "n_a_ge90": {
+   "train": 1015,
+   "val": 642
+  },
+  "n_a_lt10": {
+   "train": 1015,
+   "val": 642
+  },
+  "n_snipers_here": {
+   "train": 1015,
+   "val": 642
+  },
+  "share_a_ge50": {
+   "train": 1015,
+   "val": 642
+  },
+  "src_max_funders": {
+   "train": 827,
+   "val": 560
+  },
+  "src_n": {
+   "train": 827,
+   "val": 560
+  },
+  "sum_capital": {
+   "train": 1015,
+   "val": 642
+  },
+  "sum_ticket": {
+   "train": 1015,
+   "val": 642
+  },
+  "tl_max": {
+   "train": 939,
+   "val": 569
+  },
+  "tl_med": {
+   "train": 939,
+   "val": 569
+  },
+  "tl_min": {
+   "train": 939,
+   "val": 569
+  },
+  "top1_capital_share": {
+   "train": 1015,
+   "val": 642
+  },
+  "top2_capital_share": {
+   "train": 1015,
+   "val": 642
+  },
+  "top3_capital_share": {
+   "train": 1015,
+   "val": 642
+  }
+ },
+ "source_table_sha256": "9d2fd31f24ce37dbb304ed35d6ee46cbfcaf496ed99df495f1f887dfdce58c06",
+ "note": "launches whose feature is computed (every sniper OBSERVED); no rate was computed"
+}
