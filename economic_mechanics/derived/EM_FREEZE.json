@@ -1,0 +1,18 @@
+{
+ "frozen_at_utc": "2026-10-01 09:31:49",
+ "sha256_table": "e6b4fdd8db6dfc0be716769da77a3be156d3846aa64279e60a88e06d0436bfc9",
+ "sha256_price": "0c48ccc0fcb1dde7751cbada2da5062f1216baeb946a106daa66786ab7078ccd",
+ "source_coordination_sha256": "eb7107092221d477972d0a0b786b5c9ce31d215534a237ff1faa204acfa40a3e",
+ "rows": 1657,
+ "note": "raw relations only; groups come from coordination_detection/derived/C_results.json; prices are in a separate file",
+ "integrity": {
+  "1,657 rows, the coordination table's mints": true,
+  "same snipers as the coordination table": true,
+  "every sniper bought tokens": true,
+  "no exit after alert + 30 s": true,
+  "no exit before the sniper's buy slot": true,
+  "flows between launches lie between the two buys": true,
+  "price file aligned, no series read after 5 min": true,
+  "no label, group or outcome field in the table": true
+ }
+}
