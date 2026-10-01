@@ -1,0 +1,342 @@
+{
+ "collectors": {
+  "distinct": 20,
+  "distinct_recipients": 62,
+  "known": 4,
+  "shared_recipients": {
+   "D6HE3kncG6deev8rUd38Weso34c1VfU6V3fxMZ1sNCPC": 2
+  }
+ },
+ "fan_out": {
+  "0": 2500,
+  "1": 3603,
+  "2": 6,
+  "3": 5,
+  "4": 7,
+  "5": 10,
+  "6": 5,
+  "7": 174,
+  "8": 178,
+  "9": 3,
+  "10": 14,
+  "11": 2,
+  "12": 16,
+  "13": 16,
+  "15": 262,
+  "18": 2,
+  "24": 4,
+  "25": 1,
+  "30": 1,
+  "35": 1,
+  "36": 1,
+  "39": 1,
+  "45": 1,
+  "48": 1,
+  "54": 4,
+  "64": 1,
+  "176": 1,
+  "184": 1,
+  "231": 1
+ },
+ "operators": [
+  {
+   "events": 301,
+   "operator": "k:21.13+21.08+19.77+19.34",
+   "recipients": 23,
+   "recycle": 155,
+   "to_funder": 0.8904109589041096,
+   "train": 45,
+   "transfers": 219,
+   "val": 5,
+   "with_branch": 185
+  },
+  {
+   "events": 150,
+   "operator": "c:5MSpdabaEo18hZWFZnXqDy8r3tydm9WAX9RnWAN1RuhR",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 0,
+   "transfers": 151,
+   "val": 5,
+   "with_branch": 150
+  },
+  {
+   "events": 150,
+   "operator": "k:20.80+20.21+19.78+19.16",
+   "recipients": 1,
+   "recycle": 150,
+   "to_funder": 1.0,
+   "train": 0,
+   "transfers": 154,
+   "val": 7,
+   "with_branch": 150
+  },
+  {
+   "events": 120,
+   "operator": "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 0,
+   "transfers": 122,
+   "val": 3,
+   "with_branch": 120
+  },
+  {
+   "events": 120,
+   "operator": "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+   "recipients": 4,
+   "recycle": 82,
+   "to_funder": 1.0,
+   "train": 6,
+   "transfers": 123,
+   "val": 0,
+   "with_branch": 110
+  },
+  {
+   "events": 120,
+   "operator": "k:22.04+21.96+19.27+18.71",
+   "recipients": 2,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 6,
+   "transfers": 135,
+   "val": 0,
+   "with_branch": 102
+  },
+  {
+   "events": 60,
+   "operator": "c:8uM3AeYfpA88Z7AKCGGxKfzfMTikmKAs4P3k9yiYazBz",
+   "recipients": 1,
+   "recycle": 60,
+   "to_funder": 1.0,
+   "train": 0,
+   "transfers": 61,
+   "val": 1,
+   "with_branch": 60
+  },
+  {
+   "events": 60,
+   "operator": "c:9TN2NEfg6vfijyeWzSkWBgX48aZRvRGm6tcMznwDaJ2m",
+   "recipients": 1,
+   "recycle": 50,
+   "to_funder": 1.0,
+   "train": 2,
+   "transfers": 56,
+   "val": 0,
+   "with_branch": 50
+  },
+  {
+   "events": 60,
+   "operator": "c:Gug21eQUwmZio4dvW8UvU5iqAoJak5tc91uwmyFR18EE",
+   "recipients": 1,
+   "recycle": 60,
+   "to_funder": 1.0,
+   "train": 0,
+   "transfers": 61,
+   "val": 1,
+   "with_branch": 60
+  },
+  {
+   "events": 56,
+   "operator": "k:21.59+21.27+20.98+20.78",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 0.9464285714285714,
+   "train": 0,
+   "transfers": 56,
+   "val": 2,
+   "with_branch": 55
+  },
+  {
+   "events": 30,
+   "operator": "c:2YKa6U61fozw1aEadp7286YW4sPEpko8zeoLEBmC2csu",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 0,
+   "transfers": 25,
+   "val": 1,
+   "with_branch": 24
+  },
+  {
+   "events": 30,
+   "operator": "c:BdE3C2tCtCwDi6rsVCxvUb1mcNYp7ViKeDoH83voiymr",
+   "recipients": 1,
+   "recycle": 12,
+   "to_funder": 1.0,
+   "train": 10,
+   "transfers": 12,
+   "val": 0,
+   "with_branch": 12
+  },
+  {
+   "events": 20,
+   "operator": "c:8peR5ucxZnSFWY3o35JPpcRW7yVCmQoBxkZFuMXsnATr",
+   "recipients": 1,
+   "recycle": 4,
+   "to_funder": 1.0,
+   "train": 0,
+   "transfers": 4,
+   "val": 5,
+   "with_branch": 4
+  },
+  {
+   "events": 20,
+   "operator": "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga",
+   "recipients": 6,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 5,
+   "transfers": 26,
+   "val": 0,
+   "with_branch": 13
+  },
+  {
+   "events": 20,
+   "operator": "c:EwFgFSw9KHqVw3WxpBkmuzH6gipp5dkNW1ghMTGLpBas",
+   "recipients": 1,
+   "recycle": 6,
+   "to_funder": 1.0,
+   "train": 5,
+   "transfers": 6,
+   "val": 0,
+   "with_branch": 6
+  },
+  {
+   "events": 20,
+   "operator": "k:20.20+19.92+19.09+19.07",
+   "recipients": 1,
+   "recycle": 6,
+   "to_funder": 0.16666666666666666,
+   "train": 5,
+   "transfers": 6,
+   "val": 0,
+   "with_branch": 6
+  },
+  {
+   "events": 20,
+   "operator": "k:20.20+20.18+19.37+19.08",
+   "recipients": 1,
+   "recycle": 8,
+   "to_funder": 1.0,
+   "train": 5,
+   "transfers": 9,
+   "val": 0,
+   "with_branch": 8
+  },
+  {
+   "events": 20,
+   "operator": "k:20.24+20.07+19.65+19.52",
+   "recipients": 1,
+   "recycle": 7,
+   "to_funder": 1.0,
+   "train": 5,
+   "transfers": 7,
+   "val": 0,
+   "with_branch": 7
+  },
+  {
+   "events": 20,
+   "operator": "k:20.32+19.97+19.57+19.35",
+   "recipients": 2,
+   "recycle": 7,
+   "to_funder": 1.0,
+   "train": 5,
+   "transfers": 9,
+   "val": 0,
+   "with_branch": 9
+  },
+  {
+   "events": 20,
+   "operator": "k:20.68+20.51+20.37+18.55",
+   "recipients": 6,
+   "recycle": 0,
+   "to_funder": 1.0,
+   "train": 8,
+   "transfers": 11,
+   "val": 0,
+   "with_branch": 11
+  },
+  {
+   "events": 15,
+   "operator": "c:YSUcHvAijrKRgSGtdwg3WQ2Rk82BX5aax6YXh99iMJc",
+   "recipients": 3,
+   "recycle": 0,
+   "to_funder": 1.0,
+   "train": 7,
+   "transfers": 4,
+   "val": 0,
+   "with_branch": 4
+  },
+  {
+   "events": 13,
+   "operator": "k:21.39+21.26+21.11+21.10",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 1.0,
+   "train": 1,
+   "transfers": 19,
+   "val": 0,
+   "with_branch": 11
+  },
+  {
+   "events": 4,
+   "operator": "k:21.40+21.14+21.10+20.89",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 0.0,
+   "train": 0,
+   "transfers": 1,
+   "val": 1,
+   "with_branch": 1
+  },
+  {
+   "events": 4,
+   "operator": "k:22.02+21.86+21.15+19.43",
+   "recipients": 1,
+   "recycle": 0,
+   "to_funder": 1.0,
+   "train": 1,
+   "transfers": 3,
+   "val": 0,
+   "with_branch": 3
+  }
+ ],
+ "raw_funder": {
+  "all_branches": 1280,
+  "all_sol": 13645.27904956,
+  "branches": 788,
+  "elsewhere": 492,
+  "elsewhere_sol": 4477.766074238,
+  "events": 728,
+  "events_with_branch": 1161,
+  "hub_flagged": 157,
+  "sol": 9167.512975322
+ },
+ "recycling_via": {
+  "another wallet": 7,
+  "the launch's own funder": 600
+ },
+ "sales": {
+  "payer": {
+   "exit wallet": 6049
+  },
+  "venue": {
+   "PumpSwap": 6049
+  }
+ },
+ "sweeps": {
+  "composition": {
+   "(True, True, 4)": 1280
+  },
+  "delay_last_sale_median": 28.0,
+  "delay_receipt_median": 152.0,
+  "n": 1280,
+  "post_below_0.001": 1093,
+  "route": {
+   "through an address with 1 transaction(s) in its history": 1280
+  }
+ }
+}
