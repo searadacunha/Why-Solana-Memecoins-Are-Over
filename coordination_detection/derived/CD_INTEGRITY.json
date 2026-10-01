@@ -1,0 +1,11 @@
+{
+ "rows = alerts of the snapshot": true,
+ "one row per mint": true,
+ "every launch has 4 snipers or more": true,
+ "snipers = the detector's count (b_core_n) on every launch": true,
+ "sniper records as in coverage.md (6,822)": true,
+ "every sniper bought in the creation slot": true,
+ "no early buy after alert + 30 s": true,
+ "no sniper exit after alert + 30 s": true,
+ "no last funding at or after the buy": true
+}
