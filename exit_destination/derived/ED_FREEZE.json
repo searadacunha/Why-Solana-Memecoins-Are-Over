@@ -1,0 +1,13 @@
+{
+ "branches": 1280,
+ "calls": {
+  "calls": 9757,
+  "fails": 0
+ },
+ "events": 1457,
+ "protocol_commit": "d75fd05",
+ "sha256_selection": "14a068b4597b8434b38094da7ec073f8547665e74542d56924058e6e8d9a135f",
+ "sha256_table": "c09b0e7780b8845c7d84db8e035eb9a26af019aa403f8bea9c16a3024011f2f6",
+ "smoke_test_calls_not_in_counter": 11,
+ "wallets": 300
+}
