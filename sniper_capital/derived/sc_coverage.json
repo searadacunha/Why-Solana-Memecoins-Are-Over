@@ -1,0 +1,125 @@
+{
+ "records": 6822,
+ "variables": {
+  "capital_before_buy": {
+   "OBSERVED": 6822,
+   "PARTIAL": 0,
+   "MISSING": 0
+  },
+  "capital_after_buy": {
+   "OBSERVED": 6822,
+   "PARTIAL": 0,
+   "MISSING": 0
+  },
+  "ticket": {
+   "OBSERVED": 6822,
+   "PARTIAL": 0,
+   "MISSING": 0
+  },
+  "funding_1h": {
+   "OBSERVED": 3787,
+   "PARTIAL": 3035,
+   "MISSING": 0
+  },
+  "funding_6h": {
+   "OBSERVED": 3606,
+   "PARTIAL": 3216,
+   "MISSING": 0
+  },
+  "funding_24h": {
+   "OBSERVED": 3457,
+   "PARTIAL": 3365,
+   "MISSING": 0
+  },
+  "funding_7d": {
+   "OBSERVED": 3334,
+   "PARTIAL": 3488,
+   "MISSING": 0
+  },
+  "time_since_last_funding": {
+   "OBSERVED": 6647,
+   "PARTIAL": 175,
+   "MISSING": 0
+  },
+  "balance_before_recent_funding": {
+   "OBSERVED": 6647,
+   "PARTIAL": 175,
+   "MISSING": 0
+  },
+  "sol_spent_history": {
+   "OBSERVED": 3318,
+   "PARTIAL": 2746,
+   "MISSING": 758
+  },
+  "n_history_tx": {
+   "OBSERVED": 6064,
+   "PARTIAL": 758,
+   "MISSING": 0
+  },
+  "n_history_trades": {
+   "OBSERVED": 3318,
+   "PARTIAL": 0,
+   "MISSING": 3504
+  },
+  "wallet_age": {
+   "OBSERVED": 6064,
+   "PARTIAL": 758,
+   "MISSING": 0
+  },
+  "genesis_funder": {
+   "OBSERVED": 6064,
+   "PARTIAL": 0,
+   "MISSING": 758
+  },
+  "funder_of_funder": {
+   "OBSERVED": 6064,
+   "PARTIAL": 0,
+   "MISSING": 758
+  }
+ },
+ "costs": {
+  "funding_1h": {
+   "getTransaction": 43895,
+   "pages": 4,
+   "unbounded": 4,
+   "hours": 0.8710119047619048
+  },
+  "funding_6h": {
+   "getTransaction": 87348,
+   "pages": 40,
+   "unbounded": 40,
+   "hours": 1.7338888888888888
+  },
+  "funding_24h": {
+   "getTransaction": 119723,
+   "pages": 58,
+   "unbounded": 58,
+   "hours": 2.376607142857143
+  },
+  "funding_7d": {
+   "getTransaction": 189913,
+   "pages": 209,
+   "unbounded": 209,
+   "hours": 3.772261904761905
+  },
+  "sol_spent_history": {
+   "getTransaction": 275665,
+   "pages": 758,
+   "unbounded": 758,
+   "hours": 5.484583333333333
+  },
+  "n_history_trades": {
+   "getTransaction": 275665,
+   "pages": 758,
+   "unbounded": 758,
+   "hours": 5.484583333333333
+  }
+ },
+ "pre_below_ticket": 6,
+ "inflow_in_tx": 6,
+ "null_recent": 0,
+ "launches_by_split": {
+  "train": 1015,
+  "val": 642
+ }
+}
