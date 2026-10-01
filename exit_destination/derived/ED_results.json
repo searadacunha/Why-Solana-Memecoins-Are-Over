@@ -1,0 +1,3304 @@
+{
+ "B": {
+  "amount_shares": {
+   "held": 0.4439862566801106,
+   "other": 0.0,
+   "sold": 0.5560137433198895,
+   "transferred": 0.0
+  },
+  "disposal": {
+   "mixed": 326,
+   "sold": 1131
+  },
+  "fee_payers": 62,
+  "first_action_s_median": 81,
+  "first_sale_s_median": 81,
+  "multi_sniper_events": 0,
+  "own_signed_transfers": 0,
+  "top_fee_payer_share": 0.1203125,
+  "transfers": 1280
+ },
+ "C": {
+  "categories": {
+   "C funder": {
+    "n": 588,
+    "sol": 7691.597522554
+   },
+   "D known wallet": {
+    "n": 7,
+    "sol": 122.797859973
+   },
+   "F hub": {
+    "n": 179,
+    "sol": 1811.677553513
+   },
+   "H unknown recipient (followed in D)": {
+    "n": 385,
+    "sol": 3969.747146511
+   },
+   "H untraceable (cap)": {
+    "n": 298,
+    "sol": 10716.935289334
+   }
+  },
+  "n_sale_events": 1457,
+  "pooled_transfers": 0
+ },
+ "D": {
+  "branches": 1280,
+  "cats": {
+   "H1": {
+    "branches": 631,
+    "direct": 631,
+    "events": 590,
+    "multi": 0,
+    "sol": 7697.813565275
+   },
+   "H2": {
+    "branches": 7,
+    "direct": 7,
+    "events": 7,
+    "multi": 0,
+    "sol": 122.797859973
+   },
+   "H3": {
+    "branches": 0,
+    "direct": 0,
+    "events": 0,
+    "multi": 0,
+    "sol": 0
+   },
+   "H4": {
+    "branches": 0,
+    "direct": 0,
+    "events": 0,
+    "multi": 0,
+    "sol": 0
+   },
+   "H5": {
+    "branches": 300,
+    "direct": 289,
+    "events": 249,
+    "multi": 11,
+    "sol": 2685.014884221
+   },
+   "H6": {
+    "branches": 342,
+    "direct": 333,
+    "events": 322,
+    "multi": 9,
+    "sol": 3139.652740091
+   }
+  },
+  "reasons_h6": {
+   "cycle": 3,
+   "retained by an unknown wallet": 35,
+   "too active": 304
+  },
+  "sol": 13645.27904956,
+  "stays": 296
+ },
+ "E": {
+  "cross-launch co-occurrence (null 5)": {
+   "ci": [
+    17516.0,
+    17872.0
+   ],
+   "effect": 0.23352040196690382,
+   "null_mean": 17702.95,
+   "obs": 4134.0,
+   "p": 1.0,
+   "pct": 0.0
+  },
+  "exit -> same cluster": {
+   "ci": [
+    0.0,
+    0.01
+   ],
+   "effect": 142.85714285714286,
+   "null_mean": 0.0031033333333333334,
+   "obs": 0.44333333333333336,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "exit -> same collection (terminal) wallet": {
+   "ci": [
+    0.0045045045045045045,
+    0.04054054054054054
+   ],
+   "effect": 16.484648670925203,
+   "null_mean": 0.02186036036036036,
+   "obs": 0.36036036036036034,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "exit -> same deployer network": {
+   "ci": [
+    0.0,
+    0.0033333333333333335
+   ],
+   "effect": 0.0,
+   "null_mean": 0.0007800000000000001,
+   "obs": 0.0,
+   "p": 1.0,
+   "pct": 0.0
+  },
+  "exit -> same destination architecture (return category)": {
+   "ci": [
+    0.06538461538461539,
+    0.12307692307692308
+   ],
+   "effect": 5.464480874316939,
+   "null_mean": 0.09431538461538462,
+   "obs": 0.5153846153846153,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "exit -> same first SOL destination": {
+   "ci": [
+    0.0,
+    0.023076923076923078
+   ],
+   "effect": 40.717220769518114,
+   "null_mean": 0.010296153846153847,
+   "obs": 0.41923076923076924,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "exit -> same funder": {
+   "ci": [
+    0.0,
+    0.011450381679389313
+   ],
+   "effect": 108.93854748603351,
+   "null_mean": 0.002732824427480916,
+   "obs": 0.29770992366412213,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "exit -> same hub": {
+   "ci": [
+    0.08771929824561403,
+    0.2631578947368421
+   ],
+   "effect": 3.5026269702276704,
+   "null_mean": 0.1702982456140351,
+   "obs": 0.5964912280701754,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "sniper -> same exit wallet (always the same sniper, corpus)": {
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "effect": 20999.999999999996,
+   "null_mean": 2e-05,
+   "obs": 0.42,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  }
+ },
+ "F": {
+  "chains": {
+   "2": 44,
+   "3": 5,
+   "5": 1,
+   "6": 1
+  },
+  "dt_min_median": 18.146131320794424,
+  "events_with_branch": 1161,
+  "links": 607,
+  "null": {
+   "ci": [
+    0.2756244616709733,
+    0.30749354005167956
+   ],
+   "effect": 1.795056054839406,
+   "null_mean": 0.29125839793281655,
+   "obs": 0.5228251507321274,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  },
+  "same": {
+   "same_cluster": 607,
+   "same_deployer_network": 0,
+   "same_exit_wallet": 576,
+   "same_funder": 462,
+   "same_snipers": 607
+  }
+ },
+ "G": {
+  "h3_branches": 0,
+  "roles": {},
+  "strict": 0,
+  "tests": {
+   "TRAIN": {
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "effect": null,
+    "null_mean": 0.0,
+    "obs": 0.0,
+    "p": 1.0,
+    "pct": 0.0
+   },
+   "VALIDATION": {
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "effect": null,
+    "null_mean": 0.0,
+    "obs": 0.0,
+    "p": 1.0,
+    "pct": 0.0
+   },
+   "all": {
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "effect": null,
+    "null_mean": 0.0,
+    "obs": 0.0,
+    "p": 1.0,
+    "pct": 0.0
+   }
+  }
+ },
+ "I": {
+  "classes": {
+   "branches ending in H1": "ROBUST STRUCTURAL EVIDENCE",
+   "branches ending in H2": "NULL-COMPATIBLE",
+   "branches ending in H3": "NULL-COMPATIBLE",
+   "capital funds a later launch (events)": "ROBUST STRUCTURAL EVIDENCE",
+   "capital reaches the cluster's deployer network (events)": "NULL-COMPATIBLE",
+   "capital reaches the launch funder (events)": "ROBUST STRUCTURAL EVIDENCE",
+   "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": "ROBUST STRUCTURAL EVIDENCE",
+   "same cluster in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+   "same first SOL destination repeated (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+   "same funder in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+   "same return category in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE",
+   "same terminal wallet in all events (exit wallets)": "ROBUST STRUCTURAL EVIDENCE"
+  },
+  "tests": {
+   "TRAIN": {
+    "branches ending in H1": {
+     "ci": [
+      0.006259780907668232,
+      0.023474178403755867
+     ],
+     "effect": 31.209918768704576,
+     "null_mean": 0.014641627543035994,
+     "obs": 0.4569640062597809,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.017214397496087636,
+      0.0406885758998435
+     ],
+     "effect": 0.21993731786440865,
+     "null_mean": 0.028461658841940532,
+     "obs": 0.006259780907668232,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.3333333333333333,
+      0.384180790960452
+     ],
+     "effect": 1.716886921732008,
+     "null_mean": 0.35868361581920905,
+     "obs": 0.615819209039548,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.007532956685499058,
+      0.026365348399246705
+     ],
+     "effect": 30.217849613492625,
+     "null_mean": 0.01607909604519774,
+     "obs": 0.4858757062146893,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 2695.6521739130435,
+     "null_mean": 0.00013372093023255812,
+     "obs": 0.36046511627906974,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 787,
+     "with_branch": 531
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.023255813953488372
+     ],
+     "effect": 42.317708333333336,
+     "null_mean": 0.008930232558139534,
+     "obs": 0.37790697674418605,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.3161764705882353,
+      0.4485294117647059
+     ],
+     "effect": 1.4685706556395046,
+     "null_mean": 0.3805220588235294,
+     "obs": 0.5588235294117647,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.014925373134328358
+     ],
+     "effect": 29.850746268656714,
+     "null_mean": 0.0035,
+     "obs": 0.1044776119402985,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.10294117647058823,
+      0.20588235294117646
+     ],
+     "effect": 4.871990829193733,
+     "null_mean": 0.15394117647058825,
+     "obs": 0.75,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.015503875968992248,
+      0.07751937984496124
+     ],
+     "effect": 8.273191339552897,
+     "null_mean": 0.04403875968992248,
+     "obs": 0.3643410852713178,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "VALIDATION": {
+    "branches ending in H1": {
+     "ci": [
+      0.0655226209048362,
+      0.1029641185647426
+     ],
+     "effect": 6.349979395347095,
+     "null_mean": 0.08328549141965678,
+     "obs": 0.5288611544461779,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0015600624024961
+     ],
+     "effect": 12.048192771084338,
+     "null_mean": 0.0003884555382215289,
+     "obs": 0.0046801872074883,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.2507936507936508,
+      0.2920634920634921
+     ],
+     "effect": 1.6343779732545718,
+     "null_mean": 0.27193492063492064,
+     "obs": 0.4444444444444444,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.06349206349206349,
+      0.10317460317460317
+     ],
+     "effect": 6.414219474497682,
+     "null_mean": 0.08215873015873015,
+     "obs": 0.526984126984127,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.4050632911392405,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 670,
+     "with_branch": 630
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0078125
+     ],
+     "effect": 407.18562874251495,
+     "null_mean": 0.0013046875,
+     "obs": 0.53125,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.8211382113821138,
+      0.926829268292683
+     ],
+     "effect": 1.1411182959300115,
+     "null_mean": 0.8763333333333333,
+     "obs": 1.0,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0078125
+     ],
+     "effect": 383.2335329341317,
+     "null_mean": 0.0013046875,
+     "obs": 0.5,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.024390243902439025,
+      0.10569105691056911
+     ],
+     "effect": 4.3159822129217895,
+     "null_mean": 0.06216260162601626,
+     "obs": 0.2682926829268293,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.021505376344086023,
+      0.0967741935483871
+     ],
+     "effect": 6.342494714587738,
+     "null_mean": 0.055946236559139786,
+     "obs": 0.3548387096774194,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "full": {
+    "branches ending in H1": {
+     "ci": [
+      0.0171875,
+      0.0328125
+     ],
+     "effect": 19.858379228953577,
+     "null_mean": 0.02482421875,
+     "obs": 0.49296875,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.00390625,
+      0.01328125
+     ],
+     "effect": 0.6784260515603798,
+     "null_mean": 0.0080609375,
+     "obs": 0.00546875,
+     "p": 0.9280719280719281,
+     "pct": 0.072
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.2756244616709733,
+      0.30749354005167956
+     ],
+     "effect": 1.795056054839406,
+     "null_mean": 0.29125839793281655,
+     "obs": 0.5228251507321274,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.018949181739879414,
+      0.03617571059431524
+     ],
+     "effect": 18.4271347367106,
+     "null_mean": 0.02757795004306632,
+     "obs": 0.508182601205857,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 20999.999999999996,
+     "null_mean": 2e-05,
+     "obs": 0.42,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 1457,
+     "with_branch": 1161
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.01
+     ],
+     "effect": 142.85714285714286,
+     "null_mean": 0.0031033333333333334,
+     "obs": 0.44333333333333336,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.3769230769230769,
+      0.47692307692307695
+     ],
+     "effect": 1.7929866291851368,
+     "null_mean": 0.4268769230769231,
+     "obs": 0.7653846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.011450381679389313
+     ],
+     "effect": 108.93854748603351,
+     "null_mean": 0.002732824427480916,
+     "obs": 0.29770992366412213,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.06538461538461539,
+      0.12307692307692308
+     ],
+     "effect": 5.464480874316939,
+     "null_mean": 0.09431538461538462,
+     "obs": 0.5153846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0045045045045045045,
+      0.04054054054054054
+     ],
+     "effect": 16.484648670925203,
+     "null_mean": 0.02186036036036036,
+     "obs": 0.36036036036036034,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "known non-hub": {
+    "branches ending in H1": {
+     "ci": [
+      0.030612244897959183,
+      0.053061224489795916
+     ],
+     "effect": 15.249281036274436,
+     "null_mean": 0.042223469387755105,
+     "obs": 0.6438775510204081,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.00510204081632653,
+      0.018367346938775512
+     ],
+     "effect": 0.6316549359321422,
+     "null_mean": 0.011308163265306122,
+     "obs": 0.007142857142857143,
+     "p": 0.9500499500499501,
+     "pct": 0.05
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.28291621327529926,
+      0.3188248095756257
+     ],
+     "effect": 1.6918883353698655,
+     "null_mean": 0.30099455930359087,
+     "obs": 0.5092491838955386,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.03264417845484222,
+      0.056583242655059846
+     ],
+     "effect": 14.608299494899477,
+     "null_mean": 0.04394776931447225,
+     "obs": 0.6420021762785637,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 20999.999999999996,
+     "null_mean": 2e-05,
+     "obs": 0.42,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 1457,
+     "with_branch": 919
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.01
+     ],
+     "effect": 142.85714285714286,
+     "null_mean": 0.0031033333333333334,
+     "obs": 0.44333333333333336,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.3769230769230769,
+      0.47692307692307695
+     ],
+     "effect": 1.7929866291851368,
+     "null_mean": 0.4268769230769231,
+     "obs": 0.7653846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.011450381679389313
+     ],
+     "effect": 108.93854748603351,
+     "null_mean": 0.002732824427480916,
+     "obs": 0.29770992366412213,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.06538461538461539,
+      0.12307692307692308
+     ],
+     "effect": 5.464480874316939,
+     "null_mean": 0.09431538461538462,
+     "obs": 0.5153846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0045045045045045045,
+      0.04054054054054054
+     ],
+     "effect": 16.484648670925203,
+     "null_mean": 0.02186036036036036,
+     "obs": 0.36036036036036034,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "operator c:2YKa6U61fozw (30 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 30,
+     "with_branch": 24
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:5MSpdabaEo18 (150 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.8666666666666667,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 150,
+     "with_branch": 150
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.2,
+      0.43333333333333335
+     ],
+     "effect": 0.0,
+     "null_mean": 0.31866666666666665,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:8uM3AeYfpA88 (60 events)": {
+    "branches ending in H1": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 60,
+     "with_branch": 60
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:9TN2NEfg6vfi (60 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 60,
+     "with_branch": 50
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:BdE3C2tCtCwD (30 events)": {
+    "branches ending in H1": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 1.0,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 30,
+     "with_branch": 12
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:Fb2TAFf2zdgk (120 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 120,
+     "with_branch": 120
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.8666666666666667,
+      0.9
+     ],
+     "effect": 0.9907781419099154,
+     "null_mean": 0.8747333333333334,
+     "obs": 0.8666666666666667,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:Gug21eQUwmZi (60 events)": {
+    "branches ending in H1": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 60,
+     "with_branch": 60
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator c:HxYyavxib9P1 (120 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.17886178861788618,
+      0.34146341463414637
+     ],
+     "effect": 3.8577342867896123,
+     "null_mean": 0.25921951219512196,
+     "obs": 1.0,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.3170731707317073,
+      0.42276422764227645
+     ],
+     "effect": 0.0,
+     "null_mean": 0.369520325203252,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.509090909090909,
+      0.6181818181818182
+     ],
+     "effect": 1.309883228702417,
+     "null_mean": 0.5691,
+     "obs": 0.7454545454545455,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.18181818181818182,
+      0.33636363636363636
+     ],
+     "effect": 3.9422284342185425,
+     "null_mean": 0.25366363636363637,
+     "obs": 1.0,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 120,
+     "with_branch": 110
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.6666666666666666,
+      0.9
+     ],
+     "effect": 0.0,
+     "null_mean": 0.7964666666666667,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.06666666666666667
+     ],
+     "effect": 0.0,
+     "null_mean": 0.014,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.13333333333333333
+     ],
+     "effect": 0.0,
+     "null_mean": 0.0474,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator k:20.80+20.21+ (150 events)": {
+    "branches ending in H1": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 1.0,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 150,
+     "with_branch": 150
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      1.0,
+      1.0
+     ],
+     "effect": 1.0,
+     "null_mean": 1.0,
+     "obs": 1.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator k:21.13+21.08+ (301 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0091324200913242,
+      0.0502283105022831
+     ],
+     "effect": 16.191709844559586,
+     "null_mean": 0.028200913242009133,
+     "obs": 0.45662100456621,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0867579908675799,
+      0.1461187214611872
+     ],
+     "effect": 0.0,
+     "null_mean": 0.11787671232876712,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.572972972972973,
+      0.654054054054054
+     ],
+     "effect": 1.3692095685664818,
+     "null_mean": 0.6119135135135135,
+     "obs": 0.8378378378378378,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.010810810810810811,
+      0.05945945945945946
+     ],
+     "effect": 14.691151919866442,
+     "null_mean": 0.032378378378378384,
+     "obs": 0.4756756756756757,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.009174311926605505
+     ],
+     "effect": 500.0,
+     "null_mean": 0.0005321100917431193,
+     "obs": 0.26605504587155965,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 301,
+     "with_branch": 185
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.07575757575757576,
+      0.21212121212121213
+     ],
+     "effect": 3.8432795985907973,
+     "null_mean": 0.14192424242424242,
+     "obs": 0.5454545454545454,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.37209302325581395,
+      0.6046511627906976
+     ],
+     "effect": 1.6399587667510074,
+     "null_mean": 0.4963255813953488,
+     "obs": 0.813953488372093,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.03125
+     ],
+     "effect": 14.492753623188404,
+     "null_mean": 0.008625,
+     "obs": 0.125,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.09302325581395349,
+      0.32558139534883723
+     ],
+     "effect": 4.183154324477106,
+     "null_mean": 0.20569767441860465,
+     "obs": 0.8604651162790697,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.04878048780487805,
+      0.21951219512195122
+     ],
+     "effect": 5.9466717820832535,
+     "null_mean": 0.12714634146341464,
+     "obs": 0.7560975609756098,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "operator k:21.59+21.27+ (56 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.9464285714285714,
+      0.9464285714285714
+     ],
+     "effect": 1.0,
+     "null_mean": 0.9464285714285714,
+     "obs": 0.9464285714285714,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.05357142857142857,
+      0.05357142857142857
+     ],
+     "effect": 1.0,
+     "null_mean": 0.05357142857142857,
+     "obs": 0.05357142857142857,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.9454545454545454,
+      0.9454545454545454
+     ],
+     "effect": 1.0,
+     "null_mean": 0.9454545454545454,
+     "obs": 0.9454545454545454,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 56,
+     "with_branch": 55
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "operator k:22.04+21.96+ (120 events)": {
+    "branches ending in H1": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "n_events": {
+     "obs": 120,
+     "with_branch": 102
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.03333333333333333,
+      0.26666666666666666
+     ],
+     "effect": 0.0,
+     "null_mean": 0.1475,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.8571428571428571,
+      1.0
+     ],
+     "effect": 1.0391009852216748,
+     "null_mean": 0.928,
+     "obs": 0.9642857142857143,
+     "p": 0.3246753246753247,
+     "pct": 0.676
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.06666666666666667
+     ],
+     "effect": 0.0,
+     "null_mean": 0.0185,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.10714285714285714,
+      0.35714285714285715
+     ],
+     "effect": 0.4699984333385555,
+     "null_mean": 0.2279642857142857,
+     "obs": 0.10714285714285714,
+     "p": 0.987012987012987,
+     "pct": 0.013
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.2916666666666667,
+      0.625
+     ],
+     "effect": 0.27644673792849245,
+     "null_mean": 0.45216666666666666,
+     "obs": 0.125,
+     "p": 1.0,
+     "pct": 0.0
+    }
+   },
+   "strict non-hub": {
+    "branches ending in H1": {
+     "ci": [
+      0.04225352112676056,
+      0.14084507042253522
+     ],
+     "effect": 5.281690140845071,
+     "null_mean": 0.088,
+     "obs": 0.4647887323943662,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.028169014084507043,
+      0.11267605633802817
+     ],
+     "effect": 0.0,
+     "null_mean": 0.060774647887323945,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.3137254901960784,
+      0.45098039215686275
+     ],
+     "effect": 1.2850827593297007,
+     "null_mean": 0.38145098039215686,
+     "obs": 0.49019607843137253,
+     "p": 0.003996003996003996,
+     "pct": 0.997
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.0392156862745098,
+      0.17647058823529413
+     ],
+     "effect": 5.410821643286574,
+     "null_mean": 0.09784313725490196,
+     "obs": 0.5294117647058824,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 20999.999999999996,
+     "null_mean": 2e-05,
+     "obs": 0.42,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 1457,
+     "with_branch": 51
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.01
+     ],
+     "effect": 142.85714285714286,
+     "null_mean": 0.0031033333333333334,
+     "obs": 0.44333333333333336,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.3769230769230769,
+      0.47692307692307695
+     ],
+     "effect": 1.7929866291851368,
+     "null_mean": 0.4268769230769231,
+     "obs": 0.7653846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.011450381679389313
+     ],
+     "effect": 108.93854748603351,
+     "null_mean": 0.002732824427480916,
+     "obs": 0.29770992366412213,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.06538461538461539,
+      0.12307692307692308
+     ],
+     "effect": 5.464480874316939,
+     "null_mean": 0.09431538461538462,
+     "obs": 0.5153846153846153,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0045045045045045045,
+      0.04054054054054054
+     ],
+     "effect": 16.484648670925203,
+     "null_mean": 0.02186036036036036,
+     "obs": 0.36036036036036034,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "without the 10 most frequent exit wallets": {
+    "branches ending in H1": {
+     "ci": [
+      0.01707317073170732,
+      0.03414634146341464
+     ],
+     "effect": 18.673266053866424,
+     "null_mean": 0.025295934959349595,
+     "obs": 0.47235772357723577,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.0024390243902439024,
+      0.01056910569105691
+     ],
+     "effect": 0.9139574356965662,
+     "null_mean": 0.006226829268292683,
+     "obs": 0.005691056910569106,
+     "p": 0.6493506493506493,
+     "pct": 0.351
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.2710951526032316,
+      0.30251346499102333
+     ],
+     "effect": 1.7814726840855106,
+     "null_mean": 0.2872172351885099,
+     "obs": 0.5116696588868941,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.019748653500897665,
+      0.03770197486535009
+     ],
+     "effect": 17.1699604743083,
+     "null_mean": 0.028388689407540395,
+     "obs": 0.4874326750448833,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 18000.0,
+     "null_mean": 2.4137931034482758e-05,
+     "obs": 0.43448275862068964,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 1407,
+     "with_branch": 1114
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.010344827586206896
+     ],
+     "effect": 151.30830489192263,
+     "null_mean": 0.0030310344827586206,
+     "obs": 0.4586206896551724,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.392,
+      0.496
+     ],
+     "effect": 1.7895683453237412,
+     "null_mean": 0.4448,
+     "obs": 0.796,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.011904761904761904
+     ],
+     "effect": 95.23809523809524,
+     "null_mean": 0.00325,
+     "obs": 0.30952380952380953,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.06,
+      0.116
+     ],
+     "effect": 5.690683799908214,
+     "null_mean": 0.08716,
+     "obs": 0.496,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.0047169811320754715,
+      0.04716981132075472
+     ],
+     "effect": 15.482872072769501,
+     "null_mean": 0.02437264150943396,
+     "obs": 0.37735849056603776,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   },
+   "without the dominant operator": {
+    "branches ending in H1": {
+     "ci": [
+      0.02544769085768143,
+      0.046182846371347785
+     ],
+     "effect": 14.266523374529822,
+     "null_mean": 0.035080113100848256,
+     "obs": 0.5004712535344015,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "branches ending in H2": {
+     "ci": [
+      0.002827521206409048,
+      0.011310084825636193
+     ],
+     "effect": 0.9544586855740388,
+     "null_mean": 0.006912346842601319,
+     "obs": 0.006597549481621112,
+     "p": 0.6143856143856143,
+     "pct": 0.386
+    },
+    "branches ending in H3": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital funds a later launch (events)": {
+     "ci": [
+      0.2520491803278688,
+      0.2858606557377049
+     ],
+     "effect": 1.7184874269072548,
+     "null_mean": 0.2694897540983607,
+     "obs": 0.46311475409836067,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "capital reaches the cluster's deployer network (events)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": null,
+     "null_mean": 0.0,
+     "obs": 0.0,
+     "p": 1.0,
+     "pct": 0.0
+    },
+    "capital reaches the launch funder (events)": {
+     "ci": [
+      0.027663934426229508,
+      0.04918032786885246
+     ],
+     "effect": 13.50406197880239,
+     "null_mean": 0.03808811475409836,
+     "obs": 0.514344262295082,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "fixed sniper-to-exit-wallet pairs (exit wallets, corpus)": {
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "effect": 14000.0,
+     "null_mean": 2.573529411764706e-05,
+     "obs": 0.3602941176470588,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "n_events": {
+     "obs": 1156,
+     "with_branch": 976
+    },
+    "same cluster in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.02390438247011952
+     ],
+     "effect": 66.74958540630182,
+     "null_mean": 0.009609561752988048,
+     "obs": 0.6414342629482072,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same first SOL destination repeated (exit wallets)": {
+     "ci": [
+      0.3964757709251101,
+      0.5066079295154186
+     ],
+     "effect": 1.8189997457312184,
+     "null_mean": 0.4504581497797357,
+     "obs": 0.8193832599118943,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same funder in all events (exit wallets)": {
+     "ci": [
+      0.0,
+      0.004608294930875576
+     ],
+     "effect": 2000.0000000000002,
+     "null_mean": 0.0001705069124423963,
+     "obs": 0.34101382488479265,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same return category in all events (exit wallets)": {
+     "ci": [
+      0.08370044052863436,
+      0.15418502202643172
+     ],
+     "effect": 4.010494752623688,
+     "null_mean": 0.1175330396475771,
+     "obs": 0.4713656387665198,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    },
+    "same terminal wallet in all events (exit wallets)": {
+     "ci": [
+      0.010471204188481676,
+      0.05759162303664921
+     ],
+     "effect": 11.09895263404721,
+     "null_mean": 0.03349214659685864,
+     "obs": 0.3717277486910995,
+     "p": 0.000999000999000999,
+     "pct": 1.0
+    }
+   }
+  }
+ },
+ "J": [
+  {
+   "SOL routing": "H1 58 %, H5 27 %, H6 16 %",
+   "cluster": "W:GcfzKCPPx4KnswXSd2hGzJAKXZwYD4bHbaKMVdq8iXbz",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "84 exit wallets; same sniper always 25 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 370 s before creation (median)",
+   "launches": 35,
+   "read events": 180,
+   "recycling frequency": "73 % of events with a branch fund a later launch",
+   "sniper set": "30 distinct snipers, 4.3 per launch",
+   "temporal cadence": "median gap between its sampled launches 48 min",
+   "token routing": "sold 95, mixed 85"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:2b6YfhfZckBoS8chvFHEoAECr7AgFH1ndBJVTrusv16y",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "34 exit wallets; same sniper always 100 %",
+   "funder recurrence": "88 %",
+   "funding pattern": "22.0 SOL per sniper (median), funded 294 s before creation (median)",
+   "launches": 15,
+   "read events": 170,
+   "recycling frequency": "93 % of events with a branch fund a later launch",
+   "sniper set": "10 distinct snipers, 4.3 per launch",
+   "temporal cadence": "median gap between its sampled launches 48 min",
+   "token routing": "sold 162, mixed 8"
+  },
+  {
+   "SOL routing": "H5 20 %, H6 80 %",
+   "cluster": "W:HdM8f1jYAyL61Zw8rg7RFuGN78Rz6jTAmxv1PMYTnZPU",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 87 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "24.0 SOL per sniper (median), funded 416 s before creation (median)",
+   "launches": 5,
+   "read events": 150,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 59 min",
+   "token routing": "sold 150"
+  },
+  {
+   "SOL routing": "H5 7 %, H6 93 %",
+   "cluster": "W:4qGFfhzDfSskTBzKnftohKSJRxcw37LeRb5NccHXsnSm",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "60 exit wallets; same sniper always 0 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "24.0 SOL per sniper (median), funded 309 s before creation (median)",
+   "launches": 3,
+   "read events": 120,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "8 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 106 min",
+   "token routing": "sold 120"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:vF9GBSqpg1SP58kVvcRvTqwUz6ZY2iBwE3x8iJzbJxj",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "22.0 SOL per sniper (median), funded 303 s before creation (median)",
+   "launches": 6,
+   "read events": 120,
+   "recycling frequency": "75 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 132 min",
+   "token routing": "sold 112, mixed 8"
+  },
+  {
+   "SOL routing": "H5 73 %, H6 27 %",
+   "cluster": "W:D1Kimk2E1UkTZzXav68usPBQRsqv3qXbbsQZY8816gi1",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.0 SOL per sniper (median), funded 513 s before creation (median)",
+   "launches": 4,
+   "read events": 72,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 80 min",
+   "token routing": "sold 65, mixed 7"
+  },
+  {
+   "SOL routing": "H5 100 %",
+   "cluster": "W:44atiqx4gsWhZhm2B6tdDFCtrG97TW86muzWqAp78Qw2",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "22.0 SOL per sniper (median), funded 475 s before creation (median)",
+   "launches": 2,
+   "read events": 60,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 48 min",
+   "token routing": "sold 50, mixed 10"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:8E2rmKvuRyo4u1wa1dbXjjczKLFL3SdVtHUM6Viqjr1S",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "60 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.9 SOL per sniper (median), funded 693 s before creation (median)",
+   "launches": 1,
+   "read events": 60,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches nan min",
+   "token routing": "sold 60"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:DjJMVMy3PPeJ5J5Neecu7GWWGC2FN1apXoQ9tngxW9y7",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "60 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.9 SOL per sniper (median), funded 790 s before creation (median)",
+   "launches": 1,
+   "read events": 60,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches nan min",
+   "token routing": "sold 60"
+  },
+  {
+   "SOL routing": "H5 100 %",
+   "cluster": "W:Gfyz97DQqiPDo9tMoomGFmRPCKXjsy4Z1DZa2RaVzqAy",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "22.4 SOL per sniper (median), funded 192 s before creation (median)",
+   "launches": 2,
+   "read events": 60,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 32 min",
+   "token routing": "sold 47, mixed 13"
+  },
+  {
+   "SOL routing": "H1 95 %, H2 5 %",
+   "cluster": "W:5miRnVtTKooc7j8zChEozAf87C3Ljejmijj3ASvR1wK6",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "56 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 552 s before creation (median)",
+   "launches": 2,
+   "read events": 56,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 43 min",
+   "token routing": "sold 55, mixed 1"
+  },
+  {
+   "SOL routing": "H5 59 %, H6 41 %",
+   "cluster": "W:EJxven2AXoH5pCnYPHLbGqmQ4CvwyALA7RU2HHzF7nyb",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.9 SOL per sniper (median), funded 561 s before creation (median)",
+   "launches": 2,
+   "read events": 48,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 65 min",
+   "token routing": "sold 36, mixed 12"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:5cXxkZiFydXM4Ayuv1d2Gi9icNZq2dFuXdR9DWhBHqdd",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "6 exit wallets; same sniper always 100 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 251 s before creation (median)",
+   "launches": 10,
+   "read events": 30,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "8 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 18 min",
+   "token routing": "mixed 19, sold 11"
+  },
+  {
+   "SOL routing": "H6 100 %",
+   "cluster": "W:Hwgomc6c6mYTcXAsp9uKHuM8FmjLaAaUr9iW1sSnBcBA",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "30 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.8 SOL per sniper (median), funded 1424 s before creation (median)",
+   "launches": 1,
+   "read events": 30,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches nan min",
+   "token routing": "sold 25, mixed 5"
+  },
+  {
+   "SOL routing": "H5 31 %, H6 69 %",
+   "cluster": "W:2vbpm561nEPBMnPCFp2EbhYZJBdjTnFoQGXj4XKDbUWx",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "29.7 SOL per sniper (median), funded 374 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 45 min",
+   "token routing": "mixed 11, sold 9"
+  },
+  {
+   "SOL routing": "H5 100 %",
+   "cluster": "W:5Bwu1rULuc6CGbSHRQScsYj1k6tG91xfmi6jdnkpepng",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 114 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 39 min",
+   "token routing": "mixed 14, sold 6"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:5pQ9ZVZ2gBmWfgfB2Lu1qhz14WBSiTsCdtLB6vVZiosa",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 507 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 51 min",
+   "token routing": "mixed 14, sold 6"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:7g9hWy1oyg3YMyqFgDCYwBGcccnLL8PnkyVPMRf38PEc",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 318 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 51 min",
+   "token routing": "mixed 19, sold 1"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:7jbDoush9A7yRKCPWRm93ZPAEYE5r8FW3hh9FxXCSZtF",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 422 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 43 min",
+   "token routing": "mixed 12, sold 8"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:92hhkb9q1HLBpi4G3wwvhbGQRGGYrb6pHo4PunJrNSPf",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 250 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "78 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 42 min",
+   "token routing": "mixed 15, sold 5"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:CRXwGGzpAini61SjDYrFHA9vcr5zh6QPfSbyvFiQy7dU",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 49 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 70 min",
+   "token routing": "mixed 16, sold 4"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:CnzMAuz7rhBf9owqNXVYCAe8RSGb9wJ6Uyz6oxBjgQRq",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "100 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 319 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 30 min",
+   "token routing": "mixed 13, sold 7"
+  },
+  {
+   "SOL routing": "H1 17 %, H2 67 %, H6 17 %",
+   "cluster": "W:FgCyMbeNxPrJtmw8Q6Amm2UyfgBbxLWyBHThDGUqYQYU",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "23.8 SOL per sniper (median), funded 294 s before creation (median)",
+   "launches": 5,
+   "read events": 20,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 58 min",
+   "token routing": "mixed 14, sold 6"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:CyyfXXPAoCNuWcYn4HbYvrrjQrEemZWLqLM2Xj4T2wG7",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "3 exit wallets; same sniper always 100 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "25.0 SOL per sniper (median), funded 286 s before creation (median)",
+   "launches": 7,
+   "read events": 15,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 42 min",
+   "token routing": "mixed 10, sold 5"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:6KinmsEQAjR1zwK2ktM3FdWJPqyJmm5XqmsiZapgCWyW",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "13 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.7 SOL per sniper (median), funded 1098 s before creation (median)",
+   "launches": 1,
+   "read events": 13,
+   "recycling frequency": "100 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches nan min",
+   "token routing": "sold 13"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:8kEiAZwDD5jaJryWrn55U8uPJHD9GQFTZBf9LGF4REeY",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "13 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "15.0 SOL per sniper (median), funded 48 s before creation (median)",
+   "launches": 1,
+   "read events": 13,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches nan min",
+   "token routing": "sold 8, mixed 5"
+  },
+  {
+   "SOL routing": "H1 100 %",
+   "cluster": "W:8hHU3VYuDoTfRH4QVSz2V4Ec1XkBoa1MVVvmUMxMjao6",
+   "deployer relationships": "path reaches the deployer network in 0 % of events with a branch",
+   "exit-wallet pattern": "4 exit wallets; same sniper always 0 %",
+   "funder recurrence": "0 %",
+   "funding pattern": "24.0 SOL per sniper (median), funded 598 s before creation (median)",
+   "launches": 3,
+   "read events": 12,
+   "recycling frequency": "0 % of events with a branch fund a later launch",
+   "sniper set": "4 distinct snipers, 4.0 per launch",
+   "temporal cadence": "median gap between its sampled launches 26 min",
+   "token routing": "mixed 11, sold 1"
+  }
+ ],
+ "coverage": {
+  "calls": {
+   "calls": 9757,
+   "fails": 0
+  },
+  "events": 1457,
+  "read": 1457,
+  "status": {
+   "cap": 361,
+   "complete": 1096
+  },
+  "stopped": "None"
+ }
+}
