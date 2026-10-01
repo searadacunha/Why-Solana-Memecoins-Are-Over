@@ -1,0 +1,2446 @@
+{
+ "B": {
+  "down": {
+   "A known hub": {
+    "n": 217,
+    "operators": 15,
+    "sol": 22158.651272024
+   },
+   "C operator-associated": {
+    "n": 150,
+    "operators": 11,
+    "sol": 4465.723117063
+   },
+   "D deployer network": {
+    "n": 2,
+    "operators": 1,
+    "sol": 6.200216657
+   },
+   "E cross-operator network": {
+    "n": 13,
+    "operators": 3,
+    "sol": 711.911279922
+   },
+   "F new / unknown, keeps the SOL": {
+    "n": 6,
+    "operators": 4,
+    "sol": 246.183922389
+   },
+   "G unresolved": {
+    "n": 20,
+    "operators": 7,
+    "sol": 4104.297070385
+   }
+  },
+  "sample": {
+   "other": 2,
+   "other SOL out": 258,
+   "sweep received": 425
+  },
+  "up": {
+   "A known hub": {
+    "n": 52,
+    "operators": 16,
+    "sol": 501.91846767
+   },
+   "D deployer network": {
+    "n": 1,
+    "operators": 1,
+    "sol": 0.200063982
+   },
+   "E cross-operator network": {
+    "n": 1,
+    "operators": 1,
+    "sol": 1.000065774
+   },
+   "G unresolved": {
+    "n": 1,
+    "operators": 1,
+    "sol": 0.1
+   }
+  }
+ },
+ "C": {
+  "multi_operator_primaries": {
+   "D6HE3kncG6deev8rUd38Weso34c1VfU6V3fxMZ1sNCPC": [
+    "c:9TN2NEfg6vfijyeWzSkWBgX48aZRvRGm6tcMznwDaJ2m",
+    "k:21.13+21.08+19.77+19.34"
+   ]
+  },
+  "shared": [
+   {
+    "first": 1790424136,
+    "last": 1790598876,
+    "launches": 0,
+    "operators": [
+     "c:8uM3AeYfpA88Z7AKCGGxKfzfMTikmKAs4P3k9yiYazBz",
+     "c:Gug21eQUwmZio4dvW8UvU5iqAoJak5tc91uwmyFR18EE",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 3,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 843.750147579,
+    "wallet": "DRUKt6L9GMNaWF9sjsvxcfNFn7ufvY2HK2Dij4dhXn5X"
+   },
+   {
+    "first": 1787449122,
+    "last": 1788094039,
+    "launches": 0,
+    "operators": [
+     "k:20.32+19.97+19.57+19.35",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 5,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 2283.333143807,
+    "wallet": "27NsskNeGncqnBtaLJwmVoRJg2Qd5M9QJm9xnDTCW5dL"
+   },
+   {
+    "first": 1788460057,
+    "last": 1788824400,
+    "launches": 0,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 31.743051532000003,
+    "wallet": "7a2zhDAJom62NgHzkHdLUusycPxZnPPWx1zTxKYBUK5F"
+   },
+   {
+    "first": 1788459177,
+    "last": 1788824380,
+    "launches": 0,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 3.767268304,
+    "wallet": "7oobYnByuwxGkVYbAsWfjMtHVdfYita1V8s6PWoV4gvs"
+   },
+   {
+    "first": 1787751233,
+    "last": 1790008351,
+    "launches": 0,
+    "operators": [
+     "c:2YKa6U61fozw1aEadp7286YW4sPEpko8zeoLEBmC2csu",
+     "k:20.68+20.51+20.37+18.55"
+    ],
+    "primaries": 2,
+    "relation": "common terminal",
+    "role": "unseen",
+    "sol": 33.321566,
+    "wallet": "8zHcWujHhyJri3CRTcWUGmT5WSRdwW7xrns3WTTkPGvS"
+   },
+   {
+    "first": 1790585113,
+    "last": 1790602660,
+    "launches": 0,
+    "operators": [
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 8.000289094,
+    "wallet": "AP6c8AS1fdtUkQunasserrU1UupKiQ8pVigW49pYiFTB"
+   },
+   {
+    "first": 1787442541,
+    "last": 1788096200,
+    "launches": 0,
+    "operators": [
+     "k:20.68+20.51+20.37+18.55",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 4,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 687.517278427,
+    "wallet": "AyBdrsDJ2A1fMnvStRqim3UnWCrTwhCm38t77txi1Sp6"
+   },
+   {
+    "first": 1790585113,
+    "last": 1790602684,
+    "launches": 0,
+    "operators": [
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 8.000173659000001,
+    "wallet": "CS1egm8UeLXQRYJQeoVooWet5Zdpq3mc8AvwEmTkacVU"
+   },
+   {
+    "first": 1789918756,
+    "last": 1790424303,
+    "launches": 0,
+    "operators": [
+     "c:5MSpdabaEo18hZWFZnXqDy8r3tydm9WAX9RnWAN1RuhR",
+     "c:Gug21eQUwmZio4dvW8UvU5iqAoJak5tc91uwmyFR18EE"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 1061.000219736,
+    "wallet": "CekCebfLJJosFBnHexM86wSR8ThApNk9KPd9G9VKgbXC"
+   },
+   {
+    "first": 1788238331,
+    "last": 1790008201,
+    "launches": 0,
+    "operators": [
+     "c:2YKa6U61fozw1aEadp7286YW4sPEpko8zeoLEBmC2csu",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 10.000230243,
+    "wallet": "CrAtVXEZ5CLbtMV2KeauRQwwxAvN3U4aD1xFaaM5paZh"
+   },
+   {
+    "first": 1788459181,
+    "last": 1788824384,
+    "launches": 0,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 3.766171387,
+    "wallet": "ED1oUL2LscmMKr3LEidBc6K68iKxgv65oT8jzx1ep23t"
+   },
+   {
+    "first": 1788459176,
+    "last": 1788824384,
+    "launches": 0,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 3.767175145,
+    "wallet": "EcnoSUW5ZKnCBR1hjoQw1Tme1v89pGRSEuUrjZocjdHZ"
+   },
+   {
+    "first": 1790585113,
+    "last": 1790602684,
+    "launches": 0,
+    "operators": [
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 8.00016958,
+    "wallet": "FEiQigJgXG6EAQ1eNfbmGRrL4RXsoMG6XckiMUPpjHhW"
+   },
+   {
+    "first": 1790585112,
+    "last": 1790602684,
+    "launches": 0,
+    "operators": [
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 8.000144709,
+    "wallet": "FizVVLFL2L7L22ahJXKx5PJWvbBYupjys2yP6RbiBPyy"
+   },
+   {
+    "first": 1790585113,
+    "last": 1790602684,
+    "launches": 0,
+    "operators": [
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 8.000116898,
+    "wallet": "GMVasHNAuLprx8mjeGhuhjsQhKapM1rZkKZVkbXRLnah"
+   },
+   {
+    "first": 1787541823,
+    "last": 1788100434,
+    "launches": 0,
+    "operators": [
+     "k:20.20+20.18+19.37+19.08",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": 2,
+    "relation": "shared intermediary or mixed",
+    "role": "unseen",
+    "sol": 5.500309389,
+    "wallet": "H9tyeSef4P28p4wc8KeHq9LNV6JQrMdEVCVCfPUg81w4"
+   }
+  ],
+  "stats": {
+   "components": 14,
+   "largest": 7,
+   "shared": 16,
+   "sizes": [
+    7,
+    5,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "transfers": [
+   {
+    "direction": "up",
+    "from_ops": [
+     "k:20.20+19.92+19.09+19.07"
+    ],
+    "hops": 1,
+    "primary": "8bE9UzHpw5t3JK7EVfx1yPQjbmWTw4erBbKxuPwhvg6A",
+    "sol": 0.200063982,
+    "to_ops": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "wallet": "5iWeGWNi1uHf2SyBPWDdqLgmnGYMZqdxdrSDEo7nMkRS"
+   }
+  ]
+ },
+ "D": {
+  "components": [
+   {
+    "architecture": [
+     [
+      "A known hub",
+      57
+     ],
+     [
+      "C operator-associated",
+      42
+     ]
+    ],
+    "downstream_wallets": 144,
+    "launches": 22,
+    "operators": [
+     "c:2YKa6U61fozw1aEadp7286YW4sPEpko8zeoLEBmC2csu",
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz",
+     "k:20.20+20.18+19.37+19.08",
+     "k:20.32+19.97+19.57+19.35",
+     "k:20.68+20.51+20.37+18.55",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "44AKqBs48vsGXUJ9CJVJta2orq6PcqUe2WhSQdKeeHAD",
+     "5pQ9ZVZ2gBmWfgfB2Lu1qhz14WBSiTsCdtLB6vVZiosa",
+     "67qjEdzLDF6c9sh2HVRYUdfN8RmmDpw1QwLT8SBnmCTH",
+     "6KinmsEQAjR1zwK2ktM3FdWJPqyJmm5XqmsiZapgCWyW",
+     "6PKtd15fwSa1xxptvNYpzUCeHKT6K6q7K5iV9mxud9yS",
+     "8xxJcwB29JbMQw5huSqWhFrr6rM6g51PWn8dopNwQ2kc",
+     "92hhkb9q1HLBpi4G3wwvhbGQRGGYrb6pHo4PunJrNSPf",
+     "Axiwxae6MzxQsvHtgK6Xm5d5zyMmvGYnSGjS5iCVfT9U",
+     "BAKRUbZTLN2W27hrz4jMVpfC5SpyzHe9zwPFwCyMQcMi",
+     "BRKGcMhX87zZQHa8mpHudQRmm9MPVBdcw7PmiRSCVBaT",
+     "Dkcuf38G3ivtH1Jvg5sC65hNXYkZtbikaXLbiDgCg7U8",
+     "ESUtG7BJ8jJVfupR559unVUMHA7cESU1iE37jdXoCsSp",
+     "J4C5rKtK7AarH1dK3PFeGxFTSgPmzLSXGQ8fcmkxB3Zr",
+     "vF9GBSqpg1SP58kVvcRvTqwUz6ZY2iBwE3x8iJzbJxj",
+     "wopbKaNShKdUeE8dt6ZNQiJH8xFfNFAo4AWyY9GXXQ5"
+    ],
+    "sol": 5854.901871622
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      40
+     ],
+     [
+      "C operator-associated",
+      8
+     ]
+    ],
+    "downstream_wallets": 56,
+    "launches": 12,
+    "operators": [
+     "c:5MSpdabaEo18hZWFZnXqDy8r3tydm9WAX9RnWAN1RuhR",
+     "c:8uM3AeYfpA88Z7AKCGGxKfzfMTikmKAs4P3k9yiYazBz",
+     "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ",
+     "c:Gug21eQUwmZio4dvW8UvU5iqAoJak5tc91uwmyFR18EE",
+     "k:21.59+21.27+20.98+20.78"
+    ],
+    "primaries": [
+     "35Lopfe9H87AbhA3kPsTtnoaDPw4xiEF1RrbUcNJPqKB",
+     "3fzT6gafHPD4f5wVNvQYoqrgRkZCNSF4vZCsQbdcUbno",
+     "4aEJJD6Dn8sjFRR7okEH4YVjo5Vj21LQr7drdbq7XaeN",
+     "8E2rmKvuRyo4u1wa1dbXjjczKLFL3SdVtHUM6Viqjr1S",
+     "DjJMVMy3PPeJ5J5Neecu7GWWGC2FN1apXoQ9tngxW9y7"
+    ],
+    "sol": 975.696198152
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      11
+     ],
+     [
+      "A known hub",
+      4
+     ]
+    ],
+    "downstream_wallets": 17,
+    "launches": 5,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "2N8L1V7ZozQqQ1KXRZAQLCmsAoQaTxY5UeTzDZxskEwF",
+     "2zPEgkUufEXdwisDhKpiC3cAi9FVZHrmbHTEimzZEa4o",
+     "FMQmtN3XE2tBSQ25g4Y3YEo1NfvCJ1BU7ecxu8JgoKvi",
+     "G2rkyxbPQWpBGyFM53Szi9sFtmgf6NpxV8KXJn9H5G7T",
+     "GcCBs9BkK83mVqiVKZjSvMckd67XUjFHs7ARsUpRHRmv"
+    ],
+    "sol": 6273.47039442
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      8
+     ],
+     [
+      "C operator-associated",
+      1
+     ]
+    ],
+    "downstream_wallets": 9,
+    "launches": 2,
+    "operators": [
+     "c:YSUcHvAijrKRgSGtdwg3WQ2Rk82BX5aax6YXh99iMJc"
+    ],
+    "primaries": [
+     "5odxJv8j7utrK7zN99cLqFDnmtM3gmSuhVpTZSWbFw8c",
+     "CN6pfDgxPDBMXaVePTbndJ5PkMBw3n6XJhXVohdbUXtt"
+    ],
+    "sol": 1769.851629223
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "4B4ajwzZ8LTnGpebfHvM1YGna3cY9eCUfbv57FNirhZF"
+    ],
+    "sol": 1120.0535988660001
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "4LBVHRbF2tN3uKWZHKVg8mSN2rzzfwggzdDxBJLB7p89"
+    ],
+    "sol": 1048.179118168
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "5T54kt5APyjPE8qF7CBpyE6U93poMLPh5YE64egoWAG1"
+    ],
+    "sol": 336.226168662
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "7hk5UvRLDK5SToG72uSUA8nP42y5Yc9Zh1jW6JfW3VAz"
+    ],
+    "sol": 1117.441493379
+   },
+   {
+    "architecture": [],
+    "downstream_wallets": 0,
+    "launches": 5,
+    "operators": [
+     "k:20.24+20.07+19.65+19.52"
+    ],
+    "primaries": [
+     "7jbDoush9A7yRKCPWRm93ZPAEYE5r8FW3hh9FxXCSZtF"
+    ],
+    "sol": 0
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "c:YSUcHvAijrKRgSGtdwg3WQ2Rk82BX5aax6YXh99iMJc"
+    ],
+    "primaries": [
+     "8BxVjGLdmujNw3jCxU3BheRErKH3sxDFfW7jYeMCUffu"
+    ],
+    "sol": 925.086406979
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "8bbHSdvF1oft2BdAxnji8xhCxEkAgh8Eic3sKJMRsNB4"
+    ],
+    "sol": 335.792644422
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      13
+     ]
+    ],
+    "downstream_wallets": 13,
+    "launches": 1,
+    "operators": [
+     "k:21.39+21.26+21.11+21.10"
+    ],
+    "primaries": [
+     "8kEiAZwDD5jaJryWrn55U8uPJHD9GQFTZBf9LGF4REeY"
+    ],
+    "sol": 52.001344147
+   },
+   {
+    "architecture": [],
+    "downstream_wallets": 0,
+    "launches": 8,
+    "operators": [
+     "c:BdE3C2tCtCwDi6rsVCxvUb1mcNYp7ViKeDoH83voiymr"
+    ],
+    "primaries": [
+     "8w91SbzwpSmp6giEHpRFVDgywtYej26XxnrvirQym2w1"
+    ],
+    "sol": 0
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "AAGmdFbCz8Dg8zMJ1nqEXNmQDkT2rYJgwXhM2KUW6JDh"
+    ],
+    "sol": 1181.459632921
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      3
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:20.68+20.51+20.37+18.55"
+    ],
+    "primaries": [
+     "BYZX1UEqSHwG63S5ChGSMcccvunFoohkw4fQBprKx1NY"
+    ],
+    "sol": 737.9241028700001
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:22.02+21.86+21.15+19.43"
+    ],
+    "primaries": [
+     "BpWiEeUNPmmVarcZ3KR7PfzbKhhYZgzDD9W8AB88depM"
+    ],
+    "sol": 984.779133413
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:20.68+20.51+20.37+18.55"
+    ],
+    "primaries": [
+     "CVceChte26U2ooL3gZ49opDDLpCjoYixodwjQY5c8pTP"
+    ],
+    "sol": 551.254050362
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "D2fDN2X9GUVj8Mhdt7JCSjqjx1LmrScbBsRTjoHNXm1x"
+    ],
+    "sol": 604.919766124
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      10
+     ]
+    ],
+    "downstream_wallets": 10,
+    "launches": 5,
+    "operators": [
+     "c:9TN2NEfg6vfijyeWzSkWBgX48aZRvRGm6tcMznwDaJ2m",
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "D6HE3kncG6deev8rUd38Weso34c1VfU6V3fxMZ1sNCPC"
+    ],
+    "sol": 60.000741047
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "DcAAXVfX8ajPELQbx43FBDGx6xT69tLj4tHgGAjGJ82p"
+    ],
+    "sol": 1161.023304159
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "G4mdQfzJvhkm4fNnFPr1DCjuQNX2oPzkpvbfNMM9FBh"
+    ],
+    "sol": 625.5515957580001
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "S5qFbcPFKevULvFuQBRMEztUNPoo34Z5c7vwzRMRETu"
+    ],
+    "sol": 1042.4723385109999
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      3
+     ]
+    ],
+    "downstream_wallets": 2,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "kwEfRzWe2chYWxuuck7ZL1VvyuTdMbdPjB6EzUWT7Km"
+    ],
+    "sol": 1216.910397522
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      8
+     ]
+    ],
+    "downstream_wallets": 9,
+    "launches": 1,
+    "operators": [
+     "k:21.40+21.14+21.10+20.89"
+    ],
+    "primaries": [
+     "2AFX2bmhhQwzHzc1qJ7KEh2CZCs25vCACYFxFhsdbVza"
+    ],
+    "sol": 24.400911939
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      18
+     ]
+    ],
+    "downstream_wallets": 18,
+    "launches": 3,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "14pNgQF5JxSD6dVkDciNi9RJL7YEUtjAmroFSS3saqJA"
+    ],
+    "sol": 58.802176223000004
+   },
+   {
+    "architecture": [
+     [
+      "G unresolved",
+      1
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 2,
+    "operators": [
+     "c:EwFgFSw9KHqVw3WxpBkmuzH6gipp5dkNW1ghMTGLpBas"
+    ],
+    "primaries": [
+     "7xXmSDd2hVzJesv797mP5PLP3pzYLyhfvRqnxxTBDd6F"
+    ],
+    "sol": 6.000148244
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      10
+     ]
+    ],
+    "downstream_wallets": 11,
+    "launches": 2,
+    "operators": [
+     "k:22.04+21.96+19.27+18.71"
+    ],
+    "primaries": [
+     "7934tgWToxWUL666mmM5pNyKYPMF876HEPZADy99zJyY"
+    ],
+    "sol": 30.001290865
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      19
+     ]
+    ],
+    "downstream_wallets": 20,
+    "launches": 4,
+    "operators": [
+     "k:20.20+19.92+19.09+19.07"
+    ],
+    "primaries": [
+     "8bE9UzHpw5t3JK7EVfx1yPQjbmWTw4erBbKxuPwhvg6A"
+    ],
+    "sol": 57.00240078
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      9
+     ],
+     [
+      "F new / unknown, keeps the SOL",
+      1
+     ]
+    ],
+    "downstream_wallets": 10,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "FBJrcGysGENqFYpagVdaMENRc7QTuAXm3VWkzt8dkxL1"
+    ],
+    "sol": 112.325573084
+   },
+   {
+    "architecture": [
+     [
+      "G unresolved",
+      1
+     ],
+     [
+      "C operator-associated",
+      1
+     ]
+    ],
+    "downstream_wallets": 1,
+    "launches": 1,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "6MSk32Cfcf8EV2KVve1vqqmtuaSes7Nv32DezRTGdfiF"
+    ],
+    "sol": 1076.472794279
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      1
+     ]
+    ],
+    "downstream_wallets": 2,
+    "launches": 2,
+    "operators": [
+     "c:8peR5ucxZnSFWY3o35JPpcRW7yVCmQoBxkZFuMXsnATr"
+    ],
+    "primaries": [
+     "CRXwGGzpAini61SjDYrFHA9vcr5zh6QPfSbyvFiQy7dU"
+    ],
+    "sol": 42.100092858
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      10
+     ]
+    ],
+    "downstream_wallets": 11,
+    "launches": 7,
+    "operators": [
+     "k:20.80+20.21+19.78+19.16"
+    ],
+    "primaries": [
+     "Cb2NvwmzYbCvdN2nboLNDuAhzUif89pkz7kuNjnnFXkc"
+    ],
+    "sol": 30.001084569
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      1
+     ],
+     [
+      "F new / unknown, keeps the SOL",
+      1
+     ]
+    ],
+    "downstream_wallets": 4,
+    "launches": 3,
+    "operators": [
+     "k:21.13+21.08+19.77+19.34"
+    ],
+    "primaries": [
+     "CnzMAuz7rhBf9owqNXVYCAe8RSGb9wJ6Uyz6oxBjgQRq"
+    ],
+    "sol": 9.190700828
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      10
+     ]
+    ],
+    "downstream_wallets": 11,
+    "launches": 4,
+    "operators": [
+     "k:22.04+21.96+19.27+18.71"
+    ],
+    "primaries": [
+     "EaPUR4G9rMnxLVVEmuF5Hrqzco6jvSrzakVSHTSMRhsa"
+    ],
+    "sol": 31.000930576000002
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      19
+     ]
+    ],
+    "downstream_wallets": 20,
+    "launches": 1,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz"
+    ],
+    "primaries": [
+     "EoBeA3CpNmT4QtZ9WBJNCbYy2zLPZ3V3sRH9SAtRYoi3"
+    ],
+    "sol": 110.601571782
+   },
+   {
+    "architecture": [
+     [
+      "A known hub",
+      3
+     ]
+    ],
+    "downstream_wallets": 3,
+    "launches": 1,
+    "operators": [
+     "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga"
+    ],
+    "primaries": [
+     "6aXuXA6CNdNFHxwFBdkykjn5KdJ89DNrXA1oCzA4TGPx"
+    ],
+    "sol": 1186.851816532
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      10
+     ],
+     [
+      "F new / unknown, keeps the SOL",
+      1
+     ]
+    ],
+    "downstream_wallets": 12,
+    "launches": 2,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz"
+    ],
+    "primaries": [
+     "HkBMLh6FnwuVuxQ4WPHGXBrW1nMbyEMw54wvbPPC1Pfd"
+    ],
+    "sol": 47.801151303
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      15
+     ]
+    ],
+    "downstream_wallets": 16,
+    "launches": 2,
+    "operators": [
+     "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz"
+    ],
+    "primaries": [
+     "J17Ecj8N4T6tF7c68DjiLcakDTD8NZgAwJgM4a8gH5dX"
+    ],
+    "sol": 72.001482065
+   },
+   {
+    "architecture": [
+     [
+      "C operator-associated",
+      4
+     ],
+     [
+      "A known hub",
+      2
+     ]
+    ],
+    "downstream_wallets": 5,
+    "launches": 1,
+    "operators": [
+     "k:20.68+20.51+20.37+18.55"
+    ],
+    "primaries": [
+     "HBLBFeDczBoTS9PWHur8MpDsn9rXa2QZ8mVrWrq2fMfo"
+    ],
+    "sol": 823.416821786
+   }
+  ]
+ },
+ "E": {
+  "cross": [
+   {
+    "delay_s": 100876,
+    "kind": "another operator's snipers",
+    "mint": "628Yd6WtreiLurU1eSMaqZcggdcUF2jqCpvik4grpump",
+    "operator": "k:22.30+21.16+20.84+19.78",
+    "primary": "BRKGcMhX87zZQHa8mpHudQRmm9MPVBdcw7PmiRSCVBaT",
+    "role": "sniper",
+    "same_operator": false,
+    "sol": 4.800060839,
+    "t": 1787639671,
+    "to_population": false,
+    "wallet": "DGPvfk73uVVjgsQgZzWXaEyzczsQsgTK7zhpCNzWXXNH"
+   },
+   {
+    "delay_s": 100858,
+    "kind": "another operator's snipers",
+    "mint": "628Yd6WtreiLurU1eSMaqZcggdcUF2jqCpvik4grpump",
+    "operator": "k:22.30+21.16+20.84+19.78",
+    "primary": "BRKGcMhX87zZQHa8mpHudQRmm9MPVBdcw7PmiRSCVBaT",
+    "role": "sniper",
+    "same_operator": false,
+    "sol": 6.490145798,
+    "t": 1787639671,
+    "to_population": false,
+    "wallet": "DGPvfk73uVVjgsQgZzWXaEyzczsQsgTK7zhpCNzWXXNH"
+   },
+   {
+    "delay_s": 529303,
+    "kind": "deployer funding",
+    "mint": "Drk3CtZEwL5V7JU6GdBfHPU5m1prsqJVH8a4QU5Ypump",
+    "operator": "c:8QyCAzLox4aiwXLBMBXj7nbh3fBGJc9sCN22PjBnTaJX",
+    "primary": "6KinmsEQAjR1zwK2ktM3FdWJPqyJmm5XqmsiZapgCWyW",
+    "role": "deployer",
+    "same_operator": false,
+    "sol": 1.006097086,
+    "t": 1788271880,
+    "to_population": false,
+    "wallet": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9"
+   },
+   {
+    "delay_s": 10032,
+    "kind": "another operator's snipers",
+    "mint": "2jHstNzqT3HfaWjEWyQnE6rrBtjCjdCaKZGaXWecpump",
+    "operator": "k:20.32+19.97+19.57+19.35",
+    "primary": "44AKqBs48vsGXUJ9CJVJta2orq6PcqUe2WhSQdKeeHAD",
+    "role": "sniper",
+    "same_operator": false,
+    "sol": 109.097064671,
+    "t": 1787445539,
+    "to_population": true,
+    "wallet": "Dkcuf38G3ivtH1Jvg5sC65hNXYkZtbikaXLbiDgCg7U8"
+   }
+  ],
+  "direct": {
+   "deployer network": {
+    "n": 2,
+    "sol": 6.200216657
+   },
+   "exit wallet": {
+    "n": 1,
+    "sol": 0.368095138
+   },
+   "known hub": {
+    "n": 153,
+    "sol": 20320.130986395
+   },
+   "other known wallet": {
+    "n": 2,
+    "sol": 1076.472794279
+   },
+   "previously unseen wallet": {
+    "n": 242,
+    "sol": 10105.794039709
+   },
+   "sniper, same operator": {
+    "n": 8,
+    "sol": 184.000746262
+   }
+  },
+  "kinds": {
+   "another operator's snipers": 3,
+   "deployer funding": 1,
+   "same operator's snipers": 115
+  },
+  "links": 119,
+  "null": {
+   "ci": [
+    0.07563025210084033,
+    0.18487394957983194
+   ],
+   "effect": 7.4660780367460875,
+   "null_mean": 0.12943697478991598,
+   "obs": 0.9663865546218487,
+   "p": 0.000999000999000999,
+   "pct": 1.0
+  }
+ },
+ "F": {
+  "rows": [
+   {
+    "direction": "up",
+    "hop": 1,
+    "own_operator": false,
+    "primary": "8bE9UzHpw5t3JK7EVfx1yPQjbmWTw4erBbKxuPwhvg6A",
+    "strict": false,
+    "wallet": "5iWeGWNi1uHf2SyBPWDdqLgmnGYMZqdxdrSDEo7nMkRS"
+   },
+   {
+    "direction": "down",
+    "hop": 1,
+    "own_operator": true,
+    "primary": "G2rkyxbPQWpBGyFM53Szi9sFtmgf6NpxV8KXJn9H5G7T",
+    "strict": false,
+    "wallet": "8rueLQKFKZVdYkJDGti4HaYZwLfrnEStRLV23cG4vr96"
+   },
+   {
+    "direction": "down",
+    "hop": 1,
+    "own_operator": true,
+    "primary": "GcCBs9BkK83mVqiVKZjSvMckd67XUjFHs7ARsUpRHRmv",
+    "strict": false,
+    "wallet": "5Anx1d7f1etsszgwTYvr6vh7Fp4p9UArSJXr5Ud2Q3j1"
+   }
+  ]
+ },
+ "G": {
+  "binary_operators": 14,
+  "operator": {
+   "c:2YKa6U61fozw1aEadp7286YW4sPEpko8zeoLEBmC2csu": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 1.0
+   },
+   "c:5MSpdabaEo18hZWFZnXqDy8r3tydm9WAX9RnWAN1RuhR": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "c:8peR5ucxZnSFWY3o35JPpcRW7yVCmQoBxkZFuMXsnATr": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "c:8uM3AeYfpA88Z7AKCGGxKfzfMTikmKAs4P3k9yiYazBz": {
+    "A known hub": 0.8500990861451938,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.07791559644595325,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.07198531740885292
+   },
+   "c:9FJvWMsUwgr7wd8qsqXk6jUKTrUw2QDSVbnk4dbXa8Ga": {
+    "A known hub": 0.9962657864639866,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0037342135360135297,
+    "G unresolved": 0.0
+   },
+   "c:9TN2NEfg6vfijyeWzSkWBgX48aZRvRGm6tcMznwDaJ2m": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "c:EwFgFSw9KHqVw3WxpBkmuzH6gipp5dkNW1ghMTGLpBas": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 1.0
+   },
+   "c:Fb2TAFf2zdgkf7bMwDEY1wmnYUTzynBtFSu86Z5hY4YZ": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "c:Gug21eQUwmZio4dvW8UvU5iqAoJak5tc91uwmyFR18EE": {
+    "A known hub": 0.11683449709904659,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.8831655029009535,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "c:HxYyavxib9P1oS1oM6Cgv6BgYnz3FcF7QbTnaLjwGtbz": {
+    "A known hub": 0.029126311101550024,
+    "B other operator": 0.0,
+    "C operator-associated": 0.9458238399369449,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.02088834315137135,
+    "G unresolved": 0.004161505810133847
+   },
+   "c:YSUcHvAijrKRgSGtdwg3WQ2Rk82BX5aax6YXh99iMJc": {
+    "A known hub": 0.9988125781012354,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0011874218987646293,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:20.20+19.92+19.09+19.07": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:20.20+20.18+19.37+19.08": {
+    "A known hub": 0.2857171819245057,
+    "B other operator": 0.0,
+    "C operator-associated": 0.7142828180754942,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:20.32+19.97+19.57+19.35": {
+    "A known hub": 0.11428493481515262,
+    "B other operator": 0.0,
+    "C operator-associated": 0.6190468346787227,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.26666823050612465,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:20.68+20.51+20.37+18.55": {
+    "A known hub": 0.8921601647135191,
+    "B other operator": 0.0,
+    "C operator-associated": 0.018379627139781585,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.04601892772885732,
+    "G unresolved": 0.043441280417842135
+   },
+   "k:20.80+20.21+19.78+19.16": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:21.13+21.08+19.77+19.34": {
+    "A known hub": 0.5126936050653541,
+    "B other operator": 0.0,
+    "C operator-associated": 0.24573917106017543,
+    "D deployer network": 0.00039176980811692557,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0005395012267376519,
+    "G unresolved": 0.2406359528396158
+   },
+   "k:21.39+21.26+21.11+21.10": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:21.40+21.14+21.10+20.89": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:21.59+21.27+20.98+20.78": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.3404308676992703,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.6595691323007298
+   },
+   "k:22.02+21.86+21.15+19.43": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "k:22.04+21.96+19.27+18.71": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   }
+  },
+  "primary": {
+   "14pNgQF5JxSD6dVkDciNi9RJL7YEUtjAmroFSS3saqJA": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "2AFX2bmhhQwzHzc1qJ7KEh2CZCs25vCACYFxFhsdbVza": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "2N8L1V7ZozQqQ1KXRZAQLCmsAoQaTxY5UeTzDZxskEwF": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "2zPEgkUufEXdwisDhKpiC3cAi9FVZHrmbHTEimzZEa4o": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "35Lopfe9H87AbhA3kPsTtnoaDPw4xiEF1RrbUcNJPqKB": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "3fzT6gafHPD4f5wVNvQYoqrgRkZCNSF4vZCsQbdcUbno": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "44AKqBs48vsGXUJ9CJVJta2orq6PcqUe2WhSQdKeeHAD": {
+    "A known hub": 0.6459251941971073,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.22422041853209043,
+    "G unresolved": 0.12985438727080242
+   },
+   "4B4ajwzZ8LTnGpebfHvM1YGna3cY9eCUfbv57FNirhZF": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "4LBVHRbF2tN3uKWZHKVg8mSN2rzzfwggzdDxBJLB7p89": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "4aEJJD6Dn8sjFRR7okEH4YVjo5Vj21LQr7drdbq7XaeN": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.3404308676992703,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.6595691323007298
+   },
+   "5T54kt5APyjPE8qF7CBpyE6U93poMLPh5YE64egoWAG1": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "5odxJv8j7utrK7zN99cLqFDnmtM3gmSuhVpTZSWbFw8c": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "5pQ9ZVZ2gBmWfgfB2Lu1qhz14WBSiTsCdtLB6vVZiosa": {
+    "A known hub": 0.2857171819245057,
+    "B other operator": 0.0,
+    "C operator-associated": 0.7142828180754942,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "67qjEdzLDF6c9sh2HVRYUdfN8RmmDpw1QwLT8SBnmCTH": {
+    "A known hub": 0.7500173679844135,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.12499205215205826,
+    "G unresolved": 0.12499057986352813
+   },
+   "6KinmsEQAjR1zwK2ktM3FdWJPqyJmm5XqmsiZapgCWyW": {
+    "A known hub": 0.4913979584073842,
+    "B other operator": 0.0,
+    "C operator-associated": 0.008310229389118726,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.037161617959134044,
+    "G unresolved": 0.46313019424436314
+   },
+   "6MSk32Cfcf8EV2KVve1vqqmtuaSes7Nv32DezRTGdfiF": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0001246099164910561,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.9998753900835089
+   },
+   "6PKtd15fwSa1xxptvNYpzUCeHKT6K6q7K5iV9mxud9yS": {
+    "A known hub": 0.3913069749635587,
+    "B other operator": 0.0,
+    "C operator-associated": 0.6086930250364413,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "6aXuXA6CNdNFHxwFBdkykjn5KdJ89DNrXA1oCzA4TGPx": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "7934tgWToxWUL666mmM5pNyKYPMF876HEPZADy99zJyY": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "7hk5UvRLDK5SToG72uSUA8nP42y5Yc9Zh1jW6JfW3VAz": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "7xXmSDd2hVzJesv797mP5PLP3pzYLyhfvRqnxxTBDd6F": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 1.0
+   },
+   "8BxVjGLdmujNw3jCxU3BheRErKH3sxDFfW7jYeMCUffu": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "8E2rmKvuRyo4u1wa1dbXjjczKLFL3SdVtHUM6Viqjr1S": {
+    "A known hub": 0.11683449709904659,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.8831655029009535,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "8bE9UzHpw5t3JK7EVfx1yPQjbmWTw4erBbKxuPwhvg6A": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "8bbHSdvF1oft2BdAxnji8xhCxEkAgh8Eic3sKJMRsNB4": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "8kEiAZwDD5jaJryWrn55U8uPJHD9GQFTZBf9LGF4REeY": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "8xxJcwB29JbMQw5huSqWhFrr6rM6g51PWn8dopNwQ2kc": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "92hhkb9q1HLBpi4G3wwvhbGQRGGYrb6pHo4PunJrNSPf": {
+    "A known hub": 0.1558434252671595,
+    "B other operator": 0.0,
+    "C operator-associated": 0.8441565747328403,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "AAGmdFbCz8Dg8zMJ1nqEXNmQDkT2rYJgwXhM2KUW6JDh": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "Axiwxae6MzxQsvHtgK6Xm5d5zyMmvGYnSGjS5iCVfT9U": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 1.0
+   },
+   "BAKRUbZTLN2W27hrz4jMVpfC5SpyzHe9zwPFwCyMQcMi": {
+    "A known hub": 0.22551227127989396,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0023417227105993104,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.7721460060095068
+   },
+   "BRKGcMhX87zZQHa8mpHudQRmm9MPVBdcw7PmiRSCVBaT": {
+    "A known hub": 0.9028250591796244,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.09717494082037562
+   },
+   "BYZX1UEqSHwG63S5ChGSMcccvunFoohkw4fQBprKx1NY": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "BpWiEeUNPmmVarcZ3KR7PfzbKhhYZgzDD9W8AB88depM": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "CN6pfDgxPDBMXaVePTbndJ5PkMBw3n6XJhXVohdbUXtt": {
+    "A known hub": 0.9963183781542846,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0036816218457154264,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "CRXwGGzpAini61SjDYrFHA9vcr5zh6QPfSbyvFiQy7dU": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "CVceChte26U2ooL3gZ49opDDLpCjoYixodwjQY5c8pTP": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "Cb2NvwmzYbCvdN2nboLNDuAhzUif89pkz7kuNjnnFXkc": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "CnzMAuz7rhBf9owqNXVYCAe8RSGb9wJ6Uyz6oxBjgQRq": {
+    "A known hub": 0.5321115065676904,
+    "B other operator": 0.0,
+    "C operator-associated": 0.3590782539614181,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.1088102394708914,
+    "G unresolved": 0.0
+   },
+   "D2fDN2X9GUVj8Mhdt7JCSjqjx1LmrScbBsRTjoHNXm1x": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "D6HE3kncG6deev8rUd38Weso34c1VfU6V3fxMZ1sNCPC": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "DcAAXVfX8ajPELQbx43FBDGx6xT69tLj4tHgGAjGJ82p": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "DjJMVMy3PPeJ5J5Neecu7GWWGC2FN1apXoQ9tngxW9y7": {
+    "A known hub": 0.8500990861451938,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.07791559644595325,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.07198531740885292
+   },
+   "Dkcuf38G3ivtH1Jvg5sC65hNXYkZtbikaXLbiDgCg7U8": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 1.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "ESUtG7BJ8jJVfupR559unVUMHA7cESU1iE37jdXoCsSp": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "EaPUR4G9rMnxLVVEmuF5Hrqzco6jvSrzakVSHTSMRhsa": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "EoBeA3CpNmT4QtZ9WBJNCbYy2zLPZ3V3sRH9SAtRYoi3": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "FBJrcGysGENqFYpagVdaMENRc7QTuAXm3VWkzt8dkxL1": {
+    "A known hub": 0.8012433031852467,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.19875669681475328,
+    "G unresolved": 0.0
+   },
+   "FMQmtN3XE2tBSQ25g4Y3YEo1NfvCJ1BU7ecxu8JgoKvi": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "G2rkyxbPQWpBGyFM53Szi9sFtmgf6NpxV8KXJn9H5G7T": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.9975052918451092,
+    "D deployer network": 0.0024947081548909646,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "G4mdQfzJvhkm4fNnFPr1DCjuQNX2oPzkpvbfNMM9FBh": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "GcCBs9BkK83mVqiVKZjSvMckd67XUjFHs7ARsUpRHRmv": {
+    "A known hub": 0.9182212011045121,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0793198664166258,
+    "D deployer network": 0.002458932478862148,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "HBLBFeDczBoTS9PWHur8MpDsn9rXa2QZ8mVrWrq2fMfo": {
+    "A known hub": 0.8979856422111923,
+    "B other operator": 0.0,
+    "C operator-associated": 0.10201435778880781,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "HkBMLh6FnwuVuxQ4WPHGXBrW1nMbyEMw54wvbPPC1Pfd": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.8953979816447185,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.10460201835528161,
+    "G unresolved": 0.0
+   },
+   "J17Ecj8N4T6tF7c68DjiLcakDTD8NZgAwJgM4a8gH5dX": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 1.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "J4C5rKtK7AarH1dK3PFeGxFTSgPmzLSXGQ8fcmkxB3Zr": {
+    "A known hub": 0.08342106558435675,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.9165789344156433
+   },
+   "S5qFbcPFKevULvFuQBRMEztUNPoo34Z5c7vwzRMRETu": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "kwEfRzWe2chYWxuuck7ZL1VvyuTdMbdPjB6EzUWT7Km": {
+    "A known hub": 1.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.0
+   },
+   "vF9GBSqpg1SP58kVvcRvTqwUz6ZY2iBwE3x8iJzbJxj": {
+    "A known hub": 0.7774016034166216,
+    "B other operator": 0.0,
+    "C operator-associated": 0.11152489750050038,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 0.11107349908287814
+   },
+   "wopbKaNShKdUeE8dt6ZNQiJH8xFfNFAo4AWyY9GXXQ5": {
+    "A known hub": 0.0,
+    "B other operator": 0.0,
+    "C operator-associated": 0.0,
+    "D deployer network": 0.0,
+    "E cross-operator network": 0.0,
+    "F new / unknown, keeps the SOL": 0.0,
+    "G unresolved": 1.0
+   }
+  }
+ },
+ "H": {
+  "leave_one_out": [
+   [
+    "27NsskNeGncqnBtaLJwmVoRJg2Qd5M9QJm9xnDTCW5dL",
+    15,
+    7
+   ],
+   [
+    "7a2zhDAJom62NgHzkHdLUusycPxZnPPWx1zTxKYBUK5F",
+    15,
+    7
+   ],
+   [
+    "7oobYnByuwxGkVYbAsWfjMtHVdfYita1V8s6PWoV4gvs",
+    15,
+    7
+   ],
+   [
+    "8zHcWujHhyJri3CRTcWUGmT5WSRdwW7xrns3WTTkPGvS",
+    15,
+    7
+   ],
+   [
+    "AP6c8AS1fdtUkQunasserrU1UupKiQ8pVigW49pYiFTB",
+    15,
+    7
+   ],
+   [
+    "AyBdrsDJ2A1fMnvStRqim3UnWCrTwhCm38t77txi1Sp6",
+    15,
+    7
+   ],
+   [
+    "CS1egm8UeLXQRYJQeoVooWet5Zdpq3mc8AvwEmTkacVU",
+    15,
+    7
+   ],
+   [
+    "CekCebfLJJosFBnHexM86wSR8ThApNk9KPd9G9VKgbXC",
+    15,
+    7
+   ],
+   [
+    "CrAtVXEZ5CLbtMV2KeauRQwwxAvN3U4aD1xFaaM5paZh",
+    15,
+    7
+   ],
+   [
+    "DRUKt6L9GMNaWF9sjsvxcfNFn7ufvY2HK2Dij4dhXn5X",
+    15,
+    7
+   ],
+   [
+    "ED1oUL2LscmMKr3LEidBc6K68iKxgv65oT8jzx1ep23t",
+    15,
+    7
+   ],
+   [
+    "EcnoSUW5ZKnCBR1hjoQw1Tme1v89pGRSEuUrjZocjdHZ",
+    15,
+    7
+   ],
+   [
+    "FEiQigJgXG6EAQ1eNfbmGRrL4RXsoMG6XckiMUPpjHhW",
+    15,
+    7
+   ],
+   [
+    "FizVVLFL2L7L22ahJXKx5PJWvbBYupjys2yP6RbiBPyy",
+    15,
+    7
+   ],
+   [
+    "GMVasHNAuLprx8mjeGhuhjsQhKapM1rZkKZVkbXRLnah",
+    15,
+    7
+   ],
+   [
+    "H9tyeSef4P28p4wc8KeHq9LNV6JQrMdEVCVCfPUg81w4",
+    15,
+    6
+   ]
+  ],
+  "subsets": {
+   "TRAIN": {
+    "largest": 6,
+    "n": 52,
+    "shared": 7,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       8.0,
+       11.0
+      ],
+      "effect": 0.6311803071744161,
+      "null_mean": 9.506,
+      "obs": 6.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       12.0,
+       18.0
+      ],
+      "effect": 0.44571792422795287,
+      "null_mean": 15.705,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       11.0,
+       35.0
+      ],
+      "effect": 0.36114120621162876,
+      "null_mean": 19.383,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "C_shared": {
+      "ci": [
+       13.0,
+       18.0
+      ],
+      "effect": 0.448,
+      "null_mean": 15.625,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "VALIDATION": {
+    "largest": 5,
+    "n": 10,
+    "shared": 7,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       4.0,
+       9.0
+      ],
+      "effect": 0.7264274298997531,
+      "null_mean": 6.883,
+      "obs": 5.0,
+      "p": 0.9630369630369631,
+      "pct": 0.037
+     },
+     "A_shared": {
+      "ci": [
+       7.0,
+       7.0
+      ],
+      "effect": 1.0,
+      "null_mean": 7.0,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       7.0,
+       7.0
+      ],
+      "effect": 1.0,
+      "null_mean": 7.0,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "C_shared": {
+      "ci": [
+       7.0,
+       7.0
+      ],
+      "effect": 1.0,
+      "null_mean": 7.0,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "full": {
+    "largest": 7,
+    "n": 62,
+    "shared": 16,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       14.0,
+       19.0
+      ],
+      "effect": 0.4190613026819923,
+      "null_mean": 16.704,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       22.0,
+       27.0
+      ],
+      "effect": 0.6473801335221525,
+      "null_mean": 24.715,
+      "obs": 16.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       19.0,
+       43.0
+      ],
+      "effect": 0.5667729365922777,
+      "null_mean": 28.23,
+      "obs": 16.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "C_shared": {
+      "ci": [
+       22.0,
+       27.0
+      ],
+      "effect": 0.6459426725878078,
+      "null_mean": 24.77,
+      "obs": 16.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "known non-hub (paths through a hub removed)": {
+    "largest": 6,
+    "n": 62,
+    "shared": 4,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       9.0,
+       14.0
+      ],
+      "effect": 0.5138306071765009,
+      "null_mean": 11.677,
+      "obs": 6.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       11.0,
+       15.0
+      ],
+      "effect": 0.29485478401887066,
+      "null_mean": 13.566,
+      "obs": 4.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       9.0,
+       31.0
+      ],
+      "effect": 0.24144383412808595,
+      "null_mean": 16.567,
+      "obs": 4.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "C_shared": {
+      "ci": [
+       11.0,
+       15.0
+      ],
+      "effect": 0.2952683250904259,
+      "null_mean": 13.547,
+      "obs": 4.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "strict non-hub": {
+    "largest": 7,
+    "n": 62,
+    "shared": 15,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       14.0,
+       19.0
+      ],
+      "effect": 0.4258166555143257,
+      "null_mean": 16.439,
+      "obs": 7.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       21.0,
+       26.0
+      ],
+      "effect": 0.6232341698520857,
+      "null_mean": 24.068,
+      "obs": 15.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       18.0,
+       42.0
+      ],
+      "effect": 0.5537507383343178,
+      "null_mean": 27.088,
+      "obs": 15.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "C_shared": {
+      "ci": [
+       21.0,
+       26.0
+      ],
+      "effect": 0.6247657128576783,
+      "null_mean": 24.009,
+      "obs": 15.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "without the 10 primary wallets with the most sweeps": {
+    "largest": 6,
+    "n": 52,
+    "shared": 9,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       8.0,
+       11.0
+      ],
+      "effect": 0.6172839506172839,
+      "null_mean": 9.72,
+      "obs": 6.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       14.0,
+       20.0
+      ],
+      "effect": 0.5228606285946668,
+      "null_mean": 17.213,
+      "obs": 9.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       11.0,
+       20.0
+      ],
+      "effect": 0.5379236148466917,
+      "null_mean": 16.731,
+      "obs": 9.0,
+      "p": 0.995004995004995,
+      "pct": 0.005
+     },
+     "C_shared": {
+      "ci": [
+       14.0,
+       20.0
+      ],
+      "effect": 0.5231341548477099,
+      "null_mean": 17.204,
+      "obs": 9.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   },
+   "without the dominant operator (k:21.13+21.08+)": {
+    "largest": 5,
+    "n": 39,
+    "shared": 8,
+    "tests": {
+     "A_largest": {
+      "ci": [
+       9.0,
+       15.0
+      ],
+      "effect": 0.4141472707694856,
+      "null_mean": 12.073,
+      "obs": 5.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "A_shared": {
+      "ci": [
+       11.0,
+       14.0
+      ],
+      "effect": 0.606336213430347,
+      "null_mean": 13.194,
+      "obs": 8.0,
+      "p": 1.0,
+      "pct": 0.0
+     },
+     "B_shared": {
+      "ci": [
+       9.0,
+       14.0
+      ],
+      "effect": 0.6040471156750227,
+      "null_mean": 13.244,
+      "obs": 8.0,
+      "p": 0.994005994005994,
+      "pct": 0.006
+     },
+     "C_shared": {
+      "ci": [
+       11.0,
+       14.0
+      ],
+      "effect": 0.6070723933829109,
+      "null_mean": 13.178,
+      "obs": 8.0,
+      "p": 1.0,
+      "pct": 0.0
+     }
+    }
+   }
+  },
+  "weeks": {
+   "27NsskNeGncqnBtaLJwmVoRJg2Qd5M9QJm9xnDTCW5dL": [
+    "2026-W34",
+    "2026-W35"
+   ],
+   "7a2zhDAJom62NgHzkHdLUusycPxZnPPWx1zTxKYBUK5F": [
+    "2026-W36",
+    "2026-W37"
+   ],
+   "7oobYnByuwxGkVYbAsWfjMtHVdfYita1V8s6PWoV4gvs": [
+    "2026-W36",
+    "2026-W37"
+   ],
+   "8zHcWujHhyJri3CRTcWUGmT5WSRdwW7xrns3WTTkPGvS": [
+    "2026-W35",
+    "2026-W39"
+   ],
+   "AP6c8AS1fdtUkQunasserrU1UupKiQ8pVigW49pYiFTB": [
+    "2026-W40"
+   ],
+   "AyBdrsDJ2A1fMnvStRqim3UnWCrTwhCm38t77txi1Sp6": [
+    "2026-W34",
+    "2026-W35"
+   ],
+   "CS1egm8UeLXQRYJQeoVooWet5Zdpq3mc8AvwEmTkacVU": [
+    "2026-W40"
+   ],
+   "CekCebfLJJosFBnHexM86wSR8ThApNk9KPd9G9VKgbXC": [
+    "2026-W38",
+    "2026-W39"
+   ],
+   "CrAtVXEZ5CLbtMV2KeauRQwwxAvN3U4aD1xFaaM5paZh": [
+    "2026-W36",
+    "2026-W39"
+   ],
+   "DRUKt6L9GMNaWF9sjsvxcfNFn7ufvY2HK2Dij4dhXn5X": [
+    "2026-W39",
+    "2026-W40"
+   ],
+   "ED1oUL2LscmMKr3LEidBc6K68iKxgv65oT8jzx1ep23t": [
+    "2026-W36",
+    "2026-W37"
+   ],
+   "EcnoSUW5ZKnCBR1hjoQw1Tme1v89pGRSEuUrjZocjdHZ": [
+    "2026-W36",
+    "2026-W37"
+   ],
+   "FEiQigJgXG6EAQ1eNfbmGRrL4RXsoMG6XckiMUPpjHhW": [
+    "2026-W40"
+   ],
+   "FizVVLFL2L7L22ahJXKx5PJWvbBYupjys2yP6RbiBPyy": [
+    "2026-W40"
+   ],
+   "GMVasHNAuLprx8mjeGhuhjsQhKapM1rZkKZVkbXRLnah": [
+    "2026-W40"
+   ],
+   "H9tyeSef4P28p4wc8KeHq9LNV6JQrMdEVCVCfPUg81w4": [
+    "2026-W35"
+   ]
+  }
+ },
+ "coverage": {
+  "calls": {
+   "calls": 3553,
+   "fails": 0
+  },
+  "downs": 408,
+  "dropped_duplicate_branches": 1,
+  "primary": 62,
+  "stopped": "None",
+  "ups": 55
+ }
+}
