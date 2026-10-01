@@ -1,0 +1,13 @@
+{
+ "frozen_at_utc": "2026-10-01 09:08:38",
+ "sha256": "eb7107092221d477972d0a0b786b5c9ce31d215534a237ff1faa204acfa40a3e",
+ "rows": 1657,
+ "rows_by_split": {
+  "train": 1015,
+  "val": 642
+ },
+ "sniper_records": 6822,
+ "early_buys": 189841,
+ "source_table_sha256": "9d2fd31f24ce37dbb304ed35d6ee46cbfcaf496ed99df495f1f887dfdce58c06",
+ "note": "raw relations only; no coordination measure, label or price outcome computed"
+}
