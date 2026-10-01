@@ -1,0 +1,13 @@
+{
+ "entries": {
+  "L0": 1648,
+  "L15": 1477,
+  "L30": 1480,
+  "L5": 1471
+ },
+ "primary_observed": 1411,
+ "primary_trades_ok": 1357,
+ "rows": 1657,
+ "sha256_outcomes": "cd666bf5005320925c5620ed84e489a9ec57ebf1195214a4cfc90d920f328932",
+ "with_series": 1648
+}
