@@ -25,7 +25,7 @@ will work*. The structural signal survived the change of mechanism. The predicti
 
 ## 1. The data: a live detector, 1,657 alerts
 
-The detector described in Act III ran live from 21 August 2026. It alerts when at least four wallets
+A live detector, a separate project whose code is not published, ran from 21 August 2026. It alerts when at least four wallets
 each put 5 SOL or more into a token's bonding curve in the creation slot, 73 to 90 SOL in all, 75 to 81 %
 of the supply (the rule as applied live, `post_detection_edge/results.md`). By the snapshot of
 29 September 2026 11:23 UTC it had alerted on **1,657 launches**
@@ -464,4 +464,4 @@ nine earlier studies; they are published so the method can be read, not re-run f
 regenerates offline from the committed JSON with `python3 code/f_act_iv_timeline.py`.
 
 The headline figures of Act IV quoted in the root `README.md` are checked against these files by
-`code/p1_readme_check.py` at every run of the test suite, like every other figure on the front page.
+`code/p1_readme_check.py` on every run of `code/run_all.py` and in CI, except four quoted from the studies' results tables, which it lists as unsourced.

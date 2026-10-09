@@ -15,3 +15,9 @@
 # OPTIONAL, and only to redraw the PNGs in figures/ (code/f_*.py). No number
 # depends on it: the figures are drawn from the same JSON the tables are.
 matplotlib>=3.5
+#
+# ---------------------------------------------------------------------------
+# NOT INSTALLED HERE: alpha_patterns/code/ imports numpy, pandas, scipy,
+# scikit-learn and statsmodels. Those scripts need unpublished derived files
+# and are published to be read, not re-run from a clone (alpha_patterns/README.md);
+# run_all.py --deps checks code/ only.

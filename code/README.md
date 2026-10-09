@@ -14,7 +14,7 @@ The code is designed to make silent methodological drift difficult: reproducibil
 
 Requirements:
 
-* Python **3.9+**
+* Python **3.9+** to run the scripts; **3.12 or 3.13** for byte-identical artefacts (see §10); **3.10+** for `run_all.py --deps`, which relies on `sys.stdlib_module_names`
 * standard library only for the core offline pipeline
 * no installation step
 * relative paths only
@@ -23,8 +23,8 @@ Requirements:
 From a clean clone:
 
 ```bash
-git clone <repo>
-cd <repo>
+git clone https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over.git
+cd Why-Solana-Memecoins-Are-Over
 
 python3 code/run_all.py --strict
 ```
@@ -68,7 +68,7 @@ This answers:
 
 ### Narrative consistency
 
-`p1_readme_check.py` independently recomputes every figure quoted in the root `README.md`.
+`p1_readme_check.py` checks every figure quoted in the root `README.md` that has a row in its ledger against the committed artefact behind it. It compares the prose with the artefact; it does not recompute the artefact, which is the job of the strict runner above.
 
 It currently reports:
 
