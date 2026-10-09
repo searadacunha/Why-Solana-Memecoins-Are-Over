@@ -1,0 +1,48 @@
+{
+ "definition": "t_hit_2x = seconds from the entry read to the second of two consecutive price reads >= 2 x the entry price, within 1 h; eligible = fine sampling, entry read in [5, 15] s after the alert, 1 h window observed, blocks DISCOVERY + SELECTION",
+ "eligible": 612,
+ "eligible_by_block": {
+  "DISC": 363,
+  "SEL": 249
+ },
+ "entry_dt_after_alert_s_median": 7.7,
+ "good": 168,
+ "good_by_block": {
+  "DISC": 91,
+  "SEL": 77
+ },
+ "input": {
+  "path": "derived/labels.jsonl.gz",
+  "rows": 1657,
+  "sha256": "434bf4bb3a9b1260e7a3d337b02f57ad96a8896b74550aa3c9488775181e7322"
+ },
+ "rate_x2": 0.27450980392156865,
+ "share_of_eligible_confirmed_within_s": {
+  "120": 0.029411764705882353,
+  "1800": 0.2549019607843137,
+  "30": 0.0032679738562091504,
+  "300": 0.11601307189542484,
+  "60": 0.006535947712418301,
+  "600": 0.17973856209150327,
+  "900": 0.2173202614379085
+ },
+ "share_of_good_confirmed_within_s": {
+  "120": 0.10714285714285714,
+  "1800": 0.9285714285714286,
+  "30": 0.011904761904761904,
+  "300": 0.4226190476190476,
+  "60": 0.023809523809523808,
+  "600": 0.6547619047619048,
+  "900": 0.7916666666666666
+ },
+ "t_hit_2x_s": {
+  "max": 3401.2,
+  "min": 21.299999999999997,
+  "n": 168,
+  "p10": 117.78999999999999,
+  "p25": 161.5,
+  "p50": 375.0,
+  "p75": 814.875,
+  "p90": 1502.8400000000004
+ }
+}

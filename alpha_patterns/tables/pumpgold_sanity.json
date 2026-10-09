@@ -1,0 +1,2557 @@
+[
+ {
+  "closest_existing": [
+   [
+    "ef_px_down_share",
+    0.854
+   ],
+   [
+    "m_sells",
+    0.852
+   ],
+   [
+    "m_sellers",
+    0.75
+   ]
+  ],
+  "cut2_change_share": 0.5368357487922706,
+  "cut2_missing_diff": 0,
+  "definition": "external buys + sells per distinct external trader",
+  "disc": {
+   "Y2": {
+    "auc": 0.5228870394311571,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7905539018937396,
+    "bottom_quintile_rate": 0.19767441860465115,
+    "top_capped_lift": 0.7333989348835604,
+    "top_quintile_rate": 0.21333333333333335
+   },
+   "Y3": {
+    "auc": 0.5254643962848298,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9240377229125502,
+    "bottom_quintile_rate": 0.08139534883720931,
+    "top_capped_lift": 0.6263405788415837,
+    "top_quintile_rate": 0.12
+   },
+   "Y5": {
+    "auc": 0.513653483992467,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.833368544600939,
+    "bottom_quintile_rate": 0.023255813953488372,
+    "top_capped_lift": 0.8322655141343827,
+    "top_quintile_rate": 0.02666666666666667
+   }
+  },
+  "disc_half_medians": [
+   1.0975609756097562,
+   1.0987804878048781
+  ],
+  "feature": "pg_tx_per_wallet",
+  "max_abs_spearman_existing": 0.8538040332957106,
+  "median_by_block": {
+   "DISC": 1.105263157894737,
+   "OOS": 1.0740740740740742,
+   "SEL": 1.0869565217391304,
+   "VAL": 1.085144927536232
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 426,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 1.0,
+   "0.25": 1.0,
+   "0.5": 1.0909090909090908,
+   "0.75": 1.1693759071117562,
+   "0.95": 1.3846153846153846
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    0.5
+   ],
+   [
+    "ef_nb_sol_share",
+    0.488
+   ],
+   [
+    "m_sell_sol",
+    0.483
+   ]
+  ],
+  "cut2_change_share": 0.24033816425120774,
+  "cut2_missing_diff": 0,
+  "definition": "external buys per distinct external buyer",
+  "disc": {
+   "Y2": {
+    "auc": 0.5400573691014867,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8858461605147265,
+    "bottom_quintile_rate": 0.2297872340425532,
+    "top_capped_lift": 1.3405809298610922,
+    "top_quintile_rate": 0.32432432432432434
+   },
+   "Y3": {
+    "auc": 0.5633513931888545,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9288533769020598,
+    "bottom_quintile_rate": 0.09361702127659574,
+    "top_capped_lift": 1.2880767223703393,
+    "top_quintile_rate": 0.16216216216216217
+   },
+   "Y5": {
+    "auc": 0.601067168863779,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6545063250359491,
+    "bottom_quintile_rate": 0.01702127659574468,
+    "top_capped_lift": 1.3523298655569782,
+    "top_quintile_rate": 0.04054054054054054
+   }
+  },
+  "disc_half_medians": [
+   1.0,
+   1.0
+  ],
+  "feature": "pg_buys_per_buyer",
+  "max_abs_spearman_existing": 0.49979248079684296,
+  "median_by_block": {
+   "DISC": 1.0,
+   "OOS": 1.0,
+   "SEL": 1.0,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 232,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 1.0,
+   "0.25": 1.0,
+   "0.5": 1.0,
+   "0.75": 1.031374007936508,
+   "0.95": 1.1543456543456543
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    0.511
+   ],
+   [
+    "ef_nb_sol_share",
+    0.504
+   ],
+   [
+    "ez_fu_ntx_7d_sum",
+    0.501
+   ]
+  ],
+  "cut2_change_share": 0.24033816425120774,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buy SOL from wallets with >= 2 buys",
+  "disc": {
+   "Y2": {
+    "auc": 0.5430672268907563,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8858461605147265,
+    "bottom_quintile_rate": 0.2297872340425532,
+    "top_capped_lift": 1.1622256344068638,
+    "top_quintile_rate": 0.3013698630136986
+   },
+   "Y3": {
+    "auc": 0.5643188854489164,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9288533769020598,
+    "bottom_quintile_rate": 0.09361702127659574,
+    "top_capped_lift": 1.308082175249318,
+    "top_quintile_rate": 0.1506849315068493
+   },
+   "Y5": {
+    "auc": 0.6086001255492781,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6545063250359491,
+    "bottom_quintile_rate": 0.01702127659574468,
+    "top_capped_lift": 1.3273746862242346,
+    "top_quintile_rate": 0.0410958904109589
+   }
+  },
+  "disc_half_medians": [
+   0.0,
+   0.0
+  ],
+  "feature": "pg_repeat_buyer_sol_share",
+  "max_abs_spearman_existing": 0.5107069835988499,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 584,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.0654428302618433,
+   "0.95": 0.3392547569472866
+  },
+  "zero_share": 0.6479468599033816
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    0.535
+   ],
+   [
+    "ef_nb_sol_share",
+    0.526
+   ],
+   [
+    "m_buys",
+    0.524
+   ]
+  ],
+  "cut2_change_share": 0.04830917874396135,
+  "cut2_missing_diff": 0,
+  "definition": "largest number of external buys by one wallet",
+  "disc": {
+   "Y2": {
+    "auc": 0.5394109566903684,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8858461605147265,
+    "bottom_quintile_rate": 0.2297872340425532,
+    "top_capped_lift": 1.2131884164939228,
+    "top_quintile_rate": 0.2890625
+   },
+   "Y3": {
+    "auc": 0.5736455108359133,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9288533769020598,
+    "bottom_quintile_rate": 0.09361702127659574,
+    "top_capped_lift": 1.299057578448869,
+    "top_quintile_rate": 0.140625
+   },
+   "Y5": {
+    "auc": 0.607187696170747,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6545063250359491,
+    "bottom_quintile_rate": 0.01702127659574468,
+    "top_capped_lift": 1.750095903307416,
+    "top_quintile_rate": 0.0390625
+   }
+  },
+  "disc_half_medians": [
+   1.0,
+   1.0
+  ],
+  "feature": "pg_max_buys_one_wallet",
+  "max_abs_spearman_existing": 0.5352539740930337,
+  "median_by_block": {
+   "DISC": 1.0,
+   "OOS": 1.0,
+   "SEL": 1.0,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 18,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 1.0,
+   "0.25": 1.0,
+   "0.5": 1.0,
+   "0.75": 2.0,
+   "0.95": 4.0
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_sellers",
+    0.882
+   ],
+   [
+    "m_sells",
+    0.761
+   ],
+   [
+    "m_sell_sol",
+    0.689
+   ]
+  ],
+  "cut2_change_share": 0.12560386473429952,
+  "cut2_missing_diff": 0,
+  "definition": "external wallets that both bought and sold before the cut",
+  "disc": {
+   "Y2": {
+    "auc": 0.5393503555268261,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8908124956798618,
+    "bottom_quintile_rate": 0.21739130434782608,
+    "top_capped_lift": 1.0598954706788997,
+    "top_quintile_rate": 0.29473684210526313
+   },
+   "Y3": {
+    "auc": 0.5812693498452013,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.7011679348219809,
+    "bottom_quintile_rate": 0.07246376811594203,
+    "top_capped_lift": 0.9397569853253154,
+    "top_quintile_rate": 0.14736842105263157
+   },
+   "Y5": {
+    "auc": 0.45229127432517263,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6171059636053235,
+    "bottom_quintile_rate": 0.028985507246376812,
+    "top_capped_lift": 0.0538743301560203,
+    "top_quintile_rate": 0.010526315789473684
+   }
+  },
+  "disc_half_medians": [
+   1.0,
+   1.0
+  ],
+  "feature": "pg_roundtrip_wallets",
+  "max_abs_spearman_existing": 0.8815783886121403,
+  "median_by_block": {
+   "DISC": 1.0,
+   "OOS": 1.0,
+   "SEL": 1.0,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 31,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 1.0,
+   "0.75": 2.0,
+   "0.95": 7.0
+  },
+  "zero_share": 0.41304347826086957
+ },
+ {
+  "closest_existing": [
+   [
+    "m_sellers",
+    0.804
+   ],
+   [
+    "m_sells",
+    0.669
+   ],
+   [
+    "ef_px_down_share",
+    0.641
+   ]
+  ],
+  "cut2_change_share": 0.3852657004830918,
+  "cut2_missing_diff": 0,
+  "definition": "round-trip wallets / distinct external buyers",
+  "disc": {
+   "Y2": {
+    "auc": 0.5249676793794441,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8908124956798618,
+    "bottom_quintile_rate": 0.21739130434782608,
+    "top_capped_lift": 1.0857465797198482,
+    "top_quintile_rate": 0.28205128205128205
+   },
+   "Y3": {
+    "auc": 0.5597910216718266,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.7011679348219809,
+    "bottom_quintile_rate": 0.07246376811594203,
+    "top_capped_lift": 0.8575753965345171,
+    "top_quintile_rate": 0.11538461538461539
+   },
+   "Y5": {
+    "auc": 0.44664155681104833,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6171059636053235,
+    "bottom_quintile_rate": 0.028985507246376812,
+    "top_capped_lift": 0.9054336737349449,
+    "top_quintile_rate": 0.02564102564102564
+   }
+  },
+  "disc_half_medians": [
+   0.03333333333333333,
+   0.03419053185271771
+  ],
+  "feature": "pg_roundtrip_share",
+  "max_abs_spearman_existing": 0.8038182293884637,
+  "median_by_block": {
+   "DISC": 0.03571428571428571,
+   "OOS": 0.019803921568627453,
+   "SEL": 0.022474747474747474,
+   "VAL": 0.02105496453900709
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 267,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.025,
+   "0.75": 0.06557377049180328,
+   "0.95": 0.18087121212121213
+  },
+  "zero_share": 0.41304347826086957
+ },
+ {
+  "closest_existing": [
+   [
+    "m_sellers",
+    0.768
+   ],
+   [
+    "m_sell_max",
+    0.699
+   ],
+   [
+    "m_sell_sol",
+    0.697
+   ]
+  ],
+  "cut2_change_share": 0.4033816425120773,
+  "cut2_missing_diff": 0,
+  "definition": "SOL sold by round-trip wallets / external buy SOL",
+  "disc": {
+   "Y2": {
+    "auc": 0.5599951519069166,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8908124956798618,
+    "bottom_quintile_rate": 0.21739130434782608,
+    "top_capped_lift": 1.1197321245566332,
+    "top_quintile_rate": 0.3424657534246575
+   },
+   "Y3": {
+    "auc": 0.6074303405572755,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.7011679348219809,
+    "bottom_quintile_rate": 0.07246376811594203,
+    "top_capped_lift": 1.4024354744361802,
+    "top_quintile_rate": 0.2054794520547945
+   },
+   "Y5": {
+    "auc": 0.487758945386064,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6171059636053235,
+    "bottom_quintile_rate": 0.028985507246376812,
+    "top_capped_lift": 1.0048271446862997,
+    "top_quintile_rate": 0.0273972602739726
+   }
+  },
+  "disc_half_medians": [
+   0.011145486601930729,
+   0.05311673108050207
+  ],
+  "feature": "pg_roundtrip_sol_share",
+  "max_abs_spearman_existing": 0.7682270955625573,
+  "median_by_block": {
+   "DISC": 0.02009450698610148,
+   "OOS": 0.002681854851945941,
+   "SEL": 0.013838316953815764,
+   "VAL": 0.0006569773522659404
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 973,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.01002701898525631,
+   "0.75": 0.12650673192714443,
+   "0.95": 0.43764551208314556
+  },
+  "zero_share": 0.41304347826086957
+ },
+ {
+  "closest_existing": [
+   [
+    "first_tp_buy_dslot",
+    0.659
+   ],
+   [
+    "b_slot0_tx",
+    -0.551
+   ],
+   [
+    "b_other_slot0_sol",
+    -0.451
+   ]
+  ],
+  "cut2_change_share": 0.1462663587374904,
+  "cut2_missing_diff": 16,
+  "definition": "external sellers that had bought in the window / external sellers",
+  "disc": {
+   "Y2": {
+    "auc": 0.5362318840579711,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 1.0658134645792587,
+    "bottom_quintile_rate": 0.24561403508771928,
+    "top_capped_lift": 1.1295360384638913,
+    "top_quintile_rate": 0.32051282051282054
+   },
+   "Y3": {
+    "auc": 0.6316173786053304,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.5809507415905688,
+    "bottom_quintile_rate": 0.05263157894736842,
+    "top_capped_lift": 1.4601094159304635,
+    "top_quintile_rate": 0.19230769230769232
+   },
+   "Y5": {
+    "auc": 0.5510265700483091,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.3946607906778231,
+    "bottom_quintile_rate": 0.017543859649122806,
+    "top_capped_lift": 1.4927678980730625,
+    "top_quintile_rate": 0.038461538461538464
+   }
+  },
+  "disc_half_medians": [
+   0.6,
+   0.6666666666666666
+  ],
+  "feature": "pg_seller_buyer_overlap",
+  "max_abs_spearman_existing": 0.6591981403961285,
+  "median_by_block": {
+   "DISC": 0.6,
+   "OOS": 0.3333333333333333,
+   "SEL": 0.5,
+   "VAL": 0.35416666666666663
+  },
+  "missing_share_by_block": {
+   "DISC": 0.20684292379471228,
+   "OOS": 0.17142857142857143,
+   "SEL": 0.20161290322580644,
+   "VAL": 0.2534246575342466
+  },
+  "n_distinct": 69,
+  "n_nonnull": 1315,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.5,
+   "0.75": 0.7777777777777778,
+   "0.95": 1.0
+  },
+  "zero_share": 0.26083650190114066
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_px_down_share",
+    0.948
+   ],
+   [
+    "m_sells",
+    0.871
+   ],
+   [
+    "m_sellers",
+    0.782
+   ]
+  ],
+  "cut2_change_share": 0.5700483091787439,
+  "cut2_missing_diff": 0,
+  "definition": "external sells / external buys",
+  "disc": {
+   "Y2": {
+    "auc": 0.5098577892695539,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7300751686970419,
+    "bottom_quintile_rate": 0.19753086419753085,
+    "top_capped_lift": 0.6912361765297171,
+    "top_quintile_rate": 0.2191780821917808
+   },
+   "Y3": {
+    "auc": 0.5015479876160991,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.8509970753189322,
+    "bottom_quintile_rate": 0.08641975308641975,
+    "top_capped_lift": 0.7447716339397107,
+    "top_quintile_rate": 0.0958904109589041
+   },
+   "Y5": {
+    "auc": 0.4598242310106717,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.0878470512273328,
+    "bottom_quintile_rate": 0.037037037037037035,
+    "top_capped_lift": 0.7378440869194084,
+    "top_quintile_rate": 0.0136986301369863
+   }
+  },
+  "disc_half_medians": [
+   0.11904761904761904,
+   0.1297335203366059
+  ],
+  "feature": "pg_sell_buy_count_ratio",
+  "max_abs_spearman_existing": 0.9480955613826948,
+  "median_by_block": {
+   "DISC": 0.1276595744680851,
+   "OOS": 0.10613266583229036,
+   "SEL": 0.10810810810810811,
+   "VAL": 0.1206060606060606
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 427,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0392156862745098,
+   "0.5": 0.11764705882352941,
+   "0.75": 0.19230769230769232,
+   "0.95": 0.3554147465437788
+  },
+  "zero_share": 0.20591787439613526
+ },
+ {
+  "closest_existing": [
+   [
+    "m_sellers",
+    0.816
+   ],
+   [
+    "m_sells",
+    0.736
+   ],
+   [
+    "m_sell_sol",
+    0.649
+   ]
+  ],
+  "cut2_change_share": 0.13707729468599034,
+  "cut2_missing_diff": 0,
+  "definition": "buy followed by a sell of the same wallet within 10 s (count)",
+  "disc": {
+   "Y2": {
+    "auc": 0.540158371040724,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.898378765793974,
+    "bottom_quintile_rate": 0.21830985915492956,
+    "top_capped_lift": 1.0545782693209786,
+    "top_quintile_rate": 0.27586206896551724
+   },
+   "Y3": {
+    "auc": 0.5813080495356037,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.7011679348219809,
+    "bottom_quintile_rate": 0.07042253521126761,
+    "top_capped_lift": 0.9829433960433472,
+    "top_quintile_rate": 0.13793103448275862
+   },
+   "Y5": {
+    "auc": 0.43801004394224735,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.6171059636053235,
+    "bottom_quintile_rate": 0.028169014084507043,
+    "top_capped_lift": 0.05533830651895563,
+    "top_quintile_rate": 0.011494252873563218
+   }
+  },
+  "disc_half_medians": [
+   1.0,
+   1.0
+  ],
+  "feature": "pg_pingpong_10s",
+  "max_abs_spearman_existing": 0.8163366658125348,
+  "median_by_block": {
+   "DISC": 1.0,
+   "OOS": 1.0,
+   "SEL": 1.0,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 34,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 1.0,
+   "0.75": 3.0,
+   "0.95": 9.0
+  },
+  "zero_share": 0.4245169082125604
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buys_10s",
+    0.33
+   ],
+   [
+    "ef_nb_buyers_log",
+    0.298
+   ],
+   [
+    "h1_ex3_f",
+    -0.285
+   ]
+  ],
+  "cut2_change_share": 0.5501207729468599,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buys whose SOL size (1e-3) is repeated by another buy",
+  "disc": {
+   "Y2": {
+    "auc": 0.5526220103425986,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8780199165387333,
+    "bottom_quintile_rate": 0.22972972972972974,
+    "top_capped_lift": 1.2771198786017939,
+    "top_quintile_rate": 0.32098765432098764
+   },
+   "Y3": {
+    "auc": 0.5875386996904025,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.8711281889286273,
+    "bottom_quintile_rate": 0.0945945945945946,
+    "top_capped_lift": 1.812424123021626,
+    "top_quintile_rate": 0.19753086419753085
+   },
+   "Y5": {
+    "auc": 0.7853107344632768,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.0,
+    "bottom_quintile_rate": 0.0,
+    "top_capped_lift": 2.937187038313799,
+    "top_quintile_rate": 0.07407407407407407
+   }
+  },
+  "disc_half_medians": [
+   0.30434782608695654,
+   0.31475748194014447
+  ],
+  "feature": "pg_same_size_share",
+  "max_abs_spearman_existing": 0.33029392215169784,
+  "median_by_block": {
+   "DISC": 0.32,
+   "OOS": 0.42997198879551823,
+   "SEL": 0.3895663956639567,
+   "VAL": 0.375
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 508,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.11036036036036036,
+   "0.25": 0.27586206896551724,
+   "0.5": 0.3709677419354839,
+   "0.75": 0.4583333333333333,
+   "0.95": 0.5778354336545589
+  },
+  "zero_share": 0.03683574879227053
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_nb_sol_share",
+    -0.614
+   ],
+   [
+    "m_buy_sol",
+    -0.612
+   ],
+   [
+    "ez_cap_early_n_ge1",
+    -0.609
+   ]
+  ],
+  "cut2_change_share": 0.5609903381642513,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buys at the modal SOL size (1e-3)",
+  "disc": {
+   "Y2": {
+    "auc": 0.4336417259211377,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 1.0745988200749055,
+    "bottom_quintile_rate": 0.33783783783783783,
+    "top_capped_lift": 0.6654858834080849,
+    "top_quintile_rate": 0.1518987341772152
+   },
+   "Y3": {
+    "auc": 0.4441950464396285,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.2964437164643692,
+    "bottom_quintile_rate": 0.17567567567567569,
+    "top_capped_lift": 1.0482886436075347,
+    "top_quintile_rate": 0.10126582278481013
+   },
+   "Y5": {
+    "auc": 0.6889516635279347,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.10443331691782397,
+    "bottom_quintile_rate": 0.013513513513513514,
+    "top_capped_lift": 1.5427649090133084,
+    "top_quintile_rate": 0.0379746835443038
+   }
+  },
+  "disc_half_medians": [
+   0.11428571428571428,
+   0.1
+  ],
+  "feature": "pg_modal_size_share",
+  "max_abs_spearman_existing": 0.6135964066020011,
+  "median_by_block": {
+   "DISC": 0.12121212121212122,
+   "OOS": 0.13559322033898305,
+   "SEL": 0.1,
+   "VAL": 0.13793103448275862
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 298,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.06,
+   "0.25": 0.08823529411764706,
+   "0.5": 0.12121212121212122,
+   "0.75": 0.17857142857142858,
+   "0.95": 0.3333333333333333
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_max",
+    0.726
+   ],
+   [
+    "ez_fu_recv_1h_max",
+    -0.506
+   ],
+   [
+    "ef_nb_sol_share",
+    0.504
+   ]
+  ],
+  "cut2_change_share": 0.5615942028985508,
+  "cut2_missing_diff": 0,
+  "definition": "coefficient of variation of external buy sizes",
+  "disc": {
+   "Y2": {
+    "auc": 0.5664996767937944,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.48918252492872294,
+    "bottom_quintile_rate": 0.1506849315068493,
+    "top_capped_lift": 0.9884605094889423,
+    "top_quintile_rate": 0.273972602739726
+   },
+   "Y3": {
+    "auc": 0.5231424148606811,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.5956032923144295,
+    "bottom_quintile_rate": 0.0958904109589041,
+    "top_capped_lift": 0.9690859353256474,
+    "top_quintile_rate": 0.1232876712328767
+   },
+   "Y5": {
+    "auc": 0.36754551161330823,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.2507942955538876,
+    "bottom_quintile_rate": 0.0273972602739726,
+    "top_capped_lift": 0.7713824545066543,
+    "top_quintile_rate": 0.0136986301369863
+   }
+  },
+  "disc_half_medians": [
+   1.4196428197696427,
+   1.4943602601856332
+  ],
+  "feature": "pg_size_cv",
+  "max_abs_spearman_existing": 0.7258551182793735,
+  "median_by_block": {
+   "DISC": 1.430023581735231,
+   "OOS": 1.6807518674150426,
+   "SEL": 1.6474355109084493,
+   "VAL": 1.5864858251173872
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1654,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.8669742626966926,
+   "0.25": 1.301753066929339,
+   "0.5": 1.5625339367060396,
+   "0.75": 1.9041872218128275,
+   "0.95": 2.4606616142941786
+  },
+  "zero_share": 0.0018115942028985507
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    -0.884
+   ],
+   [
+    "m_buy_max",
+    -0.876
+   ],
+   [
+    "ef_nb_sol_share",
+    -0.865
+   ]
+  ],
+  "cut2_change_share": 0.5615942028985508,
+  "cut2_missing_diff": 0,
+  "definition": "distinct external buyers per SOL of external buys",
+  "disc": {
+   "Y2": {
+    "auc": 0.4673561732385262,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.9151858211805746,
+    "bottom_quintile_rate": 0.2876712328767123,
+    "top_capped_lift": 0.7653091388428918,
+    "top_quintile_rate": 0.2054794520547945
+   },
+   "Y3": {
+    "auc": 0.4745356037151703,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.039517996610009,
+    "bottom_quintile_rate": 0.1506849315068493,
+    "top_capped_lift": 0.9157412228629777,
+    "top_quintile_rate": 0.1095890410958904
+   },
+   "Y5": {
+    "auc": 0.5850596359070935,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.8361682149635402,
+    "bottom_quintile_rate": 0.0273972602739726,
+    "top_capped_lift": 1.6924671643353548,
+    "top_quintile_rate": 0.0684931506849315
+   }
+  },
+  "disc_half_medians": [
+   6.289815493950084,
+   4.902249872738075
+  ],
+  "feature": "pg_wallets_per_sol",
+  "max_abs_spearman_existing": 0.8839736356059812,
+  "median_by_block": {
+   "DISC": 5.4996782836954505,
+   "OOS": 6.482975491821477,
+   "SEL": 5.60374011635051,
+   "VAL": 5.196642317457384
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1655,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 2.2740941294483767,
+   "0.25": 3.9414355369702148,
+   "0.5": 5.687932863062694,
+   "0.75": 9.359479625265518,
+   "0.95": 32.4024851029811
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    0.884
+   ],
+   [
+    "m_buy_max",
+    0.876
+   ],
+   [
+    "ef_nb_sol_share",
+    0.865
+   ]
+  ],
+  "cut2_change_share": 0.5615942028985508,
+  "cut2_missing_diff": 0,
+  "definition": "external buy SOL per distinct external buyer",
+  "disc": {
+   "Y2": {
+    "auc": 0.5326438267614738,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7653091388428918,
+    "bottom_quintile_rate": 0.2054794520547945,
+    "top_capped_lift": 0.9151858211805746,
+    "top_quintile_rate": 0.2876712328767123
+   },
+   "Y3": {
+    "auc": 0.5254643962848298,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9157412228629777,
+    "bottom_quintile_rate": 0.1095890410958904,
+    "top_capped_lift": 1.039517996610009,
+    "top_quintile_rate": 0.1506849315068493
+   },
+   "Y5": {
+    "auc": 0.41494036409290647,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.6924671643353548,
+    "bottom_quintile_rate": 0.0684931506849315,
+    "top_capped_lift": 0.8361682149635402,
+    "top_quintile_rate": 0.0273972602739726
+   }
+  },
+  "disc_half_medians": [
+   0.1589871755319149,
+   0.20398961109671185
+  ],
+  "feature": "pg_sol_per_buyer",
+  "max_abs_spearman_existing": 0.8839736356059812,
+  "median_by_block": {
+   "DISC": 0.18182881911305315,
+   "OOS": 0.1542501600397515,
+   "SEL": 0.17845634016825418,
+   "VAL": 0.19243254192543865
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1655,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.03086190748190072,
+   "0.25": 0.10684375237915257,
+   "0.5": 0.17581084629621874,
+   "0.75": 0.25371492804846124,
+   "0.95": 0.43973730969940517
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_max",
+    0.765
+   ],
+   [
+    "m_buy_sol",
+    0.604
+   ],
+   [
+    "ef_nb_sol_share",
+    0.603
+   ]
+  ],
+  "cut2_change_share": 0.5615942028985508,
+  "cut2_missing_diff": 0,
+  "definition": "Gini of external buy SOL across buyer wallets",
+  "disc": {
+   "Y2": {
+    "auc": 0.5748626373626373,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.5639187440150555,
+    "bottom_quintile_rate": 0.1643835616438356,
+    "top_capped_lift": 0.9991612151684253,
+    "top_quintile_rate": 0.3013698630136986
+   },
+   "Y3": {
+    "auc": 0.5489938080495356,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.5888350730835837,
+    "bottom_quintile_rate": 0.0958904109589041,
+    "top_capped_lift": 1.0253022827236682,
+    "top_quintile_rate": 0.1506849315068493
+   },
+   "Y5": {
+    "auc": 0.42592592592592593,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.36365172855313704,
+    "bottom_quintile_rate": 0.0410958904109589,
+    "top_capped_lift": 0.7378440869194084,
+    "top_quintile_rate": 0.0136986301369863
+   }
+  },
+  "disc_half_medians": [
+   0.6281826404421105,
+   0.658162944229371
+  ],
+  "feature": "pg_buy_gini",
+  "max_abs_spearman_existing": 0.7652681118810826,
+  "median_by_block": {
+   "DISC": 0.6351844748345209,
+   "OOS": 0.688383389469899,
+   "SEL": 0.6768646301643512,
+   "VAL": 0.6605119010608513
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1654,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.46407414167766114,
+   "0.25": 0.6011999562140247,
+   "0.5": 0.6617596645255462,
+   "0.75": 0.7190310484356213,
+   "0.95": 0.7847491981450672
+  },
+  "zero_share": 0.0018115942028985507
+ },
+ {
+  "closest_existing": [
+   [
+    "m_top_buyer_share",
+    0.866
+   ],
+   [
+    "ez_cap_early_n_ge1",
+    -0.721
+   ],
+   [
+    "ez_cap_all_n_ge1",
+    -0.715
+   ]
+  ],
+  "cut2_change_share": 0.5573671497584541,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buy SOL from the 5 largest buyers",
+  "disc": {
+   "Y2": {
+    "auc": 0.47133564964447316,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.997690779237346,
+    "bottom_quintile_rate": 0.2602739726027397,
+    "top_capped_lift": 0.8513550745641606,
+    "top_quintile_rate": 0.1917808219178082
+   },
+   "Y3": {
+    "auc": 0.4824303405572755,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.0468179077041488,
+    "bottom_quintile_rate": 0.1232876712328767,
+    "top_capped_lift": 1.4493281328835272,
+    "top_quintile_rate": 0.1232876712328767
+   },
+   "Y5": {
+    "auc": 0.5881983678593848,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.8619892824963248,
+    "bottom_quintile_rate": 0.0273972602739726,
+    "top_capped_lift": 2.3748684313674255,
+    "top_quintile_rate": 0.0547945205479452
+   }
+  },
+  "disc_half_medians": [
+   0.6324322806884041,
+   0.6234174357341061
+  ],
+  "feature": "pg_top5_buyer_share",
+  "max_abs_spearman_existing": 0.8663728883037018,
+  "median_by_block": {
+   "DISC": 0.6281010625347963,
+   "OOS": 0.6149953013253828,
+   "SEL": 0.6142575383005263,
+   "VAL": 0.6959891018146505
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1613,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.40628763112814853,
+   "0.25": 0.5240654064363905,
+   "0.5": 0.6266431507861241,
+   "0.75": 0.7610773959832121,
+   "0.95": 0.9996274367621565
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_median",
+    -0.942
+   ],
+   [
+    "ef_nb_median_buy_sol",
+    -0.936
+   ],
+   [
+    "ez_sol_median",
+    -0.747
+   ]
+  ],
+  "cut2_change_share": 0.5543478260869565,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buys below 0.05 SOL",
+  "disc": {
+   "Y2": {
+    "auc": 0.48573852617970265,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.6409951881434854,
+    "bottom_quintile_rate": 0.22972972972972974,
+    "top_capped_lift": 0.5857199188134662,
+    "top_quintile_rate": 0.1643835616438356
+   },
+   "Y3": {
+    "auc": 0.5011996904024768,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.623134220438284,
+    "bottom_quintile_rate": 0.0945945945945946,
+    "top_capped_lift": 0.6588364454082056,
+    "top_quintile_rate": 0.0821917808219178
+   },
+   "Y5": {
+    "auc": 0.59353421217828,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.09428007777303551,
+    "bottom_quintile_rate": 0.013513513513513514,
+    "top_capped_lift": 0.8858183131422569,
+    "top_quintile_rate": 0.0410958904109589
+   }
+  },
+  "disc_half_medians": [
+   0.4473684210526316,
+   0.4687364307425098
+  ],
+  "feature": "pg_small_buy_share",
+  "max_abs_spearman_existing": 0.9420826283700714,
+  "median_by_block": {
+   "DISC": 0.4382621951219512,
+   "OOS": 0.5238095238095238,
+   "SEL": 0.4607692307692308,
+   "VAL": 0.4027027027027027
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 530,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.24414414414414415,
+   "0.25": 0.3623293219162231,
+   "0.5": 0.4666666666666667,
+   "0.75": 0.6008620689655172,
+   "0.95": 0.8415384615384616
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_max",
+    0.898
+   ],
+   [
+    "m_buy_sol",
+    0.746
+   ],
+   [
+    "ef_nb_sol_share",
+    0.715
+   ]
+  ],
+  "cut2_change_share": 0.3442028985507246,
+  "cut2_missing_diff": 0,
+  "definition": "share of external buy SOL from buys >= 1 SOL",
+  "disc": {
+   "Y2": {
+    "auc": 0.5601365546218487,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8134419183080472,
+    "bottom_quintile_rate": 0.20555555555555555,
+    "top_capped_lift": 1.0653886550604867,
+    "top_quintile_rate": 0.2876712328767123
+   },
+   "Y3": {
+    "auc": 0.5861842105263158,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.7541515612399821,
+    "bottom_quintile_rate": 0.08333333333333333,
+    "top_capped_lift": 1.3781246391317918,
+    "top_quintile_rate": 0.1643835616438356
+   },
+   "Y5": {
+    "auc": 0.5089453860640302,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.8658374489360405,
+    "bottom_quintile_rate": 0.027777777777777776,
+    "top_capped_lift": 1.5345587126887699,
+    "top_quintile_rate": 0.0410958904109589
+   }
+  },
+  "disc_half_medians": [
+   0.0,
+   0.15651961288085497
+  ],
+  "feature": "pg_big_buy_sol_share",
+  "max_abs_spearman_existing": 0.8975933594070258,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.16223005206787453,
+   "SEL": 0.15569163533738362,
+   "VAL": 0.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 837,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.10841214004875804,
+   "0.75": 0.39135769305552837,
+   "0.95": 0.6688404867694221
+  },
+  "zero_share": 0.49516908212560384
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sol",
+    0.999
+   ],
+   [
+    "ef_nb_sol_share",
+    0.987
+   ],
+   [
+    "m_buy_max",
+    0.898
+   ]
+  ],
+  "cut2_change_share": 0.5615942028985508,
+  "cut2_missing_diff": 0,
+  "definition": "external buy SOL / bundle SOL (core tickets)",
+  "disc": {
+   "Y2": {
+    "auc": 0.5622575953458306,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.6638778819611844,
+    "bottom_quintile_rate": 0.1917808219178082,
+    "top_capped_lift": 1.0710449299365343,
+    "top_quintile_rate": 0.3424657534246575
+   },
+   "Y3": {
+    "auc": 0.5532507739938081,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.0169621385004652,
+    "bottom_quintile_rate": 0.1232876712328767,
+    "top_capped_lift": 1.3109625196131796,
+    "top_quintile_rate": 0.1917808219178082
+   },
+   "Y5": {
+    "auc": 0.4227871939736347,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.758838425681839,
+    "bottom_quintile_rate": 0.0684931506849315,
+    "top_capped_lift": 1.5374904990679639,
+    "top_quintile_rate": 0.0410958904109589
+   }
+  },
+  "disc_half_medians": [
+   0.06374336148060344,
+   0.08657162529444648
+  ],
+  "feature": "pg_ext_over_bundle",
+  "max_abs_spearman_existing": 0.999265927442723,
+  "median_by_block": {
+   "DISC": 0.07047471032989289,
+   "OOS": 0.07625160469185033,
+   "SEL": 0.09227059282101373,
+   "VAL": 0.06577111541847036
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1655,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.00343611686251183,
+   "0.25": 0.029452165282838838,
+   "0.5": 0.0784992589272207,
+   "0.75": 0.12603521707255746,
+   "0.95": 0.23979240135424193
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_sell_sol",
+    0.855
+   ],
+   [
+    "m_buy_sol",
+    0.853
+   ],
+   [
+    "m_buy_max",
+    0.844
+   ]
+  ],
+  "cut2_change_share": 0.6358695652173914,
+  "cut2_missing_diff": 0,
+  "definition": "(external buy + sell SOL) per distinct external trader",
+  "disc": {
+   "Y2": {
+    "auc": 0.5505413703943116,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.6896114761147968,
+    "bottom_quintile_rate": 0.2054794520547945,
+    "top_capped_lift": 1.0166596414554012,
+    "top_quintile_rate": 0.2876712328767123
+   },
+   "Y3": {
+    "auc": 0.5388544891640867,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.6619933700424533,
+    "bottom_quintile_rate": 0.1095890410958904,
+    "top_capped_lift": 0.5385488822692831,
+    "top_quintile_rate": 0.1095890410958904
+   },
+   "Y5": {
+    "auc": 0.40552416823603266,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.0606508749466497,
+    "bottom_quintile_rate": 0.0547945205479452,
+    "top_capped_lift": 0.11019749350095061,
+    "top_quintile_rate": 0.0136986301369863
+   }
+  },
+  "disc_half_medians": [
+   0.1934305587741928,
+   0.26096071431016543
+  ],
+  "feature": "pg_apparent_per_wallet",
+  "max_abs_spearman_existing": 0.8548100187875342,
+  "median_by_block": {
+   "DISC": 0.22797907955151528,
+   "OOS": 0.251823086854592,
+   "SEL": 0.28924765916524736,
+   "VAL": 0.3217188925451285
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1655,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.031104543982143542,
+   "0.25": 0.13636952036993943,
+   "0.5": 0.2625060272566877,
+   "0.75": 0.38990164305046804,
+   "0.95": 0.6531980420777782
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buy_sell_ratio",
+    -1.0
+   ],
+   [
+    "m_sell_sol",
+    0.909
+   ],
+   [
+    "m_sell_max",
+    0.901
+   ]
+  ],
+  "cut2_change_share": 0.5700483091787439,
+  "cut2_missing_diff": 0,
+  "definition": "external sell SOL / external buy SOL",
+  "disc": {
+   "Y2": {
+    "auc": 0.5537734324499031,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7300751686970419,
+    "bottom_quintile_rate": 0.19753086419753085,
+    "top_capped_lift": 1.0463070672086572,
+    "top_quintile_rate": 0.2465753424657534
+   },
+   "Y3": {
+    "auc": 0.5540247678018576,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.8509970753189322,
+    "bottom_quintile_rate": 0.08641975308641975,
+    "top_capped_lift": 1.2337496769370324,
+    "top_quintile_rate": 0.1095890410958904
+   },
+   "Y5": {
+    "auc": 0.433458882611425,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.0878470512273328,
+    "bottom_quintile_rate": 0.037037037037037035,
+    "top_capped_lift": 0.6926699591488323,
+    "top_quintile_rate": 0.0136986301369863
+   }
+  },
+  "disc_half_medians": [
+   0.1236660527240788,
+   0.23344241651727712
+  ],
+  "feature": "pg_sell_pressure",
+  "max_abs_spearman_existing": 1.0,
+  "median_by_block": {
+   "DISC": 0.16238658166704012,
+   "OOS": 0.5803954068222927,
+   "SEL": 0.47573095874290316,
+   "VAL": 0.5362133449592588
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 1316,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.020627418048731264,
+   "0.5": 0.3606391077499431,
+   "0.75": 0.7340979631605824,
+   "0.95": 1.4905181176877869
+  },
+  "zero_share": 0.20591787439613526
+ },
+ {
+  "closest_existing": [
+   [
+    "m_core_sell_sol",
+    0.996
+   ],
+   [
+    "ef_bundle_sold_share",
+    0.995
+   ],
+   [
+    "sc_n_snipers_here",
+    0.763
+   ]
+  ],
+  "cut2_change_share": 0.08635265700483091,
+  "cut2_missing_diff": 0,
+  "definition": "core sniper sell SOL before the cut / external buy SOL",
+  "disc": {
+   "Y2": {
+    "auc": 0.514746283128636,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.9645275956347309,
+    "bottom_quintile_rate": 0.24271844660194175,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.25068870523415976
+   },
+   "Y3": {
+    "auc": 0.5239938080495357,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.003237481861114,
+    "bottom_quintile_rate": 0.10355987055016182,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.11019283746556474
+   },
+   "Y5": {
+    "auc": 0.5448838669177652,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.8192103521436038,
+    "bottom_quintile_rate": 0.022653721682847898,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.024793388429752067
+   }
+  },
+  "disc_half_medians": [
+   0.0,
+   0.0
+  ],
+  "feature": "pg_core_sell_over_ext_buy",
+  "max_abs_spearman_existing": 0.9956991486029598,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 198,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.0,
+   "0.95": 0.9057470643994312
+  },
+  "zero_share": 0.8810386473429952
+ },
+ {
+  "closest_existing": [
+   [
+    "h1_ex2_f",
+    0.227
+   ],
+   [
+    "h1_ex3_f",
+    0.219
+   ],
+   [
+    "first_tp_sell_dslot_log",
+    -0.161
+   ]
+  ],
+  "cut2_change_share": 0.0,
+  "cut2_missing_diff": 0,
+  "definition": "1 if the first external trade after slot 0 is a sell",
+  "disc": {
+   "Y2": {
+    "auc": 0.5091507756948933,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.9940638760667481,
+    "bottom_quintile_rate": 0.24722222222222223,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.25068870523415976
+   },
+   "Y3": {
+    "auc": 0.5094040247678019,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.98338173069988,
+    "bottom_quintile_rate": 0.10833333333333334,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.11019283746556474
+   },
+   "Y5": {
+    "auc": 0.4957627118644068,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.0000681177976953,
+    "bottom_quintile_rate": 0.025,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.024793388429752067
+   }
+  },
+  "disc_half_medians": [
+   0.0,
+   0.0
+  ],
+  "feature": "pg_sell_first",
+  "max_abs_spearman_existing": 0.2274515283108826,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 2,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.0,
+   "0.95": 0.0
+  },
+  "zero_share": 0.9885265700483091
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_nb_buyers_log",
+    0.626
+   ],
+   [
+    "m_buyers",
+    0.616
+   ],
+   [
+    "ez_buys_10s",
+    0.616
+   ]
+  ],
+  "cut2_change_share": 0.12620772946859904,
+  "cut2_missing_diff": 0,
+  "definition": "longest run of consecutive external buys without an external sell",
+  "disc": {
+   "Y2": {
+    "auc": 0.5604395604395604,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.949695011766385,
+    "bottom_quintile_rate": 0.24,
+    "top_capped_lift": 1.3738757012506733,
+    "top_quintile_rate": 0.31645569620253167
+   },
+   "Y3": {
+    "auc": 0.5944272445820433,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.111786501626347,
+    "bottom_quintile_rate": 0.09333333333333334,
+    "top_capped_lift": 1.6049585032400964,
+    "top_quintile_rate": 0.17721518987341772
+   },
+   "Y5": {
+    "auc": 0.46861268047708726,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.2121724285104567,
+    "bottom_quintile_rate": 0.02666666666666667,
+    "top_capped_lift": 1.655650146258185,
+    "top_quintile_rate": 0.02531645569620253
+   }
+  },
+  "disc_half_medians": [
+   19.0,
+   15.0
+  ],
+  "feature": "pg_buy_run_max",
+  "max_abs_spearman_existing": 0.6256642342984652,
+  "median_by_block": {
+   "DISC": 17.0,
+   "OOS": 18.5,
+   "SEL": 17.0,
+   "VAL": 12.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 57,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 6.0,
+   "0.25": 12.0,
+   "0.5": 16.0,
+   "0.75": 22.0,
+   "0.95": 33.0
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "x_burst_pre",
+    0.989
+   ],
+   [
+    "ez_buys_5s",
+    0.334
+   ],
+   [
+    "m_buys_5s",
+    0.324
+   ]
+  ],
+  "cut2_change_share": 0.5723192019950125,
+  "cut2_missing_diff": 5,
+  "definition": "coefficient of variation of the slot gaps between consecutive external buys",
+  "disc": {
+   "Y2": {
+    "auc": 0.5530087809917356,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.604284295500187,
+    "bottom_quintile_rate": 0.15492957746478872,
+    "top_capped_lift": 1.178323836985826,
+    "top_quintile_rate": 0.28169014084507044
+   },
+   "Y3": {
+    "auc": 0.535031847133758,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.9698460027259026,
+    "bottom_quintile_rate": 0.08450704225352113,
+    "top_capped_lift": 0.8278264953269121,
+    "top_quintile_rate": 0.09859154929577464
+   },
+   "Y5": {
+    "auc": 0.4557823129251701,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.3310128626781486,
+    "bottom_quintile_rate": 0.028169014084507043,
+    "top_capped_lift": 1.2570677036404736,
+    "top_quintile_rate": 0.028169014084507043
+   }
+  },
+  "disc_half_medians": [
+   1.6657324419462054,
+   1.8708286933869709
+  ],
+  "feature": "pg_buy_slot_gap_cv",
+  "max_abs_spearman_existing": 0.9892887052314321,
+  "median_by_block": {
+   "DISC": 1.7531261460926426,
+   "OOS": 1.7333333333333332,
+   "SEL": 1.8321424325271904,
+   "VAL": 1.610224896259381
+  },
+  "missing_share_by_block": {
+   "DISC": 0.03576982892690513,
+   "OOS": 0.008571428571428572,
+   "SEL": 0.021505376344086023,
+   "VAL": 0.04794520547945205
+  },
+  "n_distinct": 1510,
+  "n_nonnull": 1609,
+  "quantiles_all": {
+   "0.05": 1.1191414116476808,
+   "0.25": 1.4813657362192647,
+   "0.5": 1.7510327531143837,
+   "0.75": 2.0674393716758797,
+   "0.95": 2.6752385053426373
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "fpc_nonstd_seen",
+    0.637
+   ],
+   [
+    "m_buy_sol",
+    -0.325
+   ],
+   [
+    "ef_nb_sol_share",
+    -0.314
+   ]
+  ],
+  "cut2_change_share": 0.1392757660167131,
+  "cut2_missing_diff": 17,
+  "definition": "share of second-half external buys made by wallets absent from the first half",
+  "disc": {
+   "Y2": {
+    "auc": 0.4822464915057508,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 1.0288438752978808,
+    "bottom_quintile_rate": 0.2571428571428571,
+    "top_capped_lift": 1.0681275987071681,
+    "top_quintile_rate": 0.2490566037735849
+   },
+   "Y3": {
+    "auc": 0.42076617123717813,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.934793412431863,
+    "bottom_quintile_rate": 0.10793650793650794,
+    "top_capped_lift": 0.9346588461644186,
+    "top_quintile_rate": 0.09056603773584905
+   },
+   "Y5": {
+    "auc": 0.5207654723127035,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.9889195724463331,
+    "bottom_quintile_rate": 0.025396825396825397,
+    "top_capped_lift": 1.1448295158154314,
+    "top_quintile_rate": 0.026415094339622643
+   }
+  },
+  "disc_half_medians": [
+   1.0,
+   1.0
+  ],
+  "feature": "pg_novelty_2nd_half",
+  "max_abs_spearman_existing": 0.6365805579603048,
+  "median_by_block": {
+   "DISC": 1.0,
+   "OOS": 1.0,
+   "SEL": 1.0,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.13530326594090203,
+   "OOS": 0.07428571428571429,
+   "SEL": 0.056451612903225805,
+   "VAL": 0.17123287671232876
+  },
+  "n_distinct": 99,
+  "n_nonnull": 1473,
+  "quantiles_all": {
+   "0.05": 0.8181818181818182,
+   "0.25": 1.0,
+   "0.5": 1.0,
+   "0.75": 1.0,
+   "0.95": 1.0
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_nb_late_sol_share",
+    0.287
+   ],
+   [
+    "ef_nb_sol_after_exit_share",
+    0.232
+   ],
+   [
+    "h1_ex2_k",
+    -0.227
+   ]
+  ],
+  "cut2_change_share": 0.6511142061281338,
+  "cut2_missing_diff": 17,
+  "definition": "median external buy size, second half over first half of the window",
+  "disc": {
+   "Y2": {
+    "auc": 0.5392001688297985,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.8027100781689478,
+    "bottom_quintile_rate": 0.23809523809523808,
+    "top_capped_lift": 1.1571273242183606,
+    "top_quintile_rate": 0.2698412698412698
+   },
+   "Y3": {
+    "auc": 0.5578815155955621,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.5057105357894489,
+    "bottom_quintile_rate": 0.07936507936507936,
+    "top_capped_lift": 1.4701667331447457,
+    "top_quintile_rate": 0.14285714285714285
+   },
+   "Y5": {
+    "auc": 0.496742671009772,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.9933900877549109,
+    "bottom_quintile_rate": 0.031746031746031744,
+    "top_capped_lift": 1.5427649090133086,
+    "top_quintile_rate": 0.031746031746031744
+   }
+  },
+  "disc_half_medians": [
+   1.4466304825934182,
+   1.2277668770309373
+  ],
+  "feature": "pg_size_shift",
+  "max_abs_spearman_existing": 0.287278804180141,
+  "median_by_block": {
+   "DISC": 1.2785742189692475,
+   "OOS": 0.9272436989873526,
+   "SEL": 1.254344112265145,
+   "VAL": 1.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.13530326594090203,
+   "OOS": 0.07428571428571429,
+   "SEL": 0.056451612903225805,
+   "VAL": 0.17123287671232876
+  },
+  "n_distinct": 1458,
+  "n_nonnull": 1473,
+  "quantiles_all": {
+   "0.05": 0.1659808337187992,
+   "0.25": 0.5986533507625617,
+   "0.5": 1.1272944326162904,
+   "0.75": 2.045163143559772,
+   "0.95": 8.72231411277521
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "ez_sol_mean",
+    0.84
+   ],
+   [
+    "ez_n_early",
+    -0.832
+   ],
+   [
+    "h1_e_n",
+    -0.832
+   ]
+  ],
+  "cut2_change_share": 0.5658212560386473,
+  "cut2_missing_diff": 0,
+  "definition": "token accounts opened by first-time wallets / distinct external buyers",
+  "disc": {
+   "Y2": {
+    "auc": 0.4353789592760181,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 1.0169847228781344,
+    "bottom_quintile_rate": 0.273972602739726,
+    "top_capped_lift": 0.6858389380747073,
+    "top_quintile_rate": 0.17333333333333334
+   },
+   "Y3": {
+    "auc": 0.46408668730650154,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.2142962511915052,
+    "bottom_quintile_rate": 0.1506849315068493,
+    "top_capped_lift": 1.0419833087137798,
+    "top_quintile_rate": 0.10666666666666667
+   },
+   "Y5": {
+    "auc": 0.5745448838669177,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.9888775074690569,
+    "bottom_quintile_rate": 0.0273972602739726,
+    "top_capped_lift": 1.512514616679714,
+    "top_quintile_rate": 0.04
+   }
+  },
+  "disc_half_medians": [
+   0.4523809523809524,
+   0.3895297249334516
+  ],
+  "feature": "pg_fresh_ata_share",
+  "max_abs_spearman_existing": 0.8402103458920175,
+  "median_by_block": {
+   "DISC": 0.44281045751633985,
+   "OOS": 0.3,
+   "SEL": 0.3111111111111111,
+   "VAL": 0.4740740740740741
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 450,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.17804621848739496,
+   "0.25": 0.2727272727272727,
+   "0.5": 0.3783783783783784,
+   "0.75": 0.5714285714285714,
+   "0.95": 1.3333333333333333
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buys",
+    0.695
+   ],
+   [
+    "m_buyers",
+    0.693
+   ],
+   [
+    "ef_nb_buyers_log",
+    0.693
+   ]
+  ],
+  "cut2_change_share": 0.10809178743961352,
+  "cut2_missing_diff": 0,
+  "definition": "pairs of external buys in the same slot by different wallets within 5 % in size",
+  "disc": {
+   "Y2": {
+    "auc": 0.565893665158371,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7247148517462562,
+    "bottom_quintile_rate": 0.17333333333333334,
+    "top_capped_lift": 1.0162993428785387,
+    "top_quintile_rate": 0.24390243902439024
+   },
+   "Y3": {
+    "auc": 0.5455882352941176,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.0831309690958,
+    "bottom_quintile_rate": 0.09333333333333334,
+    "top_capped_lift": 1.323391957182802,
+    "top_quintile_rate": 0.13414634146341464
+   },
+   "Y5": {
+    "auc": 0.4930947897049592,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.4461004410300184,
+    "bottom_quintile_rate": 0.04,
+    "top_capped_lift": 0.8838757291222081,
+    "top_quintile_rate": 0.024390243902439025
+   }
+  },
+  "disc_half_medians": [
+   3.0,
+   3.0
+  ],
+  "feature": "pg_sync_same_size_pairs",
+  "max_abs_spearman_existing": 0.6948805832158789,
+  "median_by_block": {
+   "DISC": 3.0,
+   "OOS": 5.0,
+   "SEL": 3.0,
+   "VAL": 2.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 52,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 1.0,
+   "0.5": 3.0,
+   "0.75": 6.0,
+   "0.95": 15.0
+  },
+  "zero_share": 0.19384057971014493
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_nb_buyers_log",
+    0.708
+   ],
+   [
+    "m_buyers",
+    0.705
+   ],
+   [
+    "ez_buys_10s",
+    0.705
+   ]
+  ],
+  "cut2_change_share": 0.019927536231884056,
+  "cut2_missing_diff": 0,
+  "definition": "largest number of distinct external buyers in one slot",
+  "disc": {
+   "Y2": {
+    "auc": 0.5419966063348416,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7319493304236532,
+    "bottom_quintile_rate": 0.175,
+    "top_capped_lift": 1.0899329941394353,
+    "top_quintile_rate": 0.28378378378378377
+   },
+   "Y3": {
+    "auc": 0.5431501547987616,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.2410082862598197,
+    "bottom_quintile_rate": 0.1125,
+    "top_capped_lift": 1.1175657686913312,
+    "top_quintile_rate": 0.14864864864864866
+   },
+   "Y5": {
+    "auc": 0.38386691776522286,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.6044755053738409,
+    "bottom_quintile_rate": 0.05,
+    "top_capped_lift": 0.9888775074690569,
+    "top_quintile_rate": 0.02702702702702703
+   }
+  },
+  "disc_half_medians": [
+   6.0,
+   7.5
+  ],
+  "feature": "pg_same_slot_max_buyers",
+  "max_abs_spearman_existing": 0.7081645658009385,
+  "median_by_block": {
+   "DISC": 6.0,
+   "OOS": 6.0,
+   "SEL": 7.0,
+   "VAL": 5.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 25,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 2.0,
+   "0.25": 4.0,
+   "0.5": 6.0,
+   "0.75": 8.0,
+   "0.95": 12.0
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "ez_fu_ntx_24h_sum",
+    0.369
+   ],
+   [
+    "ez_fu_ntx_7d_sum",
+    0.365
+   ],
+   [
+    "ez_fu_ntx_6h_sum",
+    0.351
+   ]
+  ],
+  "cut2_change_share": 0.1642512077294686,
+  "cut2_missing_diff": 0,
+  "definition": "share of external trades whose fee payer is not the trader",
+  "disc": {
+   "Y2": {
+    "auc": 0.5214932126696833,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.92871006270902,
+    "bottom_quintile_rate": 0.24126984126984127,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.25068870523415976
+   },
+   "Y3": {
+    "auc": 0.5072755417956656,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.0380816449609505,
+    "bottom_quintile_rate": 0.10793650793650794,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.11019283746556474
+   },
+   "Y5": {
+    "auc": 0.5499058380414312,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.8629253672600915,
+    "bottom_quintile_rate": 0.022222222222222223,
+    "top_capped_lift": 1.0,
+    "top_quintile_rate": 0.024793388429752067
+   }
+  },
+  "disc_half_medians": [
+   0.0,
+   0.0
+  ],
+  "feature": "pg_payer_mismatch_share",
+  "max_abs_spearman_existing": 0.3694442302028131,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 133,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.0,
+   "0.95": 0.04
+  },
+  "zero_share": 0.7832125603864735
+ },
+ {
+  "closest_existing": [
+   [
+    "ef_nb_median_buy_sol",
+    -0.79
+   ],
+   [
+    "m_buy_median",
+    -0.779
+   ],
+   [
+    "ez_sol_median",
+    -0.7
+   ]
+  ],
+  "cut2_change_share": 0.6340579710144928,
+  "cut2_missing_diff": 0,
+  "definition": "share of external trades paying the modal priority fee",
+  "disc": {
+   "Y2": {
+    "auc": 0.4783451842275372,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7441009740304684,
+    "bottom_quintile_rate": 0.2191780821917808,
+    "top_capped_lift": 0.6261301593629598,
+    "top_quintile_rate": 0.1917808219178082
+   },
+   "Y3": {
+    "auc": 0.48842879256965943,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.586693854636007,
+    "bottom_quintile_rate": 0.0958904109589041,
+    "top_capped_lift": 0.5875588182733997,
+    "top_quintile_rate": 0.0958904109589041
+   },
+   "Y5": {
+    "auc": 0.6120527306967984,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.11636855313700384,
+    "bottom_quintile_rate": 0.0136986301369863,
+    "top_capped_lift": 0.4122367773071999,
+    "top_quintile_rate": 0.0410958904109589
+   }
+  },
+  "disc_half_medians": [
+   0.3333333333333333,
+   0.2857142857142857
+  ],
+  "feature": "pg_modal_prio_share",
+  "max_abs_spearman_existing": 0.7899322631602537,
+  "median_by_block": {
+   "DISC": 0.2845238095238095,
+   "OOS": 0.3,
+   "SEL": 0.2608695652173913,
+   "VAL": 0.16981132075471697
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 567,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.10755494505494506,
+   "0.25": 0.1724137931034483,
+   "0.5": 0.26239754098360657,
+   "0.75": 0.3696396664681358,
+   "0.95": 0.6407142857142858
+  },
+  "zero_share": 0.0
+ },
+ {
+  "closest_existing": [
+   [
+    "x_motif_fs60_n",
+    -0.393
+   ],
+   [
+    "b_core_tip_sol",
+    0.389
+   ],
+   [
+    "h_creator_tx_24h",
+    -0.386
+   ]
+  ],
+  "cut2_change_share": 0.3442028985507246,
+  "cut2_missing_diff": 0,
+  "definition": "share of external trades with >= 2 signatures",
+  "disc": {
+   "Y2": {
+    "auc": 0.5841750161603103,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.7493578733414628,
+    "bottom_quintile_rate": 0.1783783783783784,
+    "top_capped_lift": 1.2999572653198468,
+    "top_quintile_rate": 0.2876712328767123
+   },
+   "Y3": {
+    "auc": 0.5886609907120743,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 0.6389765751768103,
+    "bottom_quintile_rate": 0.07027027027027027,
+    "top_capped_lift": 1.4988529133036677,
+    "top_quintile_rate": 0.1095890410958904
+   },
+   "Y5": {
+    "auc": 0.6148775894538606,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 0.47515201825753023,
+    "bottom_quintile_rate": 0.021621621621621623,
+    "top_capped_lift": 3.205522644283208,
+    "top_quintile_rate": 0.0684931506849315
+   }
+  },
+  "disc_half_medians": [
+   0.0196078431372549,
+   0.0
+  ],
+  "feature": "pg_multisig_share",
+  "max_abs_spearman_existing": 0.3926273494492182,
+  "median_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.017543859649122806,
+   "VAL": 0.015504807692307693
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0015552099533437014,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 194,
+  "n_nonnull": 1656,
+  "quantiles_all": {
+   "0.05": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 0.029411764705882353,
+   "0.95": 0.07518939393939394
+  },
+  "zero_share": 0.5464975845410628
+ },
+ {
+  "closest_existing": [
+   [
+    "m_buys",
+    0.983
+   ],
+   [
+    "m_buyers",
+    0.977
+   ],
+   [
+    "ez_n_early",
+    0.962
+   ]
+  ],
+  "cut2_change_share": 0.6354858177429089,
+  "cut2_missing_diff": 0,
+  "definition": "number of external trades (coverage)",
+  "disc": {
+   "Y2": {
+    "auc": 0.5804783451842276,
+    "base": 0.25068870523415976,
+    "bottom_capped_lift": 0.6405661965225887,
+    "bottom_quintile_rate": 0.17721518987341772,
+    "top_capped_lift": 1.345899010385904,
+    "top_quintile_rate": 0.32432432432432434
+   },
+   "Y3": {
+    "auc": 0.56234520123839,
+    "base": 0.11019283746556474,
+    "bottom_capped_lift": 1.2291499836289164,
+    "bottom_quintile_rate": 0.12658227848101267,
+    "top_capped_lift": 1.6356529807877325,
+    "top_quintile_rate": 0.1891891891891892
+   },
+   "Y5": {
+    "auc": 0.42765222849968615,
+    "base": 0.024793388429752067,
+    "bottom_capped_lift": 1.6300912246178354,
+    "bottom_quintile_rate": 0.05063291139240506,
+    "top_capped_lift": 0.8946986972339086,
+    "top_quintile_rate": 0.02702702702702703
+   }
+  },
+  "disc_half_medians": [
+   35.0,
+   36.5
+  ],
+  "feature": "pg_n_ext_trades",
+  "max_abs_spearman_existing": 0.9828869422098861,
+  "median_by_block": {
+   "DISC": 34.0,
+   "OOS": 45.0,
+   "SEL": 47.0,
+   "VAL": 31.0
+  },
+  "missing_share_by_block": {
+   "DISC": 0.0,
+   "OOS": 0.0,
+   "SEL": 0.0,
+   "VAL": 0.0
+  },
+  "n_distinct": 120,
+  "n_nonnull": 1657,
+  "quantiles_all": {
+   "0.05": 8.0,
+   "0.25": 22.0,
+   "0.5": 40.0,
+   "0.75": 55.0,
+   "0.95": 79.0
+  },
+  "zero_share": 0.0006035003017501509
+ }
+]

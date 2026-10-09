@@ -1,0 +1,53 @@
+{
+ "K1": {
+  "bt_after_window": 0,
+  "bt_before_create": 0,
+  "records": 308520,
+  "slot_bt_inversions_gt1s": 0
+ },
+ "K3_sol_by_cut": {
+  "cut_+17": {
+   "ext_sol": 43198.400898964625,
+   "late_team_joiner_sol": 8.101914217,
+   "other_team_sniper_sol": 492.49127010600006,
+   "same_team_sniper_sol": 94.08324962500002,
+   "share_late_team_joiner_sol": 0.00018755125301858535,
+   "share_other_team_sniper_sol": 0.01140068289235688,
+   "share_same_team_sniper_sol": 0.0021779336194654142
+  },
+  "cut_+2": {
+   "ext_sol": 26578.548097468203,
+   "late_team_joiner_sol": 9.311011440000001,
+   "other_team_sniper_sol": 482.93399714400005,
+   "same_team_sniper_sol": 94.08324962500002,
+   "share_late_team_joiner_sol": 0.0003503205444426418,
+   "share_other_team_sniper_sol": 0.01817006690406851,
+   "share_same_team_sniper_sol": 0.0035398190029034024
+  },
+  "cut_+27": {
+   "ext_sol": 60153.34615468147,
+   "late_team_joiner_sol": 0.8086543500000001,
+   "other_team_sniper_sol": 521.3521159080002,
+   "same_team_sniper_sol": 94.08324962500002,
+   "share_late_team_joiner_sol": 1.3443214745204429e-05,
+   "share_other_team_sniper_sol": 0.008667050949540995,
+   "share_same_team_sniper_sol": 0.0015640567921702878
+  },
+  "cut_+29": {
+   "ext_sol": 63954.50175928647,
+   "other_team_sniper_sol": 532.8643964110005,
+   "same_team_sniper_sol": 94.08324962500002,
+   "share_other_team_sniper_sol": 0.008331929445977214,
+   "share_same_team_sniper_sol": 0.0014710965926857328
+  },
+  "cut_+7": {
+   "ext_sol": 31635.17699451737,
+   "late_team_joiner_sol": 12.647575436000004,
+   "other_team_sniper_sol": 482.93399714400005,
+   "same_team_sniper_sol": 94.08324962500002,
+   "share_late_team_joiner_sol": 0.0003997946791380978,
+   "share_other_team_sniper_sol": 0.015265727681172651,
+   "share_same_team_sniper_sol": 0.0029740073729097646
+  }
+ }
+}
