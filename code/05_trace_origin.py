@@ -78,7 +78,7 @@ def deep_signatures(addr: str, max_pages: int) -> tuple:
         if i % 20 == 19:
             old = min((s.get("blockTime") or 0) for s in pg)
             print(f"    … {len(out)} sigs, plus ancienne "
-                  f"{dt.datetime.fromtimestamp(old, dt.UTC):%Y-%m-%d}", flush=True)
+                  f"{dt.datetime.fromtimestamp(old, dt.timezone.utc):%Y-%m-%d}", flush=True)
         time.sleep(0.05)
     return sorted(out, key=lambda s: s.get("blockTime") or 0), False
 
@@ -101,7 +101,7 @@ def sampled_signatures(addr: str, max_pages: int, keep_per_page: int = 60) -> tu
         if i % 25 == 24:
             old = min((s.get("blockTime") or 0) for s in pg)
             print(f"    … page {i+1}, remonte a "
-                  f"{dt.datetime.fromtimestamp(old, dt.UTC):%Y-%m-%d}", flush=True)
+                  f"{dt.datetime.fromtimestamp(old, dt.timezone.utc):%Y-%m-%d}", flush=True)
         time.sleep(0.04)
     return sorted(out, key=lambda s: s.get("blockTime") or 0), False
 
@@ -165,7 +165,7 @@ def main() -> None:
             if not sigs:
                 trace.append({"level": level, "addr": addr, "status": "aucune signature"})
                 continue
-            oldest = dt.datetime.fromtimestamp(sigs[0].get("blockTime") or 0, dt.UTC)
+            oldest = dt.datetime.fromtimestamp(sigs[0].get("blockTime") or 0, dt.timezone.utc)
             print(f"  {len(sigs)} signatures retenues | remonte a {oldest:%Y-%m-%d} | "
                   f"genese {'ATTEINTE' if complete else 'NON atteinte (echantillon)'}", flush=True)
 
@@ -183,7 +183,7 @@ def main() -> None:
                     "oldest_seen": oldest.strftime("%Y-%m-%d"),
                     "n_inflows": len(ins),
                     "sources": [{"addr": s, "total_sol": round(v["total"], 4), "n": v["n"],
-                                 "first": dt.datetime.fromtimestamp(v["first"], dt.UTC)
+                                 "first": dt.datetime.fromtimestamp(v["first"], dt.timezone.utc)
                                             .strftime("%Y-%m-%d") if v["first"] else None,
                                  "known": KNOWN.get(s)} for s, v in ranked[:8]]}
             trace.append(node)

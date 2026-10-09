@@ -200,7 +200,7 @@ def iso(ts, sec=False):
     if not ts:
         return None
     f = "%Y-%m-%d %H:%M:%S" if sec else "%Y-%m-%d"
-    return dt.datetime.fromtimestamp(ts, dt.UTC).strftime(f)
+    return dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime(f)
 
 
 def calibre(a):
@@ -254,7 +254,7 @@ def main():
     curve, created_ts, symbol = bonding_curve(a.mint)
     if a.created:
         created_ts = dt.datetime.strptime(a.created, "%Y-%m-%d").replace(
-            tzinfo=dt.UTC).timestamp()
+            tzinfo=dt.timezone.utc).timestamp()
     if not curve or not created_ts:
         sys.exit("courbe ou date de creation introuvable : passer --created, ou mint hors pump.fun")
 

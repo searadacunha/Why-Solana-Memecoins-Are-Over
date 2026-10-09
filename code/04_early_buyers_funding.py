@@ -47,7 +47,7 @@ def early_buyers(mint: str, created_ts: int, n_early: int, window_h: int = 48) -
     if not sigs:
         return [], None
     t0 = sigs[0].get("blockTime")
-    print(f"  1re transaction du mint : {dt.datetime.fromtimestamp(t0, dt.UTC):%Y-%m-%d %H:%M} UTC")
+    print(f"  1re transaction du mint : {dt.datetime.fromtimestamp(t0, dt.timezone.utc):%Y-%m-%d %H:%M} UTC")
     early = [s for s in sigs if (s.get("blockTime") or 0) <= t0 + window_h * 3600]
     buyers, order = {}, []
     for s in early:
@@ -128,7 +128,7 @@ def main() -> None:
     a = ap.parse_args()
 
     created_ts = int(dt.datetime.strptime(a.created, "%Y-%m-%d")
-                     .replace(tzinfo=dt.UTC).timestamp())
+                     .replace(tzinfo=dt.timezone.utc).timestamp())
     print(f"Mint {a.mint[:16]}… — remontee jusqu'a {a.created}", flush=True)
     buyers, t0 = early_buyers(a.mint, created_ts, a.n_early)
     print(f"\n{len(buyers)} premiers signataires identifies", flush=True)

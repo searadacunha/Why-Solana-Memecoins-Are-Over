@@ -42,7 +42,7 @@ FUNDING = [os.path.join(DATA, "trace_cohorte", "e2_funding_*.json"),
 
 
 def utc(ts):
-    return dt.datetime.fromtimestamp(ts, dt.UTC).strftime("%Y-%m-%d %H:%M") if ts else None
+    return dt.datetime.fromtimestamp(ts, dt.timezone.utc).strftime("%Y-%m-%d %H:%M") if ts else None
 
 
 def creation_dates():
@@ -72,7 +72,7 @@ for pat in FUNDING:
         lab = d["label"]
         t_creation = created.get(lab)
         cut = (dt.datetime.strptime(t_creation[:19], "%Y-%m-%dT%H:%M:%S")
-               .replace(tzinfo=dt.UTC).timestamp()) if t_creation else None
+               .replace(tzinfo=dt.timezone.utc).timestamp()) if t_creation else None
 
         chains, tardifs = [], []
         for w in d["wallets"]:

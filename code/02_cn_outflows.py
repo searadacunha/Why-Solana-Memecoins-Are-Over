@@ -49,7 +49,7 @@ MIN_SOL, MAX_SOL = 1.0, 20.0
 
 
 def ts_of(date_str: str, end: bool = False) -> int:
-    d = dt.datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=dt.UTC)
+    d = dt.datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=dt.timezone.utc)
     if end:
         d += dt.timedelta(days=1)          # --to est inclusif sur la journée entière
     return int(d.timestamp())
@@ -74,7 +74,7 @@ def signatures_in_window(addr: str, t_from: int, t_to: int, max_pages: int) -> t
             if not t:
                 continue
             oldest = t if oldest is None else min(oldest, t)
-            per_month[dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m")] += 1
+            per_month[dt.datetime.fromtimestamp(t, dt.timezone.utc).strftime("%Y-%m")] += 1
             if t_from <= t <= t_to:
                 kept.append(s)
         before = page[-1]["signature"]
@@ -85,7 +85,7 @@ def signatures_in_window(addr: str, t_from: int, t_to: int, max_pages: int) -> t
             break                                  # fin de l'historique
         if page_i % 20 == 19:
             print(f"  … {scanned} signatures parcourues, {len(kept)} dans la fenêtre "
-                  f"(plus ancienne : {dt.datetime.fromtimestamp(oldest, dt.UTC):%Y-%m-%d})", flush=True)
+                  f"(plus ancienne : {dt.datetime.fromtimestamp(oldest, dt.timezone.utc):%Y-%m-%d})", flush=True)
         time.sleep(0.12)
     return kept, scanned, dict(sorted(per_month.items())), oldest, reached
 
@@ -139,7 +139,7 @@ def main() -> None:
 
     print(f"\n{scanned} signatures parcourues, {len(kept)} dans la fenetre.")
     if oldest:
-        print(f"Historique atteint : {dt.datetime.fromtimestamp(oldest, dt.UTC):%Y-%m-%d}")
+        print(f"Historique atteint : {dt.datetime.fromtimestamp(oldest, dt.timezone.utc):%Y-%m-%d}")
     if not reached and oldest and oldest > t_from:
         print("⚠️  La fenetre n'a PAS ete entierement atteinte (plafond de pages). "
               "Augmenter --max-pages, ou la fenetre est anterieure a l'existence de l'adresse.")
