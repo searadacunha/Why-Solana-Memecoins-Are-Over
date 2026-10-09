@@ -1,0 +1,1184 @@
+{
+ "atoms": {
+  "pg": 257,
+  "total": 3357
+ },
+ "real": {
+  "Y2": {
+   "base": 0.25068870186805725,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 54715
+   },
+   "partner_families": {
+    "ACTOR": 1351,
+    "BUNDLE": 2183,
+    "CLUSTER": 1142,
+    "COORD": 356,
+    "CREATOR": 233,
+    "EXIT": 253,
+    "FUND": 4958,
+    "PRICE": 439,
+    "TEMPO": 2257
+   },
+   "passed": 10313,
+   "passed_by_depth": {
+    "1": 1,
+    "2": 7452,
+    "3": 2860
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 211,
+    "pg_big_buy_sol_share": 444,
+    "pg_buy_gini": 490,
+    "pg_buy_run_max": 1297,
+    "pg_buy_slot_gap_cv": 155,
+    "pg_buys_per_buyer": 558,
+    "pg_core_sell_over_ext_buy": 1,
+    "pg_ext_over_bundle": 316,
+    "pg_fresh_ata_share": 341,
+    "pg_modal_prio_share": 239,
+    "pg_modal_size_share": 473,
+    "pg_multisig_share": 745,
+    "pg_n_ext_trades": 551,
+    "pg_novelty_2nd_half": 7,
+    "pg_payer_mismatch_share": 4,
+    "pg_pingpong_10s": 160,
+    "pg_repeat_buyer_sol_share": 177,
+    "pg_roundtrip_share": 47,
+    "pg_roundtrip_sol_share": 332,
+    "pg_roundtrip_wallets": 143,
+    "pg_same_size_share": 313,
+    "pg_same_slot_max_buyers": 197,
+    "pg_sell_buy_count_ratio": 224,
+    "pg_sell_pressure": 84,
+    "pg_seller_buyer_overlap": 129,
+    "pg_size_cv": 472,
+    "pg_size_shift": 743,
+    "pg_small_buy_share": 387,
+    "pg_sol_per_buyer": 74,
+    "pg_sync_same_size_pairs": 333,
+    "pg_top5_buyer_share": 173,
+    "pg_tx_per_wallet": 286,
+    "pg_wallets_per_sol": 207
+   },
+   "top": [
+    {
+     "clusters": 8,
+     "days": 7,
+     "lb": 0.556555710012019,
+     "lift": 2.872087950652643,
+     "n": 25,
+     "prec": 0.72,
+     "text": "ez_cap_early_n_ge5 <= 14 AND tr_ex_f_strict > 0.0114573 AND pg_fresh_ata_share <= 0.4375"
+    },
+    {
+     "clusters": 8,
+     "days": 6,
+     "lb": 0.5313189232471516,
+     "lift": 2.761623029473695,
+     "n": 26,
+     "prec": 0.6923076923076923,
+     "text": "s0_core_order_rho <= 0 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 12,
+     "days": 10,
+     "lb": 0.5313189232471516,
+     "lift": 2.761623029473695,
+     "n": 26,
+     "prec": 0.6923076923076923,
+     "text": "ez_fu_recv_1h_median > 25.0001 AND h_core_tx_24h <= 2 AND pg_size_shift > 1.31108"
+    },
+    {
+     "clusters": 10,
+     "days": 6,
+     "lb": 0.5165820023620581,
+     "lift": 2.6593406950487437,
+     "n": 30,
+     "prec": 0.6666666666666666,
+     "text": "ef_repeat_buyer_share <= 0.96 AND tr_ex_f_strict > 0.0114573 AND pg_fresh_ata_share > 0.301429"
+    },
+    {
+     "clusters": 11,
+     "days": 7,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "ef_fresh_sol_log > 0 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 10,
+     "days": 7,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "ez_cap_all_median <= 3.53363 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 9,
+     "days": 6,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "ez_cap_early_max <= 91.6552 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 11,
+     "days": 7,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "m_accel > 0.204814 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 10,
+     "days": 7,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "m_buy_sell_ratio <= 0.959662 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 10,
+     "days": 5,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "sc_a_max > 0.807968 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 10,
+     "days": 5,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "sc_g_min <= 0.180613 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 9,
+     "days": 6,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "h1_reg2_6h > 0.0909091 AND tr_ex_f_strict > 0.0114573 AND pg_fresh_ata_share > 0.301429"
+    },
+    {
+     "clusters": 9,
+     "days": 6,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "reg_rate_6h > 0.180195 AND tr_ex_f_strict > 0.0114573 AND pg_fresh_ata_share > 0.301429"
+    },
+    {
+     "clusters": 8,
+     "days": 8,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "b_round_share > 0.225 AND ez_sol_early_max <= 2.51572 AND pg_multisig_share > 0"
+    },
+    {
+     "clusters": 8,
+     "days": 9,
+     "lb": 0.5155798784230486,
+     "lift": 2.712527508949719,
+     "n": 25,
+     "prec": 0.68,
+     "text": "e_prior_launches_median <= 123.7 AND ez_cap_snipers_spent_over_available <= 0.857843 AND pg_roundtrip_sol_share > 0.198892"
+    }
+   ]
+  },
+  "Y3": {
+   "base": 0.11019283533096313,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 45378
+   },
+   "partner_families": {
+    "ACTOR": 1765,
+    "BUNDLE": 3414,
+    "CLUSTER": 777,
+    "COORD": 350,
+    "CREATOR": 235,
+    "EXIT": 465,
+    "FUND": 3452,
+    "PRICE": 342,
+    "TEMPO": 4528
+   },
+   "passed": 10798,
+   "passed_by_depth": {
+    "1": 1,
+    "2": 6266,
+    "3": 4531
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 113,
+    "pg_big_buy_sol_share": 504,
+    "pg_buy_gini": 219,
+    "pg_buy_run_max": 2030,
+    "pg_buy_slot_gap_cv": 77,
+    "pg_buys_per_buyer": 210,
+    "pg_core_sell_over_ext_buy": 4,
+    "pg_ext_over_bundle": 205,
+    "pg_fresh_ata_share": 56,
+    "pg_modal_prio_share": 139,
+    "pg_modal_size_share": 509,
+    "pg_multisig_share": 592,
+    "pg_n_ext_trades": 242,
+    "pg_novelty_2nd_half": 4,
+    "pg_payer_mismatch_share": 3,
+    "pg_pingpong_10s": 104,
+    "pg_repeat_buyer_sol_share": 181,
+    "pg_roundtrip_share": 63,
+    "pg_roundtrip_sol_share": 393,
+    "pg_roundtrip_wallets": 97,
+    "pg_same_size_share": 1818,
+    "pg_same_slot_max_buyers": 256,
+    "pg_sell_buy_count_ratio": 109,
+    "pg_sell_pressure": 59,
+    "pg_seller_buyer_overlap": 1035,
+    "pg_size_cv": 189,
+    "pg_size_shift": 488,
+    "pg_small_buy_share": 113,
+    "pg_sol_per_buyer": 14,
+    "pg_sync_same_size_pairs": 215,
+    "pg_top5_buyer_share": 157,
+    "pg_tx_per_wallet": 458,
+    "pg_wallets_per_sol": 142
+   },
+   "top": [
+    {
+     "clusters": 9,
+     "days": 10,
+     "lb": 0.31206153942155024,
+     "lift": 4.188461619598363,
+     "n": 26,
+     "prec": 0.46153846153846156,
+     "text": "h_core_tx_1h <= 14 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 9,
+     "days": 10,
+     "lb": 0.31206153942155024,
+     "lift": 4.188461619598363,
+     "n": 26,
+     "prec": 0.46153846153846156,
+     "text": "kg_prior_group_launches <= 4 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 11,
+     "days": 8,
+     "lb": 0.31206153942155024,
+     "lift": 4.188461619598363,
+     "n": 26,
+     "prec": 0.46153846153846156,
+     "text": "h1_e_smart3_n <= 0 AND m_buys_10s > 36 AND pg_size_cv <= 1.84228"
+    },
+    {
+     "clusters": 10,
+     "days": 10,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "ez_sol_median > 0.0493827 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 10,
+     "days": 10,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "m_buys_10s > 36 AND m_sell_max > 0.102064 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 10,
+     "days": 10,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "m_buys_10s > 36 AND m_sell_sol > 0.169321 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 12,
+     "days": 10,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "b_top2 > 0.507633 AND h_early_tx_1h > 46 AND pg_same_size_share > 0.4"
+    },
+    {
+     "clusters": 12,
+     "days": 10,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "b_top_half > 0.507801 AND h_early_tx_1h > 46 AND pg_same_size_share > 0.4"
+    },
+    {
+     "clusters": 13,
+     "days": 9,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "h_early_tx_1h > 46 AND x_prio_over_bundle > 7.33189e-08 AND pg_same_size_share > 0.4"
+    },
+    {
+     "clusters": 12,
+     "days": 7,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "sk_fail_share > 0.555556 AND x_burst_pre > 0.239188 AND pg_seller_buyer_overlap > 0.8"
+    },
+    {
+     "clusters": 7,
+     "days": 8,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "b_top3 <= 0.757677 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 7,
+     "days": 10,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "ez_cap_all_spent_over_available <= 0.305064 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 7,
+     "days": 10,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "ez_cap_all_sum > 307.722 AND m_buys_10s > 36 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 10,
+     "days": 10,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "m_buys_10s > 36 AND m_sell_max > 0.613794 AND pg_buy_run_max > 24"
+    },
+    {
+     "clusters": 9,
+     "days": 7,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "ef_top_holder_supply > 0.42251 AND ez_cap_snipers_spent_over_available <= 0.788464 AND pg_seller_buyer_overlap > 0.8"
+    }
+   ]
+  },
+  "Y5": {
+   "base": 0.024793388321995735,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 45259
+   },
+   "partner_families": {
+    "ACTOR": 2147,
+    "BUNDLE": 4067,
+    "CLUSTER": 1394,
+    "COORD": 966,
+    "CREATOR": 706,
+    "EXIT": 376,
+    "FUND": 9068,
+    "PRICE": 529,
+    "TEMPO": 3278
+   },
+   "passed": 14297,
+   "passed_by_depth": {
+    "1": 3,
+    "2": 6057,
+    "3": 8237
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 46,
+    "pg_big_buy_sol_share": 6,
+    "pg_buy_gini": 73,
+    "pg_buy_run_max": 45,
+    "pg_buy_slot_gap_cv": 394,
+    "pg_core_sell_over_ext_buy": 1,
+    "pg_ext_over_bundle": 72,
+    "pg_fresh_ata_share": 69,
+    "pg_modal_prio_share": 307,
+    "pg_modal_size_share": 402,
+    "pg_multisig_share": 4,
+    "pg_n_ext_trades": 59,
+    "pg_novelty_2nd_half": 31,
+    "pg_pingpong_10s": 70,
+    "pg_roundtrip_share": 103,
+    "pg_roundtrip_sol_share": 17,
+    "pg_roundtrip_wallets": 34,
+    "pg_same_size_share": 10714,
+    "pg_same_slot_max_buyers": 242,
+    "pg_sell_buy_count_ratio": 49,
+    "pg_sell_pressure": 4,
+    "pg_size_cv": 248,
+    "pg_size_shift": 137,
+    "pg_small_buy_share": 68,
+    "pg_sol_per_buyer": 3,
+    "pg_sync_same_size_pairs": 120,
+    "pg_top5_buyer_share": 839,
+    "pg_tx_per_wallet": 37,
+    "pg_wallets_per_sol": 103
+   },
+   "top": [
+    {
+     "clusters": 15,
+     "days": 10,
+     "lb": 0.15953015329646714,
+     "lift": 11.293333382416105,
+     "n": 25,
+     "prec": 0.28,
+     "text": "ez_fu_ticket_over_recv_24h_median <= 0.971017 AND h1_reg2_24h <= 0.388889 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 14,
+     "days": 8,
+     "lb": 0.15953015329646714,
+     "lift": 11.293333382416105,
+     "n": 25,
+     "prec": 0.28,
+     "text": "ez_fu_ticket_over_recv_24h_median <= 0.971017 AND w_early_log_age_h <= 1.23484 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 15,
+     "days": 10,
+     "lb": 0.15307233658117417,
+     "lift": 10.85897440616933,
+     "n": 26,
+     "prec": 0.2692307692307692,
+     "text": "ez_fu_ticket_over_recv_24h_median <= 0.971017 AND h_early_tx_1h > 46 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 14,
+     "days": 9,
+     "lb": 0.14711879068475617,
+     "lift": 10.4567901689038,
+     "n": 27,
+     "prec": 0.25925925925925924,
+     "text": "e_prior_launches_median > 143 AND ez_fu_ticket_over_recv_24h_median <= 0.971017 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 15,
+     "days": 10,
+     "lb": 0.14711879068475617,
+     "lift": 10.4567901689038,
+     "n": 27,
+     "prec": 0.25925925925925924,
+     "text": "ez_fu_ticket_over_recv_24h_median <= 0.971017 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_nfunders_7d_max <= 2.5 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_ntx_7d_sum <= 10 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_complete_7d > 0.1 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_complete_7d > 0.5 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_complete_7d > 0.9 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.14161246696817645,
+     "lift": 10.083333377157235,
+     "n": 28,
+     "prec": 0.25,
+     "text": "ez_fu_nfunders_7d_max <= 3.5 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.136504638956849,
+     "lift": 9.735632226220778,
+     "n": 29,
+     "prec": 0.2413793103448276,
+     "text": "ez_fu_nfunders_24h_max <= 2.5 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.136504638956849,
+     "lift": 9.735632226220778,
+     "n": 29,
+     "prec": 0.2413793103448276,
+     "text": "ez_fu_ntx_24h_sum <= 10 AND nb_d_log_age_h > -1.19667 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 20,
+     "days": 10,
+     "lb": 0.13175343299809159,
+     "lift": 9.411111152013419,
+     "n": 30,
+     "prec": 0.23333333333333334,
+     "text": "ez_fu_nfunders_7d_max <= 2.5 AND h1_reg2_24h <= 0.388889 AND pg_same_size_share > 0.35"
+    },
+    {
+     "clusters": 19,
+     "days": 8,
+     "lb": 0.13175343299809159,
+     "lift": 9.411111152013419,
+     "n": 30,
+     "prec": 0.23333333333333334,
+     "text": "ez_fu_nfunders_7d_max <= 2.5 AND w_early_log_age_h <= 1.23484 AND pg_same_size_share > 0.35"
+    }
+   ]
+  }
+ },
+ "shuffled": {
+  "Y2": {
+   "base": 0.25068870186805725,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 60388
+   },
+   "partner_families": {
+    "ACTOR": 1275,
+    "BUNDLE": 2175,
+    "CLUSTER": 3391,
+    "COORD": 303,
+    "CREATOR": 322,
+    "EXIT": 224,
+    "FUND": 4569,
+    "PRICE": 422,
+    "TEMPO": 3171
+   },
+   "passed": 11185,
+   "passed_by_depth": {
+    "1": 1,
+    "2": 6516,
+    "3": 4668
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 119,
+    "pg_big_buy_sol_share": 330,
+    "pg_buy_gini": 125,
+    "pg_buy_run_max": 281,
+    "pg_buy_slot_gap_cv": 194,
+    "pg_buys_per_buyer": 525,
+    "pg_core_sell_over_ext_buy": 4,
+    "pg_ext_over_bundle": 191,
+    "pg_fresh_ata_share": 415,
+    "pg_modal_prio_share": 71,
+    "pg_modal_size_share": 1899,
+    "pg_multisig_share": 57,
+    "pg_n_ext_trades": 188,
+    "pg_novelty_2nd_half": 17,
+    "pg_payer_mismatch_share": 1,
+    "pg_pingpong_10s": 695,
+    "pg_repeat_buyer_sol_share": 81,
+    "pg_roundtrip_share": 128,
+    "pg_roundtrip_sol_share": 120,
+    "pg_roundtrip_wallets": 199,
+    "pg_same_size_share": 613,
+    "pg_same_slot_max_buyers": 147,
+    "pg_sell_buy_count_ratio": 166,
+    "pg_sell_pressure": 23,
+    "pg_seller_buyer_overlap": 782,
+    "pg_size_cv": 424,
+    "pg_size_shift": 1904,
+    "pg_small_buy_share": 269,
+    "pg_sol_per_buyer": 22,
+    "pg_sync_same_size_pairs": 142,
+    "pg_top5_buyer_share": 679,
+    "pg_tx_per_wallet": 239,
+    "pg_wallets_per_sol": 135
+   },
+   "top": [
+    {
+     "clusters": 17,
+     "days": 10,
+     "lb": 0.554648592776822,
+     "lift": 2.7802198175509596,
+     "n": 33,
+     "prec": 0.696969696969697,
+     "text": "g_core_fund_cv > 0.175569 AND p_velocity > 0.0010714 AND pg_size_shift > 0.585268"
+    },
+    {
+     "clusters": 7,
+     "days": 8,
+     "lb": 0.5313189232471516,
+     "lift": 2.761623029473695,
+     "n": 26,
+     "prec": 0.6923076923076923,
+     "text": "ez_cap_snipers_sum > 100 AND h1_best_any > 0.506179 AND pg_modal_size_share <= 0.0754717"
+    },
+    {
+     "clusters": 12,
+     "days": 9,
+     "lb": 0.5313189232471516,
+     "lift": 2.761623029473695,
+     "n": 26,
+     "prec": 0.6923076923076923,
+     "text": "b_slot0_tx <= 11 AND s0_create_idx_log <= 2.74351 AND pg_top5_buyer_share <= 0.572196"
+    },
+    {
+     "clusters": 10,
+     "days": 7,
+     "lb": 0.5233024374734442,
+     "lift": 2.706828921746043,
+     "n": 28,
+     "prec": 0.6785714285714286,
+     "text": "s0_tp_first_gap_log <= 2.27184 AND tr_ex_any_strict <= -0.0337838 AND pg_size_shift > 0.585268"
+    },
+    {
+     "clusters": 12,
+     "days": 7,
+     "lb": 0.5165820023620581,
+     "lift": 2.6593406950487437,
+     "n": 30,
+     "prec": 0.6666666666666666,
+     "text": "h1_reg3_24h > 0.0902307 AND tr_ex_any_strict <= -0.0337838 AND pg_size_shift > 0.585268"
+    },
+    {
+     "clusters": 10,
+     "days": 8,
+     "lb": 0.5108856308415153,
+     "lift": 2.617788496688607,
+     "n": 32,
+     "prec": 0.65625,
+     "text": "h1_mfe_any > -0.0376998 AND p_reserve_vs_p0 <= 1 AND pg_modal_size_share <= 0.0886928"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.5024398165190341,
+     "lift": 2.613489993409972,
+     "n": 29,
+     "prec": 0.6551724137931034,
+     "text": "s0_create_idx_log <= 2.74351 AND tr_ex_any_strict <= -0.0337838 AND pg_size_shift > 0.585268"
+    },
+    {
+     "clusters": 9,
+     "days": 8,
+     "lb": 0.4925584985752287,
+     "lift": 2.608199527836268,
+     "n": 26,
+     "prec": 0.6538461538461539,
+     "text": "b_slot0_tx <= 11 AND ez_t_first_outside > 0.5 AND pg_top5_buyer_share <= 0.572196"
+    },
+    {
+     "clusters": 9,
+     "days": 8,
+     "lb": 0.4925584985752287,
+     "lift": 2.608199527836268,
+     "n": 26,
+     "prec": 0.6538461538461539,
+     "text": "b_slot0_tx <= 11 AND m_t_first_buy > 0.5 AND pg_top5_buyer_share <= 0.572196"
+    },
+    {
+     "clusters": 8,
+     "days": 8,
+     "lb": 0.4925584985752287,
+     "lift": 2.608199527836268,
+     "n": 26,
+     "prec": 0.6538461538461539,
+     "text": "ef_px_logret > 0.102492 AND h1_mfe_any > -0.0376998 AND pg_modal_size_share <= 0.0886928"
+    },
+    {
+     "clusters": 8,
+     "days": 8,
+     "lb": 0.4925584985752287,
+     "lift": 2.608199527836268,
+     "n": 26,
+     "prec": 0.6538461538461539,
+     "text": "s0_tp_first_gap_log <= 2.48143 AND tr_ex_any_strict <= -0.0337838 AND pg_fresh_ata_share <= 0.546334"
+    },
+    {
+     "clusters": 13,
+     "days": 9,
+     "lb": 0.4925584985752287,
+     "lift": 2.608199527836268,
+     "n": 26,
+     "prec": 0.6538461538461539,
+     "text": "s0_tp_first_gap_log <= 2.27184 AND x_pre_slot_peak_share > 0.222222 AND pg_seller_buyer_overlap <= 0.453571"
+    },
+    {
+     "clusters": 14,
+     "days": 9,
+     "lb": 0.4895737832820471,
+     "lift": 2.507378369617387,
+     "n": 35,
+     "prec": 0.6285714285714286,
+     "text": "b_slot0_tx <= 11 AND m_top_buyer_share > 0.150299 AND pg_top5_buyer_share <= 0.572196"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.48746808370925504,
+     "lift": 2.564364241654146,
+     "n": 28,
+     "prec": 0.6428571428571429,
+     "text": "h1_reg2_24h > 0.162791 AND tr_ex_any_strict <= -0.0337838 AND pg_size_shift > 1.31108"
+    },
+    {
+     "clusters": 8,
+     "days": 9,
+     "lb": 0.48746808370925504,
+     "lift": 2.564364241654146,
+     "n": 28,
+     "prec": 0.6428571428571429,
+     "text": "bs_bundle_over_pool > 1.07536 AND h1_ex3_any <= -0.0114523 AND pg_modal_size_share <= 0.0886928"
+    }
+   ]
+  },
+  "Y3": {
+   "base": 0.11019283533096313,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 45695
+   },
+   "partner_families": {
+    "ACTOR": 881,
+    "BUNDLE": 1783,
+    "CLUSTER": 2006,
+    "COORD": 144,
+    "CREATOR": 155,
+    "EXIT": 170,
+    "FUND": 1792,
+    "PRICE": 189,
+    "TEMPO": 1912
+   },
+   "passed": 5685,
+   "passed_by_depth": {
+    "2": 2338,
+    "3": 3347
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 79,
+    "pg_big_buy_sol_share": 53,
+    "pg_buy_gini": 39,
+    "pg_buy_run_max": 81,
+    "pg_buy_slot_gap_cv": 354,
+    "pg_buys_per_buyer": 112,
+    "pg_ext_over_bundle": 43,
+    "pg_fresh_ata_share": 118,
+    "pg_modal_prio_share": 169,
+    "pg_modal_size_share": 36,
+    "pg_multisig_share": 21,
+    "pg_n_ext_trades": 225,
+    "pg_pingpong_10s": 79,
+    "pg_repeat_buyer_sol_share": 80,
+    "pg_roundtrip_share": 230,
+    "pg_roundtrip_sol_share": 57,
+    "pg_roundtrip_wallets": 467,
+    "pg_same_size_share": 67,
+    "pg_same_slot_max_buyers": 169,
+    "pg_sell_buy_count_ratio": 1147,
+    "pg_sell_pressure": 18,
+    "pg_seller_buyer_overlap": 76,
+    "pg_size_cv": 146,
+    "pg_size_shift": 173,
+    "pg_small_buy_share": 34,
+    "pg_sol_per_buyer": 43,
+    "pg_sync_same_size_pairs": 181,
+    "pg_top5_buyer_share": 1073,
+    "pg_tx_per_wallet": 202,
+    "pg_wallets_per_sol": 113
+   },
+   "top": [
+    {
+     "clusters": 10,
+     "days": 7,
+     "lb": 0.2994457819180969,
+     "lift": 4.033333411465089,
+     "n": 27,
+     "prec": 0.4444444444444444,
+     "text": "m_first5_sol > 0.654469 AND tr_ex_any_strict > 0.0633028 AND pg_buy_slot_gap_cv <= 2.12266"
+    },
+    {
+     "clusters": 9,
+     "days": 8,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "m_accel <= 0.40625 AND tr_ex_any_strict > 0.0633028 AND pg_buy_slot_gap_cv <= 2.12266"
+    },
+    {
+     "clusters": 11,
+     "days": 8,
+     "lb": 0.2906183090166478,
+     "lift": 3.9930000773504393,
+     "n": 25,
+     "prec": 0.44,
+     "text": "ez_cap_all_spent_over_available > 0.238773 AND tr_ex_f_strict > -0.0195459 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.28782298540572354,
+     "lift": 3.889285789627051,
+     "n": 28,
+     "prec": 0.42857142857142855,
+     "text": "b_hhi <= 0.250013 AND ef_px_min_over_first > 0.998384 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.28782298540572354,
+     "lift": 3.889285789627051,
+     "n": 28,
+     "prec": 0.42857142857142855,
+     "text": "ef_px_min_over_first > 0.998384 AND lv_hhi <= 0.250013 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.28586297808639977,
+     "lift": 3.805645235011416,
+     "n": 31,
+     "prec": 0.41935483870967744,
+     "text": "b_hhi <= 0.250013 AND p_pool_price_ratio > 1.01756 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.28586297808639977,
+     "lift": 3.805645235011416,
+     "n": 31,
+     "prec": 0.41935483870967744,
+     "text": "lv_hhi <= 0.250013 AND p_pool_price_ratio > 1.01756 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.28586297808639977,
+     "lift": 3.805645235011416,
+     "n": 31,
+     "prec": 0.41935483870967744,
+     "text": "b_top3 <= 0.752452 AND p_pool_price_ratio > 1.01756 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 10,
+     "days": 6,
+     "lb": 0.278468119848076,
+     "lift": 3.839423151298499,
+     "n": 26,
+     "prec": 0.4230769230769231,
+     "text": "m_first3_sol > 0.163168 AND tr_ex_f_strict > 0.0114573 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 7,
+     "days": 9,
+     "lb": 0.278468119848076,
+     "lift": 3.839423151298499,
+     "n": 26,
+     "prec": 0.4230769230769231,
+     "text": "h1_nres_w > 0 AND p_reserve_vs_p0 <= 1 AND pg_sell_buy_count_ratio <= 0.0769231"
+    },
+    {
+     "clusters": 8,
+     "days": 7,
+     "lb": 0.27707877849947526,
+     "lift": 3.755172486536463,
+     "n": 29,
+     "prec": 0.41379310344827586,
+     "text": "m_tx <= 90.6 AND tr_ex_any_strict > 0.0633028 AND pg_buy_slot_gap_cv <= 2.12266"
+    },
+    {
+     "clusters": 7,
+     "days": 8,
+     "lb": 0.27707877849947526,
+     "lift": 3.755172486536463,
+     "n": 29,
+     "prec": 0.41379310344827586,
+     "text": "b_top3 <= 0.752452 AND ef_px_min_over_first > 0.998384 AND pg_sell_buy_count_ratio <= 0.167473"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.27707877849947526,
+     "lift": 3.755172486536463,
+     "n": 29,
+     "prec": 0.41379310344827586,
+     "text": "ef_px_logret > 0.0213965 AND sc_gen_max_share is missing AND pg_tx_per_wallet <= 1.09756"
+    },
+    {
+     "clusters": 10,
+     "days": 7,
+     "lb": 0.27622569760952503,
+     "lift": 3.6867188214173088,
+     "n": 32,
+     "prec": 0.40625,
+     "text": "g_core_funders <= 2 AND tr_ex_any_strict > 0.0633028 AND pg_buy_slot_gap_cv <= 2.12266"
+    },
+    {
+     "clusters": 6,
+     "days": 8,
+     "lb": 0.27622569760952503,
+     "lift": 3.6867188214173088,
+     "n": 32,
+     "prec": 0.40625,
+     "text": "b_hhi <= 0.250013 AND p_pool_price_ratio > 1.00453 AND pg_sell_buy_count_ratio <= 0.167473"
+    }
+   ]
+  },
+  "Y5": {
+   "base": 0.024793388321995735,
+   "evaluated": {
+    "pairs": 674393,
+    "singles": 257,
+    "triples": 57003
+   },
+   "partner_families": {
+    "ACTOR": 2480,
+    "BUNDLE": 5322,
+    "CLUSTER": 8915,
+    "COORD": 681,
+    "CREATOR": 1564,
+    "EXIT": 790,
+    "FUND": 6321,
+    "PRICE": 1040,
+    "TEMPO": 6871
+   },
+   "passed": 21973,
+   "passed_by_depth": {
+    "2": 9962,
+    "3": 12011
+   },
+   "pg_feature_uses": {
+    "pg_apparent_per_wallet": 625,
+    "pg_big_buy_sol_share": 464,
+    "pg_buy_gini": 85,
+    "pg_buy_run_max": 65,
+    "pg_buy_slot_gap_cv": 313,
+    "pg_buys_per_buyer": 126,
+    "pg_core_sell_over_ext_buy": 34,
+    "pg_ext_over_bundle": 329,
+    "pg_fresh_ata_share": 188,
+    "pg_max_buys_one_wallet": 6,
+    "pg_modal_prio_share": 198,
+    "pg_modal_size_share": 4792,
+    "pg_multisig_share": 643,
+    "pg_n_ext_trades": 287,
+    "pg_novelty_2nd_half": 43,
+    "pg_payer_mismatch_share": 39,
+    "pg_pingpong_10s": 2055,
+    "pg_repeat_buyer_sol_share": 76,
+    "pg_roundtrip_share": 623,
+    "pg_roundtrip_sol_share": 135,
+    "pg_roundtrip_wallets": 1332,
+    "pg_same_size_share": 3070,
+    "pg_same_slot_max_buyers": 589,
+    "pg_sell_buy_count_ratio": 263,
+    "pg_sell_pressure": 39,
+    "pg_seller_buyer_overlap": 708,
+    "pg_size_cv": 110,
+    "pg_size_shift": 462,
+    "pg_small_buy_share": 323,
+    "pg_sol_per_buyer": 61,
+    "pg_sync_same_size_pairs": 120,
+    "pg_top5_buyer_share": 2015,
+    "pg_tx_per_wallet": 621,
+    "pg_wallets_per_sol": 1134
+   },
+   "top": [
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.12952745612548583,
+     "lift": 9.680000042070946,
+     "n": 25,
+     "prec": 0.24,
+     "text": "ez_cap_all_n_ge1 <= 30 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.12952745612548583,
+     "lift": 9.680000042070946,
+     "n": 25,
+     "prec": 0.24,
+     "text": "ez_cap_early_n_ge1 <= 25 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 9,
+     "days": 6,
+     "lb": 0.12952745612548583,
+     "lift": 9.680000042070946,
+     "n": 25,
+     "prec": 0.24,
+     "text": "h1_ex3_any <= -0.0193237 AND reg_rate_24h <= 0.184211 AND pg_same_size_share > 0.309524"
+    },
+    {
+     "clusters": 19,
+     "days": 5,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "dep_gap_s <= 2647.4 AND h1_reg2_6h <= 0.125 AND pg_same_size_share > 0.309524"
+    },
+    {
+     "clusters": 13,
+     "days": 7,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "fu_amount_over_ticket <= 0.0842715 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 13,
+     "days": 8,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "h1_ex2_k <= 0.0203397 AND sc_tl_max > 0.850975 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 14,
+     "days": 9,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "ez_cap_all_n_ge2 <= 20 AND h1_ex5_k > -0.008468 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 14,
+     "days": 9,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "ez_cap_early_n_ge2 <= 15 AND h1_ex5_k > -0.008468 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 9,
+     "days": 7,
+     "lb": 0.12432360002856317,
+     "lift": 9.30769234814514,
+     "n": 26,
+     "prec": 0.23076923076923078,
+     "text": "h1_ex3_any <= -0.0193237 AND h1_reg2_6h <= 0.2 AND pg_same_size_share > 0.309524"
+    },
+    {
+     "clusters": 11,
+     "days": 8,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "h1_last2_any <= 0.5 AND reg_rate_6h <= 0.0945887 AND pg_same_size_share > 0.309524"
+    },
+    {
+     "clusters": 15,
+     "days": 7,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "reg_rate_6h <= 0.0945887 AND sc_top1_capital_share > 0.25 AND pg_same_size_share > 0.309524"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "dep_fund_lead_s <= 3.43857 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "dep_gap_s <= 2647.4 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 12,
+     "days": 8,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "ez_cap_early_n_ge2 <= 18 AND h1_ex2_k <= 0.0203397 AND pg_top5_buyer_share <= 0.681504"
+    },
+    {
+     "clusters": 9,
+     "days": 7,
+     "lb": 0.1150796461087611,
+     "lift": 8.642857180420487,
+     "n": 28,
+     "prec": 0.21428571428571427,
+     "text": "h1_ex2_k <= 0.0203397 AND h1_reg2_24h > 0.162791 AND pg_top5_buyer_share <= 0.681504"
+    }
+   ]
+  }
+ }
+}

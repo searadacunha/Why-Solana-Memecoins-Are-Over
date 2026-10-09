@@ -1,0 +1,5441 @@
+{
+ "actors": {
+  "delay_linked_first_to_2x_s": {
+   "median": 565.436792087555,
+   "n": 7
+  },
+  "funders": {
+   "3faMxgekVawBLWQ8H73TJ3gPnteezTkJ9JTrXHvKxGBz": {
+    "disc_launches_funding_early_wallets": 1,
+    "is_core_funder_here": true,
+    "launch": "EumP1q4o",
+    "wallets_in_this_launch": 5,
+    "x2_rate_of_those": 1.0
+   },
+   "58HrX7n1dSNoDni8Hoy5SHuZwJiASZMXmGepZwbkPzE7": {
+    "disc_launches_funding_early_wallets": 1,
+    "is_core_funder_here": true,
+    "launch": "Gd2igp4Y",
+    "wallets_in_this_launch": 5,
+    "x2_rate_of_those": 1.0
+   },
+   "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9": {
+    "disc_launches_funding_early_wallets": 198,
+    "is_core_funder_here": true,
+    "launch": "85zNoV5b",
+    "wallets_in_this_launch": 4,
+    "x2_rate_of_those": 0.21212121212121213
+   },
+   "89UCqy4fSQvcpy2T5yGBgqgD1tSfw25g4zrnyMVHEH38": {
+    "disc_launches_funding_early_wallets": 1,
+    "is_core_funder_here": true,
+    "launch": "7oLcB2Tt",
+    "wallets_in_this_launch": 5,
+    "x2_rate_of_those": 0.0
+   },
+   "9aevgNCmosFsySJvuxkPFHX4dwE8rwaD1fyCPzt5cPQm": {
+    "disc_launches_funding_early_wallets": 1,
+    "is_core_funder_here": true,
+    "launch": "DtSyNUAL",
+    "wallets_in_this_launch": 5,
+    "x2_rate_of_those": 0.0
+   },
+   "BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6": {
+    "disc_launches_funding_early_wallets": 56,
+    "is_core_funder_here": true,
+    "launch": "2ww66irr",
+    "wallets_in_this_launch": 3,
+    "x2_rate_of_those": 0.23214285714285715
+   },
+   "Dv34prGm2BT7Ph2n6qKLgzeLgjnii87RJJ7Db6ZQQvKM": {
+    "disc_launches_funding_early_wallets": 22,
+    "is_core_funder_here": true,
+    "launch": "6LYndPnL",
+    "wallets_in_this_launch": 4,
+    "x2_rate_of_those": 0.3181818181818182
+   },
+   "JhnGbQYQSNx2xFaHTXe2D9MverdvrUu47WVt29ifPGe": {
+    "disc_launches_funding_early_wallets": 1,
+    "is_core_funder_here": true,
+    "launch": "Fb9GkWRB",
+    "wallets_in_this_launch": 5,
+    "x2_rate_of_those": 0.0
+   },
+   "iGdFcQoyR2MwbXMHQskhmNsqddZ6rinsipHc4TNSdwu": {
+    "disc_launches_funding_early_wallets": 5,
+    "is_core_funder_here": true,
+    "launch": "GJbnE1sN",
+    "wallets_in_this_launch": 2,
+    "x2_rate_of_those": 0.0
+   },
+   "is6MTRHEgyFLNTfYcuV4QBWLjrZBfmhVNYR6ccgr8KV": {
+    "disc_launches_funding_early_wallets": 4,
+    "is_core_funder_here": false,
+    "launch": "5uZRASM2",
+    "wallets_in_this_launch": 2,
+    "x2_rate_of_those": 0.0
+   },
+   "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w": {
+    "disc_launches_funding_early_wallets": 8,
+    "is_core_funder_here": true,
+    "launch": "McbTQ3Ty",
+    "wallets_in_this_launch": 2,
+    "x2_rate_of_those": 0.125
+   }
+  },
+  "funders_reused": 6,
+  "funders_total": 11,
+  "wallets": [],
+  "wallets_summary": {
+   "fresh": 0,
+   "linked": 36,
+   "median_prior_launches_recurrent": 39.0,
+   "n": 1552,
+   "prior_x2_mean_recurrent_resolved": 0.2986196848764267,
+   "recurrent": 1549
+  }
+ },
+ "base_x2": 0.25068870523415976,
+ "base_x3": 0.11019283746556474,
+ "d1_launches": [
+  {
+   "accel_buys": 0.59375,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 9,
+   "independent": 19,
+   "linked": 1,
+   "mint": "2gUzWnAJmj",
+   "n_ext_buyers": 102,
+   "perf_wallets": 0,
+   "premium": 2.7249999046325684,
+   "recurrent": 24,
+   "second_group": null,
+   "t_burst": -16.150554895401,
+   "unknown": 82,
+   "window_s": 15.150554895401001,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": null,
+   "burst_position": 0.0,
+   "cluster": "k:24.76+24.6",
+   "fresh": 1,
+   "funder_groups": 1,
+   "indep_after_burst": 4,
+   "independent": 14,
+   "linked": 0,
+   "mint": "EumP1q4oc1",
+   "n_ext_buyers": 14,
+   "perf_wallets": 0,
+   "premium": 11.907999992370605,
+   "recurrent": 13,
+   "second_group": null,
+   "t_burst": -13.5714271068573,
+   "unknown": 0,
+   "window_s": 12.5714271068573,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 1.2857142857142858,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 13,
+   "linked": 0,
+   "mint": "FictnzoV72",
+   "n_ext_buyers": 38,
+   "perf_wallets": 5,
+   "premium": 3.1710000038146973,
+   "recurrent": 36,
+   "second_group": null,
+   "t_burst": -11.097532987594604,
+   "unknown": 25,
+   "window_s": 10.097532987594604,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.1935483870967742,
+   "burst_position": 0.26176273439726494,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 9,
+   "linked": 0,
+   "mint": "5RYFvTTFS1",
+   "n_ext_buyers": 37,
+   "perf_wallets": 0,
+   "premium": 3.5850000381469727,
+   "recurrent": 32,
+   "second_group": null,
+   "t_burst": -6.640506982803345,
+   "unknown": 28,
+   "window_s": 7.640506982803345,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.35714285714285715,
+   "burst_position": 0.1025400287233066,
+   "cluster": "k:20.67+20.2",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 10,
+   "linked": 0,
+   "mint": "6ZgpA7ghfF",
+   "n_ext_buyers": 34,
+   "perf_wallets": 4,
+   "premium": 3.6440000534057617,
+   "recurrent": 31,
+   "second_group": null,
+   "t_burst": -9.752289056777954,
+   "unknown": 24,
+   "window_s": 9.752289056777954,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 2.0,
+   "burst_position": 0.0866786529691807,
+   "cluster": "k:20.29+20.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 0,
+   "mint": "2E3pZyRn6i",
+   "n_ext_buyers": 39,
+   "perf_wallets": 4,
+   "premium": 3.757999897003174,
+   "recurrent": 33,
+   "second_group": null,
+   "t_burst": -11.536865949630737,
+   "unknown": 28,
+   "window_s": 11.536865949630737,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.9,
+   "burst_position": 0.07426946209362374,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 10,
+   "linked": 0,
+   "mint": "H7brJ1GYbA",
+   "n_ext_buyers": 40,
+   "perf_wallets": 3,
+   "premium": 3.0179998874664307,
+   "recurrent": 33,
+   "second_group": null,
+   "t_burst": -13.464484214782715,
+   "unknown": 30,
+   "window_s": 13.464484214782715,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.11904761904761904,
+   "burst_position": 0.06544730050076819,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 12,
+   "linked": 0,
+   "mint": "DmUYYZCyrx",
+   "n_ext_buyers": 73,
+   "perf_wallets": 4,
+   "premium": 3.194000005722046,
+   "recurrent": 72,
+   "second_group": null,
+   "t_burst": -15.279469013214111,
+   "unknown": 61,
+   "window_s": 15.279469013214111,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 4.833333333333333,
+   "burst_position": 0.9095182284135579,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 10,
+   "linked": 0,
+   "mint": "6XPfhet8fh",
+   "n_ext_buyers": 48,
+   "perf_wallets": 2,
+   "premium": 3.188999891281128,
+   "recurrent": 46,
+   "second_group": null,
+   "t_burst": -2.0943150520324707,
+   "unknown": 38,
+   "window_s": 12.09431505203247,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.1388888888888889,
+   "burst_position": 0.4897149712836629,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 0,
+   "mint": "DxK33R12sM",
+   "n_ext_buyers": 63,
+   "perf_wallets": 4,
+   "premium": 3.0829999446868896,
+   "recurrent": 60,
+   "second_group": null,
+   "t_burst": -8.294028997421265,
+   "unknown": 52,
+   "window_s": 14.294028997421265,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.9024390243902439,
+   "burst_position": 0.043551023033249495,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 0,
+   "indep_after_burst": 0,
+   "independent": 9,
+   "linked": 0,
+   "mint": "GE8q5h6eSx",
+   "n_ext_buyers": 213,
+   "perf_wallets": 5,
+   "premium": 4.120999813079834,
+   "recurrent": 55,
+   "second_group": null,
+   "t_burst": -22.961573123931885,
+   "unknown": 204,
+   "window_s": 22.961573123931885,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 3.6666666666666665,
+   "burst_position": 0.9907382841524355,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 12,
+   "linked": 1,
+   "mint": "Bjwzu4ZPPX",
+   "n_ext_buyers": 43,
+   "perf_wallets": 4,
+   "premium": 3.3889999389648438,
+   "recurrent": 40,
+   "second_group": null,
+   "t_burst": -1.0934829711914062,
+   "unknown": 30,
+   "window_s": 10.093482971191406,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.6086956521739131,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 9,
+   "linked": 6,
+   "mint": "5wRmP75EZn",
+   "n_ext_buyers": 70,
+   "perf_wallets": 11,
+   "premium": 4.389999866485596,
+   "recurrent": 57,
+   "second_group": -15.352538824081421,
+   "t_burst": -15.352538824081421,
+   "unknown": 55,
+   "window_s": 14.352538824081421,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.12903225806451613,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 3,
+   "indep_after_burst": 1,
+   "independent": 8,
+   "linked": 6,
+   "mint": "GJbnE1sNeZ",
+   "n_ext_buyers": 31,
+   "perf_wallets": 9,
+   "premium": 4.02400016784668,
+   "recurrent": 29,
+   "second_group": -8.639144897460938,
+   "t_burst": -8.639144897460938,
+   "unknown": 17,
+   "window_s": 7.6391448974609375,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.42857142857142855,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 9,
+   "linked": 1,
+   "mint": "DFTN7RZKdh",
+   "n_ext_buyers": 46,
+   "perf_wallets": 1,
+   "premium": 3.880000114440918,
+   "recurrent": 45,
+   "second_group": null,
+   "t_burst": -11.008108139038086,
+   "unknown": 36,
+   "window_s": 10.008108139038086,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 1.5714285714285714,
+   "burst_position": 0.6066153127996158,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 0,
+   "indep_after_burst": 0,
+   "independent": 6,
+   "linked": 0,
+   "mint": "7sCwo89CwH",
+   "n_ext_buyers": 53,
+   "perf_wallets": 0,
+   "premium": 4.054999828338623,
+   "recurrent": 47,
+   "second_group": null,
+   "t_burst": -4.242455959320068,
+   "unknown": 47,
+   "window_s": 8.242455959320068,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.3333333333333333,
+   "burst_position": 0.10310363447892572,
+   "cluster": "c:9qkvxLqABj",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 7,
+   "linked": 2,
+   "mint": "5uZRASM2U7",
+   "n_ext_buyers": 50,
+   "perf_wallets": 1,
+   "premium": 3.890000104904175,
+   "recurrent": 46,
+   "second_group": null,
+   "t_burst": -9.698979139328003,
+   "unknown": 41,
+   "window_s": 9.698979139328003,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.10256410256410256,
+   "burst_position": 0.2208326905570593,
+   "cluster": "c:6w2q9WLbyy",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 13,
+   "linked": 0,
+   "mint": "Gk9vjdDWBq",
+   "n_ext_buyers": 46,
+   "perf_wallets": 1,
+   "premium": 3.5,
+   "recurrent": 38,
+   "second_group": null,
+   "t_burst": -8.05663013458252,
+   "unknown": 33,
+   "window_s": 9.05663013458252,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.8571428571428571,
+   "burst_position": 0.07882522616821362,
+   "cluster": "c:6w2q9WLbyy",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 7,
+   "linked": 0,
+   "mint": "BEKVq9V9iR",
+   "n_ext_buyers": 34,
+   "perf_wallets": 1,
+   "premium": 3.884999990463257,
+   "recurrent": 31,
+   "second_group": null,
+   "t_burst": -12.686294078826904,
+   "unknown": 27,
+   "window_s": 12.686294078826904,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.2682926829268293,
+   "burst_position": null,
+   "cluster": "k:21.13+21.0",
+   "fresh": 1,
+   "funder_groups": 1,
+   "indep_after_burst": null,
+   "independent": 18,
+   "linked": 1,
+   "mint": "4PBRa277WE",
+   "n_ext_buyers": 56,
+   "perf_wallets": 0,
+   "premium": 3.947000026702881,
+   "recurrent": 52,
+   "second_group": null,
+   "t_burst": null,
+   "unknown": 37,
+   "window_s": 9.079218864440918,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 1.2,
+   "burst_position": null,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": null,
+   "independent": 18,
+   "linked": 2,
+   "mint": "FuJj8w53ZQ",
+   "n_ext_buyers": 54,
+   "perf_wallets": 2,
+   "premium": 3.765000104904175,
+   "recurrent": 49,
+   "second_group": null,
+   "t_burst": null,
+   "unknown": 34,
+   "window_s": 15.235663175582886,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 0.29411764705882354,
+   "burst_position": 0.10826269450703958,
+   "cluster": "k:56.38+13.7",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 6,
+   "linked": 1,
+   "mint": "91pXQmY7Md",
+   "n_ext_buyers": 51,
+   "perf_wallets": 0,
+   "premium": 2.7660000324249268,
+   "recurrent": 36,
+   "second_group": null,
+   "t_burst": -9.236792087554932,
+   "unknown": 44,
+   "window_s": 9.236792087554932,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.14285714285714285,
+   "burst_position": 0.09117576474270908,
+   "cluster": "k:29.70+24.6",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 0,
+   "mint": "DtSyNUALeU",
+   "n_ext_buyers": 19,
+   "perf_wallets": 0,
+   "premium": 5.160999774932861,
+   "recurrent": 19,
+   "second_group": null,
+   "t_burst": -10.967826843261719,
+   "unknown": 8,
+   "window_s": 10.967826843261719,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.5,
+   "burst_position": 0.0,
+   "cluster": "k:30.66+29.6",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 12,
+   "linked": 0,
+   "mint": "Fb9GkWRBrs",
+   "n_ext_buyers": 18,
+   "perf_wallets": 0,
+   "premium": 11.111000061035156,
+   "recurrent": 18,
+   "second_group": null,
+   "t_burst": -9.860949039459229,
+   "unknown": 6,
+   "window_s": 8.860949039459229,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.0,
+   "burst_position": 0.0,
+   "cluster": "k:24.76+24.6",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 1,
+   "independent": 11,
+   "linked": 0,
+   "mint": "7oLcB2TtqQ",
+   "n_ext_buyers": 16,
+   "perf_wallets": 0,
+   "premium": 6.327000141143799,
+   "recurrent": 16,
+   "second_group": null,
+   "t_burst": -12.407877206802368,
+   "unknown": 5,
+   "window_s": 11.407877206802368,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.24,
+   "burst_position": 0.07499319630002449,
+   "cluster": "c:8QyCAzLox4",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 2,
+   "independent": 15,
+   "linked": 1,
+   "mint": "Drk3CtZEwL",
+   "n_ext_buyers": 52,
+   "perf_wallets": 2,
+   "premium": 3.506999969482422,
+   "recurrent": 44,
+   "second_group": null,
+   "t_burst": -13.334542989730835,
+   "unknown": 36,
+   "window_s": 13.334542989730835,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 0.0,
+   "burst_position": 0.07264221063494944,
+   "cluster": "k:25.65+24.6",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 12,
+   "linked": 0,
+   "mint": "Gd2igp4YL8",
+   "n_ext_buyers": 21,
+   "perf_wallets": 0,
+   "premium": 5.86899995803833,
+   "recurrent": 21,
+   "second_group": null,
+   "t_burst": -13.766100883483887,
+   "unknown": 9,
+   "window_s": 13.766100883483887,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.37142857142857144,
+   "burst_position": 0.3958172615658531,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 8,
+   "linked": 1,
+   "mint": "4rY8qH4BAm",
+   "n_ext_buyers": 46,
+   "perf_wallets": 3,
+   "premium": 3.2320001125335693,
+   "recurrent": 44,
+   "second_group": null,
+   "t_burst": -5.579255104064941,
+   "unknown": 37,
+   "window_s": 7.579255104064941,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": Infinity,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 14,
+   "linked": 0,
+   "mint": "7vviBDZEmy",
+   "n_ext_buyers": 38,
+   "perf_wallets": 7,
+   "premium": 3.453000068664551,
+   "recurrent": 38,
+   "second_group": null,
+   "t_burst": -4.286997079849243,
+   "unknown": 24,
+   "window_s": 3.286997079849243,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.2,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 0,
+   "mint": "3Mm39gqP5v",
+   "n_ext_buyers": 52,
+   "perf_wallets": 10,
+   "premium": 2.9830000400543213,
+   "recurrent": 46,
+   "second_group": null,
+   "t_burst": -12.168334007263184,
+   "unknown": 41,
+   "window_s": 11.168334007263184,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 0.2631578947368421,
+   "burst_position": 0.0,
+   "cluster": "k:19.76+19.7",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 14,
+   "linked": 0,
+   "mint": "8pVbx68qkP",
+   "n_ext_buyers": 46,
+   "perf_wallets": 0,
+   "premium": 3.63100004196167,
+   "recurrent": 44,
+   "second_group": null,
+   "t_burst": -10.8369300365448,
+   "unknown": 32,
+   "window_s": 9.8369300365448,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": Infinity,
+   "burst_position": 0.8332205633624866,
+   "cluster": "c:6DPiM8hK7o",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 3,
+   "linked": 8,
+   "mint": "9kubGiQtv5",
+   "n_ext_buyers": 12,
+   "perf_wallets": 0,
+   "premium": 33884.38671875,
+   "recurrent": 10,
+   "second_group": null,
+   "t_burst": -3.00162410736084,
+   "unknown": 1,
+   "window_s": 12.00162410736084,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.42857142857142855,
+   "burst_position": 0.05933652455061747,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 15,
+   "linked": 1,
+   "mint": "FpXX3TH5Qa",
+   "n_ext_buyers": 47,
+   "perf_wallets": 0,
+   "premium": 3.7639999389648438,
+   "recurrent": 41,
+   "second_group": null,
+   "t_burst": -16.853026151657104,
+   "unknown": 31,
+   "window_s": 16.853026151657104,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.4,
+   "burst_position": 0.0,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 13,
+   "linked": 1,
+   "mint": "A9cXx5AAmD",
+   "n_ext_buyers": 48,
+   "perf_wallets": 0,
+   "premium": 3.7909998893737793,
+   "recurrent": 45,
+   "second_group": null,
+   "t_burst": -9.086745023727417,
+   "unknown": 34,
+   "window_s": 8.086745023727417,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.3333333333333333,
+   "burst_position": null,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": null,
+   "independent": 10,
+   "linked": 1,
+   "mint": "McbTQ3TyMj",
+   "n_ext_buyers": 34,
+   "perf_wallets": 0,
+   "premium": 3.5820000171661377,
+   "recurrent": 33,
+   "second_group": null,
+   "t_burst": null,
+   "unknown": 23,
+   "window_s": 7.41193699836731,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.4166666666666667,
+   "burst_position": 0.06384812882370282,
+   "cluster": "k:21.13+21.0",
+   "fresh": 0,
+   "funder_groups": 2,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 2,
+   "mint": "85zNoV5b7X",
+   "n_ext_buyers": 52,
+   "perf_wallets": 0,
+   "premium": 3.924999952316284,
+   "recurrent": 49,
+   "second_group": null,
+   "t_burst": -15.662166118621826,
+   "unknown": 39,
+   "window_s": 15.662166118621826,
+   "y2": 1,
+   "y3": 1
+  },
+  {
+   "accel_buys": 0.25,
+   "burst_position": 0.09110896752891484,
+   "cluster": "c:EwFgFSw9KH",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 16,
+   "linked": 0,
+   "mint": "FwBJyBd7PN",
+   "n_ext_buyers": 61,
+   "perf_wallets": 4,
+   "premium": 3.7090001106262207,
+   "recurrent": 58,
+   "second_group": null,
+   "t_burst": -10.975867986679077,
+   "unknown": 45,
+   "window_s": 10.975867986679077,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.38095238095238093,
+   "burst_position": 0.0,
+   "cluster": "c:EwFgFSw9KH",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 9,
+   "linked": 0,
+   "mint": "6LYndPnLFU",
+   "n_ext_buyers": 50,
+   "perf_wallets": 4,
+   "premium": 3.8289999961853027,
+   "recurrent": 45,
+   "second_group": null,
+   "t_burst": -11.266676902770996,
+   "unknown": 41,
+   "window_s": 10.266676902770996,
+   "y2": 0,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.12,
+   "burst_position": 0.127447291496196,
+   "cluster": "c:HxYyavxib9",
+   "fresh": 1,
+   "funder_groups": 0,
+   "indep_after_burst": 0,
+   "independent": 18,
+   "linked": 0,
+   "mint": "61Gvuz5MhU",
+   "n_ext_buyers": 28,
+   "perf_wallets": 0,
+   "premium": 3.7960000038146973,
+   "recurrent": 24,
+   "second_group": null,
+   "t_burst": -7.846380949020386,
+   "unknown": 10,
+   "window_s": 7.846380949020386,
+   "y2": 1,
+   "y3": 0
+  },
+  {
+   "accel_buys": 0.47058823529411764,
+   "burst_position": 0.0,
+   "cluster": "c:AgTAFS3ZWu",
+   "fresh": 0,
+   "funder_groups": 1,
+   "indep_after_burst": 0,
+   "independent": 11,
+   "linked": 0,
+   "mint": "2ww66irr9z",
+   "n_ext_buyers": 49,
+   "perf_wallets": 2,
+   "premium": 3.5209999084472656,
+   "recurrent": 49,
+   "second_group": null,
+   "t_burst": -8.593063831329346,
+   "unknown": 38,
+   "window_s": 7.593063831329346,
+   "y2": 1,
+   "y3": 0
+  }
+ ],
+ "d1_variants_note": "strict/loose/cut2 lifts are in composite_patterns_results.json",
+ "decomposition": {
+  "ABC_sync+sizes+funder": {
+   "clusters": 12,
+   "days": 9,
+   "ev_500_x2": -0.2144389353266114,
+   "lift_x2": 1.3755210306934447,
+   "lift_x3": 2.8163793103448276,
+   "n": 29,
+   "x2": 0.3448275862068966,
+   "x3": 0.3103448275862069,
+   "x5": 0.0
+  },
+  "AB_sync+sizes": {
+   "clusters": 22,
+   "days": 9,
+   "ev_500_x2": -0.23522226132765336,
+   "lift_x2": 1.3054945054945055,
+   "lift_x3": 1.9799999999999998,
+   "n": 55,
+   "x2": 0.32727272727272727,
+   "x3": 0.21818181818181817,
+   "x5": 0.03636363636363636
+  },
+  "AC_sync+funder": {
+   "clusters": 27,
+   "days": 11,
+   "ev_500_x2": -0.2712753338885134,
+   "lift_x2": 1.1397174254317113,
+   "lift_x3": 1.4260714285714284,
+   "n": 70,
+   "x2": 0.2857142857142857,
+   "x3": 0.15714285714285714,
+   "x5": 0.014285714285714285
+  },
+  "A_sync_alone": {
+   "clusters": 37,
+   "days": 11,
+   "ev_500_x2": -0.2842341663146761,
+   "lift_x2": 1.1312120715105791,
+   "lift_x3": 1.2867537313432835,
+   "n": 134,
+   "x2": 0.2835820895522388,
+   "x3": 0.1417910447761194,
+   "x5": 0.022388059701492536
+  },
+  "BC_sizes+funder": {
+   "clusters": 35,
+   "days": 11,
+   "ev_500_x2": -0.2525196149531472,
+   "lift_x2": 1.1108638197245793,
+   "lift_x3": 1.8379746835443038,
+   "n": 79,
+   "x2": 0.27848101265822783,
+   "x3": 0.20253164556962025,
+   "x5": 0.05063291139240506
+  },
+  "B_sizes_alone": {
+   "clusters": 45,
+   "days": 11,
+   "ev_500_x2": -0.27235079203347345,
+   "lift_x2": 1.1842376373626375,
+   "lift_x3": 1.4888671875,
+   "n": 128,
+   "x2": 0.296875,
+   "x3": 0.1640625,
+   "x5": 0.0546875
+  },
+  "C_funder_alone": {
+   "clusters": 68,
+   "days": 12,
+   "ev_500_x2": -0.3112514655879521,
+   "lift_x2": 1.0354454056581717,
+   "lift_x3": 1.0812765957446808,
+   "n": 235,
+   "x2": 0.25957446808510637,
+   "x3": 0.11914893617021277,
+   "x5": 0.02553191489361702
+  },
+  "D1 = pairs>=4 & slot>=8 & funder": {
+   "clusters": 17,
+   "days": 11,
+   "ev_500_x2": -0.11979211343365925,
+   "lift_x2": 1.595604395604396,
+   "lift_x3": 2.041875,
+   "n": 40,
+   "x2": 0.4,
+   "x3": 0.225,
+   "x5": 0.025
+  },
+  "none_of_the_three": {
+   "clusters": 16,
+   "days": 9,
+   "ev_500_x2": -0.6229739791774229,
+   "lift_x2": 0.3891718038059502,
+   "lift_x3": 0.4426829268292683,
+   "n": 41,
+   "x2": 0.0975609756097561,
+   "x3": 0.04878048780487805,
+   "x5": 0.0
+  },
+  "sync_same_size_pairs>=4 (D1 atom)": {
+   "clusters": 41,
+   "days": 12,
+   "ev_500_x2": -0.3230389626048729,
+   "lift_x2": 1.1435164835164837,
+   "lift_x3": 1.1495,
+   "n": 150,
+   "x2": 0.2866666666666667,
+   "x3": 0.12666666666666668,
+   "x5": 0.02666666666666667
+  }
+ },
+ "q65_same_size_share": 0.3499999940395355,
+ "rules": {
+  "R1_burst_then_ge5_independent": {
+   "clusters": 10,
+   "days": 7,
+   "ev_500_x2": 0.025884048841897565,
+   "lift_x2": 1.0637362637362637,
+   "lift_x3": 0.605,
+   "n": 15,
+   "outside_D1": {
+    "n": 14,
+    "precision": 0.21428571428571427,
+    "successes": 3
+   },
+   "within_D1": {
+    "n": 1,
+    "precision": 1.0,
+    "successes": 1
+   },
+   "x2": 0.26666666666666666,
+   "x3": 0.06666666666666667
+  },
+  "R1b_burst_then_lt5_independent": {
+   "clusters": 43,
+   "days": 11,
+   "ev_500_x2": -0.40073267463443824,
+   "lift_x2": 1.033298027273931,
+   "lift_x3": 1.0933734939759037,
+   "n": 166,
+   "outside_D1": {
+    "n": 130,
+    "precision": 0.23076923076923078,
+    "successes": 30
+   },
+   "within_D1": {
+    "n": 36,
+    "precision": 0.3611111111111111,
+    "successes": 13
+   },
+   "x2": 0.25903614457831325,
+   "x3": 0.12048192771084337
+  },
+  "R2_burst_in_first_half_window": {
+   "clusters": 31,
+   "days": 11,
+   "ev_500_x2": -0.3431830527253482,
+   "lift_x2": 1.120508704778368,
+   "lift_x3": 1.121629213483146,
+   "n": 89,
+   "outside_D1": {
+    "n": 70,
+    "precision": 0.21428571428571427,
+    "successes": 15
+   },
+   "within_D1": {
+    "n": 19,
+    "precision": 0.5263157894736842,
+    "successes": 10
+   },
+   "x2": 0.2808988764044944,
+   "x3": 0.12359550561797752
+  },
+  "R2b_burst_in_second_half_window": {
+   "clusters": 12,
+   "days": 8,
+   "ev_500_x2": -0.6193056451435498,
+   "lift_x2": 0.4986263736263737,
+   "lift_x3": 0.75625,
+   "n": 24,
+   "outside_D1": {
+    "n": 20,
+    "precision": 0.15,
+    "successes": 3
+   },
+   "within_D1": {
+    "n": 4,
+    "precision": 0.0,
+    "successes": 0
+   },
+   "x2": 0.125,
+   "x3": 0.08333333333333333
+  },
+  "R3_independent_accelerate_last5s": {
+   "clusters": 4,
+   "days": 3,
+   "ev_500_x2": -0.7268114087593627,
+   "lift_x2": 0.5698587127158556,
+   "lift_x3": 0.0,
+   "n": 7,
+   "outside_D1": {
+    "n": 6,
+    "precision": 0.16666666666666666,
+    "successes": 1
+   },
+   "within_D1": {
+    "n": 1,
+    "precision": 0.0,
+    "successes": 0
+   },
+   "x2": 0.14285714285714285,
+   "x3": 0.0
+  },
+  "R4_second_funder_group_present": {
+   "clusters": 1,
+   "days": 1,
+   "ev_500_x2": -0.9940222587329475,
+   "lift_x2": 0.0,
+   "lift_x3": 0.0,
+   "n": 2,
+   "outside_D1": {
+    "n": 0,
+    "precision": null,
+    "successes": 0
+   },
+   "within_D1": {
+    "n": 2,
+    "precision": 0.0,
+    "successes": 0
+   },
+   "x2": 0.0,
+   "x3": 0.0
+  },
+  "R5_performing_wallet_present": {
+   "clusters": 49,
+   "days": 11,
+   "ev_500_x2": -0.3548586427376188,
+   "lift_x2": 1.1080586080586081,
+   "lift_x3": 0.9625,
+   "n": 198,
+   "outside_D1": {
+    "n": 175,
+    "precision": 0.26285714285714284,
+    "successes": 46
+   },
+   "within_D1": {
+    "n": 23,
+    "precision": 0.391304347826087,
+    "successes": 9
+   },
+   "x2": 0.2777777777777778,
+   "x3": 0.10606060606060606
+  },
+  "R6_ge10_independent_total": {
+   "clusters": 60,
+   "days": 12,
+   "ev_500_x2": -0.3209420626498246,
+   "lift_x2": 1.0799942415662942,
+   "lift_x3": 1.0699781659388645,
+   "n": 229,
+   "outside_D1": {
+    "n": 201,
+    "precision": 0.24378109452736318,
+    "successes": 49
+   },
+   "within_D1": {
+    "n": 28,
+    "precision": 0.4642857142857143,
+    "successes": 13
+   },
+   "x2": 0.27074235807860264,
+   "x3": 0.11790393013100436
+  },
+  "R7_no_burst_at_all": {
+   "clusters": 58,
+   "days": 12,
+   "ev_500_x2": -0.32747328688984956,
+   "lift_x2": 0.9643762830576018,
+   "lift_x3": 0.9473901098901099,
+   "n": 182,
+   "outside_D1": {
+    "n": 179,
+    "precision": 0.2346368715083799,
+    "successes": 42
+   },
+   "within_D1": {
+    "n": 3,
+    "precision": 0.6666666666666666,
+    "successes": 2
+   },
+   "x2": 0.24175824175824176,
+   "x3": 0.1043956043956044
+  },
+  "R8_D1_and_ge5_independent_after_burst": {
+   "clusters": 1,
+   "days": 1,
+   "ev_500_x2": 1.7433280589257603,
+   "lift_x2": 3.9890109890109895,
+   "lift_x3": 9.075,
+   "n": 1,
+   "outside_D1": {
+    "n": 0,
+    "precision": null,
+    "successes": 0
+   },
+   "within_D1": {
+    "n": 1,
+    "precision": 1.0,
+    "successes": 1
+   },
+   "x2": 1.0,
+   "x3": 1.0
+  },
+  "R9_linked_share_ge_half": {
+   "clusters": 1,
+   "days": 1,
+   "ev_500_x2": 0.022051680412077737,
+   "lift_x2": 0.0,
+   "lift_x3": 0.0,
+   "n": 2,
+   "outside_D1": {
+    "n": 1,
+    "precision": 0.0,
+    "successes": 0
+   },
+   "within_D1": {
+    "n": 1,
+    "precision": 0.0,
+    "successes": 0
+   },
+   "x2": 0.0,
+   "x3": 0.0
+  }
+ },
+ "trajectories": {
+  "D1": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      1.625,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      1.9792208246749994,
+      0.0
+     ],
+     "buys": [
+      1.875,
+      0.0
+     ],
+     "cum_sol": [
+      1.9792208246749994,
+      0.0
+     ],
+     "cum_wallets": [
+      1.625,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.025,
+      0.0
+     ],
+     "independent": [
+      0.225,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.625,
+      0.0
+     ],
+     "recurrent": [
+      0.825,
+      0.0
+     ],
+     "sells": [
+      0.55,
+      0.0
+     ],
+     "size_cv": [
+      1.3685000570588748,
+      1.3685000570588748
+     ],
+     "size_median": [
+      0.294065216000007,
+      0.294065216000007
+     ],
+     "sync_pairs": [
+      0.375,
+      0.0
+     ],
+     "unknown": [
+      1.4,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      18.05,
+      16.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      6.580601194025017,
+      1.7769674735
+     ],
+     "buys": [
+      19.675,
+      16.0
+     ],
+     "cum_sol": [
+      8.559822018700014,
+      1.7769674735
+     ],
+     "cum_wallets": [
+      19.475,
+      16.0
+     ],
+     "fresh": [
+      0.025,
+      0.0
+     ],
+     "funders_known": [
+      1.475,
+      1.0
+     ],
+     "independent": [
+      7.75,
+      9.5
+     ],
+     "linked": [
+      0.425,
+      0.0
+     ],
+     "new": [
+      17.85,
+      16.0
+     ],
+     "recurrent": [
+      14.65,
+      15.5
+     ],
+     "sells": [
+      2.575,
+      0.0
+     ],
+     "size_cv": [
+      1.4263644932109714,
+      1.4321421668321956
+     ],
+     "size_median": [
+      0.11077837485002347,
+      0.05097065950000257
+     ],
+     "sync_pairs": [
+      4.55,
+      3.0
+     ],
+     "unknown": [
+      9.875,
+      4.5
+     ]
+    },
+    {
+     "active": [
+      19.3,
+      18.5
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      7.492026080275001,
+      2.8924750490000055
+     ],
+     "buys": [
+      19.85,
+      20.0
+     ],
+     "cum_sol": [
+      16.051848098975018,
+      6.583458116000003
+     ],
+     "cum_wallets": [
+      38.375,
+      33.5
+     ],
+     "fresh": [
+      0.05,
+      0.0
+     ],
+     "funders_known": [
+      0.575,
+      0.0
+     ],
+     "independent": [
+      3.025,
+      0.0
+     ],
+     "linked": [
+      0.3,
+      0.0
+     ],
+     "new": [
+      18.9,
+      18.5
+     ],
+     "recurrent": [
+      16.325,
+      13.5
+     ],
+     "sells": [
+      3.525,
+      2.0
+     ],
+     "size_cv": [
+      1.5321633805043993,
+      1.4175551312891355
+     ],
+     "size_median": [
+      0.12455884713513649,
+      0.07633249600000624
+     ],
+     "sync_pairs": [
+      7.425,
+      2.5
+     ],
+     "unknown": [
+      15.975,
+      13.5
+     ]
+    },
+    {
+     "active": [
+      8.225,
+      5.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      3.5309453572749923,
+      1.0333795534999979
+     ],
+     "buys": [
+      8.4,
+      5.0
+     ],
+     "cum_sol": [
+      19.58279345625001,
+      8.097670458500005
+     ],
+     "cum_wallets": [
+      46.15,
+      46.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.075,
+      0.0
+     ],
+     "independent": [
+      0.4,
+      0.0
+     ],
+     "linked": [
+      0.225,
+      0.0
+     ],
+     "new": [
+      7.775,
+      5.0
+     ],
+     "recurrent": [
+      6.025,
+      4.0
+     ],
+     "sells": [
+      1.775,
+      1.0
+     ],
+     "size_cv": [
+      1.1922701518573702,
+      1.029509028734034
+     ],
+     "size_median": [
+      0.4680151605945954,
+      0.07840609999999515
+     ],
+     "sync_pairs": [
+      6.2,
+      0.0
+     ],
+     "unknown": [
+      7.6,
+      5.0
+     ]
+    },
+    {
+     "active": [
+      2.075,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      1.1570675029750006,
+      0.09365957050000162
+     ],
+     "buys": [
+      2.1,
+      1.0
+     ],
+     "cum_sol": [
+      20.73986095922501,
+      8.372856988500004
+     ],
+     "cum_wallets": [
+      48.1,
+      46.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.95,
+      1.0
+     ],
+     "recurrent": [
+      1.425,
+      0.0
+     ],
+     "sells": [
+      0.65,
+      0.0
+     ],
+     "size_cv": [
+      0.7606034147258122,
+      0.7397856222224457
+     ],
+     "size_median": [
+      0.6631575653200007,
+      0.09555570199999863
+     ],
+     "sync_pairs": [
+      0.375,
+      0.0
+     ],
+     "unknown": [
+      2.075,
+      1.0
+     ]
+    },
+    {
+     "active": [
+      2.1,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      0.6559735913750009,
+      0.08638784449999548
+     ],
+     "buys": [
+      2.125,
+      1.0
+     ],
+     "cum_sol": [
+      21.39583455060001,
+      9.214589480999997
+     ],
+     "cum_wallets": [
+      50.075,
+      48.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.975,
+      1.0
+     ],
+     "recurrent": [
+      0.075,
+      0.0
+     ],
+     "sells": [
+      0.55,
+      0.0
+     ],
+     "size_cv": [
+      0.7507764957246276,
+      0.9289713952147965
+     ],
+     "size_median": [
+      0.2674760390000007,
+      0.0886158849999994
+     ],
+     "sync_pairs": [
+      0.45,
+      0.0
+     ],
+     "unknown": [
+      0.125,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.6838179797131222,
+     "median": 0.37142857142857144,
+     "n": 37
+    },
+    "burst_position": {
+     "mean": 0.16085000413738806,
+     "median": 0.07264221063494944,
+     "n": 37
+    },
+    "indep_after_burst": {
+     "mean": 0.4594594594594595,
+     "median": 0.0,
+     "n": 37
+    },
+    "indep_before_burst": {
+     "mean": 10.594594594594595,
+     "median": 11.0,
+     "n": 37
+    },
+    "indep_last5": {
+     "mean": 0.4,
+     "median": 0.0,
+     "n": 40
+    },
+    "indep_prev5": {
+     "mean": 3.0,
+     "median": 0.0,
+     "n": 40
+    },
+    "linked_after_burst": {
+     "mean": 0.02702702702702703,
+     "median": 0.0,
+     "n": 37
+    },
+    "n_ext_buyers": {
+     "mean": 48.1,
+     "median": 46.0,
+     "n": 40
+    },
+    "n_fresh": {
+     "mean": 0.075,
+     "median": 0.0,
+     "n": 40
+    },
+    "n_funder_groups": {
+     "mean": 1.225,
+     "median": 1.0,
+     "n": 40
+    },
+    "n_independent": {
+     "mean": 11.375,
+     "median": 11.0,
+     "n": 40
+    },
+    "n_link_core": {
+     "mean": 0.475,
+     "median": 0.0,
+     "n": 40
+    },
+    "n_linked": {
+     "mean": 0.9,
+     "median": 0.0,
+     "n": 40
+    },
+    "n_perf_wallets": {
+     "mean": 2.325,
+     "median": 1.0,
+     "n": 40
+    },
+    "n_recurrent": {
+     "mean": 38.725,
+     "median": 40.5,
+     "n": 40
+    },
+    "n_unknown": {
+     "mean": 35.825,
+     "median": 33.5,
+     "n": 40
+    },
+    "new_after_burst": {
+     "mean": 26.675675675675677,
+     "median": 21.0,
+     "n": 37
+    },
+    "perf_first_dt": {
+     "mean": -10.758962506833283,
+     "median": -11.008108139038086,
+     "n": 23
+    },
+    "t_burst": {
+     "mean": -10.468968591174564,
+     "median": -10.967826843261719,
+     "n": 37
+    },
+    "t_buyers_10": {
+     "mean": -11.351966422796249,
+     "median": -10.991988062858582,
+     "n": 40
+    },
+    "t_buyers_20": {
+     "mean": -10.350541503088815,
+     "median": -10.008108139038086,
+     "n": 35
+    },
+    "t_first_funder_group": {
+     "mean": -11.098352710405985,
+     "median": -11.967321157455444,
+     "n": 6
+    },
+    "t_indep_10": {
+     "mean": -11.563025270189558,
+     "median": -11.095924019813538,
+     "n": 28
+    },
+    "t_indep_5": {
+     "mean": -11.873770071909977,
+     "median": -11.097532987594604,
+     "n": 39
+    },
+    "t_second_funder_group": {
+     "mean": -11.99584186077118,
+     "median": -11.99584186077118,
+     "n": 2
+    },
+    "window_s": {
+     "mean": 11.17696642279625,
+     "median": 10.617251873016357,
+     "n": 40
+    }
+   },
+   "n": 40,
+   "share_perf_wallet": 0.575,
+   "share_second_funder_group": 0.05,
+   "share_with_burst": 0.925
+  },
+  "D1_fail": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      13.791666666666666,
+      13.5
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      2.7388645945833603,
+      1.505366852500003
+     ],
+     "buys": [
+      14.0,
+      13.5
+     ],
+     "cum_sol": [
+      2.7388645945833603,
+      1.505366852500003
+     ],
+     "cum_wallets": [
+      13.791666666666666,
+      13.5
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      1.0,
+      0.5
+     ],
+     "independent": [
+      6.916666666666667,
+      9.0
+     ],
+     "linked": [
+      0.375,
+      0.0
+     ],
+     "new": [
+      13.791666666666666,
+      13.5
+     ],
+     "recurrent": [
+      13.458333333333334,
+      13.5
+     ],
+     "sells": [
+      0.9583333333333334,
+      0.0
+     ],
+     "size_cv": [
+      1.3074385655841088,
+      1.2633986725405926
+     ],
+     "size_median": [
+      0.10426317347062758,
+      0.05243539100000305
+     ],
+     "sync_pairs": [
+      2.375,
+      2.0
+     ],
+     "unknown": [
+      6.5,
+      3.0
+     ]
+    },
+    {
+     "active": [
+      18.458333333333332,
+      18.5
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      3.0617007988750014,
+      2.525596063000002
+     ],
+     "buys": [
+      19.041666666666668,
+      20.0
+     ],
+     "cum_sol": [
+      5.800565393458361,
+      4.961742737000002
+     ],
+     "cum_wallets": [
+      32.125,
+      30.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.5833333333333334,
+      0.0
+     ],
+     "independent": [
+      3.0,
+      0.0
+     ],
+     "linked": [
+      0.4166666666666667,
+      0.0
+     ],
+     "new": [
+      18.333333333333332,
+      18.5
+     ],
+     "recurrent": [
+      17.333333333333332,
+      15.5
+     ],
+     "sells": [
+      2.2083333333333335,
+      2.0
+     ],
+     "size_cv": [
+      1.537588549836971,
+      1.4637150367546974
+     ],
+     "size_median": [
+      0.08615380813636477,
+      0.08049272300000312
+     ],
+     "sync_pairs": [
+      10.291666666666666,
+      3.0
+     ],
+     "unknown": [
+      15.041666666666666,
+      13.5
+     ]
+    },
+    {
+     "active": [
+      8.333333333333334,
+      5.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      1.215477800499986,
+      0.8555832890000019
+     ],
+     "buys": [
+      8.333333333333334,
+      5.0
+     ],
+     "cum_sol": [
+      7.016043193958347,
+      6.537967214999981
+     ],
+     "cum_wallets": [
+      40.291666666666664,
+      44.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.08333333333333333,
+      0.0
+     ],
+     "independent": [
+      0.6666666666666666,
+      0.0
+     ],
+     "linked": [
+      0.3333333333333333,
+      0.0
+     ],
+     "new": [
+      8.166666666666666,
+      5.0
+     ],
+     "recurrent": [
+      7.083333333333333,
+      5.0
+     ],
+     "sells": [
+      1.4166666666666667,
+      1.0
+     ],
+     "size_cv": [
+      1.263518996205678,
+      1.023215488992513
+     ],
+     "size_median": [
+      0.11630031758695851,
+      0.07508989499999785
+     ],
+     "sync_pairs": [
+      9.708333333333334,
+      0.0
+     ],
+     "unknown": [
+      7.333333333333333,
+      5.0
+     ]
+    },
+    {
+     "active": [
+      2.375,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      0.728442104166667,
+      0.21983508900000637
+     ],
+     "buys": [
+      2.375,
+      1.0
+     ],
+     "cum_sol": [
+      7.744485298125014,
+      8.0572820045
+     ],
+     "cum_wallets": [
+      42.541666666666664,
+      46.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      2.25,
+      1.0
+     ],
+     "recurrent": [
+      1.9583333333333333,
+      0.5
+     ],
+     "sells": [
+      0.5833333333333334,
+      0.0
+     ],
+     "size_cv": [
+      0.8307689823040281,
+      0.7789837252102683
+     ],
+     "size_median": [
+      0.5805896668823534,
+      0.08614031500000152
+     ],
+     "sync_pairs": [
+      0.3333333333333333,
+      0.0
+     ],
+     "unknown": [
+      2.375,
+      1.0
+     ]
+    },
+    {
+     "active": [
+      1.6666666666666667,
+      1.5
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      0.3758805574583341,
+      0.10653421450000167
+     ],
+     "buys": [
+      1.6666666666666667,
+      1.5
+     ],
+     "cum_sol": [
+      8.120365855583348,
+      8.285143763000008
+     ],
+     "cum_wallets": [
+      44.125,
+      47.5
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.5833333333333333,
+      1.0
+     ],
+     "recurrent": [
+      0.08333333333333333,
+      0.0
+     ],
+     "sells": [
+      0.4583333333333333,
+      0.0
+     ],
+     "size_cv": [
+      0.5688290563613777,
+      0.3014282095027233
+     ],
+     "size_median": [
+      0.3121517280588241,
+      0.09809599700000149
+     ],
+     "sync_pairs": [
+      0.16666666666666666,
+      0.0
+     ],
+     "unknown": [
+      0.08333333333333333,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.7712199802035188,
+     "median": 0.3571428571428571,
+     "n": 22
+    },
+    "burst_position": {
+     "mean": 0.20875653056244484,
+     "median": 0.06544730050076819,
+     "n": 23
+    },
+    "indep_after_burst": {
+     "mean": 0.08695652173913043,
+     "median": 0.0,
+     "n": 23
+    },
+    "indep_before_burst": {
+     "mean": 10.521739130434783,
+     "median": 11.0,
+     "n": 23
+    },
+    "indep_last5": {
+     "mean": 0.6666666666666666,
+     "median": 0.0,
+     "n": 24
+    },
+    "indep_prev5": {
+     "mean": 3.0,
+     "median": 0.0,
+     "n": 24
+    },
+    "linked_after_burst": {
+     "mean": 0.0,
+     "median": 0.0,
+     "n": 23
+    },
+    "n_ext_buyers": {
+     "mean": 42.541666666666664,
+     "median": 46.0,
+     "n": 24
+    },
+    "n_fresh": {
+     "mean": 0.0,
+     "median": 0.0,
+     "n": 24
+    },
+    "n_funder_groups": {
+     "mean": 1.375,
+     "median": 1.0,
+     "n": 24
+    },
+    "n_independent": {
+     "mean": 10.583333333333334,
+     "median": 11.0,
+     "n": 24
+    },
+    "n_link_core": {
+     "mean": 0.4166666666666667,
+     "median": 0.0,
+     "n": 24
+    },
+    "n_linked": {
+     "mean": 1.125,
+     "median": 0.0,
+     "n": 24
+    },
+    "n_perf_wallets": {
+     "mean": 2.4166666666666665,
+     "median": 1.0,
+     "n": 24
+    },
+    "n_recurrent": {
+     "mean": 39.416666666666664,
+     "median": 40.5,
+     "n": 24
+    },
+    "n_unknown": {
+     "mean": 30.833333333333332,
+     "median": 31.5,
+     "n": 24
+    },
+    "new_after_burst": {
+     "mean": 20.347826086956523,
+     "median": 18.0,
+     "n": 23
+    },
+    "perf_first_dt": {
+     "mean": -9.48786187171936,
+     "median": -10.627668499946594,
+     "n": 14
+    },
+    "t_burst": {
+     "mean": -9.29252206760904,
+     "median": -9.860949039459229,
+     "n": 23
+    },
+    "t_buyers_10": {
+     "mean": -10.505831023057302,
+     "median": -10.90237843990326,
+     "n": 24
+    },
+    "t_buyers_20": {
+     "mean": -9.495083367824554,
+     "median": -9.353543639183044,
+     "n": 20
+    },
+    "t_first_funder_group": {
+     "mean": -9.1730717420578,
+     "median": -9.16906201839447,
+     "n": 4
+    },
+    "t_indep_10": {
+     "mean": -10.840241034825643,
+     "median": -10.967826843261719,
+     "n": 15
+    },
+    "t_indep_5": {
+     "mean": -11.092970454174539,
+     "median": -11.008108139038086,
+     "n": 23
+    },
+    "t_second_funder_group": {
+     "mean": -11.99584186077118,
+     "median": -11.99584186077118,
+     "n": 2
+    },
+    "window_s": {
+     "mean": 10.464164356390635,
+     "median": 10.095507979393005,
+     "n": 24
+    }
+   },
+   "n": 24,
+   "share_perf_wallet": 0.5833333333333334,
+   "share_second_funder_group": 0.08333333333333333,
+   "share_with_burst": 0.9583333333333334
+  },
+  "D1_x2": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      4.0625,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      4.948052061687498,
+      0.0
+     ],
+     "buys": [
+      4.6875,
+      0.0
+     ],
+     "cum_sol": [
+      4.948052061687498,
+      0.0
+     ],
+     "cum_wallets": [
+      4.0625,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0625,
+      0.0
+     ],
+     "independent": [
+      0.5625,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      4.0625,
+      0.0
+     ],
+     "recurrent": [
+      2.0625,
+      0.0
+     ],
+     "sells": [
+      1.375,
+      0.0
+     ],
+     "size_cv": [
+      1.3685000570588748,
+      1.3685000570588748
+     ],
+     "size_median": [
+      0.294065216000007,
+      0.294065216000007
+     ],
+     "sync_pairs": [
+      0.9375,
+      0.0
+     ],
+     "unknown": [
+      3.5,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      24.4375,
+      20.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      12.343206093187503,
+      4.0725546564999995
+     ],
+     "buys": [
+      28.1875,
+      20.0
+     ],
+     "cum_sol": [
+      17.291258154875,
+      4.0725546564999995
+     ],
+     "cum_wallets": [
+      28.0,
+      20.0
+     ],
+     "fresh": [
+      0.0625,
+      0.0
+     ],
+     "funders_known": [
+      2.1875,
+      1.0
+     ],
+     "independent": [
+      9.0,
+      10.5
+     ],
+     "linked": [
+      0.5,
+      0.0
+     ],
+     "new": [
+      23.9375,
+      20.0
+     ],
+     "recurrent": [
+      16.4375,
+      18.0
+     ],
+     "sells": [
+      5.0,
+      0.5
+     ],
+     "size_cv": [
+      1.572734865674802,
+      1.56259484293546
+     ],
+     "size_median": [
+      0.11929825357692575,
+      0.049382715
+     ],
+     "sync_pairs": [
+      7.8125,
+      4.0
+     ],
+     "unknown": [
+      14.9375,
+      6.0
+     ]
+    },
+    {
+     "active": [
+      20.5625,
+      19.5
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      14.137514002375,
+      3.9764178665000123
+     ],
+     "buys": [
+      21.0625,
+      20.0
+     ],
+     "cum_sol": [
+      31.428772157250002,
+      9.740525299499994
+     ],
+     "cum_wallets": [
+      47.75,
+      37.5
+     ],
+     "fresh": [
+      0.125,
+      0.0
+     ],
+     "funders_known": [
+      0.5625,
+      0.0
+     ],
+     "independent": [
+      3.0625,
+      0.0
+     ],
+     "linked": [
+      0.125,
+      0.0
+     ],
+     "new": [
+      19.75,
+      19.5
+     ],
+     "recurrent": [
+      14.8125,
+      10.0
+     ],
+     "sells": [
+      5.5,
+      3.5
+     ],
+     "size_cv": [
+      1.5242064654832945,
+      1.3975714988590366
+     ],
+     "size_median": [
+      0.18088623766666836,
+      0.0735718030000001
+     ],
+     "sync_pairs": [
+      3.125,
+      2.0
+     ],
+     "unknown": [
+      17.375,
+      13.5
+     ]
+    },
+    {
+     "active": [
+      8.0625,
+      7.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      7.004146692437502,
+      1.7814847624999999
+     ],
+     "buys": [
+      8.5,
+      7.0
+     ],
+     "cum_sol": [
+      38.432918849687496,
+      11.292249292499989
+     ],
+     "cum_wallets": [
+      54.9375,
+      47.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0625,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0625,
+      0.0
+     ],
+     "new": [
+      7.1875,
+      6.5
+     ],
+     "recurrent": [
+      4.4375,
+      3.0
+     ],
+     "sells": [
+      2.3125,
+      1.0
+     ],
+     "size_cv": [
+      1.090486088502645,
+      1.029509028734034
+     ],
+     "size_median": [
+      1.0458324026785704,
+      0.09851679699999494
+     ],
+     "sync_pairs": [
+      0.9375,
+      0.5
+     ],
+     "unknown": [
+      8.0,
+      7.0
+     ]
+    },
+    {
+     "active": [
+      1.625,
+      0.5
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      1.8000056011875012,
+      4.939000000092619e-06
+     ],
+     "buys": [
+      1.6875,
+      0.5
+     ],
+     "cum_sol": [
+      40.232924450875004,
+      11.67893240099999
+     ],
+     "cum_wallets": [
+      56.4375,
+      50.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.5,
+      0.5
+     ],
+     "recurrent": [
+      0.625,
+      0.0
+     ],
+     "sells": [
+      0.75,
+      0.5
+     ],
+     "size_cv": [
+      0.6202722795693802,
+      0.6168554836699627
+     ],
+     "size_median": [
+      0.8386143495000014,
+      0.1773343615000016
+     ],
+     "sync_pairs": [
+      0.4375,
+      0.0
+     ],
+     "unknown": [
+      1.625,
+      0.5
+     ]
+    },
+    {
+     "active": [
+      2.75,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      1.076113142250001,
+      0.02772888850000392
+     ],
+     "buys": [
+      2.8125,
+      1.0
+     ],
+     "cum_sol": [
+      41.309037593125005,
+      12.112873088
+     ],
+     "cum_wallets": [
+      59.0,
+      51.5
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      2.5625,
+      0.5
+     ],
+     "recurrent": [
+      0.0625,
+      0.0
+     ],
+     "sells": [
+      0.6875,
+      1.0
+     ],
+     "size_cv": [
+      1.062686391775913,
+      0.944600043409966
+     ],
+     "size_median": [
+      0.18308862633333448,
+      0.0791357729999973
+     ],
+     "sync_pairs": [
+      0.875,
+      0.0
+     ],
+     "unknown": [
+      0.1875,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.555628378993874,
+     "median": 0.37142857142857144,
+     "n": 15
+    },
+    "burst_position": {
+     "mean": 0.08214642501050898,
+     "median": 0.0734558363642866,
+     "n": 14
+    },
+    "indep_after_burst": {
+     "mean": 1.0714285714285714,
+     "median": 0.0,
+     "n": 14
+    },
+    "indep_before_burst": {
+     "mean": 10.714285714285714,
+     "median": 10.5,
+     "n": 14
+    },
+    "indep_last5": {
+     "mean": 0.0,
+     "median": 0.0,
+     "n": 16
+    },
+    "indep_prev5": {
+     "mean": 3.0,
+     "median": 0.0,
+     "n": 16
+    },
+    "linked_after_burst": {
+     "mean": 0.07142857142857142,
+     "median": 0.0,
+     "n": 14
+    },
+    "n_ext_buyers": {
+     "mean": 56.4375,
+     "median": 50.0,
+     "n": 16
+    },
+    "n_fresh": {
+     "mean": 0.1875,
+     "median": 0.0,
+     "n": 16
+    },
+    "n_funder_groups": {
+     "mean": 1.0,
+     "median": 1.0,
+     "n": 16
+    },
+    "n_independent": {
+     "mean": 12.5625,
+     "median": 11.0,
+     "n": 16
+    },
+    "n_link_core": {
+     "mean": 0.5625,
+     "median": 0.0,
+     "n": 16
+    },
+    "n_linked": {
+     "mean": 0.5625,
+     "median": 0.0,
+     "n": 16
+    },
+    "n_perf_wallets": {
+     "mean": 2.1875,
+     "median": 2.0,
+     "n": 16
+    },
+    "n_recurrent": {
+     "mean": 37.6875,
+     "median": 40.0,
+     "n": 16
+    },
+    "n_unknown": {
+     "mean": 43.3125,
+     "median": 36.5,
+     "n": 16
+    },
+    "new_after_burst": {
+     "mean": 37.07142857142857,
+     "median": 23.0,
+     "n": 14
+    },
+    "perf_first_dt": {
+     "mean": -12.736230161454943,
+     "median": -12.536865949630737,
+     "n": 9
+    },
+    "t_burst": {
+     "mean": -12.401702165603638,
+     "median": -12.75143849849701,
+     "n": 14
+    },
+    "t_buyers_10": {
+     "mean": -12.62116952240467,
+     "median": -12.75143849849701,
+     "n": 16
+    },
+    "t_buyers_20": {
+     "mean": -11.491152350107829,
+     "median": -10.536865949630737,
+     "n": 15
+    },
+    "t_first_funder_group": {
+     "mean": -14.948914647102356,
+     "median": -14.948914647102356,
+     "n": 2
+    },
+    "t_indep_10": {
+     "mean": -12.397007080224844,
+     "median": -13.334542989730835,
+     "n": 13
+    },
+    "t_indep_5": {
+     "mean": -12.99616952240467,
+     "median": -12.935704469680786,
+     "n": 16
+    },
+    "window_s": {
+     "mean": 12.24616952240467,
+     "median": 12.054146528244019,
+     "n": 16
+    }
+   },
+   "n": 16,
+   "share_perf_wallet": 0.5625,
+   "share_second_funder_group": 0.0,
+   "share_with_burst": 0.875
+  },
+  "D1_x3": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      7.222222222222222,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      8.796536998555553,
+      0.0
+     ],
+     "buys": [
+      8.333333333333334,
+      0.0
+     ],
+     "cum_sol": [
+      8.796536998555553,
+      0.0
+     ],
+     "cum_wallets": [
+      7.222222222222222,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.1111111111111111,
+      0.0
+     ],
+     "independent": [
+      1.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      7.222222222222222,
+      0.0
+     ],
+     "recurrent": [
+      3.6666666666666665,
+      0.0
+     ],
+     "sells": [
+      2.4444444444444446,
+      0.0
+     ],
+     "size_cv": [
+      1.3685000570588748,
+      1.3685000570588748
+     ],
+     "size_median": [
+      0.294065216000007,
+      0.294065216000007
+     ],
+     "sync_pairs": [
+      1.6666666666666667,
+      0.0
+     ],
+     "unknown": [
+      6.222222222222222,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      34.22222222222222,
+      36.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      17.975483852777774,
+      6.876807625
+     ],
+     "buys": [
+      40.888888888888886,
+      36.0
+     ],
+     "cum_sol": [
+      26.772020851333327,
+      6.876807625
+     ],
+     "cum_wallets": [
+      40.55555555555556,
+      36.0
+     ],
+     "fresh": [
+      0.1111111111111111,
+      0.0
+     ],
+     "funders_known": [
+      3.2222222222222223,
+      4.0
+     ],
+     "independent": [
+      10.555555555555555,
+      11.0
+     ],
+     "linked": [
+      0.7777777777777778,
+      1.0
+     ],
+     "new": [
+      33.333333333333336,
+      36.0
+     ],
+     "recurrent": [
+      20.333333333333332,
+      21.0
+     ],
+     "sells": [
+      8.666666666666666,
+      2.0
+     ],
+     "size_cv": [
+      1.4602790262891978,
+      1.5202300045174857
+     ],
+     "size_median": [
+      0.13609572868750175,
+      0.0483952677500028
+     ],
+     "sync_pairs": [
+      12.222222222222221,
+      6.0
+     ],
+     "unknown": [
+      22.88888888888889,
+      17.0
+     ]
+    },
+    {
+     "active": [
+      22.666666666666668,
+      25.0
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      9.379360859,
+      4.997310166000015
+     ],
+     "buys": [
+      23.444444444444443,
+      25.0
+     ],
+     "cum_sol": [
+      36.15138171033333,
+      11.324752783000008
+     ],
+     "cum_wallets": [
+      61.77777777777778,
+      47.0
+     ],
+     "fresh": [
+      0.1111111111111111,
+      0.0
+     ],
+     "funders_known": [
+      0.4444444444444444,
+      0.0
+     ],
+     "independent": [
+      2.2222222222222223,
+      0.0
+     ],
+     "linked": [
+      0.2222222222222222,
+      0.0
+     ],
+     "new": [
+      21.22222222222222,
+      25.0
+     ],
+     "recurrent": [
+      14.444444444444445,
+      10.0
+     ],
+     "sells": [
+      4.0,
+      4.0
+     ],
+     "size_cv": [
+      1.4839972696776784,
+      1.259129109710601
+     ],
+     "size_median": [
+      0.22083878050000214,
+      0.09816811600000364
+     ],
+     "sync_pairs": [
+      3.6666666666666665,
+      1.0
+     ],
+     "unknown": [
+      20.22222222222222,
+      25.0
+     ]
+    },
+    {
+     "active": [
+      9.11111111111111,
+      9.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      5.029450083111113,
+      2.2184963589999995
+     ],
+     "buys": [
+      9.555555555555555,
+      9.0
+     ],
+     "cum_sol": [
+      41.18083179344445,
+      14.207543853000013
+     ],
+     "cum_wallets": [
+      69.33333333333333,
+      52.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.1111111111111111,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.1111111111111111,
+      0.0
+     ],
+     "new": [
+      7.555555555555555,
+      7.0
+     ],
+     "recurrent": [
+      4.0,
+      3.0
+     ],
+     "sells": [
+      3.2222222222222223,
+      2.0
+     ],
+     "size_cv": [
+      1.189486597677075,
+      1.0686804353900279
+     ],
+     "size_median": [
+      0.1703213841249977,
+      0.09851679699999494
+     ],
+     "sync_pairs": [
+      0.8888888888888888,
+      0.0
+     ],
+     "unknown": [
+      9.0,
+      9.0
+     ]
+    },
+    {
+     "active": [
+      2.111111111111111,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      0.515524351111111,
+      0.028561111000001915
+     ],
+     "buys": [
+      2.2222222222222223,
+      1.0
+     ],
+     "cum_sol": [
+      41.69635614455555,
+      14.207543853000013
+     ],
+     "cum_wallets": [
+      71.22222222222223,
+      52.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.8888888888888888,
+      1.0
+     ],
+     "recurrent": [
+      0.5555555555555556,
+      0.0
+     ],
+     "sells": [
+      0.8888888888888888,
+      1.0
+     ],
+     "size_cv": [
+      0.3762090407127326,
+      0.5117716384681633
+     ],
+     "size_median": [
+      0.2840624794000004,
+      0.09901185599999707
+     ],
+     "sync_pairs": [
+      0.7777777777777778,
+      0.0
+     ],
+     "unknown": [
+      2.111111111111111,
+      1.0
+     ]
+    },
+    {
+     "active": [
+      3.111111111111111,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      1.4756338955555584,
+      0.01980237000000784
+     ],
+     "buys": [
+      3.2222222222222223,
+      1.0
+     ],
+     "cum_sol": [
+      43.17199004011112,
+      14.207543853000013
+     ],
+     "cum_wallets": [
+      74.22222222222223,
+      55.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      3.0,
+      1.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      1.0,
+      1.0
+     ],
+     "size_cv": [
+      1.121689687409741,
+      0.9954695872040651
+     ],
+     "size_median": [
+      0.09051201880000186,
+      0.0791357729999973
+     ],
+     "sync_pairs": [
+      1.5555555555555556,
+      0.0
+     ],
+     "unknown": [
+      0.1111111111111111,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.5240721181765389,
+     "median": 0.3940476190476191,
+     "n": 8
+    },
+    "burst_position": {
+     "mean": 0.08260137281754713,
+     "median": 0.043551023033249495,
+     "n": 7
+    },
+    "indep_after_burst": {
+     "mean": 2.142857142857143,
+     "median": 0.0,
+     "n": 7
+    },
+    "indep_before_burst": {
+     "mean": 10.285714285714286,
+     "median": 10.0,
+     "n": 7
+    },
+    "indep_last5": {
+     "mean": 0.0,
+     "median": 0.0,
+     "n": 9
+    },
+    "indep_prev5": {
+     "mean": 2.111111111111111,
+     "median": 0.0,
+     "n": 9
+    },
+    "linked_after_burst": {
+     "mean": 0.14285714285714285,
+     "median": 0.0,
+     "n": 7
+    },
+    "n_ext_buyers": {
+     "mean": 71.22222222222223,
+     "median": 52.0,
+     "n": 9
+    },
+    "n_fresh": {
+     "mean": 0.2222222222222222,
+     "median": 0.0,
+     "n": 9
+    },
+    "n_funder_groups": {
+     "mean": 1.1111111111111112,
+     "median": 1.0,
+     "n": 9
+    },
+    "n_independent": {
+     "mean": 13.666666666666666,
+     "median": 14.0,
+     "n": 9
+    },
+    "n_link_core": {
+     "mean": 0.8888888888888888,
+     "median": 1.0,
+     "n": 9
+    },
+    "n_linked": {
+     "mean": 0.8888888888888888,
+     "median": 1.0,
+     "n": 9
+    },
+    "n_perf_wallets": {
+     "mean": 2.4444444444444446,
+     "median": 2.0,
+     "n": 9
+    },
+    "n_recurrent": {
+     "mean": 41.77777777777778,
+     "median": 46.0,
+     "n": 9
+    },
+    "n_unknown": {
+     "mean": 56.666666666666664,
+     "median": 37.0,
+     "n": 9
+    },
+    "new_after_burst": {
+     "mean": 55.42857142857143,
+     "median": 33.0,
+     "n": 7
+    },
+    "perf_first_dt": {
+     "mean": -14.455873680114745,
+     "median": -14.334542989730835,
+     "n": 5
+    },
+    "t_burst": {
+     "mean": -14.203979049410139,
+     "median": -13.5714271068573,
+     "n": 7
+    },
+    "t_buyers_10": {
+     "mean": -14.082526153988308,
+     "median": -13.5714271068573,
+     "n": 9
+    },
+    "t_buyers_20": {
+     "mean": -13.271413534879684,
+     "median": -13.242548942565918,
+     "n": 8
+    },
+    "t_first_funder_group": {
+     "mean": -14.948914647102356,
+     "median": -14.948914647102356,
+     "n": 2
+    },
+    "t_indep_10": {
+     "mean": -13.600272451128278,
+     "median": -13.5714271068573,
+     "n": 7
+    },
+    "t_indep_5": {
+     "mean": -14.304748376210531,
+     "median": -13.5714271068573,
+     "n": 9
+    },
+    "window_s": {
+     "mean": 13.638081709543863,
+     "median": 13.334542989730835,
+     "n": 9
+    }
+   },
+   "n": 9,
+   "share_perf_wallet": 0.5555555555555556,
+   "share_second_funder_group": 0.0,
+   "share_with_burst": 0.7777777777777778
+  },
+  "nonD1": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      0.13622291021671826,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      0.5519040726656346,
+      0.0
+     ],
+     "buys": [
+      0.13622291021671826,
+      0.0
+     ],
+     "cum_sol": [
+      0.5519040726656346,
+      0.0
+     ],
+     "cum_wallets": [
+      0.13622291021671826,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0030959752321981426,
+      0.0
+     ],
+     "independent": [
+      0.018575851393188854,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.13622291021671826,
+      0.0
+     ],
+     "recurrent": [
+      0.09597523219814241,
+      0.0
+     ],
+     "sells": [
+      0.05572755417956656,
+      0.0
+     ],
+     "size_cv": [
+      1.9155957917146178,
+      1.9155957917146178
+     ],
+     "size_median": [
+      0.10891304300000115,
+      0.10891304300000115
+     ],
+     "sync_pairs": [
+      0.0030959752321981426,
+      0.0
+     ],
+     "unknown": [
+      0.11764705882352941,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      11.68421052631579,
+      11.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      5.702055862538697,
+      0.7557616599999903
+     ],
+     "buys": [
+      11.773993808049536,
+      11.0
+     ],
+     "cum_sol": [
+      6.253959935204332,
+      0.7557616599999903
+     ],
+     "cum_wallets": [
+      11.81733746130031,
+      11.0
+     ],
+     "fresh": [
+      0.09907120743034056,
+      0.0
+     ],
+     "funders_known": [
+      0.9009287925696594,
+      0.0
+     ],
+     "independent": [
+      6.371517027863777,
+      7.0
+     ],
+     "linked": [
+      0.08978328173374613,
+      0.0
+     ],
+     "new": [
+      11.681114551083592,
+      11.0
+     ],
+     "recurrent": [
+      10.882352941176471,
+      10.0
+     ],
+     "sells": [
+      1.0123839009287925,
+      0.0
+     ],
+     "size_cv": [
+      1.3607459261599428,
+      1.2999075192917964
+     ],
+     "size_median": [
+      0.10541986370093259,
+      0.05036888174999865
+     ],
+     "sync_pairs": [
+      1.278637770897833,
+      0.0
+     ],
+     "unknown": [
+      5.222910216718266,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      11.48297213622291,
+      10.0
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      6.218774113990713,
+      1.5463631199999952
+     ],
+     "buys": [
+      11.743034055727554,
+      10.0
+     ],
+     "cum_sol": [
+      12.472734049195047,
+      3.3934318319999996
+     ],
+     "cum_wallets": [
+      23.241486068111456,
+      21.0
+     ],
+     "fresh": [
+      0.06191950464396285,
+      0.0
+     ],
+     "funders_known": [
+      0.56656346749226,
+      0.0
+     ],
+     "independent": [
+      3.8575851393188856,
+      0.0
+     ],
+     "linked": [
+      0.06501547987616099,
+      0.0
+     ],
+     "new": [
+      11.424148606811146,
+      10.0
+     ],
+     "recurrent": [
+      9.891640866873065,
+      8.0
+     ],
+     "sells": [
+      2.1486068111455108,
+      1.0
+     ],
+     "size_cv": [
+      1.162435221816315,
+      1.0984944143937811
+     ],
+     "size_median": [
+      0.19997880203500248,
+      0.07350825900000046
+     ],
+     "sync_pairs": [
+      1.105263157894737,
+      0.0
+     ],
+     "unknown": [
+      7.560371517027864,
+      6.0
+     ]
+    },
+    {
+     "active": [
+      5.071207430340557,
+      3.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      2.695562911253868,
+      0.52311111
+     ],
+     "buys": [
+      5.176470588235294,
+      3.0
+     ],
+     "cum_sol": [
+      15.168296960448913,
+      5.045984949000015
+     ],
+     "cum_wallets": [
+      28.195046439628484,
+      27.0
+     ],
+     "fresh": [
+      0.0030959752321981426,
+      0.0
+     ],
+     "funders_known": [
+      0.07120743034055728,
+      0.0
+     ],
+     "independent": [
+      0.3157894736842105,
+      0.0
+     ],
+     "linked": [
+      0.02786377708978328,
+      0.0
+     ],
+     "new": [
+      4.953560371517028,
+      3.0
+     ],
+     "recurrent": [
+      3.863777089783282,
+      2.0
+     ],
+     "sells": [
+      1.4210526315789473,
+      1.0
+     ],
+     "size_cv": [
+      0.9708337275947044,
+      0.903974160838626
+     ],
+     "size_median": [
+      0.18938105302123484,
+      0.09901185600000417
+     ],
+     "sync_pairs": [
+      1.1764705882352942,
+      0.0
+     ],
+     "unknown": [
+      4.727554179566564,
+      3.0
+     ]
+    },
+    {
+     "active": [
+      1.6625386996904026,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      1.2232816621207416,
+      0.002970353999998565
+     ],
+     "buys": [
+      1.6996904024767803,
+      1.0
+     ],
+     "cum_sol": [
+      16.391578622569654,
+      5.687266333000011
+     ],
+     "cum_wallets": [
+      29.76780185758514,
+      29.0
+     ],
+     "fresh": [
+      0.006191950464396285,
+      0.0
+     ],
+     "funders_known": [
+      0.02786377708978328,
+      0.0
+     ],
+     "independent": [
+      0.06501547987616099,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.5727554179566563,
+      1.0
+     ],
+     "recurrent": [
+      1.1362229102167183,
+      0.0
+     ],
+     "sells": [
+      0.5170278637770898,
+      0.0
+     ],
+     "size_cv": [
+      0.8456588207418311,
+      0.8146963534424753
+     ],
+     "size_median": [
+      0.5326214014221542,
+      0.14356719300000265
+     ],
+     "sync_pairs": [
+      0.5634674922600619,
+      0.0
+     ],
+     "unknown": [
+      1.5975232198142415,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      1.5820433436532508,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      1.0110183310433432,
+      0.009777777
+     ],
+     "buys": [
+      1.5913312693498451,
+      1.0
+     ],
+     "cum_sol": [
+      17.402596953613003,
+      6.004477363000001
+     ],
+     "cum_wallets": [
+      31.278637770897834,
+      30.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.5108359133126934,
+      1.0
+     ],
+     "recurrent": [
+      0.04643962848297214,
+      0.0
+     ],
+     "sells": [
+      0.48297213622291024,
+      0.0
+     ],
+     "size_cv": [
+      0.8874998580372887,
+      0.8152298003278545
+     ],
+     "size_median": [
+      0.48594848597005674,
+      0.10619076749999579
+     ],
+     "sync_pairs": [
+      1.0773993808049536,
+      0.0
+     ],
+     "unknown": [
+      0.07120743034055728,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.8706092596785472,
+     "median": 0.5,
+     "n": 300
+    },
+    "burst_position": {
+     "mean": 0.1932269100973928,
+     "median": 0.08813487087283461,
+     "n": 144
+    },
+    "indep_after_burst": {
+     "mean": 0.8819444444444444,
+     "median": 0.0,
+     "n": 144
+    },
+    "indep_before_burst": {
+     "mean": 10.32638888888889,
+     "median": 10.0,
+     "n": 144
+    },
+    "indep_last5": {
+     "mean": 0.3653250773993808,
+     "median": 0.0,
+     "n": 323
+    },
+    "indep_prev5": {
+     "mean": 3.8544891640866874,
+     "median": 0.0,
+     "n": 323
+    },
+    "linked_after_burst": {
+     "mean": 0.034722222222222224,
+     "median": 0.0,
+     "n": 144
+    },
+    "n_ext_buyers": {
+     "mean": 29.76780185758514,
+     "median": 29.0,
+     "n": 323
+    },
+    "n_fresh": {
+     "mean": 0.16718266253869968,
+     "median": 0.0,
+     "n": 323
+    },
+    "n_funder_groups": {
+     "mean": 1.0773993808049536,
+     "median": 1.0,
+     "n": 323
+    },
+    "n_independent": {
+     "mean": 10.609907120743035,
+     "median": 11.0,
+     "n": 323
+    },
+    "n_link_core": {
+     "mean": 0.11145510835913312,
+     "median": 0.0,
+     "n": 323
+    },
+    "n_linked": {
+     "mean": 0.17956656346749225,
+     "median": 0.0,
+     "n": 323
+    },
+    "n_perf_wallets": {
+     "mean": 1.588235294117647,
+     "median": 1.0,
+     "n": 323
+    },
+    "n_recurrent": {
+     "mean": 25.687306501547987,
+     "median": 25.0,
+     "n": 323
+    },
+    "n_unknown": {
+     "mean": 18.978328173374614,
+     "median": 18.0,
+     "n": 323
+    },
+    "new_after_burst": {
+     "mean": 19.333333333333332,
+     "median": 19.0,
+     "n": 144
+    },
+    "perf_first_dt": {
+     "mean": -9.614094728742327,
+     "median": -10.180357933044434,
+     "n": 175
+    },
+    "t_burst": {
+     "mean": -9.608292834626305,
+     "median": -9.673726081848145,
+     "n": 144
+    },
+    "t_buyers_10": {
+     "mean": -10.249576459428678,
+     "median": -10.577248096466064,
+     "n": 297
+    },
+    "t_buyers_20": {
+     "mean": -8.19436086701081,
+     "median": -8.00472104549408,
+     "n": 226
+    },
+    "t_first_funder_group": {
+     "mean": -9.505088647206625,
+     "median": -9.298500418663025,
+     "n": 12
+    },
+    "t_indep_10": {
+     "mean": -10.184091881139954,
+     "median": -10.661359071731567,
+     "n": 201
+    },
+    "t_indep_5": {
+     "mean": -10.8858039777787,
+     "median": -11.17578387260437,
+     "n": 305
+    },
+    "window_s": {
+     "mean": 10.561587544786672,
+     "median": 10.8190279006958,
+     "n": 323
+    }
+   },
+   "n": 323,
+   "share_perf_wallet": 0.541795665634675,
+   "share_second_funder_group": 0.0,
+   "share_with_burst": 0.4458204334365325
+  },
+  "nonD1_fail": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      11.060483870967742,
+      10.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      6.102972726217739,
+      0.652200287499987
+     ],
+     "buys": [
+      11.161290322580646,
+      10.0
+     ],
+     "cum_sol": [
+      6.102972726217739,
+      0.652200287499987
+     ],
+     "cum_wallets": [
+      11.060483870967742,
+      10.0
+     ],
+     "fresh": [
+      0.11290322580645161,
+      0.0
+     ],
+     "funders_known": [
+      0.9233870967741935,
+      0.0
+     ],
+     "independent": [
+      6.254032258064516,
+      7.0
+     ],
+     "linked": [
+      0.10887096774193548,
+      0.0
+     ],
+     "new": [
+      11.060483870967742,
+      10.0
+     ],
+     "recurrent": [
+      10.34274193548387,
+      9.0
+     ],
+     "sells": [
+      0.8870967741935484,
+      0.0
+     ],
+     "size_cv": [
+      1.30816504579168,
+      1.2503464871656538
+     ],
+     "size_median": [
+      0.1117607013540349,
+      0.0539345279999921
+     ],
+     "sync_pairs": [
+      1.1935483870967742,
+      0.0
+     ],
+     "unknown": [
+      4.69758064516129,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      11.35483870967742,
+      9.5
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      7.1467964230443535,
+      1.5387266404999975
+     ],
+     "buys": [
+      11.588709677419354,
+      10.0
+     ],
+     "cum_sol": [
+      13.249769149262093,
+      3.291699853000003
+     ],
+     "cum_wallets": [
+      22.366935483870968,
+      20.0
+     ],
+     "fresh": [
+      0.06048387096774194,
+      0.0
+     ],
+     "funders_known": [
+      0.5403225806451613,
+      0.0
+     ],
+     "independent": [
+      3.931451612903226,
+      1.0
+     ],
+     "linked": [
+      0.08064516129032258,
+      0.0
+     ],
+     "new": [
+      11.306451612903226,
+      9.5
+     ],
+     "recurrent": [
+      9.77016129032258,
+      8.0
+     ],
+     "sells": [
+      2.2016129032258065,
+      1.0
+     ],
+     "size_cv": [
+      1.1522924673606285,
+      1.0657058138860824
+     ],
+     "size_median": [
+      0.23369656506550537,
+      0.07192365499999909
+     ],
+     "sync_pairs": [
+      1.1451612903225807,
+      0.0
+     ],
+     "unknown": [
+      7.342741935483871,
+      6.0
+     ]
+    },
+    {
+     "active": [
+      5.05241935483871,
+      3.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      3.0312908509314487,
+      0.4807474555
+     ],
+     "buys": [
+      5.17741935483871,
+      3.0
+     ],
+     "cum_sol": [
+      16.281060000193545,
+      4.935217480500006
+     ],
+     "cum_wallets": [
+      27.31451612903226,
+      26.0
+     ],
+     "fresh": [
+      0.004032258064516129,
+      0.0
+     ],
+     "funders_known": [
+      0.06451612903225806,
+      0.0
+     ],
+     "independent": [
+      0.29838709677419356,
+      0.0
+     ],
+     "linked": [
+      0.036290322580645164,
+      0.0
+     ],
+     "new": [
+      4.94758064516129,
+      3.0
+     ],
+     "recurrent": [
+      3.8225806451612905,
+      2.0
+     ],
+     "sells": [
+      1.4112903225806452,
+      1.0
+     ],
+     "size_cv": [
+      0.9709078631553315,
+      0.878795283829412
+     ],
+     "size_median": [
+      0.19506210697738616,
+      0.09901185600000417
+     ],
+     "sync_pairs": [
+      1.407258064516129,
+      0.0
+     ],
+     "unknown": [
+      4.717741935483871,
+      3.0
+     ]
+    },
+    {
+     "active": [
+      1.4919354838709677,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      1.429887369149192,
+      0.0012289894999998308
+     ],
+     "buys": [
+      1.5201612903225807,
+      1.0
+     ],
+     "cum_sol": [
+      17.710947369342737,
+      5.443157156500003
+     ],
+     "cum_wallets": [
+      28.70967741935484,
+      28.0
+     ],
+     "fresh": [
+      0.004032258064516129,
+      0.0
+     ],
+     "funders_known": [
+      0.016129032258064516,
+      0.0
+     ],
+     "independent": [
+      0.03225806451612903,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.3951612903225807,
+      0.0
+     ],
+     "recurrent": [
+      1.0120967741935485,
+      0.0
+     ],
+     "sells": [
+      0.5403225806451613,
+      0.0
+     ],
+     "size_cv": [
+      0.8630221547336802,
+      0.8163327695101318
+     ],
+     "size_median": [
+      0.6414777620433052,
+      0.14851778599999932
+     ],
+     "sync_pairs": [
+      0.6612903225806451,
+      0.0
+     ],
+     "unknown": [
+      1.4596774193548387,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      1.5685483870967742,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      1.1871845834758057,
+      0.0010387025000002529
+     ],
+     "buys": [
+      1.5766129032258065,
+      1.0
+     ],
+     "cum_sol": [
+      18.898131952818538,
+      5.733664358000006
+     ],
+     "cum_wallets": [
+      30.217741935483872,
+      28.5
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.5080645161290323,
+      0.5
+     ],
+     "recurrent": [
+      0.04838709677419355,
+      0.0
+     ],
+     "sells": [
+      0.4838709677419355,
+      0.0
+     ],
+     "size_cv": [
+      0.8647340530150626,
+      0.8152298003278545
+     ],
+     "size_median": [
+      0.5649771448571388,
+      0.12726633974999757
+     ],
+     "sync_pairs": [
+      1.3185483870967742,
+      0.0
+     ],
+     "unknown": [
+      0.06048387096774194,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.8706907813741583,
+     "median": 0.4666666666666667,
+     "n": 229
+    },
+    "burst_position": {
+     "mean": 0.2054340099640636,
+     "median": 0.09744785059190748,
+     "n": 111
+    },
+    "indep_after_burst": {
+     "mean": 0.9099099099099099,
+     "median": 0.0,
+     "n": 111
+    },
+    "indep_before_burst": {
+     "mean": 10.225225225225225,
+     "median": 10.0,
+     "n": 111
+    },
+    "indep_last5": {
+     "mean": 0.3185483870967742,
+     "median": 0.0,
+     "n": 248
+    },
+    "indep_prev5": {
+     "mean": 3.9274193548387095,
+     "median": 1.0,
+     "n": 248
+    },
+    "linked_after_burst": {
+     "mean": 0.036036036036036036,
+     "median": 0.0,
+     "n": 111
+    },
+    "n_ext_buyers": {
+     "mean": 28.70967741935484,
+     "median": 28.0,
+     "n": 248
+    },
+    "n_fresh": {
+     "mean": 0.1774193548387097,
+     "median": 0.0,
+     "n": 248
+    },
+    "n_funder_groups": {
+     "mean": 1.125,
+     "median": 1.0,
+     "n": 248
+    },
+    "n_independent": {
+     "mean": 10.5,
+     "median": 11.0,
+     "n": 248
+    },
+    "n_link_core": {
+     "mean": 0.13306451612903225,
+     "median": 0.0,
+     "n": 248
+    },
+    "n_linked": {
+     "mean": 0.2217741935483871,
+     "median": 0.0,
+     "n": 248
+    },
+    "n_perf_wallets": {
+     "mean": 1.532258064516129,
+     "median": 1.0,
+     "n": 248
+    },
+    "n_recurrent": {
+     "mean": 24.774193548387096,
+     "median": 23.5,
+     "n": 248
+    },
+    "n_unknown": {
+     "mean": 17.987903225806452,
+     "median": 17.0,
+     "n": 248
+    },
+    "new_after_burst": {
+     "mean": 17.783783783783782,
+     "median": 17.0,
+     "n": 111
+    },
+    "perf_first_dt": {
+     "mean": -9.529067795406016,
+     "median": -10.051050901412964,
+     "n": 129
+    },
+    "t_burst": {
+     "mean": -9.246583072988837,
+     "median": -8.614181995391846,
+     "n": 111
+    },
+    "t_buyers_10": {
+     "mean": -10.136317660934047,
+     "median": -10.288524389266968,
+     "n": 228
+    },
+    "t_buyers_20": {
+     "mean": -8.021436110848473,
+     "median": -7.618417024612427,
+     "n": 168
+    },
+    "t_first_funder_group": {
+     "mean": -9.505088647206625,
+     "median": -9.298500418663025,
+     "n": 12
+    },
+    "t_indep_10": {
+     "mean": -10.243725197879892,
+     "median": -10.656225562095642,
+     "n": 152
+    },
+    "t_indep_5": {
+     "mean": -10.727811333473692,
+     "median": -10.91759204864502,
+     "n": 235
+    },
+    "window_s": {
+     "mean": 10.427315918668624,
+     "median": 10.815900564193726,
+     "n": 248
+    }
+   },
+   "n": 248,
+   "share_perf_wallet": 0.5201612903225806,
+   "share_second_funder_group": 0.0,
+   "share_with_burst": 0.4475806451612903
+  },
+  "nonD1_x2": {
+   "bins": [
+    {
+     "active": [
+      0.0,
+      0.0
+     ],
+     "bin": "<-30",
+     "buy_sol": [
+      0.0,
+      0.0
+     ],
+     "buys": [
+      0.0,
+      0.0
+     ],
+     "cum_sol": [
+      0.0,
+      0.0
+     ],
+     "cum_wallets": [
+      0.0,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.0,
+      0.0
+     ],
+     "recurrent": [
+      0.0,
+      0.0
+     ],
+     "sells": [
+      0.0,
+      0.0
+     ],
+     "sync_pairs": [
+      0.0,
+      0.0
+     ],
+     "unknown": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      0.5866666666666667,
+      0.0
+     ],
+     "bin": "-30..-20",
+     "buy_sol": [
+      2.376866872946666,
+      0.0
+     ],
+     "buys": [
+      0.5866666666666667,
+      0.0
+     ],
+     "cum_sol": [
+      2.376866872946666,
+      0.0
+     ],
+     "cum_wallets": [
+      0.5866666666666667,
+      0.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.013333333333333334,
+      0.0
+     ],
+     "independent": [
+      0.08,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      0.5866666666666667,
+      0.0
+     ],
+     "recurrent": [
+      0.41333333333333333,
+      0.0
+     ],
+     "sells": [
+      0.24,
+      0.0
+     ],
+     "size_cv": [
+      1.9155957917146178,
+      1.9155957917146178
+     ],
+     "size_median": [
+      0.10891304300000115,
+      0.10891304300000115
+     ],
+     "sync_pairs": [
+      0.013333333333333334,
+      0.0
+     ],
+     "unknown": [
+      0.5066666666666667,
+      0.0
+     ]
+    },
+    {
+     "active": [
+      13.746666666666666,
+      14.0
+     ],
+     "bin": "-20..-10",
+     "buy_sol": [
+      4.376357433306667,
+      1.211212837000005
+     ],
+     "buys": [
+      13.8,
+      14.0
+     ],
+     "cum_sol": [
+      6.753224306253333,
+      1.211212837000005
+     ],
+     "cum_wallets": [
+      14.32,
+      14.0
+     ],
+     "fresh": [
+      0.05333333333333334,
+      0.0
+     ],
+     "funders_known": [
+      0.8266666666666667,
+      0.0
+     ],
+     "independent": [
+      6.76,
+      8.0
+     ],
+     "linked": [
+      0.02666666666666667,
+      0.0
+     ],
+     "new": [
+      13.733333333333333,
+      14.0
+     ],
+     "recurrent": [
+      12.666666666666666,
+      13.0
+     ],
+     "sells": [
+      1.4266666666666667,
+      0.0
+     ],
+     "size_cv": [
+      1.5226125578818495,
+      1.4726571941166284
+     ],
+     "size_median": [
+      0.08615807384905584,
+      0.049505927999987875
+     ],
+     "sync_pairs": [
+      1.56,
+      1.0
+     ],
+     "unknown": [
+      6.96,
+      1.0
+     ]
+    },
+    {
+     "active": [
+      11.906666666666666,
+      11.0
+     ],
+     "bin": "-10..-5",
+     "buy_sol": [
+      3.1501136787200017,
+      1.5548828830000048
+     ],
+     "buys": [
+      12.253333333333334,
+      11.0
+     ],
+     "cum_sol": [
+      9.903337984973334,
+      3.5572670280000267
+     ],
+     "cum_wallets": [
+      26.133333333333333,
+      24.0
+     ],
+     "fresh": [
+      0.06666666666666667,
+      0.0
+     ],
+     "funders_known": [
+      0.6533333333333333,
+      0.0
+     ],
+     "independent": [
+      3.6133333333333333,
+      0.0
+     ],
+     "linked": [
+      0.013333333333333334,
+      0.0
+     ],
+     "new": [
+      11.813333333333333,
+      11.0
+     ],
+     "recurrent": [
+      10.293333333333333,
+      10.0
+     ],
+     "sells": [
+      1.9733333333333334,
+      1.0
+     ],
+     "size_cv": [
+      1.1951008574897755,
+      1.1394704407392728
+     ],
+     "size_median": [
+      0.09122714380985915,
+      0.08448916899999404
+     ],
+     "sync_pairs": [
+      0.9733333333333334,
+      1.0
+     ],
+     "unknown": [
+      8.28,
+      6.0
+     ]
+    },
+    {
+     "active": [
+      5.133333333333334,
+      4.0
+     ],
+     "bin": "-5..-2",
+     "buy_sol": [
+      1.5854225240533342,
+      0.6985318160000134
+     ],
+     "buys": [
+      5.173333333333333,
+      4.0
+     ],
+     "cum_sol": [
+      11.488760509026669,
+      5.269116291000003
+     ],
+     "cum_wallets": [
+      31.106666666666666,
+      31.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.09333333333333334,
+      0.0
+     ],
+     "independent": [
+      0.37333333333333335,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      4.973333333333334,
+      4.0
+     ],
+     "recurrent": [
+      4.0,
+      3.0
+     ],
+     "sells": [
+      1.4533333333333334,
+      1.0
+     ],
+     "size_cv": [
+      0.9706139686114171,
+      1.0216509916960725
+     ],
+     "size_median": [
+      0.1705388907333329,
+      0.09901185599999707
+     ],
+     "sync_pairs": [
+      0.41333333333333333,
+      0.0
+     ],
+     "unknown": [
+      4.76,
+      4.0
+     ]
+    },
+    {
+     "active": [
+      2.2266666666666666,
+      1.0
+     ],
+     "bin": "-2..-1",
+     "buy_sol": [
+      0.5401054575466664,
+      0.024761987000005092
+     ],
+     "buys": [
+      2.2933333333333334,
+      1.0
+     ],
+     "cum_sol": [
+      12.028865966573337,
+      6.259695587999998
+     ],
+     "cum_wallets": [
+      33.266666666666666,
+      33.0
+     ],
+     "fresh": [
+      0.013333333333333334,
+      0.0
+     ],
+     "funders_known": [
+      0.06666666666666667,
+      0.0
+     ],
+     "independent": [
+      0.17333333333333334,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      2.16,
+      1.0
+     ],
+     "recurrent": [
+      1.5466666666666666,
+      0.0
+     ],
+     "sells": [
+      0.44,
+      0.0
+     ],
+     "size_cv": [
+      0.8022504857622093,
+      0.7586079276254007
+     ],
+     "size_median": [
+      0.18700245644999972,
+      0.14024169550000276
+     ],
+     "sync_pairs": [
+      0.24,
+      0.0
+     ],
+     "unknown": [
+      2.0533333333333332,
+      1.0
+     ]
+    },
+    {
+     "active": [
+      1.6266666666666667,
+      1.0
+     ],
+     "bin": "-1..0 (post-cut)",
+     "buy_sol": [
+      0.4284952563333338,
+      0.05915030399999921
+     ],
+     "buys": [
+      1.64,
+      1.0
+     ],
+     "cum_sol": [
+      12.457361222906668,
+      6.94567676600002
+     ],
+     "cum_wallets": [
+      34.78666666666667,
+      35.0
+     ],
+     "fresh": [
+      0.0,
+      0.0
+     ],
+     "funders_known": [
+      0.0,
+      0.0
+     ],
+     "independent": [
+      0.0,
+      0.0
+     ],
+     "linked": [
+      0.0,
+      0.0
+     ],
+     "new": [
+      1.52,
+      1.0
+     ],
+     "recurrent": [
+      0.04,
+      0.0
+     ],
+     "sells": [
+      0.48,
+      0.0
+     ],
+     "size_cv": [
+      0.9557972731039669,
+      0.8047929541311009
+     ],
+     "size_median": [
+      0.24307992451219507,
+      0.09851679700000204
+     ],
+     "sync_pairs": [
+      0.28,
+      0.0
+     ],
+     "unknown": [
+      0.10666666666666667,
+      0.0
+     ]
+    }
+   ],
+   "events": {
+    "accel_buys": {
+     "mean": 0.8703463235053785,
+     "median": 0.6,
+     "n": 71
+    },
+    "burst_position": {
+     "mean": 0.15216666509131815,
+     "median": 0.07888761404325711,
+     "n": 33
+    },
+    "indep_after_burst": {
+     "mean": 0.7878787878787878,
+     "median": 0.0,
+     "n": 33
+    },
+    "indep_before_burst": {
+     "mean": 10.666666666666666,
+     "median": 11.0,
+     "n": 33
+    },
+    "indep_last5": {
+     "mean": 0.52,
+     "median": 0.0,
+     "n": 75
+    },
+    "indep_prev5": {
+     "mean": 3.6133333333333333,
+     "median": 0.0,
+     "n": 75
+    },
+    "linked_after_burst": {
+     "mean": 0.030303030303030304,
+     "median": 0.0,
+     "n": 33
+    },
+    "n_ext_buyers": {
+     "mean": 33.266666666666666,
+     "median": 33.0,
+     "n": 75
+    },
+    "n_fresh": {
+     "mean": 0.13333333333333333,
+     "median": 0.0,
+     "n": 75
+    },
+    "n_funder_groups": {
+     "mean": 0.92,
+     "median": 1.0,
+     "n": 75
+    },
+    "n_independent": {
+     "mean": 10.973333333333333,
+     "median": 11.0,
+     "n": 75
+    },
+    "n_link_core": {
+     "mean": 0.04,
+     "median": 0.0,
+     "n": 75
+    },
+    "n_linked": {
+     "mean": 0.04,
+     "median": 0.0,
+     "n": 75
+    },
+    "n_perf_wallets": {
+     "mean": 1.7733333333333334,
+     "median": 1.0,
+     "n": 75
+    },
+    "n_recurrent": {
+     "mean": 28.706666666666667,
+     "median": 29.0,
+     "n": 75
+    },
+    "n_unknown": {
+     "mean": 22.253333333333334,
+     "median": 22.0,
+     "n": 75
+    },
+    "new_after_burst": {
+     "mean": 24.545454545454547,
+     "median": 24.0,
+     "n": 33
+    },
+    "perf_first_dt": {
+     "mean": -9.85253982440285,
+     "median": -10.587670087814331,
+     "n": 46
+    },
+    "t_burst": {
+     "mean": -10.82495294195233,
+     "median": -11.220721006393433,
+     "n": 33
+    },
+    "t_buyers_10": {
+     "mean": -10.623822924019635,
+     "median": -11.08585000038147,
+     "n": 69
+    },
+    "t_buyers_20": {
+     "mean": -8.695246367618955,
+     "median": -8.703515529632568,
+     "n": 58
+    },
+    "t_indep_10": {
+     "mean": -9.999106898599742,
+     "median": -10.707175016403198,
+     "n": 49
+    },
+    "t_indep_5": {
+     "mean": -11.41620785508837,
+     "median": -11.610568046569824,
+     "n": 70
+    },
+    "window_s": {
+     "mean": 11.00557905515035,
+     "median": 10.897877931594849,
+     "n": 75
+    }
+   },
+   "n": 75,
+   "share_perf_wallet": 0.6133333333333333,
+   "share_second_funder_group": 0.0,
+   "share_with_burst": 0.44
+  }
+ }
+}

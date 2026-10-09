@@ -35,6 +35,7 @@ The work covers:
 * **Python-based data analysis**
 * **Reproducible research**
 * **On-chain financial-flow reconstruction**
+* **Pre-registered hypothesis testing on a live detector's alerts**
 
 The central question was simple:
 
@@ -87,6 +88,10 @@ The funding pattern disappeared.
 The public signal became harder to observe.
 
 So I rebuilt the investigation from the blockchain and measured what changed.
+
+Then I asked the question a trader would ask next: once the new mechanism is visible on chain, can it be traded?
+
+Act IV is the answer. It is no, for a reason more precise than "the edge is gone".
 
 The repository contains the data, scripts, validation procedures, competing hypotheses and transaction-level evidence behind that investigation.
 
@@ -330,35 +335,127 @@ a behavioural signature can be defined, measured, and triggered on a new event.
 
 ---
 
+# Act IV — The Signal Still Exists. The Edge Doesn't.
+
+The detector described above ran live from 21 August 2026.
+
+By 29 September it had alerted on **1,657 launches**.
+
+Which raised the question anyone who traded Act I would ask next:
+
+> **Once the group snipe is visible on chain, can it be traded?**
+
+Nine pre-registered studies and one systematic search later, the answer, within what was tested, is no.
+
+The reason is the interesting part.
+
+## What was tried
+
+Each study was written as a plan before its rates were computed and ended with a verdict; the studies that tested a signal read the alerts after 15 September as their hold-out, one after another.
+
+| question | verdict |
+|---|---|
+| Does buying right after the alert still pay? | Statistical signal, no tradable edge (`post_detection_edge/`) |
+| Does the bundle's on-chain structure say which launches double? | No robust separation (`post_detection_forensics/`, `entry_zone/`, `sniper_capital/`) |
+| Do the buying wallets act as a group? | Yes, in about four launches out of five (`coordination_detection/`) |
+| How does the group operate? | A repeatable loop: one funder, four snipers, 78 % of the supply, exit wallets, the capital back, the same snipers funded again a median 21 minutes later (18 in the validation weeks) (`economic_mechanics/`, `exit_destination/`, `funder_network/`) |
+| Is "a group we have already seen" a live signal? | No incremental signal (`known_group_reentry/`) |
+| Is there any rule at all, over 415 features? | No exploitable pattern found (`alpha_patterns/`) |
+| Do the teams, their rhythm, or the absorption of their inventory predict the outcome? | No (`alpha_patterns/`, three mechanism studies) |
+
+## The teams exist
+
+On the **1,015 launches** before 15 September 2026, **612** had an observable one-hour outcome and **168 (27.5 %)** doubled from the entry price read 5 to 15 s after the alert (the declared trade buys at alert + 5 s).
+
+Shared wallets, shared funders and identical ticket configurations confirm each other **47 to 212 times** above chance: the operators are real, recognisable identities.
+
+**33 teams** have five or more observable launches; **19** have ten or more.
+
+Their doubling rates differ a little more than chance would allow, from **0 % to 58 %**, and the difference survives the calendar day and the entry price (p = 0.0017 within the day).
+
+## The same teams make GOOD and BAD
+
+**28 of the 33 teams** have both.
+
+A team's history does not predict its next launch: the rule that bets on teams with a strong record is right **3 times in 29**, against **44.1 %** for the launches it leaves aside.
+
+The rhythm is real, one launch every **20.6 minutes** in the median inside a session, and it does not determine the outcome: 17 pre-registered tests, none passes.
+
+Inside a team, **32 variables** measured before the alert (configuration, wallets, funders, tickets, synchronisation, concentration, rhythm, swarm, other teams, market) show no detectable separation: none passes the correction.
+
+## Absorption comes too late
+
+The last hypothesis was that a GOOD launch is one where outside demand absorbs the team's inventory.
+
+Forty seconds after the creation, the team has sold **4.6 %** of what it holds on a GOOD launch and **4.5 %** on a BAD one (on the 78 GOOD and 213 BAD launches observed that long).
+
+Outside buyers have paid for about one tenth of its value, on both: **11.0 %** on the GOOD launches and **9.9 %** on the BAD, 27 s after the alert.
+
+The price of a GOOD launch is at **×1.09** thirty seconds after the entry and **×1.55** after five minutes; a BAD one at **×1.01** and **×0.64**.
+
+The confirmed doubling arrives a **median 375 s** after the entry; **1.2 %** of the GOOD launches confirm it within 30 s.
+
+Forty tests of demand at the moment of decision: none passes.
+
+## Where the information moved
+
+![F5. Where the information sits](figures/f5_act_iv_information_timing.png)
+
+In 2024, in the reference case of Act I, the signal came **7.6 hours** before the launch, and the move it announced happened in public afterwards.
+
+In 2026 the coordination is on chain in the creation slot itself, the detector alerts a median **12.6 s / 12.3 s** after the creation (GOOD / BAD launches), and the outcome is decided minutes later, inside the price.
+
+The window in between is where an entrant has to decide, and it holds structure, not prediction.
+
+## Structural signal, predictive signal
+
+A structural signal says who is launching, and how.
+
+A predictive signal says which launch will double.
+
+This repository establishes the first and did not find the second.
+
+> We found a strong structural signal of coordinated launch-time accumulation. The analyses performed did not establish that this signal, or anything else observable before the entry, was sufficient to predict which launches would subsequently produce the measured price outcome.
+
+Every figure in this act is checked against its artefact by `code/p1_readme_check.py`. The full chapter, hypothesis by hypothesis, is `docs/ACT_IV.md`; the search itself is `alpha_patterns/`.
+
+**Exploratory, not validated out of sample.** These analyses ran on the first 1,015 alerts. One pre-declared rule was read once on the following week and failed. The last week was never read.
+
+---
+
 # Why Solana Memecoins Are Over
 
-In 2024, outsiders could observe accumulation.
+The story of this repository is one line of questions.
 
-That observation created the opportunity.
+1. In 2024 I had an observable edge: wallets funded hours before a launch, accumulating in public.
+2. The mechanism changed, and the edge went with it.
+3. I identified what replaced it: the group snipe, the whole curve bought in the creation slot, on **42/42** manually verified launches and **58 of 70 (82.9%)** of an independent frozen sample, approximately **79% of supply** on the 42 verified launches.
+4. I then asked whether the new mechanism could itself become an edge.
+5. I identified the teams and their structure.
+6. I tried their rhythm.
+7. I tried the configuration of their bundles.
+8. I tried to tell their GOOD launches from their BAD ones.
+9. I tried the absorption of their inventory by outside demand.
+10. Nothing tested gave a signal early enough to act on.
+11. That is the result: the market now reveals the coordination of a launch without revealing, early enough, whether it will succeed.
 
-By 2026, the same type of activity could happen inside the creation slot itself.
+In 2024, outsiders could observe accumulation, and that observation was the opportunity.
 
-The important change was therefore not simply that memecoins became "harder".
+By 2026 the same activity happens inside the creation slot, and what the public sees first is the market after it.
 
-The information advantage changed.
+The information advantage did not just shrink.
 
-The public went from seeing the accumulation process to seeing the market **after the accumulation had already happened**.
-
-The measured data supports that structural change:
-
-* **42/42** manually verified launches showed the same creation-slot accumulation signature
-* **58/70 (82.9%)** showed it in the independent frozen sample
-* approximately **79% of supply** was acquired inside the creation slot in the verified launches
+It moved: from the funding, hours ahead of the launch, to the demand, minutes behind the entry.
 
 The broader market data is consistent with a significant contraction in the memecoin environment, but those macro figures are external measurements rather than outputs of this repository.[3]
 
 The conclusion I can defend from the on-chain evidence is narrower:
 
-> **The observable accumulation pattern that made the 2024 strategy possible was replaced by a much less observable launch-time mechanism.**
+> **The observable accumulation pattern that made the 2024 strategy possible was replaced by a launch-time mechanism whose coordination is observable, and whose outcome was not found to be predictable early enough to trade.**
 
 The public wasn't simply outcompeted.
 
-**The observable order flow changed.**
+**The observable order flow changed, and the part of it that predicts moved out of reach.**
 
 ---
 
@@ -451,9 +548,13 @@ That separation is intentional.
 | `docs/PATTERN.md`      | Funding distributions token by token with detected bursts                           |
 | `docs/EXPLOITATION.md` | Trading methodology, automation, receipts and on-chain totals                       |
 | `docs/SPLIT_PHASE1.md` | 2024–2025 split analysis with controls and null models                              |
+| `docs/ACT_IV.md`       | Act IV in full: the studies after the detector, hypothesis by hypothesis, every figure traced to an artefact |
+| `docs/INVESTIGATION.md` | The investigation framework used throughout                                        |
+| `alpha_patterns/`      | The exploratory pattern search of October 2026: plan, pre-registrations, reports, result JSON, scripts, test registry, audits |
+| `post_detection_edge/` … `known_group_reentry/` | Nine pre-registered studies, run 29 September to 1 October 2026 on the detector's 1,657 alerts of 21 August to 29 September 2026, each with its plan and results |
 | `code/`                | One script per measurement                                                          |
 | `data/`                | Versioned derived datasets                                                          |
-| `figures/`             | Figures regenerated from the analysis scripts                                       |
+| `figures/`             | Figures regenerated from the analysis scripts (`code/f_figures_resultats.py`, `code/f_act_iv_timeline.py`) |
 
 ---
 

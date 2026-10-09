@@ -1,0 +1,78 @@
+{
+ "candidates": [
+  {
+   "atoms": [
+    {
+     "col": null,
+     "family": "TEMPO",
+     "feat": "swarm_10s",
+     "op": ">=",
+     "q": null,
+     "thr": 30.0
+    },
+    {
+     "col": 409,
+     "family": "PRICE",
+     "feat": "p_entry_over_operator",
+     "op": "<=",
+     "q": 0.3333333333333333,
+     "thr": 3.6016666094462075
+    }
+   ],
+   "depth": 2,
+   "disc": {
+    "note": "not computed before the freeze (hypothesis born from DISCOVERY)"
+   },
+   "families": [
+    "TEMPO",
+    "PRICE"
+   ],
+   "fires_by_block_all_alerts": {
+    "DISC": 25,
+    "OOS": 20,
+    "SEL": 26,
+    "VAL": 14
+   },
+   "id": "SWARM_CHEAP",
+   "kind": "prespecified",
+   "rule": null,
+   "sel": {
+    "note": "SELECTION not read"
+   },
+   "target": "Y2",
+   "text": "swarm_10s >= 30 AND p_entry_over_operator <= 3.601666609446208"
+  }
+ ],
+ "cfg": {
+  "ALPHA_OOS": 0.05,
+  "ATOM_MAX_SHARE": 0.95,
+  "BOOT": 100000,
+  "CAP": 3.0,
+  "COPY_RHO": 0.97,
+  "IMPROVE": 1.1,
+  "JACCARD_MAX": 0.5,
+  "K_PER_TARGET": 10,
+  "MIN_CLUSTERS": 5,
+  "MIN_DAYS": 5,
+  "MIN_DAYS_HOLD": 3,
+  "NEFF_MIN_DISC": 12,
+  "NEFF_MIN_SEL": 8,
+  "N_MIN_DISC": 25,
+  "N_MIN_HALF": 8,
+  "N_MIN_HOLD": 8,
+  "N_MIN_SEL": 12,
+  "P_VAL": 0.1,
+  "QUANTS": [
+   0.2,
+   0.35,
+   0.5,
+   0.65,
+   0.8
+  ],
+  "RANK": "min",
+  "TRIPLE_SEEDS": 300
+ },
+ "info": {
+  "note": "single pre-declared candidate, PLAN section 11"
+ }
+}

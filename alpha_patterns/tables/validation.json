@@ -1,0 +1,89 @@
+[
+ {
+  "atoms": [
+   {
+    "col": null,
+    "family": "TEMPO",
+    "feat": "swarm_10s",
+    "op": ">=",
+    "q": null,
+    "thr": 30.0
+   },
+   {
+    "col": 409,
+    "family": "PRICE",
+    "feat": "p_entry_over_operator",
+    "op": "<=",
+    "q": 0.3333333333333333,
+    "thr": 3.6016666094462075
+   }
+  ],
+  "depth": 2,
+  "disc": {
+   "note": "not computed before the freeze (hypothesis born from DISCOVERY)"
+  },
+  "families": [
+   "TEMPO",
+   "PRICE"
+  ],
+  "fires_by_block_all_alerts": {
+   "DISC": 25,
+   "OOS": 20,
+   "SEL": 26,
+   "VAL": 14
+  },
+  "id": "SWARM_CHEAP",
+  "kind": "prespecified",
+  "rule": null,
+  "sel": {
+   "note": "SELECTION not read"
+  },
+  "target": "Y2",
+  "text": "swarm_10s >= 30 AND p_entry_over_operator <= 3.601666609446208",
+  "val": {
+   "base": 0.30603448275862066,
+   "days_used": 3,
+   "diff": 0.08324552160168602,
+   "diff_ci": [
+    -0.24479166666666666,
+    0.4018264840182648
+   ],
+   "fire_share_all_alerts": 0.04794520547945205,
+   "hits": 5,
+   "lift": 1.2567713976164683,
+   "mh_rr_day": 1.1097305147652092,
+   "n_block": 232,
+   "n_clusters_fire": 5,
+   "n_days_block": 6,
+   "n_days_fire": 3,
+   "n_fire": 13,
+   "n_fire_all_alerts": 14,
+   "net_censored": 0,
+   "net_ci": [
+    -0.5275416253548155,
+    0.08227282874076991
+   ],
+   "net_clusters": 5,
+   "net_lb99": -0.6068096848583749,
+   "net_mean": -0.11550391983822164,
+   "net_mean_all_alerts": -0.315802829391681,
+   "net_median": 0.08881754050999975,
+   "net_n": 13,
+   "net_win_share": 0.5384615384615384,
+   "odds_ratio": 1.4935869084475895,
+   "p": 0.3937582498003729,
+   "p_boot": 0.22337776622233776,
+   "p_boot_floor": false,
+   "p_day": 0.3937582498003729,
+   "p_fisher": 0.36165779954641053,
+   "prec": 0.38461538461538464,
+   "prec_ci": [
+    0.17709446581236818,
+    0.6447751902773147
+   ],
+   "prec_rest": 0.3013698630136986,
+   "recall": 0.07042253521126761
+  },
+  "val_pass": false
+ }
+]

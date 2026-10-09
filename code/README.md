@@ -72,7 +72,7 @@ This answers:
 
 It currently reports:
 
-* **22/22 sourced claims reproduced**
+* **43/43 sourced claims reproduced**
 * **0 mismatches**
 * 15 narrative figures that still have no underlying artefact
 
