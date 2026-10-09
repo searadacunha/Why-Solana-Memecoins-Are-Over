@@ -1,63 +1,5 @@
 # Why Solana Memecoins Are Over
 
-[![ci](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml/badge.svg)](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml)
-
-**An independent investigation of how Solana memecoin launches are bought, built from transaction-level on-chain data.** I built the Python pipeline that collects and rebuilds the transactions, the checks that try to break the conclusions (`docs/PITFALLS.md`), and a CI that fails when a committed table, or one of the 43 README figures it tracks, no longer matches the code behind it. I work with AI coding agents (Claude Code); the commits they co-wrote carry a co-author line.
-
-It started from a pattern I traded in 2024. When it stopped paying, I rebuilt the mechanism from the chain, measured what replaced it, then tested whether the new mechanism could tell which launches would succeed well enough to trade. Within what was tested, it could not.
-
-## At a glance
-
-| | |
-|---|---|
-| **Question** | Can coordinated buying around token launches be measured from public chain data alone, and does it tell you which launches will succeed? |
-| **What I built** | A Python pipeline, one script per measurement, that reads Solana blocks and transactions over RPC and rebuilds funding flows, launch-time purchases and exits. Every script under `code/` that computes a number uses the standard library only. |
-| **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks that each output is byte-identical to the committed one, checks 43 README figures against their sources, and runs 76 unit tests, type checks, a linter and a publication gate. |
-| **Research design** | Nine studies on the 1,657 alerts of a live detector, each with a written plan, a frozen input table (SHA-256) and a verdict, then one exploratory search over 415 features. |
-| **Measured** | 2024: fresh wallets funded through the same swap service before launch, on 6 of 13 measured tokens. 2026: the token's sale curve bought in the very block (slot) that creates the token, on all 42 launches of recurring buyer groups rebuilt transaction by transaction, a selected sample rather than a market-wide rate. The groups behind the 2026 alerts recur from launch to launch. |
-| **Negative results** | No tradable edge. One of 12 signals locked before the test survived it (the chance of doubling within 15 minutes rose from 31.0 % to 45.7 %) and still lost money after costs. The search over 415 features found nothing exploitable. The 2024 funding signature stops separating the tokens I traded once a criterion that also fires on random wallets is removed (`docs/SPLIT_PHASE1.md` §6). |
-| **Not established** | Who controls the wallets: links are measured, ownership and intent are not attributed. The roughly $400 starting capital of my 2024 trading, an unsourced recollection. The live detector's code, a separate project: only its frozen alert journal is here. The October 2026 search (`alpha_patterns/`) is exploratory, not validated out of sample. |
-
-## Where to look
-
-| To check | Open |
-|---|---|
-| Python and data processing | `code/`, one script per measurement; shared logic in `statlib.py`, `splitlib.py`, `pumplib.py`, `common.py` |
-| RPC and API integration | `code/rpc_client.py`, the RPC client of `code/`: key rotation, a cooldown after HTTP 429, bounded retries, and one error rule: a failed call raises, it never returns an empty result |
-| Fund tracing | `code/02_cn_outflows.py` (a swap service's hot-wallet outflows, grouped into identical-amount splits), `code/05_trace_origin.py` (a wallet's origin past the RPC's 1,000-signature page limit, without pretending the start of its history was reached) |
-| Pipeline and automation | `code/run_all.py` (runs the measurements by tier, then byte-compares the artefacts), `.github/workflows/ci.yml` |
-| Detection logic | `code/v05_creation_block.py` and `code/v06_curve_ladder.py` (launch-block reconstruction), `code/splitlib.py` (identical-amount funding bursts), `code/a1_null_model.py` (how often the funding detector fires on random wallets) |
-| Testing and validation | `tests/`, `code/p1_readme_check.py` (this README's figures against their artefacts), `code/p0_pitfalls_check.py`, `code/check_no_secrets.py` |
-| Statistics | `code/statlib.py`, the cluster bootstraps in `code/pumplib.py` and `code/t1_base_rate_sorties.py`, `post_detection_edge/code/an_40_signals.py` (logistic regression and decision trees written from scratch, chosen on validation, locked before the test split was read) |
-| Data-quality failures caught | `docs/PITFALLS.md`: an HTTP 403 that had become "no data" (P6b), a detector that needed its own null (P13), a network failure that looked like a result (P15) |
-| Research design | `post_detection_edge/` (plan, lock, test split), `docs/ACT_IV.md`, `alpha_patterns/` |
-| Method | `docs/INVESTIGATION.md`, `docs/METHODOLOGY.md`, `code/README.md` |
-
-Some script names, JSON keys, console messages and the `alpha_patterns/` working notes are in French; this README and `docs/` are in English.
-
-## Verify it yourself
-
-Python 3.12 or 3.13, nothing to install, no key:
-
-```bash
-git clone https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over.git
-cd Why-Solana-Memecoins-Are-Over
-python3 code/run_all.py --strict
-python3 code/p1_readme_check.py
-```
-
-The first command ends with `22 ran, 20 skipped, 0 failed` and `every committed table and JSON reproduced byte for byte`, in about 30 seconds. The second prints the claim ledger, every sourced row `OK`, then the figures that have no artefact. The rest of the CI needs `pip install pytest mypy ruff`, then `python3 -m pytest -q` (76 passed) and `ruff check .`. Python 3.9 to 3.11 also run the scripts, but two floating-point aggregates then differ in their last digits, so `--strict` is byte-exact on 3.12 and 3.13 only.
-
-What a clone does not rerun:
-
-* Of the 42 scripts `run_all.py` lists, 13 need the network (a Solana RPC key, public price APIs), 5 a raw capture corpus that is not published, and 2 redraw figures with matplotlib; the runner names each one and why. The 2024 collection scripts outside it (`code/01_*.py` to `code/08_*.py`, `code/scan_gateway_dispatch.py`) need the network too. The outputs the offline scripts read are committed.
-* CI does not run the nine studies or `alpha_patterns/`. `post_detection_edge/` reruns offline from its committed snapshot. The analysis scripts of `economic_mechanics/`, `exit_destination/` and `funder_network/` need an on-chain cache that is not committed: without it they finish without an error but write different numbers over their committed tables (a known defect, so run them in a scratch clone), and their post-hoc scripts stop on the missing cache. The `alpha_patterns/` scripts need unpublished derived files; `alpha_patterns/code/chk_00_integrity.py` checks the published hashes offline.
-* The live detector is not published.
-
----
-
-## The story
-
 Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
 I had started with roughly **$400**, a multiple of about **590×**.
@@ -73,6 +15,31 @@ So I did what I had been doing from the beginning: I went back to the chain and 
 This repository is the result.
 
 It is part trading history, part on-chain investigation, and part attempt to prove myself wrong.
+
+---
+
+## What this repository demonstrates
+
+This is not a tutorial and it is not a collection of screenshots.
+
+It is a reproducible blockchain investigation built from transaction-level data.
+
+The work covers:
+
+* **Blockchain forensics**
+* **On-chain transaction tracing and attribution discipline**
+* **Wallet clustering and relationship analysis**
+* **Funding-flow reconstruction**
+* **Pattern and anomaly detection**
+* **Detection of coordinated accumulation**
+* **Real-time transaction monitoring**
+* **Hypothesis testing and falsification**
+* **Manual transaction verification**
+* **Detection of instrumentation and data-quality failures**
+* **Python-based data analysis**
+* **Reproducible research**
+* **On-chain financial-flow reconstruction**
+* **Pre-registered hypothesis testing on a live detector's alerts**
 
 The central question was simple:
 
@@ -582,6 +549,62 @@ from
 **unsourced historical recollections**.
 
 That separation is intentional.
+
+---
+
+# How It Is Built and Checked
+
+[![ci](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml/badge.svg)](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml)
+
+I built the Python pipeline that collects and rebuilds the transactions, the checks that try to break the conclusions (`docs/PITFALLS.md`), and a CI that fails when a committed table, or one of the 43 README figures it tracks, no longer matches the code behind it. I work with AI coding agents (Claude Code); the commits they co-wrote carry a co-author line.
+
+## At a glance
+
+| | |
+|---|---|
+| **Question** | Can coordinated buying around token launches be measured from public chain data alone, and does it tell you which launches will succeed? |
+| **What I built** | A Python pipeline, one script per measurement, that reads Solana blocks and transactions over RPC and rebuilds funding flows, launch-time purchases and exits. Every script under `code/` that computes a number uses the standard library only. |
+| **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks that each output is byte-identical to the committed one, checks 43 README figures against their sources, and runs 76 unit tests, type checks, a linter and a publication gate. |
+| **Research design** | Nine studies on the 1,657 alerts of a live detector, each with a written plan, a frozen input table (SHA-256) and a verdict, then one exploratory search over 415 features. |
+| **Measured** | 2024: fresh wallets funded through the same swap service before launch, on 6 of 13 measured tokens. 2026: the token's sale curve bought in the very block (slot) that creates the token, on all 42 launches of recurring buyer groups rebuilt transaction by transaction, a selected sample rather than a market-wide rate. The groups behind the 2026 alerts recur from launch to launch. |
+| **Negative results** | No tradable edge. One of 12 signals locked before the test survived it (the chance of doubling within 15 minutes rose from 31.0 % to 45.7 %) and still lost money after costs. The search over 415 features found nothing exploitable. The 2024 funding signature stops separating the tokens I traded once a criterion that also fires on random wallets is removed (`docs/SPLIT_PHASE1.md` §6). |
+| **Not established** | Who controls the wallets: links are measured, ownership and intent are not attributed. The roughly $400 starting capital of my 2024 trading, an unsourced recollection. The live detector's code, a separate project: only its frozen alert journal is here. The October 2026 search (`alpha_patterns/`) is exploratory, not validated out of sample. |
+
+## Where to look
+
+| To check | Open |
+|---|---|
+| Python and data processing | `code/`, one script per measurement; shared logic in `statlib.py`, `splitlib.py`, `pumplib.py`, `common.py` |
+| RPC and API integration | `code/rpc_client.py`, the RPC client of `code/`: key rotation, a cooldown after HTTP 429, bounded retries, and one error rule: a failed call raises, it never returns an empty result |
+| Fund tracing | `code/02_cn_outflows.py` (a swap service's hot-wallet outflows, grouped into identical-amount splits), `code/05_trace_origin.py` (a wallet's origin past the RPC's 1,000-signature page limit, without pretending the start of its history was reached) |
+| Pipeline and automation | `code/run_all.py` (runs the measurements by tier, then byte-compares the artefacts), `.github/workflows/ci.yml` |
+| Detection logic | `code/v05_creation_block.py` and `code/v06_curve_ladder.py` (launch-block reconstruction), `code/splitlib.py` (identical-amount funding bursts), `code/a1_null_model.py` (how often the funding detector fires on random wallets) |
+| Testing and validation | `tests/`, `code/p1_readme_check.py` (this README's figures against their artefacts), `code/p0_pitfalls_check.py`, `code/check_no_secrets.py` |
+| Statistics | `code/statlib.py`, the cluster bootstraps in `code/pumplib.py` and `code/t1_base_rate_sorties.py`, `post_detection_edge/code/an_40_signals.py` (logistic regression and decision trees written from scratch, chosen on validation, locked before the test split was read) |
+| Data-quality failures caught | `docs/PITFALLS.md`: an HTTP 403 that had become "no data" (P6b), a detector that needed its own null (P13), a network failure that looked like a result (P15) |
+| Research design | `post_detection_edge/` (plan, lock, test split), `docs/ACT_IV.md`, `alpha_patterns/` |
+| Method | `docs/INVESTIGATION.md`, `docs/METHODOLOGY.md`, `code/README.md` |
+
+Some script names, JSON keys, console messages and the `alpha_patterns/` working notes are in French; this README and `docs/` are in English.
+
+## Verify it yourself
+
+Python 3.12 or 3.13, nothing to install, no key:
+
+```bash
+git clone https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over.git
+cd Why-Solana-Memecoins-Are-Over
+python3 code/run_all.py --strict
+python3 code/p1_readme_check.py
+```
+
+The first command ends with `22 ran, 20 skipped, 0 failed` and `every committed table and JSON reproduced byte for byte`, in about 30 seconds. The second prints the claim ledger, every sourced row `OK`, then the figures that have no artefact. The rest of the CI needs `pip install pytest mypy ruff`, then `python3 -m pytest -q` (76 passed) and `ruff check .`. Python 3.9 to 3.11 also run the scripts, but two floating-point aggregates then differ in their last digits, so `--strict` is byte-exact on 3.12 and 3.13 only.
+
+What a clone does not rerun:
+
+* Of the 42 scripts `run_all.py` lists, 13 need the network (a Solana RPC key, public price APIs), 5 a raw capture corpus that is not published, and 2 redraw figures with matplotlib; the runner names each one and why. The 2024 collection scripts outside it (`code/01_*.py` to `code/08_*.py`, `code/scan_gateway_dispatch.py`) need the network too. The outputs the offline scripts read are committed.
+* CI does not run the nine studies or `alpha_patterns/`. `post_detection_edge/` reruns offline from its committed snapshot. The analysis scripts of `economic_mechanics/`, `exit_destination/` and `funder_network/` need an on-chain cache that is not committed: without it they finish without an error but write different numbers over their committed tables (a known defect, so run them in a scratch clone), and their post-hoc scripts stop on the missing cache. The `alpha_patterns/` scripts need unpublished derived files; `alpha_patterns/code/chk_00_integrity.py` checks the published hashes offline.
+* The live detector is not published.
 
 ---
 
