@@ -2,11 +2,13 @@
 
 Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
+I had started with roughly **$400**, a multiple of about **590×**.
+
 I stopped when the pattern I was exploiting disappeared.
 
-I didn't stop because the market became impossible to understand.
+Not because the market had become impossible to read.
 
-I stopped because the mechanism had changed.
+Because the mechanism had changed.
 
 So I did what I had been doing from the beginning: I went back to the chain and looked for what replaced it.
 
@@ -25,13 +27,15 @@ It is a reproducible blockchain investigation built from transaction-level data.
 The work covers:
 
 * **Blockchain forensics**
-* **On-chain transaction tracing**
+* **On-chain transaction tracing and attribution discipline**
 * **Wallet clustering and relationship analysis**
 * **Funding-flow reconstruction**
 * **Pattern and anomaly detection**
-* **Transaction monitoring**
+* **Detection of coordinated accumulation**
+* **Real-time transaction monitoring**
 * **Hypothesis testing and falsification**
 * **Manual transaction verification**
+* **Detection of instrumentation and data-quality failures**
 * **Python-based data analysis**
 * **Reproducible research**
 * **On-chain financial-flow reconstruction**
@@ -183,7 +187,7 @@ And eventually, that information stopped being observable.
 
 # Results
 
-The results below are reconstructed from the blockchain.
+The results below are reconstructed from the blockchain, from the deposit address's own balance changes.
 
 | Metric                                     |             Result |
 | ------------------------------------------ | -----------------: |
@@ -299,7 +303,7 @@ It prevents the measurement from simply becoming a collection of examples select
 
 # Real-World Example
 
-One instance is the launch associated with **ANSEM ("TheBlackBull")**:
+One instance is the launch associated with **ANSEM ("TheBlackBull")**:[2]
 
 Mint:
 
@@ -351,7 +355,9 @@ The reason is the interesting part.
 
 ## What was tried
 
-Each study was written as a plan before its rates were computed and ended with a verdict; the studies that tested a signal read the alerts after 15 September as their hold-out, one after another.
+Each study was written as a plan before its rates were computed, and ended with a verdict.
+
+The studies that tested a signal read the alerts after 15 September as their hold-out, one after another.
 
 | question | verdict |
 |---|---|
@@ -425,7 +431,7 @@ Every figure in this act is checked against its artefact by `code/p1_readme_chec
 
 # Why Solana Memecoins Are Over
 
-The story of this repository is one line of questions.
+The story of this repository is a single chain of questions.
 
 1. In 2024 I had an observable edge: wallets funded hours before a launch, accumulating in public.
 2. The mechanism changed, and the edge went with it.
@@ -446,8 +452,6 @@ By 2026 the same activity happens inside the creation slot, and what the public 
 The information advantage did not just shrink.
 
 It moved: from the funding, hours ahead of the launch, to the demand, minutes behind the entry.
-
-The broader market data is consistent with a significant contraction in the memecoin environment, but those macro figures are external measurements rather than outputs of this repository.[3]
 
 The conclusion I can defend from the on-chain evidence is narrower:
 
@@ -587,5 +591,3 @@ That is the work I want to keep doing.
 1. A 2025 external study on Solana mixers observed funds routed through ChangeNOW arriving at the address used in this investigation. An earlier public attribution also associates the address with the service. The repository measures what leaves the address; it does not independently establish who operates it.
 
 2. External sources document the ANSEM/Black Bull launch. The wallet measurements themselves come from this repository. Where a value is not measured by an artefact in this repository, it is explicitly marked as unsourced.
-
-3. The graduation-rate and Solana-fee figures are network-wide aggregates from an external source. They are included as context, not as measurements produced by this repository.
