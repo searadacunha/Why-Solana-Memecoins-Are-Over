@@ -1,0 +1,146 @@
+{
+ "Y2": {
+  "atom_uses_by_family": {
+   "ACTOR": 7961,
+   "BUNDLE": 14721,
+   "CLUSTER": 4406,
+   "COORD": 2470,
+   "CREATOR": 2489,
+   "EXIT": 2034,
+   "FUND": 24172,
+   "PRICE": 4317,
+   "TEMPO": 16782
+  },
+  "base": 0.25068870186805725,
+  "base_eff": 0.26282915275880364,
+  "evaluated": {
+   "pairs": 3103093,
+   "singles": 3100,
+   "triples": 131750
+  },
+  "hits": 91,
+  "n": 363,
+  "passed": 37296,
+  "passed_before_spread": {
+   "pairs": 76591,
+   "singles": 99
+  },
+  "passed_by_depth": {
+   "1": 19,
+   "2": 32498,
+   "3": 4779
+  },
+  "rules_ge10_clusters": 34017,
+  "rules_ge5_clusters": 37296,
+  "rules_ge5_days": 37296
+ },
+ "Y3": {
+  "atom_uses_by_family": {
+   "ACTOR": 12497,
+   "BUNDLE": 18489,
+   "CLUSTER": 5206,
+   "COORD": 2132,
+   "CREATOR": 2311,
+   "EXIT": 2700,
+   "FUND": 18196,
+   "PRICE": 3101,
+   "TEMPO": 19274
+  },
+  "base": 0.11019283533096313,
+  "base_eff": 0.10007653097152835,
+  "evaluated": {
+   "pairs": 3103093,
+   "singles": 3100,
+   "triples": 150319
+  },
+  "hits": 40,
+  "n": 363,
+  "passed": 36238,
+  "passed_before_spread": {
+   "pairs": 64139,
+   "singles": 49
+  },
+  "passed_by_depth": {
+   "1": 7,
+   "2": 24794,
+   "3": 11437
+  },
+  "rules_ge10_clusters": 30797,
+  "rules_ge5_clusters": 36238,
+  "rules_ge5_days": 36238
+ },
+ "Y5": {
+  "atom_uses_by_family": {
+   "ACTOR": 17696,
+   "BUNDLE": 10266,
+   "CLUSTER": 11148,
+   "COORD": 3047,
+   "CREATOR": 2017,
+   "EXIT": 271,
+   "FUND": 24184,
+   "PRICE": 2356,
+   "TEMPO": 17208
+  },
+  "base": 0.024793388321995735,
+  "base_eff": 0.029463040797068935,
+  "evaluated": {
+   "pairs": 3103093,
+   "singles": 3100,
+   "triples": 159862
+  },
+  "hits": 9,
+  "n": 363,
+  "passed": 36612,
+  "passed_before_spread": {
+   "pairs": 135443,
+   "singles": 192
+  },
+  "passed_by_depth": {
+   "1": 10,
+   "2": 21623,
+   "3": 14979
+  },
+  "rules_ge10_clusters": 34539,
+  "rules_ge5_clusters": 36612,
+  "rules_ge5_days": 36612
+ },
+ "atoms": {
+  "allowed_atom_pairs": 3881457,
+  "duplicates_removed": 550,
+  "forbidden_copy_feature_pairs": 239,
+  "missing_atoms": 16,
+  "missing_atoms_skipped": 155,
+  "n_atoms": 3100,
+  "n_features": 415,
+  "support_rejected": 590
+ },
+ "cfg": {
+  "ALPHA_OOS": 0.05,
+  "ATOM_MAX_SHARE": 0.95,
+  "BOOT": 100000,
+  "CAP": 3.0,
+  "COPY_RHO": 0.97,
+  "IMPROVE": 1.1,
+  "JACCARD_MAX": 0.5,
+  "K_PER_TARGET": 10,
+  "MIN_CLUSTERS": 5,
+  "MIN_DAYS": 5,
+  "MIN_DAYS_HOLD": 3,
+  "NEFF_MIN_DISC": 12,
+  "NEFF_MIN_SEL": 8,
+  "N_MIN_DISC": 25,
+  "N_MIN_HALF": 8,
+  "N_MIN_HOLD": 8,
+  "N_MIN_SEL": 12,
+  "P_VAL": 0.1,
+  "QUANTS": [
+   0.2,
+   0.35,
+   0.5,
+   0.65,
+   0.8
+  ],
+  "RANK": "min",
+  "TRIPLE_SEEDS": 300
+ }
+}

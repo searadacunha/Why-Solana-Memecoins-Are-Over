@@ -44,3 +44,9 @@ select = ["F", "E9", "E402", "E501", "E731", "E741", "BLE", "RUF100"]
 # the point. Blind excepts there are recorded by this comment rather than edited
 # away; the rule applies to code/, which is still executed.
 "data/**" = ["BLE001"]
+
+# alpha_patterns/code/ is the published record of the exploratory search of October 2026 (Act IV):
+# the scripts are hashed in alpha_patterns/SELECTION_FREEZE.json and in its chained test registry,
+# so they are kept byte for byte. Nothing in CI executes them (they need the unpublished feature
+# matrix); the line-length and style rules below would mean rewriting a frozen record.
+"alpha_patterns/code/**" = ["E501", "E741", "BLE001", "RUF100", "F401", "F811"]

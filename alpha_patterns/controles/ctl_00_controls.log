@@ -1,0 +1,668 @@
+{"scenario": "NULL", "seed": 2, "seconds": 39.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 3, "seconds": 44.7, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 1, "seconds": 47.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 0, "seconds": 56.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 4, "seconds": 36.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 5, "seconds": 36.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 6, "seconds": 46.3, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 7, "seconds": 44.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 8, "seconds": 36.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 9, "seconds": 45.6, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 10, "seconds": 33.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 11, "seconds": 31.2, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 12, "seconds": 46.0, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 13, "seconds": 33.3, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 14, "seconds": 34.0, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 15, "seconds": 36.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 16, "seconds": 34.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 18, "seconds": 34.6, "n_candidates": 32, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 19, "seconds": 29.2, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 17, "seconds": 39.9, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 20, "seconds": 20.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 22, "seconds": 22.4, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 23, "seconds": 23.9, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 21, "seconds": 36.9, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 24, "seconds": 25.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 26, "seconds": 20.7, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 25, "seconds": 41.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 28, "seconds": 24.6, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 27, "seconds": 30.9, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 29, "seconds": 33.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 31, "seconds": 23.1, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 32, "seconds": 26.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 30, "seconds": 31.0, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 33, "seconds": 28.1, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 34, "seconds": 29.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 35, "seconds": 28.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 37, "seconds": 19.6, "n_candidates": 20, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 36, "seconds": 39.2, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL", "seed": 38, "seconds": 27.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 39, "seconds": 35.1, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 41, "seconds": 29.3, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 40, "seconds": 38.4, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 42, "seconds": 29.1, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 43, "seconds": 25.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 44, "seconds": 29.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 45, "seconds": 32.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 46, "seconds": 32.7, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 47, "seconds": 26.2, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 48, "seconds": 26.8, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 49, "seconds": 24.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 51, "seconds": 35.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 52, "seconds": 26.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 53, "seconds": 22.9, "n_candidates": 22, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 50, "seconds": 52.8, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 55, "seconds": 36.9, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 54, "seconds": 45.0, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 56, "seconds": 50.1, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 57, "seconds": 36.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 59, "seconds": 36.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 58, "seconds": 43.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 60, "seconds": 29.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 61, "seconds": 32.5, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 64, "seconds": 24.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 62, "seconds": 29.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 63, "seconds": 29.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 65, "seconds": 42.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 67, "seconds": 18.6, "n_candidates": 20, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 66, "seconds": 32.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 68, "seconds": 31.7, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 70, "seconds": 30.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 69, "seconds": 31.9, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 72, "seconds": 29.1, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 71, "seconds": 40.7, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 73, "seconds": 31.9, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 74, "seconds": 35.0, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "NULL", "seed": 75, "seconds": 23.1, "n_candidates": 20, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 76, "seconds": 34.3, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 79, "seconds": 21.0, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 78, "seconds": 25.3, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 77, "seconds": 33.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 80, "seconds": 25.8, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 82, "seconds": 25.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 83, "seconds": 27.9, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 81, "seconds": 35.2, "n_candidates": 32, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "NULL", "seed": 84, "seconds": 26.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 85, "seconds": 27.2, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 87, "seconds": 26.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 86, "seconds": 32.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 88, "seconds": 25.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 89, "seconds": 28.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 90, "seconds": 27.7, "n_candidates": 32, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 91, "seconds": 30.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 92, "seconds": 22.7, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 96, "seconds": 24.3, "n_candidates": 22, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 93, "seconds": 38.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 95, "seconds": 34.4, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 94, "seconds": 44.3, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 98, "seconds": 25.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 97, "seconds": 30.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 100, "seconds": 21.0, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 99, "seconds": 24.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 101, "seconds": 16.9, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 103, "seconds": 18.5, "n_candidates": 30, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 102, "seconds": 22.3, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 104, "seconds": 19.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 105, "seconds": 16.5, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 106, "seconds": 15.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 108, "seconds": 14.4, "n_candidates": 20, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 107, "seconds": 16.9, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 109, "seconds": 20.3, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 110, "seconds": 15.6, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL", "seed": 111, "seconds": 16.3, "n_candidates": 32, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "NULL", "seed": 112, "seconds": 14.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 113, "seconds": 16.5, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 114, "seconds": 17.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 115, "seconds": 17.4, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 116, "seconds": 22.7, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 117, "seconds": 16.3, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 120, "seconds": 13.0, "n_candidates": 21, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 119, "seconds": 20.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 118, "seconds": 23.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 121, "seconds": 17.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 122, "seconds": 15.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 123, "seconds": 15.1, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 125, "seconds": 15.7, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 124, "seconds": 24.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 126, "seconds": 15.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 127, "seconds": 15.8, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 128, "seconds": 13.7, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 131, "seconds": 15.2, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 130, "seconds": 16.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 129, "seconds": 25.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 132, "seconds": 15.1, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 134, "seconds": 15.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 135, "seconds": 13.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 136, "seconds": 11.7, "n_candidates": 20, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 133, "seconds": 18.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 137, "seconds": 17.6, "n_candidates": 31, "n_val_pass": 8, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "NULL", "seed": 139, "seconds": 15.5, "n_candidates": 32, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 138, "seconds": 17.3, "n_candidates": 32, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 140, "seconds": 17.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 141, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 143, "seconds": 12.8, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 142, "seconds": 16.5, "n_candidates": 33, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 144, "seconds": 15.8, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 145, "seconds": 12.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 146, "seconds": 12.9, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 148, "seconds": 12.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 147, "seconds": 21.4, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 149, "seconds": 16.5, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "NULL", "seed": 150, "seconds": 15.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 152, "seconds": 16.0, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 153, "seconds": 14.0, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 154, "seconds": 15.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 151, "seconds": 27.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 156, "seconds": 15.3, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 155, "seconds": 17.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 158, "seconds": 17.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 157, "seconds": 19.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 159, "seconds": 19.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 162, "seconds": 13.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 160, "seconds": 20.2, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 161, "seconds": 17.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 164, "seconds": 13.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 163, "seconds": 15.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 165, "seconds": 13.6, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 166, "seconds": 13.2, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 169, "seconds": 13.4, "n_candidates": 21, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 168, "seconds": 14.6, "n_candidates": 21, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 167, "seconds": 16.3, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 170, "seconds": 18.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 171, "seconds": 14.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 172, "seconds": 15.2, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 173, "seconds": 16.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 174, "seconds": 14.6, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 176, "seconds": 15.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 175, "seconds": 17.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 177, "seconds": 15.2, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 178, "seconds": 21.1, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL", "seed": 180, "seconds": 11.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 181, "seconds": 15.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 179, "seconds": 18.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 182, "seconds": 12.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 183, "seconds": 15.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 185, "seconds": 14.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 184, "seconds": 14.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 186, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL", "seed": 187, "seconds": 13.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 189, "seconds": 10.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL", "seed": 190, "seconds": 11.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 188, "seconds": 16.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 191, "seconds": 12.8, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 192, "seconds": 15.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "NULL", "seed": 193, "seconds": 16.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL", "seed": 194, "seconds": 14.6, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 195, "seconds": 12.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 196, "seconds": 13.4, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 197, "seconds": 15.0, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL", "seed": 199, "seconds": 12.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL", "seed": 198, "seconds": 15.2, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 0, "seconds": 13.4, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 3, "seconds": 10.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 2, "seconds": 12.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 1, "seconds": 14.0, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 4, "seconds": 11.3, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 5, "seconds": 11.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 6, "seconds": 11.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 7, "seconds": 14.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 9, "seconds": 10.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 8, "seconds": 16.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 10, "seconds": 14.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 11, "seconds": 11.4, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 1, "n_interesting": 2, "false_oos": 1}
+{"scenario": "NULL_day04", "seed": 12, "seconds": 10.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 13, "seconds": 13.8, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 15, "seconds": 10.7, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 14, "seconds": 11.5, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 16, "seconds": 14.8, "n_candidates": 33, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 19, "seconds": 12.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 18, "seconds": 12.9, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 17, "seconds": 15.8, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 20, "seconds": 11.8, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 22, "seconds": 12.1, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 23, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 21, "seconds": 16.1, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 24, "seconds": 12.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 26, "seconds": 12.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 25, "seconds": 15.0, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 27, "seconds": 11.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 28, "seconds": 13.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 29, "seconds": 11.6, "n_candidates": 32, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 31, "seconds": 10.1, "n_candidates": 30, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 30, "seconds": 13.9, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 32, "seconds": 11.9, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 34, "seconds": 10.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 33, "seconds": 13.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 35, "seconds": 12.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 36, "seconds": 10.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 37, "seconds": 13.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 39, "seconds": 10.0, "n_candidates": 21, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 38, "seconds": 13.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 40, "seconds": 15.7, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 43, "seconds": 11.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 42, "seconds": 13.0, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 41, "seconds": 19.2, "n_candidates": 33, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 44, "seconds": 12.9, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 45, "seconds": 11.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 46, "seconds": 12.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 48, "seconds": 10.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 47, "seconds": 14.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 49, "seconds": 11.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 50, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 51, "seconds": 13.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 53, "seconds": 11.0, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 52, "seconds": 15.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 54, "seconds": 12.5, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 55, "seconds": 14.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 58, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 56, "seconds": 15.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 57, "seconds": 13.8, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 59, "seconds": 10.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 60, "seconds": 11.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 62, "seconds": 12.3, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 61, "seconds": 16.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 63, "seconds": 9.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 64, "seconds": 9.3, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day04", "seed": 65, "seconds": 11.7, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 0, "seconds": 14.2, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 1, "seconds": 14.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 2, "seconds": 14.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 3, "seconds": 11.2, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 4, "seconds": 11.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 7, "seconds": 10.5, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 6, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 5, "seconds": 21.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 8, "seconds": 13.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 10, "seconds": 12.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 9, "seconds": 15.0, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 11, "seconds": 13.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 12, "seconds": 12.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 13, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 14, "seconds": 12.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 16, "seconds": 10.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 17, "seconds": 12.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 18, "seconds": 12.2, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 15, "seconds": 19.9, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 19, "seconds": 15.6, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 20, "seconds": 14.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 21, "seconds": 11.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 22, "seconds": 15.5, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 25, "seconds": 10.7, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 23, "seconds": 13.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 24, "seconds": 12.6, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 26, "seconds": 14.3, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 27, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 28, "seconds": 13.9, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 29, "seconds": 14.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 30, "seconds": 15.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 32, "seconds": 12.8, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 33, "seconds": 14.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 31, "seconds": 18.5, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 34, "seconds": 13.3, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 35, "seconds": 12.2, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 36, "seconds": 12.3, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 38, "seconds": 8.7, "n_candidates": 20, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 37, "seconds": 15.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 41, "seconds": 7.7, "n_candidates": 21, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 39, "seconds": 15.2, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 40, "seconds": 14.2, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 42, "seconds": 14.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 44, "seconds": 9.6, "n_candidates": 20, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 43, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 45, "seconds": 11.5, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 47, "seconds": 12.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 46, "seconds": 16.6, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 49, "seconds": 10.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 48, "seconds": 14.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 50, "seconds": 9.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 52, "seconds": 11.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 53, "seconds": 12.9, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 51, "seconds": 17.2, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 54, "seconds": 11.2, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 55, "seconds": 10.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 57, "seconds": 11.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 56, "seconds": 15.8, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 58, "seconds": 13.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 59, "seconds": 15.3, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 60, "seconds": 11.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 62, "seconds": 9.5, "n_candidates": 20, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 61, "seconds": 11.2, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 63, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 64, "seconds": 11.6, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_day08", "seed": 65, "seconds": 13.5, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 0, "seconds": 12.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 1, "seconds": 10.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 2, "seconds": 11.1, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 3, "seconds": 10.6, "n_candidates": 32, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 4, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 5, "seconds": 8.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 6, "seconds": 12.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 7, "seconds": 10.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 8, "seconds": 9.4, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 9, "seconds": 9.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 10, "seconds": 9.8, "n_candidates": 20, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 11, "seconds": 11.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 12, "seconds": 10.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 13, "seconds": 9.7, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 15, "seconds": 6.7, "n_candidates": 21, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 14, "seconds": 12.9, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 16, "seconds": 11.1, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 17, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 18, "seconds": 6.9, "n_candidates": 20, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 19, "seconds": 7.5, "n_candidates": 21, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 20, "seconds": 8.8, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 21, "seconds": 6.7, "n_candidates": 21, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 22, "seconds": 11.0, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 23, "seconds": 10.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 24, "seconds": 11.1, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 25, "seconds": 13.3, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 1, "n_interesting": 0, "false_oos": 1}
+{"scenario": "NULL_hist", "seed": 26, "seconds": 11.0, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 27, "seconds": 10.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 28, "seconds": 9.6, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 29, "seconds": 10.8, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 30, "seconds": 13.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 31, "seconds": 12.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 32, "seconds": 11.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 33, "seconds": 11.7, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 34, "seconds": 10.2, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 35, "seconds": 9.8, "n_candidates": 22, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 36, "seconds": 8.0, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 37, "seconds": 10.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 38, "seconds": 10.3, "n_candidates": 30, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 40, "seconds": 11.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 39, "seconds": 13.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 41, "seconds": 10.6, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 42, "seconds": 11.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 43, "seconds": 10.7, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 44, "seconds": 11.0, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 45, "seconds": 10.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 46, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 47, "seconds": 10.9, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 48, "seconds": 9.9, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 49, "seconds": 9.8, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 50, "seconds": 11.8, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 52, "seconds": 9.0, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 51, "seconds": 12.4, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 53, "seconds": 9.0, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 55, "seconds": 9.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 54, "seconds": 11.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 56, "seconds": 10.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 57, "seconds": 9.8, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 58, "seconds": 10.8, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 59, "seconds": 9.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 60, "seconds": 11.5, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 61, "seconds": 9.6, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 63, "seconds": 9.9, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 62, "seconds": 10.1, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 65, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "NULL_hist", "seed": 64, "seconds": 12.5, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 1, "seconds": 11.7, "n_candidates": 21, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 0, "seconds": 15.3, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 2, "seconds": 11.8, "n_candidates": 32, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 3, "seconds": 15.3, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 4, "seconds": 13.6, "n_candidates": 32, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 5, "seconds": 13.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 6, "seconds": 11.0, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 7, "seconds": 10.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 8, "seconds": 10.7, "n_candidates": 21, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 9, "seconds": 10.3, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 10, "seconds": 15.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 12, "seconds": 11.5, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 11, "seconds": 15.6, "n_candidates": 33, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 13, "seconds": 13.2, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 1, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 14, "seconds": 9.8, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 16, "seconds": 11.4, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 1, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 15, "seconds": 12.5, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 17, "seconds": 13.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 19, "seconds": 10.2, "n_candidates": 31, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 18, "seconds": 15.1, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 20, "seconds": 11.5, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 21, "seconds": 11.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 23, "seconds": 12.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 0, "seconds": 10.9, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x1.83", "seed": 22, "seconds": 14.8, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 1, "seconds": 14.1, "n_candidates": 33, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 14, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 2, "seconds": 11.7, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 3, "seconds": 11.0, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 4, "seconds": 13.1, "n_candidates": 32, "n_val_pass": 8, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 5, "seconds": 10.0, "n_candidates": 33, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 6, "seconds": 12.1, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 7, "seconds": 13.1, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 8, "seconds": 14.5, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 9, "seconds": 13.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 11, "seconds": 7.5, "n_candidates": 21, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 10, "seconds": 14.4, "n_candidates": 30, "n_val_pass": 7, "n_oos_pass": 2, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 12, "seconds": 11.9, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 13, "seconds": 10.7, "n_candidates": 32, "n_val_pass": 12, "n_oos_pass": 1, "n_interesting": 13, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 14, "seconds": 11.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 17, "seconds": 11.3, "n_candidates": 32, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 15, "seconds": 18.2, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 18, "seconds": 13.7, "n_candidates": 32, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 16, "seconds": 18.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 19, "seconds": 15.1, "n_candidates": 31, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 20, "seconds": 12.9, "n_candidates": 33, "n_val_pass": 1, "n_oos_pass": 1, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 22, "seconds": 13.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 21, "seconds": 19.7, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 2, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 0, "seconds": 15.6, "n_candidates": 32, "n_val_pass": 8, "n_oos_pass": 0, "n_interesting": 15, "false_oos": 0}
+{"scenario": "PLANTED_x2.2", "seed": 23, "seconds": 16.6, "n_candidates": 31, "n_val_pass": 8, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 1, "seconds": 13.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 2, "seconds": 16.0, "n_candidates": 33, "n_val_pass": 9, "n_oos_pass": 2, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 4, "seconds": 14.2, "n_candidates": 31, "n_val_pass": 8, "n_oos_pass": 4, "n_interesting": 14, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 3, "seconds": 17.8, "n_candidates": 31, "n_val_pass": 10, "n_oos_pass": 9, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 6, "seconds": 15.5, "n_candidates": 33, "n_val_pass": 13, "n_oos_pass": 5, "n_interesting": 14, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 5, "seconds": 21.7, "n_candidates": 31, "n_val_pass": 14, "n_oos_pass": 4, "n_interesting": 15, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 8, "seconds": 10.8, "n_candidates": 32, "n_val_pass": 10, "n_oos_pass": 5, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 7, "seconds": 13.7, "n_candidates": 33, "n_val_pass": 9, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 10, "seconds": 14.9, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 1, "n_interesting": 11, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 9, "seconds": 16.0, "n_candidates": 32, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 12, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 11, "seconds": 13.8, "n_candidates": 31, "n_val_pass": 8, "n_oos_pass": 7, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 12, "seconds": 14.3, "n_candidates": 31, "n_val_pass": 13, "n_oos_pass": 4, "n_interesting": 12, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 14, "seconds": 12.7, "n_candidates": 32, "n_val_pass": 15, "n_oos_pass": 4, "n_interesting": 13, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 13, "seconds": 14.1, "n_candidates": 32, "n_val_pass": 17, "n_oos_pass": 12, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 15, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 3, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 16, "seconds": 12.2, "n_candidates": 31, "n_val_pass": 6, "n_oos_pass": 1, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 18, "seconds": 9.4, "n_candidates": 32, "n_val_pass": 14, "n_oos_pass": 7, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 20, "seconds": 11.8, "n_candidates": 32, "n_val_pass": 9, "n_oos_pass": 6, "n_interesting": 12, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 17, "seconds": 15.6, "n_candidates": 31, "n_val_pass": 13, "n_oos_pass": 9, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 21, "seconds": 11.0, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 1, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 19, "seconds": 18.6, "n_candidates": 32, "n_val_pass": 15, "n_oos_pass": 5, "n_interesting": 13, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 22, "seconds": 12.8, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.9", "seed": 23, "seconds": 14.3, "n_candidates": 32, "n_val_pass": 10, "n_oos_pass": 8, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 0, "seconds": 12.7, "n_candidates": 33, "n_val_pass": 16, "n_oos_pass": 1, "n_interesting": 17, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 1, "seconds": 13.7, "n_candidates": 30, "n_val_pass": 9, "n_oos_pass": 9, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 2, "seconds": 11.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 4, "seconds": 11.4, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 5, "seconds": 10.1, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 5, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 3, "seconds": 18.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 14, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 6, "seconds": 11.5, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 1, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 8, "seconds": 12.9, "n_candidates": 33, "n_val_pass": 9, "n_oos_pass": 9, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 7, "seconds": 14.2, "n_candidates": 32, "n_val_pass": 5, "n_oos_pass": 1, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 9, "seconds": 14.3, "n_candidates": 32, "n_val_pass": 9, "n_oos_pass": 2, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 10, "seconds": 13.4, "n_candidates": 32, "n_val_pass": 6, "n_oos_pass": 5, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 11, "seconds": 10.3, "n_candidates": 32, "n_val_pass": 13, "n_oos_pass": 2, "n_interesting": 16, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 13, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 12, "seconds": 16.6, "n_candidates": 32, "n_val_pass": 11, "n_oos_pass": 0, "n_interesting": 20, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 14, "seconds": 14.2, "n_candidates": 32, "n_val_pass": 11, "n_oos_pass": 6, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 15, "seconds": 12.6, "n_candidates": 32, "n_val_pass": 12, "n_oos_pass": 7, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 16, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 19, "n_oos_pass": 6, "n_interesting": 19, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 18, "seconds": 11.3, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 1, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 17, "seconds": 15.2, "n_candidates": 33, "n_val_pass": 8, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 19, "seconds": 11.5, "n_candidates": 32, "n_val_pass": 11, "n_oos_pass": 4, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 20, "seconds": 11.7, "n_candidates": 32, "n_val_pass": 3, "n_oos_pass": 3, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 23, "seconds": 11.5, "n_candidates": 33, "n_val_pass": 9, "n_oos_pass": 4, "n_interesting": 13, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 0, "seconds": 8.9, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 22, "seconds": 16.5, "n_candidates": 32, "n_val_pass": 9, "n_oos_pass": 5, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x3.0", "seed": 21, "seconds": 21.0, "n_candidates": 32, "n_val_pass": 13, "n_oos_pass": 1, "n_interesting": 19, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 2, "seconds": 10.1, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 3, "seconds": 10.9, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 1, "seconds": 15.6, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 4, "seconds": 13.0, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 6, "seconds": 9.9, "n_candidates": 33, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 5, "seconds": 11.4, "n_candidates": 30, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 7, "seconds": 11.0, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 8, "seconds": 10.7, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 1, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 10, "seconds": 8.2, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 9, "seconds": 10.6, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 11, "seconds": 9.6, "n_candidates": 32, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 12, "seconds": 10.6, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 13, "seconds": 8.4, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 14, "seconds": 8.6, "n_candidates": 31, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 15, "seconds": 13.3, "n_candidates": 31, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 16, "seconds": 9.5, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 17, "seconds": 9.7, "n_candidates": 30, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 18, "seconds": 13.0, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 1, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 19, "seconds": 9.5, "n_candidates": 31, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 21, "seconds": 10.2, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 20, "seconds": 12.4, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 22, "seconds": 10.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 0, "seconds": 6.0, "n_candidates": 21, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 7, "false_oos": 0}
+{"scenario": "PLANTED_x2.2_s5", "seed": 23, "seconds": 12.1, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 1, "seconds": 10.2, "n_candidates": 30, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 2, "seconds": 11.0, "n_candidates": 30, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 3, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 3, "seconds": 14.1, "n_candidates": 32, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 5, "seconds": 8.8, "n_candidates": 31, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 4, "seconds": 11.2, "n_candidates": 33, "n_val_pass": 9, "n_oos_pass": 0, "n_interesting": 12, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 9, "seconds": 10.9, "n_candidates": 30, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 8, "seconds": 11.6, "n_candidates": 31, "n_val_pass": 7, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 6, "seconds": 16.0, "n_candidates": 33, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 7, "seconds": 13.4, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 12, "seconds": 8.5, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 10, "seconds": 9.7, "n_candidates": 32, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 6, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 13, "seconds": 9.5, "n_candidates": 30, "n_val_pass": 4, "n_oos_pass": 0, "n_interesting": 13, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 11, "seconds": 12.6, "n_candidates": 31, "n_val_pass": 6, "n_oos_pass": 6, "n_interesting": 0, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 14, "seconds": 9.0, "n_candidates": 22, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 8, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 15, "seconds": 9.3, "n_candidates": 30, "n_val_pass": 3, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 16, "seconds": 10.7, "n_candidates": 30, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 2, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 17, "seconds": 14.2, "n_candidates": 31, "n_val_pass": 0, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 19, "seconds": 9.7, "n_candidates": 31, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 9, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 20, "seconds": 7.8, "n_candidates": 21, "n_val_pass": 1, "n_oos_pass": 0, "n_interesting": 4, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 18, "seconds": 15.8, "n_candidates": 32, "n_val_pass": 7, "n_oos_pass": 0, "n_interesting": 14, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 21, "seconds": 12.1, "n_candidates": 30, "n_val_pass": 5, "n_oos_pass": 0, "n_interesting": 10, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 23, "seconds": 10.1, "n_candidates": 33, "n_val_pass": 6, "n_oos_pass": 0, "n_interesting": 12, "false_oos": 0}
+{"scenario": "PLANTED_x3.0_s5", "seed": 22, "seconds": 11.6, "n_candidates": 32, "n_val_pass": 2, "n_oos_pass": 0, "n_interesting": 5, "false_oos": 0}
+{
+ "NULL": {
+  "runs": 200,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.0,
+  "val_pass_per_run": 0.965,
+  "interesting_per_run": 1.66,
+  "runs_with_interesting": 144,
+  "oos_survivors_using_history": 0
+ },
+ "NULL_day04": {
+  "runs": 66,
+  "runs_with_false_oos_survivor": 1,
+  "false_oos_survivors_per_run": 0.015151515151515152,
+  "oos_survivors_per_run": 0.015151515151515152,
+  "val_pass_per_run": 0.696969696969697,
+  "interesting_per_run": 1.7575757575757576,
+  "runs_with_interesting": 51,
+  "oos_survivors_using_history": 1
+ },
+ "NULL_day08": {
+  "runs": 66,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.0,
+  "val_pass_per_run": 0.7121212121212122,
+  "interesting_per_run": 1.303030303030303,
+  "runs_with_interesting": 43,
+  "oos_survivors_using_history": 0
+ },
+ "NULL_hist": {
+  "runs": 66,
+  "runs_with_false_oos_survivor": 1,
+  "false_oos_survivors_per_run": 0.015151515151515152,
+  "oos_survivors_per_run": 0.015151515151515152,
+  "val_pass_per_run": 0.8484848484848485,
+  "interesting_per_run": 1.2727272727272727,
+  "runs_with_interesting": 40,
+  "oos_survivors_using_history": 1
+ },
+ "PLANTED_x1.83": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.08333333333333333,
+  "val_pass_per_run": 1.6666666666666667,
+  "interesting_per_run": 3.0416666666666665,
+  "runs_with_interesting": 21,
+  "oos_survivors_using_history": 1,
+  "planted_frozen": 8,
+  "planted_val": 4,
+  "planted_oos": 1,
+  "signal_oos": 1
+ },
+ "PLANTED_x2.2": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.25,
+  "val_pass_per_run": 3.25,
+  "interesting_per_run": 5.416666666666667,
+  "runs_with_interesting": 22,
+  "oos_survivors_using_history": 1,
+  "planted_frozen": 9,
+  "planted_val": 7,
+  "planted_oos": 3,
+  "signal_oos": 4
+ },
+ "PLANTED_x2.9": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 4.041666666666667,
+  "val_pass_per_run": 9.0,
+  "interesting_per_run": 8.833333333333334,
+  "runs_with_interesting": 24,
+  "oos_survivors_using_history": 36,
+  "planted_frozen": 23,
+  "planted_val": 22,
+  "planted_oos": 17,
+  "signal_oos": 19
+ },
+ "PLANTED_x3.0": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 3.0,
+  "val_pass_per_run": 7.75,
+  "interesting_per_run": 9.75,
+  "runs_with_interesting": 24,
+  "oos_survivors_using_history": 45,
+  "planted_frozen": 23,
+  "planted_val": 20,
+  "planted_oos": 16,
+  "signal_oos": 17
+ },
+ "PLANTED_x2.2_s5": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.041666666666666664,
+  "val_pass_per_run": 2.0416666666666665,
+  "interesting_per_run": 2.9166666666666665,
+  "runs_with_interesting": 20,
+  "oos_survivors_using_history": 1,
+  "planted_frozen": 4,
+  "planted_val": 0,
+  "planted_oos": 0,
+  "signal_oos": 0
+ },
+ "PLANTED_x3.0_s5": {
+  "runs": 24,
+  "runs_with_false_oos_survivor": 0,
+  "false_oos_survivors_per_run": 0.0,
+  "oos_survivors_per_run": 0.25,
+  "val_pass_per_run": 3.25,
+  "interesting_per_run": 6.5,
+  "runs_with_interesting": 23,
+  "oos_survivors_using_history": 0,
+  "planted_frozen": 13,
+  "planted_val": 7,
+  "planted_oos": 1,
+  "signal_oos": 1
+ }
+}
