@@ -83,13 +83,13 @@ def main() -> None:
         before = batch[-1].get("signature")
         if p % 5 == 4:
             print(f"  … {n_tx} transactions, {len(inflow)} sources, {len(outflow)} destinataires "
-                  f"(remonte a {dt.datetime.fromtimestamp(oldest, dt.UTC):%Y-%m-%d})", flush=True)
+                  f"(remonte a {dt.datetime.fromtimestamp(oldest, dt.timezone.utc):%Y-%m-%d})", flush=True)
         time.sleep(0.2)
 
     recycl = sorted(set(inflow) & set(outflow),
                     key=lambda w: -(inflow[w]["sol"] + outflow[w]["sol"]))
     def fmt(t):
-        return dt.datetime.fromtimestamp(t, dt.UTC).strftime("%Y-%m-%d") if t else "?"
+        return dt.datetime.fromtimestamp(t, dt.timezone.utc).strftime("%Y-%m-%d") if t else "?"
 
     print(f"\n=== HUB {a.addr} ===")
     print(f"  {n_tx} transactions lues, du {fmt(oldest)} au {fmt(newest)}")

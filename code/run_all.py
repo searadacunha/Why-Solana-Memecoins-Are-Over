@@ -170,6 +170,12 @@ def deps() -> int:
     local = {os.path.splitext(f)[0] for f in os.listdir(settings.CODE)
              if f.endswith(".py")}
     stdlib = set(getattr(sys, "stdlib_module_names", ())) or set()
+    if not stdlib:
+        # sys.stdlib_module_names only exists from 3.10. Without it every import
+        # would count as stdlib and the check would pass without checking.
+        print("--deps needs Python 3.10+ (sys.stdlib_module_names); "
+              "nothing was checked", file=sys.stderr)
+        return 2
     third: dict[str, list[str]] = {}
     for f in sorted(os.listdir(settings.CODE)):
         if not f.endswith(".py"):
