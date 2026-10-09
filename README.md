@@ -1,5 +1,63 @@
 # Why Solana Memecoins Are Over
 
+[![ci](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml/badge.svg)](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml)
+
+**An independent investigation of how Solana memecoin launches are bought, built from transaction-level on-chain data.** I built the Python pipeline that collects and rebuilds the transactions, the checks that try to break the conclusions (`docs/PITFALLS.md`), and a CI that fails when a committed table, or one of the 43 README figures it tracks, no longer matches the code behind it. I work with AI coding agents (Claude Code); the commits they co-wrote carry a co-author line.
+
+It started from a pattern I traded in 2024. When it stopped paying, I rebuilt the mechanism from the chain, measured what replaced it, then tested whether the new mechanism could tell which launches would succeed well enough to trade. Within what was tested, it could not.
+
+## At a glance
+
+| | |
+|---|---|
+| **Question** | Can coordinated buying around token launches be measured from public chain data alone, and does it tell you which launches will succeed? |
+| **What I built** | A Python pipeline, one script per measurement, that reads Solana blocks and transactions over RPC and rebuilds funding flows, launch-time purchases and exits. Every script under `code/` that computes a number uses the standard library only. |
+| **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks that each output is byte-identical to the committed one, checks 43 README figures against their sources, and runs 76 unit tests, type checks, a linter and a publication gate. |
+| **Research design** | Nine studies on the 1,657 alerts of a live detector, each with a written plan, a frozen input table (SHA-256) and a verdict, then one exploratory search over 415 features. |
+| **Measured** | 2024: fresh wallets funded through the same swap service before launch, on 6 of 13 measured tokens. 2026: the token's sale curve bought in the very block (slot) that creates the token, on all 42 launches of recurring buyer groups rebuilt transaction by transaction, a selected sample rather than a market-wide rate. The groups behind the 2026 alerts recur from launch to launch. |
+| **Negative results** | No tradable edge. One of 12 signals locked before the test survived it (the chance of doubling within 15 minutes rose from 31.0 % to 45.7 %) and still lost money after costs. The search over 415 features found nothing exploitable. The 2024 funding signature stops separating the tokens I traded once a criterion that also fires on random wallets is removed (`docs/SPLIT_PHASE1.md` §6). |
+| **Not established** | Who controls the wallets: links are measured, ownership and intent are not attributed. The roughly $400 starting capital of my 2024 trading, an unsourced recollection. The live detector's code, a separate project: only its frozen alert journal is here. The October 2026 search (`alpha_patterns/`) is exploratory, not validated out of sample. |
+
+## Where to look
+
+| To check | Open |
+|---|---|
+| Python and data processing | `code/`, one script per measurement; shared logic in `statlib.py`, `splitlib.py`, `pumplib.py`, `common.py` |
+| RPC and API integration | `code/rpc_client.py`, the RPC client of `code/`: key rotation, a cooldown after HTTP 429, bounded retries, and one error rule: a failed call raises, it never returns an empty result |
+| Fund tracing | `code/02_cn_outflows.py` (a swap service's hot-wallet outflows, grouped into identical-amount splits), `code/05_trace_origin.py` (a wallet's origin past the RPC's 1,000-signature page limit, without pretending the start of its history was reached) |
+| Pipeline and automation | `code/run_all.py` (runs the measurements by tier, then byte-compares the artefacts), `.github/workflows/ci.yml` |
+| Detection logic | `code/v05_creation_block.py` and `code/v06_curve_ladder.py` (launch-block reconstruction), `code/splitlib.py` (identical-amount funding bursts), `code/a1_null_model.py` (how often the funding detector fires on random wallets) |
+| Testing and validation | `tests/`, `code/p1_readme_check.py` (this README's figures against their artefacts), `code/p0_pitfalls_check.py`, `code/check_no_secrets.py` |
+| Statistics | `code/statlib.py`, the cluster bootstraps in `code/pumplib.py` and `code/t1_base_rate_sorties.py`, `post_detection_edge/code/an_40_signals.py` (logistic regression and decision trees written from scratch, chosen on validation, locked before the test split was read) |
+| Data-quality failures caught | `docs/PITFALLS.md`: an HTTP 403 that had become "no data" (P6b), a detector that needed its own null (P13), a network failure that looked like a result (P15) |
+| Research design | `post_detection_edge/` (plan, lock, test split), `docs/ACT_IV.md`, `alpha_patterns/` |
+| Method | `docs/INVESTIGATION.md`, `docs/METHODOLOGY.md`, `code/README.md` |
+
+Some script names, JSON keys, console messages and the `alpha_patterns/` working notes are in French; this README and `docs/` are in English.
+
+## Verify it yourself
+
+Python 3.12 or 3.13, nothing to install, no key:
+
+```bash
+git clone https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over.git
+cd Why-Solana-Memecoins-Are-Over
+python3 code/run_all.py --strict
+python3 code/p1_readme_check.py
+```
+
+The first command ends with `22 ran, 20 skipped, 0 failed` and `every committed table and JSON reproduced byte for byte`, in about 30 seconds. The second prints the claim ledger, every sourced row `OK`, then the figures that have no artefact. The rest of the CI needs `pip install pytest mypy ruff`, then `python3 -m pytest -q` (76 passed) and `ruff check .`. Python 3.9 to 3.11 also run the scripts, but two floating-point aggregates then differ in their last digits, so `--strict` is byte-exact on 3.12 and 3.13 only.
+
+What a clone does not rerun:
+
+* Of the 42 scripts `run_all.py` lists, 13 need the network (a Solana RPC key, public price APIs), 5 a raw capture corpus that is not published, and 2 redraw figures with matplotlib; the runner names each one and why. The 2024 collection scripts outside it (`code/01_*.py` to `code/08_*.py`, `code/scan_gateway_dispatch.py`) need the network too. The outputs the offline scripts read are committed.
+* CI does not run the nine studies or `alpha_patterns/`. `post_detection_edge/` reruns offline from its committed snapshot. The analysis scripts of `economic_mechanics/`, `exit_destination/` and `funder_network/` need an on-chain cache that is not committed: without it they finish without an error but write different numbers over their committed tables (a known defect, so run them in a scratch clone), and their post-hoc scripts stop on the missing cache. The `alpha_patterns/` scripts need unpublished derived files; `alpha_patterns/code/chk_00_integrity.py` checks the published hashes offline.
+* The live detector is not published.
+
+---
+
+## The story
+
 Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
 I had started with roughly **$400**, a multiple of about **590×**.
@@ -15,31 +73,6 @@ So I did what I had been doing from the beginning: I went back to the chain and 
 This repository is the result.
 
 It is part trading history, part on-chain investigation, and part attempt to prove myself wrong.
-
----
-
-## What this repository demonstrates
-
-This is not a tutorial and it is not a collection of screenshots.
-
-It is a reproducible blockchain investigation built from transaction-level data.
-
-The work covers:
-
-* **Blockchain forensics**
-* **On-chain transaction tracing and attribution discipline**
-* **Wallet clustering and relationship analysis**
-* **Funding-flow reconstruction**
-* **Pattern and anomaly detection**
-* **Detection of coordinated accumulation**
-* **Real-time transaction monitoring**
-* **Hypothesis testing and falsification**
-* **Manual transaction verification**
-* **Detection of instrumentation and data-quality failures**
-* **Python-based data analysis**
-* **Reproducible research**
-* **On-chain financial-flow reconstruction**
-* **Pre-registered hypothesis testing on a live detector's alerts**
 
 The central question was simple:
 
@@ -63,7 +96,7 @@ Where this repository can measure something, I measure it.
 
 Where it cannot, I say so.
 
-When the trading stopped, I turned the same methodology against my own claims. `docs/PITFALLS.md` documents fifteen competing explanations that were tested, corrected or retired. Results that could not be regenerated from the published data were deleted rather than kept.
+When the trading stopped, I turned the same methodology against my own claims. `docs/PITFALLS.md` documents fifteen competing explanations that were tested, corrected or retired. Results that could not be regenerated from the published data were withdrawn; `docs/PITFALLS.md` §18 lists them rather than silently removing them.
 
 That standard is intentional.
 
@@ -150,6 +183,8 @@ Once one wallet bought roughly **2% of supply** — around 20 million tokens —
 That created something unusual in an otherwise chaotic market:
 
 **a measurable, observable accumulation pattern.**
+
+> **What Act I does and does not show.** The case above is one token. Across the 13 tokens measured, fresh wallets funded through the gateway before launch appear on 6, and several wallets at one identical amount on one of them, this one (`docs/PATTERN.md` §6; identical amounts are not required there, §2.4). That is a deliberately selected sample, not a prevalence estimate. The funding links these wallets on chain; that a single operator controls them is not established. And the split-funding detector of `docs/SPLIT_PHASE1.md` does not separate the tokens I traded: p = 0.0007 against dead tokens holds only with a criterion that also fires on 88.9 % of random wallet groups; without it, p = 0.060 against dead tokens and p = 0.44 against graduated tokens of the same period (§6.1).
 
 ---
 
@@ -299,6 +334,8 @@ This separation between the discovery sample and the frozen sample is deliberate
 
 It prevents the measurement from simply becoming a collection of examples selected after seeing the result.
 
+> **What the frozen sample tests.** One thing: at least 60 SOL bought inside the creation slot, whatever the number of buyers (25 of the 58 have one or two buyers in that slot, `data/v09_signature_gros_tokens.json`). Three of the 70 tokens are also among the 42 (`data/v05_creation_block.json` against `data/v09_signature_gros_tokens.json`); without them the rate is 55 of 67. The sample is selected on outcome (tokens that reached $500k), so it shows that the signature is common among large tokens, not that it makes them large (`docs/RESULTATS.md`).
+
 ---
 
 # Real-World Example
@@ -325,23 +362,29 @@ Using the same measurement scripts:
 * **sixteen signatures**
 * no bonding-curve supply left for public buyers
 
-More importantly, both wallets were already present in the repository's historical wallet catalogue before this token existed.
+Both wallets recur in the repository's wallet catalogue, built from launches of 27 June to 4 July 2026, after this one.
 
 One was a repeat operator observed across multiple tokens.
 
 The other was classified as shared infrastructure.
 
-The alert triggered immediately after creation.
+An alert fired on it shortly after creation; no log of that alert is published.
 
 This is the point where the repository moves from historical analysis to something closer to **transaction monitoring**:
 
 a behavioural signature can be defined, measured, and triggered on a new event.
 
+> **Provenance and limits.** No artefact of this repository measures this launch's creation slot: `code/p1_readme_check.py` lists the figures above as unsourced, and the mint is published so they can be re-measured. What is committed: the launch's creation time and its creator in the pump.fun record (`data/bundle/frame_ath.json`, `data/bundle/_frame_ath_raw.json`), the creator being the repeat-operator wallet; and the catalogue that classifies the two wallets (`docs/out/m4_infra.json`: 24 and 44 of 282 launches). Who controls that wallet is not established: nothing here attributes it, or the purchase, to any person, including the public figure the token's name refers to. This launch is also outside the 1,657 alerts of Act IV: that detector started on 21 August 2026, and its rule (at least four wallets of 5 SOL or more) excludes a two-buyer block (`post_detection_edge/tables/T7_robustness.md`).
+
 ---
 
 # Act IV — The Signal Still Exists. The Edge Doesn't.
 
-The detector described above ran live from 21 August 2026.
+A live detector ran from 21 August 2026.
+
+It is a separate project whose code is not published; this repository holds its frozen alert journal (`post_detection_edge/data/`).
+
+Its rule is stricter than the Act III signature: at least four wallets of 5 SOL or more inside the creation slot. It was not watching for at least ~600 of the ~930 hours, mostly while the machine slept, so launches in those hours are missing (`post_detection_edge/results.md`).
 
 By 29 September it had alerted on **1,657 launches**.
 
@@ -373,7 +416,7 @@ The studies that tested a signal read the alerts after 15 September as their hol
 
 On the **1,015 launches** before 15 September 2026, **612** had an observable one-hour outcome and **168 (27.5 %)** doubled from the entry price read 5 to 15 s after the alert (the declared trade buys at alert + 5 s).
 
-Shared wallets, shared funders and identical ticket configurations confirm each other **47 to 212 times** above chance: the operators are real, recognisable identities.
+Shared wallets, shared funders and identical ticket configurations confirm each other **47 to 212 times** above chance: the operators are real, recurring on-chain entities, though who controls them is not established.
 
 **33 teams** have five or more observable launches; **19** have ten or more.
 
@@ -423,9 +466,9 @@ This repository establishes the first and did not find the second.
 
 > We found a strong structural signal of coordinated launch-time accumulation. The analyses performed did not establish that this signal, or anything else observable before the entry, was sufficient to predict which launches would subsequently produce the measured price outcome.
 
-Every figure in this act is checked against its artefact by `code/p1_readme_check.py`. The full chapter, hypothesis by hypothesis, is `docs/ACT_IV.md`; the search itself is `alpha_patterns/`.
+Most figures in this act are checked against their artefact by `code/p1_readme_check.py`; the four quoted from the studies' results tables (78 % of the supply, four snipers, 21 and 18 minutes, four launches out of five) are listed by it as unsourced. The full chapter, hypothesis by hypothesis, is `docs/ACT_IV.md`; the search itself is `alpha_patterns/`.
 
-**Exploratory, not validated out of sample.** These analyses ran on the first 1,015 alerts. One pre-declared rule was read once on the following week and failed. The last week was never read.
+**Exploratory, not validated out of sample.** These analyses ran on the first 1,015 alerts. One pre-declared rule was read once on the following week and failed. The last week was never read by this search; those alerts had already served as the earlier studies' hold-out, so no block of the snapshot is untouched, and a confirmation has to come from new alerts.
 
 ---
 
@@ -548,15 +591,17 @@ That separation is intentional.
 | ---------------------- | ----------------------------------------------------------------------------------- |
 | `docs/PITFALLS.md`     | Fifteen competing explanations, the tests designed to break them, and what survived |
 | `docs/METHODOLOGY.md`  | Definitions, populations, validation protocol and declared limitations              |
-| `docs/RESULTATS.md`    | Complete 2026 measurements with an English executive summary                        |
+| `docs/RESULTATS.md`    | The 2026 launch measurements in full: creation-slot signature, entry prices, exits, horizons |
 | `docs/PATTERN.md`      | Funding distributions token by token with detected bursts                           |
-| `docs/EXPLOITATION.md` | Trading methodology, automation, receipts and on-chain totals                       |
+| `docs/EXPLOITATION.md` | How I traded the pattern, the screenshotted receipts, and the on-chain totals       |
 | `docs/SPLIT_PHASE1.md` | 2024–2025 split analysis with controls and null models                              |
 | `docs/ACT_IV.md`       | Act IV in full: the studies after the detector, hypothesis by hypothesis, every figure traced to an artefact |
 | `docs/INVESTIGATION.md` | The investigation framework used throughout                                        |
 | `alpha_patterns/`      | The exploratory pattern search of October 2026: plan, pre-registrations, reports, result JSON, scripts, test registry, audits |
-| `post_detection_edge/` … `known_group_reentry/` | Nine pre-registered studies, run 29 September to 1 October 2026 on the detector's 1,657 alerts of 21 August to 29 September 2026, each with its plan and results |
-| `code/`                | One script per measurement                                                          |
+| `post_detection_edge/` … `known_group_reentry/` | Nine pre-registered studies, run 29 September to 1 October 2026 on the detector's 1,657 alerts of 21 August to 29 September 2026, each with its plan and results. `post_detection_edge/data/` holds the detector's frozen alert journal |
+| `code/`                | One script per measurement, the runner, the RPC client and the publication gate; `code/README.md` explains how to reproduce each |
+| `tests/`               | Unit tests for the shared libraries, the RPC client and the publication gate        |
+| `.github/workflows/ci.yml` | The checks run on every push (see Verify it yourself)                           |
 | `data/`                | Versioned derived datasets                                                          |
 | `figures/`             | Figures regenerated from the analysis scripts (`code/f_figures_resultats.py`, `code/f_act_iv_timeline.py`) |
 
@@ -568,7 +613,7 @@ That separation is intentional.
 
 I published this investigation under my real name deliberately.
 
-The commit history is authored under it.
+The commits are authored under it, or, for edits made in the GitHub web editor, under `teamdacunha`, the display name of my account.
 
 The trading screenshots retain the `teamdacunha` referral handle.
 
@@ -576,11 +621,13 @@ The **$237,137.87** withdrawal figure is reconstructed from my own exchange depo
 
 The chain, the code, the artefacts and the person behind the investigation are therefore connected.
 
-I am not presenting this repository as a generic software-engineering portfolio.
+This repository is an investigation, not a software product.
 
-I am presenting it as evidence of a specific capability:
+What it shows is a way of working:
 
-> **I find patterns in blockchain data, build hypotheses around them, try to break those hypotheses, and turn the surviving evidence into a reproducible investigation.**
+> **I find patterns in data, build the tools to measure them, try to break the hypotheses, and turn the surviving evidence into a reproducible result.**
+
+Here the data was the Solana chain, and the tools were RPC collection, transaction reconstruction, a test suite and a CI that checks the prose against the measurements. That approach is what I would bring to transaction monitoring, fraud investigations, data pipelines and automation; this repository shows it on one domain.
 
 That is the work I want to keep doing.
 
@@ -588,6 +635,6 @@ That is the work I want to keep doing.
 
 # Footnotes
 
-1. A 2025 external study on Solana mixers observed funds routed through ChangeNOW arriving at the address used in this investigation. An earlier public attribution also associates the address with the service. The repository measures what leaves the address; it does not independently establish who operates it.
+1. A [2025 external study on Solana mixers](https://medium.com/@smartgenuise806/the-shadow-economy-a-research-study-on-mixers-in-solana-3eebc60dcd2a) observed funds routed through ChangeNOW arriving at the address used in this investigation. An [earlier public attribution](https://x.com/CrypticZK/status/1616072613356535808) also associates the address with the service. The repository measures what leaves the address; it does not independently establish who operates it.
 
-2. External sources document the ANSEM/Black Bull launch. The wallet measurements themselves come from this repository. Where a value is not measured by an artefact in this repository, it is explicitly marked as unsourced.
+2. External sources on the ANSEM / Black Bull launch: [Phemex Academy](https://phemex.com/academy/black-bull-ansem-solana-meme-token), [CryptoBriefing](https://cryptobriefing.com/ansem-airdrops-7m-ansem-memecoin-solana/) and [The Defiant](https://thedefiant.io/news/defi/ansem-airdrops-usd7m-of-usdansem-memecoin-in-bid-to-reach-1m-holders). The recurrence of the two wallets is measured in this repository (`docs/out/m4_infra.json`); the slot amounts, the buyer count and the signature count are not, and `code/p1_readme_check.py` lists them as unsourced.
