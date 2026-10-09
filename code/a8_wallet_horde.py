@@ -117,12 +117,12 @@ def etudie(args):
         nb = naissance(d, ki=idx)
         if nb is not None and abs(nb - e["premier_ts"]) <= 3600:
             neuves[d] = {"sol": round(e["sol"], 6), "n": e["n"],
-                         "quand": dt.datetime.fromtimestamp(e["premier_ts"], dt.UTC)
+                         "quand": dt.datetime.fromtimestamp(e["premier_ts"], dt.timezone.utc)
                                   .strftime("%Y-%m-%d %H:%M")}
         time.sleep(0.03)
 
     return wallet, {"statut": "ok", "n_tx": n_tx,
-                    "derniere_activite": dt.datetime.fromtimestamp(dernier, dt.UTC)
+                    "derniere_activite": dt.datetime.fromtimestamp(dernier, dt.timezone.utc)
                                           .strftime("%Y-%m-%d") if dernier else None,
                     "jours_apres_le_trade": round((dernier - t_ref) / 86400, 1) if dernier else None,
                     "n_destinataires": len(sorties),
@@ -140,7 +140,7 @@ for tok, v in src.items():
     if not v.get("mesurable"):
         continue
     t_ref = int(dt.datetime.strptime(v["creation"][:19], "%Y-%m-%dT%H:%M:%S")
-                .replace(tzinfo=dt.UTC).timestamp())
+                .replace(tzinfo=dt.timezone.utc).timestamp())
     for w, r in (v.get("portefeuilles") or {}).items():
         if any(h["avant_token"] for h in (r.get("g2y") or [])):
             cibles.append((w, tok, t_ref))
