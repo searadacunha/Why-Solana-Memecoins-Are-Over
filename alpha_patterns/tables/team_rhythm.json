@@ -1,0 +1,5513 @@
+{
+ "configuration_changes": {
+  "C1_config_changed": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -1.8729908435790779,
+     "1": 3.9924278507869864
+    },
+    "n": 238,
+    "n_by_cat": {
+     "0": 162,
+     "1": 76
+    },
+    "p": 0.24587706146926536,
+    "stat_minus_null": 0.24731464016799254
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 3.4338578088578084,
+     "1": -7.630795130795128
+    },
+    "n": 116,
+    "n_by_cat": {
+     "0": 80,
+     "1": 36
+    },
+    "p": 0.11244377811094453,
+    "stat_minus_null": 0.9834643665210979
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -0.14340266777373095,
+     "expected": 0.29842650788074476,
+     "good": 79,
+     "n": 266,
+     "rate": 0.29699248120300753
+    },
+    "1": {
+     "excess_pts": 0.3346062248053756,
+     "expected": 0.33875920090984085,
+     "good": 39,
+     "n": 114,
+     "rate": 0.34210526315789475
+    }
+   },
+   "cells": 2,
+   "diff_changed_minus_same_pts": 4.511278195488721,
+   "excess_changed_pts": 0.3346062248053756,
+   "n": 380,
+   "null_mean": 0.5918871128921317,
+   "p": 1.0,
+   "passes": false,
+   "per_team": false,
+   "q_bh": 1.0,
+   "same_sense": {
+    "all": 0.3346062248053756,
+    "category": 1,
+    "disc": 3.9924278507869864,
+    "same": false,
+    "sel": -7.630795130795128
+   },
+   "stat": 0.009070902676297243,
+   "teams": 26
+  },
+  "C1_dominant_funder_changed": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.7007045242339363,
+     "1": 0.5074067244452644
+    },
+    "n": 200,
+    "n_by_cat": {
+     "0": 84,
+     "1": 116
+    },
+    "p": 0.8195902048975512,
+    "stat_minus_null": -0.49755732137762976
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 4.94949494949495,
+     "1": -7.1682340647857865
+    },
+    "n": 71,
+    "n_by_cat": {
+     "0": 42,
+     "1": 29
+    },
+    "p": 0.08345827086456771,
+    "stat_minus_null": 0.8586090477099326
+   },
+   "categories": {
+    "0": {
+     "excess_pts": 0.7602339181286542,
+     "expected": 0.3484582668793196,
+     "good": 47,
+     "n": 132,
+     "rate": 0.3560606060606061
+    },
+    "1": {
+     "excess_pts": -0.619449859215941,
+     "expected": 0.29014511587610997,
+     "good": 46,
+     "n": 162,
+     "rate": 0.2839506172839506
+    }
+   },
+   "cells": 2,
+   "diff_changed_minus_same_pts": -7.210998877665547,
+   "excess_changed_pts": -0.619449859215941,
+   "n": 294,
+   "null_mean": 0.44831174177811345,
+   "p": 0.7025297470252975,
+   "passes": false,
+   "per_team": false,
+   "q_bh": 1.0,
+   "same_sense": {
+    "all": 0.7602339181286542,
+    "category": 0,
+    "disc": -0.7007045242339363,
+    "same": false,
+    "sel": 4.94949494949495
+   },
+   "stat": 0.07016504695772166,
+   "teams": 23
+  },
+  "C1_n_snipers_changed": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.7995431182181594,
+     "1": 5.147058823529413
+    },
+    "n": 238,
+    "n_by_cat": {
+     "0": 206,
+     "1": 32
+    },
+    "p": 0.5022488755622189,
+    "stat_minus_null": -0.3867670757322045
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 1.2820512820512833,
+     "1": -15.242165242165242
+    },
+    "n": 116,
+    "n_by_cat": {
+     "0": 107,
+     "1": 9
+    },
+    "p": 0.2723638180909545,
+    "stat_minus_null": 0.6585178998267728
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -0.12949146728410837,
+     "expected": 0.31194580224680557,
+     "good": 105,
+     "n": 338,
+     "rate": 0.3106508875739645
+    },
+    "1": {
+     "excess_pts": 1.0420979986197394,
+     "expected": 0.29910282953761214,
+     "good": 13,
+     "n": 42,
+     "rate": 0.30952380952380953
+    }
+   },
+   "cells": 2,
+   "diff_changed_minus_same_pts": -0.11270780501549393,
+   "excess_changed_pts": 1.0420979986197394,
+   "n": 380,
+   "null_mean": 0.7542595248280475,
+   "p": 1.0,
+   "passes": false,
+   "per_team": false,
+   "q_bh": 1.0,
+   "same_sense": {
+    "all": 1.0420979986197394,
+    "category": 1,
+    "disc": 5.147058823529413,
+    "same": false,
+    "sel": -15.242165242165242
+   },
+   "stat": 0.025351095639898798,
+   "teams": 26
+  },
+  "C1_sol_changed_gt_5pct": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.6293107235425898,
+     "1": 4.051187782805431
+    },
+    "n": 238,
+    "n_by_cat": {
+     "0": 206,
+     "1": 32
+    },
+    "p": 0.6436781609195402,
+    "stat_minus_null": -0.6049809559558705
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 2.039072039072041,
+     "1": -19.46386946386946
+    },
+    "n": 116,
+    "n_by_cat": {
+     "0": 105,
+     "1": 11
+    },
+    "p": 0.047476261869065464,
+    "stat_minus_null": 1.8782341165853786
+   },
+   "categories": {
+    "0": {
+     "excess_pts": 0.27097353350459963,
+     "expected": 0.31370817511271515,
+     "good": 106,
+     "n": 335,
+     "rate": 0.3164179104477612
+    },
+    "1": {
+     "excess_pts": -2.017247416089789,
+     "expected": 0.2868391408275646,
+     "good": 12,
+     "n": 45,
+     "rate": 0.26666666666666666
+    }
+   },
+   "cells": 2,
+   "diff_changed_minus_same_pts": -4.975124378109452,
+   "excess_changed_pts": -2.017247416089789,
+   "n": 380,
+   "null_mean": 0.8202626486552841,
+   "p": 0.8434156584341566,
+   "passes": false,
+   "per_team": false,
+   "q_bh": 1.0,
+   "same_sense": {
+    "all": -2.017247416089789,
+    "category": 1,
+    "disc": 4.051187782805431,
+    "same": false,
+    "sel": -19.46386946386946
+   },
+   "stat": 0.10578190703840457,
+   "teams": 26
+  },
+  "C1_wallets_changed_jaccard_lt_0.5": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -2.67327827881461,
+     "1": 2.673278278814613
+    },
+    "n": 238,
+    "n_by_cat": {
+     "0": 119,
+     "1": 119
+    },
+    "p": 0.24737631184407796,
+    "stat_minus_null": 0.2709756520736105
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 1.4552577052577058,
+     "1": -2.3813307904217007
+    },
+    "n": 116,
+    "n_by_cat": {
+     "0": 72,
+     "1": 44
+    },
+    "p": 0.45977011494252873,
+    "stat_minus_null": -0.08723399682115032
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -1.0865708215161816,
+     "expected": 0.34419904154849507,
+     "good": 66,
+     "n": 198,
+     "rate": 0.3333333333333333
+    },
+    "1": {
+     "excess_pts": 1.1820935311000247,
+     "expected": 0.27389335040328544,
+     "good": 52,
+     "n": 182,
+     "rate": 0.2857142857142857
+    }
+   },
+   "cells": 2,
+   "diff_changed_minus_same_pts": -4.761904761904762,
+   "excess_changed_pts": 1.1820935311000247,
+   "n": 380,
+   "null_mean": 0.4751209725194365,
+   "p": 0.4991500849915009,
+   "passes": false,
+   "per_team": false,
+   "q_bh": 0.9983001699830018,
+   "same_sense": {
+    "all": 1.1820935311000247,
+    "category": 1,
+    "disc": 2.673278278814613,
+    "same": false,
+    "sel": -2.3813307904217007
+   },
+   "stat": 0.2556488202443942,
+   "teams": 26
+  },
+  "C2_between_configs": {
+   "block_DISC": {
+    "n": 251,
+    "p": 0.019490254872563718,
+    "stat_minus_null": 14.165707288954962
+   },
+   "block_SEL": {
+    "n": 137,
+    "p": 0.8390804597701149,
+    "stat_minus_null": -3.1666488095238066
+   },
+   "categories_n": 132,
+   "categories_with_ge3": 43,
+   "cells": 132,
+   "n": 413,
+   "null_mean": 108.80785137356787,
+   "p": 0.058894110588941104,
+   "passes": false,
+   "per_team": true,
+   "q_bh": 0.47115288471152883,
+   "rows_without_category": 0,
+   "same_sense": {
+    "all": 13.169572364252048,
+    "disc": 14.165707288954962,
+    "same": false,
+    "sel": -3.1666488095238066
+   },
+   "stat": 121.97742373781992,
+   "teams": 28
+  },
+  "C2_between_dominant_funders": {
+   "block_DISC": {
+    "n": 226,
+    "p": 0.1294352823588206,
+    "stat_minus_null": 8.94963318234177
+   },
+   "block_SEL": {
+    "n": 99,
+    "p": 0.6656671664167916,
+    "stat_minus_null": -1.5382560052910073
+   },
+   "categories_n": 187,
+   "categories_with_ge3": 30,
+   "cells": 187,
+   "n": 346,
+   "null_mean": 173.83277738428566,
+   "p": 0.13488651134886512,
+   "passes": false,
+   "per_team": true,
+   "q_bh": 0.5395460453954605,
+   "rows_without_category": 63,
+   "same_sense": {
+    "all": 10.956336733376844,
+    "disc": 8.94963318234177,
+    "same": false,
+    "sel": -1.5382560052910073
+   },
+   "stat": 184.7891141176625,
+   "teams": 26
+  },
+  "C2_between_wallet_sets": {
+   "block_DISC": {
+    "n": 251,
+    "p": 0.26936531734132935,
+    "stat_minus_null": 4.724172239998296
+   },
+   "block_SEL": {
+    "n": 137,
+    "p": 0.6946526736631684,
+    "stat_minus_null": -2.085250138888874
+   },
+   "categories_n": 201,
+   "categories_with_ge3": 38,
+   "cells": 201,
+   "n": 413,
+   "null_mean": 185.76515045384252,
+   "p": 0.43045695430456954,
+   "passes": false,
+   "per_team": true,
+   "q_bh": 0.9983001699830018,
+   "rows_without_category": 0,
+   "same_sense": {
+    "all": 0.8071325489385686,
+    "disc": 4.724172239998296,
+    "same": false,
+    "sel": -2.085250138888874
+   },
+   "stat": 186.5722830027811,
+   "teams": 28
+  }
+ },
+ "family_23_tests": 17,
+ "interaction": {
+  "I1_contemporaneous_other_teams_30min": {
+   "corr": -0.011904048358640985,
+   "corr_DISC": 0.03310302077006361,
+   "corr_SEL": -0.10938435286935178,
+   "mean_others": 4.210909090909091,
+   "n": 550,
+   "n_by_others_tercile": [
+    201,
+    178,
+    171
+   ],
+   "null_mean_global": -0.003552093166982523,
+   "null_mean_within_day": 0.05012628082037496,
+   "null_mean_within_day_DISC": 0.05732151997826303,
+   "null_mean_within_day_SEL": 0.014876645735787815,
+   "null_mean_within_team_day": 0.023091886821655347,
+   "others_tercile_cuts": [
+    0.0,
+    0.3333333333333333
+   ],
+   "p_global": 0.8853114688531147,
+   "p_within_day": 0.22577742225777422,
+   "p_within_team_day": 0.44395560443955606,
+   "rate_by_others_tercile": [
+    0.23880597014925373,
+    0.2752808988764045,
+    0.29239766081871343
+   ],
+   "same_sense": true
+  },
+  "I1_contemporaneous_other_teams_60min": {
+   "corr": 0.0010421836141490221,
+   "corr_DISC": 0.05116239632814832,
+   "corr_SEL": -0.1104693493849814,
+   "mean_others": 7.291095890410959,
+   "n": 584,
+   "n_by_others_tercile": [
+    195,
+    204,
+    185
+   ],
+   "null_mean_global": -0.0044084248481838255,
+   "null_mean_within_day": 0.06012177358681477,
+   "null_mean_within_day_DISC": 0.06662902127141046,
+   "null_mean_within_day_SEL": 0.02062778319038461,
+   "null_mean_within_team_day": 0.043537613821711965,
+   "others_tercile_cuts": [
+    0.1465201465201463,
+    0.3333333333333333
+   ],
+   "p_global": 0.9182081791820818,
+   "p_within_day": 0.20337966203379662,
+   "p_within_team_day": 0.2685731426857314,
+   "passes": false,
+   "q_bh_I1_I4": 0.46814068593140684,
+   "rate_by_others_tercile": [
+    0.26666666666666666,
+    0.29411764705882354,
+    0.25405405405405407
+   ],
+   "same_sense": true
+  },
+  "I3_pairs_ge5": 5,
+  "I3_team_pairs": [
+   {
+    "A_n_without_B": 109,
+    "A_rate_without_B": 0.3211009174311927,
+    "cooccurrences": 7,
+    "eligible": 6,
+    "good": 3,
+    "team_A_launches": 31,
+    "team_B_snipers_buy": 5
+   },
+   {
+    "A_n_without_B": 5,
+    "A_rate_without_B": 0.4,
+    "cooccurrences": 7,
+    "eligible": 7,
+    "good": 1,
+    "team_A_launches": 368,
+    "team_B_snipers_buy": 31
+   },
+   {
+    "A_n_without_B": 15,
+    "A_rate_without_B": 0.06666666666666667,
+    "cooccurrences": 6,
+    "eligible": 2,
+    "good": 0,
+    "team_A_launches": 225,
+    "team_B_snipers_buy": 31
+   },
+   {
+    "A_n_without_B": 8,
+    "A_rate_without_B": 0.25,
+    "cooccurrences": 6,
+    "eligible": 6,
+    "good": 2,
+    "team_A_launches": 606,
+    "team_B_snipers_buy": 31
+   },
+   {
+    "A_n_without_B": 6,
+    "A_rate_without_B": 0.6666666666666666,
+    "cooccurrences": 6,
+    "eligible": 6,
+    "good": 1,
+    "team_A_launches": 855,
+    "team_B_snipers_buy": 31
+   }
+  ],
+  "I4_top_bots": {
+   "bot01": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -0.05071687772685647,
+      "1": 0.09072685904471374
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 161,
+      "1": 90
+     },
+     "p": 1.0,
+     "stat_minus_null": -0.8726638732514855
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": -0.3231658767990962,
+      "1": 0.5282519139985213
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 85,
+      "1": 52
+     },
+     "p": 1.0,
+     "stat_minus_null": -0.8522933413354372
+    },
+    "categories": {
+     "0": {
+      "excess_pts": 0.13807816328824846,
+      "expected": 0.3190825388304379,
+      "good": 83,
+      "n": 259,
+      "rate": 0.3204633204633205
+     },
+     "1": {
+      "excess_pts": -0.23222236553023332,
+      "expected": 0.27504949638257503,
+      "good": 42,
+      "n": 154,
+      "rate": 0.2727272727272727
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": -4.773604773604778,
+    "launches_present_all": 388,
+    "n": 413,
+    "null_mean": 0.8541352015848898,
+    "p": 1.0,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 1.0,
+    "same_sense": {
+     "all": -0.23222236553023332,
+     "category": 1,
+     "disc": 0.09072685904471374,
+     "same": false,
+     "sel": 0.5282519139985213
+    },
+    "stat": 0.007135099328735089,
+    "teams": 28,
+    "wallet_prefix": "Fs9RN3"
+   },
+   "bot02": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -1.569548460236718,
+      "1": 5.465391959752863
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 195,
+      "1": 56
+     },
+     "p": 0.29485257371314344,
+     "stat_minus_null": 0.16217961505668788
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": 2.513021525626566,
+      "1": -3.9829020406156914
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 84,
+      "1": 53
+     },
+     "p": 0.4032983508245877,
+     "stat_minus_null": -0.25497097781929123
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -0.4518105663440913,
+      "expected": 0.30886593175039745,
+      "good": 91,
+      "n": 299,
+      "rate": 0.30434782608695654
+     },
+     "1": {
+      "excess_pts": 1.1850119240077526,
+      "expected": 0.2863954947950102,
+      "good": 34,
+      "n": 114,
+      "rate": 0.2982456140350877
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": -0.6102212051868838,
+    "launches_present_all": 284,
+    "n": 413,
+    "null_mean": 0.9244079470757757,
+    "p": 0.7889211078892111,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.9642369096423692,
+    "same_sense": {
+     "all": 1.1850119240077526,
+     "category": 1,
+     "disc": 5.465391959752863,
+     "same": false,
+     "sel": -3.9829020406156914
+    },
+    "stat": 0.12035277344963492,
+    "teams": 28,
+    "wallet_prefix": "27HFmP"
+   },
+   "bot03": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -3.1523689891928814,
+      "1": 4.921555666801136
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 153,
+      "1": 98
+     },
+     "p": 0.15642178910544727,
+     "stat_minus_null": 1.1137942857466152
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": 0.2863400789097388,
+      "1": -0.6476739880101225
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 95,
+      "1": 42
+     },
+     "p": 1.0,
+     "stat_minus_null": -0.8051709945175834
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -1.57836031223089,
+      "expected": 0.3101232257638183,
+      "good": 78,
+      "n": 265,
+      "rate": 0.2943396226415094
+     },
+     "1": {
+      "excess_pts": 2.826118126629636,
+      "expected": 0.2893063863012712,
+      "good": 47,
+      "n": 148,
+      "rate": 0.31756756756756754
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 2.322794492605812,
+    "launches_present_all": 279,
+    "n": 413,
+    "null_mean": 0.911010734002456,
+    "p": 0.32526747325267474,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 2.826118126629636,
+     "category": 1,
+     "disc": 4.921555666801136,
+     "same": false,
+     "sel": -0.6476739880101225
+    },
+    "stat": 0.9727693333543314,
+    "teams": 28,
+    "wallet_prefix": "2aRFiP"
+   },
+   "bot04": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -1.9700846516939194,
+      "1": 6.7052003934845725
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 194,
+      "1": 57
+     },
+     "p": 0.22638680659670166,
+     "stat_minus_null": 0.7288906953947683
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": -0.998244674715263,
+      "1": 3.7176008575602904
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 108,
+      "1": 29
+     },
+     "p": 0.6221889055472264,
+     "stat_minus_null": -0.7164496777470573
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -1.2420219158150738,
+      "expected": 0.2999202191581507,
+      "good": 92,
+      "n": 320,
+      "rate": 0.2875
+     },
+     "1": {
+      "excess_pts": 4.273623796352945,
+      "expected": 0.3121024717138899,
+      "good": 33,
+      "n": 93,
+      "rate": 0.3548387096774194
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 6.7338709677419395,
+    "launches_present_all": 248,
+    "n": 413,
+    "null_mean": 0.9864599827788252,
+    "p": 0.3404659534046595,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 4.273623796352945,
+     "category": 1,
+     "disc": 6.7052003934845725,
+     "same": true,
+     "sel": 3.7176008575602904
+    },
+    "stat": 1.1376316140272351,
+    "teams": 28,
+    "wallet_prefix": "7HVGmP"
+   },
+   "bot05": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -2.5892351944654153,
+      "1": 7.726606612055531
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 188,
+      "1": 63
+     },
+     "p": 0.11144427786106946,
+     "stat_minus_null": 1.72605730136547
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": -2.0267659511356984,
+      "1": 6.650325777164012
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 105,
+      "1": 32
+     },
+     "p": 0.3823088455772114,
+     "stat_minus_null": -0.11466208157998725
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -2.180720568127704,
+      "expected": 0.3011722850463564,
+      "good": 88,
+      "n": 315,
+      "rate": 0.27936507936507937
+     },
+     "1": {
+      "excess_pts": 7.00945896898191,
+      "expected": 0.30745643071834416,
+      "good": 37,
+      "n": 98,
+      "rate": 0.37755102040816324
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 9.818594104308387,
+    "launches_present_all": 236,
+    "n": 413,
+    "null_mean": 0.9276819541437302,
+    "p": 0.07339266073392661,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 7.00945896898191,
+     "category": 1,
+     "disc": 7.726606612055531,
+     "same": true,
+     "sel": 6.650325777164012
+    },
+    "stat": 3.284768609750689,
+    "teams": 28,
+    "wallet_prefix": "HcWPg6"
+   },
+   "bot06": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -4.46240094288454,
+      "1": 7.581283322319976
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 158,
+      "1": 93
+     },
+     "p": 0.034482758620689655,
+     "stat_minus_null": 3.4388654428364474
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": 0.5083571890294583,
+      "1": -3.360805860805862
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 119,
+      "1": 18
+     },
+     "p": 0.767616191904048,
+     "stat_minus_null": -0.7432462462907838
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -2.151389809815498,
+      "expected": 0.30770918429344113,
+      "good": 85,
+      "n": 297,
+      "rate": 0.28619528619528617
+     },
+     "1": {
+      "excess_pts": 5.508299771682788,
+      "expected": 0.28974458849006873,
+      "good": 40,
+      "n": 116,
+      "rate": 0.3448275862068966
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 5.863230001161041,
+    "launches_present_all": 235,
+    "n": 413,
+    "null_mean": 0.8988353777797418,
+    "p": 0.11138886111388861,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 5.508299771682788,
+     "category": 1,
+     "disc": 7.581283322319976,
+     "same": false,
+     "sel": -3.360805860805862
+    },
+    "stat": 2.543125550532746,
+    "teams": 28,
+    "wallet_prefix": "2283iK"
+   },
+   "bot07": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -2.8749153732568136,
+      "1": 5.819105815748736
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 168,
+      "1": 83
+     },
+     "p": 0.14642678660669664,
+     "stat_minus_null": 1.2865102868329248
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": -1.9589510835185575,
+      "1": 3.2021315788284115
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 85,
+      "1": 52
+     },
+     "p": 0.527736131934033,
+     "stat_minus_null": -0.44697476597255087
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -2.065969733422361,
+      "expected": 0.31062252261303397,
+      "good": 78,
+      "n": 269,
+      "rate": 0.2899628252788104
+     },
+     "1": {
+      "excess_pts": 3.859346238129275,
+      "expected": 0.28779542650759615,
+      "good": 47,
+      "n": 144,
+      "rate": 0.3263888888888889
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 3.6426063610078496,
+    "launches_present_all": 223,
+    "n": 413,
+    "null_mean": 0.9171092174612305,
+    "p": 0.17478252174782521,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 3.859346238129275,
+     "category": 1,
+     "disc": 5.819105815748736,
+     "same": true,
+     "sel": 3.2021315788284115
+    },
+    "stat": 1.7425951301082923,
+    "teams": 28,
+    "wallet_prefix": "4t2VKy"
+   },
+   "bot08": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -3.4229814558975598,
+      "1": 6.340295196719348
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 163,
+      "1": 88
+     },
+     "p": 0.08545727136431784,
+     "stat_minus_null": 1.9175057186167004
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": 2.431145309398153e-16
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 137
+     },
+     "p": 1.0,
+     "stat_minus_null": 0.0
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -1.3092936617233282,
+      "expected": 0.30232370584800244,
+      "good": 94,
+      "n": 325,
+      "rate": 0.28923076923076924
+     },
+     "1": {
+      "excess_pts": 4.8354595461372964,
+      "expected": 0.3039181318113543,
+      "good": 31,
+      "n": 88,
+      "rate": 0.3522727272727273
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 6.304195804195806,
+    "launches_present_all": 221,
+    "n": 413,
+    "null_mean": 0.8110691609304252,
+    "p": 0.22517748225177484,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 4.8354595461372964,
+     "category": 1,
+     "disc": 6.340295196719348,
+     "same": false,
+     "sel": null
+    },
+    "stat": 1.3336650928952622,
+    "teams": 28,
+    "wallet_prefix": "5zZYFT"
+   },
+   "bot09": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -1.6465913400897907,
+      "1": 5.733666273526956
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 195,
+      "1": 56
+     },
+     "p": 0.28735632183908044,
+     "stat_minus_null": 0.27402371048530094
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": -1.0594776431880513,
+      "1": 6.197944212650095
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 117,
+      "1": 20
+     },
+     "p": 0.5882058970514743,
+     "stat_minus_null": -0.47876804772979586
+    },
+    "categories": {
+     "0": {
+      "excess_pts": -1.1078649359008634,
+      "expected": 0.30023527586503274,
+      "good": 96,
+      "n": 332,
+      "rate": 0.2891566265060241
+     },
+     "1": {
+      "excess_pts": 4.54087850270478,
+      "expected": 0.3126159063309769,
+      "good": 29,
+      "n": 81,
+      "rate": 0.35802469135802467
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 6.886806485200059,
+    "launches_present_all": 201,
+    "n": 413,
+    "null_mean": 0.9758963312644547,
+    "p": 0.32216778322167783,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.46814068593140684,
+    "same_sense": {
+     "all": 4.54087850270478,
+     "category": 1,
+     "disc": 5.733666273526956,
+     "same": true,
+     "sel": 6.197944212650095
+    },
+    "stat": 1.0677394050747084,
+    "teams": 28,
+    "wallet_prefix": "E83Avo"
+   },
+   "bot10": {
+    "block_DISC": {
+     "excess_pts": {
+      "0": -0.20678245083070482,
+      "1": 0.46727462914990675
+     },
+     "n": 251,
+     "n_by_cat": {
+      "0": 174,
+      "1": 77
+     },
+     "p": 1.0,
+     "stat_minus_null": -0.7788525034482939
+    },
+    "block_SEL": {
+     "excess_pts": {
+      "0": 2.431145309398153e-16
+     },
+     "n": 137,
+     "n_by_cat": {
+      "0": 137
+     },
+     "p": 1.0,
+     "stat_minus_null": 0.0
+    },
+    "categories": {
+     "0": {
+      "excess_pts": 0.25000277888933425,
+      "expected": 0.2980952103063447,
+      "good": 101,
+      "n": 336,
+      "rate": 0.3005952380952381
+     },
+     "1": {
+      "excess_pts": -1.090921216971635,
+      "expected": 0.322597523858028,
+      "good": 24,
+      "n": 77,
+      "rate": 0.3116883116883117
+     }
+    },
+    "cells": 2,
+    "diff_present_minus_absent_pts": 1.10930735930736,
+    "launches_present_all": 199,
+    "n": 413,
+    "null_mean": 0.7358166708540892,
+    "p": 0.8796120387961204,
+    "passes": false,
+    "per_team": false,
+    "q_bh_I1_I4": 0.9675732426757324,
+    "same_sense": {
+     "all": -1.090921216971635,
+     "category": 1,
+     "disc": 0.46727462914990675,
+     "same": false,
+     "sel": null
+    },
+    "stat": 0.055378995119765156,
+    "teams": 28,
+    "wallet_prefix": "8NmHiF"
+   }
+  },
+  "launches_with_other_team_sniper_buying": 113
+ },
+ "n_tests_registered": 381,
+ "population": {
+  "alerts": 1015,
+  "base_Y2": 0.27450980392156865,
+  "base_Y3": 0.09640522875816994,
+  "eligible": 612,
+  "largest_group": 31,
+  "largest_group_rows": 115,
+  "within_good": 125,
+  "within_rows": 456,
+  "within_rows_by_block": {
+   "DISC": 286,
+   "SEL": 170
+  },
+  "within_teams": 33,
+  "within_teams_mixed": 28
+ },
+ "prediction": {
+  "M1_team_history_announces": false,
+  "M2_T0_RY_announces": false,
+  "M3_RE_announces": false,
+  "M4_all_announces": false,
+  "good_by_block": {
+   "DISC": 55,
+   "SEL": 43
+  },
+  "rows": 352,
+  "rows_by_block": {
+   "DISC": 217,
+   "SEL": 135
+  },
+  "train_DISC_test_SEL": {
+   "M0_market": {
+    "auc": 0.5022750252780587,
+    "logloss_gain_ci": null,
+    "logloss_gain_vs_market": 0.0,
+    "n": 135,
+    "within_team_auc": {
+     "auc": 0.5098684210526315,
+     "n": 82,
+     "p": 0.9135432283858071,
+     "strata": 10
+    }
+   },
+   "M1_team_history": {
+    "auc": 0.5968149646107179,
+    "logloss_gain_ci": [
+     0.0032046319928958392,
+     0.047269575533237344
+    ],
+    "logloss_gain_vs_market": 0.02430392588042588,
+    "n": 135,
+    "within_team_auc": {
+     "auc": 0.40789473684210525,
+     "n": 82,
+     "p": 0.22988505747126436,
+     "strata": 10
+    }
+   },
+   "M2_T0_RY": {
+    "auc": 0.4719413549039434,
+    "logloss_gain_ci": [
+     -0.16654897920824996,
+     0.014520996538241885
+    ],
+    "logloss_gain_vs_market": -0.07366777355076,
+    "n": 135,
+    "within_team_auc": {
+     "auc": 0.5328947368421053,
+     "n": 82,
+     "p": 0.7011494252873564,
+     "strata": 10
+    }
+   },
+   "M2_T0_RY_coef": {
+    "core_order_rho": -0.376,
+    "creator_buy": -0.218,
+    "fund_spread_s": -0.212,
+    "fund_to_buy_med_s": -0.055,
+    "grouped": 0.0,
+    "jaccard_prev": -0.106,
+    "log_gap_prev_min": -0.286,
+    "n_last_funders": 0.347,
+    "n_snipers": -0.211,
+    "new_to_team_share": 0.159,
+    "ntx": 0.037,
+    "rank_in_session": 0.09,
+    "same_config_prev": 0.011,
+    "shared_funder_prev": -0.025,
+    "snipe_sol": -0.046,
+    "supply_part": -0.018,
+    "team_launches_60m": 0.12,
+    "ticket_cv": 0.011,
+    "ticket_median": -0.005,
+    "wallet_age": -0.241
+   },
+   "M2_T0_RY_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "M3_RE": {
+    "auc": 0.4941860465116279,
+    "logloss_gain_ci": [
+     -0.3040670153178868,
+     0.021526735760427806
+    ],
+    "logloss_gain_vs_market": -0.10468061908091172,
+    "n": 135,
+    "within_team_auc": {
+     "auc": 0.506578947368421,
+     "n": 82,
+     "p": 0.9695152423788106,
+     "strata": 10
+    }
+   },
+   "M3_RE_coef": {
+    "age_at_alert_s": -0.1,
+    "core_exit_share": 0.006,
+    "entry_premium": -0.232,
+    "other_slot0_buyers": -0.137,
+    "other_team_snipers_buying": -0.039,
+    "recurrent_bots_10s": 0.027,
+    "swarm_10s": 0.252,
+    "swarm_5s": 0.065
+   },
+   "M3_RE_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "M4_all": {
+    "auc": 0.4534883720930233,
+    "logloss_gain_ci": [
+     -0.3616665954142151,
+     -0.020784387408275973
+    ],
+    "logloss_gain_vs_market": -0.1714233265090068,
+    "n": 135,
+    "within_team_auc": {
+     "auc": 0.4605263157894737,
+     "n": 82,
+     "p": 0.6461769115442278,
+     "strata": 10
+    }
+   },
+   "M4_all_coef": {
+    "age_at_alert_s": -0.055,
+    "alerts_60m": -0.179,
+    "candidates_60m": 0.173,
+    "core_exit_share": 0.01,
+    "core_order_rho": -0.353,
+    "creator_buy": -0.178,
+    "entry_premium": -0.189,
+    "fund_spread_s": -0.189,
+    "fund_to_buy_med_s": -0.004,
+    "grouped": 0.0,
+    "jaccard_prev": -0.092,
+    "log_gap_prev_min": -0.296,
+    "market_rate_24h": 0.203,
+    "n_last_funders": 0.319,
+    "n_snipers": -0.202,
+    "new_to_team_share": 0.077,
+    "ntx": 0.135,
+    "other_slot0_buyers": -0.199,
+    "other_team_launches_30m": 0.029,
+    "other_team_snipers_buying": -0.021,
+    "rank_in_session": 0.072,
+    "recurrent_bots_10s": -0.012,
+    "same_config_prev": 0.007,
+    "shared_funder_prev": -0.047,
+    "snipe_sol": -0.078,
+    "supply_part": -0.038,
+    "swarm_10s": 0.208,
+    "swarm_5s": 0.069,
+    "team_launches_60m": 0.141,
+    "ticket_cv": -0.019,
+    "ticket_median": 0.027,
+    "wallet_age": -0.301
+   },
+   "M4_all_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "test_rows": 135,
+   "test_rows_with_market": 135
+  },
+  "train_SEL_test_DISC": {
+   "M0_market": {
+    "auc": 0.5771560236998025,
+    "logloss_gain_ci": null,
+    "logloss_gain_vs_market": 0.0,
+    "n": 204,
+    "within_team_auc": {
+     "auc": 0.5336166924265843,
+     "n": 177,
+     "p": 0.5997001499250375,
+     "strata": 14
+    }
+   },
+   "M1_team_history": {
+    "auc": 0.5602369980250165,
+    "logloss_gain_ci": [
+     -0.03245804026715984,
+     0.022509953655919415
+    ],
+    "logloss_gain_vs_market": -0.009280741964897227,
+    "n": 204,
+    "within_team_auc": {
+     "auc": 0.47256568778979907,
+     "n": 177,
+     "p": 0.6781609195402298,
+     "strata": 14
+    }
+   },
+   "M2_T0_RY": {
+    "auc": 0.5489137590520079,
+    "logloss_gain_ci": [
+     -0.09352354771131857,
+     0.016620109967939542
+    ],
+    "logloss_gain_vs_market": -0.04975494472625533,
+    "n": 204,
+    "within_team_auc": {
+     "auc": 0.5533230293663061,
+     "n": 177,
+     "p": 0.42828585707146427,
+     "strata": 14
+    }
+   },
+   "M2_T0_RY_coef": {
+    "core_order_rho": -0.072,
+    "creator_buy": 0.013,
+    "fund_spread_s": 0.034,
+    "fund_to_buy_med_s": -0.044,
+    "grouped": 0.0,
+    "jaccard_prev": 0.225,
+    "log_gap_prev_min": -0.098,
+    "n_last_funders": -0.085,
+    "n_snipers": 0.01,
+    "new_to_team_share": -0.02,
+    "ntx": 0.185,
+    "rank_in_session": 0.148,
+    "same_config_prev": -0.097,
+    "shared_funder_prev": -0.002,
+    "snipe_sol": -0.01,
+    "supply_part": 0.025,
+    "team_launches_60m": -0.167,
+    "ticket_cv": -0.034,
+    "ticket_median": -0.189,
+    "wallet_age": 0.033
+   },
+   "M2_T0_RY_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "M3_RE": {
+    "auc": 0.4954575378538512,
+    "logloss_gain_ci": [
+     -0.05355606034720438,
+     0.03387171037013046
+    ],
+    "logloss_gain_vs_market": -0.013180692566170901,
+    "n": 204,
+    "within_team_auc": {
+     "auc": 0.42581143740340033,
+     "n": 177,
+     "p": 0.25987006496751625,
+     "strata": 14
+    }
+   },
+   "M3_RE_coef": {
+    "age_at_alert_s": 0.031,
+    "core_exit_share": 0.127,
+    "entry_premium": -0.206,
+    "other_slot0_buyers": 0.04,
+    "other_team_snipers_buying": -0.256,
+    "recurrent_bots_10s": -0.052,
+    "swarm_10s": -0.06,
+    "swarm_5s": -0.08
+   },
+   "M3_RE_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "M4_all": {
+    "auc": 0.5507570770243582,
+    "logloss_gain_ci": [
+     -0.11281954312671229,
+     0.024915905538266246
+    ],
+    "logloss_gain_vs_market": -0.06296151406003982,
+    "n": 204,
+    "within_team_auc": {
+     "auc": 0.5641421947449768,
+     "n": 177,
+     "p": 0.33033483258370816,
+     "strata": 14
+    }
+   },
+   "M4_all_coef": {
+    "age_at_alert_s": 0.05,
+    "alerts_60m": 0.169,
+    "candidates_60m": -0.121,
+    "core_exit_share": 0.01,
+    "core_order_rho": -0.085,
+    "creator_buy": 0.023,
+    "entry_premium": -0.188,
+    "fund_spread_s": 0.04,
+    "fund_to_buy_med_s": -0.057,
+    "grouped": 0.0,
+    "jaccard_prev": 0.221,
+    "log_gap_prev_min": -0.058,
+    "market_rate_24h": 0.001,
+    "n_last_funders": -0.089,
+    "n_snipers": -0.003,
+    "new_to_team_share": -0.07,
+    "ntx": 0.124,
+    "other_slot0_buyers": -0.087,
+    "other_team_launches_30m": -0.139,
+    "other_team_snipers_buying": -0.269,
+    "rank_in_session": 0.176,
+    "recurrent_bots_10s": 0.03,
+    "same_config_prev": -0.088,
+    "shared_funder_prev": 0.025,
+    "snipe_sol": -0.026,
+    "supply_part": 0.004,
+    "swarm_10s": -0.051,
+    "swarm_5s": -0.082,
+    "team_launches_60m": -0.192,
+    "ticket_cv": -0.034,
+    "ticket_median": -0.191,
+    "wallet_age": 0.033
+   },
+   "M4_all_warnings": [
+    "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18."
+   ],
+   "test_rows": 217,
+   "test_rows_with_market": 204
+  }
+ },
+ "prereg_sha256": "ef81e894384a6fd26bdcbf2684b58f1c5eaf66ab8132cb46e24a4edf98cdfb75",
+ "rhythm_descriptive": {
+  "gap_in_session_cv_pooled": 0.6647456257273286,
+  "gap_in_session_cv_team_median": 0.37222011804783917,
+  "gap_in_session_n": 634,
+  "gap_in_session_quantiles_min": {
+   "10": 11.78,
+   "25": 15.1,
+   "5": 8.69,
+   "50": 20.59,
+   "75": 29.53,
+   "90": 48.8,
+   "95": 68.29
+  },
+  "gap_market_share_lt10": 0.4723865877712032,
+  "gap_team_n": 827,
+  "gap_team_quantiles_min": {
+   "10": 12.56,
+   "25": 16.87,
+   "50": 24.94,
+   "75": 77.88,
+   "90": 1286.26
+  },
+  "gap_team_share_lt10": 0.0471584038694075,
+  "launches_by_hour_utc": {
+   "0": 38,
+   "1": 32,
+   "2": 45,
+   "3": 33,
+   "4": 25,
+   "5": 29,
+   "6": 15,
+   "7": 30,
+   "8": 52,
+   "9": 37,
+   "10": 45,
+   "11": 38,
+   "12": 51,
+   "13": 65,
+   "14": 60,
+   "15": 39,
+   "16": 51,
+   "17": 59,
+   "18": 61,
+   "19": 55,
+   "20": 47,
+   "21": 35,
+   "22": 34,
+   "23": 39
+  },
+  "launches_in_sessions_ge3": 697,
+  "session_size_counts": {
+   "1": 224,
+   "2": 47,
+   "3": 29,
+   "4": 23,
+   "5": 16,
+   "6": 8,
+   "7": 6,
+   "8": 4,
+   "9": 3,
+   "10": 4,
+   "11": 2,
+   "12": 1,
+   "13": 5,
+   "14": 4,
+   "17": 2,
+   "20": 3
+  },
+  "sessions": 381,
+  "teams_ge10": [
+   {
+    "chronology_by_session": ".................... | .............. | .... | . | ............. | .... | ....... | 32FFF2F2F | FFFFFF3. | . | FF2 | FF.2FF22FF3FFF3F2FF3 | 2F3FF2F2F.... | 2FFFFFF... | F | FFFFFFFF332FFF3F.... | FFFFFF | F3F3.. | FF232F3F3F3 | 2FFFFFFF22....... | .... | FFF | F222.. | F22..... | FFF..... | ... | . | ...",
+    "eligible": 115,
+    "first": "08-22 23:01",
+    "gap_in_session_cv": 0.7883042768538708,
+    "gap_in_session_median_min": 17.87963765660922,
+    "good": 38,
+    "hours_utc_top3": [
+     [
+      2,
+      24
+     ],
+     [
+      3,
+      22
+     ],
+     [
+      1,
+      17
+     ]
+    ],
+    "last": "09-14 14:49",
+    "launches": 224,
+    "launches_per_hour_in_session": 3.355772703694639,
+    "session_minutes_median": 141.53691627383233,
+    "session_sizes": [
+     20,
+     20,
+     20,
+     17,
+     14,
+     13,
+     13,
+     11,
+     10,
+     9,
+     8,
+     8,
+     8,
+     7,
+     6,
+     6,
+     6,
+     4,
+     4,
+     4,
+     3,
+     3,
+     3,
+     3,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 28,
+    "team": 31
+   },
+   {
+    "chronology_by_session": ".. | . | ...... | .......... | ..... | ... | 2 | FFFFFFF | 2FFFFFFFF..",
+    "eligible": 17,
+    "first": "08-21 19:50",
+    "gap_in_session_cv": 0.5171746247743125,
+    "gap_in_session_median_min": 20.64887161652247,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      23,
+      7
+     ],
+     [
+      16,
+      4
+     ],
+     [
+      19,
+      3
+     ]
+    ],
+    "last": "09-04 06:20",
+    "launches": 46,
+    "launches_per_hour_in_session": 2.9057277857251145,
+    "session_minutes_median": 78.25434495210648,
+    "session_sizes": [
+     11,
+     10,
+     7,
+     6,
+     5,
+     3,
+     2,
+     1,
+     1
+    ],
+    "sessions": 9,
+    "team": 5
+   },
+   {
+    "chronology_by_session": ".. | .. | . | F3 | . | .. | 3 | F | 3 | F | 3 | FF | F3 | FFFF | FF | F | .. | . | F | 2 | 3 | 2 | F2 | 2 | . | .",
+    "eligible": 25,
+    "first": "08-25 03:48",
+    "gap_in_session_cv": 0.5854349949001669,
+    "gap_in_session_median_min": 27.03246025244395,
+    "good": 10,
+    "hours_utc_top3": [
+     [
+      20,
+      6
+     ],
+     [
+      7,
+      4
+     ],
+     [
+      17,
+      4
+     ]
+    ],
+    "last": "09-09 09:31",
+    "launches": 38,
+    "launches_per_hour_in_session": 2.2195538045626284,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     4,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 26,
+    "team": 169
+   },
+   {
+    "chronology_by_session": ".... | F | FFFF3FF | FFFFF | ... | .FFFF | ..",
+    "eligible": 17,
+    "first": "08-26 07:15",
+    "gap_in_session_cv": 0.4624866340368509,
+    "gap_in_session_median_min": 17.698623965183895,
+    "good": 1,
+    "hours_utc_top3": [
+     [
+      14,
+      5
+     ],
+     [
+      21,
+      4
+     ],
+     [
+      23,
+      3
+     ]
+    ],
+    "last": "09-14 14:20",
+    "launches": 27,
+    "launches_per_hour_in_session": 3.390094061438328,
+    "session_minutes_median": 52.50003154675166,
+    "session_sizes": [
+     7,
+     5,
+     5,
+     4,
+     3,
+     2,
+     1
+    ],
+    "sessions": 7,
+    "team": 225
+   },
+   {
+    "chronology_by_session": "FFFFF | F2FF3F2222FF3 | . | FF..",
+    "eligible": 20,
+    "first": "09-05 14:47",
+    "gap_in_session_cv": 0.5679010856562916,
+    "gap_in_session_median_min": 17.8092156847318,
+    "good": 7,
+    "hours_utc_top3": [
+     [
+      16,
+      6
+     ],
+     [
+      17,
+      5
+     ],
+     [
+      20,
+      5
+     ]
+    ],
+    "last": "09-07 21:14",
+    "launches": 23,
+    "launches_per_hour_in_session": 3.369042245439209,
+    "session_minutes_median": 90.56391420165698,
+    "session_sizes": [
+     13,
+     5,
+     4,
+     1
+    ],
+    "sessions": 4,
+    "team": 570
+   },
+   {
+    "chronology_by_session": "... | . | .. | . | . | .... | . | .. | .. | . | ... | F",
+    "eligible": 1,
+    "first": "08-22 18:41",
+    "gap_in_session_cv": 0.49260812766887435,
+    "gap_in_session_median_min": 39.34009374181429,
+    "good": 0,
+    "hours_utc_top3": [
+     [
+      19,
+      4
+     ],
+     [
+      18,
+      3
+     ],
+     [
+      21,
+      3
+     ]
+    ],
+    "last": "08-28 17:21",
+    "launches": 22,
+    "launches_per_hour_in_session": 1.5251615919823405,
+    "session_minutes_median": 16.93466751774152,
+    "session_sizes": [
+     4,
+     3,
+     3,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 12,
+    "team": 18
+   },
+   {
+    "chronology_by_session": "F | 2 | 3 | F | F | FF. | FF | F | F | F | . | F. | . | F | F.",
+    "eligible": 15,
+    "first": "09-05 16:18",
+    "gap_in_session_cv": 0.21091609077960385,
+    "gap_in_session_median_min": 77.29106502135595,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      13,
+      4
+     ],
+     [
+      16,
+      3
+     ],
+     [
+      14,
+      2
+     ]
+    ],
+    "last": "09-14 22:54",
+    "launches": 20,
+    "launches_per_hour_in_session": 0.7762863661332868,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     3,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 15,
+    "team": 578
+   },
+   {
+    "chronology_by_session": "FFFFFFF | FF...2FFFF3FF",
+    "eligible": 17,
+    "first": "09-09 17:38",
+    "gap_in_session_cv": 0.44293789301641256,
+    "gap_in_session_median_min": 19.746540306011838,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      8,
+      4
+     ],
+     [
+      19,
+      3
+     ],
+     [
+      9,
+      3
+     ]
+    ],
+    "last": "09-10 12:43",
+    "launches": 20,
+    "launches_per_hour_in_session": 3.0385069521131753,
+    "session_minutes_median": 213.9485106408596,
+    "session_sizes": [
+     13,
+     7
+    ],
+    "sessions": 2,
+    "team": 789
+   },
+   {
+    "chronology_by_session": ". | . | .. | F | . | F | FF | FF | F | F | F | F | F | F",
+    "eligible": 12,
+    "first": "08-23 14:12",
+    "gap_in_session_cv": 1.0294776748966676,
+    "gap_in_session_median_min": 8.478943816820781,
+    "good": 0,
+    "hours_utc_top3": [
+     [
+      1,
+      5
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "last": "09-10 12:03",
+    "launches": 17,
+    "launches_per_hour_in_session": 7.07635305720156,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 14,
+    "team": 68
+   },
+   {
+    "chronology_by_session": "F2FFFF2F3F2223...",
+    "eligible": 14,
+    "first": "09-09 22:09",
+    "gap_in_session_cv": 0.36014694209778203,
+    "gap_in_session_median_min": 17.662370973825453,
+    "good": 7,
+    "hours_utc_top3": [
+     [
+      22,
+      5
+     ],
+     [
+      23,
+      3
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "last": "09-10 03:15",
+    "launches": 17,
+    "launches_per_hour_in_session": 3.3970524166272074,
+    "session_minutes_median": 305.5191857655843,
+    "session_sizes": [
+     17
+    ],
+    "sessions": 1,
+    "team": 811
+   },
+   {
+    "chronology_by_session": "F2... | 2FFF3F3FFF | .",
+    "eligible": 12,
+    "first": "09-07 20:13",
+    "gap_in_session_cv": 0.4865081847672658,
+    "gap_in_session_median_min": 24.148014267285664,
+    "good": 4,
+    "hours_utc_top3": [
+     [
+      21,
+      3
+     ],
+     [
+      14,
+      3
+     ],
+     [
+      20,
+      2
+     ]
+    ],
+    "last": "09-08 16:21",
+    "launches": 16,
+    "launches_per_hour_in_session": 2.4846763520959376,
+    "session_minutes_median": 91.31791772047679,
+    "session_sizes": [
+     10,
+     5,
+     1
+    ],
+    "sessions": 3,
+    "team": 679
+   },
+   {
+    "chronology_by_session": "...... | .... | ... | ..",
+    "eligible": 0,
+    "first": "08-22 17:08",
+    "gap_in_session_cv": 0.35080164762619614,
+    "gap_in_session_median_min": 31.845039467016857,
+    "good": 0,
+    "hours_utc_top3": [
+     [
+      19,
+      5
+     ],
+     [
+      18,
+      4
+     ],
+     [
+      17,
+      2
+     ]
+    ],
+    "last": "08-25 19:12",
+    "launches": 15,
+    "launches_per_hour_in_session": 1.884123901373849,
+    "session_minutes_median": 78.69312122265498,
+    "session_sizes": [
+     6,
+     4,
+     3,
+     2
+    ],
+    "sessions": 4,
+    "team": 12
+   },
+   {
+    "chronology_by_session": ". | . | . | . | . | .. | . | . | F2 | F2 | F | F",
+    "eligible": 6,
+    "first": "08-22 21:09",
+    "gap_in_session_cv": 0.3894499732796771,
+    "gap_in_session_median_min": 45.523685149351756,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      2,
+      3
+     ],
+     [
+      14,
+      2
+     ],
+     [
+      20,
+      2
+     ]
+    ],
+    "last": "09-14 20:15",
+    "launches": 15,
+    "launches_per_hour_in_session": 1.3179952326608686,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 12,
+    "team": 28
+   },
+   {
+    "chronology_by_session": "FF22FFFFFF3FF3",
+    "eligible": 14,
+    "first": "09-06 19:12",
+    "gap_in_session_cv": 0.32064638181233557,
+    "gap_in_session_median_min": 20.266494250297548,
+    "good": 4,
+    "hours_utc_top3": [
+     [
+      20,
+      3
+     ],
+     [
+      21,
+      3
+     ],
+     [
+      22,
+      3
+     ]
+    ],
+    "last": "09-06 23:40",
+    "launches": 14,
+    "launches_per_hour_in_session": 2.9605515023457545,
+    "session_minutes_median": 268.2868390520414,
+    "session_sizes": [
+     14
+    ],
+    "sessions": 1,
+    "team": 606
+   },
+   {
+    "chronology_by_session": "2F2F2F22F3F...",
+    "eligible": 11,
+    "first": "09-10 10:16",
+    "gap_in_session_cv": 0.18636218582956365,
+    "gap_in_session_median_min": 23.52748918135961,
+    "good": 6,
+    "hours_utc_top3": [
+     [
+      12,
+      3
+     ],
+     [
+      13,
+      3
+     ],
+     [
+      14,
+      3
+     ]
+    ],
+    "last": "09-10 15:26",
+    "launches": 14,
+    "launches_per_hour_in_session": 2.5502083769965935,
+    "session_minutes_median": 309.81716789801914,
+    "session_sizes": [
+     14
+    ],
+    "sessions": 1,
+    "team": 850
+   },
+   {
+    "chronology_by_session": "2FFF22F3F2FF..",
+    "eligible": 12,
+    "first": "09-10 10:54",
+    "gap_in_session_cv": 0.29257982105631253,
+    "gap_in_session_median_min": 21.416303519407908,
+    "good": 5,
+    "hours_utc_top3": [
+     [
+      13,
+      4
+     ],
+     [
+      11,
+      3
+     ],
+     [
+      14,
+      3
+     ]
+    ],
+    "last": "09-10 15:03",
+    "launches": 14,
+    "launches_per_hour_in_session": 2.8016039250483504,
+    "session_minutes_median": 248.7881721973419,
+    "session_sizes": [
+     14
+    ],
+    "sessions": 1,
+    "team": 855
+   },
+   {
+    "chronology_by_session": "FFFFFFFFFFFFF",
+    "eligible": 13,
+    "first": "09-03 20:31",
+    "gap_in_session_cv": 0.45492723572347843,
+    "gap_in_session_median_min": 19.392621566851936,
+    "good": 0,
+    "hours_utc_top3": [
+     [
+      0,
+      4
+     ],
+     [
+      22,
+      3
+     ],
+     [
+      20,
+      2
+     ]
+    ],
+    "last": "09-04 00:57",
+    "launches": 13,
+    "launches_per_hour_in_session": 3.093960236018775,
+    "session_minutes_median": 265.8762002189954,
+    "session_sizes": [
+     13
+    ],
+    "sessions": 1,
+    "team": 493
+   },
+   {
+    "chronology_by_session": "F2F | F223 | .2 | FF32",
+    "eligible": 12,
+    "first": "09-08 17:52",
+    "gap_in_session_cv": 0.22365784505414915,
+    "gap_in_session_median_min": 39.25619728167852,
+    "good": 7,
+    "hours_utc_top3": [
+     [
+      18,
+      4
+     ],
+     [
+      19,
+      4
+     ],
+     [
+      17,
+      2
+     ]
+    ],
+    "last": "09-14 20:18",
+    "launches": 13,
+    "launches_per_hour_in_session": 1.5284210941135385,
+    "session_minutes_median": 76.99777536789576,
+    "session_sizes": [
+     4,
+     4,
+     3,
+     2
+    ],
+    "sessions": 4,
+    "team": 745
+   },
+   {
+    "chronology_by_session": "3 | F | F. | FFF2 | . | FF | F",
+    "eligible": 10,
+    "first": "08-28 17:44",
+    "gap_in_session_cv": 0.369076147634241,
+    "gap_in_session_median_min": 80.75979295174281,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      17,
+      2
+     ],
+     [
+      14,
+      2
+     ],
+     [
+      19,
+      1
+     ]
+    ],
+    "last": "09-09 18:40",
+    "launches": 12,
+    "launches_per_hour_in_session": 0.742943955240851,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     4,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 7,
+    "team": 264
+   },
+   {
+    "chronology_by_session": "2FF2FFFFF3FF",
+    "eligible": 12,
+    "first": "08-31 03:48",
+    "gap_in_session_cv": 0.5016014410131387,
+    "gap_in_session_median_min": 21.93384668032328,
+    "good": 3,
+    "hours_utc_top3": [
+     [
+      4,
+      3
+     ],
+     [
+      6,
+      3
+     ],
+     [
+      5,
+      2
+     ]
+    ],
+    "last": "08-31 08:41",
+    "launches": 12,
+    "launches_per_hour_in_session": 2.7354982860268477,
+    "session_minutes_median": 293.0724691828092,
+    "session_sizes": [
+     12
+    ],
+    "sessions": 1,
+    "team": 368
+   },
+   {
+    "chronology_by_session": "F | F | F | . | . | 2 | . | 2 | 2 | F | 2",
+    "eligible": 8,
+    "first": "08-30 17:35",
+    "gap_in_session_cv": null,
+    "gap_in_session_median_min": null,
+    "good": 4,
+    "hours_utc_top3": [
+     [
+      21,
+      2
+     ],
+     [
+      17,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "last": "09-10 10:03",
+    "launches": 11,
+    "launches_per_hour_in_session": null,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 11,
+    "team": 344
+   },
+   {
+    "chronology_by_session": "FFFF | FF | F2FF.",
+    "eligible": 10,
+    "first": "09-05 14:16",
+    "gap_in_session_cv": 0.18848092650676537,
+    "gap_in_session_median_min": 24.471611432234447,
+    "good": 1,
+    "hours_utc_top3": [
+     [
+      14,
+      3
+     ],
+     [
+      15,
+      3
+     ],
+     [
+      16,
+      3
+     ]
+    ],
+    "last": "09-07 17:03",
+    "launches": 11,
+    "launches_per_hour_in_session": 2.451820558125033,
+    "session_minutes_median": 79.04197783470154,
+    "session_sizes": [
+     5,
+     4,
+     2
+    ],
+    "sessions": 3,
+    "team": 565
+   },
+   {
+    "chronology_by_session": "F | F | . | FFF | 23F | F",
+    "eligible": 9,
+    "first": "08-30 18:42",
+    "gap_in_session_cv": 0.4140211539506174,
+    "gap_in_session_median_min": 71.93668643037478,
+    "good": 2,
+    "hours_utc_top3": [
+     [
+      18,
+      2
+     ],
+     [
+      21,
+      2
+     ],
+     [
+      16,
+      2
+     ]
+    ],
+    "last": "09-06 19:04",
+    "launches": 10,
+    "launches_per_hour_in_session": 0.8340667742330902,
+    "session_minutes_median": 0.0,
+    "session_sizes": [
+     3,
+     3,
+     1,
+     1,
+     1,
+     1
+    ],
+    "sessions": 6,
+    "team": 348
+   },
+   {
+    "chronology_by_session": "FFFFFFFFF2",
+    "eligible": 10,
+    "first": "08-31 22:34",
+    "gap_in_session_cv": 0.5172690930480713,
+    "gap_in_session_median_min": 19.312714115778604,
+    "good": 1,
+    "hours_utc_top3": [
+     [
+      23,
+      3
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "last": "09-01 02:17",
+    "launches": 10,
+    "launches_per_hour_in_session": 3.1067616721452755,
+    "session_minutes_median": 222.95548331737518,
+    "session_sizes": [
+     10
+    ],
+    "sessions": 1,
+    "team": 431
+   },
+   {
+    "chronology_by_session": "FF2FF.... | F",
+    "eligible": 6,
+    "first": "09-07 15:43",
+    "gap_in_session_cv": 0.30651465040326165,
+    "gap_in_session_median_min": 16.308772842089336,
+    "good": 1,
+    "hours_utc_top3": [
+     [
+      16,
+      3
+     ],
+     [
+      17,
+      3
+     ],
+     [
+      15,
+      2
+     ]
+    ],
+    "last": "09-12 12:23",
+    "launches": 10,
+    "launches_per_hour_in_session": 3.6790015153778626,
+    "session_minutes_median": 68.35421058336894,
+    "session_sizes": [
+     9,
+     1
+    ],
+    "sessions": 2,
+    "team": 659
+   },
+   {
+    "chronology_by_session": "F2. | .2F2F2.",
+    "eligible": 7,
+    "first": "09-12 12:18",
+    "gap_in_session_cv": 0.21716287651090302,
+    "gap_in_session_median_min": 31.166989982128143,
+    "good": 4,
+    "hours_utc_top3": [
+     [
+      12,
+      3
+     ],
+     [
+      13,
+      3
+     ],
+     [
+      10,
+      2
+     ]
+    ],
+    "last": "09-13 13:28",
+    "launches": 10,
+    "launches_per_hour_in_session": 1.9251137191754917,
+    "session_minutes_median": 125.65432765285173,
+    "session_sizes": [
+     7,
+     3
+    ],
+    "sessions": 2,
+    "team": 931
+   }
+  ],
+  "teams_with_cv": 52
+ },
+ "rhythm_vs_outcome": {
+  "R1_hour_6h": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": 0.3645709295864098,
+     "1": 3.7546439628482977,
+     "2": -7.294274891659487,
+     "3": 4.698395859386573
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 78,
+     "1": 40,
+     "2": 67,
+     "3": 66
+    },
+    "p": 0.344327836081959,
+    "stat_minus_null": 2.1832489878935775
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 33.33333333333333,
+     "1": -0.5243499587390992,
+     "2": -2.044439671214519,
+     "3": -1.793319137609795
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 6,
+     "1": 39,
+     "2": 58,
+     "3": 34
+    },
+    "p": 0.05847076461769116,
+    "stat_minus_null": 10.094660912698416
+   },
+   "categories": {
+    "0": {
+     "excess_pts": 0.9839608239655828,
+     "expected": 0.29248597315569297,
+     "good": 26,
+     "n": 86,
+     "rate": 0.3023255813953488
+    },
+    "1": {
+     "excess_pts": 1.7717403643204042,
+     "expected": 0.30758380117607315,
+     "good": 27,
+     "n": 83,
+     "rate": 0.3253012048192771
+    },
+    "2": {
+     "excess_pts": -3.297228612473803,
+     "expected": 0.30108822815372355,
+     "good": 37,
+     "n": 138,
+     "rate": 0.26811594202898553
+    },
+    "3": {
+     "excess_pts": 2.1070044096391642,
+     "expected": 0.30911863514889143,
+     "good": 35,
+     "n": 106,
+     "rate": 0.330188679245283
+    }
+   },
+   "causal": true,
+   "cells": 63,
+   "identity": "final U",
+   "labels": [
+    "00-06",
+    "06-12",
+    "12-18",
+    "18-24"
+   ],
+   "n": 413,
+   "null_mean": 38.436149179852514,
+   "p": 0.06229377062293771,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.26474852514748526,
+   "same_sense": {
+    "all": 12.978966458114328,
+    "disc": 2.1832489878935775,
+    "same": true,
+    "sel": 10.094660912698416
+   },
+   "stat": 51.41511563796684,
+   "teams": 28
+  },
+  "R1_hour_market": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -1.0304089849544376,
+     "1": 1.8542063996609472,
+     "2": -0.8264462809917335,
+     "3": 0.8570554025099499
+    },
+    "n": 363,
+    "n_by_cat": {
+     "0": 104,
+     "1": 52,
+     "2": 99,
+     "3": 108
+    },
+    "p": 0.974512743628186,
+    "stat_minus_null": -2.805051463077834
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 19.07630522088353,
+     "1": -3.231387086808778,
+     "2": 3.6916898362681443,
+     "3": -5.209409064830758
+    },
+    "n": 249,
+    "n_by_cat": {
+     "0": 10,
+     "1": 65,
+     "2": 104,
+     "3": 70
+    },
+    "p": 0.3078460769615192,
+    "stat_minus_null": 0.6165290144863458
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -1.1351909184726536,
+     "expected": 0.27450980392156854,
+     "good": 30,
+     "n": 114,
+     "rate": 0.2631578947368421
+    },
+    "1": {
+     "excess_pts": -0.10055304172951292,
+     "expected": 0.27450980392156854,
+     "good": 32,
+     "n": 117,
+     "rate": 0.27350427350427353
+    },
+    "2": {
+     "excess_pts": 2.1056698541485543,
+     "expected": 0.27450980392156854,
+     "good": 60,
+     "n": 203,
+     "rate": 0.2955665024630542
+    },
+    "3": {
+     "excess_pts": -1.608283762943381,
+     "expected": 0.2745098039215686,
+     "good": 46,
+     "n": 178,
+     "rate": 0.25842696629213485
+    }
+   },
+   "causal": true,
+   "cells": 4,
+   "identity": "market",
+   "labels": [
+    "00-06",
+    "06-12",
+    "12-18",
+    "18-24"
+   ],
+   "n": 612,
+   "null_mean": 3.005499491595991,
+   "p": 0.8676132386761324,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.98329500383295,
+   "same_sense": {
+    "all": -2.2480102985525905,
+    "disc": -2.805051463077834,
+    "same": false,
+    "sel": 0.6165290144863458
+   },
+   "stat": 0.7574891930434007,
+   "teams": 1
+  },
+  "R2_gap_since_previous": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -5.064935064935063,
+     "1": 0.27400416248175113,
+     "2": 3.9829637313334034,
+     "3": -0.9598754588485744,
+     "4": -1.0248212997573611
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 11,
+     "1": 46,
+     "2": 47,
+     "3": 101,
+     "4": 46
+    },
+    "p": 0.08345827086456771,
+    "stat_minus_null": 10.98464326803002
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 2.0237516494200993,
+     "1": -14.122059080042273,
+     "2": 0.8397484868073105,
+     "3": 3.734864575200711,
+     "4": 1.0473078120136945
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 11,
+     "1": 21,
+     "2": 24,
+     "3": 63,
+     "4": 18
+    },
+    "p": 0.14592703648175911,
+    "stat_minus_null": 7.299767416383219
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -0.39167709244435506,
+     "expected": 0.3082645970114,
+     "good": 7,
+     "n": 23,
+     "rate": 0.30434782608695654
+    },
+    "1": {
+     "excess_pts": -3.4145202185365107,
+     "expected": 0.29340446144462434,
+     "good": 21,
+     "n": 81,
+     "rate": 0.25925925925925924
+    },
+    "2": {
+     "excess_pts": 2.6681367985715814,
+     "expected": 0.31115646985212203,
+     "good": 25,
+     "n": 74,
+     "rate": 0.33783783783783783
+    },
+    "3": {
+     "excess_pts": 0.7138979904137134,
+     "expected": 0.3046257259782158,
+     "good": 53,
+     "n": 170,
+     "rate": 0.31176470588235294
+    },
+    "4": {
+     "excess_pts": -0.5110780097992363,
+     "expected": 0.29741847240568464,
+     "good": 19,
+     "n": 65,
+     "rate": 0.2923076923076923
+    }
+   },
+   "causal": true,
+   "cells": 103,
+   "identity": "final U",
+   "labels": [
+    "first of team",
+    "> 90 min (pause)",
+    "30-90",
+    "15-30",
+    "< 15"
+   ],
+   "n": 413,
+   "null_mean": 83.74638153934241,
+   "p": 0.043495650434956505,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.26474852514748526,
+   "same_sense": {
+    "all": 19.141892379079138,
+    "disc": 10.98464326803002,
+    "same": true,
+    "sel": 7.299767416383219
+   },
+   "stat": 102.88827391842155,
+   "teams": 28
+  },
+  "R3_rank_in_session": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.7563174428092122,
+     "1": -6.461237306438544,
+     "2": -3.871894193226461,
+     "3": 9.317246841756647
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 57,
+     "1": 60,
+     "2": 62,
+     "3": 72
+    },
+    "p": 0.14942528735632185,
+    "stat_minus_null": 7.361389483949836
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -8.571936641789584,
+     "1": 4.99022219610455,
+     "2": -2.659659580615463,
+     "3": 4.832959576792594
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 32,
+     "1": 42,
+     "2": 32,
+     "3": 31
+    },
+    "p": 0.31784107946026985,
+    "stat_minus_null": 2.4562010912698398
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -2.7460068348815163,
+     "expected": 0.29669083757958437,
+     "good": 28,
+     "n": 104,
+     "rate": 0.2692307692307692
+    },
+    "1": {
+     "excess_pts": -1.8224736800958665,
+     "expected": 0.30262840652572937,
+     "good": 31,
+     "n": 109,
+     "rate": 0.28440366972477066
+    },
+    "2": {
+     "excess_pts": -3.475766330329042,
+     "expected": 0.292489622066177,
+     "good": 25,
+     "n": 97,
+     "rate": 0.25773195876288657
+    },
+    "3": {
+     "excess_pts": 7.974598796116938,
+     "expected": 0.3183122644660151,
+     "good": 41,
+     "n": 103,
+     "rate": 0.39805825242718446
+    }
+   },
+   "causal": true,
+   "cells": 92,
+   "identity": "final U",
+   "labels": [
+    "1st",
+    "2-3",
+    "4-6",
+    ">= 7"
+   ],
+   "n": 413,
+   "null_mean": 71.4187337098318,
+   "p": 0.1382861713828617,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.33583784478694984,
+   "same_sense": {
+    "all": 10.502686146947639,
+    "disc": 7.361389483949836,
+    "same": true,
+    "sel": 2.4562010912698398
+   },
+   "stat": 81.92141985677944,
+   "teams": 28
+  },
+  "R3_rank_in_session_sens_180min": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -3.489164408405563,
+     "1": -4.181874541007667,
+     "2": -2.609850603810914,
+     "3": 6.2863035657153326
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 47,
+     "1": 55,
+     "2": 61,
+     "3": 88
+    },
+    "p": 0.038980509745127435,
+    "stat_minus_null": 14.358853991215106
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -5.119310609506688,
+     "1": -2.0038564376799672,
+     "2": 0.5757067521773401,
+     "3": 5.971954367676293
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 27,
+     "1": 40,
+     "2": 37,
+     "3": 33
+    },
+    "p": 0.19940029985007496,
+    "stat_minus_null": 5.30515267573697
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -2.906633652633771,
+     "expected": 0.296508196991454,
+     "good": 23,
+     "n": 86,
+     "rate": 0.26744186046511625
+    },
+    "1": {
+     "excess_pts": -3.5884735976076847,
+     "expected": 0.3025514026427435,
+     "good": 28,
+     "n": 105,
+     "rate": 0.26666666666666666
+    },
+    "2": {
+     "excess_pts": -1.1742436574676824,
+     "expected": 0.2889701593469541,
+     "good": 28,
+     "n": 101,
+     "rate": 0.27722772277227725
+    },
+    "3": {
+     "excess_pts": 6.159990341153286,
+     "expected": 0.3185653858446654,
+     "good": 46,
+     "n": 121,
+     "rate": 0.38016528925619836
+    }
+   },
+   "cells": 94,
+   "n": 413,
+   "null_mean": 73.56351578993743,
+   "p": 0.043478260869565216,
+   "per_team": true,
+   "same_sense": {
+    "all": 18.145209463370705,
+    "disc": 14.358853991215106,
+    "same": true,
+    "sel": 5.30515267573697
+   },
+   "stat": 91.70872525330813,
+   "teams": 28
+  },
+  "R3_rank_in_session_sens_60min": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.5934459073777951,
+     "1": -1.7141137831650863,
+     "2": -6.731206157676746,
+     "3": 9.072853072853075
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 75,
+     "1": 56,
+     "2": 60,
+     "3": 60
+    },
+    "p": 0.25237381309345325,
+    "stat_minus_null": 4.150731123689688
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -6.447379121175914,
+     "1": 4.99022219610455,
+     "2": -4.730566713488915,
+     "3": 4.832959576792594
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 33,
+     "1": 42,
+     "2": 31,
+     "3": 31
+    },
+    "p": 0.447776111944028,
+    "stat_minus_null": 0.36267241071428913
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -2.0582450966701438,
+     "expected": 0.2947759993537982,
+     "good": 34,
+     "n": 124,
+     "rate": 0.27419354838709675
+    },
+    "1": {
+     "excess_pts": 1.063012186733415,
+     "expected": 0.3066775704403582,
+     "good": 33,
+     "n": 104,
+     "rate": 0.3173076923076923
+    },
+    "2": {
+     "excess_pts": -5.92712057491401,
+     "expected": 0.2933137589406295,
+     "good": 22,
+     "n": 94,
+     "rate": 0.23404255319148937
+    },
+    "3": {
+     "excess_pts": 7.712290753942197,
+     "expected": 0.3184814880649737,
+     "good": 36,
+     "n": 91,
+     "rate": 0.3956043956043956
+    }
+   },
+   "cells": 90,
+   "n": 413,
+   "null_mean": 69.19620153283319,
+   "p": 0.239880059970015,
+   "per_team": true,
+   "same_sense": {
+    "all": 6.416147290771065,
+    "disc": 4.150731123689688,
+    "same": true,
+    "sel": 0.36267241071428913
+   },
+   "stat": 75.61234882360425,
+   "teams": 28
+  },
+  "R4_relative_third_of_session": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -4.110950754543894,
+     "1": -2.7260634226688,
+     "2": 11.988269115665366
+    },
+    "n": 210,
+    "n_by_cat": {
+     "0": 86,
+     "1": 77,
+     "2": 47
+    },
+    "p": 0.3818090954522739,
+    "stat_minus_null": 1.13732861058066
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -7.928185392114358,
+     "1": 12.569085909422045,
+     "2": -5.128942019698322
+    },
+    "n": 116,
+    "n_by_cat": {
+     "0": 53,
+     "1": 42,
+     "2": 21
+    },
+    "p": 0.3403298350824588,
+    "stat_minus_null": 1.7886071031746056
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -5.517886763291173,
+     "expected": 0.31212331207735616,
+     "good": 37,
+     "n": 144,
+     "rate": 0.2569444444444444
+    },
+    "1": {
+     "excess_pts": 2.775765298667904,
+     "expected": 0.3083079207838127,
+     "good": 41,
+     "n": 122,
+     "rate": 0.3360655737704918
+    },
+    "2": {
+     "excess_pts": 6.513318963949217,
+     "expected": 0.29200966750336504,
+     "good": 25,
+     "n": 70,
+     "rate": 0.35714285714285715
+    }
+   },
+   "causal": false,
+   "cells": 68,
+   "identity": "final U",
+   "labels": [
+    "start",
+    "middle",
+    "end"
+   ],
+   "n": 336,
+   "null_mean": 51.30360392842322,
+   "p": 0.38176182381761825,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.5899955458999555,
+   "same_sense": {
+    "all": 1.928843907525227,
+    "disc": 1.13732861058066,
+    "same": true,
+    "sel": 1.7886071031746056
+   },
+   "stat": 53.23244783594845,
+   "teams": 23
+  },
+  "R5_session_size": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": 6.948563991907647,
+     "1": -0.3160474716202242,
+     "2": -6.725781270672913,
+     "3": 2.762694821518352
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 22,
+     "1": 24,
+     "2": 75,
+     "3": 130
+    },
+    "p": 0.12093953023488256,
+    "stat_minus_null": 6.637125499425805
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 13.571428571428571,
+     "1": -20.23105100028177,
+     "2": 1.3731538499340359,
+     "3": 0.8599931200550394
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 10,
+     "1": 13,
+     "2": 57,
+     "3": 57
+    },
+    "p": 0.15942028985507245,
+    "stat_minus_null": 4.679214325396824
+   },
+   "categories": {
+    "0": {
+     "excess_pts": 8.90301825926553,
+     "expected": 0.30121371984636913,
+     "good": 16,
+     "n": 41,
+     "rate": 0.3902439024390244
+    },
+    "1": {
+     "excess_pts": -6.338292647696085,
+     "expected": 0.3191968799653329,
+     "good": 11,
+     "n": 43,
+     "rate": 0.2558139534883721
+    },
+    "2": {
+     "excess_pts": -3.5315773584387826,
+     "expected": 0.2747523933026977,
+     "good": 34,
+     "n": 142,
+     "rate": 0.23943661971830985
+    },
+    "3": {
+     "excess_pts": 2.1872022466275522,
+     "expected": 0.32037396683853725,
+     "good": 64,
+     "n": 187,
+     "rate": 0.3422459893048128
+    }
+   },
+   "causal": false,
+   "cells": 49,
+   "identity": "final U",
+   "labels": [
+    "1",
+    "2-3",
+    "4-9",
+    ">= 10"
+   ],
+   "n": 413,
+   "null_mean": 22.846871860810694,
+   "p": 0.057694230576942306,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.26474852514748526,
+   "same_sense": {
+    "all": 13.51745741607995,
+    "disc": 6.637125499425805,
+    "same": true,
+    "sel": 4.679214325396824
+   },
+   "stat": 36.36432927689064,
+   "teams": 28
+  },
+  "R6_team_launches_60m": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.5934459073777951,
+     "1": -0.9152568787847787,
+     "2": 2.9638686630917497
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 75,
+     "1": 123,
+     "2": 53
+    },
+    "p": 0.23488255872063968,
+    "stat_minus_null": 4.119469126840347
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -6.447379121175914,
+     "1": 3.806317941064864,
+     "2": -6.365546218487396
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 33,
+     "1": 86,
+     "2": 18
+    },
+    "p": 0.2723638180909545,
+    "stat_minus_null": 3.180515079365076
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -2.0582450966701438,
+     "expected": 0.2947759993537982,
+     "good": 34,
+     "n": 124,
+     "rate": 0.27419354838709675
+    },
+    "1": {
+     "excess_pts": 0.9828340928906418,
+     "expected": 0.30209826457568073,
+     "good": 68,
+     "n": 218,
+     "rate": 0.3119266055045872
+    },
+    "2": {
+     "excess_pts": 0.5769656300977225,
+     "expected": 0.3181740056708538,
+     "good": 23,
+     "n": 71,
+     "rate": 0.323943661971831
+    }
+   },
+   "causal": true,
+   "cells": 70,
+   "identity": "final U",
+   "labels": [
+    "0",
+    "1-2",
+    ">= 3"
+   ],
+   "n": 413,
+   "null_mean": 47.24912976964923,
+   "p": 0.18338166183381663,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.3478985434789854,
+   "same_sense": {
+    "all": 7.849605882359654,
+    "disc": 4.119469126840347,
+    "same": true,
+    "sel": 3.180515079365076
+   },
+   "stat": 55.098735652008884,
+   "teams": 28
+  }
+ },
+ "sequences": {
+  "S10_session_overdispersion": {
+   "block_DISC": {
+    "n": 251,
+    "p": 0.10744627686156921,
+    "stat_minus_null": 9.314208985117325
+   },
+   "block_SEL": {
+    "n": 137,
+    "p": 0.2773613193403298,
+    "stat_minus_null": 2.8863902777777746
+   },
+   "causal": false,
+   "cells": 107,
+   "n": 413,
+   "null_mean": 84.71595777880954,
+   "p": 0.061193880611938804,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.26474852514748526,
+   "same_sense": {
+    "all": 15.519181237523512,
+    "disc": 9.314208985117325,
+    "same": true,
+    "sel": 2.8863902777777746
+   },
+   "stat": 100.23513901633305,
+   "teams": 28
+  },
+  "S1_after_good_vs_bad": {
+   "causal": false,
+   "diff": 0.05084299262381453,
+   "diff_DISC": 0.04979362430842191,
+   "diff_SEL": 0.04040404040404039,
+   "diff_minus_null": -0.015454254201255846,
+   "diff_minus_null_DISC": 0.001485863832280658,
+   "diff_minus_null_SEL": -0.04712030601468248,
+   "n": 396,
+   "n_DISC": 252,
+   "n_SEL": 144,
+   "n_cond": 104,
+   "n_cond_DISC": 59,
+   "n_cond_SEL": 45,
+   "null_mean": 0.06629724682507038,
+   "null_mean_DISC": 0.04830776047614125,
+   "null_mean_SEL": 0.08752434641872286,
+   "p": 0.7407259274072593,
+   "p_cond": 0.3076923076923077,
+   "p_not": 0.2568493150684932,
+   "passes": false,
+   "q_bh_sections_2_3": 0.899452911851672,
+   "same_sense": false
+  },
+  "S2_after_good_vs_bad_same_session": {
+   "causal": false,
+   "diff": 0.02920481927710844,
+   "diff_DISC": 0.05049019607843139,
+   "diff_SEL": -0.023214285714285743,
+   "diff_minus_null": -0.03376845192785481,
+   "diff_minus_null_DISC": 0.004739577737504969,
+   "diff_minus_null_SEL": -0.10378619029496125,
+   "n": 333,
+   "n_DISC": 218,
+   "n_SEL": 115,
+   "n_cond": 83,
+   "n_cond_DISC": 48,
+   "n_cond_SEL": 35,
+   "null_mean": 0.06297327120496325,
+   "null_mean_DISC": 0.04575061834092642,
+   "null_mean_SEL": 0.08057190458067551,
+   "p": 0.5188481151884812,
+   "p_cond": 0.30120481927710846,
+   "p_not": 0.272,
+   "passes": false,
+   "q_bh_sections_2_3": 0.6784936890926292,
+   "same_sense": false
+  },
+  "S3_after_two_bad": {
+   "causal": false,
+   "diff": -0.13862249346120314,
+   "diff_DISC": -0.08210347752332486,
+   "diff_SEL": -0.23019943019943023,
+   "diff_minus_null": -0.05414471054645949,
+   "diff_minus_null_DISC": -0.01799778929418175,
+   "diff_minus_null_SEL": -0.11409298706794084,
+   "n": 340,
+   "n_DISC": 221,
+   "n_SEL": 119,
+   "n_cond": 185,
+   "n_cond_DISC": 131,
+   "n_cond_SEL": 54,
+   "null_mean": -0.08447778291474366,
+   "null_mean_DISC": -0.06410568822914312,
+   "null_mean_SEL": -0.11610644313148939,
+   "p": 0.18418158184181582,
+   "p_cond": 0.21621621621621623,
+   "p_not": 0.3548387096774194,
+   "passes": false,
+   "q_bh_sections_2_3": 0.3478985434789854,
+   "same_sense": true
+  },
+  "S4_after_three_bad": {
+   "causal": false,
+   "diff": -0.1753774680603949,
+   "diff_DISC": -0.145335057099763,
+   "diff_SEL": -0.23179723502304145,
+   "diff_minus_null": -0.07255321275912466,
+   "diff_minus_null_DISC": -0.06330691419674657,
+   "diff_minus_null_SEL": -0.09018404352932405,
+   "n": 290,
+   "n_DISC": 193,
+   "n_SEL": 97,
+   "n_cond": 126,
+   "n_cond_DISC": 91,
+   "n_cond_SEL": 35,
+   "null_mean": -0.10282425530127023,
+   "null_mean_DISC": -0.08202814290301642,
+   "null_mean_SEL": -0.1416131914937174,
+   "p": 0.09159084091590841,
+   "p_cond": 0.19047619047619047,
+   "p_not": 0.36585365853658536,
+   "passes": false,
+   "q_bh_sections_2_3": 0.3114088591140886,
+   "same_sense": true
+  },
+  "S5_last_resolved_good": {
+   "causal": true,
+   "diff": 0.060470324748040316,
+   "diff_DISC": 0.03154836031548358,
+   "diff_SEL": 0.08095238095238094,
+   "diff_minus_null": -0.0011601096685210505,
+   "diff_minus_null_DISC": -0.009983307609230899,
+   "diff_minus_null_SEL": -0.00893537829016064,
+   "n": 368,
+   "n_DISC": 238,
+   "n_SEL": 130,
+   "n_cond": 133,
+   "n_cond_DISC": 73,
+   "n_cond_SEL": 60,
+   "null_mean": 0.06163043441656137,
+   "null_mean_DISC": 0.04153166792471448,
+   "null_mean_SEL": 0.08988775924254158,
+   "p": 0.9832016798320168,
+   "p_cond": 0.3157894736842105,
+   "p_not": 0.2553191489361702,
+   "passes": false,
+   "q_bh_sections_2_3": 1.0,
+   "same_sense": true
+  },
+  "S6_last_two_resolved_bad": {
+   "causal": true,
+   "diff": -0.1505885730691932,
+   "diff_DISC": -0.07574564856118252,
+   "diff_SEL": -0.2728047740835464,
+   "diff_minus_null": -0.0722742147414462,
+   "diff_minus_null_DISC": -0.02280452069191472,
+   "diff_minus_null_SEL": -0.1530916503392339,
+   "n": 334,
+   "n_DISC": 214,
+   "n_SEL": 120,
+   "n_cond": 162,
+   "n_cond_DISC": 111,
+   "n_cond_SEL": 51,
+   "null_mean": -0.07831435832774701,
+   "null_mean_DISC": -0.052941127869267794,
+   "null_mean_SEL": -0.11971312374431252,
+   "p": 0.1100889911008899,
+   "p_cond": 0.20987654320987653,
+   "p_not": 0.36046511627906974,
+   "passes": false,
+   "q_bh_sections_2_3": 0.3119188081191881,
+   "same_sense": true
+  },
+  "S7_rank_mod3": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -7.394951886113374,
+     "1": 1.5774184167594179,
+     "2": 3.6599500553503224
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 62,
+     "1": 112,
+     "2": 77
+    },
+    "p": 0.3963018490754623,
+    "stat_minus_null": 1.3989538161081114
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": -1.0047996985713252,
+     "1": -3.7568131436526264,
+     "2": 5.813981027884773
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 34,
+     "1": 59,
+     "2": 44
+    },
+    "p": 0.7791104447776112,
+    "stat_minus_null": -5.123866240079369
+   },
+   "categories": {
+    "0": {
+     "excess_pts": -4.974463717352175,
+     "expected": 0.30484667798984827,
+     "good": 25,
+     "n": 98,
+     "rate": 0.25510204081632654
+    },
+    "1": {
+     "excess_pts": -0.11799767982768408,
+     "expected": 0.29905231722380876,
+     "good": 56,
+     "n": 188,
+     "rate": 0.2978723404255319
+    },
+    "2": {
+     "excess_pts": 4.013236284315893,
+     "expected": 0.3063243300702269,
+     "good": 44,
+     "n": 127,
+     "rate": 0.3464566929133858
+    }
+   },
+   "causal": true,
+   "cells": 80,
+   "identity": "final U",
+   "n": 413,
+   "null_mean": 58.39822014388011,
+   "p": 0.5009499050094991,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.6784936890926292,
+   "same_sense": {
+    "all": -0.5423180169523789,
+    "disc": 1.3989538161081114,
+    "same": false,
+    "sel": -5.123866240079369
+   },
+   "stat": 57.85590212692773,
+   "teams": 28
+  },
+  "S8_rank_mod2": {
+   "block_DISC": {
+    "excess_pts": {
+     "0": -0.4273696849197756,
+     "1": 0.3124219765620436
+    },
+    "n": 251,
+    "n_by_cat": {
+     "0": 106,
+     "1": 145
+    },
+    "p": 0.6036981509245377,
+    "stat_minus_null": -1.8364920023245102
+   },
+   "block_SEL": {
+    "excess_pts": {
+     "0": 2.8792024968495546,
+     "1": -2.2435344131295243
+    },
+    "n": 137,
+    "n_by_cat": {
+     "0": 60,
+     "1": 77
+    },
+    "p": 0.25087456271864067,
+    "stat_minus_null": 3.1499790393518516
+   },
+   "categories": {
+    "0": {
+     "excess_pts": 0.5164917147679604,
+     "expected": 0.3069738111760198,
+     "good": 54,
+     "n": 173,
+     "rate": 0.31213872832369943
+    },
+    "1": {
+     "excess_pts": -0.37230444439523597,
+     "expected": 0.2995563777772857,
+     "good": 71,
+     "n": 240,
+     "rate": 0.29583333333333334
+    }
+   },
+   "causal": true,
+   "cells": 55,
+   "identity": "final U",
+   "n": 413,
+   "null_mean": 30.384733064801857,
+   "p": 0.3231676832316768,
+   "passes": false,
+   "per_team": true,
+   "q_bh_sections_2_3": 0.5493850614938507,
+   "same_sense": {
+    "all": 2.3819115786658998,
+    "disc": -1.8364920023245102,
+    "same": false,
+    "sel": 3.1499790393518516
+   },
+   "stat": 32.76664464346776,
+   "teams": 28
+  },
+  "S9_runs": {
+   "adjacent_pairs": 423,
+   "causal": false,
+   "changes": 158.0,
+   "changes_minus_null_DISC": -2.5635000000000048,
+   "changes_minus_null_SEL": 5.086500000000001,
+   "null_mean": 158.0673,
+   "p": 1.0,
+   "passes": false,
+   "q_bh_sections_2_3": 1.0,
+   "reading": "fewer changes than null = GOOD clustered in streaks; more = alternation",
+   "same_sense": false
+  }
+ },
+ "team_profiles_good_vs_bad_medians": [
+  {
+   "eligible": 115,
+   "entry_premium": [
+    3.4355000257492065,
+    3.509000062942505
+   ],
+   "fund_to_buy_med_s": [
+    357.0,
+    362.0
+   ],
+   "good": 38,
+   "jaccard_prev": [
+    0.38888888888888884,
+    0.8
+   ],
+   "log_gap_prev_min": [
+    1.3771995014653216,
+    1.3436798836140094
+   ],
+   "market_rate_24h": [
+    0.2928571428571428,
+    0.3
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    6.0,
+    4.0
+   ],
+   "recurrent_bots_10s": [
+    16.0,
+    7.0
+   ],
+   "snipe_sol": [
+    78.84662628173828,
+    79.40092468261719
+   ],
+   "swarm_10s": [
+    19.0,
+    10.0
+   ],
+   "team": 31,
+   "ticket_cv": [
+    0.03566891327500343,
+    0.06034407392144203
+   ]
+  },
+  {
+   "eligible": 25,
+   "entry_premium": [
+    10.510499954223633,
+    10.335000038146973
+   ],
+   "fund_to_buy_med_s": [
+    1.0,
+    1.0
+   ],
+   "good": 10,
+   "jaccard_prev": [
+    0.0,
+    0.0
+   ],
+   "log_gap_prev_min": [
+    2.0658638038536346,
+    2.2394383366231025
+   ],
+   "market_rate_24h": [
+    0.35,
+    0.30434782608695654
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    1.0,
+    1.0
+   ],
+   "recurrent_bots_10s": [
+    0.0,
+    1.0
+   ],
+   "snipe_sol": [
+    84.01770782470703,
+    84.01770782470703
+   ],
+   "swarm_10s": [
+    0.0,
+    1.0
+   ],
+   "team": 169,
+   "ticket_cv": [
+    0.3531948924064636,
+    0.3531948924064636
+   ]
+  },
+  {
+   "eligible": 20,
+   "entry_premium": [
+    3.7219998836517334,
+    3.753999948501587
+   ],
+   "fund_to_buy_med_s": [
+    273.0,
+    331.0
+   ],
+   "good": 7,
+   "jaccard_prev": [
+    1.0,
+    1.0
+   ],
+   "log_gap_prev_min": [
+    1.2196795376001122,
+    1.2876020602215743
+   ],
+   "market_rate_24h": [
+    0.2360248447204969,
+    0.2358490566037736
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    8.0,
+    3.0
+   ],
+   "recurrent_bots_10s": [
+    0.0,
+    4.0
+   ],
+   "snipe_sol": [
+    75.49047088623047,
+    75.49047088623047
+   ],
+   "swarm_10s": [
+    0.0,
+    9.0
+   ],
+   "team": 570,
+   "ticket_cv": [
+    0.005259376019239426,
+    0.007953687570989132
+   ]
+  },
+  {
+   "eligible": 17,
+   "entry_premium": [
+    3.5015000104904175,
+    3.9860000610351562
+   ],
+   "fund_to_buy_med_s": [
+    247.0,
+    407.0
+   ],
+   "good": 2,
+   "jaccard_prev": [
+    0.0,
+    1.0
+   ],
+   "log_gap_prev_min": [
+    3.750383737253266,
+    1.3670149937685605
+   ],
+   "market_rate_24h": [
+    0.2875779920589904,
+    0.2
+   ],
+   "other_team_snipers_buying": [
+    0.5,
+    0.0
+   ],
+   "rank_in_session": [
+    1.0,
+    5.0
+   ],
+   "recurrent_bots_10s": [
+    7.5,
+    18.0
+   ],
+   "snipe_sol": [
+    79.2901496887207,
+    78.47492218017578
+   ],
+   "swarm_10s": [
+    7.5,
+    19.0
+   ],
+   "team": 5,
+   "ticket_cv": [
+    0.03240691404789686,
+    0.01509111188352108
+   ]
+  },
+  {
+   "eligible": 17,
+   "entry_premium": [
+    3.924999952316284,
+    3.5765000581741333
+   ],
+   "fund_to_buy_med_s": [
+    110.0,
+    350.5
+   ],
+   "good": 1,
+   "jaccard_prev": [
+    1.0,
+    0.0
+   ],
+   "log_gap_prev_min": [
+    1.4523615916587058,
+    1.352897138697958
+   ],
+   "market_rate_24h": [
+    0.24161073825503357,
+    0.34523809523809523
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    5.0,
+    3.0
+   ],
+   "recurrent_bots_10s": [
+    29.0,
+    16.0
+   ],
+   "snipe_sol": [
+    81.8337631225586,
+    81.83433151245117
+   ],
+   "swarm_10s": [
+    38.0,
+    18.0
+   ],
+   "team": 225,
+   "ticket_cv": [
+    0.027281930670142174,
+    0.012131884694099426
+   ]
+  },
+  {
+   "eligible": 17,
+   "entry_premium": [
+    3.97599995136261,
+    3.5859999656677246
+   ],
+   "fund_to_buy_med_s": [
+    74.0,
+    377.5
+   ],
+   "good": 2,
+   "jaccard_prev": [
+    0.0,
+    0.0
+   ],
+   "log_gap_prev_min": [
+    1.3817056371199863,
+    1.3152161029414065
+   ],
+   "market_rate_24h": [
+    0.2853566958698373,
+    0.2765957446808511
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    8.5,
+    6.0
+   ],
+   "recurrent_bots_10s": [
+    47.0,
+    22.0
+   ],
+   "snipe_sol": [
+    79.25553894042969,
+    79.25553894042969
+   ],
+   "swarm_10s": [
+    192.5,
+    25.0
+   ],
+   "team": 789,
+   "ticket_cv": [
+    0.032002273947000504,
+    0.032002273947000504
+   ]
+  },
+  {
+   "eligible": 15,
+   "entry_premium": [
+    11.536500453948975,
+    14.630000114440918
+   ],
+   "fund_to_buy_med_s": [
+    0.5,
+    1.0
+   ],
+   "good": 2,
+   "jaccard_prev": [
+    0.0,
+    0.0
+   ],
+   "log_gap_prev_min": [
+    2.7748250851181915,
+    2.756458549332218
+   ],
+   "market_rate_24h": [
+    0.27314814814814814,
+    0.2702702702702703
+   ],
+   "other_team_snipers_buying": [
+    0.0,
+    0.0
+   ],
+   "rank_in_session": [
+    1.0,
+    1.0
+   ],
+   "recurrent_bots_10s": [
+    6.0,
+    8.0
+   ],
+   "snipe_sol": [
+    84.9065933227539,
+    84.9065933227539
+   ],
+   "swarm_10s": [
+    7.5,
+    8.0
+   ],
+   "team": 578,
+   "ticket_cv": [
+    0.43171194195747375,
+    0.43171194195747375
+   ]
+  },
+  {
+   "eligible": 14,
+   "entry_premium": [
+    3.768499970436096,
+    3.8009999990463257
+   ],
+   "fund_to_buy_med_s": [
+    120.0,
+    200.75
+   ],
+   "good": 4,
+   "jaccard_prev": [
+    1.0,
+    1.0
+   ],
+   "log_gap_prev_min": [
+    1.287342430924959,
+    1.3067786298262856
+   ],
+   "market_rate_24h": [
+    0.3313492063492064,
+    0.40283400809716596
+   ],
+   "other_team_snipers_buying": [
+    0.5,
+    0.0
+   ],
+   "rank_in_session": [
+    7.5,
+    7.5
+   ],
+   "recurrent_bots_10s": [
+    10.5,
+    24.5
+   ],
+   "snipe_sol": [
+    78.45542907714844,
+    78.45542907714844
+   ],
+   "swarm_10s": [
+    11.0,
+    26.5
+   ],
+   "team": 606,
+   "ticket_cv": [
+    0.03188502788543701,
+    0.03188502788543701
+   ]
+  }
+ ],
+ "variance_decomposition": {
+  "day": {
+   "sd_mean": [
+    0.43693674592699117
+   ],
+   "vc_names": [
+    "day"
+   ],
+   "warnings": []
+  },
+  "session+day": {
+   "sd_mean": [
+    0.599106406524705,
+    0.38562696030450444
+   ],
+   "vc_names": [
+    "sess",
+    "day"
+   ],
+   "warnings": []
+  },
+  "team": {
+   "sd_mean": [
+    0.7450160503262662
+   ],
+   "vc_names": [
+    "team"
+   ],
+   "warnings": []
+  },
+  "team+session": {
+   "sd_mean": [
+    0.6658167625307667,
+    0.30288426980959626
+   ],
+   "vc_names": [
+    "team",
+    "sess"
+   ],
+   "warnings": []
+  },
+  "team+session+day": {
+   "sd_mean": [
+    0.6276401046895208,
+    0.24859866381399037,
+    0.4266751704552471
+   ],
+   "vc_names": [
+    "team",
+    "sess",
+    "day"
+   ],
+   "warnings": []
+  }
+ },
+ "within_team": {
+  "age_at_alert_s": {
+   "auc": 0.5650741350906096,
+   "auc_DISC": 0.5951557093425606,
+   "auc_SEL": 0.46779661016949153,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.16618338166183383,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5249425981873111,
+   "q_bh": 0.6619782466197824,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "alerts_60m": {
+   "auc": 0.5159253157605711,
+   "auc_DISC": 0.4727028066128412,
+   "auc_SEL": 0.6152542372881356,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.7416258374162584,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5354199395770393,
+   "q_bh": 0.992015084205865,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "candidates_60m": {
+   "auc": 0.5549148819330039,
+   "auc_DISC": 0.5321030372933487,
+   "auc_SEL": 0.5474576271186441,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.23647635236476353,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5230332326283987,
+   "q_bh": 0.7567243275672433,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "core_exit_share": {
+   "auc": 0.5199066447007139,
+   "auc_DISC": 0.5230680507497116,
+   "auc_SEL": 0.5372881355932203,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.655034496550345,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5240604229607251,
+   "q_bh": 0.992015084205865,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "core_order_rho": {
+   "auc": 0.41474464579901155,
+   "auc_DISC": 0.42656670511341793,
+   "auc_SEL": 0.4559322033898305,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.06369363063693631,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.4693776435045317,
+   "q_bh": 0.5095490450954905,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "creator_buy": {
+   "auc": 0.492174629324547,
+   "auc_DISC": 0.48942714340638216,
+   "auc_SEL": 0.4915254237288136,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.8680131986801319,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5058368580060423,
+   "q_bh": 0.992015084205865,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "entry_premium": {
+   "auc": 0.46609006040637013,
+   "auc_DISC": 0.47770088427527874,
+   "auc_SEL": 0.3864406779661017,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.4717528247175283,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.45931117824773415,
+   "q_bh": 0.9835460898354609,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "fund_spread_s": {
+   "auc": 0.4900420757363254,
+   "auc_DISC": 0.4948657187993681,
+   "auc_SEL": 0.49491525423728816,
+   "good": 124,
+   "n": 412,
+   "n_DISC": 250,
+   "n_SEL": 137,
+   "p": 0.7958204179582041,
+   "pairs": 3565,
+   "passes": false,
+   "pooled_auc": 0.47350404444011307,
+   "q_bh": 0.992015084205865,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.7991584852734923,
+   "strata": 28
+  },
+  "fund_to_buy_med_s": {
+   "auc": 0.4977559607293128,
+   "auc_DISC": 0.5082938388625592,
+   "auc_SEL": 0.46271186440677964,
+   "good": 124,
+   "n": 412,
+   "n_DISC": 250,
+   "n_SEL": 137,
+   "p": 0.9627037296270373,
+   "pairs": 3565,
+   "passes": false,
+   "pooled_auc": 0.4787057791638242,
+   "q_bh": 0.9937586886472644,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.7991584852734923,
+   "strata": 28
+  },
+  "grouped": {
+   "auc": 0.5,
+   "auc_DISC": 0.5,
+   "auc_SEL": 0.5,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 1.0,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.4852809667673716,
+   "q_bh": 1.0,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "jaccard_prev": {
+   "auc": 0.45309859154929577,
+   "auc_DISC": 0.4092505854800937,
+   "auc_SEL": 0.5404858299595142,
+   "good": 118,
+   "n": 380,
+   "n_DISC": 238,
+   "n_SEL": 116,
+   "p": 0.29847015298470153,
+   "pairs": 3550,
+   "passes": false,
+   "pooled_auc": 0.5003133685759442,
+   "q_bh": 0.795920407959204,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.824225352112676,
+   "strata": 26
+  },
+  "log_gap_prev_min": {
+   "auc": 0.5030985915492958,
+   "auc_DISC": 0.524199843871975,
+   "auc_SEL": 0.4331983805668016,
+   "good": 118,
+   "n": 380,
+   "n_DISC": 238,
+   "n_SEL": 116,
+   "p": 0.9597040295970403,
+   "pairs": 3550,
+   "passes": false,
+   "pooled_auc": 0.49558559049539486,
+   "q_bh": 0.9937586886472644,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.824225352112676,
+   "strata": 26
+  },
+  "market_rate_24h": {
+   "auc": 0.4862602653190145,
+   "auc_DISC": 0.4791284403669725,
+   "auc_SEL": 0.5169491525423728,
+   "good": 115,
+   "n": 395,
+   "n_DISC": 233,
+   "n_SEL": 137,
+   "p": 0.7753224677532247,
+   "pairs": 3166,
+   "passes": false,
+   "pooled_auc": 0.5513091668451489,
+   "q_bh": 0.992015084205865,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.7839545167403664,
+   "strata": 27
+  },
+  "n_last_funders": {
+   "auc": 0.5199158485273492,
+   "auc_DISC": 0.5248815165876777,
+   "auc_SEL": 0.5050847457627119,
+   "good": 124,
+   "n": 412,
+   "n_DISC": 250,
+   "n_SEL": 137,
+   "p": 0.18618138186181382,
+   "pairs": 3565,
+   "passes": false,
+   "pooled_auc": 0.49488353961602183,
+   "q_bh": 0.6619782466197824,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.7991584852734923,
+   "strata": 28
+  },
+  "n_snipers": {
+   "auc": 0.5177100494233937,
+   "auc_DISC": 0.5090349865436371,
+   "auc_SEL": 0.5152542372881356,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.6777322267773223,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5137401812688822,
+   "q_bh": 0.992015084205865,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "new_to_team_share": {
+   "auc": 0.5422535211267606,
+   "auc_DISC": 0.5815768930523029,
+   "auc_SEL": 0.4757085020242915,
+   "good": 118,
+   "n": 380,
+   "n_DISC": 238,
+   "n_SEL": 116,
+   "p": 0.28787121287871215,
+   "pairs": 3550,
+   "passes": false,
+   "pooled_auc": 0.5086789470815848,
+   "q_bh": 0.795920407959204,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.824225352112676,
+   "strata": 26
+  },
+  "ntx": {
+   "auc": 0.4681493684788578,
+   "auc_DISC": 0.4627066512879662,
+   "auc_SEL": 0.5050847457627119,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.4968503149685031,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.512821752265861,
+   "q_bh": 0.9835460898354609,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "other_slot0_buyers": {
+   "auc": 0.4726798462383306,
+   "auc_DISC": 0.4817377931564783,
+   "auc_SEL": 0.4847457627118644,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.5372462753724627,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.4791419939577039,
+   "q_bh": 0.9835460898354609,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "other_team_launches_30m": {
+   "auc": 0.48846787479406917,
+   "auc_DISC": 0.4609765474817378,
+   "auc_SEL": 0.6101694915254238,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.7929207079292071,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5211842900302115,
+   "q_bh": 0.992015084205865,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "other_team_snipers_buying": {
+   "auc": 0.5118066996155958,
+   "auc_DISC": 0.5167243367935409,
+   "auc_SEL": 0.48983050847457626,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.5405459454054594,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5017280966767371,
+   "q_bh": 0.9835460898354609,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "rank_in_session": {
+   "auc": 0.5737232289950577,
+   "auc_DISC": 0.5818915801614764,
+   "auc_SEL": 0.611864406779661,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.11448855114488551,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5545498489425982,
+   "q_bh": 0.6619782466197824,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "recurrent_bots_10s": {
+   "auc": 0.6039264140582098,
+   "auc_DISC": 0.6485966935793925,
+   "auc_SEL": 0.4864406779661017,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.0225977402259774,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5377885196374622,
+   "q_bh": 0.24104256241042563,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "same_config_prev": {
+   "auc": 0.46056338028169014,
+   "auc_DISC": 0.4272053083528493,
+   "auc_SEL": 0.5566801619433198,
+   "good": 118,
+   "n": 380,
+   "n_DISC": 238,
+   "n_SEL": 116,
+   "p": 0.33256674332566744,
+   "pairs": 3550,
+   "passes": false,
+   "pooled_auc": 0.46657856013951715,
+   "q_bh": 0.8186258297247199,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.824225352112676,
+   "strata": 26
+  },
+  "shared_funder_prev": {
+   "auc": 0.5200235571260307,
+   "auc_DISC": 0.4985561056105611,
+   "auc_SEL": 0.548582995951417,
+   "good": 116,
+   "n": 378,
+   "n_DISC": 236,
+   "n_SEL": 116,
+   "p": 0.6626337366263374,
+   "pairs": 3396,
+   "passes": false,
+   "pooled_auc": 0.5303248697194811,
+   "q_bh": 0.992015084205865,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8162544169611308,
+   "strata": 26
+  },
+  "snipe_sol": {
+   "auc": 0.5057660626029654,
+   "auc_DISC": 0.46212995001922336,
+   "auc_SEL": 0.5135593220338983,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.9051094890510949,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.47019939577039277,
+   "q_bh": 0.9937586886472644,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "supply_part": {
+   "auc": 0.5082372322899505,
+   "auc_DISC": 0.4728950403690888,
+   "auc_SEL": 0.5101694915254237,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.8652134786521348,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.4571238670694864,
+   "q_bh": 0.992015084205865,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "swarm_10s": {
+   "auc": 0.6103789126853377,
+   "auc_DISC": 0.6587850826605152,
+   "auc_SEL": 0.4711864406779661,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.018998100189981004,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5410151057401813,
+   "q_bh": 0.24104256241042563,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "swarm_5s": {
+   "auc": 0.6355024711696869,
+   "auc_DISC": 0.671280276816609,
+   "auc_SEL": 0.4576271186440678,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.003999600039996,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5416314199395771,
+   "q_bh": 0.127987201279872,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "team_launches_60m": {
+   "auc": 0.507550796265788,
+   "auc_DISC": 0.5042291426374471,
+   "auc_SEL": 0.559322033898305,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.8649135086491351,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5209305135951662,
+   "q_bh": 0.992015084205865,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "ticket_cv": {
+   "auc": 0.47213069741900054,
+   "auc_DISC": 0.48077662437524027,
+   "auc_SEL": 0.523728813559322,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.5532446755324467,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.5080725075528701,
+   "q_bh": 0.9835460898354609,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "ticket_median": {
+   "auc": 0.428610653487095,
+   "auc_DISC": 0.3860053825451749,
+   "auc_SEL": 0.48983050847457626,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.1282871712828717,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.46293655589123867,
+   "q_bh": 0.6619782466197824,
+   "same_sense": true,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  },
+  "wallet_age": {
+   "auc": 0.4327292696320703,
+   "auc_DISC": 0.3790849673202614,
+   "auc_SEL": 0.5559322033898305,
+   "good": 125,
+   "n": 413,
+   "n_DISC": 251,
+   "n_SEL": 137,
+   "p": 0.15608439156084392,
+   "pairs": 3642,
+   "passes": false,
+   "pooled_auc": 0.4698731117824773,
+   "q_bh": 0.6619782466197824,
+   "same_sense": false,
+   "share_pairs_largest_group": 0.8034047226798462,
+   "strata": 28
+  }
+ },
+ "within_team_sensitivity": {
+  "intra_session": {
+   "age_at_alert_s": {
+    "auc": 0.5092748735244519,
+    "n": 297,
+    "p": 0.8335832083958021,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "alerts_60m": {
+    "auc": 0.5185497470489039,
+    "n": 297,
+    "p": 0.6746626686656672,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "candidates_60m": {
+    "auc": 0.5320404721753794,
+    "n": 297,
+    "p": 0.47926036981509246,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "core_exit_share": {
+    "auc": 0.5489038785834739,
+    "n": 297,
+    "p": 0.1469265367316342,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "core_order_rho": {
+    "auc": 0.433389544688027,
+    "n": 297,
+    "p": 0.021989005497251374,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "creator_buy": {
+    "auc": 0.44350758853288363,
+    "n": 297,
+    "p": 0.05647176411794103,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "entry_premium": {
+    "auc": 0.448566610455312,
+    "n": 297,
+    "p": 0.22538730634682658,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "fund_spread_s": {
+    "auc": 0.4819277108433735,
+    "n": 296,
+    "p": 0.6026986506746627,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "fund_to_buy_med_s": {
+    "auc": 0.45524956970740105,
+    "n": 296,
+    "p": 0.28585707146426786,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "grouped": {
+    "auc": 0.5,
+    "n": 297,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "jaccard_prev": {
+    "auc": 0.44862385321100917,
+    "n": 276,
+    "p": 0.09145427286356822,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "log_gap_prev_min": {
+    "auc": 0.48623853211009177,
+    "n": 276,
+    "p": 0.775112443778111,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "market_rate_24h": {
+    "auc": 0.3767857142857143,
+    "n": 279,
+    "p": 0.0029985007496251873,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "n_last_funders": {
+    "auc": 0.4991394148020654,
+    "n": 296,
+    "p": 0.9635182408795602,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "n_snipers": {
+    "auc": 0.4957841483979764,
+    "n": 297,
+    "p": 0.8695652173913043,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "new_to_team_share": {
+    "auc": 0.5568807339449541,
+    "n": 276,
+    "p": 0.041979010494752625,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "ntx": {
+    "auc": 0.5067453625632378,
+    "n": 297,
+    "p": 0.8840579710144928,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "other_slot0_buyers": {
+    "auc": 0.5236087689713322,
+    "n": 297,
+    "p": 0.5452273863068465,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "other_team_launches_30m": {
+    "auc": 0.5531197301854974,
+    "n": 297,
+    "p": 0.15692153923038482,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "other_team_snipers_buying": {
+    "auc": 0.4839797639123103,
+    "n": 297,
+    "p": 0.5542228885557221,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "rank_in_session": {
+    "auc": 0.5733558178752108,
+    "n": 297,
+    "p": 0.09045477261369315,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "recurrent_bots_10s": {
+    "auc": 0.5581787521079258,
+    "n": 297,
+    "p": 0.15992003998001,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "same_config_prev": {
+    "auc": 0.48073394495412847,
+    "n": 276,
+    "p": 0.4447776111944028,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "shared_funder_prev": {
+    "auc": 0.5104166666666666,
+    "n": 274,
+    "p": 0.6636681659170415,
+    "share_pairs_largest_group": null,
+    "strata": 40
+   },
+   "snipe_sol": {
+    "auc": 0.4991568296795953,
+    "n": 297,
+    "p": 0.9940029985007496,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "supply_part": {
+    "auc": 0.4974704890387858,
+    "n": 297,
+    "p": 0.9505247376311844,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "swarm_10s": {
+    "auc": 0.5581787521079258,
+    "n": 297,
+    "p": 0.15592203898050974,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "swarm_5s": {
+    "auc": 0.5354131534569984,
+    "n": 297,
+    "p": 0.4287856071964018,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "team_launches_60m": {
+    "auc": 0.5101180438448567,
+    "n": 297,
+    "p": 0.8100949525237381,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "ticket_cv": {
+    "auc": 0.4839797639123103,
+    "n": 297,
+    "p": 0.6411794102948526,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "ticket_median": {
+    "auc": 0.44013490725126475,
+    "n": 297,
+    "p": 0.07746126936531735,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   },
+   "wallet_age": {
+    "auc": 0.47554806070826305,
+    "n": 297,
+    "p": 0.6011994002998501,
+    "share_pairs_largest_group": null,
+    "strata": 43
+   }
+  },
+  "strata_L1_variables_U": {
+   "age_at_alert_s": {
+    "auc": 0.5154166666666666,
+    "n": 251,
+    "p": 0.7831084457771115,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "alerts_60m": {
+    "auc": 0.52,
+    "n": 251,
+    "p": 0.6976511744127936,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "candidates_60m": {
+    "auc": 0.605,
+    "n": 251,
+    "p": 0.05347326336831584,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "core_exit_share": {
+    "auc": 0.49583333333333335,
+    "n": 251,
+    "p": 0.9465267366316842,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "core_order_rho": {
+    "auc": 0.43625,
+    "n": 251,
+    "p": 0.21989005497251374,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "creator_buy": {
+    "auc": 0.4825,
+    "n": 251,
+    "p": 0.7321339330334833,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "entry_premium": {
+    "auc": 0.3541666666666667,
+    "n": 251,
+    "p": 0.005497251374312844,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "fund_spread_s": {
+    "auc": 0.509020618556701,
+    "n": 250,
+    "p": 0.8555722138930535,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "fund_to_buy_med_s": {
+    "auc": 0.5197594501718213,
+    "n": 250,
+    "p": 0.728135932033983,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "grouped": {
+    "auc": 0.5,
+    "n": 251,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "jaccard_prev": {
+    "auc": 0.48091934084995663,
+    "n": 229,
+    "p": 0.7056471764117941,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "log_gap_prev_min": {
+    "auc": 0.5394622723330442,
+    "n": 229,
+    "p": 0.48425787106446777,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "market_rate_24h": {
+    "auc": 0.41950321987120515,
+    "n": 243,
+    "p": 0.1504247876061969,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "n_last_funders": {
+    "auc": 0.5304982817869416,
+    "n": 250,
+    "p": 0.20039980009995004,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "n_snipers": {
+    "auc": 0.5516666666666666,
+    "n": 251,
+    "p": 0.2593703148425787,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "new_to_team_share": {
+    "auc": 0.49522983521248914,
+    "n": 229,
+    "p": 0.9245377311344328,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "ntx": {
+    "auc": 0.5145833333333333,
+    "n": 251,
+    "p": 0.7791104447776112,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "other_slot0_buyers": {
+    "auc": 0.5016666666666667,
+    "n": 251,
+    "p": 0.974512743628186,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "other_team_launches_30m": {
+    "auc": 0.5541666666666667,
+    "n": 251,
+    "p": 0.2843578210894553,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "other_team_snipers_buying": {
+    "auc": 0.53875,
+    "n": 251,
+    "p": 0.12443778110944528,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "rank_in_session": {
+    "auc": 0.5883333333333334,
+    "n": 251,
+    "p": 0.1024487756121939,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "recurrent_bots_10s": {
+    "auc": 0.5595833333333333,
+    "n": 251,
+    "p": 0.2538730634682659,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "same_config_prev": {
+    "auc": 0.47094535993061576,
+    "n": 229,
+    "p": 0.4307846076961519,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "shared_funder_prev": {
+    "auc": 0.547641073080481,
+    "n": 227,
+    "p": 0.28235882058970513,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "snipe_sol": {
+    "auc": 0.54,
+    "n": 251,
+    "p": 0.44677661169415295,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "supply_part": {
+    "auc": 0.5375,
+    "n": 251,
+    "p": 0.4912543728135932,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "swarm_10s": {
+    "auc": 0.5670833333333334,
+    "n": 251,
+    "p": 0.19490254872563717,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "swarm_5s": {
+    "auc": 0.59625,
+    "n": 251,
+    "p": 0.07146426786606697,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "team_launches_60m": {
+    "auc": 0.4875,
+    "n": 251,
+    "p": 0.7946026986506747,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "ticket_cv": {
+    "auc": 0.50375,
+    "n": 251,
+    "p": 0.9405297351324338,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "ticket_median": {
+    "auc": 0.39875,
+    "n": 251,
+    "p": 0.054972513743128434,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   },
+   "wallet_age": {
+    "auc": 0.515,
+    "n": 251,
+    "p": 0.7861069465267366,
+    "share_pairs_largest_group": null,
+    "strata": 20
+   }
+  },
+  "target_Y3": {
+   "age_at_alert_s": {
+    "auc": 0.5445223961144091,
+    "n": 339,
+    "p": 0.5107446276861569,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "alerts_60m": {
+    "auc": 0.4840798704803022,
+    "n": 339,
+    "p": 0.8000999500249875,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "candidates_60m": {
+    "auc": 0.5971397733405289,
+    "n": 339,
+    "p": 0.13893053473263367,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "core_exit_share": {
+    "auc": 0.4530491095520777,
+    "n": 339,
+    "p": 0.48125937031484256,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "core_order_rho": {
+    "auc": 0.39989206691851054,
+    "n": 339,
+    "p": 0.11494252873563218,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "creator_buy": {
+    "auc": 0.4824608742579601,
+    "n": 339,
+    "p": 0.7666166916541729,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "entry_premium": {
+    "auc": 0.44036697247706424,
+    "n": 339,
+    "p": 0.38780609695152424,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "fund_spread_s": {
+    "auc": 0.46862521391899603,
+    "n": 338,
+    "p": 0.5577211394302849,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "fund_to_buy_med_s": {
+    "auc": 0.455219623502567,
+    "n": 338,
+    "p": 0.527736131934033,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "grouped": {
+    "auc": 0.5,
+    "n": 339,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "jaccard_prev": {
+    "auc": 0.40599230346344145,
+    "n": 308,
+    "p": 0.13943028485757122,
+    "share_pairs_largest_group": null,
+    "strata": 17
+   },
+   "log_gap_prev_min": {
+    "auc": 0.47333699835074217,
+    "n": 308,
+    "p": 0.6926536731634183,
+    "share_pairs_largest_group": null,
+    "strata": 17
+   },
+   "market_rate_24h": {
+    "auc": 0.4625766871165644,
+    "n": 323,
+    "p": 0.5967016491754122,
+    "share_pairs_largest_group": null,
+    "strata": 18
+   },
+   "n_last_funders": {
+    "auc": 0.47718197375926985,
+    "n": 338,
+    "p": 0.5147426286856571,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "n_snipers": {
+    "auc": 0.5607123583378305,
+    "n": 339,
+    "p": 0.25537231384307846,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "new_to_team_share": {
+    "auc": 0.5489279824079164,
+    "n": 308,
+    "p": 0.4002998500749625,
+    "share_pairs_largest_group": null,
+    "strata": 17
+   },
+   "ntx": {
+    "auc": 0.3939557474365893,
+    "n": 339,
+    "p": 0.09995002498750624,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "other_slot0_buyers": {
+    "auc": 0.41527253103076095,
+    "n": 339,
+    "p": 0.15292353823088456,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "other_team_launches_30m": {
+    "auc": 0.48596869940636805,
+    "n": 339,
+    "p": 0.8225887056471765,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "other_team_snipers_buying": {
+    "auc": 0.5083648138154344,
+    "n": 339,
+    "p": 0.6626686656671664,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "rank_in_session": {
+    "auc": 0.6778197517539126,
+    "n": 339,
+    "p": 0.0069965017491254375,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "recurrent_bots_10s": {
+    "auc": 0.565569347004857,
+    "n": 339,
+    "p": 0.3263368315842079,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "same_config_prev": {
+    "auc": 0.4290819131390874,
+    "n": 308,
+    "p": 0.2383808095952024,
+    "share_pairs_largest_group": null,
+    "strata": 17
+   },
+   "shared_funder_prev": {
+    "auc": 0.49325513196480936,
+    "n": 306,
+    "p": 0.8250874562718641,
+    "share_pairs_largest_group": null,
+    "strata": 17
+   },
+   "snipe_sol": {
+    "auc": 0.48354020507285483,
+    "n": 339,
+    "p": 0.7956021989005497,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "supply_part": {
+    "auc": 0.4932541824069077,
+    "n": 339,
+    "p": 0.9085457271364318,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "swarm_10s": {
+    "auc": 0.5893146249325418,
+    "n": 339,
+    "p": 0.1679160419790105,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "swarm_5s": {
+    "auc": 0.6384241770102537,
+    "n": 339,
+    "p": 0.02948525737131434,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "team_launches_60m": {
+    "auc": 0.5307609282245008,
+    "n": 339,
+    "p": 0.6326836581709145,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "ticket_cv": {
+    "auc": 0.5121424716675661,
+    "n": 339,
+    "p": 0.8605697151424287,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "ticket_median": {
+    "auc": 0.32676740420939016,
+    "n": 339,
+    "p": 0.00849575212393803,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   },
+   "wallet_age": {
+    "auc": 0.41662169454937936,
+    "n": 339,
+    "p": 0.20839580209895053,
+    "share_pairs_largest_group": null,
+    "strata": 19
+   }
+  },
+  "without_largest_group": {
+   "age_at_alert_s": {
+    "auc": 0.47416201117318435,
+    "n": 298,
+    "p": 0.5582208895552224,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "alerts_60m": {
+    "auc": 0.5425977653631285,
+    "n": 298,
+    "p": 0.33183408295852074,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "candidates_60m": {
+    "auc": 0.4965083798882682,
+    "n": 298,
+    "p": 0.953023488255872,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "core_exit_share": {
+    "auc": 0.5,
+    "n": 298,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "core_order_rho": {
+    "auc": 0.45321229050279327,
+    "n": 298,
+    "p": 0.04897551224387806,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "creator_buy": {
+    "auc": 0.4504189944134078,
+    "n": 298,
+    "p": 0.10994502748625687,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "entry_premium": {
+    "auc": 0.45670391061452514,
+    "n": 298,
+    "p": 0.3308345827086457,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "fund_spread_s": {
+    "auc": 0.4776536312849162,
+    "n": 298,
+    "p": 0.47176411794102946,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "fund_to_buy_med_s": {
+    "auc": 0.36522346368715086,
+    "n": 298,
+    "p": 0.0009995002498750624,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "grouped": {
+    "auc": 0.5,
+    "n": 298,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "jaccard_prev": {
+    "auc": 0.4967948717948718,
+    "n": 265,
+    "p": 0.8680659670164917,
+    "share_pairs_largest_group": null,
+    "strata": 25
+   },
+   "log_gap_prev_min": {
+    "auc": 0.46794871794871795,
+    "n": 265,
+    "p": 0.49075462268865566,
+    "share_pairs_largest_group": null,
+    "strata": 25
+   },
+   "market_rate_24h": {
+    "auc": 0.5241228070175439,
+    "n": 288,
+    "p": 0.5907046476761619,
+    "share_pairs_largest_group": null,
+    "strata": 26
+   },
+   "n_last_funders": {
+    "auc": 0.5090782122905028,
+    "n": 298,
+    "p": 0.5272363818090955,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "n_snipers": {
+    "auc": 0.4979050279329609,
+    "n": 298,
+    "p": 1.0,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "new_to_team_share": {
+    "auc": 0.49919871794871795,
+    "n": 265,
+    "p": 0.9800099950024987,
+    "share_pairs_largest_group": null,
+    "strata": 25
+   },
+   "ntx": {
+    "auc": 0.486731843575419,
+    "n": 298,
+    "p": 0.6931534232883558,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "other_slot0_buyers": {
+    "auc": 0.4797486033519553,
+    "n": 298,
+    "p": 0.5662168915542228,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "other_team_launches_30m": {
+    "auc": 0.5886871508379888,
+    "n": 298,
+    "p": 0.04097951024487756,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "other_team_snipers_buying": {
+    "auc": 0.5048882681564246,
+    "n": 298,
+    "p": 0.8455772113943029,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "rank_in_session": {
+    "auc": 0.5579608938547486,
+    "n": 298,
+    "p": 0.15792103948025987,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "recurrent_bots_10s": {
+    "auc": 0.48393854748603354,
+    "n": 298,
+    "p": 0.7091454272863568,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "same_config_prev": {
+    "auc": 0.5104166666666666,
+    "n": 265,
+    "p": 0.617191404297851,
+    "share_pairs_largest_group": null,
+    "strata": 25
+   },
+   "shared_funder_prev": {
+    "auc": 0.4831730769230769,
+    "n": 265,
+    "p": 0.4127936031984008,
+    "share_pairs_largest_group": null,
+    "strata": 25
+   },
+   "snipe_sol": {
+    "auc": 0.5048882681564246,
+    "n": 298,
+    "p": 0.8645677161419291,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "supply_part": {
+    "auc": 0.5020949720670391,
+    "n": 298,
+    "p": 0.9555222388805598,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "swarm_10s": {
+    "auc": 0.4790502793296089,
+    "n": 298,
+    "p": 0.6251874062968515,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "swarm_5s": {
+    "auc": 0.4860335195530726,
+    "n": 298,
+    "p": 0.750624687656172,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "team_launches_60m": {
+    "auc": 0.5488826815642458,
+    "n": 298,
+    "p": 0.1809095452273863,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "ticket_cv": {
+    "auc": 0.48812849162011174,
+    "n": 298,
+    "p": 0.665167416291854,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "ticket_median": {
+    "auc": 0.5048882681564246,
+    "n": 298,
+    "p": 0.848575712143928,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   },
+   "wallet_age": {
+    "auc": 0.48324022346368717,
+    "n": 298,
+    "p": 0.7161419290354822,
+    "share_pairs_largest_group": null,
+    "strata": 27
+   }
+  }
+ },
+ "within_team_time_negative_control": {
+  "auc": 0.5269082921471718,
+  "good": 125,
+  "n": 413,
+  "p": 0.5746425357464253,
+  "pairs": 3642,
+  "share_pairs_largest_group": 0.8034047226798462,
+  "strata": 28
+ }
+}

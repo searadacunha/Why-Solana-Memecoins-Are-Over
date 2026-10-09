@@ -1,0 +1,29 @@
+{
+ "decision": "val_pass (PLAN 7) then Holm m=1 at 0.05; A / B / C as in the candidate file",
+ "features": {
+  "p_entry_over_operator": "entry premium, forensics fA, cut alert - 1 s",
+  "swarm_10s": "distinct external buyer wallets with block time <= t_alert - 10 s (feat_29_swarm.py)"
+ },
+ "fires_by_block_all_alerts": {
+  "DISC": 25,
+  "OOS": 20,
+  "SEL": 26,
+  "VAL": 14
+ },
+ "frozen_at_utc": "2026-10-06 17:53:00",
+ "rule": "IF swarm_10s >= 30 AND p_entry_over_operator <= B THEN SIGNAL",
+ "sha256": {
+  "code/feat_29_swarm.py": "61abf6c74dfc66c3bd3ab19d06b90147eafa368430c05f4b5543c0d3c61e7cbe",
+  "derived/candidates.json": "26ce7c15d366401ed513f2209b77edc6bfe1483f6a27089e480a92b3715e5c02",
+  "derived/candidates_fire.npz": "62b35c63395df65c0e69b1b80cb91f6ff38923ac8581a705e3ef772e71f0e6e3",
+  "derived/feat_swarm.jsonl.gz": "7420ed0efe416f653ddab0d151d49f546b31479ddba1add2d274e20e360ee270",
+  "tables/CANDIDATE_SWARM_CHEAP_ENTRY.md": "a267e440a998a23a6726cc03debb3dc5db5f58ab3553e38bcc87f734463c1796"
+ },
+ "target": "Y2 (x2 confirmed within 1 h from the +5 s entry); Y3, Y5 descriptive",
+ "thresholds": {
+  "A_min": 30,
+  "B_definition": "first tercile of p_entry_over_operator over the 363 DISCOVERY reference rows (rob_80, 2026-10-05)",
+  "B_premium_max": 3.6016666094462075
+ },
+ "trade": "buy +5 s, TP x2 sold at the next read, time exit 1 h, trade.py costs, $500 primary"
+}

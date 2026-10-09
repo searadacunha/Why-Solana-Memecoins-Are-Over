@@ -44,6 +44,11 @@ Reads (all committed, no network, no private state)
     data/v07_exit.json                     exit delay
     data/v09_signature_gros_tokens.json    frozen 70-token sample
     data/screens/trades/index.json         the 19 screenshotted executions
+    post_detection_edge/data/SNAPSHOT.json the live detector's snapshot (act IV)
+    alpha_patterns/tables/*.json           the October 2026 search (act IV):
+                                           discovery_summary, operator_forensics,
+                                           team_rhythm, team_absorption,
+                                           x2_timing_summary
 
 Writes
     docs/out/p1_readme_check.json          the ledger (byte-compared by --strict:
@@ -232,6 +237,103 @@ def d_expl_passthrough(a):
             % (format(p["sol_in"], ",.4f"), format(p["sol_swept_out"], ",.4f")))
 
 
+def d_trades_n(a):
+    """The count of screenshotted trades. The README used to quote the range of
+    their gains too; since 2026-09 it quotes the count alone."""
+    if len(a["trades"]) != a["n"]:
+        raise Absent("index.json: n=%d but %d trades listed" % (a["n"], len(a["trades"])))
+    return int(a["n"])
+
+
+# --- act IV: alpha_patterns/tables/*.json ------------------------------------
+def d_ap_good_rate(a):
+    p = a["population"]["Y2"]
+    if p["eligible"] == 0 or round(p["good"] / p["eligible"], 12) != round(p["rate"], 12):
+        raise Absent("team_absorption: good / eligible does not reproduce the stored rate")
+    return "%d (%.1f %%)" % (p["good"], 100.0 * p["rate"])
+
+
+def d_ap_corroboration(a):
+    """How much the link types confirm each other: for a pair of launches linked
+    one way (shared wallet L1, shared funder L3, two shared wallets L4, same
+    ticket configuration L5), the share also linked another way, divided by the
+    same share among pairs of the same week. Two ratios are left out: the ones
+    with a zero baseline (undefined) and L4 -> L1, which is 1.0 by construction
+    (two shared wallets imply one) and measures nothing."""
+    c = a["groupings"]["corroboration"]
+    kinds = ("L1", "L3", "L4", "L5")
+    ratios = []
+    for k in kinds:
+        for other in kinds:
+            if other == k or (k, other) == ("L4", "L1"):
+                continue
+            base = c[k]["sameweek_baseline_" + other]
+            if base > 0:
+                ratios.append(c[k]["also_" + other] / base)
+    if not ratios:
+        raise Absent("operator_forensics: no corroboration ratio with a non-zero baseline")
+    return "%d to %d" % (round(min(ratios)), round(max(ratios)))
+
+
+def d_ap_rate_range(a):
+    rates = [g["rate_x2"] for g in a["groups"]["U"] if g["eligible"] >= 10]
+    if len(rates) != a["groupings"]["stats"]["U"]["groups_ge"]["10"]:
+        raise Absent("operator_forensics: groups listed with >= 10 outcomes differ from the count")
+    return "%d %% to %d %%" % (round(100.0 * min(rates)), round(100.0 * max(rates)))
+
+
+def d_ap_teams_mixed(a):
+    p = a["population"]
+    return "%d of the %d" % (p["within_teams_mixed"], p["within_teams"])
+
+
+def d_ap_hc1(a):
+    h = a["history_prediction"]["U"]["ALL"]["Y2_HC1"]
+    if round(h["successes"] / h["n"], 12) != round(h["rate"], 12):
+        raise Absent("operator_forensics: HC1 successes / n does not reproduce the stored rate")
+    return "%d times in %d, against %.1f %%" % (h["successes"], h["n"], 100.0 * h["rest_rate"])
+
+
+def d_ap_rhythm_tests(a):
+    rows = [v for v in list(a["rhythm_vs_outcome"].values()) + list(a["sequences"].values())
+            if isinstance(v, dict) and v.get("q_bh_sections_2_3") is not None]
+    if len(rows) != a["family_23_tests"]:
+        raise Absent("team_rhythm: %d tests with a q against family_23_tests=%d"
+                     % (len(rows), a["family_23_tests"]))
+    return "%d, %s" % (len(rows), "none passes" if not any(v.get("passes") for v in rows) else "some pass")
+
+
+def d_ap_within_team(a):
+    rows = a["within_team"]
+    return "%d, %s" % (len(rows), "none passes" if not any(v.get("passes") for v in rows.values()) else "some pass")
+
+
+def d_ap_demand_share_27(a):
+    m = a["mechanism"]["timeline_medians"]["27"]["M7_demand_over_inventory"]
+    return "%.1f %% / %.1f %%" % (100.0 * m["good_median"], 100.0 * m["bad_median"])
+
+
+def d_ap_alert_age(a):
+    d = a["mechanism"]["descriptive"]["age_alert"]
+    return "%.1f s / %.1f s" % (d["good_median"], d["bad_median"])
+
+
+def d_ap_sold_c40(a):
+    d = a["mechanism"]["descriptive"]["team_sold_share_c40"]
+    return "%.1f %% / %.1f %%" % (100.0 * d["good_median"], 100.0 * d["bad_median"])
+
+
+def d_ap_price_paths(a):
+    p = a["mechanism"]["price_after_entry"]
+    return "%.2f / %.2f ; %.2f / %.2f" % (p["at_30"]["good_median"], p["at_300"]["good_median"],
+                                          p["at_30"]["bad_median"], p["at_300"]["bad_median"])
+
+
+def d_ap_tradable(a):
+    rows = a["tradable"]
+    return "%d, %s" % (len(rows), "none passes" if not any(v.get("passes") for v in rows.values()) else "some pass")
+
+
 def _m4_ubiquite(prefixe, infra_attendue):
     """The two ANSEM slot-0 wallets, looked up in the ubiquity table of
     m4_infra.json. The wallets' presence across the 282-token corpus is the
@@ -252,6 +354,19 @@ DERIVES = {
     "v06_42_of_42": d_v06_42_of_42,
     "v09_signature": d_v09_signature,
     "trades_plage": d_trades_plage,
+    "trades_n": d_trades_n,
+    "ap_good_rate": d_ap_good_rate,
+    "ap_corroboration": d_ap_corroboration,
+    "ap_rate_range": d_ap_rate_range,
+    "ap_teams_mixed": d_ap_teams_mixed,
+    "ap_hc1": d_ap_hc1,
+    "ap_rhythm_tests": d_ap_rhythm_tests,
+    "ap_within_team": d_ap_within_team,
+    "ap_sold_c40": d_ap_sold_c40,
+    "ap_demand_share_27": d_ap_demand_share_27,
+    "ap_alert_age": d_ap_alert_age,
+    "ap_price_paths": d_ap_price_paths,
+    "ap_tradable": d_ap_tradable,
     "expl_sol_bons_mois": d_expl_sol_bons_mois,
     "expl_usd_bons_mois": d_expl_usd_bons_mois,
     "expl_usd_fenetre": d_expl_usd_fenetre,
@@ -274,6 +389,8 @@ REGLES = {
     "exact": lambda v: v,
     "round0": lambda v: round(v),
     "round1": lambda v: round(v, 1),
+    "round4": lambda v: round(v, 4),
+    "round1_pct": lambda v: round(100.0 * v, 1),
     "round0_pct": lambda v: round(100.0 * v),
     "dec9": lambda v: "%.9f" % v,
     "pct_pm": lambda v: "±%g%%" % (100.0 * v),
@@ -287,7 +404,7 @@ REGLES = {
 # is reworded the row goes ABSENT rather than passing unnoticed.
 CLAIMS = [
     # ---------------------------------------------------------------- act I --
-    {"section": "1 Act I", "texte": "- 9 wallets",
+    {"section": "1 Act I", "texte": "* **9 wallets**",
      "source": "docs/out/a9_g2y_prelaunch.json",
      "chemin": ["cas_reference", "n_portefeuilles"], "regle": "exact",
      "attendu": 9, "niveau": "MESURE"},
@@ -299,7 +416,7 @@ CLAIMS = [
      "source": "docs/out/a9_g2y_prelaunch.json",
      "chemin": ["cas_reference", "etendue_s"], "regle": "exact",
      "attendu": 343, "niveau": "MESURE"},
-    {"section": "1 Act I", "texte": "token launched **7.6 hours** later",
+    {"section": "1 Act I", "texte": "token launched **7.6 hours later**",
      "source": "docs/out/a9_g2y_prelaunch.json",
      "chemin": ["cas_reference", "delai_creation_h_depuis_dernier_credit"],
      "regle": "round1", "attendu": 7.6, "niveau": "MESURE",
@@ -328,7 +445,7 @@ CLAIMS = [
              "below; it gets its own row because a substring check cannot see "
              "a second occurrence, and the front page is what most people read"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| Withdrawn, Oct–Dec 2024 | **1,190.6957 SOL** |",
+     "texte": '| Withdrawn, Oct–Dec 2024                    | **1,190.6957 SOL** |',
      "texte_fr": "| Retiré, oct.–déc. 2024 | **1 190,6957 SOL** |",
      "source": "docs/out/expl_ledger.json", "derive": "expl_sol_bons_mois",
      "regle": "exact", "attendu": "1,190.6957", "niveau": "MESURE",
@@ -337,7 +454,7 @@ CLAIMS = [
              "the exchange are reported separately and excluded. Replaces the "
              "1 200.12 asserted before, which no on-chain read produced"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| USD at each transfer's own day price | **$237,137.87** |",
+     "texte": "| USD value at each transfer's own day price |    **$237,137.87** |",
      "texte_fr": "| USD au prix du jour propre à chaque transfert | "
                  "**237 137,87 $** |",
      "source": "docs/out/expl_ledger.json", "derive": "expl_usd_bons_mois",
@@ -346,7 +463,7 @@ CLAIMS = [
              "day, never at a window average; expl_ledger publishes "
              "missing_price_days and raises rather than skipping a day"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| Incoming transfers, Oct–Dec 2024 | **245** |",
+     "texte": '| Incoming transfers, Oct–Dec 2024           |            **245** |',
      "texte_fr": "| Transferts entrants, oct.–déc. 2024 | **245** |",
      "source": "docs/out/expl_ledger.json",
      "chemin": ["good_months_2024_10_12", "n_transfers"], "regle": "exact",
@@ -356,7 +473,7 @@ CLAIMS = [
              "than the SOL it sums to -- the money does not depend on how the "
              "transfers are counted"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| Distinct sending wallets, Oct–Dec 2024 | **74** |",
+     "texte": '| Distinct sending wallets                   |             **74** |',
      "texte_fr": "| Portefeuilles expéditeurs distincts, oct.–déc. 2024 | "
                  "**74** |",
      "source": "docs/out/expl_ledger.json",
@@ -370,7 +487,7 @@ CLAIMS = [
              "heuristic resolves four of the 74 to third-party exchange hot "
              "wallets this repository labels elsewhere"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| Full window to 2 Feb 2025 | **$244,315.58** |",
+     "texte": '| Full window through 2 Feb 2025             |    **$244,315.58** |',
      "texte_fr": "| Fenêtre complète jusqu'au 2 février 2025 | "
                  "**244 315,58 $** |",
      "source": "docs/out/expl_ledger.json", "derive": "expl_usd_fenetre",
@@ -393,87 +510,168 @@ CLAIMS = [
              "0.0098 SOL. The derive recomputes that residual from the two "
              "sides rather than trusting the artefact's own field"},
     {"section": "2 Exploiting the pattern",
-     "texte": "| Example trades (a sample; the window holds hundreds) | "
-              "**19 (+100% to +28,465%)** |",
+     "texte": '| Example trades in documented sample        |             **19** |',
      "texte_fr": "| Trades d'exemple (un échantillon ; la fenêtre en compte "
                  "des centaines) | **19 (de +100 % à +28 465 %)** |",
-     "source": "data/screens/trades/index.json", "derive": "trades_plage",
-     "regle": "exact", "attendu": "19 (+100% to +28,465%)",
+     "source": "data/screens/trades/index.json", "derive": "trades_n",
+     "regle": "exact", "attendu": 19,
      "niveau": "MESURE (on the screenshot sample, not on the book)"},
 
     # -------------------------------------------------------------- act III --
     {"section": "3 Act III",
-     "texte": "Measured across **42/42 manually verified launches**",
+     "texte": "across **42/42 manually verified launches**, with each transaction checked individually",
      "source": "data/v05_creation_block.json", "derive": "v05_42_42",
      "regle": "exact", "attendu": "42/42", "niveau": "MESURE",
      "note": "launches with zero small buyer before the block / total"},
-    {"section": "3 Act III", "texte": "- **85 SOL**",
+    {"section": "3 Act III", "texte": "* approximately **85 SOL**",
      "source": "data/v05_creation_block.json",
      "chemin": ["agregats", "sol_bloc_med"], "regle": "round0",
      "attendu": 85, "niveau": "MESURE"},
-    {"section": "3 Act III", "texte": "- approximately **79% of supply**",
+    {"section": "3 Act III", "texte": "* approximately **79% of supply**",
      "source": "data/v05_creation_block.json",
      "chemin": ["agregats", "part_supply_med"], "regle": "round0_pct",
      "attendu": 79, "niveau": "MESURE"},
     {"section": "3 Act III",
-     "texte": "**70 tokens reaching at least $500k market cap**",
+     "texte": "of 70 tokens reaching at least $500k market cap",
      "source": "data/v09_signature_gros_tokens.json", "chemin": ["n"],
      "regle": "exact", "attendu": 70, "niveau": "MESURE"},
-    {"section": "3 Act III", "texte": "**58 (82.9%)** exhibit the same signature",
+    {"section": "3 Act III", "texte": "**58 of 70 (82.9%)** exhibited the same signature",
      "source": "data/v09_signature_gros_tokens.json", "derive": "v09_signature",
      "regle": "exact", "attendu": "58 (82.9%)", "niveau": "MESURE"},
-    {"section": "3 Act III", "texte": "market cap is already around **25×**",
-     "source": "docs/out/m2_entry_price.json", "chemin": ["multiple_median"],
-     "regle": "round0", "attendu": 25, "niveau": "MESURE"},
-    {"section": "3 Act III",
-     "texte": "insiders typically exit around **17.5 seconds** after launch",
-     "source": "data/v07_exit.json",
-     "chemin": ["agregats", "delai_transfert_s_med"], "regle": "exact",
-     "attendu": 17.5, "niveau": "MESURE"},
 
     # ------------------------------------------------- act III, ANSEM block --
     # The two rows the ANSEM section CAN back. Restored with the mint and the
     # creation slot so the rest of the block is falsifiable rather than merely
     # unsourced; the slot-0 amounts remain in UNBACKED below.
-    {"section": "4 Real-world example",
-     "texte": "a repeat operator on **24 of 282** tokens",
-     "source": "docs/out/m4_infra.json", "derive": "m4_op1", "regle": "exact",
-     "attendu": "24 of 282, infra=no", "niveau": "MESURE",
-     "note": "yHCxHBEa..., the slot-0 buyer; not classed as shared infrastructure"},
-    {"section": "4 Real-world example",
-     "texte": "5th by ubiquity at **44 of 282** tokens",
-     "source": "docs/out/m4_infra.json", "derive": "m4_sniper",
-     "regle": "exact", "attendu": "44 of 282, infra=yes", "niveau": "MESURE",
-     "note": "9ryBR3Sn..., classed as shared infrastructure"},
 
     # ---------------------------------------------------------- conclusion ---
-    {"section": "6 Why Solana memecoins are finished",
-     "texte": "across **42 out of 42** verified launches",
+    {"section": "6 Why Solana memecoins are over",
+     "texte": "on **42/42** manually verified launches and **58 of 70 (82.9%)** of an independent frozen sample",
      "source": "data/v06_curve_ladder.json", "derive": "v06_42_of_42",
      "regle": "exact", "attendu": "42 out of 42", "niveau": "MESURE",
      "note": "launches with zero curve purchase before the block / total"},
+
+    {"section": "6 Why Solana memecoins are over",
+     "texte": "**58 of 70 (82.9%)** of an independent frozen sample",
+     "source": "data/v09_signature_gros_tokens.json", "derive": "v09_signature",
+     "regle": "exact", "attendu": "58 (82.9%)", "niveau": "MESURE",
+     "note": "second occurrence of the frozen-sample figure, in the closing list"},
+    {"section": "6 Why Solana memecoins are over",
+     "texte": "approximately **79% of supply** on the 42 verified launches",
+     "source": "data/v05_creation_block.json",
+     "chemin": ["agregats", "part_supply_med"], "regle": "round0_pct",
+     "attendu": 79, "niveau": "MESURE"},
+
+    # ---------------------------------------------------------------- act IV --
+    # The exploratory search of October 2026 (alpha_patterns/) and the detector
+    # snapshot it ran on. Every row reads a committed JSON; the French reports
+    # beside them quote the same figures and are not read here.
+    {"section": "5 Act IV", "texte": "alerted on **1,657 launches**",
+     "source": "post_detection_edge/data/SNAPSHOT.json", "chemin": ["n_alerts"],
+     "regle": "exact", "attendu": 1657, "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "over 415 features",
+     "source": "alpha_patterns/tables/discovery_summary.json",
+     "chemin": ["atoms", "n_features"], "regle": "exact", "attendu": 415,
+     "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "On the **1,015 launches** before 15 September 2026",
+     "source": "alpha_patterns/tables/team_absorption.json",
+     "chemin": ["population", "alerts"], "regle": "exact", "attendu": 1015,
+     "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "**612** had an observable one-hour outcome",
+     "source": "alpha_patterns/tables/team_absorption.json",
+     "chemin": ["population", "Y2", "eligible"], "regle": "exact", "attendu": 612,
+     "niveau": "MESURE"},
+    {"section": "5 Act IV",
+     "texte": "**168 (27.5 %)** doubled from the entry price read 5 to 15 s after the alert",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_good_rate",
+     "regle": "exact", "attendu": "168 (27.5 %)", "niveau": "MESURE",
+     "note": "GOOD = two consecutive reads at or above 2x the entry price within 1 h"},
+    {"section": "5 Act IV", "texte": "confirm each other **47 to 212 times** above chance",
+     "source": "alpha_patterns/tables/operator_forensics.json", "derive": "ap_corroboration",
+     "regle": "exact", "attendu": "47 to 212", "niveau": "MESURE",
+     "note": "share of launch pairs linked one way that are also linked another way, "
+             "over the same share among pairs of the same week; the two ratios with a "
+             "zero baseline are left out"},
+    {"section": "5 Act IV", "texte": "**33 teams** have five or more observable launches",
+     "source": "alpha_patterns/tables/operator_forensics.json",
+     "chemin": ["groupings", "stats", "U", "groups_ge", "5"], "regle": "exact",
+     "attendu": 33, "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "**19** have ten or more",
+     "source": "alpha_patterns/tables/operator_forensics.json",
+     "chemin": ["groupings", "stats", "U", "groups_ge", "10"], "regle": "exact",
+     "attendu": 19, "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "from **0 % to 58 %**",
+     "source": "alpha_patterns/tables/operator_forensics.json", "derive": "ap_rate_range",
+     "regle": "exact", "attendu": "0 % to 58 %", "niveau": "MESURE",
+     "note": "x2 rates of the union-identity groups with ten or more observable launches"},
+    {"section": "5 Act IV", "texte": "(p = 0.0017 within the day)",
+     "source": "alpha_patterns/tables/operator_forensics.json",
+     "chemin": ["heterogeneity", "U", "Y2", "10", "p_within_day"], "regle": "round4",
+     "attendu": 0.0017, "niveau": "MESURE",
+     "note": "10,000 reshufflings of the outcomes inside each calendar day"},
+    {"section": "5 Act IV", "texte": "**28 of the 33 teams** have both",
+     "source": "alpha_patterns/tables/team_rhythm.json", "derive": "ap_teams_mixed",
+     "regle": "exact", "attendu": "28 of the 33", "niveau": "MESURE"},
+    {"section": "5 Act IV",
+     "texte": "is right **3 times in 29**, against **44.1 %** for the launches it leaves aside",
+     "source": "alpha_patterns/tables/operator_forensics.json", "derive": "ap_hc1",
+     "regle": "exact", "attendu": "3 times in 29, against 44.1 %", "niveau": "MESURE",
+     "note": "HC1: ten or more resolved antecedents and a 90 % Wilson lower bound of "
+             "the group's rate above the market's; chronological identity"},
+    {"section": "5 Act IV", "texte": "one launch every **20.6 minutes** in the median inside a session",
+     "source": "alpha_patterns/tables/team_rhythm.json",
+     "chemin": ["rhythm_descriptive", "gap_in_session_quantiles_min", "50"],
+     "regle": "round1", "attendu": 20.6, "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "17 pre-registered tests, none passes",
+     "source": "alpha_patterns/tables/team_rhythm.json", "derive": "ap_rhythm_tests",
+     "regle": "exact", "attendu": "17, none passes", "niveau": "MESURE"},
+    {"section": "5 Act IV",
+     "texte": "**32 variables** measured before the alert",
+     "source": "alpha_patterns/tables/team_rhythm.json", "derive": "ap_within_team",
+     "regle": "exact", "attendu": "32, none passes", "niveau": "MESURE",
+     "note": "the README's 'none passes the correction' is checked by the same derive"},
+    {"section": "5 Act IV",
+     "texte": "has sold **4.6 %** of what it holds on a GOOD launch and **4.5 %** on a BAD one",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_sold_c40",
+     "regle": "exact", "attendu": "4.6 % / 4.5 %", "niveau": "MESURE",
+     "note": "medians at creation + 40 s, the launches whose window reaches it"},
+    {"section": "5 Act IV",
+     "texte": "**×1.09** thirty seconds after the entry and **×1.55** after five minutes; "
+              "a BAD one at **×1.01** and **×0.64**",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_price_paths",
+     "regle": "exact", "attendu": "1.09 / 1.55 ; 1.01 / 0.64", "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "a **median 375 s** after the entry",
+     "source": "alpha_patterns/tables/x2_timing_summary.json",
+     "chemin": ["t_hit_2x_s", "p50"], "regle": "round0", "attendu": 375,
+     "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "**1.2 %** of the GOOD launches confirm it within 30 s",
+     "source": "alpha_patterns/tables/x2_timing_summary.json",
+     "chemin": ["share_of_good_confirmed_within_s", "30"], "regle": "round1_pct",
+     "attendu": 1.2, "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "Forty tests of demand at the moment of decision: none passes",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_tradable",
+     "regle": "exact", "attendu": "40, none passes", "niveau": "MESURE"},
+    {"section": "5 Act IV",
+     "texte": "**11.0 %** on the GOOD launches and **9.9 %** on the BAD, 27 s after the alert",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_demand_share_27",
+     "regle": "exact", "attendu": "11.0 % / 9.9 %", "niveau": "MESURE",
+     "note": "external SOL paid over the value of the team's inventory at the alert price, "
+             "medians at alert + 27 s, the last cut before the end of the transaction window"},
+    {"section": "5 Act IV",
+     "texte": "the detector alerts a median **12.6 s / 12.3 s** after the creation (GOOD / BAD launches)",
+     "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_alert_age",
+     "regle": "exact", "attendu": "12.6 s / 12.3 s", "niveau": "MESURE"},
+    {"section": "5 Act IV", "texte": "the signal came **7.6 hours** before the launch",
+     "source": "docs/out/a9_g2y_prelaunch.json",
+     "chemin": ["cas_reference", "delai_creation_h_depuis_dernier_credit"],
+     "regle": "round1", "attendu": 7.6, "niveau": "MESURE",
+     "note": "second occurrence of the act I delay, in act IV"},
 ]
 
 # Figures quoted in README.md that no committed artefact backs. They never fail
 # the run: "unsourced" is a different defect from "wrong". They are printed and
 # counted at every run so the number stays a visible, falling quantity.
 UNBACKED = [
-    {"section": "2 Exploiting the pattern", "texte": "50% at 2×",
-     "raison": "exit tranche size: no source. The operator confirmed no percentage "
-               "at any rung, and code/exit_ladder.py's LADDER is a policy this "
-               "repository stipulates so it can be simulated, not a record of "
-               "execution. The x2 level itself was used post-graduation on large "
-               "positions, not as the first rung of the unattended configuration"},
-    {"section": "2 Exploiting the pattern", "texte": "25% at 5×",
-     "raison": "exit tranche size: no source. The x5 level was part of the "
-               "automated configuration left running unattended; the share sold "
-               "there was never recorded. The 25 % agrees with code/exit_ladder.py "
-               "only because both are the same unsourced assertion"},
-    {"section": "2 Exploiting the pattern", "texte": "10% at 10×",
-     "raison": "exit tranche size: no source. The x10 level was part of the "
-               "automated configuration; the share sold there was never recorded. "
-               "code/exit_ladder.py states 15 %, two unsourced figures that also "
-               "disagree. Not to be resolved by picking one"},
     # Four entries used to sit here: 238 989.57 $, 246 945.59 $, 312 withdrawals
     # and 97 trading wallets. They are gone from this list because they were
     # measured, not because they were deleted: code/expl_ledger.py reconstructs
@@ -483,7 +681,7 @@ UNBACKED = [
     # and no data source. This list may only shrink this way, or by a figure
     # leaving the README; never by dropping a row that is still asserted.
     {"section": "1 Act I",
-     "texte": "roughly **2% of the supply** (around 20 million tokens)",
+     "texte": "roughly **2% of supply** — around 20 million tokens",
      "raison": "data/ holds no purchased-token quantity for the phase-1 tokens; "
                "a9 lists this under non_etabli"},
     {"section": "4 Real-world example",
@@ -499,44 +697,21 @@ UNBACKED = [
      "raison": "the mint is published so the block is falsifiable, but no "
                "script here measures it; re-running the frozen v05/v06 chain "
                "on it needs $HELIUS_API_KEYS and is the declared remedy"},
-    {"section": "4 Real-world example", "texte": "creation slot **426930467**",
+    {"section": "4 Real-world example", "texte": "**426930467**",
      "raison": "the ANSEM launch has no committed artefact"},
-    {"section": "4 Real-world example", "texte": "only two buyers",
+    {"section": "4 Real-world example", "texte": "only **two buyers**",
      "raison": "the ANSEM launch has no committed artefact"},
     {"section": "4 Real-world example", "texte": "sixteen signatures",
      "raison": "the ANSEM launch has no committed artefact"},
-    {"section": "4 Real-world example",
-     "texte": "approximately **$6,300** spent on launch",
-     "raison": "reported off-chain by third parties; nothing in data/ measures it"},
-    {"section": "4 Real-world example", "texte": "**June 16, 2026**",
+    {"section": "4 Real-world example", "texte": "**2026-06-16 21:05:48 UTC**",
      "raison": "the ANSEM launch has no committed artefact"},
-    {"section": "6 Why Solana memecoins are finished",
-     "texte": "only **0.26%** of pump.fun tokens now graduate",
-     "raison": "network-wide aggregate; no script in this repository computes "
-               "it. Cited to DEXTools, 22 June 2026, in footnote [^macro]"},
-    {"section": "6 Why Solana memecoins are finished",
-     "texte": "from approximately **33,000 SOL/day** to roughly **5,300 SOL/day**",
-     "raison": "network-wide aggregate; no script in this repository computes "
-               "it. Cited to DEXTools, 22 June 2026, in footnote [^macro]"},
-    {"section": "6 Why Solana memecoins are finished",
-     "texte": "fell roughly **84%**",
-     "raison": "arithmetic on the two SOL/day endpoints above, which are "
-               "themselves unsourced here; the percentage had no row of its "
-               "own and was invisible to this ledger"},
-    {"section": "6 Why Solana memecoins are finished",
-     "texte": "shed billions in market cap",
-     "raison": "network-wide market-cap loss; no script in this repository "
-               "measures it, and the figure is deliberately left qualitative. "
-               "The DEXTools graduation collapse and 84% fee decline in "
-               "[^macro] are the measured proxy for the consequence, not a "
-               "measurement of the market-cap figure itself"},
     {"section": "2 Exploiting the pattern",
-     "texte": "a ChangeNOW-funded wallet buying at least **2% of supply**",
+     "texte": "ChangeNOW-funded wallet buying at least **2% of supply**",
      "raison": "second occurrence of the entry rule, in the Exploiting the "
                "Pattern section; same gap as the Act I wording -- data/ holds "
                "no purchased-token quantity for the phase-1 tokens"},
     {"section": "2 Exploiting the pattern",
-     "texte": "1% of the supply at most",
+     "texte": "1% of supply at most",
      "raison": "the operator's own position size, stated as personal prose. No "
                "artefact of this repository measures the size of my own buys; "
                "the deposit ledger measures only the net that reached the "
@@ -547,19 +722,33 @@ UNBACKED = [
     # proceeds landing on the exchange, not the buys that produced them. Listed
     # here rather than asserted -- the credibility of the ledger is worth more
     # than the figure (see CHRONOLOGIE.md, "Phase 0", author testimony).
-    {"section": "5 Author",
-     "texte": "roughly **$400** of starting capital",
+    {"section": "0 Disclosure",
+     "texte": "Starting capital was roughly **$400**",
      "raison": "seed capital: Phase-0 author recollection from before the "
                "2024-10-01 window the deposit ledger measures. Nothing in data/ "
                "records the initial funding into the first wallet; the ledger "
                "measures only proceeds landing on the exchange. Never measured, "
                "listed as unsourced"},
-    {"section": "5 Author",
-     "texte": "staked **1-2 SOL** and closed near **$2,000**",
-     "raison": "first-trade stake and exit: Phase-0 (token EPEP, per "
-               "CHRONOLOGIE.md), before the measured window and never resolved "
-               "on chain. A deposit ledger sees proceeds arriving, not the "
-               "trades that produced them, so no artefact here reconstructs it"},
+    # Act IV quotes three results of the nine pre-registered studies in prose.
+    # Their results.md tables carry them; no JSON of those studies is read here.
+    {"section": "5 Act IV", "texte": "78 % of the supply, exit wallets",
+     "raison": "economic_mechanics/results.md, the share of the supply the "
+               "coordinated snipers hold after the creation slot (TRAIN and "
+               "VALIDATION medians); stated in its results tables, not in a JSON "
+               "this ledger reads. The same quantity on the alpha_patterns launches "
+               "is the 77.7 % / 77.8 % row of alpha_patterns/tables/team_absorption.json"},
+    {"section": "5 Act IV", "texte": "four snipers",
+     "raison": "economic_mechanics/results.md, the typical coordinated launch (four sniper "
+               "wallets, about 25 SOL each); results tables, no JSON read here"},
+    {"section": "5 Act IV",
+     "texte": "the same snipers funded again a median 21 minutes later (18 in the validation weeks)",
+     "raison": "economic_mechanics/results.md, median gap between two launches of "
+               "the same snipers (21 min TRAIN, 18 min VALIDATION); results table, "
+               "no JSON read here"},
+    {"section": "5 Act IV", "texte": "Yes, in about four launches out of five",
+     "raison": "coordination_detection/README.md: the rate of launches with a "
+               "coordinated funding and buying structure, TRAIN and VALIDATION; "
+               "results table, no JSON read here"},
 ]
 
 
