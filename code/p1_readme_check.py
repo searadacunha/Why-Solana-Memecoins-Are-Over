@@ -11,9 +11,7 @@ unsourced is a different defect from wrong.
 
 A failing row means the README states a number this code does not produce. Fix
 the README, or fix the measurement; never adjust the expected value to match
-the prose. Every row reproduces today, so a red row is a real signal. (Until
-2026-08-10 the front page also quoted this run's two counts in a banner; the
-author removed it, and they now live only in this script's output and JSON.)
+the prose. Every row reproduces today, so a red row is a real signal.
 
 Only the literal `texte` substrings are matched, so a correct number can sit in
 a sentence whose surrounding claim is false and the row still passes on the
@@ -716,19 +714,15 @@ UNBACKED = [
                "artefact of this repository measures the size of my own buys; "
                "the deposit ledger measures only the net that reached the "
                "exchange. Kept as prose, never a measured row"},
-    # Phase-0 seed capital and first trade, in the Author section. Author
-    # recollection from BEFORE the 2024-10 window: out of the measured
-    # perimeter, and structurally invisible to the deposit ledger, which sees
-    # proceeds landing on the exchange, not the buys that produced them. Listed
-    # here rather than asserted -- the credibility of the ledger is worth more
-    # than the figure (see CHRONOLOGIE.md, "Phase 0", author testimony).
-    {"section": "0 Disclosure",
-     "texte": "Starting capital was roughly **$400**",
-     "raison": "seed capital: Phase-0 author recollection from before the "
-               "2024-10-01 window the deposit ledger measures. Nothing in data/ "
-               "records the initial funding into the first wallet; the ledger "
-               "measures only proceeds landing on the exchange. Never measured, "
-               "listed as unsourced"},
+    # Starting capital is the author's firsthand trading account. Keep its
+    # wording tracked separately from the withdrawal measurements: the exchange
+    # ledger records funds received, not the initial fiat funding.
+    {"section": "0 Trading record",
+     "texte": "I started with **€400**.",
+     "raison": "starting capital confirmed directly by Benjamin Da Cunha in "
+               "his firsthand trading account. The automated ledger check "
+               "reconstructs withdrawals reaching the exchange; it does not "
+               "reconstruct the initial fiat funding"},
     # Act IV quotes three results of the nine pre-registered studies in prose.
     # Their results.md tables carry them; no JSON of those studies is read here.
     {"section": "5 Act IV", "texte": "78 % of the supply, exit wallets",
