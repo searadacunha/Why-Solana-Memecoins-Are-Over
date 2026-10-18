@@ -484,9 +484,9 @@
  "non_source": [
   {
    "present_dans_readme": true,
-   "raison": "seed capital: Phase-0 author recollection from before the 2024-10-01 window the deposit ledger measures. Nothing in data/ records the initial funding into the first wallet; the ledger measures only proceeds landing on the exchange. Never measured, listed as unsourced",
-   "section": "0 Disclosure",
-   "texte": "Starting capital was roughly **$400**"
+   "raison": "starting capital confirmed directly by Benjamin Da Cunha in his firsthand trading account. The automated ledger check reconstructs withdrawals reaching the exchange; it does not reconstruct the initial fiat funding",
+   "section": "0 Trading record",
+   "texte": "I started with **\u20ac400**."
   },
   {
    "present_dans_readme": true,

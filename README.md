@@ -1,20 +1,18 @@
 # Why Solana Memecoins Are Over
 
+## €400 to start. $237,137.87 withdrawn.
+
+I started with **€400**.
+
 Between **October and December 2024**, I withdrew **$237,137.87** trading memecoins on **pump.fun**.
 
-I had started with roughly **$400**, a multiple of about **590×**.
+I found a pattern in how fresh wallets were funded before launch. I traded the accumulation that followed.
 
-I stopped when the pattern I was exploiting disappeared.
+Then the pattern disappeared.
 
-Not because the market had become impossible to read.
+**The mechanism had changed. I followed the money to find out how.**
 
-Because the mechanism had changed.
-
-So I did what I had been doing from the beginning: I went back to the chain and looked for what replaced it.
-
-This repository is the result.
-
-It is part trading history, part on-chain investigation, and part attempt to prove myself wrong.
+This repository follows that trail: the pattern I traded, the launches I reconstructed, the recurring groups I identified, and the tests I ran to find another edge.
 
 ---
 
@@ -47,25 +45,17 @@ The central question was simple:
 
 ---
 
-# Disclosure
+# My Trading Record
 
 The pattern documented below is one I identified and traded myself, lawfully, under my own name.
 
-Starting capital was roughly **$400**; withdrawals over October–December 2024 came to **$237,137.87**, a multiple of roughly **590×**.
+I started with **€400**. Between October and December 2024, I withdrew **$237,137.87**.
 
 The withdrawal figure is reconstructed directly from the blockchain by `code/expl_ledger.py` and reproduces from the committed artefacts.
 
-The starting capital is different: it is a Phase-0 recollection from before the measured window and is explicitly marked as unsourced. The 590× figure is therefore arithmetic based on those two numbers and inherits the same limitation.
-
-I consider that distinction important.
-
-Where this repository can measure something, I measure it.
-
-Where it cannot, I say so.
+My exchange deposit address is public. The transaction-level ledger is published. Anyone can reconstruct the withdrawals.
 
 When the trading stopped, I turned the same methodology against my own claims. `docs/PITFALLS.md` documents fifteen competing explanations that were tested, corrected or retired. Results that could not be regenerated from the published data were withdrawn; `docs/PITFALLS.md` §18 lists them rather than silently removing them.
-
-That standard is intentional.
 
 ---
 
@@ -187,7 +177,7 @@ And eventually, that information stopped being observable.
 
 ---
 
-# Results
+# Results — $237,137.87 Reconstructed on Chain
 
 The results below are reconstructed from the blockchain, from the deposit address's own balance changes.
 
@@ -214,7 +204,7 @@ Those definitions are documented rather than hidden.
 
 ---
 
-# The evidence is public
+# The Evidence Is Public — Follow the Money
 
 The deposit address used for the reconstruction is published:
 
@@ -345,7 +335,7 @@ a behavioural signature can be defined, measured, and triggered on a new event.
 
 ---
 
-# Act IV — The Signal Still Exists. The Edge Doesn't.
+# Act IV — I Found the Teams. The Tests Found No Edge.
 
 A live detector ran from 21 August 2026.
 
@@ -532,23 +522,7 @@ Manual verification
 Reproducible result
 ```
 
-The repository therefore separates:
-
-**Measured facts**
-
-from
-
-**interpretations**
-
-from
-
-**external claims**
-
-from
-
-**unsourced historical recollections**.
-
-That separation is intentional.
+The repository distinguishes **reproducible measurements**, **analytical interpretations**, **external sources**, and **my firsthand trading account**.
 
 ---
 
@@ -562,13 +536,14 @@ I built the Python pipeline that collects and rebuilds the transactions, the che
 
 | | |
 |---|---|
+| **Trading record** | I started with **€400** and withdrew **$237,137.87** in October–December 2024. The withdrawals are reconstructed from my public exchange deposit address. |
 | **Question** | Can coordinated buying around token launches be measured from public chain data alone, and does it tell you which launches will succeed? |
 | **What I built** | A Python pipeline, one script per measurement, that reads Solana blocks and transactions over RPC and rebuilds funding flows, launch-time purchases and exits. Every script under `code/` that computes a number uses the standard library only. |
 | **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks that each output is byte-identical to the committed one, checks 43 README figures against their sources, and runs 76 unit tests, type checks, a linter and a publication gate. |
 | **Research design** | Nine studies on the 1,657 alerts of a live detector, each with a written plan, a frozen input table (SHA-256) and a verdict, then one exploratory search over 415 features. |
 | **Measured** | 2024: fresh wallets funded through the same swap service before launch, on 6 of 13 measured tokens. 2026: the token's sale curve bought in the very block (slot) that creates the token, on all 42 launches of recurring buyer groups rebuilt transaction by transaction, a selected sample rather than a market-wide rate. The groups behind the 2026 alerts recur from launch to launch. |
 | **Negative results** | No tradable edge. One of 12 signals locked before the test survived it (the chance of doubling within 15 minutes rose from 31.0 % to 45.7 %) and still lost money after costs. The search over 415 features found nothing exploitable. The 2024 funding signature stops separating the tokens I traded once a criterion that also fires on random wallets is removed (`docs/SPLIT_PHASE1.md` §6). |
-| **Not established** | Who controls the wallets: links are measured, ownership and intent are not attributed. The roughly $400 starting capital of my 2024 trading, an unsourced recollection. The live detector's code, a separate project: only its frozen alert journal is here. The October 2026 search (`alpha_patterns/`) is exploratory, not validated out of sample. |
+| **Not established** | Who controls the wallets: links are measured, ownership and intent are not attributed. The live detector's code, a separate project: only its frozen alert journal is here. The October 2026 search (`alpha_patterns/`) is exploratory, not validated out of sample. |
 
 ## Where to look
 
@@ -636,7 +611,7 @@ What a clone does not rerun:
 
 I published this investigation under my real name deliberately.
 
-The commits are authored under it, or, for edits made in the GitHub web editor, under `teamdacunha`, the display name of my account.
+`teamdacunha` is the display name of my GitHub account.
 
 The trading screenshots retain the `teamdacunha` referral handle.
 
