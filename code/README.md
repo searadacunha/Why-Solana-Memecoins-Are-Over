@@ -344,9 +344,7 @@ Its question is deliberately narrow:
 
 > **What actually landed on the exchange deposit address between 2024-10-01 and 2025-02-02?**
 
-Several figures in the root `README.md` were previously asserted rather than measured.
-
-They are now generated from the ledger artefact.
+The financial figures in the root `README.md` are generated from the ledger artefact.
 
 Run:
 
@@ -470,14 +468,6 @@ The repository treats this as a deliberate trade-off:
 > **Public verifiability over pseudonymity for this particular artefact.**
 
 The address is a KYC-linked exchange deposit address, so publishing it permanently connects the ledger to the author's legal identity.
-
-Before this decision, it was represented using a salted-HMAC label:
-
-```text
-RDCT-838bf381fe
-```
-
-That mechanism was retired when the address was published.
 
 The script still reads the address from:
 
@@ -688,7 +678,7 @@ Current scope:
 
 None belongs to the operator clusters analysed in the dossier.
 
-The former HMAC-based privacy redaction for the author's exchange deposit address was removed when that address was deliberately published in 2026-08.
+The author's exchange deposit address is public and is not redacted.
 
 ---
 
@@ -708,8 +698,6 @@ r1lib.save
 This means a rerun from the raw network cache cannot accidentally reintroduce a redacted identifier into a published artefact.
 
 `sanitize_data.py --check` verifies this invariant.
-
-The repository previously had a more dangerous implementation.
 
 A naive `{32,44}` pattern could match a 44-character substring inside a valid 87–88 character Solana transaction signature and corrupt it.
 
