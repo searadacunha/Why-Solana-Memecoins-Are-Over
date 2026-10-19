@@ -238,6 +238,7 @@ class Roles:
     """Known wallets of the frozen tables with the time each role becomes visible, clusters and hubs."""
 
     def __init__(self, rows: list[dict[str, Any]]) -> None:
+        E.require_hops(rows)
         self.cl = E.clusters(rows)
         self.first: dict[str, float] = {}
         self.launches: dict[str, set[str]] = defaultdict(set)

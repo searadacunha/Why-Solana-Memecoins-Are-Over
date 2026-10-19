@@ -92,14 +92,17 @@ def integrity(out: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> None:
+    # Validate all collection metadata before replacing the frozen table.
+    calls = json.load(open(os.path.join(L.CACHE, "budget.json")))
+    done = [x for x in open(os.path.join(L.CACHE, "collect.log")) if "stopped: " in x]
     F = N.Fetch(online=False)
     out = C.run(F, 1, lambda m: None)
-    done = [x for x in open(os.path.join(L.CACHE, "collect.log")) if "stopped: " in x]
     out["stopped"] = done[-1].split("stopped: ", 1)[1].strip() if done else "collection log has no end line"
     raw = json.dumps(out, sort_keys=True, separators=(",", ":")).encode()
-    with open(TABLE, "wb") as fh:
-        fh.write(gzip.compress(raw, mtime=0))
-    sha = hashlib.sha256(open(TABLE, "rb").read()).hexdigest()
+    packed = gzip.compress(raw, mtime=0)
+    sha = hashlib.sha256(packed).hexdigest()
+    if os.path.exists(FREEZE) and sha != json.load(open(FREEZE))["sha256_table"]:
+        sys.exit("rebuilt funder table differs from the frozen one (check cache completeness); outputs left unchanged")
     commit = subprocess.run(
         ["git", "-C", N.ROOT, "log", "-1", "--format=%h", "--", "funder_network/analysis_plan.md"],
         capture_output=True,
@@ -108,15 +111,17 @@ def main() -> None:
     doc = {
         "sha256_table": sha,
         "protocol_commit": commit,
-        "calls": json.load(open(os.path.join(L.CACHE, "budget.json"))),
+        "calls": calls,
         "probe_calls_included": N.PROBE_CALLS,
         "primary": len(out["primary"]),
         "ups": len(out["ups"]),
         "downs": len(out["downs"]),
         "reads": sum(len(v) for v in out["reads"].values()),
     }
-    json.dump(doc, open(FREEZE, "w"), indent=1, sort_keys=True)
     integ = integrity(out)
+    with open(TABLE, "wb") as fh:
+        fh.write(packed)
+    json.dump(doc, open(FREEZE, "w"), indent=1, sort_keys=True)
     json.dump(integ, open(INTEGRITY, "w"), indent=1, sort_keys=True, default=str)
     print(json.dumps(doc, indent=1))
     print(json.dumps(integ, indent=1, default=str)[:5000])
