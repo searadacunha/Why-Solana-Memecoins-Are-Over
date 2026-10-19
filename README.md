@@ -8,9 +8,9 @@ Between **October and December 2024**, I withdrew **$237,137.87** trading memeco
 
 I found a pattern in how fresh wallets were funded before launch. I traded the accumulation that followed.
 
-Then the pattern disappeared.
+Then I could no longer trade the same pattern.
 
-**The mechanism had changed. I followed the money to find out how.**
+**The mechanism appeared to have changed. I followed the money to find out how.**
 
 This repository follows that trail: the pattern I traded, the launches I reconstructed, the recurring groups I identified, and the tests I ran to find another edge.
 
@@ -51,9 +51,11 @@ The pattern documented below is one I identified and traded myself, lawfully, un
 
 I started with **€400**. Between October and December 2024, I withdrew **$237,137.87**.
 
-The withdrawal figure is reconstructed directly from the blockchain by `code/expl_ledger.py` and reproduces from the committed artefacts.
+The withdrawal figure is reconstructed from the deposit address's positive balance changes by `code/expl_ledger.py`. The committed artefact publishes the totals; rebuilding them from transactions requires the on-chain history and daily prices.
 
-My exchange deposit address is public. The transaction-level ledger is published. Anyone can reconstruct the withdrawals.
+My exchange deposit address is public. The aggregate ledger is published. Anyone can reconstruct the incoming transfers.
+
+The **€400** starting capital is my firsthand account. The deposit total is not a complete trading PnL: it does not reconstruct every purchase, loss, fee or possible return of capital.
 
 When the trading stopped, I turned the same methodology against my own claims. `docs/PITFALLS.md` documents fifteen competing explanations that were tested, corrected or retired. Results that could not be regenerated from the published data were withdrawn; `docs/PITFALLS.md` §18 lists them rather than silently removing them.
 
@@ -77,7 +79,7 @@ The interesting part came later.
 
 The wallets multiplied.
 
-The funding pattern disappeared.
+I stopped finding the same funding pattern.
 
 The public signal became harder to observe.
 
@@ -85,7 +87,7 @@ So I rebuilt the investigation from the blockchain and measured what changed.
 
 Then I asked the question a trader would ask next: once the new mechanism is visible on chain, can it be traded?
 
-Act IV is the answer. It is no, for a reason more precise than "the edge is gone".
+Act IV is the answer. No profitable edge was established under the tested conditions, for a reason more precise than "the edge is gone".
 
 The repository contains the data, scripts, validation procedures, competing hypotheses and transaction-level evidence behind that investigation.
 
@@ -173,7 +175,7 @@ The important point for this investigation is not the trading strategy itself.
 
 It is that **the strategy depended on information being publicly observable on-chain.**
 
-And eventually, that information stopped being observable.
+And eventually, I could no longer use that information in the same way.
 
 ---
 
@@ -250,7 +252,7 @@ And anyone watching the chain could buy alongside them.
 
 As the wallet inventory grew into the thousands, the original funding mechanism became less useful.
 
-The public funding stage disappeared.
+I could no longer identify the same public funding stage.
 
 The question was no longer:
 
@@ -260,15 +262,15 @@ It became:
 
 > **"Can accumulation still be detected before the public gets there?"**
 
-That is what led to the next investigation.
+That is what led to the next investigation. The later launches let me measure another mechanism; they do not establish why my 2024 trading results changed.
 
 ---
 
 # Act III — What Replaced It
 
-What replaced the previous pattern does not simply shorten the observation window.
+What I found in the later launches does not simply shorten the observation window.
 
-**It removes it.**
+**It compresses the measured accumulation into the creation slot.**
 
 The new mechanism I identified is what I call the **group snipe**:
 
@@ -281,15 +283,15 @@ The observed signature:
 * approximately **85 SOL**
 * approximately **79% of supply**
 * purchased inside the token creation slot
-* **zero public bonding-curve purchases beforehand**
+* **zero small non-creator purchases before the last large purchase** (small: below 5 SOL; large: at least 5 SOL)
 
-I then tested the same signature on a **separate frozen sample** of 70 tokens reaching at least $500k market cap.
+I then tested a broader signature on a **partly overlapping frozen sample** of 70 tokens reaching at least $500k market cap.
 
-**58 of 70 (82.9%)** exhibited the same signature.
+**58 of 70 (82.9%)** met the broader creation-slot threshold.
 
-This separation between the discovery sample and the frozen sample is deliberate.
+The frozen sample was fixed before this measurement was computed.
 
-It prevents the measurement from simply becoming a collection of examples selected after seeing the result.
+That fixes the denominator. It does not remove the selection of successful tokens or make the two samples independent.
 
 > **What the frozen sample tests.** One thing: at least 60 SOL bought inside the creation slot, whatever the number of buyers (25 of the 58 have one or two buyers in that slot, `data/v09_signature_gros_tokens.json`). Three of the 70 tokens are also among the 42 (`data/v05_creation_block.json` against `data/v09_signature_gros_tokens.json`); without them the rate is 55 of 67. The sample is selected on outcome (tokens that reached $500k), so it shows that the signature is common among large tokens, not that it makes them large (`docs/RESULTATS.md`).
 
@@ -311,7 +313,7 @@ Creation slot:
 
 **426930467**
 
-Using the same measurement scripts:
+In my original observation, not reproduced by the published artefacts:
 
 * **85.007 SOL** purchased in the creation slot
 * **84.74 SOL** purchased by a single wallet
@@ -355,7 +357,7 @@ The reason is the interesting part.
 
 ## What was tried
 
-Each study was written as a plan before its rates were computed, and ended with a verdict.
+Each study was written as a plan before its rates were computed, and ended with a verdict. These plans were applied to historical alerts. Reusing those alerts across studies does not create a fresh prospective test.
 
 The studies that tested a signal read the alerts after 15 September as their hold-out, one after another.
 
@@ -407,11 +409,11 @@ Forty tests of demand at the moment of decision: none passes.
 
 ![F5. Where the information sits](figures/f5_act_iv_information_timing.png)
 
-In 2024, in the reference case of Act I, the signal came **7.6 hours** before the launch, and the move it announced happened in public afterwards.
+In 2024, in the reference case of Act I, the funding came **7.6 hours** before the launch. The buying signal I traded came later, after the token existed.
 
 In 2026 the coordination is on chain in the creation slot itself, the detector alerts a median **12.6 s / 12.3 s** after the creation (GOOD / BAD launches), and the outcome is decided minutes later, inside the price.
 
-The window in between is where an entrant has to decide, and it holds structure, not prediction.
+The window in between is where an entrant has to decide. It holds measurable structure; the predictive gain found did not produce a net trading edge under the tested conditions.
 
 ## Structural signal, predictive signal
 
@@ -419,11 +421,11 @@ A structural signal says who is launching, and how.
 
 A predictive signal says which launch will double.
 
-This repository establishes the first and did not find the second.
+This repository establishes the first and found a limited version of the second: one locked signal raised the measured doubling rate from 31.0 % to 45.7 %, while its simulated strategy still lost money after costs (`post_detection_edge/`).
 
-> We found a strong structural signal of coordinated launch-time accumulation. The analyses performed did not establish that this signal, or anything else observable before the entry, was sufficient to predict which launches would subsequently produce the measured price outcome.
+> We found a strong structural signal of coordinated launch-time accumulation and a statistical improvement in predicting one price outcome. The analyses performed did not establish a profitable trading strategy from that information.
 
-Most figures in this act are checked against their artefact by `code/p1_readme_check.py`; the four quoted from the studies' results tables (78 % of the supply, four snipers, 21 and 18 minutes, four launches out of five) are listed by it as unsourced. The full chapter, hypothesis by hypothesis, is `docs/ACT_IV.md`; the search itself is `alpha_patterns/`.
+Most figures in this act are checked against their artefact by `code/p1_readme_check.py`; the four quoted from the studies' results tables (78 % of the supply, four snipers, 21 and 18 minutes, four launches out of five) remain outside its automated source checks. The full chapter, hypothesis by hypothesis, is `docs/ACT_IV.md`; the search itself is `alpha_patterns/`.
 
 **Exploratory, not validated out of sample.** These analyses ran on the first 1,015 alerts. One pre-declared rule was read once on the following week and failed. The last week was never read by this search; those alerts had already served as the earlier studies' hold-out, so no block of the snapshot is untouched, and a confirmation has to come from new alerts.
 
@@ -433,33 +435,33 @@ Most figures in this act are checked against their artefact by `code/p1_readme_c
 
 The story of this repository is a single chain of questions.
 
-1. In 2024 I had an observable edge: wallets funded hours before a launch, accumulating in public.
-2. The mechanism changed, and the edge went with it.
-3. I identified what replaced it: the group snipe, the whole curve bought in the creation slot, on **42/42** manually verified launches and **58 of 70 (82.9%)** of an independent frozen sample, approximately **79% of supply** on the 42 verified launches.
+1. In 2024 I traded an observable pattern: wallets funded hours before a launch, accumulating in public.
+2. It stopped working for me. The later launches showed a different mechanism.
+3. I measured the group snipe on **42/42** manually verified launches, approximately **79% of supply** on the 42 verified launches. A broader threshold was met by **58 of 70 (82.9%)** of a partly overlapping frozen sample.
 4. I then asked whether the new mechanism could itself become an edge.
 5. I identified the teams and their structure.
 6. I tried their rhythm.
 7. I tried the configuration of their bundles.
 8. I tried to tell their GOOD launches from their BAD ones.
 9. I tried the absorption of their inventory by outside demand.
-10. Nothing tested gave a signal early enough to act on.
-11. That is the result: the market now reveals the coordination of a launch without revealing, early enough, whether it will succeed.
+10. Nothing tested established a profitable strategy after costs.
+11. That is the result: these launches reveal coordination, and one signal improved prediction, without establishing a tradable edge.
 
 In 2024, outsiders could observe accumulation, and that observation was the opportunity.
 
-By 2026 the same activity happens inside the creation slot, and what the public sees first is the market after it.
+In the 2026 launches studied, most of the measured accumulation happens inside the creation slot, and a later entrant faces the market after it.
 
-The information advantage did not just shrink.
+The observable timing is different.
 
-It moved: from the funding, hours ahead of the launch, to the demand, minutes behind the entry.
+Funding hours ahead in one historical case. Demand unfolding minutes after entry in the later cohort. Those are different samples, not a continuous measurement of the transition.
 
 The conclusion I can defend from the on-chain evidence is narrower:
 
-> **The observable accumulation pattern that made the 2024 strategy possible was replaced by a launch-time mechanism whose coordination is observable, and whose outcome was not found to be predictable early enough to trade.**
+> **The 2024 account and the 2026 measurements show different accumulation timing. The later mechanism's coordination is observable, but the tested predictive gains did not establish a profitable trading strategy.**
 
-The public wasn't simply outcompeted.
+The investigation reaches a trading limit.
 
-**The observable order flow changed, and the part of it that predicts moved out of reach.**
+**The structure is measurable. A profitable edge remains unproven.**
 
 ---
 
@@ -530,7 +532,7 @@ The repository distinguishes **reproducible measurements**, **analytical interpr
 
 [![ci](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml/badge.svg)](https://github.com/searadacunha/Why-Solana-Memecoins-Are-Over/actions/workflows/ci.yml)
 
-I built the Python pipeline that collects and rebuilds the transactions, the checks that try to break the conclusions (`docs/PITFALLS.md`), and a CI that fails when a committed table, or one of the 43 README figures it tracks, no longer matches the code behind it. I work with AI coding agents (Claude Code); the commits they co-wrote carry a co-author line.
+I built the Python pipeline that collects and rebuilds the transactions, the checks that try to break the conclusions (`docs/PITFALLS.md`), and a CI that fails when a declared offline output, or one of the 43 README figures it tracks, no longer matches its reference. I work with AI coding agents (Claude Code); the commits they co-wrote carry a co-author line.
 
 ## At a glance
 
@@ -539,7 +541,7 @@ I built the Python pipeline that collects and rebuilds the transactions, the che
 | **Trading record** | I started with **€400** and withdrew **$237,137.87** in October–December 2024. The withdrawals are reconstructed from my public exchange deposit address. |
 | **Question** | Can coordinated buying around token launches be measured from public chain data alone, and does it tell you which launches will succeed? |
 | **What I built** | A Python pipeline, one script per measurement, that reads Solana blocks and transactions over RPC and rebuilds funding flows, launch-time purchases and exits. Every script under `code/` that computes a number uses the standard library only. |
-| **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks that each output is byte-identical to the committed one, checks 43 README figures against their sources, and runs 76 unit tests, type checks, a linter and a publication gate. |
+| **How it is checked** | On every push, GitHub Actions reruns the 22 offline scripts and checks their declared outputs against the committed references, checks 43 README figures against their sources, and runs 91 tests, type checks, a linter and a publication gate. |
 | **Research design** | Nine studies on the 1,657 alerts of a live detector, each with a written plan, a frozen input table (SHA-256) and a verdict, then one exploratory search over 415 features. |
 | **Measured** | 2024: fresh wallets funded through the same swap service before launch, on 6 of 13 measured tokens. 2026: the token's sale curve bought in the very block (slot) that creates the token, on all 42 launches of recurring buyer groups rebuilt transaction by transaction, a selected sample rather than a market-wide rate. The groups behind the 2026 alerts recur from launch to launch. |
 | **Negative results** | No tradable edge. One of 12 signals locked before the test survived it (the chance of doubling within 15 minutes rose from 31.0 % to 45.7 %) and still lost money after costs. The search over 415 features found nothing exploitable. The 2024 funding signature stops separating the tokens I traded once a criterion that also fires on random wallets is removed (`docs/SPLIT_PHASE1.md` §6). |
@@ -573,12 +575,12 @@ python3 code/run_all.py --strict
 python3 code/p1_readme_check.py
 ```
 
-The first command ends with `22 ran, 20 skipped, 0 failed` and `every committed table and JSON reproduced byte for byte`, in about 30 seconds. The second prints the claim ledger, every sourced row `OK`, then the figures that have no artefact. The rest of the CI needs `pip install pytest mypy ruff`, then `python3 -m pytest -q` (76 passed) and `ruff check .`. Python 3.9 to 3.11 also run the scripts, but two floating-point aggregates then differ in their last digits, so `--strict` is byte-exact on 3.12 and 3.13 only.
+The first command ends with `22 ran, 20 skipped, 0 failed` and `all compared artefacts unchanged byte for byte (skipped scripts not revalidated)`, in about 30 seconds. The second prints the claim ledger, every sourced row `OK`, then the figures outside its linked source checks. The rest of the CI needs `pip install pytest mypy ruff`, then `python3 -m pytest -q` (91 passed) and `ruff check .`. Python 3.9 to 3.11 also run the measurement scripts, but two floating-point aggregates can differ in their last digits; the strict CI comparison targets 3.12 and 3.13. The current mypy configuration targets 3.10 or later.
 
 What a clone does not rerun:
 
-* Of the 42 scripts `run_all.py` lists, 13 need the network (a Solana RPC key, public price APIs), 5 a raw capture corpus that is not published, and 2 redraw figures with matplotlib; the runner names each one and why. The 2024 collection scripts outside it (`code/01_*.py` to `code/08_*.py`, `code/scan_gateway_dispatch.py`) need the network too. The outputs the offline scripts read are committed.
-* CI does not run the nine studies or `alpha_patterns/`. `post_detection_edge/` reruns offline from its committed snapshot. The analysis scripts of `economic_mechanics/`, `exit_destination/` and `funder_network/` need an on-chain cache that is not committed: without it they finish without an error but write different numbers over their committed tables (a known defect, so run them in a scratch clone), and their post-hoc scripts stop on the missing cache. The `alpha_patterns/` scripts need unpublished derived files; `alpha_patterns/code/chk_00_integrity.py` checks the published hashes offline.
+* Of the 42 scripts `run_all.py` lists, 11 need network access or their original caches, 2 specifically read an unpublished block/price cache without fetching it, 5 need an unpublished raw capture corpus, and 2 redraw figures with matplotlib; the runner names each one and why. The 2024 collection scripts outside it (`code/01_*.py` to `code/08_*.py`, `code/scan_gateway_dispatch.py`) need the network too. The outputs the offline scripts read are committed. The deposit ledger's aggregate is checked, but its transactions are not recollected by the default offline run.
+* CI does not rerun the nine studies or `alpha_patterns/`. `post_detection_edge/` reruns offline from its committed snapshot. The cache-dependent analyses of `economic_mechanics/`, `exit_destination/` and `funder_network/` now stop before writing results when their required cache is absent; their frozen-table readers remain usable. Their original on-chain cache is still not published. The `alpha_patterns/` scripts need unpublished derived inputs and refer to old workspace paths; `alpha_patterns/code/chk_00_integrity.py` checks the published hashes offline but cannot reconstruct missing files.
 * The live detector is not published.
 
 ---

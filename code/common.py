@@ -220,9 +220,10 @@ def boot_ci_median_tokens(v, B=4000, seed=12345):
     Two limits are accepted rather than hidden. Tokens of one cluster are
     treated as independent, so the interval is narrower than reality
     (METHODOLOGY 3.1, effective n around 5.5); and random.Random is not
-    byte-identical across Python versions. The cross-version LCG engine is
-    pumplib.bootstrap_median_ci, and the two are deliberately distinct: see the
-    statlib.py header, merging them would change published numbers.
+    guaranteed byte-identical across Python versions.
+    pumplib.bootstrap_median_ci also uses a local seeded random.Random, but
+    its defaults, minimum sample size and percentile indices differ. Keep
+    those procedures distinct rather than silently changing their definitions.
 
     Returns (lo, hi)."""
     import random

@@ -9,17 +9,19 @@
 > 15 to 29 September 2026, 642 alerts. In `alpha_patterns/` the VALIDATION block was read once, for one
 > pre-declared rule, which failed, and the OOS block was never read by this study (those alerts had
 > served as the earlier studies' hold-out, which is why the plan calls any confirmation prospective).
-> A separate, pre-registered confirmatory study on the same detector keeps its own TEST block unread
-> and is not used here. Nothing below is a trading result; several things below are the absence of one.
+> Pre-registration here means a plan fixed before that study's computation on historical alerts;
+> it does not make previously examined alerts a new prospective test. Trading figures below are
+> simulations with estimated costs, not executed trades.
 
-Act III established that the public bonding curve of a successful pump.fun launch is now bought in
-the creation slot by a coordinated group. This chapter asks the question that follows for anyone who
+Act III reconstructed large creation-slot acquisitions on selected launches and found a broader
+creation-slot signature among selected tokens that reached $500k. This chapter asks the question that follows for anyone who
 once traded Act I: **once that group is visible on chain, can what it reveals still be traded?**
 
 Nine pre-registered studies and one systematic search later, the answer, within what was tested, is
 no. The reason is more specific than "the edge is gone". The
-chain still shows *who* is launching and *how*. It no longer shows, early enough, *whether the launch
-will work*. The structural signal survived the change of mechanism. The predictive signal did not.
+chain shows recurring participants and *how* they launch. One signal improved the probability of a
+double within 15 minutes on its held-out test, but its declared trade still lost money. The structural
+signal is clear; a profitable predictive signal was not established.
 
 ---
 
@@ -32,7 +34,8 @@ of the supply (the rule as applied live, `post_detection_edge/results.md`). By t
 (`post_detection_edge/data/SNAPSHOT.json`). Every launch in this chapter is therefore a bundle snipe
 by construction: the population is the detector's, not pump.fun's.
 
-Time was cut before any outcome was read, on alert counts alone (`alpha_patterns/PLAN.md`, §3):
+Time was cut on alert counts before outcomes were read by this search (`alpha_patterns/PLAN.md`, §3);
+earlier studies had already examined these alerts:
 
 | block | period (UTC) | alerts | with an observable 1 h outcome | role |
 |---|---|---:|---:|---|
@@ -92,11 +95,11 @@ singles, 3,103,093 pairs, 131,750 triples; `alpha_patterns/tables/discovery_summ
 26,655 passed (`alpha_patterns/tables/BILAN_2026-10-06.md`, §1). The best DISCOVERY precision, 72 % on 25 launches, is what
 the shuffled outcomes also produce. DISCOVERY generates; it does not judge.
 
-The chain was then calibrated on synthetic outcomes before any hold-out block was read
+The chain was then calibrated on synthetic outcomes before any hold-out block was read by this search
 (`alpha_patterns/code/ctl_00_controls.py`, `alpha_patterns/controles/ctl_00_controls.log`): a planted rule at three
 times the base rate on 8 to 15 % of the alerts survives the full chain in 16 of 24 worlds; at 2.2 times,
-in 3 of 24; at the break-even lift of 1.83, in 1 of 24. A negative result from this search therefore
-excludes only large effects. Rather than freeze ten mechanical candidates per target, the author
+in 3 of 24; at the break-even lift of 1.83, in 1 of 24. The planned chain therefore has useful power
+mainly for large, frequent effects, and can miss even those. Rather than freeze ten mechanical candidates per target, the author
 pre-declared a single rule, SWARM + CHEAP ENTRY (at least 30 external wallets already in by alert − 10 s,
 entry premium in the cheapest tercile): a hypothesis born from DISCOVERY, its swarm half from the
 autopsy of D1 below and its cheap-entry half from an earlier robustness read, and declared as such in
@@ -324,7 +327,7 @@ SWARM + CHEAP ENTRY (`alpha_patterns/tables/CANDIDATE_SWARM_CHEAP_ENTRY.md`, fro
 to a hold-out block. On VALIDATION it fired 13 times: 5 successes, **38.5 % against a block base rate
 of 30.6 %**, lift 1.26, p = 0.39 by the pre-declared test, expected value −11.6 % per trade at $500
 (`alpha_patterns/tables/validation.json`, `alpha_patterns/tables/CANDIDATE_SWARM_CHEAP_ENTRY_RESULT.md`). Verdict: **fail**. The OOS block was
-not opened for it or for anything else. With VALIDATION consumed, the mechanical selection that the
+not opened by this search for it or for anything else. With VALIDATION consumed, the mechanical selection that the
 plan had designed could no longer be run cleanly on this snapshot and was abandoned.
 
 ---
@@ -338,10 +341,10 @@ plan had designed could no longer be run cleanly on this snapshot and was abando
 
 Put the two eras on one clock and the result of this chapter becomes a statement about time.
 
-In 2024 the signal preceded the move. The reference case of Act I had nine fresh wallets funded with
-the same amount within 343 s, **7.6 hours before the token existed**; the accumulation they announced
-then happened in public, one wallet after another. Whoever read the funding had hours to see it and
-minutes to act while the move was still ahead.
+In the 2024 reference case of Act I, nine fresh wallets were funded with
+the same amount within 343 s, **7.6 hours before the token existed**. The author's trading account
+describes using such funding to anticipate subsequent accumulation. The measured funding lead does
+not by itself establish how reliably that anticipation predicted a profitable trade.
 
 In 2026 the signal and the move start together, and the outcome comes later than either. On the
 456 launches of the 33 teams (the figure's population), the snipers hold about 78 % of the supply from
@@ -350,7 +353,7 @@ detector's live share on all 1,015 alerts within 0.012); the tokens leave the sn
 seconds (first transfer a median 7 to 8 s after the creation, on the 337 launches with an observed
 transfer; on the 42 hand-verified launches of June–July the median delay per sniper wallet was 17.5 s,
 `data/v07_exit.json`, a per-wallet statistic on another sample, not the same measure); the detector
-alerts at about 12 s; an entry is read a median 7.7 s after that. Everything that can be seen by then is structure: who the snipers are,
+alerts at about 12 s; an entry is read a median 7.7 s after that. The measured features describe structure: who the snipers are,
 how they were funded, what they hold. At 40 s after the creation (about 27 s after the alert, close to the end of the
 transaction window), the team has sold about 4.5 % of what it holds (4.6 % GOOD, 4.5 % BAD, on the 78 and
 213 launches observed that long) and outside buyers have paid for about one tenth of its value (11.0 %
@@ -359,10 +362,11 @@ minutes, ×1.55 after five; the BAD at ×1.01, ×0.96, ×0.64. The confirmed ×2
 **median 375 s after the entry** (10th percentile 118 s, 90th 1,503 s); 1.2 % of the GOOD launches have
 confirmed it within 30 s, 10.7 % within two minutes, 42.3 % within five (`alpha_patterns/tables/x2_timing_summary.json`).
 
-So the problem is not only that the Act I signal disappeared. The new mechanism **moved the useful
-information along the time axis**. Coordination became visible at once, in the first slot; the demand
-that decides the outcome became visible minutes later, inside the price itself. The window between the
-two is exactly where an entrant has to decide, and it is empty of what the entrant needs.
+These observations suggest a difference in **where information appears along the time axis**.
+Coordination is visible in the first slot; much of the observed separation between GOOD and BAD
+appears minutes later, in the price. The window between the two is where an entrant has to decide,
+and the tested features did not establish a profitable rule there. The different historical samples
+do not establish when this structure replaced the earlier one or caused the author's results to change.
 
 ---
 
@@ -380,16 +384,17 @@ other, never a claim about who holds the keys.)
 A **predictive signal** says something about the future price: that this launch, rather than that
 one, will double. Studies 1 to 4 and 8 and the three mechanism studies looked for it in the entry
 price, the bundle's geometry, the snipers' capital, the operator's identity and history, the team's
-rhythm, its configuration, and the early demand. None of them found it at a level that survives its
-own hold-out block or pays for the trade.
+rhythm, its configuration, and the early demand. Study 1 found a limited predictive signal that
+survived its held-out test: P(×2 within 15 min) rose from 31.0 % to 45.7 %. Its declared trade lost
+23.3 % after estimated costs. None of the tested strategies established positive net expectancy.
 
 The bundle can be real, coordinated and informative about the structure of the participants without
 being predictive of the subsequent return. That is the defensible statement of this repository:
 
 > A strong structural signal of coordinated launch-time accumulation is observable on chain. The
-> analyses performed did not establish that this signal, or anything else observable before the
-> entry, was sufficient to predict which launches would subsequently produce the measured price
-> outcome.
+> analyses found a limited improvement in the probability of a double, but did not establish a
+> strategy with positive net expectancy from the information available before entry, under the
+> tested execution and cost assumptions.
 
 ---
 
@@ -403,8 +408,8 @@ being predictive of the subsequent return. That is the defensible statement of t
 | H4 | early external demand separates GOOD from BAD | more or faster outside buying before the entry on the GOOD | 42 against 40 buyers at +2 s; 19 pre-entry metrics, best q 0.41, inverts on SELECTION | **no** (§6) |
 | H5 | absorption of the inventory explains the pump | the ratio of demand to inventory predicting the ×2 from the decision time | 40 tradable tests, best q 0.91; the ratio only separates the GOOD from +27 to +29 s, when the price is already part of the label | **no as an early signal** (§6) |
 
-What remains is not an absence of structure. It is an absence of predictive information early enough
-to act on.
+The structure remains measurable. These hypotheses did not establish predictive information
+sufficient for a profitable entry under the tested strategies.
 
 ---
 
@@ -416,11 +421,12 @@ We could detect, within seconds of a launch:
 - that several wallets were run together, through shared funding, shared wallets and
   an identical ticket configuration confirming each other 47 to 212 times above chance;
 - that about 78 % of the supply was held by that group;
-- that the execution mechanism of 2024 had been replaced by this one.
+- that these observed launches used a different acquisition sequence from the author's 2024 account.
 
 We did not show that we could predict:
 
-- which launch would reach ×2, or ×3;
+- which launches would reach ×2 or ×3 with a positive net trading expectancy, despite the limited
+  improvement in the fifteen-minute doubling probability in study 1;
 - which launch of a given team would be its GOOD;
 - when the external demand would become sufficient, or whether it would;
 - which launch would be tradable with a positive expectation under the declared costs.
@@ -431,9 +437,10 @@ The boundary between the two lists is the result.
 
 ## 12. What survived, what did not, and what is not claimed
 
-**Survived.** Coordinated launch-time accumulation as the norm (Act III); a repeatable operating loop
+**Survived.** Coordinated launch-time accumulation in the selected Act III launches; a repeatable operating loop
 with a 20 minute cadence; recognisable teams whose ×2 rates differ by about 13 points around the
-market's 27.5 %; the temporal asymmetry of §8.
+observed population's 27.5 %; the temporal asymmetry of §8; the limited predictive signal in study 1,
+whose declared trade nevertheless loses after costs.
 
 **Did not survive.** Every candidate for an early predictive signal listed in §10; the only
 pre-declared rule carried to VALIDATION; the "one pump in three" story; the idea that the early swarm
@@ -441,7 +448,8 @@ of buyers announces the outcome (it is mostly the same recurring bots, on every 
 
 **Not claimed.** That no signal exists: the mechanical search would have frozen a lift of three on 8 to 15 % of the
 alerts in 23 of 24 planted runs and carried it to OOS in 16 of 24 (`alpha_patterns/tables/BILAN_2026-10-06.md`,
-§4), so a miss of that size is unlikely, and smaller effects stay open; the within-team AUCs between 0.5 and 0.68 are not
+§4), leaving 8 of 24 runs without that exact OOS recovery; smaller effects remain weakly tested. These
+controls describe the planned mechanical chain, whose real-data selection was abandoned (§3). The within-team AUCs between 0.5 and 0.68 are not
 excluded; the post-hoc lead on demand velocity for late entries is untested. That absorption during
 the liquidation is not the mechanism: that phase was not observed. That these results hold after
 14 September 2026: DISCOVERY and SELECTION are 25 days (21 August to 14 September 2026) of one detector, SELECTION had been read by

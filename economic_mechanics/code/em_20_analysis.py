@@ -250,6 +250,8 @@ def fmt_test(d: dict[str, Any]) -> str:
 # --------------------------------------------------------------------- main --- #
 def main() -> None:
     rows = E.load()
+    E.require_hops(rows)
+    E.check_prices()
     res: dict[str, Any] = {}
     arch = {r["mint"]: E.architecture(r) for r in rows}
     arch_g = {r["mint"]: E.architecture(r, "gen") for r in rows}

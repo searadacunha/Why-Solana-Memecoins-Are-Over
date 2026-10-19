@@ -4,7 +4,7 @@
 >
 > This document reports three empirical findings:
 >
-> 1. **Launch mechanics:** the bonding curve is acquired inside the token's creation slot, before an external buyer can transact.
+> 1. **Launch mechanics:** large acquisitions occupy the token's creation slot on the selected reconstructed launches, with no observed small purchase before the last large buy.
 > 2. **Buyer structures:** repeated early-buyer structures exist, but graph connectivity is heavily distorted by shared infrastructure.
 > 3. **Buyer economics:** after the initial repricing, the tested entry and exit policies produce negative results across the measured sample.
 >
@@ -16,25 +16,25 @@
 
 ## 1. Launch Mechanics
 
-Across **42 launches reconstructed transaction by transaction**, the bonding curve is acquired inside the **creation slot itself**.
+Across **42 selected launches reconstructed transaction by transaction**, the bonding curve is acquired inside the **creation slot itself**.
 
 Key measurements:
 
 * Median capital committed: **85.2 SOL**
 * Median supply acquired: **79.0%**
-* Curve purchases before the creation slot: **0/42**
+* Launches with a small non-creator purchase before the last large purchase in the slot: **0/42**
 * Median transfer of the acquired position: **t+17.5 s**
 * Median market cap:
 
   * launch: **~$2,158**
-  * first point at which an external buyer can transact: **~$53,985**
-  * increase before external access: **×25.0**
+  * AMM open: **~$53,985**
+  * launch-to-AMM-open increase: **×25.0**
 
-A separate frozen sample of **70 tokens that reached ≥$500k ATH** contains the same creation-slot signature in:
+A separate frozen sample of **70 tokens that reached ≥$500k ATH** contains the broader signature of at least 60 SOL bought in the creation slot in:
 
 **58/70 = 82.9%**
 
-with a Wilson 95% CI of **72.4–89.9%**.
+with a nominal Wilson 95% CI of **72.4–89.9%**. Three tokens overlap the 42-launch sample; excluding them leaves **55/67**. The broader signature has no minimum buyer count, and 25 of its 58 positive cases have only one or two buyers.
 
 This does **not** establish that the signature causes tokens to succeed.
 
@@ -202,35 +202,35 @@ Across the 42 transaction-level reconstructions, the bonding curve is acquired e
 | Total supply acquired           |             **78.95%** | 78.31–79.09% | 76.78–79.25% |
 | Curve share captured            |                 79.09% |            — | 77.60–79.29% |
 | Curve SOL captured              |             **98.72%** |            — |            — |
-| Curve purchases before block    |                  **0** |            — |  max = 0 SOL |
-| Intra-core time gap             |      **0 s / 0 slots** |            — |        42/42 |
+| Small purchases before last large buy |             **0** |            — |  max = 0 SOL |
+| Slot gap between core purchases |            **0 slots** |            — |        42/42 |
 | Ticket CV                       |                 0.0265 |            — |            — |
 | Creator dev-buy                 |              0.068 SOL |            — |            — |
 | Wallets in creation block       | 4 in 33 cases / 5 in 9 |            — |            — |
 
 Two measurements are particularly important.
 
-### No Pre-Block Purchase
+### No Small Purchase Before the Last Large Buy
 
 There are:
 
-**zero curve purchases before the creation block in all 42 launches.**
+**zero observed small non-creator purchases before the last large purchase in all 42 launches.**
 
-This means the measured mechanism is not simply a matter of executing faster than competitors.
+`v05_creation_block.py` defines large purchases as at least 5 SOL and small purchases as less than 5 SOL, with the creator excluded. This size-based classification does not establish that every large buyer belongs to one operator.
 
-There is no observed purchase window between token creation and the measured curve acquisition.
+The reconstruction shows no intervening small purchase during the measured acquisition sequence.
 
-### No Intra-Block Gap
+### Same Creation Slot
 
-The core purchases occur at:
+The core purchases are separated by:
 
-**0 seconds / 0 slots**
+**0 slots**
 
 on all 42 launches.
 
 The four or five purchases therefore occupy the same Solana slot.
 
-A conventional external observer cannot insert a transaction between those observed purchases merely by reducing monitoring latency.
+Transaction order is observable, but elapsed time within the slot is not measured. Same-slot execution does not establish atomicity or a zero-time gap.
 
 ---
 
@@ -370,7 +370,7 @@ One C3 wallet group was created within approximately 50 seconds of one another a
 
 # 1.6 The Signature Among Large Tokens
 
-A separate frozen population of **70 tokens with ATH ≥$500k** was audited independently of the detector.
+A separate frozen population of **70 tokens with ATH ≥$500k** was audited independently of the detector. Three tokens also occur among the 42 reconstructed launches; the samples are not fully independent.
 
 | Measurement                                 |            Result |
 | ------------------------------------------- | ----------------: |
@@ -391,11 +391,13 @@ The 70/70 agreement is notable:
 
 The 70 tokens are the first 70 qualifying tokens in the source file.
 
-The confidence interval quantifies sampling error **within this selected population**.
+The Wilson interval is a nominal binomial interval for these observations.
 
-It does not correct for selection bias.
+It does not correct for selection bias or dependence between launches. Removing the three cases shared with the 42-launch sample leaves **55/67** with the signature.
 
-#### 2. The signature does not predict price trajectory
+#### 2. The signature does not establish a predictor of price trajectory
+
+Here the signature is at least 60 SOL bought in the creation slot, regardless of buyer count. Of the 58 positive cases, 25 have only one or two buyers. This is broader than the four- or five-buyer configuration of the 42 selected launches.
 
 Within these 70 tokens:
 
@@ -951,7 +953,7 @@ The following findings are supported by the measurements documented above.
 Across 42 transaction-level reconstructions:
 
 * the bonding curve is bought inside the creation slot;
-* there are **0 prior purchases in 42/42**;
+* there are **0 small non-creator purchases before the last large purchase in 42/42**;
 * the position is transferred at a median **t+17.5s**.
 
 ### 2. Large Repricing Before External Access
@@ -960,7 +962,7 @@ Median market cap rises approximately:
 
 **$2,158 → $53,985**
 
-before an external buyer can transact.
+at AMM open; this is a measured price stage, not a reconstruction of every possible external entry.
 
 The same phenomenon is independently measured at **×25.2** on 293 captures.
 
@@ -1005,7 +1007,7 @@ The analysis does **not** establish:
 
 ### Historical Market Evolution
 
-The available historical depth is insufficient to date an evolution from sequential purchases to atomic execution.
+The available historical depth is insufficient to date an evolution from sequential purchases to same-slot execution, or to establish that this evolution caused the author's historical trading results to change. Same-slot execution does not establish atomicity.
 
 ### Predictive Power of Cluster Identity
 
@@ -1109,13 +1111,15 @@ A separate reconciliation also corrected the AMM-open market-cap estimate from t
 
 The strongest result in this investigation is not that a particular group “wins” the market.
 
-It is that the **observable launch mechanics are highly structured**, while the **subsequent predictive and trading claims fail under increasingly strict controls**.
+It is that the **observable launch mechanics are highly structured**, while the **tested cluster-based predictive and trading claims are not established in this capture corpus**.
 
 The data support three distinct conclusions:
 
 1. **A reproducible creation-slot execution pattern exists.**
 2. **Persistent buyer structures exist, but graph connectivity must be aggressively controlled for shared infrastructure and temporal co-occurrence.**
-3. **The observed early-entry advantage does not translate into demonstrated predictive power over subsequent token trajectories or positive post-detection trading returns.**
+3. **In this capture corpus, the observed early-entry advantage does not establish predictive power over subsequent token trajectories or positive returns from the tested post-detection policies.**
+
+The later detector study found a limited predictive signal for a double within 15 minutes, but its declared trade lost after estimated costs (`post_detection_edge/results.md`). Statistical prediction and profitable execution remain separate questions.
 
 The analysis therefore treats the forensic signature as a **measured market-microstructure phenomenon**, not as proof of identity, intent, future price direction, or a profitable strategy.
 
