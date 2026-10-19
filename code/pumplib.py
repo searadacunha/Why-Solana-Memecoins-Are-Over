@@ -26,6 +26,7 @@ import datetime as _dt
 import gzip
 import json
 import os
+import random
 import statistics
 
 
@@ -138,22 +139,23 @@ from statlib import median, quantile, wilson  # noqa: E402,F401
 def bootstrap_median_ci(xs, n_boot=2000, seed=12345, alpha=0.05):
     """Bootstrap confidence interval of the median.
 
-    The congruential generator is written out here so the interval is the same
-    on any machine and any version of Python; random.seed does not guarantee
-    that across versions. The per-token variant built on random.Random is
-    common.boot_ci_median_tokens, and the two are deliberately distinct: see
-    the statlib.py header, merging them would change published numbers."""
+    Draw observations independently with replacement using a local seeded
+    generator. Repeated runs are deterministic for a fixed seed and interpreter,
+    without reading or changing the global random state. The former LCG's
+    low bits forced balanced index classes for even sample sizes and could
+    collapse the interval entirely; indexing its raw output modulo n was not
+    a valid bootstrap.
+
+    common.boot_ci_median_tokens uses different defaults, minimum sample size
+    and percentile indices. Keep those procedures distinct."""
     xs = [x for x in xs if x is not None]
     if len(xs) < 3:
         return (None, None)
     n = len(xs)
-    state = seed
+    rng = random.Random(seed)
     meds = []
     for _ in range(n_boot):
-        s = []
-        for _ in range(n):
-            state = (1103515245 * state + 12345) % (1 << 31)
-            s.append(xs[state % n])
+        s = [xs[rng.randrange(n)] for _ in range(n)]
         s.sort()
         meds.append(s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2]))
     meds.sort()
@@ -168,22 +170,19 @@ def cluster_bootstrap_mean_ci(values_by_cluster, n_boot=2000, seed=999, alpha=0.
     independent would overstate the precision.
 
     The statistic resampled is the mean of the cluster means, the same one
-    reported as the point estimate beside it. Resampling clusters and then
-    averaging the pooled tokens would estimate something else, a mean weighted
-    by cluster size, and would return an interval that does not contain its
-    own point estimate."""
+    reported as the point estimate beside it. Draw len(keys) clusters
+    independently with replacement using a local seeded generator, then give
+    each drawn cluster mean equal weight. Averaging the pooled tokens instead
+    would target a different, cluster-size-weighted statistic."""
     keys = sorted(values_by_cluster)
     if len(keys) < 3:
         return (None, None)
     cmeans = {k: sum(v) / len(v) for k, v in values_by_cluster.items() if v}
     keys = [k for k in keys if k in cmeans]
-    state = seed
+    rng = random.Random(seed)
     out = []
     for _ in range(n_boot):
-        acc = []
-        for _ in range(len(keys)):
-            state = (1103515245 * state + 12345) % (1 << 31)
-            acc.append(cmeans[keys[state % len(keys)]])
+        acc = [cmeans[keys[rng.randrange(len(keys))]] for _ in range(len(keys))]
         out.append(sum(acc) / len(acc))
     out.sort()
     return (out[int(alpha / 2 * (len(out) - 1))],

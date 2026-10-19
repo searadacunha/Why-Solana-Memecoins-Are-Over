@@ -595,7 +595,7 @@ Under this six-hour session definition, the observed dispatches are therefore no
 
 The three tests support a deliberately narrow conclusion:
 
-> **Two of the thirteen token pairs are linked by hard on-chain evidence.**
+> **Two pairs among the thirteen measured tokens are linked by repeated funding amounts or a shared buyer wallet.**
 
 That is stronger than:
 
@@ -906,10 +906,10 @@ The current evidence supports the following conclusions.
 * The pattern can involve direct **gateway → wallet** funding.
 * It can also involve **gateway → distributor → wallet** funding.
 * Fresh wallets, pre-launch funding, repeated conversion-output amounts, and chronology form the core observable structure.
-* The pattern appears on **6/13 measured tokens** in the scanned population.
+* Fresh gateway-funded wallets appear before launch on **6/13 measured tokens** in the scanned population; several wallets funded at one identical amount occur on one of those tokens, the reference case.
 * One case was initially hidden by an arbitrary 40-buyer scan limit.
 * The downstream behaviour of the 14 readable gateway-funded wallets is consistent with a **standing wallet fleet**: all 14 subsequently funded at least one newly created address.
-* At least two token pairs have hard on-chain links through recurring funding evidence.
+* Two token pairs are linked by recurring funding amounts or a shared buyer wallet; the shared wallet's gateway funding occurred after both tokens existed (§4).
 * The identity behind those linked operations is **not established**.
 
 ## Not established
@@ -921,6 +921,7 @@ The current evidence supports the following conclusions.
 * That absence of a shared upstream funder implies unrelated operators.
 * That a shared gateway alone demonstrates coordination.
 * That an observed wallet fleet identifies a specific person or organization.
+* That the funding pattern caused the author's historical gains or establishes a profitable trading rule; `SPLIT_PHASE1.md` §6 documents the corrected control comparison.
 
 ---
 
