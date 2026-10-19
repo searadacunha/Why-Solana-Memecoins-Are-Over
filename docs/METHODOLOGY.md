@@ -2,6 +2,8 @@
 
 This chapter is the methodological contract of the repository.
 
+It describes the core capture analysis. The later detector studies have their own protocols and data-availability limits; a plan fixed before a study reads historical outcomes is not, by itself, prospective validation. `ACT_IV.md` records the reuse of hold-out alerts across those studies.
+
 The purpose is simple:
 
 > **Every important claim should be traceable to a definition, a dataset, a measurement, and a validation procedure.**
@@ -220,19 +222,21 @@ The creation-slot signature was measured across **42 launches [R]**.
 | Supply acquired                |  **79.0%** | 76.8–79.3% |
 | Buyers in block                |      **4** |        4–5 |
 | Ticket dispersion (CV)         |  **0.027** |          — |
-| Small buyers before block      | **0 / 42** |          — |
+| Launches with a small purchase before the last large purchase | **0 / 42** |          — |
 
-The independent frozen sample contains tokens that later reached ≥$500k:
+Here, small means under 5 SOL and the creator is excluded. This is a size-based observation, not an ownership classification. The 42 launches were selected from recurring buyer groups in a capture corpus biased toward graduated tokens.
+
+A separate frozen sample contains tokens that later reached ≥$500k:
 
 **58 / 70 = 82.9%**
 
-had their curve bought back for ≥60 SOL inside the creation slot.
+had at least 60 SOL of purchases inside the creation slot. This broader signature has no minimum buyer count: 25 of the 58 have only one or two buyers (`data/v09_signature_gros_tokens.json`). Three of the 70 also appear among the 42; excluding them leaves **55 / 67**. The samples are therefore not fully independent.
 
-Wilson 95% CI:
+Nominal Wilson 95% CI for 58 / 70:
 
 **[72.4%, 89.9%]**
 
-This number has an important limitation:
+This interval does not correct for selection or dependence between launches:
 
 the 70-token sample was selected because those tokens later reached ≥$500k.
 
@@ -924,7 +928,7 @@ An earlier CI check caught a stale T5 result at `n=18`. It was regenerated, and 
 
 | Claim                                    | Population        | Cluster CI          | Multiplicity | MC stratification | Lookahead | Out-of-sample  |
 | ---------------------------------------- | ----------------- | ------------------- | ------------ | ----------------- | --------- | -------------- |
-| No exit policy profitable in expectation | Canonical         | Yes                 | —            | —                 | —         | No             |
+| No tested exit policy establishes positive expectancy | Canonical         | Yes                 | —            | —                 | —         | No             |
 | No post-snipe entry rule reaches 1x      | Canonical         | Yes                 | —            | —                 | Yes       | No             |
 | Value decays over 1–24h                  | 191 / 27 clusters | Yes                 | —            | —                 | —         | No             |
 | Peak already past at first visibility    | B                 | Wilson              | —            | Yes               | —         | Descriptive    |
@@ -953,6 +957,8 @@ Population B extends through:
 The repository does not claim that the observed behaviour is a permanent law of Solana.
 
 Memecoin microstructure can change over weeks.
+
+The selected historical cases and later capture populations do not date a market-wide transition or establish why the author's 2024 trading performance changed.
 
 ---
 

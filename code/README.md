@@ -33,7 +33,7 @@ The strict runner executes the **22 offline scripts**, then compares every regen
 
 A successful run means:
 
-> The numbers published in `docs/` are the numbers produced by the current code from the current committed data.
+> The outputs of the scripts that ran match the committed references on a clean clone. Outputs of skipped scripts are not reconstructed by this check.
 
 It is not a claim that the measurements are universally correct; it is a reproducibility check on the repository's declared measurement pipeline.
 
@@ -47,7 +47,7 @@ ok    a9_g2y_prelaunch.py
 ok    p1_readme_check.py
 
 22 ran, 20 skipped, 0 failed
-every committed table and JSON reproduced byte for byte
+all compared artefacts unchanged byte for byte (skipped scripts not revalidated)
 ```
 
 All 22 offline scripts currently pass, including `p1_readme_check.py`.
@@ -60,7 +60,7 @@ The runner deliberately checks two different things.
 
 ### Artefact reproduction
 
-The code regenerates the committed tables and JSON files byte-for-byte.
+The eligible scripts regenerate their committed tables and JSON files byte-for-byte. The runner compares its declared artefact paths, including some files whose producers are skipped; unchanged files in that second group are not evidence of reconstruction.
 
 This answers:
 
@@ -68,15 +68,15 @@ This answers:
 
 ### Narrative consistency
 
-`p1_readme_check.py` checks every figure quoted in the root `README.md` that has a row in its ledger against the committed artefact behind it. It compares the prose with the artefact; it does not recompute the artefact, which is the job of the strict runner above.
+`p1_readme_check.py` checks every figure quoted in the root `README.md` that has a row in its ledger against the committed artefact behind it. It compares the prose with the artefact; it does not recompute the artefact. The strict runner rebuilds only those whose producing scripts run with the available inputs.
 
 It currently reports:
 
 * **43/43 sourced claims reproduced**
 * **0 mismatches**
-* 15 narrative figures that still have no underlying artefact
+* 15 narrative figures without a source linked by this checker, including figures backed by published results tables or raw records outside its current checks
 
-Those 15 unsourced figures are reported but are not treated as measurement failures.
+Those 15 unchecked figures are reported but are not treated as measurement failures.
 
 This distinction matters:
 
@@ -92,7 +92,7 @@ The expected value must never be modified simply to make the test pass.
 
 | Question                                                 | Command                                         | Primary output                                               | Requirement         |
 | -------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------- |
-| Is the curve bought back inside the creation slot?       | `v05_creation_block.py` → `v06_curve_ladder.py` | `data/v05_creation_block.json`, `data/v06_curve_ladder.json` | Solana RPC, cached  |
+| Is the curve bought back inside the creation slot?       | `v05_creation_block.py` → `v06_curve_ladder.py` | `data/v05_creation_block.json`, `data/v06_curve_ladder.json` | Unpublished block/price cache |
 | What does an exit policy return without an entry filter? | `t1_base_rate_sorties.py`                       | `docs/tables/T1_base_rate_sorties.md`                        | None                |
 | What happens after the 20-minute capture window?         | `fetch_gt_ohlcv.py` → `t5_horizon_1h_24h.py`    | `docs/tables/T5_horizon_1h_24h.md`                           | Public HTTP, no key |
 
@@ -111,31 +111,29 @@ Doing so would make the measurement circular.
 Instead, `v05_creation_block.py`:
 
 1. takes the 42 previously identified creation slots;
-2. retrieves the complete block;
+2. reads the complete block from the previously collected cache;
 3. enumerates every successful purchase of the target mint in that block;
 4. identifies the set of buyers above 5 SOL;
 5. measures the resulting creation-block structure.
 
 Wallet identity is used to select the verification population, **not to define what counts as a purchase**.
 
-Run:
+With the original block and price cache in place, run:
 
 ```bash
-export HELIUS_API_KEYS=...
 python3 code/v05_creation_block.py
 python3 code/v06_curve_ladder.py
-python3 code/v08_ages.py
 ```
 
-The first pass makes the required RPC calls and populates:
+These two scripts read, but do not populate:
 
 ```text
 data/cache/
 ```
 
-After the cache is populated, the scripts can be rerun offline.
+They require `solusd_window.json` and `block_<slot>.json` for the frozen creation slots. A key alone cannot recreate these inputs through either script. With the original cache restored, they can be rerun offline; without it, the runner explicitly skips them.
 
-The cached material currently contains:
+The original cache was documented as containing:
 
 * 42 blocks
 * 859 transactions
@@ -282,7 +280,8 @@ The pipeline is deliberately divided by data requirement.
 | -------------------------- | ------------------------------------------------------------------------- | ---------------------------------------- |
 | **Offline**                | `p0`, `m1`–`m6`, `t1`–`t5`, `a1`–`a7`, `a9`, `exit_ladder`, `p1`          | `data/` only                             |
 | **Public HTTP**            | `fetch_sol_usd`, `fetch_gt_ohlcv`                                         | GeckoTerminal; rate-limited client       |
-| **Solana RPC**             | `v05`–`v08`, `v1_*`, `v2_*`, `r1_*`, `a8_wallet_horde`, `09_bundle_snipe` | `HELIUS_API_KEYS`                        |
+| **Unpublished block/price cache** | `v05`, `v06`                                                        | `data/cache/`; these scripts do not fetch it |
+| **Solana RPC**             | `v07`, `v08`, `v1_*`, `v2_*`, `r1_*`, `a8_wallet_horde`, `09_bundle_snipe` | `HELIUS_API_KEYS`                        |
 | **Unpublished raw corpus** | `v01`–`v04`, `make_public_data`                                           | `PUMP_PRIVATE_ROOT`                      |
 | **Deposit ledger**         | `expl_ledger`                                                             | `EXPL_LEDGER_ADDR` + Helius on first run |
 | **Figures**                | `f_*`                                                                     | `matplotlib`                             |
@@ -313,12 +312,12 @@ Multiple Helius keys can be supplied as a comma-separated list. The client rotat
 
 # 7. RPC Budget and Caching
 
-The main RPC workloads are bounded and cached.
+The collecting scripts use bounded, cached RPC calls. For `v05` and `v06`, the rows below describe the upstream collection, not calls made by those cache readers.
 
 | Measurement   | Approximate workload                    |
 | ------------- | --------------------------------------- |
-| `v05`         | 42 `getBlock` calls                     |
-| `v06` / `v07` | ~860 `getTransaction` calls             |
+| `v05` / `v06` inputs | 42 cached `getBlock` responses, plus the price reference |
+| Original transaction cache / `v07` | ~860 `getTransaction` calls             |
 | `v08`         | Backward `getSignaturesForAddress` walk |
 | `r1_*`        | Paginated enhanced-transaction endpoint |
 
@@ -420,11 +419,11 @@ A missing price day raises an error rather than silently defaulting.
 
 ## 8.3 What the Total Means
 
-The total is the net value of **all incoming transfers**, including losing and winning activity.
+The total is the value of **all positive incoming balance deltas** on the deposit address.
 
 There is intentionally no “best trades” table.
 
-The aggregate already includes losing trades.
+The aggregate does not reconstruct purchases, losing trades or fees on the trading wallets. It cannot establish net PnL or a return on the stated starting capital; that requires the complete trading ledger and capital flows.
 
 The artefact publishes:
 
@@ -561,22 +560,24 @@ This prevents a small-format test run from silently overwriting a published tabl
 
 # 10.4 Python Version Scope
 
-The random resampling is deliberately implemented using an explicit LCG rather than Python's `random` module.
+The median and cluster-mean bootstraps in `pumplib.py` use a local `random.Random(seed)` instance and independent draws with replacement through `randrange`.
 
-The resampling counts are therefore interpreter-independent.
+An earlier LCG indexed observations with its low bits, imposing a fixed composition on some samples. That could understate uncertainty, including at 20 clusters. The engine was corrected and the affected M2/M5 intervals regenerated; regression tests check nonzero variability and an analytic variance reference. The point estimates and simulation returns are unchanged.
+
+A fixed seed makes repeated runs deterministic within the tested runtime. It is not a general guarantee across future Python versions; CI checks the declared versions explicitly.
 
 Two floating-point aggregates are not completely byte-stable across all Python/libm combinations:
 
 * the log-log ATH/MC elasticity in `t2`;
 * the mean-based cluster-bootstrap CI in `m5`.
 
-The committed JSON is byte-identical on:
+The strict byte-comparison is tested on:
 
 **CPython 3.12 and 3.13**
 
 but may differ in the final approximately `1e-15` digits on 3.9–3.11.
 
-The rounded published figures remain unchanged.
+The Python-version differences described here concern floating-point rounding. They are separate from the bootstrap correction, which changes published interval bounds.
 
 Accordingly, the strict CI byte-comparison is pinned to **Python 3.12/3.13**.
 

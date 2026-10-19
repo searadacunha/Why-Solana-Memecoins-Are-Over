@@ -9,9 +9,9 @@ near-copies respectively (common.py, pumplib.py, lib_verif.py,
 09_bundle_snipe.py, f_signature_gros_tokens.py).
 
 Not here: the bootstrap and cluster-bootstrap CIs. They are not duplicates,
-they differ by construction (cross-version LCG in pumplib vs random.Random in
-common/t1, different seeds, B and estimators), and merging them would change
-published numbers. They stay with the module that owns their procedure.
+they differ by construction (seeds, B, minimum sample sizes, percentile indices
+and estimators), and merging them would change the measurement procedures.
+They stay with the module that owns their procedure.
 
 Stdlib only.
 """

@@ -162,14 +162,14 @@
    "section": "3 Act III",
    "source": "data/v09_signature_gros_tokens.json",
    "statut": "OK",
-   "texte": "**58 of 70 (82.9%)** exhibited the same signature",
+   "texte": "**58 of 70 (82.9%)** met the broader creation-slot threshold",
    "valeur_artefact": "58 (82.9%)"
   },
   {
    "attendu": "42/42",
    "chemin": "derive:v05_42_42",
    "niveau": "MESURE",
-   "note": "launches with zero small buyer before the block / total",
+   "note": "launches with zero non-creator purchase below 5 SOL before the last purchase of at least 5 SOL / total",
    "section": "3 Act III",
    "source": "data/v05_creation_block.json",
    "statut": "OK",
@@ -437,7 +437,7 @@
    "section": "5 Act IV",
    "source": "docs/out/a9_g2y_prelaunch.json",
    "statut": "OK",
-   "texte": "the signal came **7.6 hours** before the launch",
+   "texte": "the funding came **7.6 hours** before the launch",
    "valeur_artefact": 7.6
   },
   {
@@ -448,7 +448,7 @@
    "section": "6 Why Solana memecoins are over",
    "source": "data/v09_signature_gros_tokens.json",
    "statut": "OK",
-   "texte": "**58 of 70 (82.9%)** of an independent frozen sample",
+   "texte": "**58 of 70 (82.9%)** of a partly overlapping frozen sample",
    "valeur_artefact": "58 (82.9%)"
   },
   {
@@ -466,11 +466,11 @@
    "attendu": "42 out of 42",
    "chemin": "derive:v06_42_of_42",
    "niveau": "MESURE",
-   "note": "launches with zero curve purchase before the block / total",
+   "note": "launches with zero curve purchase below 5 SOL before the first purchase of at least 5 SOL / total",
    "section": "6 Why Solana memecoins are over",
    "source": "data/v06_curve_ladder.json",
    "statut": "OK",
-   "texte": "on **42/42** manually verified launches and **58 of 70 (82.9%)** of an independent frozen sample",
+   "texte": "group snipe on **42/42** manually verified launches",
    "valeur_artefact": "42 out of 42"
   }
  ],
@@ -496,7 +496,7 @@
   },
   {
    "present_dans_readme": true,
-   "raison": "the operator's own position size, stated as personal prose. No artefact of this repository measures the size of my own buys; the deposit ledger measures only the net that reached the exchange. Kept as prose, never a measured row",
+   "raison": "the operator's own position size, stated as personal prose. No artefact of this repository measures the size of my own buys; the deposit ledger measures only the positive inflows reaching the exchange. Kept as prose, never a measured row",
    "section": "2 Exploiting the pattern",
    "texte": "1% of supply at most"
   },
@@ -508,43 +508,43 @@
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact",
+   "raison": "creation time is published in data/bundle/frame_ath.json and data/bundle/_frame_ath_raw.json, but this checker does not currently link those records to this claim",
    "section": "4 Real-world example",
    "texte": "**2026-06-16 21:05:48 UTC**"
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact",
+   "raison": "the ANSEM launch has no committed creation-slot measurement",
    "section": "4 Real-world example",
    "texte": "**426930467**"
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact; the 84.74 in data/v09 belongs to a different mint, with 8 buyers",
+   "raison": "the ANSEM launch has no committed creation-slot measurement; the 84.74 in data/v09 belongs to a different mint, with 8 buyers",
    "section": "4 Real-world example",
    "texte": "**84.74 SOL** purchased by a single wallet"
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact; data/v05 covers a different, frozen set of 42 mints",
+   "raison": "the ANSEM launch has no committed creation-slot measurement; data/v05 covers a different, frozen set of 42 mints",
    "section": "4 Real-world example",
    "texte": "**85.007 SOL**"
   },
   {
    "present_dans_readme": true,
-   "raison": "the mint is published so the block is falsifiable, but no script here measures it; re-running the frozen v05/v06 chain on it needs $HELIUS_API_KEYS and is the declared remedy",
+   "raison": "the mint appears in data/bundle/frame_ath.json and its raw record, but this checker does not link that source; the creation-slot measurement would require a separate block collection without altering the frozen v05/v06 population",
    "section": "4 Real-world example",
    "texte": "`9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`"
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact",
+   "raison": "the ANSEM launch has no committed creation-slot measurement",
    "section": "4 Real-world example",
    "texte": "only **two buyers**"
   },
   {
    "present_dans_readme": true,
-   "raison": "the ANSEM launch has no committed artefact",
+   "raison": "the ANSEM launch has no committed creation-slot measurement",
    "section": "4 Real-world example",
    "texte": "sixteen signatures"
   },

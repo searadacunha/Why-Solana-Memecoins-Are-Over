@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""p1_readme_check.py -- recomputes every figure quoted in README.md, as
+"""p1_readme_check.py -- checks the listed figures quoted in README.md, as
 p0_pitfalls_check.py does for docs/PITFALLS.md. Output is a claim ledger: per
 quoted figure, the literal sentence, the artefact behind it, the value that
 artefact holds, whether the two agree. Expected values are written out in
 CLAIMS below rather than scraped from the prose with a regex, so a claim that
-moves or is reworded turns up as ABSENT instead of being skipped. Figures no
-artefact backs sit in UNBACKED: counted at every run, never fatal, since
-unsourced is a different defect from wrong.
+moves or is reworded turns up as ABSENT instead of being skipped. Figures with
+no source linked by this checker sit in UNBACKED, including published tables
+or raw records outside its coverage: counted at every run, never fatal.
 
 A failing row means the README states a number this code does not produce. Fix
 the README, or fix the measurement; never adjust the expected value to match
@@ -41,7 +41,7 @@ Reads (all committed, no network, no private state)
     data/v06_curve_ladder.json             curve captured
     data/v07_exit.json                     exit delay
     data/v09_signature_gros_tokens.json    frozen 70-token sample
-    data/screens/trades/index.json         the 19 screenshotted executions
+    data/screens/trades/index.json         the 19 illustrative trade screenshots
     post_detection_edge/data/SNAPSHOT.json the live detector's snapshot (act IV)
     alpha_patterns/tables/*.json           the October 2026 search (act IV):
                                            discovery_summary, operator_forensics,
@@ -520,7 +520,8 @@ CLAIMS = [
      "texte": "across **42/42 manually verified launches**, with each transaction checked individually",
      "source": "data/v05_creation_block.json", "derive": "v05_42_42",
      "regle": "exact", "attendu": "42/42", "niveau": "MESURE",
-     "note": "launches with zero small buyer before the block / total"},
+     "note": "launches with zero non-creator purchase below 5 SOL before the "
+             "last purchase of at least 5 SOL / total"},
     {"section": "3 Act III", "texte": "* approximately **85 SOL**",
      "source": "data/v05_creation_block.json",
      "chemin": ["agregats", "sol_bloc_med"], "regle": "round0",
@@ -533,7 +534,7 @@ CLAIMS = [
      "texte": "of 70 tokens reaching at least $500k market cap",
      "source": "data/v09_signature_gros_tokens.json", "chemin": ["n"],
      "regle": "exact", "attendu": 70, "niveau": "MESURE"},
-    {"section": "3 Act III", "texte": "**58 of 70 (82.9%)** exhibited the same signature",
+    {"section": "3 Act III", "texte": "**58 of 70 (82.9%)** met the broader creation-slot threshold",
      "source": "data/v09_signature_gros_tokens.json", "derive": "v09_signature",
      "regle": "exact", "attendu": "58 (82.9%)", "niveau": "MESURE"},
 
@@ -544,13 +545,14 @@ CLAIMS = [
 
     # ---------------------------------------------------------- conclusion ---
     {"section": "6 Why Solana memecoins are over",
-     "texte": "on **42/42** manually verified launches and **58 of 70 (82.9%)** of an independent frozen sample",
+     "texte": "group snipe on **42/42** manually verified launches",
      "source": "data/v06_curve_ladder.json", "derive": "v06_42_of_42",
      "regle": "exact", "attendu": "42 out of 42", "niveau": "MESURE",
-     "note": "launches with zero curve purchase before the block / total"},
+     "note": "launches with zero curve purchase below 5 SOL before the "
+             "first purchase of at least 5 SOL / total"},
 
     {"section": "6 Why Solana memecoins are over",
-     "texte": "**58 of 70 (82.9%)** of an independent frozen sample",
+     "texte": "**58 of 70 (82.9%)** of a partly overlapping frozen sample",
      "source": "data/v09_signature_gros_tokens.json", "derive": "v09_signature",
      "regle": "exact", "attendu": "58 (82.9%)", "niveau": "MESURE",
      "note": "second occurrence of the frozen-sample figure, in the closing list"},
@@ -659,15 +661,16 @@ CLAIMS = [
      "texte": "the detector alerts a median **12.6 s / 12.3 s** after the creation (GOOD / BAD launches)",
      "source": "alpha_patterns/tables/team_absorption.json", "derive": "ap_alert_age",
      "regle": "exact", "attendu": "12.6 s / 12.3 s", "niveau": "MESURE"},
-    {"section": "5 Act IV", "texte": "the signal came **7.6 hours** before the launch",
+    {"section": "5 Act IV", "texte": "the funding came **7.6 hours** before the launch",
      "source": "docs/out/a9_g2y_prelaunch.json",
      "chemin": ["cas_reference", "delai_creation_h_depuis_dernier_credit"],
      "regle": "round1", "attendu": 7.6, "niveau": "MESURE",
      "note": "second occurrence of the act I delay, in act IV"},
 ]
 
-# Figures quoted in README.md that no committed artefact backs. They never fail
-# the run: "unsourced" is a different defect from "wrong". They are printed and
+# Figures quoted in README.md without a source linked by this checker. Some
+# have published table or raw-record sources, as their reasons explain. They never fail
+# the run: unchecked is different from wrong. They are printed and
 # counted at every run so the number stays a visible, falling quantity.
 UNBACKED = [
     # Four entries used to sit here: 238 989.57 $, 246 945.59 $, 312 withdrawals
@@ -684,25 +687,28 @@ UNBACKED = [
                "a9 lists this under non_etabli"},
     {"section": "4 Real-world example",
      "texte": "**84.74 SOL** purchased by a single wallet",
-     "raison": "the ANSEM launch has no committed artefact; the 84.74 in "
+     "raison": "the ANSEM launch has no committed creation-slot measurement; the 84.74 in "
                "data/v09 belongs to a different mint, with 8 buyers"},
     {"section": "4 Real-world example",
      "texte": "**85.007 SOL**",
-     "raison": "the ANSEM launch has no committed artefact; data/v05 covers a "
+     "raison": "the ANSEM launch has no committed creation-slot measurement; data/v05 covers a "
                "different, frozen set of 42 mints"},
     {"section": "4 Real-world example",
      "texte": "`9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`",
-     "raison": "the mint is published so the block is falsifiable, but no "
-               "script here measures it; re-running the frozen v05/v06 chain "
-               "on it needs $HELIUS_API_KEYS and is the declared remedy"},
+     "raison": "the mint appears in data/bundle/frame_ath.json and its raw "
+               "record, but this checker does not link that source; the "
+               "creation-slot measurement would require a separate block "
+               "collection without altering the frozen v05/v06 population"},
     {"section": "4 Real-world example", "texte": "**426930467**",
-     "raison": "the ANSEM launch has no committed artefact"},
+     "raison": "the ANSEM launch has no committed creation-slot measurement"},
     {"section": "4 Real-world example", "texte": "only **two buyers**",
-     "raison": "the ANSEM launch has no committed artefact"},
+     "raison": "the ANSEM launch has no committed creation-slot measurement"},
     {"section": "4 Real-world example", "texte": "sixteen signatures",
-     "raison": "the ANSEM launch has no committed artefact"},
+     "raison": "the ANSEM launch has no committed creation-slot measurement"},
     {"section": "4 Real-world example", "texte": "**2026-06-16 21:05:48 UTC**",
-     "raison": "the ANSEM launch has no committed artefact"},
+     "raison": "creation time is published in data/bundle/frame_ath.json and "
+               "data/bundle/_frame_ath_raw.json, but this checker does not "
+               "currently link those records to this claim"},
     {"section": "2 Exploiting the pattern",
      "texte": "ChangeNOW-funded wallet buying at least **2% of supply**",
      "raison": "second occurrence of the entry rule, in the Exploiting the "
@@ -712,7 +718,7 @@ UNBACKED = [
      "texte": "1% of supply at most",
      "raison": "the operator's own position size, stated as personal prose. No "
                "artefact of this repository measures the size of my own buys; "
-               "the deposit ledger measures only the net that reached the "
+               "the deposit ledger measures only the positive inflows reaching the "
                "exchange. Kept as prose, never a measured row"},
     # Starting capital is the author's firsthand trading account. Keep its
     # wording tracked separately from the withdrawal measurements: the exchange
@@ -891,7 +897,7 @@ def main():
     P.kv("  reproduced exactly", n_ok)
     P.kv("  MISMATCH (README != artefact)", n_mm)
     P.kv("  ABSENT (artefact, key, or claim text gone)", n_ab)
-    P.kv("figures with no artefact at all", n_present,
+    P.kv("figures without a linked source in this check", n_present,
          note="listed above, not fatal")
     P.kv("claims also checked in README.fr.md", n_fr,
          note="%d of them not found there" % n_fr_ab)

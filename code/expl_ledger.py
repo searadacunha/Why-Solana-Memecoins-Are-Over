@@ -6,7 +6,8 @@ expl_ledger.py, the exchange-deposit ledger rebuilt from the chain.
 [MESURE] Every SOL transfer that landed on the author's exchange deposit
 address over 2024-10-01 .. 2025-02-02 (UTC, half-open), valued transfer by
 transfer at the SOL/USD close of its own UTC day, never at a window average.
-The total is the net of every incoming transfer, losing trades included.
+The total sums positive incoming balance deltas. It is not a complete trading
+PnL and does not identify purchases, losses or fees on the trading wallets.
 Outgoing transfers (the exchange's sweeps) are reported separately and
 excluded from proceeds; the pass-through check (SOL in ~= SOL swept out,
 residual ~0) validates the model, since a deposit address holds no balance.
@@ -226,8 +227,8 @@ def main():
   CONCLUSION:
    - %.4f SOL landed on the deposit address over the window, %.2f USD at
      each transfer's own-day close; %.4f SOL of it in 2024-10..12. The total
-     is the net of every incoming transfer, it already absorbs the losing
-     trades. [MESURE]
+     sums positive incoming balance deltas; it does not reconstruct the
+     trading wallets' purchases, losses or fees. [MESURE]
    - The wallet is a pass-through: %.4f SOL in vs %.4f SOL swept out,
      residual ~0, as expected of a deposit address. [MESURE]
 

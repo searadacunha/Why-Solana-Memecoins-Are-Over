@@ -23,8 +23,8 @@ if not os.path.exists(_SOLUSD_P):
     raise SystemExit(
         "data/cache/solusd_window.json absent.\n"
         "  Ce script rejoue une capture reseau et le cache est git-ignore, donc\n"
-        "  il n'existe pas dans un clone. Les mesures publiees se recalculent\n"
-        "  sans lui : python3 code/run_all.py --strict")
+        "  il n'existe pas dans un clone. Seules les analyses aval se recalculent\n"
+        "  sans lui : python3 code/run_all.py --strict ignore cette reconstruction.")
 SOLUSD = json.load(open(_SOLUSD_P))["median_close"]
 V4 = json.load(open(f"{DATA}/v04_slot_order.json"))["lancements"]
 
