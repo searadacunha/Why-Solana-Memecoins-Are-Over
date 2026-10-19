@@ -33,7 +33,7 @@ jobs:
       - name: Stdlib-only (no undeclared third-party import)
         run: python code/run_all.py --deps
 
-      - name: Reproduce every committed artefact byte-for-byte
+      - name: Reproduce the declared offline artefacts byte-for-byte
         run: python code/run_all.py --strict
 
       - name: README claim ledger (prose == measurement)

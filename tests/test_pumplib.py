@@ -2,10 +2,16 @@
 and the two bootstrap engines that produce the confidence intervals of m2, m5
 and m6.
 
-The bootstraps carry an explicit promise: their generator is written out in the
-module so the interval is the same on any machine and any Python version. These
-tests are what makes that promise checkable.
+The bootstraps must retain sampling variability, including at sample sizes
+where the former LCG suppressed it. Fixed seeds must reproduce without using
+the global random state; the cluster-mean variance has an analytical check.
 """
+import math
+import random
+import statistics
+
+import pytest
+
 import pumplib as P
 
 
@@ -80,36 +86,51 @@ def test_clusters_is_independent_of_input_order():
 
 
 # ------------------------------------------------- bootstrap_median_ci ------
-def test_bootstrap_median_ci_is_pinned_to_an_exact_value():
-    """The generator is written out in the module precisely so this value does
-    not move between machines or Python versions. If it moves, the published
-    intervals of m2 and m6 moved with it."""
+def test_bootstrap_median_ci_is_deterministic():
     xs = [float(i) for i in range(1, 11)]
-    assert P.bootstrap_median_ci(xs, n_boot=200, seed=42) == (3.0, 8.0)
-    assert P.bootstrap_median_ci(xs) == (3.0, 8.5)
+    runs = {P.bootstrap_median_ci(xs, n_boot=500, seed=42) for _ in range(3)}
+    assert len(runs) == 1
 
 
-def test_bootstrap_median_ci_does_not_depend_on_the_global_random_state():
-    import random
+@pytest.mark.parametrize("sample_size", [8, 16, 20])
+def test_bootstrap_median_preserves_sampling_variation_at_even_sizes(sample_size):
+    """Modulo-LCG draws fixed each quartile's count and froze this median."""
+    xs = [float(i % 4) for i in range(sample_size)]
+    lo, hi = P.bootstrap_median_ci(xs, n_boot=2000, seed=7)
+    assert 0.0 <= lo < statistics.median(xs) < hi <= 3.0
+
+
+@pytest.mark.parametrize("clustered", [False, True])
+def test_bootstraps_do_not_depend_on_or_modify_global_random_state(clustered):
     xs = [float(i) for i in range(1, 11)]
-    random.seed(1)
-    first = P.bootstrap_median_ci(xs)
-    random.seed(999999)
-    assert P.bootstrap_median_ci(xs) == first
+    values = {i: [x] for i, x in enumerate(xs)} if clustered else xs
+    bootstrap = P.cluster_bootstrap_mean_ci if clustered else P.bootstrap_median_ci
+    saved = random.getstate()
+    try:
+        random.seed(1)
+        before = random.getstate()
+        first = bootstrap(values, n_boot=500, seed=42)
+        assert random.getstate() == before
+        random.seed(999999)
+        before = random.getstate()
+        assert bootstrap(values, n_boot=500, seed=42) == first
+        assert random.getstate() == before
+    finally:
+        random.setstate(saved)
 
 
 def test_bootstrap_median_ci_filters_none_and_refuses_a_short_sample():
     assert P.bootstrap_median_ci([1.0, 2.0]) == (None, None)
     assert P.bootstrap_median_ci([1.0, None]) == (None, None), "None ne compte pas"
-    assert P.bootstrap_median_ci([1.0, None, 2.0, 3.0, None, 4.0, 5.0],
-                                 n_boot=100, seed=1) == (1.0, 5.0)
+    with_missing = [1.0, None, 2.0, 3.0, None, 4.0, 5.0]
+    complete = [1.0, 2.0, 3.0, 4.0, 5.0]
+    assert P.bootstrap_median_ci(with_missing, n_boot=100, seed=1) == P.bootstrap_median_ci(
+        complete, n_boot=100, seed=1)
 
 
 # -------------------------------------------- cluster_bootstrap_mean_ci -----
 def test_cluster_bootstrap_mean_ci_brackets_its_own_point_estimate():
-    """The docstring states the estimator resampled is the mean of the cluster
-    means, and that the other candidate (pooling the tokens) would give an
-    interval not containing its own point estimate. This checks the first half."""
+    """The interval on this example brackets the mean of the cluster means."""
     by = {"c0": [1.0], "c1": [2.0, 2.5], "c2": [3.0], "c3": [10.0, 11.0, 12.0],
           "c4": [4.0], "c5": [5.5], "c6": [20.0]}
     cmeans = [sum(v) / len(v) for v in by.values()]
@@ -129,24 +150,36 @@ def test_cluster_bootstrap_mean_ci_is_deterministic():
     assert len(runs) == 1
 
 
-def test_a_power_of_two_number_of_clusters_collapses_the_interval():
-    """KNOWN LIMITATION, pinned here so it is never discovered by surprise.
+@pytest.mark.parametrize("n_clusters", [8, 16, 20])
+def test_cluster_bootstrap_preserves_sampling_variation_at_even_sizes(n_clusters):
+    """Twenty clusters also failed: the LCG fixed all four residue counts."""
+    by = {i: [float(i % 4)] for i in range(n_clusters)}
+    lo, hi = P.cluster_bootstrap_mean_ci(by, n_boot=2000, seed=7)
+    assert 0.0 <= lo < 1.5 < hi <= 3.0
 
-    The generator is `state = (1103515245 * state + 12345) % 2**31` and the draw
-    is `state % len(keys)`. The low bits of that recurrence have a period equal
-    to their modulus, so when the number of clusters is a power of two the draw
-    cycles through every cluster exactly once per resample: each resample is the
-    whole set, the resampled mean is always the point estimate, and the interval
-    has zero width.
 
-    No published figure is affected: m5 resamples 20 clusters, and no committed
-    interval in docs/out/ has zero width. It is the corpus that keeps this off,
-    not the code, which is why it is written down.
+def test_cluster_bootstrap_sd_matches_the_independent_draw_formula():
+    """For 20 means cycling through 0,1,2,3, Var(mean*) = 1.25 / 20.
+
+    With one replicate both returned quantiles expose that resampled mean.
+    Across 4000 fixed seeds its SD must be close to the exact value 0.25;
+    the former LCG returns 1.5 for every seed and has zero SD here.
     """
-    eight = {"c%d" % i: [float(i)] for i in range(8)}
-    lo, hi = P.cluster_bootstrap_mean_ci(eight, n_boot=500, seed=7)
-    assert lo == hi, "huit grappes: intervalle de largeur nulle"
+    means = [float(i % 4) for i in range(20)]
+    by = {i: [v] for i, v in enumerate(means)}
+    sampled_means = [P.cluster_bootstrap_mean_ci(by, n_boot=1, seed=seed)[0]
+                     for seed in range(4000)]
+    expected_sd = math.sqrt(statistics.pvariance(means) / len(means))
+    assert expected_sd == 0.25
+    assert statistics.pstdev(sampled_means) == pytest.approx(expected_sd, rel=0.05)
 
-    seven = {"c%d" % i: [float(i)] for i in range(7)}
-    lo7, hi7 = P.cluster_bootstrap_mean_ci(seven, n_boot=500, seed=7)
-    assert lo7 < hi7, "sept grappes: comportement normal"
+
+def test_cluster_bootstrap_gives_each_cluster_mean_equal_weight():
+    """A large zero-return cluster must not outweigh the seven small ones.
+
+    The median number of zero-cluster draws among eight is one, so the
+    central percentiles of the mean of cluster means are (0 + 7*10) / 8.
+    Pooling the underlying observations would give a different result.
+    """
+    by = {0: [0.0] * 100, **{i: [10.0] for i in range(1, 8)}}
+    assert P.cluster_bootstrap_mean_ci(by, n_boot=10000, seed=7, alpha=0.99) == (8.75, 8.75)

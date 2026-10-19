@@ -436,7 +436,7 @@ is not derivable from a population selected on outcome.
 
 The cohort also cannot establish profitability.
 
-The captures are selected winning trades, while losing trades are not represented in the screenshot dossier.
+The captures document individual trades, but the retained examples are selected winners and do not provide the complete set of winning and losing trades. They cannot by themselves measure overall profitability or isolate the funding signal's contribution to the gains.
 
 ---
 
@@ -446,11 +446,11 @@ Against dead tokens, the original split signature strongly separated the traded 
 
 **p = 0.0007**
 
-Against graduated tokens from the same period, the difference disappears:
+After removing the weak shared-funder criterion and comparing with graduated tokens from the same period, no statistically distinguishable difference remains:
 
 **p = 0.44**
 
-The apparent effect was therefore substantially explained by the difference between:
+The comparisons show why the original result cannot separate the funding mechanism from the difference between:
 
 > **a token that went somewhere**
 
@@ -502,9 +502,7 @@ Removing criterion C eliminates most of the apparent effect and removes conventi
 
 Once the outcome is held approximately constant, the original detector still fires frequently among untraded graduated tokens.
 
-This demonstrates that criterion C was not specifically detecting coordination.
-
-It was detecting a property strongly associated with having a successful token and a sufficiently active buyer population.
+Together with its 88.9% firing rate on random groups, this shows why criterion C cannot be interpreted as specific evidence of coordination.
 
 ---
 
@@ -520,6 +518,8 @@ Both corrections are now applied:
 * the control group is matched on graduation/outcome.
 
 No statistically distinguishable effect remains in this small measured sample.
+
+This does not prove that the historical strategy had no edge. The selected sample and incomplete trade history do not establish or exclude that claim.
 
 ---
 
