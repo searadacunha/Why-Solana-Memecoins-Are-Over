@@ -69,6 +69,7 @@ def dep_funders(r: dict[str, Any]) -> set[str]:
 
 def main() -> None:
     rows = sorted(E.load(), key=lambda z: z["t"])
+    E.require_hops(rows)
     ret = A.returning(rows)
     top_op = {sp: Counter(r["cluster"] for r in rows if r["split"] == sp).most_common(1)[0][0] for sp in E.SPLITS}
     top10 = {w for w, _ in Counter(s["wallet"] for r in rows for s in r["snipers"]).most_common(10)}

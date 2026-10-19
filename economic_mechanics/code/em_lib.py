@@ -51,10 +51,15 @@ def load() -> list[dict[str, Any]]:
 
 
 def load_prices() -> dict[str, dict[str, Any]]:
+    check_prices()
+    return {p["mint"]: p for p in (json.loads(x) for x in gzip.open(PRICE, "rt", encoding="utf8"))}
+
+
+def check_prices() -> None:
+    """Check the price input before publishing tables, without computing a price measure."""
     doc = json.load(open(FREEZE))
     if hashlib.sha256(open(PRICE, "rb").read()).hexdigest() != doc["sha256_price"]:
         sys.exit("the price file differs from the frozen one")
-    return {p["mint"]: p for p in (json.loads(x) for x in gzip.open(PRICE, "rt", encoding="utf8"))}
 
 
 def write(name: str, lines: list[str]) -> None:
@@ -93,10 +98,41 @@ def fkey(s: dict[str, Any], kind: str = "last", strict: bool = False) -> Optiona
 _hop_cache: dict[str, Any] = {}
 
 
+class MissingCacheError(FileNotFoundError):
+    """A required local collection is absent, not evidence of an empty history."""
+
+
 def hop(addr: str) -> dict[str, Any]:
-    if addr not in _hop_cache:
-        _hop_cache[addr] = FB._hop(addr, False) or {}
-    return _hop_cache[addr]
+    path = os.path.join(FB.GEN_HOP, addr + ".json")
+    if path not in _hop_cache:
+        if not os.path.isfile(path):
+            raise MissingCacheError(
+                "required genesis_hop cache is missing: %s; architecture and role analyses "
+                "cannot be reproduced from the published derived tables alone" % path
+            )
+        data = FB._hop(addr, False)
+        if not isinstance(data, dict):
+            raise ValueError("invalid genesis_hop cache (expected a JSON object): %s" % path)
+        _hop_cache[path] = data
+    return _hop_cache[path]
+
+
+def require_hops(rows: Sequence[dict[str, Any]]) -> None:
+    """Load the last/genesis funder inputs before any cache-dependent output is written.
+
+    Keep this separate from load(): measures using only the frozen table remain
+    available without the private cache. A collected JSON object with no funding
+    result is valid; an absent file cannot stand in for that observation.
+    """
+    addresses = {
+        f
+        for r in rows
+        for s in r["snipers"]
+        for kind in ("last", "gen")
+        if (f := fkey(s, kind)) is not None and not f.startswith("own:")
+    }
+    for addr in sorted(addresses):
+        hop(addr)
 
 
 def deployer_sent_to(r: dict[str, Any]) -> set[str]:
