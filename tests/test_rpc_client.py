@@ -56,6 +56,9 @@ def test_signature_history_rejects_non_list_results(monkeypatch):
     # These falsey values used to end pagination as a successful empty history.
     for result in ({}, False, 0, ""):
         _patch_response(monkeypatch, {"jsonrpc": "2.0", "id": 1, "result": result})
+        # Legacy adapters also call rpc() directly, bypassing sigs().
+        with pytest.raises(rpc_client.HeliusError):
+            rpc_client.rpc("getSignaturesForAddress", ["SomeAddr"])
         with pytest.raises(rpc_client.HeliusError):
             rpc_client.walk_sigs("SomeAddr")
 
