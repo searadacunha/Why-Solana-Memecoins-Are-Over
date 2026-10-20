@@ -38,8 +38,8 @@ B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 def is_b58_pubkey(s: str) -> bool:
     """True for a base58 string that decodes to a 32-byte Solana pubkey.
 
-    The length window rejects the obvious non-keys; the final bound is the real
-    test, since 32 bytes is exactly the integers below 2**256.
+    The character count rejects obvious non-keys; the decoded length also
+    counts each leading '1' as a zero byte.
     """
     if not (32 <= len(s) <= 44):
         return False
@@ -48,4 +48,5 @@ def is_b58_pubkey(s: str) -> bool:
         if c not in B58:
             return False
         n = n * 58 + B58.index(c)
-    return n < 2 ** 256
+    zero_bytes = len(s) - len(s.lstrip("1"))
+    return zero_bytes + (n.bit_length() + 7) // 8 == 32
