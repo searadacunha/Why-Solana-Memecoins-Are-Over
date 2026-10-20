@@ -40,6 +40,24 @@ def _patch_response(monkeypatch, payload):
 def test_rpc_returns_result_on_success(monkeypatch):
     _patch_response(monkeypatch, {"jsonrpc": "2.0", "id": 1, "result": {"ok": 1}})
     assert rpc_client.rpc("getX", []) == {"ok": 1}
+    # An explicit null is legitimate for an unavailable transaction.
+    _patch_response(monkeypatch, {"jsonrpc": "2.0", "id": 1, "result": None})
+    assert rpc_client.tx("synthetic") is None
+
+
+def test_rpc_rejects_a_missing_result(monkeypatch):
+    for payload in (None, [], {}, {"jsonrpc": "2.0", "id": 1}, {"error": None}):
+        _patch_response(monkeypatch, payload)
+        with pytest.raises(rpc_client.HeliusError):
+            rpc_client.tx("synthetic")
+
+
+def test_signature_history_rejects_non_list_results(monkeypatch):
+    # These falsey values used to end pagination as a successful empty history.
+    for result in ({}, False, 0, ""):
+        _patch_response(monkeypatch, {"jsonrpc": "2.0", "id": 1, "result": result})
+        with pytest.raises(rpc_client.HeliusError):
+            rpc_client.walk_sigs("SomeAddr")
 
 
 def test_sigs_raises_on_null_result(monkeypatch):
