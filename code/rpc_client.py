@@ -159,6 +159,8 @@ def rpc(method: str, params: list[Any], tolerate_codes: tuple[int, ...] = ()) ->
         raise HeliusError("%s: %s" % (method, json.dumps(err)[:200]))
     if not isinstance(r, dict) or "result" not in r:
         raise HeliusError("%s: malformed RPC response (missing result)" % method)
+    if method == "getSignaturesForAddress" and not isinstance(r["result"], list):
+        raise HeliusError("getSignaturesForAddress -> expected a list")
     return r["result"]
 
 
@@ -169,8 +171,6 @@ def sigs(addr: str, limit: int = 1000, before: Optional[str] = None) -> list[Any
     if before:
         p["before"] = before
     r: list[Any] = rpc("getSignaturesForAddress", [addr, p])
-    if not isinstance(r, list):
-        raise HeliusError("getSignaturesForAddress -> expected a list")
     return r
 
 
