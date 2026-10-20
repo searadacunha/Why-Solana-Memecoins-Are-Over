@@ -6,11 +6,16 @@ import hlib
 def test_accepts_a_real_pump_mint():
     assert hlib.is_b58_pubkey("9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump")
     assert hlib.is_b58_pubkey("G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t")
+    assert hlib.is_b58_pubkey("1" * 32)  # 32 zero bytes: the system program
+    assert hlib.is_b58_pubkey("1" * 31 + "2")  # 31 zero bytes, then 0x01
 
 
 def test_rejects_wrong_length():
     assert not hlib.is_b58_pubkey("tooShort")
     assert not hlib.is_b58_pubkey("")
+    # Hypothesis counterexample: 32 Base58 characters, but only 23 bytes.
+    assert not hlib.is_b58_pubkey("211966bxuDncfGUaAi4CQx8mn96GMzZD")
+    assert not hlib.is_b58_pubkey("1" * 32 + "2")  # 33 bytes
 
 
 def test_rejects_non_base58_characters():
@@ -25,8 +30,8 @@ def test_rejects_a_44_char_string_that_overflows_32_bytes():
     check actually turns on."""
     # "zzz..." (44 chars) is the largest 44-character base58 value.
     assert not hlib.is_b58_pubkey("z" * 44)
-    # The smallest 44-character string, on the other hand, decodes well below it.
-    assert hlib.is_b58_pubkey("1" * 44)
+    # Each leading '1' encodes a zero byte, so these are 44 bytes too.
+    assert not hlib.is_b58_pubkey("1" * 44)
 
 
 def test_boundary_at_two_to_the_256():
