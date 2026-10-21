@@ -157,18 +157,20 @@ def rpc(method: str, params: list[Any], tolerate_codes: tuple[int, ...] = ()) ->
         if code in tolerate_codes:
             return None
         raise HeliusError("%s: %s" % (method, json.dumps(err)[:200]))
-    return r.get("result") if isinstance(r, dict) else None
+    if not isinstance(r, dict) or "result" not in r:
+        raise HeliusError("%s: malformed RPC response (missing result)" % method)
+    if method == "getSignaturesForAddress" and not isinstance(r["result"], list):
+        raise HeliusError("getSignaturesForAddress -> expected a list")
+    return r["result"]
 
 
 def sigs(addr: str, limit: int = 1000, before: Optional[str] = None) -> list[Any]:
     """One page of getSignaturesForAddress, oldest-last. Raises if the RPC
-    returns null: that is a failure, not an empty page."""
+    returns anything other than a list: that is a failure, not an empty page."""
     p: dict[str, Any] = {"limit": limit}
     if before:
         p["before"] = before
     r: list[Any] = rpc("getSignaturesForAddress", [addr, p])
-    if r is None:
-        raise HeliusError("getSignaturesForAddress -> null")
     return r
 
 
