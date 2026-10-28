@@ -81,7 +81,10 @@ def detect(group):
 
     by_sig = defaultdict(set)
     for w, a, t, s, sig in rows:
-        by_sig[sig].add(w)
+        # Missing signatures are not a shared funding transaction. In particular,
+        # grouping None would fabricate criterion A across unrelated wallets.
+        if isinstance(sig, str) and sig:
+            by_sig[sig].add(w)
     A = any(len(ws) >= 2 for ws in by_sig.values())
 
     # B: find_splits semantics. Events sorted by amount alone (stable), every
