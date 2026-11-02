@@ -22,6 +22,7 @@ def test_nearly_full_volume_refuses(tmp_path, monkeypatch):
     monkeypatch.setenv("FORENSICS_DATA_ROOT", str(tmp_path))
     (tmp_path / S.MARKER).write_text("")
     monkeypatch.setattr(S, "MIN_FREE_BYTES", 10**18)
+    monkeypatch.setattr(S, "INTERNAL_MIN_FREE_BYTES", 10**18)  # whichever disk this test runs on
     with pytest.raises(S.StorageError):
         S.data_root(allow_internal=True)
 
@@ -39,7 +40,24 @@ def test_internal_disk_refused_by_default(tmp_path, monkeypatch):
     (tmp_path / S.MARKER).write_text("")
     monkeypatch.setenv("FORENSICS_DATA_ROOT", str(tmp_path))
     monkeypatch.setattr(S.Path, "home", classmethod(lambda cls: home))
+    monkeypatch.setattr(S, "CONFIG", tmp_path / "absent.json")
     assert os.stat(tmp_path).st_dev == os.stat(home).st_dev
+    with pytest.raises(S.StorageError):
+        S.data_root()
+
+
+def test_internal_disk_needs_a_written_quota_and_the_floor(tmp_path, monkeypatch):
+    home = tmp_path / "home"
+    home.mkdir()
+    (tmp_path / S.MARKER).write_text("")
+    cfg = tmp_path / "c.json"
+    cfg.write_text('{"internal_quota_bytes": 1000}')
+    monkeypatch.setenv("FORENSICS_DATA_ROOT", str(tmp_path))
+    monkeypatch.setattr(S.Path, "home", classmethod(lambda cls: home))
+    monkeypatch.setattr(S, "CONFIG", cfg)
+    monkeypatch.setattr(S, "INTERNAL_MIN_FREE_BYTES", 0)
+    assert S.data_root() == tmp_path and S.internal_quota() == 1000
+    monkeypatch.setattr(S, "INTERNAL_MIN_FREE_BYTES", 10**18)
     with pytest.raises(S.StorageError):
         S.data_root()
 

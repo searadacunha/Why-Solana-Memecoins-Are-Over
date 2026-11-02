@@ -1,0 +1,3 @@
+# Only store.py needs a dependency. The rest is standard library. Versions tested on 2026-11-02.
+duckdb==2.0.0
+pytest==9.2.0

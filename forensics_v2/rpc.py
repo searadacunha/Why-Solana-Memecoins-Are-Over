@@ -80,9 +80,12 @@ class Budget:
 
 class RpcClient:
     def __init__(self, pool: KeyPool, root: Path, budget: Budget,
-                 read_caches: Sequence[Path] = (), opener: Optional[Callable[..., Any]] = None):
+                 read_caches: Sequence[Path] = (), opener: Optional[Callable[..., Any]] = None,
+                 legacy_root: Optional[Path] = None, max_db_bytes: int = 0):
         self.pool, self.root, self.budget = pool, root, budget
         self.read_caches = list(read_caches)
+        self.legacy_root = legacy_root or root
+        self.max_db_bytes = max_db_bytes
         self._open = opener or urllib.request.urlopen
         self.net_calls = 0
         self.cache_hits = 0
@@ -148,7 +151,7 @@ class RpcClient:
     # ------------------------------------------------------------- transactions
     def _tx_path(self, sig: str) -> Path:
         """Older cache layout, one file per transaction: read only. It saturated a USB disk."""
-        return self.root / "rpc_raw" / "tx" / sig[:2] / (sig + ".json.gz")
+        return self.legacy_root / "rpc_raw" / "tx" / sig[:2] / (sig + ".json.gz")
 
     def _db_conn(self) -> sqlite3.Connection:
         with self._db_lock:
@@ -198,6 +201,9 @@ class RpcClient:
     def _store_txs(self, rows: list[tuple[str, dict[str, Any]]]) -> None:
         """One transaction per batch: a page of 100 costs one commit, not 100 files."""
         db = self._db_conn()
+        path = self.root / "rpc_raw" / "tx.sqlite"
+        if self.max_db_bytes and path.stat().st_size > self.max_db_bytes:
+            raise BudgetExhausted("transaction cache over its %d-byte quota on this disk" % self.max_db_bytes)
         body = [(s, zlib.compress(json.dumps(t).encode(), 6)) for s, t in rows]
         with self._db_lock:
             db.executemany("INSERT OR IGNORE INTO tx(sig, body) VALUES (?, ?)", body)

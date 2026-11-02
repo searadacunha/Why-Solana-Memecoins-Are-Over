@@ -202,6 +202,16 @@ def analyse() -> int:
             "null_mean": sum(nn) / perms, "null_p95": nn[int(0.95 * perms)],
             "p_permutation": (1 + sum(1 for x in nn if x >= counts[o])) / (perms + 1),
         }
+    # Negative control. The plan said 12 bursts of one day, but a sample of 150 over 49 days rarely has that many on
+    # one day, so the 12 members come from 12 different bursts across the sample. Amendment in DECISIONS.md.
+    neg = Counter()
+    draws = 200
+    for _ in range(draws):
+        picked = rng.sample(range(n), min(12, n))
+        r = outcomes([rng.choice(bursts[i]["members"]) for i in picked])
+        for o in names:
+            neg[o] += r[o]
+    res["negative_control_of_200_draws"] = {o: neg[o] for o in names}
     fresh = [i for i, b in enumerate(bursts)
              if sum(1 for m in b["members"] if m.get("first_sig") == m.get("credit_sig")) >= MIN_MEMBERS]
     res["secondary_bursts_with_5_fresh"] = {"n": len(fresh), **{o: sum(real[i][o] for i in fresh) for o in names}}
