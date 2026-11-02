@@ -11,7 +11,6 @@ import os
 import re
 import subprocess
 import sys
-from collections import Counter
 from pathlib import Path
 
 REPO = "searadacunha/Why-Solana-Memecoins-Are-Over"
