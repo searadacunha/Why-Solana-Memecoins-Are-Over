@@ -1,4 +1,4 @@
-name: Normalize research commit messages (one-time)
+name: Curate research commit messages (final pass)
 
 on:
   push:
@@ -26,17 +26,17 @@ jobs:
           persist-credentials: true
           ref: main
 
-      - name: Verify original-history backup and prepare exact message plan
+      - name: Verify original-history backup and prepare curated diff-based titles
         shell: bash
         run: |
           set -euo pipefail
           git fetch origin backup/original-commit-messages-2026-11-02
           test "$(git rev-parse FETCH_HEAD)" = '44bdf0dc1ad0f79bea6f64272ce1569feb987284'
           export ORIGINAL_HEAD="$(git rev-parse HEAD)"
-          python3 scripts/rewrite_commit_messages.py --plan
+          python3 scripts/refine_commit_messages.py --plan
           echo "ORIGINAL_HEAD=$ORIGINAL_HEAD" >> "$GITHUB_ENV"
 
-      - name: Rewrite only messages and verify author, date, and tree preservation
+      - name: Retitle duplicate messages without changing authors, dates or trees
         shell: bash
         env:
           FILTER_BRANCH_SQUELCH_WARNING: '1'
@@ -44,12 +44,12 @@ jobs:
           set -euo pipefail
           export FILTER_BRANCH_SQUELCH_WARNING=1
           git filter-branch --force \
-            --msg-filter 'python3 "$GITHUB_WORKSPACE/scripts/rewrite_commit_messages.py" --filter-message' \
+            --msg-filter 'python3 "$GITHUB_WORKSPACE/scripts/refine_commit_messages.py" --filter-message' \
             -- main
-          python3 scripts/rewrite_commit_messages.py --verify
+          python3 scripts/refine_commit_messages.py --verify
           test "$(git rev-parse HEAD)" = "$(git rev-parse main)"
 
-      - name: Publish rewritten history only if main is unchanged
+      - name: Publish curated history using force-with-lease
         shell: bash
         run: |
           set -euo pipefail
