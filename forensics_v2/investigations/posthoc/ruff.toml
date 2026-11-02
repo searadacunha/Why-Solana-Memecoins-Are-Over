@@ -1,0 +1,5 @@
+# One-off scripts kept as they were run, the record of how a report's figures were obtained.
+extend = "../../ruff.toml"
+
+[lint]
+ignore = ["E402", "E501", "E741"]

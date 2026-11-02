@@ -2,13 +2,11 @@
 
 Order follows the mission's priorities.
 
-1. Nine wallets: finish the report, including whether the common wallet connects the two collections.
-2. 2024 trades: card scan (h2w6gm6jz, ACID, symx), link the candidates to the known wallets, the four recipients of 2024-12-03,
-   then the private deliverables in `private_trades/`.
-3. Gateway bursts: analyse, write up, whichever way it falls.
-4. Co-signers: collect, analyse, write up.
-5. 2024-12-13 at the gateway: read that day, so that the burst of 15 is measured in its own day's traffic.
-6. Load decoded data into DuckDB, export Parquet to the external volume.
-7. Other tokens in the 2024 trades: launch context (first buyers, their funding) on a sample fixed in advance.
-8. Cross-chain module: Wormhole messages are verifiable, a custodial swap is not. Not started.
-9. Silent-failure review of the new code by an independent agent. Then push the branch and open a pull request.
+1. Unresolved PnL cards: extend the scans of h2w6gm6jz and symx past 25,000 transactions; find the mints of bender, Mooni, Chan and bwick.
+2. Launch context of a sample of Raydium entries, which are outside the current test, and with a comparison group fixed in advance this time.
+3. Trace the common wallet of the published fleet further, and the fleet's other tokens to their deployers.
+4. Co-signers: a new plan with paying wallets instead of signers, persistence over windows, and the most shared destinations read.
+5. The 8 strict bursts of the burst test: are they one operator or several? Trace them with the same method as the published case.
+6. Cross-chain module: Wormhole messages are verifiable, a custodial swap is not. Not started. See `docs/EXTERNAL_REPOS_AUDIT.md`, section D1.
+7. Second decoder for venue-level swaps: `solana-dex-parser` stays quarantined until someone decides to install and run it, isolated.
+8. `sync_cold` once the external disk is calm, then check row counts on both sides.

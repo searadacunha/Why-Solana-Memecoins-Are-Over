@@ -9,19 +9,18 @@ import json
 import random
 import sys
 from collections import defaultdict
-from pathlib import Path
 from typing import Any, Optional
 
 from .. import decode as D
 from ..__main__ import client
 from ..trace import history, sol_flows
 from .gateway_bursts import wilson
-from .trades_2024 import G2Y, OCT1, JAN1, POSTHOC, utc, write_private
+from .trades_2024 import G2Y, OCT1, JAN1, POSTHOC, PRIVATE, utc, write_private
 
 SEED = 20261102
 BIG = 20_000_000 * 10**6
 SUPPLY = 10**15
-OUT = Path(__file__).resolve().parents[1] / "reports" / "trade_context"
+OUT = PRIVATE / "trade_context"  # figures about the author's own trades: nothing from here goes to a public file
 WEEK = 7 * 86400
 
 
@@ -190,6 +189,7 @@ def control_sample(c: Any, n: int) -> list[dict[str, Any]]:
 
 def collect_control(credits: int) -> int:
     c = client(credits)
+    c.store_bodies = False  # the external disk stalls under other sessions: keep signatures and results, not the bodies
     smp = control_sample(c, 200)
     print("controls drawn", len(smp), "net", c.net_calls, flush=True)
     mints: dict[str, Any] = {}

@@ -277,8 +277,7 @@ def pnl_markdown(rows: list[dict[str, Any]], attr: dict[str, Any], rec: dict[str
               "## 2. Cash moved (not profit)", "",
               "Deposits, returns from the exchange and trading cash flow are in the frozen study, "
               "`posthoc_divergence/README.md` section 1, unchanged. The published USD figure is the gross inflow of those "
-              "deposits. A transfer between own wallets is never profit.",
-              "",
+              "deposits. A transfer between own wallets is never profit.", "",
               "## 3. USD", "",
               "`realised_usd_at_close_day` values each closed trip at that day's SOL close: a valuation, not money received.", "",
               "## 4. The largest trips", "", "| card | mint | opened | hold | in | realised | ROI | entry | exit | class |",
@@ -427,11 +426,78 @@ def expand(credits: int, top: int = 150) -> int:
     return 0
 
 
+def unresolved() -> int:
+    """UNRESOLVED_TRADES.md: what these files cannot say, from whatever the other steps left in private_trades."""
+    def load(name: str) -> Any:
+        p = PRIVATE / name
+        return json.loads(p.read_text()) if p.exists() else None
+
+    with open(PRIVATE / "TRADES_2024_2025.csv") as f:
+        rows = list(csv.DictReader(f))
+    q4 = [r for r in rows if r["t_open_utc"] < "2025-01-01"]
+    by_class = Counter(r["class_frozen"] for r in q4)
+    open_trips = [r for r in rows if r["closed"] != "True"]
+    receipts = json.loads((STUDY / "tables/q1_receipts_trips.json").read_text())["receipts"]
+    weak = [r["card"] for r in receipts if r.get("confidence") not in ("high", "medium")]
+    scan = load("card_scan.json") or []
+    exp = load("WALLET_CANDIDATES_EXPANDED.json")
+    cov = load("COVERAGE_TOKEN_ACCOUNTS.json")
+    lines = ["# Unresolved, private", "",
+             "What the files of this folder cannot establish. Nothing here is a finding about a trade that was not read.", "",
+             "## Trades with no answer on the pattern (frozen classes, Oct-Dec)", ""]
+    lines += ["- %s: %d trips" % (k, v) for k, v in sorted(by_class.items(), key=lambda x: str(x[0]))]
+    lines += ["", "I1 and I2 (undecided by the frozen study) and U (origin not determined) are not trades without the pattern. "
+              "`PATTERN_MATCHES.json` reads part of them directly: see the report in `reports/trade_context/`.", "",
+              "## Positions never closed", "",
+              "%d trips between 2024-10-01 and 2025-02-02: their tokens are valued at nothing here, and their SOL cost is "
+              "outside the closed-trip figure." % len(open_trips), "", "## PnL cards without a trade", "",
+              "Cards matched with low confidence by the frozen study, so not counted: " + ", ".join(sorted(weak)) + ".", ""]
+    for r in scan:
+        full = [x for x in r["candidates"] if x["score"] == 3]
+        lines.append("- **%s** (invested %s, gain %s, held %s). `%s…`: %d owners read over %d transactions, stop %s. "
+                     "Trades matching all three figures: %d. A match on two of three proves nothing: %d of them." % (
+                         r["sym"], r["card"]["inv"], r["card"]["gain"], r["card"]["held"], r["mint"][:10], r["n_owners"],
+                         r["coverage"]["transactions_read"], r["coverage"]["walk_stop"], len(full),
+                         sum(1 for x in r["candidates"] if x["score"] == 2)))
+    lines += ["", "A `max_pages` stop means the token's later trading was not read, so the card may be there. For ACID the whole "
+              "history was read and nothing matched: either that wallet is not visible as an owner in those transactions, or the "
+              "symbol is another mint (homonyms are common). Mints are unknown for bender, Mooni and Chan, and only a fragment "
+              "is known for bwick, so they were not scanned.", ""]
+    if exp:
+        hot = [r for r in exp["rows"] if r["exchange_returns"]]
+        traders = [r for r in hot if r["trips"]]
+        lines += ["## Wallets outside the perimeter", "",
+                  "%d wallets exchanged at least 0.1 SOL with the perimeter. None of those read has a trade matching a card on "
+                  "all three figures. They stay undetermined. Worth your own look, as they also received from the same exchange "
+                  "hot wallet, which many customers of that exchange do:" % len(exp["rows"]), ""]
+        lines += ["- `%s`: %.2f SOL with the perimeter, %d returns from the hot wallet, %d trips, realised %.2f SOL%s" % (
+            r["wallet"], r["lamports"] / 1e9, r["exchange_returns"], r["trips"], r["realised_lamports_closed"] / 1e9,
+            ", history capped" if r["history_capped"] else "") for r in hot]
+        lines += ["", "With trades among those: %d. Their PnL is not in any total of this folder." % len(traders), ""]
+    if cov:
+        extra = sum(v["extra"] for v in cov.values())
+        moving = [m for v in cov.values() for m in v["extra_moving"]]
+        lines += ["## Inflows that signatures of the owner cannot show", "",
+                  "Every balance change of the %d wallets was requested. %d transactions beyond the ledger, %d of them moving "
+                  "SOL or tokens on the wallet, %d lamports net. All complete: %s." % (
+                      len(cov), extra, len(moving), sum(m["sol"] for m in moving), all(v["complete"] for v in cov.values())), ""]
+    lines += ["## Out of reach", "",
+              "- Why any trade was taken. A signal seen on chain does not show what was known at the time.",
+              "- Other wallets, other exchanges, anything before 2024-09-01 for these wallets.",
+              "- Whether a return from the hot wallet came from your account: the exchange's books are not on chain.",
+              "- The 400 EUR starting capital: your statement, not reconstructed.", ""]
+    write_private("UNRESOLVED_TRADES.md", "\n".join(lines))
+    print("written", len(lines), "lines")
+    return 0
+
+
 def main(argv: Optional[list[str]] = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     cmd = args[0] if args else "reconcile"
     if cmd == "coverage":
         return coverage(int(args[1]))
+    if cmd == "unresolved":
+        return unresolved()
     if cmd == "expand":
         return expand(int(args[1]))
     if cmd == "build":

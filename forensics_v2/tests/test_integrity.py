@@ -40,6 +40,27 @@ def test_private_outputs_are_ignored():
     assert not [p for p in _tracked() if "private_trades" in str(p)]
 
 
+def test_no_private_trade_figure_in_tracked_files():
+    """His totals are computed from the private files at run time, so this test publishes none of them."""
+    trades = Path(__file__).resolve().parents[1] / "private_trades" / "TRADES_2024_2025.csv"
+    if not trades.exists():
+        pytest.skip("private trades not on this machine")
+    import csv
+    with open(trades) as f:
+        rows = list(csv.DictReader(f))
+    q4 = [r for r in rows if r["t_open_utc"] < "2025-01-01"]
+    closed = [r for r in q4 if r["closed"] == "True"]
+    lamports = sum(int(r["realised_lamports"]) for r in closed)
+    figures = {"%.2f" % (lamports / 1e9), "%.3f" % (lamports / 1e9), str(lamports), "{:,}".format(len(q4)),
+               "{:,}".format(len(closed))}
+    for p in _tracked():
+        if not p.is_file() or p.suffix == ".json" or "docs/baseline" in str(p) or "AUDIT" in p.name:
+            continue  # raw on-chain numbers in data files can repeat a figure by chance
+        text = p.read_text(errors="ignore")
+        found = [x for x in figures if x in text]
+        assert not found, "%s carries a private total: %s" % (p, len(found))
+
+
 def test_no_private_wallet_in_tracked_files():
     """Runs only where the private ledger exists: the author's wallets must never reach the public branch."""
     ledger = Path.home() / "Documents/Crypto/WSMO-historical-edge-2024/historical_edge_2024/derived/q1_ledger.json"

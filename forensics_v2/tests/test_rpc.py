@@ -232,6 +232,14 @@ def test_history_with_a_time_window_does_not_claim_genesis(tmp_path):
     assert w.complete and w.stop == "window" and c.net_calls == 3
 
 
+def test_history_without_stored_bodies_still_returns_them(tmp_path):
+    c = client(tmp_path, [ok({"data": [_gtfa_item("a")], "paginationToken": None})])
+    c.store_bodies = False
+    raw, w = c.history_txs(W)
+    assert [t["transaction"]["signatures"][0] for t in raw] == ["a"] and w.complete
+    assert c._tx_cached("a") is None
+
+
 def test_empty_history_answer_is_asked_again_before_being_believed(tmp_path):
     empty = ok({"data": [], "paginationToken": None})
     c = client(tmp_path, [empty, ok({"data": [_gtfa_item("a")], "paginationToken": None})])

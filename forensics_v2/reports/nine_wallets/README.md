@@ -2,7 +2,8 @@
 
 Token `FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump`. Gateway `G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t`, publicly attributed
 to ChangeNOW. Every figure comes from decoded transactions, with none copied from the published dossier, which is only compared with
-at the end. Data: [group15_detail.json](group15_detail.json) (signature of every credit and sweep), [evidence.json](evidence.json).
+at the end. Data: [group15_detail.json](group15_detail.json), with the signature of every credit and sweep. Code: `investigations/nine_wallets.py`
+and `investigations/posthoc/nine_*.py`.
 
 **The nine credits are real, but the group is fifteen wallets, and this token was not its reason to exist. The fifteen were funded
 together, then traded nine tokens as one fleet in four days. They made +49.81 SOL overall, and lost 4.66 SOL on this one.**

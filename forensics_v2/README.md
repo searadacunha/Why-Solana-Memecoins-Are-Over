@@ -39,7 +39,8 @@ only the standard library; `store.py` needs DuckDB (`requirements.txt`).
 | [docs/EXTERNAL_REPOS_AUDIT.md](docs/EXTERNAL_REPOS_AUDIT.md) | 15 repositories read: integrate, adapt or reject |
 | [docs/baseline/](docs/baseline/) | Test state before any change |
 | [reports/nine_wallets/README.md](reports/nine_wallets/README.md) | The published case, rebuilt from signatures |
-| [docs/PLAN_gateway_bursts.md](docs/PLAN_gateway_bursts.md) | Plan, committed before results |
-| [docs/PLAN_cosigners.md](docs/PLAN_cosigners.md) | Plan, committed before results |
+| [reports/gateway_bursts/README.md](reports/gateway_bursts/README.md) | Do same-amount bursts behave as groups? Plan: [docs/PLAN_gateway_bursts.md](docs/PLAN_gateway_bursts.md) |
+| [reports/cosigners/README.md](reports/cosigners/README.md) | Very active co-signers: not settled. Plan: [docs/PLAN_cosigners.md](docs/PLAN_cosigners.md) |
+| [docs/PLAN_trade_context.md](docs/PLAN_trade_context.md) | The author's own trades against his description. Results stay private |
 
 State of the work: [PROJECT_STATE.md](PROJECT_STATE.md), [TODO.md](TODO.md), [DECISIONS.md](DECISIONS.md), [BLOCKERS.md](BLOCKERS.md).

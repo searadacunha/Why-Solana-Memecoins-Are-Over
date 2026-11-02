@@ -5,3 +5,4 @@ private_trades/
 *.duckdb.wal
 *.parquet
 __pycache__/
+reports/nine_wallets/evidence.json

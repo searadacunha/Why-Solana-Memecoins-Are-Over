@@ -35,19 +35,22 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
     "distinct other signers" measure mostly counts disposable keys, so the report says the test does not discriminate. No threshold
     was changed.
 13b. **Amendment to the trade-context plan, before reading.** The plan named the trips of frozen class P for group A, inside a sample of curve
-    entries. Part of them did not enter on the curve, so group A is smaller than that class. Noticed when drawing the sample, before any launch was
-    read. A few trips are in both A and B, and are counted in each group's own row.
+    entries. Part of them did not enter on the curve, so group A is smaller than that class. Noticed when drawing the sample, before any launch
+    was read. A few trips are in both A and B, and are counted in each group's own row.
 13c. **Amendment to the trade-context analysis, before reading any result.** An independent review noted that `window_covers_entry` can be
     true when his own buy was not seen. The reported subset is now `entry_seen`, which needs it. The review also noted S1 and S2 are lower bounds:
     8 buyers per trip, each one's first 100 transactions. The report says so.
-13d. **Independent review of the new code, 2026-11-02.** No arithmetic defect. Checked on the data: every direct deposit survives the edge
-    rules and the total matches the frozen ledger up to fees, no token account without owner in the 2024 cache, no
-    burst member with an empty history. Fixed: a wallet credited twice in a burst counted twice for O3 (124 unchanged, null 48.7 to 48.6); an
+13d. **Independent review of the new code, 2026-11-02.** No arithmetic defect. Checked on the data: every direct deposit survives the edge rules
+    and the total matches the frozen ledger up to fees, no token account without owner in the 2024 cache, no burst member with an empty history. Fixed: a wallet credited twice in a burst counted twice for O3 (124 unchanged, null 48.7 to 48.6); an
     empty final page of `getTransactionsForAddress` is now asked again before it is believed, as signature walks already did. Not re-checked for
     runs before that fix: the 447 empty windows in checkpoints. Over the whole month, 6 of the 8 wallets marked "no activity" in the co-signer
     study do have transactions, so that label means "none in those eight days", no more.
 13e. **Credits wasted.** Two verification scripts cost about 11,000 credits for nothing: one spent 3,000 and lost its result, and one had no
     `__main__` guard, so each worker process repeated its network part. Both were mine. Total spent is in RUN_MANIFEST.json.
+13f. **Trade results stay private.** All trade-context output goes to the private folder, and a test refuses the private totals in any tracked
+    file, computed at run time from the private data.
+13g. **Bodies of group X's transactions not kept.** The external disk stalled with the cache past its internal quota, so group X keeps signatures and
+    results only. The bodies can be fetched again.
 14. **Work area on the internal disk.** The external drive stalled under several sessions, 5 pages in 8 minutes. The cache runs in
     `~/.local/state/forensics_v2/hot`, capped at 1.5 GB then 1.8 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor,
     it continues on the external volume by itself, as the author asked on 2026-11-02; that switch happened once on its own. `sync_cold` copies

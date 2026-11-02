@@ -92,6 +92,7 @@ class RpcClient:
         self.read_caches = list(read_caches)
         self.legacy_root = legacy_root or root
         self.max_db_bytes = max_db_bytes
+        self.store_bodies = True  # False keeps signatures and results only; the bodies can be fetched again
         self._open = opener or urllib.request.urlopen
         self.net_calls = 0
         self.cache_hits = 0
@@ -176,10 +177,18 @@ class RpcClient:
         return self._open_db("_db", self.root / "rpc_raw" / "tx.sqlite")
 
     def _tx_cached(self, sig: str) -> Optional[dict[str, Any]]:
-        dbs = [self._db_conn()]
+        db = self._db_conn()
+        with self._db_lock:
+            row = db.execute("SELECT body FROM tx WHERE sig = ?", (sig,)).fetchone()
+        if row:
+            return json.loads(zlib.decompress(row[0]))
+        for c in self.read_caches:  # local and fast: before anything on the slow disk
+            q = c / (sig + ".json")
+            if q.exists():
+                with open(q) as f:
+                    return json.load(f)["result"]
         if self.legacy_root != self.root and (self.legacy_root / "rpc_raw" / "tx.sqlite").exists():
-            dbs.append(self._overflow_conn())
-        for db in dbs:
+            db = self._overflow_conn()  # opened only on a miss: it can wait minutes on a busy disk
             with self._db_lock:
                 row = db.execute("SELECT body FROM tx WHERE sig = ?", (sig,)).fetchone()
             if row:
@@ -190,11 +199,6 @@ class RpcClient:
                 tx = json.load(f)
             self._store_tx(sig, tx)  # next time from the database, not one small file on a slow disk
             return tx
-        for c in self.read_caches:
-            q = c / (sig + ".json")
-            if q.exists():
-                with open(q) as f:
-                    return json.load(f)["result"]
         return None
 
     def tx(self, sig: str) -> dict[str, Any]:
@@ -272,6 +276,7 @@ class RpcClient:
         ck = self.root / "checkpoints" / "gtfa" / tag
         ck.parent.mkdir(parents=True, exist_ok=True)
         sigs: list[dict[str, Any]] = []
+        fresh: dict[str, dict[str, Any]] = {}
         token, pages, ended = None, 0, False
         if ck.exists():
             with open(ck) as f:
@@ -300,16 +305,18 @@ class RpcClient:
             for item in data:
                 rows.append({"signature": item["transaction"]["signatures"][0], "slot": item["slot"],
                              "blockTime": item.get("blockTime"), "transactionIndex": item.get("transactionIndex")})
+            fresh.update((r["signature"], t) for r, t in zip(rows, data))
             # A transaction some read cache already holds is not stored twice.
-            self._store_txs([(r["signature"], t) for r, t in zip(rows, data)
-                             if not any((c / (r["signature"] + ".json")).exists() for c in self.read_caches)])
+            if self.store_bodies:
+                self._store_txs([(r["signature"], t) for r, t in zip(rows, data)
+                                 if not any((c / (r["signature"] + ".json")).exists() for c in self.read_caches)])
             token, pages, ended = r["paginationToken"], pages + 1, r["paginationToken"] is None
             sigs.extend(rows)
             with open(ck, "a") as f:
                 f.write(json.dumps({"sigs": rows, "next": token}) + "\n")
         stop = ("genesis" if t_from is None else "window") if ended else "max_pages"
         walk = SigWalk(addr, list(reversed(sigs)), ended, stop, pages)
-        return [self.tx(s["signature"]) for s in sigs], walk
+        return [fresh.get(s["signature"]) or self.tx(s["signature"]) for s in sigs], walk
 
     # --------------------------------------------------------------- signatures
     def page(self, addr: str, before: Optional[str] = None, limit: int = PAGE) -> list[dict[str, Any]]:
