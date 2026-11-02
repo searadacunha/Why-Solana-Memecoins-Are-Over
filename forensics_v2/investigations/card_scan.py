@@ -75,7 +75,8 @@ def score(trip: dict[str, Any], inv: float, gain: float, held: int) -> dict[str,
 
 
 def scan(c: Any, sym: str, mint: str, inv: float, gain: float, held_txt: str, max_pages: int) -> dict[str, Any]:
-    h = history(c, mint, token_accounts="none", max_pages=max_pages)
+    # t_from=1 keeps a distinct checkpoint from the first run, whose pages sit in small files on a stalled disk.
+    h = history(c, mint, t_from=1, token_accounts="none", max_pages=max_pages)
     trips = owner_trips(h.txs, mint)
     held = _held_seconds(held_txt)
     rows = []

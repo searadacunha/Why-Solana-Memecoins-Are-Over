@@ -26,8 +26,7 @@ def read_caches() -> list[Path]:
 def client(credits: int) -> RpcClient:
     root = storage.data_root()
     cfg = json.loads(storage.CONFIG.read_text())
-    used = Budget(root / "checkpoints" / "credits", cfg["credit_ceiling"])
-    budget = Budget(used.path, min(cfg["credit_ceiling"], used.used() + credits))
+    budget = Budget(root / "checkpoints" / "credits", cfg["credit_ceiling"], run_limit=credits)
     legacy = Path(cfg["legacy_root"]) if cfg.get("legacy_root") else None
     return RpcClient(KeyPool.from_config(), root, budget, read_caches(), legacy_root=legacy,
                      max_db_bytes=storage.internal_quota())

@@ -129,6 +129,18 @@ def test_budget_stops_before_spending(tmp_path):
     assert c.net_calls == 1 and c.budget.used() == 1
 
 
+def test_run_limit_ignores_what_other_processes_spend(tmp_path):
+    other = R.Budget(tmp_path / "credits", 100, run_limit=50)
+    mine = R.Budget(tmp_path / "credits", 100, run_limit=2)
+    other.charge(40)
+    mine.charge(2)
+    with pytest.raises(R.BudgetExhausted):
+        mine.charge(1)
+    assert other.used() == 42
+    with pytest.raises(R.BudgetExhausted):
+        R.Budget(tmp_path / "credits", 42).charge(1)  # the shared ceiling still binds everyone
+
+
 def test_null_transaction_is_not_found_and_never_cached(tmp_path):
     c = client(tmp_path, [ok(None), ok(None), ok(None)])
     with pytest.raises(R.TxNotFound):

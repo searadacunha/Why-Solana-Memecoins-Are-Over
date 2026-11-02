@@ -45,7 +45,8 @@ def main() -> int:
                 t.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(f, t)
                 copied += 1
-    print({"transactions_offered": n, "files_copied": copied, "external_rows": dst.execute("SELECT count(*) FROM tx").fetchone()[0]})
+    rows = dst.execute("SELECT count(*) FROM tx").fetchone()[0]
+    print({"transactions_offered": n, "files_copied": copied, "external_rows": rows})
     return 0
 
 

@@ -61,11 +61,14 @@ class SigWalk:
 class Budget:
     """Credit ceiling shared across processes through a locked counter file."""
 
-    def __init__(self, path: Path, ceiling: int):
-        self.path, self.ceiling = path, ceiling
+    def __init__(self, path: Path, ceiling: int, run_limit: Optional[int] = None):
+        self.path, self.ceiling, self.run_limit = path, ceiling, run_limit
+        self.run_spent = 0
         path.parent.mkdir(parents=True, exist_ok=True)
 
     def charge(self, credits: int = 1) -> None:
+        if self.run_limit is not None and self.run_spent + credits > self.run_limit:
+            raise BudgetExhausted("this run's limit reached: %d of %d" % (self.run_spent, self.run_limit))
         with open(self.path, "a+") as f:
             fcntl.flock(f, fcntl.LOCK_EX)
             f.seek(0)
@@ -75,6 +78,7 @@ class Budget:
             f.seek(0)
             f.truncate()
             f.write(str(used + credits))
+        self.run_spent += credits
 
     def used(self) -> int:
         return int(self.path.read_text() or 0) if self.path.exists() else 0

@@ -126,10 +126,12 @@ def classify(trip: dict[str, Any], m: dict[str, Any], c: Any, buyers: dict[str, 
             "class_frozen": trip["class"], "closed": trip["closed"], "realised_sol": trip["realised_sol"],
             "window_covers_entry": covers, "t_create": m["t_create"], "creator": m["creator"],
             "entry_delay_after_creation_s": (entry_t - m["t_create"]) if m["t_create"] and entry_t else None,
-            "rank_among_buyers": rank.get(wallet), "first_buy_pct_supply": round(my_first["tok"] * 100 / SUPPLY, 4) if my_first else None,
+            "rank_among_buyers": rank.get(wallet),
+            "first_buy_pct_supply": round(my_first["tok"] * 100 / SUPPLY, 4) if my_first else None,
             "curve_real_sol_after_entry": (my_first["rsol"] / 1e9) if my_first and my_first["rsol"] is not None else None,
             "S0": bool(before), "S1": s1 is not None, "S2": s2 is not None, "n_large_before": len({e["user"] for e in before}),
-            "delay_after_S1_s": (entry_t - s1) if s1 and entry_t else None, "delay_after_S2_s": (entry_t - s2) if s2 and entry_t else None,
+            "delay_after_S1_s": (entry_t - s1) if s1 and entry_t else None,
+            "delay_after_S2_s": (entry_t - s2) if s2 and entry_t else None,
             "buyers_checked": details}
 
 

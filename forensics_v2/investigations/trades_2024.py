@@ -162,8 +162,9 @@ def funding_paths(flows: dict[str, list[Any]], all_txs: dict[str, list[D.Decoded
         first = rows[0] if rows else None
         out[w] = {"read_from": utc(all_txs[w][0].block_time) if all_txs[w] else None,
                   "note": "window from 2024-09-01: an earlier source is not visible here", "first_inflow_in_window": first,
-                  "n_inflows": len(rows), "by_class_lamports": dict(Counter({c: sum(r["lamports"] for r in rows if r["src_class"] == c)
-                                                                         for c in {r["src_class"] for r in rows}})),
+                  "n_inflows": len(rows),
+                  "by_class_lamports": {c: sum(r["lamports"] for r in rows if r["src_class"] == c)
+                                        for c in {r["src_class"] for r in rows}},
                   "direct_from_gateway": sum(1 for r in rows if r["src"] == G2Y), "inflows": rows}
     return out
 
@@ -183,11 +184,14 @@ def rotation(attr: dict[str, Any], flows: dict[str, list[Any]]) -> dict[str, Any
     return {"sequence": seq, "funded_first_by": dict(Counter(s["funded_first_by"] for s in seq))}
 
 
-def trip_rows(all_txs: dict[str, list[D.Decoded]], flows: dict[str, list[Any]], built: list[Trip]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+def trip_rows(all_txs: dict[str, list[D.Decoded]], flows: dict[str, list[Any]],
+              built: list[Trip]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Per trip and per leg. Only exact chain values, plus derived prices. USD stays a separate column."""
-    feats = {(r["wallet"], r["mint"], r["t_open"]): r for r in json.loads((POSTHOC / "derived/trips.json").read_text())}
+    frozen = json.loads((POSTHOC / "derived/trips.json").read_text())
+    feats = {(r["wallet"], r["mint"], r["t_open"]): r for r in frozen}
     classes = {}
-    for r, k in zip(json.loads((POSTHOC / "derived/classes.json").read_text()), json.loads((POSTHOC / "derived/trips.json").read_text())):
+    for r, k in zip(json.loads((POSTHOC / "derived/classes.json").read_text()), frozen):
+        assert r["wallet"] == k["wallet"] and r["mint"] == k["mint"]
         classes[(k["wallet"], k["mint"], k["t_open"])] = r
     usd = {k: float(v) for k, v in json.loads(SOL_USD.read_text()).items()} if SOL_USD.exists() else {}
     by_sig = {w: {d.signature: d for d in v} for w, v in all_txs.items()}
