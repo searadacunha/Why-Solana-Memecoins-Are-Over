@@ -152,6 +152,43 @@ def test_read_cache_is_used_and_not_written(tmp_path):
     assert [p.name for p in ro.iterdir()] == ["sig.json"]
 
 
+def test_cache_over_quota_moves_to_the_external_volume_without_stopping(tmp_path):
+    hot, cold = tmp_path / "hot", tmp_path / "cold"
+    hot.mkdir()
+    cold.mkdir()
+    (cold / R.storage.MARKER).write_text("")
+    tx = {"slot": 1, "meta": {}, "transaction": {"signatures": ["s"]}}
+    pool = K.KeyPool([KEY], rps_per_key=1e6, rps_total=1e6)
+    c = R.RpcClient(pool, hot, R.Budget(hot / "credits", 100), opener=opener([ok(tx), ok(tx)]), legacy_root=cold, max_db_bytes=1)
+    c.tx("a")  # first row creates the hot file, already over a 1-byte quota
+    c.tx("b")
+    assert (cold / "rpc_raw" / "tx.sqlite").exists()
+    assert c._tx_cached("a") == tx and c._tx_cached("b") == tx
+
+
+def test_cache_over_quota_with_the_volume_gone_refuses_rather_than_filling_the_disk(tmp_path):
+    hot, cold = tmp_path / "hot", tmp_path / "unmounted"
+    hot.mkdir()
+    tx = {"slot": 1, "meta": {}, "transaction": {"signatures": ["s"]}}
+    pool = K.KeyPool([KEY], rps_per_key=1e6, rps_total=1e6)
+    c = R.RpcClient(pool, hot, R.Budget(hot / "credits", 100), opener=opener([ok(tx)]), legacy_root=cold, max_db_bytes=1)
+    with pytest.raises(R.BudgetExhausted):
+        c.tx("a")  # an empty database file already exceeds a 1-byte quota
+    assert not cold.exists()
+
+
+def test_older_cache_file_moves_into_the_database_on_first_read(tmp_path):
+    tx = {"slot": 9}
+    c = client(tmp_path, [])
+    p = c._tx_path("old")
+    p.parent.mkdir(parents=True)
+    with R.gzip.open(p, "wt") as f:
+        json.dump(tx, f)
+    assert c.tx("old") == tx
+    p.unlink()
+    assert c.tx("old") == tx and c.net_calls == 0
+
+
 def test_key_never_reaches_an_error_or_the_log(tmp_path):
     c = client(tmp_path, [http(403, ("invalid key " + KEY).encode())])
     with pytest.raises(R.RpcError) as e:

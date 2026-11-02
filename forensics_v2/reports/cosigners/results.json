@@ -1,0 +1,102 @@
+{
+ "n_cosigners_listed": 106,
+ "n_controls_listed": 25,
+ "wallets_read": 131,
+ "n_multi_operator_cosigners_read": 16,
+ "alpha_bonferroni": 0.005555555555555556,
+ "measures": {
+  "share_signed": {
+   "median_cosigner": 0.9707602339181286,
+   "median_control": 0.922077922077922,
+   "p_two_sided": 0.00029997000299970003,
+   "below_bonferroni": true
+  },
+  "distinct_other_signers": {
+   "median_cosigner": 235.5,
+   "median_control": 207.0,
+   "p_two_sided": 0.5062493750624938,
+   "below_bonferroni": false
+  },
+  "top10_share_of_other_signers": {
+   "median_cosigner": 0.3181818181818182,
+   "median_control": 0.18543046357615894,
+   "p_two_sided": 0.00029997000299970003,
+   "below_bonferroni": true
+  },
+  "known_operator_share_of_other_signers": {
+   "median_cosigner": 0.01059135864789575,
+   "median_control": 0.010135135135135136,
+   "p_two_sided": 0.7579242075792421,
+   "below_bonferroni": false
+  },
+  "distinct_program_sets": {
+   "median_cosigner": 7.0,
+   "median_control": 4.0,
+   "p_two_sided": 9.999000099990002e-05,
+   "below_bonferroni": true
+  },
+  "top_program_set_share": {
+   "median_cosigner": 0.5524705882352942,
+   "median_control": 0.7647058823529411,
+   "p_two_sided": 0.00019998000199980003,
+   "below_bonferroni": true
+  },
+  "four_signer_sweep_share": {
+   "median_cosigner": 0.5333993072736269,
+   "median_control": 0.6623931623931624,
+   "p_two_sided": 0.0006999300069993001,
+   "below_bonferroni": true
+  },
+  "distinct_destinations": {
+   "median_cosigner": 58.0,
+   "median_control": 45.0,
+   "p_two_sided": 0.14488551144885511,
+   "below_bonferroni": false
+  },
+  "top_destination_share": {
+   "median_cosigner": 0.1894295635989018,
+   "median_control": 0.27519403555612115,
+   "p_two_sided": 0.04409559044095591,
+   "below_bonferroni": false
+  }
+ },
+ "verdicts_all_cosigners": {
+  "shared execution service": 69,
+  "not separated": 35,
+  "no activity in the windows": 2
+ },
+ "verdicts_multi_operator": {
+  "shared execution service": 10,
+  "not separated": 6
+ },
+ "verdicts_controls": {
+  "shared execution service": 16,
+  "no activity in the windows": 6,
+  "not separated": 3
+ },
+ "multi_operator_medians": {
+  "share_signed": 0.9596341847997477,
+  "distinct_other_signers": 181.0,
+  "top10_share_of_other_signers": 0.3166550153729206,
+  "known_operator_share_of_other_signers": 0.011237373737373737,
+  "distinct_program_sets": 7.0,
+  "top_program_set_share": 0.503358124859139,
+  "four_signer_sweep_share": 0.47427721088435376,
+  "distinct_destinations": 64.5,
+  "top_destination_share": 0.23217897415669053
+ },
+ "other_signers_seen_with_two_or_more_cosigners": 612,
+ "other_signers_total": 26297,
+ "known_operator_signers_found": 324,
+ "windows": [
+  1787270400,
+  1787653028,
+  1788035657,
+  1788418285,
+  1788800914,
+  1789183542,
+  1789566171,
+  1789948800
+ ],
+ "tx_read": 29137
+}

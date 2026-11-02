@@ -1,0 +1,73 @@
+{
+ "meta": {
+  "population_bursts": 296,
+  "population_members": 4205,
+  "sampled": 150,
+  "read": 150,
+  "stopped": null,
+  "net_calls": 1602
+ },
+ "n_bursts_read": 150,
+ "n_days": 42,
+ "alpha": 0.016666666666666666,
+ "outcomes": {
+  "O1": {
+   "bursts_meeting": 8,
+   "share": 0.05333333333333334,
+   "wilson_95": [
+    0.02726921289013246,
+    0.10170500474670958
+   ],
+   "bootstrap_by_day_95": [
+    0.011560693641618497,
+    0.11267605633802817
+   ],
+   "null_mean": 0.919,
+   "null_p95": 2,
+   "p_permutation": 0.000999000999000999
+  },
+  "O2": {
+   "bursts_meeting": 70,
+   "share": 0.4666666666666667,
+   "wilson_95": [
+    0.3886591247406171,
+    0.5463389512024308
+   ],
+   "bootstrap_by_day_95": [
+    0.3560606060606061,
+    0.5704697986577181
+   ],
+   "null_mean": 19.416,
+   "null_p95": 23,
+   "p_permutation": 0.000999000999000999
+  },
+  "O3": {
+   "bursts_meeting": 124,
+   "share": 0.8266666666666667,
+   "wilson_95": [
+    0.7581386789428641,
+    0.8788801768152663
+   ],
+   "bootstrap_by_day_95": [
+    0.7536231884057971,
+    0.8863636363636364
+   ],
+   "null_mean": 48.679,
+   "null_p95": 55,
+   "p_permutation": 0.000999000999000999
+  }
+ },
+ "negative_control_of_200_draws": {
+  "O1": 0,
+  "O2": 0,
+  "O3": 0
+ },
+ "secondary_bursts_with_5_fresh": {
+  "n": 142,
+  "O1": 8,
+  "O2": 66,
+  "O3": 121
+ },
+ "member_history_stopped_at_first_page": 1638,
+ "members_read": 1638
+}

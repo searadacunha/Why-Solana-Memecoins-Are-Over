@@ -29,3 +29,11 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
 10. **Time limit on 2026 reads.** Nothing at or after 2026-09-22 00:00 UTC, so that the untouched 22-29/09 sample and the future
     TEST stay untouched. No price or outcome file is opened for the co-signer study.
 11. **Commit trailers.** No `Co-Authored-By` line in this repository's commits: the author removed them on 2026-08-19.
+12. **Amendment to the burst plan, after results.** The negative control draws 12 members from 12 bursts across the whole sample, not
+    one day: 150 bursts over 49 days rarely give 12 on a day. It met none of the outcomes in 200 draws. A one-day version was not run.
+13. **Amendment to the co-signer plan, after results.** The plan's verdicts are reported as computed. A post-hoc reading shows the
+    "distinct other signers" measure mostly counts disposable keys, so the report says the test does not discriminate. No threshold
+    was changed.
+14. **Work area on the internal disk.** The external drive stalled under several sessions, 5 pages in 8 minutes. The cache runs in
+    `~/.local/state/forensics_v2/hot`, capped at 1.5 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor, it
+    continues on the external volume by itself, as the author asked on 2026-11-02. `sync_cold` copies everything out, adding only.

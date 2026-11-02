@@ -11,6 +11,7 @@ from __future__ import annotations
 import fcntl
 import gzip
 import json
+import shutil
 import sqlite3
 import threading
 import time
@@ -21,6 +22,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Optional, Sequence
 
+from . import storage
 from .keys import KeyPool, redact
 
 URL = "https://mainnet.helius-rpc.com/?api-key="
@@ -90,6 +92,7 @@ class RpcClient:
         self.net_calls = 0
         self.cache_hits = 0
         self._db: Optional[sqlite3.Connection] = None
+        self._db_ext: Optional[sqlite3.Connection] = None
         self._db_lock = threading.Lock()
         (root / "rpc_raw").mkdir(parents=True, exist_ok=True)
         self._log_path = root / "rpc_raw" / "provenance.jsonl"
@@ -153,26 +156,36 @@ class RpcClient:
         """Older cache layout, one file per transaction: read only. It saturated a USB disk."""
         return self.legacy_root / "rpc_raw" / "tx" / sig[:2] / (sig + ".json.gz")
 
-    def _db_conn(self) -> sqlite3.Connection:
+    def _open_db(self, attr: str, path: Path) -> sqlite3.Connection:
         with self._db_lock:
-            if self._db is None:
-                db = sqlite3.connect(self.root / "rpc_raw" / "tx.sqlite", check_same_thread=False, timeout=120)
+            db = getattr(self, attr)
+            if db is None:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                db = sqlite3.connect(path, check_same_thread=False, timeout=120)
                 db.execute("PRAGMA journal_mode=WAL")
                 db.execute("PRAGMA synchronous=NORMAL")
                 db.execute("CREATE TABLE IF NOT EXISTS tx(sig TEXT PRIMARY KEY, body BLOB NOT NULL) WITHOUT ROWID")
-                self._db = db
-            return self._db
+                setattr(self, attr, db)
+            return db
+
+    def _db_conn(self) -> sqlite3.Connection:
+        return self._open_db("_db", self.root / "rpc_raw" / "tx.sqlite")
 
     def _tx_cached(self, sig: str) -> Optional[dict[str, Any]]:
-        db = self._db_conn()
-        with self._db_lock:
-            row = db.execute("SELECT body FROM tx WHERE sig = ?", (sig,)).fetchone()
-        if row:
-            return json.loads(zlib.decompress(row[0]))
+        dbs = [self._db_conn()]
+        if self.legacy_root != self.root and (self.legacy_root / "rpc_raw" / "tx.sqlite").exists():
+            dbs.append(self._overflow_conn())
+        for db in dbs:
+            with self._db_lock:
+                row = db.execute("SELECT body FROM tx WHERE sig = ?", (sig,)).fetchone()
+            if row:
+                return json.loads(zlib.decompress(row[0]))
         p = self._tx_path(sig)
         if p.exists():
             with gzip.open(p, "rt") as f:
-                return json.load(f)
+                tx = json.load(f)
+            self._store_tx(sig, tx)  # next time from the database, not one small file on a slow disk
+            return tx
         for c in self.read_caches:
             q = c / (sig + ".json")
             if q.exists():
@@ -200,14 +213,29 @@ class RpcClient:
 
     def _store_txs(self, rows: list[tuple[str, dict[str, Any]]]) -> None:
         """One transaction per batch: a page of 100 costs one commit, not 100 files."""
-        db = self._db_conn()
-        path = self.root / "rpc_raw" / "tx.sqlite"
-        if self.max_db_bytes and path.stat().st_size > self.max_db_bytes:
-            raise BudgetExhausted("transaction cache over its %d-byte quota on this disk" % self.max_db_bytes)
         body = [(s, zlib.compress(json.dumps(t).encode(), 6)) for s, t in rows]
+        if self._overflowing():
+            db = self._overflow_conn()
+        else:
+            db = self._db_conn()
         with self._db_lock:
             db.executemany("INSERT OR IGNORE INTO tx(sig, body) VALUES (?, ?)", body)
             db.commit()
+
+    def _overflowing(self) -> bool:
+        """Over the quota, or under the internal disk's floor: new writes go to the external disk."""
+        if not self.max_db_bytes:
+            return False
+        path = self.root / "rpc_raw" / "tx.sqlite"
+        low = shutil.disk_usage(self.root).free < storage.INTERNAL_MIN_FREE_BYTES + 200_000_000
+        return (path.exists() and path.stat().st_size > self.max_db_bytes) or low
+
+    def _overflow_conn(self) -> sqlite3.Connection:
+        if self.legacy_root == self.root:
+            raise BudgetExhausted("cache quota reached and no external volume configured")
+        if not (self.legacy_root / storage.MARKER).is_file():
+            raise BudgetExhausted("cache quota reached and the external volume is not mounted")
+        return self._open_db("_db_ext", self.legacy_root / "rpc_raw" / "tx.sqlite")
 
     def _store_tx(self, sig: str, tx: dict[str, Any]) -> None:
         self._store_txs([(sig, tx)])
