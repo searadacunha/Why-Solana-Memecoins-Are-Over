@@ -322,7 +322,8 @@ def build() -> int:
                                                         "rows_differing_over_2_lamports", "only_new", "only_old")},
                       "trips_written": len(rows), "legs": len(legs), "open": len(open_trips), "attribution": attr["counts"],
                       "rotation": attr["rotation"]["funded_first_by"], "jan_feb_closed_sol": sum(
-                          r["realised_lamports"] for r in rows if r["closed"] and r["t_open_utc"] >= "2025-01-01") / 1e9}, indent=0))
+                          r["realised_lamports"] for r in rows if r["closed"] and r["t_open_utc"] >= "2025-01-01") / 1e9},
+                     indent=0))
     return 0
 
 
