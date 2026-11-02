@@ -170,7 +170,9 @@ def analyse() -> int:
     rows = d["trips"]
     res: dict[str, Any] = {"partial": d["partial"], "n": len(rows), "groups": {}}
     for g in "ABC":
-        for label, sel in (("all", lambda r: True), ("window_covers_entry", lambda r: r["window_covers_entry"])):
+        # His own buy has to be seen: a late timestamp alone does not show the window reached his entry.
+        for label, sel in (("all", lambda r: True),
+                           ("entry_seen", lambda r: r["window_covers_entry"] and r["first_buy_pct_supply"] is not None)):
             xs = [r for r in rows if r["group"] == g and sel(r)]
             n = len(xs)
             entry = {"n": n}
@@ -197,6 +199,9 @@ def analyse() -> int:
     res["signal_buyer_is_token_creator"] = sum(
         1 for r in rows for b in r["buyers_checked"] if b["is_creator"] and (b["s1"] or b["s2"]))
     res["checked_large_buyers"] = sum(len(r["buyers_checked"]) for r in rows)
+    res["trips_with_more_large_buyers_than_checked"] = sum(1 for r in rows if r["n_large_before"] > len(r["buyers_checked"]))
+    res["note_lower_bound"] = ("Only each buyer's first 100 transactions and up to 8 large buyers per trip are read: "
+                               "S1 and S2 are lower bounds.")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "results.json").write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=0))

@@ -226,9 +226,17 @@ def test_history_pages_resume_from_token_and_charge_ten(tmp_path):
 
 
 def test_history_with_a_time_window_does_not_claim_genesis(tmp_path):
-    c = client(tmp_path, [ok({"data": [], "paginationToken": None})])
+    empty = ok({"data": [], "paginationToken": None})
+    c = client(tmp_path, [empty, empty, empty])
     _, w = c.history_txs(W, t_from=100)
-    assert w.complete and w.stop == "window"
+    assert w.complete and w.stop == "window" and c.net_calls == 3
+
+
+def test_empty_history_answer_is_asked_again_before_being_believed(tmp_path):
+    empty = ok({"data": [], "paginationToken": None})
+    c = client(tmp_path, [empty, ok({"data": [_gtfa_item("a")], "paginationToken": None})])
+    raw, w = c.history_txs(W)
+    assert len(raw) == 1 and w.complete and c.net_calls == 2
 
 
 def test_history_malformed_reply_raises(tmp_path):

@@ -13,9 +13,9 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
    or scripts use them. No key value is copied anywhere: sources and fingerprints only.
 4. **Credit ceiling.** 300,000 credits for this mission, in `~/.config/forensics_v2/config.json`, plus a ceiling per run. The
    project rule asks for a numeric cap on Helius calls, and the mission did not give one, so this one is mine and is reported.
-5. **Rate.** At most 8 requests per second per key and 10 overall, below the free plan's documented 10 per key. The overall
-   limit is deliberate: it means the pool spreads credits and does not add speed, because whether several free accounts are
-   allowed was not established (BLOCKERS.md).
+5. **Rate.** At most 10 requests per second per process, spread over the keys, and up to three processes ran at once in this
+   session: about 6 per key at worst, under the free plan's documented 10. Whether several free accounts are allowed was not
+   established (BLOCKERS.md).
 6. **`getTransactionsForAddress` over signature walks.** Checked against the classic path on one wallet: same 88 transactions,
    same decoded result. Ten times cheaper, gives the exact order inside a slot, and returns inflows to token accounts.
 7. **Second decoder.** The node's own `jsonParsed` reading, an implementation independent of ours, used for comparison.
@@ -37,6 +37,18 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
 13b. **Amendment to the trade-context plan, before reading.** The plan named the trips of frozen class P for group A, inside a sample of curve
     entries. Part of them did not enter on the curve, so group A is smaller than that class. Noticed when drawing the sample, before any launch was
     read. A few trips are in both A and B, and are counted in each group's own row.
+13c. **Amendment to the trade-context analysis, before reading any result.** An independent review noted that `window_covers_entry` can be
+    true when his own buy was not seen. The reported subset is now `entry_seen`, which needs it. The review also noted S1 and S2 are lower bounds:
+    8 buyers per trip, each one's first 100 transactions. The report says so.
+13d. **Independent review of the new code, 2026-11-02.** No arithmetic defect. Checked on the data: every direct deposit survives the edge
+    rules and the total matches the frozen ledger up to fees, no token account without owner in the 2024 cache, no
+    burst member with an empty history. Fixed: a wallet credited twice in a burst counted twice for O3 (124 unchanged, null 48.7 to 48.6); an
+    empty final page of `getTransactionsForAddress` is now asked again before it is believed, as signature walks already did. Not re-checked for
+    runs before that fix: the 447 empty windows in checkpoints. Over the whole month, 6 of the 8 wallets marked "no activity" in the co-signer
+    study do have transactions, so that label means "none in those eight days", no more.
+13e. **Credits wasted.** Two verification scripts cost about 11,000 credits for nothing: one spent 3,000 and lost its result, and one had no
+    `__main__` guard, so each worker process repeated its network part. Both were mine. Total spent is in RUN_MANIFEST.json.
 14. **Work area on the internal disk.** The external drive stalled under several sessions, 5 pages in 8 minutes. The cache runs in
-    `~/.local/state/forensics_v2/hot`, capped at 1.5 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor, it
-    continues on the external volume by itself, as the author asked on 2026-11-02. `sync_cold` copies everything out, adding only.
+    `~/.local/state/forensics_v2/hot`, capped at 1.5 GB then 1.8 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor,
+    it continues on the external volume by itself, as the author asked on 2026-11-02; that switch happened once on its own. `sync_cold` copies
+    everything out, adding only.

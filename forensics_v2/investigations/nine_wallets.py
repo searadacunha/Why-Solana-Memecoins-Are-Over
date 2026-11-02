@@ -136,7 +136,7 @@ def main() -> int:
         },
         "shared_destinations_of_the_nine": shared_dests,
         "seconds_first_to_last_credit": (lambda ts: max(ts) - min(ts))(
-            [x["t"] for r in rows for x in r["g2y_credits"] if x["lamports"] == AMOUNT] or [0]),
+            [x["t"] for r in rows for x in r["g2y_credits"] if x["lamports"] == AMOUNT]),
         "hours_last_credit_to_creation": None if not create_t else (create_t - max(
             x["t"] for r in rows for x in r["g2y_credits"] if x["lamports"] == AMOUNT)) / 3600,
         "net_calls": c.net_calls, "cache_hits": c.cache_hits,

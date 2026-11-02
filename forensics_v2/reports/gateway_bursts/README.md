@@ -8,13 +8,14 @@ chance within a day. About 1 in 19 shows the strict signature of the published c
 
 ## Result
 
-296 bursts in the population (4,205 payouts); 150 sampled; 1,638 members read; 49 days; 16,020 credits.
+296 bursts in the population (4,205 payouts); 150 sampled; 1,638 members read, 1,602 distinct wallets, none with an empty history; 49 days;
+16,020 credits. An independent review found that a wallet credited twice in a burst counted twice for O3; fixed, and the counts did not move.
 
 | Outcome, among up to 12 members of a burst | Bursts | Share | Wilson 95 % | Bootstrap by day 95 % | Permuted, mean | Permuted, 95th pct | p |
 |---|---:|---:|---|---|---:|---:|---:|
 | **O1** at least 5 buy the same mint, same raw amount, within 10 slots | 8 | 5.3 % | 2.7 to 10.2 | 1.2 to 11.3 | 0.92 | 2 | 0.001 |
 | **O2** at least 5 buy the same mint within 72 h | 70 | 46.7 % | 38.9 to 54.6 | 35.6 to 57.0 | 19.4 | 23 | 0.001 |
-| **O3** at least 5 send at least 0.1 SOL to the same wallet within 7 days | 124 | 82.7 % | 75.8 to 87.9 | 75.4 to 88.6 | 48.7 | 55 | 0.001 |
+| **O3** at least 5 send at least 0.1 SOL to the same wallet within 7 days | 124 | 82.7 % | 75.8 to 87.9 | 75.4 to 88.6 | 48.6 | 55 | 0.001 |
 
 The three tests are compared to 0.05 / 3. With 1,000 permutations, 0.001 is the smallest p they can give.
 

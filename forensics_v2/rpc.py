@@ -289,6 +289,10 @@ class RpcClient:
             if token:
                 cfg["paginationToken"] = token
             r = self.call("getTransactionsForAddress", [addr, cfg], addr, credits=10)
+            for _ in range(EMPTY_CONFIRMATIONS):  # an empty ending page is only believed after asking again
+                if not (isinstance(r, dict) and r.get("data") == [] and r.get("paginationToken") is None):
+                    break
+                r = self.call("getTransactionsForAddress", [addr, cfg], addr, credits=10)
             data = r.get("data") if isinstance(r, dict) else None
             if not isinstance(data, list) or "paginationToken" not in r:
                 raise RpcError("getTransactionsForAddress: malformed reply")
@@ -296,7 +300,9 @@ class RpcClient:
             for item in data:
                 rows.append({"signature": item["transaction"]["signatures"][0], "slot": item["slot"],
                              "blockTime": item.get("blockTime"), "transactionIndex": item.get("transactionIndex")})
-            self._store_txs([(r["signature"], t) for r, t in zip(rows, data)])
+            # A transaction some read cache already holds is not stored twice.
+            self._store_txs([(r["signature"], t) for r, t in zip(rows, data)
+                             if not any((c / (r["signature"] + ".json")).exists() for c in self.read_caches)])
             token, pages, ended = r["paginationToken"], pages + 1, r["paginationToken"] is None
             sigs.extend(rows)
             with open(ck, "a") as f:

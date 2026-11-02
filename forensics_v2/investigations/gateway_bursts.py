@@ -73,13 +73,13 @@ def behaviour(h: History, t_credit: int, services: set[str]) -> dict[str, Any]:
 def outcomes(members: list[dict[str, Any]]) -> dict[str, bool]:
     by_mint: dict[str, set[str]] = defaultdict(set)
     by_size: dict[tuple[str, int], list[tuple[int, str]]] = defaultdict(list)
-    by_dest: Counter[str] = Counter()
+    by_dest: dict[str, set[str]] = defaultdict(set)
     for m in members:
         for b in m["buys"]:
             by_mint[b["mint"]].add(m["wallet"])
             by_size[(b["mint"], b["tok"])].append((b["slot"], m["wallet"]))
         for d in m["dest"]:
-            by_dest[d] += 1
+            by_dest[d].add(m["wallet"])  # a wallet credited twice in a burst still counts once
     o1 = False
     for rows in by_size.values():
         rows.sort()
@@ -91,7 +91,7 @@ def outcomes(members: list[dict[str, Any]]) -> dict[str, bool]:
         if o1:
             break
     return {"O1": o1, "O2": any(len(v) >= MIN_MEMBERS for v in by_mint.values()),
-            "O3": any(v >= MIN_MEMBERS for v in by_dest.values())}
+            "O3": any(len(v) >= MIN_MEMBERS for v in by_dest.values())}
 
 
 def read_member(c: Any, wallet: str, t: int, services: set[str]) -> dict[str, Any]:
@@ -215,7 +215,9 @@ def analyse() -> int:
     fresh = [i for i, b in enumerate(bursts)
              if sum(1 for m in b["members"] if m.get("first_sig") == m.get("credit_sig")) >= MIN_MEMBERS]
     res["secondary_bursts_with_5_fresh"] = {"n": len(fresh), **{o: sum(real[i][o] for i in fresh) for o in names}}
-    res["member_history_stopped_at_first_page"] = sum(1 for b in bursts for m in b["members"] if m["stop"] == "max_pages")
+    res["members_with_first_page_full"] = sum(1 for b in bursts for m in b["members"] if m["n_tx"] >= 100)
+    res["members_read_with_no_transaction"] = sum(1 for b in bursts for m in b["members"] if m["n_tx"] == 0)
+    res["distinct_wallets_read"] = len({m["wallet"] for b in bursts for m in b["members"]})
     res["members_read"] = sum(len(b["members"]) for b in bursts)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "results.json").write_text(json.dumps(res, indent=1))

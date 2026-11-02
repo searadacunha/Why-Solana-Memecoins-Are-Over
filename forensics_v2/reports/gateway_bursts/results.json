@@ -52,7 +52,7 @@
     0.7536231884057971,
     0.8863636363636364
    ],
-   "null_mean": 48.679,
+   "null_mean": 48.578,
    "null_p95": 55,
    "p_permutation": 0.000999000999000999
   }
@@ -68,6 +68,8 @@
   "O2": 66,
   "O3": 121
  },
- "member_history_stopped_at_first_page": 1638,
+ "members_with_first_page_full": 82,
+ "members_read_with_no_transaction": 0,
+ "distinct_wallets_read": 1602,
  "members_read": 1638
 }

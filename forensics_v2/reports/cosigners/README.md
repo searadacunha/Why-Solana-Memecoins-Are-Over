@@ -23,7 +23,8 @@ most 100 transactions each: 29,137 transactions, 10,480 credits, read with no fa
 | **Controls (25)** | **16** | 0 | 3 | 6 |
 
 No wallet is private to the operators under the rule. But most controls also get the service label, so the label does not separate
-co-signers from very active wallets in general.
+co-signers from very active wallets in general. "No activity" means none in those eight days: over the whole month, 6 of those 8 wallets do have
+transactions. Each window reads the first 100 transactions of the day, by design, so very active wallets are seen in the same few hours.
 
 Measures against the controls (medians, permutation p, Bonferroni at 0.0056):
 

@@ -92,7 +92,16 @@ rule was not rebuilt. Ranks inside a slot also differ from `e6`; this report ord
 Same-amount bursts are not rare at this gateway, and neither is linked behaviour: [gateway bursts](../gateway_bursts/README.md), run with a plan
 committed first. This case is not an exception to them, and it can't serve as an example of one operator either. The amount 2.9768156 SOL was paid 1,753
 times over 49 days in the frozen study's sample, 1 of 9 sampled bursts at this amount showing the same strict signature.
-2024-12-13 itself has not been read at the gateway, so the share of that day's traffic these 15 represent is not measured.
+
+In its own day it stands out. The gateway's whole 2024-12-13 was read for this report ([gateway_day_2024-12-13.json](gateway_day_2024-12-13.json), complete: 7,189
+transactions, 1,893 payouts of at least 1 SOL):
+
+- 39 payouts at this exact amount that day, to 38 wallets. The fleet is 15 of them, so the amount alone does not point to the fleet.
+- During the fleet's 380 seconds, the gateway made 18 payouts of at least 1 SOL, and **15 of the 18 were these**. Nobody else got this amount in that span.
+- Four bursts that day under the rule of the burst test, sizes 25, 17, 15 and 10. This one is not the largest.
+
+So: a real concentration in time, and not a unique event. Coming through the gateway in one burst says nothing on its own about who paid, as a custodial
+swap's internal ledger is not on chain.
 
 ## Limits
 

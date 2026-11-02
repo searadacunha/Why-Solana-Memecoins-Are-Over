@@ -354,11 +354,86 @@ def coverage(credits: int) -> int:
     return 0
 
 
+def _held(text: str) -> int:
+    import re
+    return sum(int(n) * {"d": 86400, "h": 3600, "m": 60, "s": 1}[u] for n, u in re.findall(r"(\d+)\s*([dhms])", text))
+
+
+def expand(credits: int, top: int = 150) -> int:
+    """Wallets outside the perimeter that exchanged SOL with it. Do they trade like the cards nothing else explains?
+
+    A transfer from one of his wallets does not make a wallet his. A candidate here is that plus a trade matching a card's
+    invested amount, gain and holding time, the three figures that can only coincide by chance. Everything stays a candidate.
+    """
+    from ..__main__ import client
+    from ..trace import history
+    all_txs = load_all()
+    flows = _flows_of(all_txs)
+    perimeter = set(flows)
+    infra = set(ledger()["infra"])
+    services = set(load_services()) | {DEPOSIT, HOT, G2Y} | infra
+    links: dict[str, list[Any]] = defaultdict(list)
+    for w, fl in flows.items():
+        for f in fl:
+            other = f.dst if f.src == w else f.src
+            if other not in perimeter and other not in services and f.lamports >= 100_000_000 and other not in D.JITO_TIP:
+                links[other].append(f)
+    ranked = sorted(links, key=lambda a: -sum(f.lamports for f in links[a]))
+    receipts = json.loads((STUDY / "tables/q1_receipts_trips.json").read_text())["receipts"]
+    open_cards = {r["card"] for r in receipts if r.get("confidence") not in ("high", "medium")}
+    cards = [c for c in json.loads((STUDY / "q1/captures_read.json").read_text())["cards"]
+             if c["sym"] in open_cards and c["inv_sol"] and c["gain_sol"]]
+    c = client(credits)
+    out = []
+    stopped = None
+    for a in ranked[:top]:
+        try:
+            h = history(c, a, 1725148800, 1740787199, token_accounts="none", max_pages=3)
+        except RuntimeError as e:
+            stopped = str(e)[:120]
+            break
+        ts = trips(h.txs, a)
+        hits = []
+        for t in ts:
+            if not t.closed or not t.t_close:
+                continue
+            for k in cards:
+                inv, gain, held = k["inv_sol"], k["gain_sol"], _held(k["held"])
+                ok_i = abs(t.sol_out / 1e9 - inv) <= max(0.03 * inv, 0.02)
+                ok_g = abs(t.realised / 1e9 - gain) <= 0.05 * abs(gain)
+                ok_h = abs((t.t_close - t.t_open) - held) <= max(0.10 * held, 120)
+                if ok_i + ok_g + ok_h >= 2:
+                    hits.append({"card": k["sym"], "mint": t.mint, "first_sig": t.sig_open, "invested": ok_i, "gain": ok_g,
+                                 "held": ok_h, "sol_out": t.sol_out / 1e9, "realised": t.realised / 1e9,
+                                 "dur_s": t.t_close - t.t_open})
+        fl = links[a]
+        out.append({"wallet": a, "linked_from": sorted({f.src if f.dst == a else f.dst for f in fl}),
+                    "transfers": len(fl), "lamports": sum(f.lamports for f in fl),
+                    "to_it": sum(f.lamports for f in fl if f.dst == a), "from_it": sum(f.lamports for f in fl if f.src == a),
+                    "link_sigs": [f.signature for f in fl][:5], "tx_read": len(h.txs), "history_capped": not h.walk.complete,
+                    "trips": len(ts), "realised_lamports_closed": sum(t.realised for t in ts if t.closed),
+                    "deposits_to_his_address": sum(1 for f in sol_flows(h)[0] if f.dst == DEPOSIT),
+                    "exchange_returns": sum(1 for f in sol_flows(h)[0] if f.src == HOT), "card_hits": hits,
+                    "class": "CANDIDATE" if any(x["invested"] and x["gain"] and x["held"] for x in hits) else "UNDETERMINED"})
+        write_private("WALLET_CANDIDATES_EXPANDED.json",
+                      json.dumps({"rule": expand.__doc__, "stopped": stopped, "rows": out}, indent=1))
+    full = [r for r in out if r["class"] == "CANDIDATE"]
+    print({"external_counterparties": len(ranked), "read": len(out), "stopped": stopped, "net": c.net_calls,
+           "with_trips": sum(1 for r in out if r["trips"]), "capped": sum(1 for r in out if r["history_capped"]),
+           "with_deposits": sum(1 for r in out if r["deposits_to_his_address"]),
+           "with_exchange_returns": sum(1 for r in out if r["exchange_returns"]),
+           "two_of_three_hits": sum(1 for r in out if r["card_hits"]), "three_of_three": len(full),
+           "cards_matched": sorted({x["card"] for r in full for x in r["card_hits"]})})
+    return 0
+
+
 def main(argv: Optional[list[str]] = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     cmd = args[0] if args else "reconcile"
     if cmd == "coverage":
         return coverage(int(args[1]))
+    if cmd == "expand":
+        return expand(int(args[1]))
     if cmd == "build":
         return build()
     all_txs = load_all()
