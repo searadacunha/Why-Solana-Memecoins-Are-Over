@@ -159,6 +159,107 @@ def collect(credits: int) -> int:
     return 0
 
 
+def control_sample(c: Any, n: int) -> list[dict[str, Any]]:
+    """Ordinary buys at random moments of the period. Costs one reply per draw; nothing is stored but the checkpoint below."""
+    from .trades_2024 import ledger
+    own = set(ledger()["candidates"])
+    rng = random.Random(20261103)
+    ck = c.root / "intermediate" / "trade_context_controls.json"
+    done: list[dict[str, Any]] = json.loads(ck.read_text()) if ck.exists() else []
+    times = [rng.randrange(OCT1, JAN1) for _ in range(n)]
+    for t in times[len(done):]:
+        r = c.call("getTransactionsForAddress", [D.PUMP, {
+            "transactionDetails": "full", "sortOrder": "asc", "limit": 20, "encoding": "json",
+            "maxSupportedTransactionVersion": 1, "filters": {"tokenAccounts": "none", "status": "succeeded",
+                                                             "blockTime": {"gte": t, "lte": t + 600}}}], D.PUMP, credits=10)
+        pick = None
+        for item in r.get("data") or []:
+            d = D.decode(item)
+            for e in d.trade_events:
+                if e["buy"] and e["user"] not in own:
+                    pick = {"group": "X", "wallet": e["user"], "mint": e["mint"], "t_open": d.block_time, "class": None,
+                            "closed": False, "realised_sol": 0.0, "drawn_at": t}
+                    break
+            if pick:
+                break
+        done.append(pick or {"group": "X", "none_at": t})
+        ck.parent.mkdir(parents=True, exist_ok=True)
+        ck.write_text(json.dumps(done))
+    return [x for x in done if "wallet" in x]
+
+
+def collect_control(credits: int) -> int:
+    c = client(credits)
+    smp = control_sample(c, 200)
+    print("controls drawn", len(smp), "net", c.net_calls, flush=True)
+    mints: dict[str, Any] = {}
+    buyers: dict[str, Any] = {}
+    out = []
+    stopped = None
+    for i, t in enumerate(smp):
+        try:
+            out.append(classify(t, read_mint(c, t["mint"], t["t_open"], mints), c, buyers))
+        except RuntimeError as e:
+            stopped = str(e)[:140]
+            break
+        if i % 25 == 0:
+            print(i, "net", c.net_calls, flush=True)
+    store = c.root / "intermediate" / "trade_context_group_x.json"
+    store.write_text(json.dumps({"stopped": stopped, "trips": out}))
+    print({"trips": len(out), "stopped": stopped, "net": c.net_calls})
+    return 0
+
+
+def _fisher_two_sided(a: int, b: int, c: int, d: int) -> float:
+    from math import comb
+    n, r1, k1 = a + b + c + d, a + b, a + c
+
+    def pr(x: int) -> float:
+        return comb(r1, x) * comb(n - r1, k1 - x) / comb(n, k1)
+    p0 = pr(a)
+    return min(1.0, sum(pr(x) for x in range(max(0, k1 - (n - r1)), min(r1, k1) + 1) if pr(x) <= p0 * (1 + 1e-9)))
+
+
+def analyse_control() -> int:
+    from .. import storage
+    from .trades_2024 import PRIVATE
+    x = json.loads((storage.data_root() / "intermediate" / "trade_context_group_x.json").read_text())
+    c_rows = [r for r in json.loads((PRIVATE / "PATTERN_MATCHES.json").read_text())["trips"] if r["group"] == "C"]
+
+    def seen(r: dict[str, Any]) -> bool:
+        return bool(r["window_covers_entry"] and r["first_buy_pct_supply"] is not None)
+
+    def band(r: dict[str, Any]) -> Optional[str]:
+        v = r["curve_real_sol_after_entry"]
+        return None if v is None else "under_5" if v < 5 else "5_to_20" if v < 20 else "20_to_85" if v < 85 else "over_85"
+
+    def block(rows: list[dict[str, Any]]) -> dict[str, Any]:
+        out: dict[str, Any] = {"n": len(rows)}
+        for s in ("S0", "S1", "S2"):
+            k = sum(1 for r in rows if r[s])
+            out[s] = {"k": k, "share": k / len(rows) if rows else None, "wilson_95": wilson(k, len(rows))}
+        out["median_first_buy_pct_supply"] = median([r["first_buy_pct_supply"] for r in rows])
+        out["median_rank"] = median([r["rank_among_buyers"] for r in rows])
+        out["median_entry_delay_s"] = median([r["entry_delay_after_creation_s"] for r in rows])
+        out["median_curve_sol_after_entry"] = median([r["curve_real_sol_after_entry"] for r in rows])
+        return out
+
+    xs, cs = x["trips"], c_rows
+    res: dict[str, Any] = {"stopped": x["stopped"], "amended_after_reading_groups_ABC": True,
+                           "X_all": block(xs), "X_entry_seen": block([r for r in xs if seen(r)]),
+                           "C_all": block(cs), "C_entry_seen": block([r for r in cs if seen(r)]), "by_curve_band_entry_seen": {}}
+    for b in ("under_5", "5_to_20", "20_to_85"):
+        res["by_curve_band_entry_seen"][b] = {
+            "C": block([r for r in cs if seen(r) and band(r) == b]), "X": block([r for r in xs if seen(r) and band(r) == b])}
+    a1, a0 = res["C_entry_seen"]["S1"]["k"], res["C_entry_seen"]["n"] - res["C_entry_seen"]["S1"]["k"]
+    b1, b0 = res["X_entry_seen"]["S1"]["k"], res["X_entry_seen"]["n"] - res["X_entry_seen"]["S1"]["k"]
+    res["fisher_S1_entry_seen_C_vs_X"] = {"table": [[a1, a0], [b1, b0]], "p_two_sided": _fisher_two_sided(a1, a0, b1, b0)}
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "results_control.json").write_text(json.dumps(res, indent=1))
+    print(json.dumps(res, indent=0))
+    return 0
+
+
 def median(v: list[float]) -> Optional[float]:
     v = sorted(x for x in v if x is not None)
     return (v[(len(v) - 1) // 2] + v[len(v) // 2]) / 2 if v else None
@@ -211,11 +312,12 @@ def analyse() -> int:
 def main() -> int:
     if sys.argv[1] == "collect":
         return collect(int(sys.argv[2]))
+    if sys.argv[1] == "collect_control":
+        return collect_control(int(sys.argv[2]))
+    if sys.argv[1] == "analyse_control":
+        return analyse_control()
     return analyse()
 
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
-__all__ = ["D"]

@@ -1,8 +1,9 @@
 # Plan: was the described signal there before the author's own entries?
 
 Written and committed before any launch context is read. The frozen 2024 study could only test this through the group members it had
-scanned, and left many trips undecided. This reads each token's first buyers directly, so it does not depend on that
-sample. Descriptive: no test is promoted, and the motive for any trade stays unknowable.
+scanned, and left many trips undecided. This reads each token's first buyers directly, so it does not depend on that sample.
+Descriptive: no test is promoted, and the motive for any trade stays unknowable. Results stay in the
+private folder.
 
 ## The signal, as the author describes it
 
@@ -41,6 +42,14 @@ only, marked as association.
 
 The description holds for his curve trades if most of group C show S1 or S2. It holds for part of them if a minority does, and the
 share is the result. Trades that do not fit are listed as they are. None is reclassified to fit.
+
+## Amendment, 2026-11-02, written after reading groups A, B and C
+
+A share means little without a comparison, and the plan had none. Added after seeing S1 in group C, so this comparison was not fixed in advance, and
+it is reported as such. **Group X:** 200 ordinary buys, one for each random moment drawn uniformly in 2024-10-01 to 2024-12-31 with
+`random.Random(20261103)`: at that moment, the first successful pump.fun buy after it, taken with its wallet and mint, excluding the author's own wallets.
+Same code as for his trades, with that buy as the entry. Reported for all and for `entry_seen`, overall and by SOL in the curve after entry (under 5, 5 to
+20, 20 to 85). Comparison by a two-sided Fisher test on S1 with `entry_seen`, against group C only. Only one test is added, and the ceiling is 22,000 credits.
 
 ## Limits
 
