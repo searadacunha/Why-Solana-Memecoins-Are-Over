@@ -267,8 +267,9 @@ def pnl_markdown(rows: list[dict[str, Any]], attr: dict[str, Any], rec: dict[str
              "| period | closed trips | realised |", "|---|---:|---:|",
              "| 2024-10-01 to 2024-12-31 | %d | %s |" % (len(q4), s(sum(r["realised_lamports"] for r in q4))),
              "| 2025-01-01 to 2025-02-02 | %d | %s |" % (len(jan), s(sum(r["realised_lamports"] for r in jan))), ""]
-    lines += ["Same figure as the frozen study, by a separate implementation over the same raw transactions: %d trips, %d closed, "
-              "%d lamports, %d rows differing. Same convention, same data: this validates the code, it does not add evidence "
+    lines += ["Same figure as the frozen study, by a separate implementation over the same raw transactions: %d trips, "
+              "%d closed, %d lamports, %d rows differing. Same convention, same data: this validates the code, not the "
+              "trades, and adds no evidence "
               "about the trades." % (rec["trips_new_oct_dec"], rec["closed_new"], rec["realised_lamports_new"],
                                      rec["rows_differing_over_2_lamports"]), "",
               "By month: " + ", ".join("%s %s" % (k, s(v)) for k, v in sorted(by_month.items())), "",
@@ -276,7 +277,8 @@ def pnl_markdown(rows: list[dict[str, Any]], attr: dict[str, Any], rec: dict[str
               "## 2. Cash moved (not profit)", "",
               "Deposits, returns from the exchange and trading cash flow are in the frozen study, "
               "`posthoc_divergence/README.md` section 1, unchanged. The published USD figure is the gross inflow of those "
-              "deposits. A transfer between own wallets is never profit.", "",
+              "deposits. A transfer between own wallets is never profit.",
+              "",
               "## 3. USD", "",
               "`realised_usd_at_close_day` values each closed trip at that day's SOL close: a valuation, not money received.", "",
               "## 4. The largest trips", "", "| card | mint | opened | hold | in | realised | ROI | entry | exit | class |",
@@ -285,7 +287,8 @@ def pnl_markdown(rows: list[dict[str, Any]], attr: dict[str, Any], rec: dict[str
         lines.append("| %s | `%s…` | %s | %s | %.3f | %s | %.0f %% | %s | %s | %s |" % (
             r["card"] or "", r["mint"][:10], r["t_open_utc"], r["hold_s"], r["sol_out_lamports"] / 1e9, s(r["realised_lamports"]),
             (r["roi"] or 0) * 100, r["entry_venue"], r["exit_venue"], r["class_frozen"]))
-    lines += ["", "## 5. Pattern class of the trips (frozen criteria)", "", "| class | trips | realised, closed only |", "|---|---:|---:|"]
+    lines += ["", "## 5. Pattern class of the trips (frozen criteria)", "",
+              "| class | trips | realised, closed only |", "|---|---:|---:|"]
     for k, v in sorted(by_class.items()):
         lines.append("| %s | %d | %s |" % (k, v[0], s(v[1])))
     lines += ["", "## 6. Wallets", "", json.dumps(attr["counts"]), "", "First funding of each wallet, in the window read: " +

@@ -34,6 +34,9 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
 13. **Amendment to the co-signer plan, after results.** The plan's verdicts are reported as computed. A post-hoc reading shows the
     "distinct other signers" measure mostly counts disposable keys, so the report says the test does not discriminate. No threshold
     was changed.
+13b. **Amendment to the trade-context plan, before reading.** The plan named the trips of frozen class P for group A, inside a sample of curve
+    entries. Part of them did not enter on the curve, so group A is smaller than that class. Noticed when drawing the sample, before any launch was
+    read. A few trips are in both A and B, and are counted in each group's own row.
 14. **Work area on the internal disk.** The external drive stalled under several sessions, 5 pages in 8 minutes. The cache runs in
     `~/.local/state/forensics_v2/hot`, capped at 1.5 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor, it
     continues on the external volume by itself, as the author asked on 2026-11-02. `sync_cold` copies everything out, adding only.
