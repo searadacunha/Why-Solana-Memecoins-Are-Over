@@ -1,0 +1,6 @@
+code/run_all.py --deps rc=0 secs=0
+code/run_all.py --strict rc=0 secs=25
+code/p1_readme_check.py rc=0 secs=0
+-m pytest -q rc=0 secs=3
+ruff rc=0
+done

@@ -1,0 +1,118 @@
+==============================================================================
+P1 : README CLAIM LEDGER   [MESURE]
+==============================================================================
+  Every figure quoted in README.md, the artefact behind it, and whether
+  the two agree. A red row means the README states a number this code
+  does not produce: fix the README, or fix the measurement.
+
+  STATUT    CLAIM (README.md)                         SOURCE                              ARTEFACT SAYS               README SAYS
+  ------------------------------------------------------------------------------------------------------------------------------------------------
+  [0 Front page]
+  OK        I withdrew **$237,137.87** trading meme…  docs/out/expl_ledger.json           237,137.87                  237,137.87
+  [1 Act I]
+  OK        * **9 wallets**                           docs/out/a9_g2y_prelaunch.json      9                           9
+  OK        all funded with exactly **2.976815600 S…  docs/out/a9_g2y_prelaunch.json      2.976815600                 2.976815600
+  OK        all funded within **343 seconds**         docs/out/a9_g2y_prelaunch.json      343                         343
+  OK        token launched **7.6 hours later**        docs/out/a9_g2y_prelaunch.json      7.6                         7.6
+  [2 Exploiting the pattern]
+  OK        **1,226.4663 SOL** arrived over the ful…  docs/out/expl_ledger.json           **1,226.4663 SOL** arrive…  **1,226.4663 SOL** arrived ov…
+  OK        | Distinct sending wallets             …  docs/out/expl_ledger.json           74                          74
+  OK        | Example trades in documented sample  …  data/screens/trades/index.json      19                          19
+  OK        | Full window through 2 Feb 2025       …  docs/out/expl_ledger.json           244,315.58                  244,315.58
+  OK        | Incoming transfers, Oct–Dec 2024     …  docs/out/expl_ledger.json           245                         245
+  OK        | USD value at each transfer's own day …  docs/out/expl_ledger.json           237,137.87                  237,137.87
+  OK        | Withdrawn, Oct–Dec 2024              …  docs/out/expl_ledger.json           1,190.6957                  1,190.6957
+  [3 Act III]
+  OK        * approximately **79% of supply**         data/v05_creation_block.json        79                          79
+  OK        * approximately **85 SOL**                data/v05_creation_block.json        85                          85
+  OK        **58 of 70 (82.9%)** met the broader cr…  data/v09_signature_gros_tokens.js…  58 (82.9%)                  58 (82.9%)
+  OK        across **42/42 manually verified launch…  data/v05_creation_block.json        42/42                       42/42
+  OK        of 70 tokens reaching at least $500k ma…  data/v09_signature_gros_tokens.js…  70                          70
+  [5 Act IV]
+  OK        (p = 0.0017 within the day)               alpha_patterns/tables/operator_fo…  0.0017                      0.0017
+  OK        **1.2 %** of the GOOD launches confirm …  alpha_patterns/tables/x2_timing_s…  1.2                         1.2
+  OK        **11.0 %** on the GOOD launches and **9…  alpha_patterns/tables/team_absorp…  11.0 % / 9.9 %              11.0 % / 9.9 %
+  OK        **168 (27.5 %)** doubled from the entry…  alpha_patterns/tables/team_absorp…  168 (27.5 %)                168 (27.5 %)
+  OK        **19** have ten or more                   alpha_patterns/tables/operator_fo…  19                          19
+  OK        **28 of the 33 teams** have both          alpha_patterns/tables/team_rhythm…  28 of the 33                28 of the 33
+  OK        **32 variables** measured before the al…  alpha_patterns/tables/team_rhythm…  32, none passes             32, none passes
+  OK        **33 teams** have five or more observab…  alpha_patterns/tables/operator_fo…  33                          33
+  OK        **612** had an observable one-hour outc…  alpha_patterns/tables/team_absorp…  612                         612
+  OK        **×1.09** thirty seconds after the entr…  alpha_patterns/tables/team_absorp…  1.09 / 1.55 ; 1.01 / 0.64   1.09 / 1.55 ; 1.01 / 0.64
+  OK        17 pre-registered tests, none passes      alpha_patterns/tables/team_rhythm…  17, none passes             17, none passes
+  OK        Forty tests of demand at the moment of …  alpha_patterns/tables/team_absorp…  40, none passes             40, none passes
+  OK        On the **1,015 launches** before 15 Sep…  alpha_patterns/tables/team_absorp…  1015                        1015
+  OK        a **median 375 s** after the entry        alpha_patterns/tables/x2_timing_s…  375                         375
+  OK        alerted on **1,657 launches**             post_detection_edge/data/SNAPSHOT…  1657                        1657
+  OK        confirm each other **47 to 212 times** …  alpha_patterns/tables/operator_fo…  47 to 212                   47 to 212
+  OK        from **0 % to 58 %**                      alpha_patterns/tables/operator_fo…  0 % to 58 %                 0 % to 58 %
+  OK        has sold **4.6 %** of what it holds on …  alpha_patterns/tables/team_absorp…  4.6 % / 4.5 %               4.6 % / 4.5 %
+  OK        is right **3 times in 29**, against **4…  alpha_patterns/tables/operator_fo…  3 times in 29, against 44…  3 times in 29, against 44.1 %
+  OK        one launch every **20.6 minutes** in th…  alpha_patterns/tables/team_rhythm…  20.6                        20.6
+  OK        over 415 features                         alpha_patterns/tables/discovery_s…  415                         415
+  OK        the detector alerts a median **12.6 s /…  alpha_patterns/tables/team_absorp…  12.6 s / 12.3 s             12.6 s / 12.3 s
+  OK        the funding came **7.6 hours** before t…  docs/out/a9_g2y_prelaunch.json      7.6                         7.6
+  [6 Why Solana memecoins are over]
+  OK        **58 of 70 (82.9%)** of a partly overla…  data/v09_signature_gros_tokens.js…  58 (82.9%)                  58 (82.9%)
+  OK        approximately **79% of supply** on the …  data/v05_creation_block.json        79                          79
+  OK        group snipe on **42/42** manually verif…  data/v06_curve_ladder.json          42 out of 42                42 out of 42
+
+
+  UNSOURCED FIGURES STILL IN README.md: 15
+  (counted, never fatal: 'unsourced' is not the same defect as 'wrong')
+    - I started with **€400**.
+      starting capital confirmed directly by Benjamin Da Cunha in his firsthand trading account. The automated ledger check reconstructs withdrawals reaching the exchange; it does not reconstruct the initial fiat funding
+    - roughly **2% of supply** — around 20 million tokens
+      data/ holds no purchased-token quantity for the phase-1 tokens; a9 lists this under non_etabli
+    - 1% of supply at most
+      the operator's own position size, stated as personal prose. No artefact of this repository measures the size of my own buys; the deposit ledger measures only the positive inflows reaching the exchange. Kept as prose, never a measured row
+    - ChangeNOW-funded wallet buying at least **2% of supply**
+      second occurrence of the entry rule, in the Exploiting the Pattern section; same gap as the Act I wording -- data/ holds no purchased-token quantity for the phase-1 tokens
+    - **2026-06-16 21:05:48 UTC**
+      creation time is published in data/bundle/frame_ath.json and data/bundle/_frame_ath_raw.json, but this checker does not currently link those records to this claim
+    - **426930467**
+      the ANSEM launch has no committed creation-slot measurement
+    - **84.74 SOL** purchased by a single wallet
+      the ANSEM launch has no committed creation-slot measurement; the 84.74 in data/v09 belongs to a different mint, with 8 buyers
+    - **85.007 SOL**
+      the ANSEM launch has no committed creation-slot measurement; data/v05 covers a different, frozen set of 42 mints
+    - `9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump`
+      the mint appears in data/bundle/frame_ath.json and its raw record, but this checker does not link that source; the creation-slot measurement would require a separate block collection without altering the frozen v05/v06 population
+    - only **two buyers**
+      the ANSEM launch has no committed creation-slot measurement
+    - sixteen signatures
+      the ANSEM launch has no committed creation-slot measurement
+    - 78 % of the supply, exit wallets
+      economic_mechanics/results.md, the share of the supply the coordinated snipers hold after the creation slot (TRAIN and VALIDATION medians); stated in its results tables, not in a JSON this ledger reads. The same quantity on the alpha_patterns launches is the 77.7 % / 77.8 % row of alpha_patterns/tables/team_absorption.json
+    - Yes, in about four launches out of five
+      coordination_detection/README.md: the rate of launches with a coordinated funding and buying structure, TRAIN and VALIDATION; results table, no JSON read here
+    - four snipers
+      economic_mechanics/results.md, the typical coordinated launch (four sniper wallets, about 25 SOL each); results tables, no JSON read here
+    - the same snipers funded again a median 21 minutes later (18 in the validation weeks)
+      economic_mechanics/results.md, median gap between two launches of the same snipers (21 min TRAIN, 18 min VALIDATION); results table, no JSON read here
+
+  FRENCH EDITION (_relecture_fr/README.fr.md): 0 of 43 claim(s) declare a sentence there
+    file not in this checkout -- untracked by design, so this is the normal state of a clone.
+    The check is skipped, it never fails the run, and nothing from it reaches the artefact.
+    (the other 43 rows are transcribed by hand and checked by nothing; that count is the gap, and it is meant to fall)
+  claims with a committed artefact                     43
+    reproduced exactly                                 43
+    MISMATCH (README != artefact)                      0
+    ABSENT (artefact, key, or claim text gone)         0
+  figures without a linked source in this check        15   listed above, not fatal
+  claims also checked in README.fr.md                  0   0 of them not found there
+
+  -> docs/out/p1_readme_check.json
+
+=> What is established: for every figure listed, the value the committed
+   artefact holds and whether it agrees with the README's prose. [MESURE]
+=> What is not established here: that the artefacts are themselves right. p1
+   compares prose to artefacts; the artefacts are established by the scripts
+   that produce them. [MESURE for the agreement, NON ETABLI for the substance]
+=> Also not established: that the README is complete. A figure added without a
+   row in CLAIMS or UNBACKED is invisible to this script. [NON ETABLI]
+=> A red run is not a regression in p1. Fix the README, or fix the measurement;
+   never adjust the expected value to match the prose. [MESURE]
+=> Also not established: that README.fr.md is right. Only the rows declaring a
+   `texte_fr` are compared to it; the rest of the French prose is transcribed
+   by hand and checked by nothing. [NON ETABLI for the remainder]

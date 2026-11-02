@@ -1,0 +1,46 @@
+  ok    p0_pitfalls_check.py               0.8 s
+  ok    m1_corpus.py                       2.4 s
+  ok    m2_entry_price.py                  1.6 s
+  ok    m3_operators.py                    1.6 s
+  ok    m4_infra_ubiquity.py               1.5 s
+  ok    m5_roundtrip.py                    2.1 s
+  ok    m6_horizon.py                      0.1 s
+  ok    t1_base_rate_sorties.py            7.6 s
+  ok    t2_x2_par_prix_entree.py           0.1 s
+  ok    t3_ath_avant_detection.py          0.1 s
+  ok    t4_entree_post_snipe_20min.py      4.0 s
+  ok    t5_horizon_1h_24h.py               1.9 s
+  ok    a1_null_model.py                   1.0 s
+  ok    a2_recount.py                      0.0 s
+  ok    a3_hub_origin.py                   0.0 s
+  ok    a4_selection_bias.py               0.0 s
+  ok    a5_author_pattern.py               0.1 s
+  ok    a6_gateway_chains.py               0.1 s
+  ok    a7_cross_token_links.py            0.0 s
+  ok    exit_ladder.py                     0.0 s
+  ok    a9_g2y_prelaunch.py                0.0 s
+  ok    p1_readme_check.py                 0.0 s
+
+22 ran, 20 skipped, 0 failed
+  skipped a8_wallet_horde.py             needs $HELIUS_API_KEYS or --with-net
+  skipped v05_creation_block.py          needs unpublished data/cache/block_*.json and solusd_window.json; no fetcher in this script
+  skipped v06_curve_ladder.py            needs unpublished data/cache/block_*.json and solusd_window.json; no fetcher in this script
+  skipped fetch_sol_usd.py               needs $HELIUS_API_KEYS or --with-net
+  skipped fetch_gt_ohlcv.py              needs $HELIUS_API_KEYS or --with-net
+  skipped expl_ledger.py                 needs $EXPL_LEDGER_ADDR (published in README.md, 'Author')
+  skipped make_public_data.py            needs $PUMP_PRIVATE_ROOT
+  skipped v01_corpus.py                  needs $PUMP_PRIVATE_ROOT
+  skipped v02_fleets.py                  needs $PUMP_PRIVATE_ROOT
+  skipped v03_onchain_slot.py            needs $PUMP_PRIVATE_ROOT
+  skipped v04_slot_order.py              needs $PUMP_PRIVATE_ROOT
+  skipped v07_exit.py                    needs $HELIUS_API_KEYS or --with-net
+  skipped v08_ages.py                    needs $HELIUS_API_KEYS or --with-net
+  skipped v1_probe_addresses.py          needs $HELIUS_API_KEYS or --with-net
+  skipped v2_dispatcher_burst.py         needs $HELIUS_API_KEYS or --with-net
+  skipped r1_dust_vs_funding.py          needs $HELIUS_API_KEYS or --with-net
+  skipped r1_burst_window.py             needs $HELIUS_API_KEYS or --with-net
+  skipped 09_bundle_snipe.py             needs $HELIUS_API_KEYS or --with-net
+  skipped f_figures_resultats.py         needs --with-figures (matplotlib)
+  skipped f_signature_gros_tokens.py     needs --with-figures (matplotlib)
+
+all compared artefacts unchanged byte for byte (skipped scripts not revalidated)

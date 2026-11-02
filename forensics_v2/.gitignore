@@ -1,0 +1,7 @@
+# Private by design: wallet attribution, trades, PnL. Stays on this machine.
+private_trades/
+# Local state and heavy data live on the external volume, not in git.
+*.duckdb
+*.duckdb.wal
+*.parquet
+__pycache__/
