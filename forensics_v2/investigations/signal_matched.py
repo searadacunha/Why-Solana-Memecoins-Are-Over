@@ -320,7 +320,7 @@ def analyse() -> int:
 
 
 def bias_checks() -> int:
-    """The earlier comparison, by month, hour, curve level and token age, and its Mantel-Haenszel odds ratio by strata. Private."""
+    """The earlier comparison by month, hour, curve level and token age, with Mantel-Haenszel odds ratios. Private."""
     root = json.loads(storage.CONFIG.read_text())["cold_root"]
     x = json.loads((Path(root) / "intermediate/trade_context_group_x.json").read_text())["trips"]
     trips = json.loads((PRIVATE / "PATTERN_MATCHES.json").read_text())["trips"]
