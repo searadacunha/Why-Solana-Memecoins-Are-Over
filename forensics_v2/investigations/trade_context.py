@@ -76,6 +76,7 @@ def read_buyer(c: Any, wallet: str, cache: dict[str, Any]) -> dict[str, Any]:
                 for f in flows if f.dst == wallet and f.src == G2Y]
     first = h.txs[0] if h.txs else None
     r = {"first_t": first.block_time if first else None, "first_sig": first.signature if first else None,
+         "first_funders": sorted({f.src for f in flows if first and f.signature == first.signature and f.dst == wallet}),
          "first_is_gateway": bool(first and credits_ and credits_[0]["sig"] == first.signature),
          "gateway_credits": credits_[:5], "history_truncated": not h.walk.complete and len(h.txs) >= 100}
     cache[wallet] = r
