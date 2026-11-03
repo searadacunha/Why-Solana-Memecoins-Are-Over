@@ -1,0 +1,126 @@
+{
+ "hub": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+ "windows": [
+  {
+   "day": "2024-11-21",
+   "tx": 100,
+   "span_s": 1112,
+   "in_sol": 68.272582992,
+   "in_from_loop_sol": 0.0,
+   "out_sol": 35.99820933,
+   "out_to_loop_sol": 0.0,
+   "sources": 27,
+   "destinations": 25,
+   "both_ways": 0
+  },
+  {
+   "day": "2024-11-28",
+   "tx": 100,
+   "span_s": 1816,
+   "in_sol": 2203.45715511,
+   "in_from_loop_sol": 0.0,
+   "out_sol": 107.1640668,
+   "out_to_loop_sol": 0.0,
+   "sources": 19,
+   "destinations": 40,
+   "both_ways": 0
+  },
+  {
+   "day": "2024-12-05",
+   "tx": 100,
+   "span_s": 1738,
+   "in_sol": 136.187500595,
+   "in_from_loop_sol": 0.0,
+   "out_sol": 42.98161273,
+   "out_to_loop_sol": 0.0,
+   "sources": 32,
+   "destinations": 27,
+   "both_ways": 0
+  },
+  {
+   "day": "2024-12-12",
+   "tx": 100,
+   "span_s": 1399,
+   "in_sol": 325.982173058,
+   "in_from_loop_sol": 0.0,
+   "out_sol": 610.55083898,
+   "out_to_loop_sol": 0.0,
+   "sources": 18,
+   "destinations": 47,
+   "both_ways": 0
+  },
+  {
+   "day": "2024-12-14",
+   "tx": 100,
+   "span_s": 1645,
+   "in_sol": 140.462240699,
+   "in_from_loop_sol": 0.0,
+   "out_sol": 150.01008417,
+   "out_to_loop_sol": 0.0,
+   "sources": 36,
+   "destinations": 32,
+   "both_ways": 0
+  },
+  {
+   "day": "2024-12-16",
+   "tx": 100,
+   "span_s": 1355,
+   "in_sol": 230.748159323,
+   "in_from_loop_sol": 98.790653622,
+   "out_sol": 65.55261205,
+   "out_to_loop_sol": 0.0,
+   "sources": 36,
+   "destinations": 34,
+   "both_ways": 0
+  }
+ ],
+ "in_sol": 3105.11,
+ "out_sol": 1012.257,
+ "share_in_from_loop": 0.0318,
+ "share_out_to_loop": 0.0,
+ "top_sources": [
+  [
+   "4BeXMQgmQh5jWLs4qrpBN7mdWoebV53xAYH6H88bufof",
+   2000.0
+  ],
+  [
+   "4sGVrzNo2Ww2m9EUigeLsUDsCutbQVEkDgt5wVjFXecM",
+   85.816
+  ],
+  [
+   "75p448NDh5ypBUASHtmz3YAvvctkLvwrY2m2oSLuWwFf",
+   82.992
+  ],
+  [
+   "AwzntLkaND9bq6CBrB4gAyUb41KBePj4TofdTeMXbKyL",
+   68.0
+  ],
+  [
+   "C97JizASoJvyBw9QqhHbtmkv6qkyUhrdGFcdbDpGtTF5",
+   26.904
+  ]
+ ],
+ "top_destinations": [
+  [
+   "u1qd5KqT8SHDgHYJVaiGAYj1pVTFX9DbnQboJkRLPyC",
+   245.303
+  ],
+  [
+   "BYMfnmTjTGWvHEgVAKSBwWuQoP1shAH2Ym9fM7xpk9Wi",
+   56.784
+  ],
+  [
+   "4AsVvgDhKg2PWHsvumYh4VKmbT5NCjQdic6eMwatzmAa",
+   42.147
+  ],
+  [
+   "83wBYiN8Y5qtUdYkf89Gxo8yh1jXKcsYQoks1UmkbnP7",
+   23.198
+  ],
+  [
+   "BzViM8ha2Hp8oAPWC13J9dUFmScFqKJGxSAAV3bRBWeo",
+   20.061
+  ]
+ ],
+ "net_calls": 6
+}

@@ -1,8 +1,8 @@
 # The published fleet against the gateway's ordinary traffic
 
-Figures: [results.json](results.json) and [hypotheses.json](hypotheses.json). Code: `investigations/posthoc/fleet_vs_gateway.py`, `investigations/fleet_hypotheses.py`. Plan for the second part, committed before reading: [../../docs/PLAN_fleet_hypotheses.md](../../docs/PLAN_fleet_hypotheses.md). Payouts come from the frozen study's list of public transfers, 91,789 over 49 days. 54 calls for the second part. Nothing here identifies a person.
+Figures: [results.json](results.json) and [hypotheses.json](hypotheses.json). Code: `investigations/posthoc/fleet_vs_gateway.py`, `investigations/fleet_hypotheses.py`, `investigations/posthoc/g9x7_float.py`. Plan for the second part, committed before reading: [../../docs/PLAN_fleet_hypotheses.md](../../docs/PLAN_fleet_hypotheses.md). Payouts come from the frozen study's list of public transfers, 91,789 over 49 days. 60 calls for the second part and the loop test. Nothing here identifies a person.
 
-**The exact amount links nobody: 2.9768156 SOL fits the gateway's fee line on a round 3 SOL, and it was paid 1,753 times in 49 days. What sets the fleet apart is acting together, and it is not alone in that: 5 of 150 sampled bursts repeat the same purchase on 3 tokens or more, as it does. The 8 strict bursts are not one operator. Their tools point to third-party bots, and only 3 of them, on the same day, share a destination.**
+**The exact amount links nobody: 2.9768156 SOL fits the gateway's fee line on a round 3 SOL, and it was paid 1,753 times in 49 days. What sets the fleet apart is acting together, and it is not alone in that: 5 of 150 sampled bursts repeat the same purchase on 3 tokens or more, as it does. The 8 strict bursts are not one operator. Their tools point to third-party bots, and only 3 of them, on the same day, share a destination. The fleet's money enters a loop, but through a wallet that looks like a busy service.**
 
 ## The amount
 
@@ -61,7 +61,16 @@ Read for the first time, with `AwzntLka…`'s first 200 transactions:
 
 So `G9X7F4Jz…`, `ERGbjcz9…` and `AwzntLka…` form a loop running in parallel (`ONCHAIN_VERIFIED` for the transfers). The fleet's 92.12 SOL entered this loop on 12-13 and 12-16, and `G9X7F4Jz…` also made the first payment to the deployers of 2 of the fleet's 9 tokens: 4.54 SOL on 12-14 and 1.76 SOL on 12-15, each about an hour before its token.
 
-**What this changes:** the earlier note saw `G9X7F4Jz…` as a busy counterparty and nothing more. A loop is more than that: money comes back to it. It fits one treasury, and it also fits a busy service recycling its float. SOL is fungible, so this does not show that the fleet's own lamports reached a deployer. `G9X7F4Jz…` pays hundreds of other wallets, whose relation to the loop was not read. `EXPLORATORY_HYPOTHESIS`, and the next thing to test would be how much of its float returns to these two wallets against all its destinations.
+**What this changes, tested.** A loop could mean one treasury, or a busy service recycling its float. The reading was fixed before looking, `investigations/posthoc/g9x7_float.py`, on six windows of about 25 minutes between 2024-11-21 and 2024-12-16 ([hub_float.json](hub_float.json)):
+
+| In the windows | |
+|---|---:|
+| SOL entering `G9X7F4Jz…` / from the loop | 3,105 / 3.2 % |
+| SOL leaving it / to the loop | 1,012 / 0 % |
+| Different sources per window | 18 to 36 |
+| Different destinations per window | 25 to 47 |
+
+Nearly everything passing through it comes from and goes to wallets outside the loop. **So this fits a busy service better than a treasury of the fleet, and the loop and the two deployers are weak evidence of a common owner.** The test does not exclude a large operator with many wallets, whose relation to these flows was not read. SOL is fungible, so nothing here shows that the fleet's own lamports reached a deployer. Owner `UNRESOLVED`. The historical study had already called this wallet a high-throughput service (`data/trace_h2w6/e8_fenetres_G9X7F4Jz.json`), and this measure agrees.
 
 ## Limits
 

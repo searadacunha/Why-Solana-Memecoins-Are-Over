@@ -13,7 +13,7 @@ Checkpoint: 2026-11-03, second session of the day. Rewritten at each step; histo
   Tips paid in their own transaction are attached to their trade. PnL cards are matched by token symbol, wallets get a level from a rule fixed in advance. Everything is in `private_trades/`, git-ignored.
 - **Cross-chain module:** three levels of proof, tested on a real transaction from Solana to Ethereum (`crosschain.py`, `reports/cross_chain/`).
 - **2026 exits through the new engine:** 427 of 427 transactions agree with the frozen tables after one stated convention, and the engine recovers what their cap hid (`reports/exits_2026/`).
-- **Fleet of the published case:** deployers read, ordinary traffic compared, a loop among three wallets found, and three hypotheses tested on the 8 strict bursts (`reports/nine_wallets/`, `reports/fleet_structure/`).
+- **Fleet of the published case:** deployers read, ordinary traffic compared, a loop among three wallets found and tested, and three hypotheses tested on the 8 strict bursts (`reports/nine_wallets/`, `reports/fleet_structure/`).
 - **Signal before the author's entries:** a control on new trips, matched and fixed in advance, read in the private folder (`docs/PLAN_signal_matched.md`).
 - **Co-signers, second test:** on paying wallets, plan fixed first, no credit spent (`reports/cosigners_v2/`).
 - **Gateway bursts, first co-signer test, baseline, external repositories:** as reported on 2026-11-02.
