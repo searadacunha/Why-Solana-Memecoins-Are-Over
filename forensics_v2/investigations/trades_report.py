@@ -14,11 +14,12 @@ import re
 from collections import Counter, defaultdict
 from typing import Any, Optional
 
-from ..decode import JITO_TIP
-from .trades_2024 import DEPOSIT, FEB3, G2Y, HOT, JAN1, OCT1, PRIVATE, STUDY, ledger, utc, write_private
+from ..decode import JITO_TIP, account_keys
+from .trades_2024 import CACHE, DEPOSIT, FEB3, G2Y, HOT, JAN1, OCT1, PRIVATE, STUDY, ledger, utc, write_private
 from .trades_ledger import DERIVED, ROWS
 
 TOOL_FEE = "9yMwSPk9mrXSN7yDHUuZurAh1sjbJsfpUqjZ7SvVtdco"  # the account receiving the fee of the bot named on the cards
+PUMP_FEE = "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM"  # pump.fun's fee account
 PERIODS = (("before_oct", 0, OCT1), ("oct_dec", OCT1, JAN1), ("jan_feb2", JAN1, FEB3), ("after_feb2", FEB3, 10**12))
 
 
@@ -551,6 +552,71 @@ def capital_path(rows: list[dict[str, Any]], perimeter: set[str]) -> dict[str, A
     }
 
 
+def costs(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """What trading cost over the window. Bot and pump.fun fees sit inside the legs: never add them to a result again."""
+    tool = Counter()
+    tool_n = Counter()
+    pump_paid = pump_n = pump_by_curve = pump_curve_n = 0
+    tips = tip_n = fees = failed = failed_n = rent = 0
+    for r in rows:
+        if not OCT1 <= r["t"] < FEB3:
+            continue
+        rent += r["rent"]
+        fees += r["fee"] if r["payer"] == r["w"] else 0
+        if not r["ok"]:
+            failed += r["native"]
+            failed_n += 1
+            continue
+        if r.get("class") == "tip":
+            tips += sum(m["n"] for m in r["moves"] if m["dst"] in JITO_TIP)
+            tip_n += 1
+        for m in r["moves"]:
+            if m["k"] == "sol_transfer" and m["src"] == r["w"] and m["dst"] == TOOL_FEE:
+                tool[r["class"]] += m["n"]
+                tool_n[r["class"]] += 1
+            if m["k"] == "sol_transfer" and m["src"] == r["w"] and m["dst"] == PUMP_FEE:
+                pump_paid += m["n"]
+                pump_n += 1
+        if (
+            r.get("class") == "sell" and "pump" in r["venues"]
+        ):  # on a curve sale the curve pays this fee, so it is only in the raw transaction
+            with open(CACHE / (r["sig"] + ".json")) as f:
+                raw = json.load(f)["result"]
+            keys = account_keys(raw)
+            if PUMP_FEE in keys:
+                i = keys.index(PUMP_FEE)
+                pump_by_curve += raw["meta"]["postBalances"][i] - raw["meta"]["preBalances"][i]
+                pump_curve_n += 1
+    return {
+        "tool_fee_lamports": sum(tool.values()),
+        "tool_fee_payments": sum(tool_n.values()),
+        "tool_fee_by_class": dict(tool),
+        "tool_fee_n_by_class": dict(tool_n),
+        "pump_fee_paid_by_wallet": pump_paid,
+        "pump_fee_wallet_payments": pump_n,
+        "pump_fee_taken_on_curve_sales": pump_by_curve,
+        "pump_fee_sales": pump_curve_n,
+        "jito_tips_lamports": tips,
+        "jito_tips_n": tip_n,
+        "network_fees_paid": fees,
+        "failed_lamports": failed,
+        "failed_n": failed_n,
+        "net_rent_in_token_accounts": rent,
+    }
+
+
+def cumulative(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Result of trading after tips and failed fees over time, from 2024-10-01, so that it ends on the window's total."""
+    cum = peak = 0
+    t_peak = None
+    for r in sorted(rows, key=lambda x: x["slot"]):
+        if OCT1 <= r["t"] < FEB3 and r.get("class") in ("buy", "sell", "token_other", "failed", "tip"):
+            cum += r["native"]
+            if cum > peak:
+                peak, t_peak = cum, r["t"]
+    return {"end_lamports": cum, "peak_lamports": peak, "peak_utc": utc(t_peak), "drop_from_peak_lamports": peak - cum}
+
+
 def usd(rows: list[dict[str, Any]]) -> dict[str, Any]:
     """Each flow at the daily close of its own day: a valuation, not money received."""
     from .trades_2024 import SOL_USD
@@ -635,6 +701,8 @@ def main() -> int:
         "tips_unattached_lamports": unattached,
         "by_level": {k: dict(v) for k, v in by_level.items()},
         "capital_path": capital_path(rows, perimeter),
+        "costs": costs(rows),
+        "cumulative": cumulative(rows),
         "usd": usd(rows),
     }
     write_private("derived/report_core.json", json.dumps(report, indent=1))
