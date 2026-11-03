@@ -76,4 +76,8 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
 20. **Python.** On this machine `python3` resolves to a 3.14 virtual environment of another tool. The repository's CI and byte-for-byte reproduction are on 3.12 and 3.13, so this work runs from
     its own environment, `~/.local/share/forensics_v2/venv`, Python 3.13.1, with `duckdb`, `pytest`, `mypy` and `ruff`.
 21. **Venue list.** Moonshot added to `decode.VENUES`, after 138 token transactions showed no venue. No total changes: buy and sell are decided by sign.
+22. **Screenshots beyond the study's card list.** The published transcription of the screenshots holds one card the frozen study's list left out, VISUALIZE. The rule of `docs/PLAN_attribution_2024.md` is applied to it as written, percentage and holding time, so one wallet moved up a level. No threshold changed.
+23. **Telegram session not used.** A saved Telegram session exists on this machine for another project. Reading the author's chats with it could settle the last card, but this mission never asked for it, so it was not opened: the author can look up that message himself.
+24. **Second sentence in the root README.** The reconciliation's sentence now also says that the exact amount alone links nobody. Reading identical amounts as a link had become misleading once the fee line was measured. No figure and no earlier sentence changed.
+25. **Attrition of the matched control.** 20 of 60 trips found no match inside the plan's limits. They are dropped and counted, and the limits were not loosened.
 

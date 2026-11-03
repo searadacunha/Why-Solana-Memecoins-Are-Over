@@ -143,7 +143,7 @@ The deployers' own funding does show links among them, first inflow of each:
 
 This makes 4 of the 9 deployers part of two funding chains (`STRONG_TECHNICAL_INFERENCE` for the transfers' existence, `EXPLORATORY_HYPOTHESIS` for any common operator). Whether the fleet bought those tokens because of that, or the overlap comes from one very active funder, is `UNRESOLVED`.
 
-Going forward from the common wallet (600 of its transactions, 400 credits): the largest destination stays `AwzntLka…`, 484.5 SOL in 24 transfers in that part, and its largest source `G9X7F4Jz…`, 291.8 SOL. The trace stopped at the seed's page limit, so the next hop was not read.
+Going forward from the common wallet (600 of its transactions, 400 credits): the largest destination stays `AwzntLka…`, 484.5 SOL in 24 transfers in that part, and its largest source `G9X7F4Jz…`, 291.8 SOL. The trace stopped at the seed's page limit. The next hop, read later, closes a loop with `G9X7F4Jz…`: [fleet_structure](../fleet_structure/README.md).
 
 ## Rarity
 

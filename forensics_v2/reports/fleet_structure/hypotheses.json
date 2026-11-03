@@ -1,0 +1,948 @@
+{
+ "plan": "docs/PLAN_fleet_hypotheses.md",
+ "groups": [
+  {
+   "group": "burst_33_2024-10-22",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     5
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     5
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     5
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     4
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     4
+    ],
+    [
+     "4pP8eDKACuV7T2rbFPE8CHxGKDYAzSdRsdMsGvz2k4oc",
+     2
+    ],
+    [
+     "HQ2UUt18uJqKaQFJhgV9zaTdQxUZjNrsKFgoEDquBkcx",
+     2
+    ],
+    [
+     "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+     1
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     4,
+     null
+    ],
+    [
+     "F4hJ3Ee3c5UuaorKAMfELBjYCjiiLH75haZTKqTywRP3",
+     2,
+     null
+    ],
+    [
+     "4o9p5PaYQcfNiLZCCN5ZsZckdtj6Up3xzLvSoZx8GufA",
+     2,
+     null
+    ],
+    [
+     "F34kcgMgCF7mYWkwLN3WN7KrFprr2NbwxuLvXx4fbztj",
+     2,
+     null
+    ],
+    [
+     "J9KUz2qkcHqY1G12Lgbz3bwiRG2mBPPBEXa4ipivHcYr",
+     1,
+     null
+    ],
+    [
+     "Cw8CFyM9FkoMi7K7Crf6HNQqf4uEMzpKw6QNghXLvLkY",
+     1,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "D15CAtUpCVE6z7NeFhAKrYCUq7R9Xh98cypCFrV33HAi",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "godTjnH7RZ3KAG6oEVTU7mH22TZR5oV4JKJheF9ZAjc",
+       609.0,
+       null
+      ],
+      [
+       "C7ZxQvvjwB3N466Ysp6dWiktBDDcLNLMhhoukQUjsTA2",
+       600.0,
+       null
+      ],
+      [
+       "AVUCZyuT35YSuj4RH7fwiyPu82Djn2Hfg7y2ND2XcnZH",
+       3.595,
+       null
+      ]
+     ],
+     "second_hop": {
+      "godTjnH7RZ3KAG6oEVTU7mH22TZR5oV4JKJheF9ZAjc": [
+       [
+        "5FaGXg95BA7Wb1nqj7unqoCBgquywFMnb2uy2dBG5hY",
+        609.0,
+        null
+       ],
+       [
+        "godxpxo7vYWyLCwHiWnwJmKivibyvfbdekMeSXQQ6TK",
+        600.541,
+        null
+       ],
+       [
+        "AApd5QiJYGDUg8xCHHsA5tHLp8vYj9aQ4FhujJqhYPbP",
+        1.466,
+        null
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_106_2024-12-03",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     16
+    ],
+    [
+     "4pP8eDKACuV7T2rbFPE8CHxGKDYAzSdRsdMsGvz2k4oc",
+     16
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     16
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     16
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     16
+    ],
+    [
+     "HQ2UUt18uJqKaQFJhgV9zaTdQxUZjNrsKFgoEDquBkcx",
+     16
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     16
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     16,
+     null
+    ],
+    [
+     "9RYJ3qr5eU5xAooqVcbmdeusjcViL5Nkiq7Gske3tiKq",
+     16,
+     null
+    ],
+    [
+     "28KqHiudrpzfVkVWQ1jztQ2Aarf4W3CvTitjWEqTCkpA",
+     16,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "GrmXv6qK672i9ToMtXoAiBqAFQD51m7TQm8P6MmRAc66",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "FuDyM3MLFYgvSM8CL8VTjrfSaMhxzizn1xiuxpM3obZb",
+       304.0,
+       null
+      ],
+      [
+       "5UM1oACaFdDqVfj16sq6mPouC5foJeTsyT4ykBFN88Mi",
+       173.0,
+       null
+      ],
+      [
+       "5r5YQ96nU1bVp2dZY1xrNyVk77bKX4TfSwSHEyMCjp5u",
+       50.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "FuDyM3MLFYgvSM8CL8VTjrfSaMhxzizn1xiuxpM3obZb": [
+       [
+        "GQcbmJQWrYqG4YK7AuxnDwDZQtuCKKMM5Gi6LojSWMnT",
+        32.7,
+        null
+       ],
+       [
+        "Cj7YBtNFKXiP6u3ncEF7J1mLqBEZNdxF3g7XJ35ByXrZ",
+        0.013,
+        null
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_124_2025-01-14",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     8
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     8
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     8
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     8
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     8
+    ],
+    [
+     "MaestroAAe9ge5HTc64VbBQZ6fP77pwvrhM8i1XWSAx",
+     7
+    ],
+    [
+     "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+     1
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     8,
+     null
+    ],
+    [
+     "MaestroUL88UBnZr3wfoN7hqmNWFi3ZYCGqZoJJHE36",
+     7,
+     null
+    ],
+    [
+     "TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq",
+     3,
+     null
+    ],
+    [
+     "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5",
+     1,
+     null
+    ],
+    [
+     "6a364kmdmM3hMg1mMs22jt6JTZeyzhedWEMyd4LsJbLJ",
+     1,
+     null
+    ],
+    [
+     "nextBLoCkPMgmG8ZgJtABeScP35qLa2AMCNKntAP7Xc",
+     1,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "8jPLUWVo6uVWYYY7prm9qxkSrSkjthBeJKk2fdZpLHzE",
+     "tx_read": 27,
+     "complete": true,
+     "out_top": [
+      [
+       "3BzvGeits54nYFx7R59H7bV7CEiBPveGzwTa8CLKN4Tm",
+       29.09,
+       null
+      ],
+      [
+       "B6rurxpBfs8gpJnS4n4QpHxSSfAvpFzrJdJYU7EknW7R",
+       4.8,
+       null
+      ],
+      [
+       "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+       0.048,
+       null
+      ]
+     ],
+     "second_hop": {
+      "3BzvGeits54nYFx7R59H7bV7CEiBPveGzwTa8CLKN4Tm": [
+       [
+        "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+        29.09,
+        "ChangeNOW gateway (public attribution)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_126_2025-01-15",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     9
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     9
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     8
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     8
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     8
+    ],
+    [
+     "MaestroAAe9ge5HTc64VbBQZ6fP77pwvrhM8i1XWSAx",
+     8
+    ],
+    [
+     "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+     1
+    ],
+    [
+     "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+     1
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     8,
+     null
+    ],
+    [
+     "MaestroUL88UBnZr3wfoN7hqmNWFi3ZYCGqZoJJHE36",
+     8,
+     null
+    ],
+    [
+     "TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq",
+     5,
+     null
+    ],
+    [
+     "35pxg9ikPGiymhSqrfMe9gQTUe2hWS3KfJkYByorLyPr",
+     1,
+     null
+    ],
+    [
+     "3AVi9Tg9Uo68tJfuvoKvqKNWKkC5wPdSSdeBnizKZ6jT",
+     1,
+     null
+    ],
+    [
+     "nEXTBLockYgngeRmRrjDV31mGSekVPqZoMGhQEZtPVG",
+     1,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "Cxw6iN92GTxaQ74Xu39wofKFyMksfny5nKMfR7HGBy4s",
+     "tx_read": 139,
+     "complete": false,
+     "out_top": [
+      [
+       "6e9hhj57RYhgHq9GcwMGnd6XmPR6ADi7NUyAejz75LVr",
+       20.0,
+       null
+      ],
+      [
+       "3nMFwZXwY1s1M5s8vYAHqd4wGs4iSxXE4LRoUMMYqEgF",
+       18.658,
+       null
+      ],
+      [
+       "J2xg8Aw7TTwZRgbFuUJwRgzu2fYCQjKhV1jbFrgD3p1D",
+       10.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "6e9hhj57RYhgHq9GcwMGnd6XmPR6ADi7NUyAejz75LVr": []
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_138_2025-01-28",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     9
+    ],
+    [
+     "4pP8eDKACuV7T2rbFPE8CHxGKDYAzSdRsdMsGvz2k4oc",
+     9
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     9
+    ],
+    [
+     "HQ2UUt18uJqKaQFJhgV9zaTdQxUZjNrsKFgoEDquBkcx",
+     9
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     9
+    ],
+    [
+     "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+     5
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     4
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     3
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "9RYJ3qr5eU5xAooqVcbmdeusjcViL5Nkiq7Gske3tiKq",
+     9,
+     null
+    ],
+    [
+     "28KqHiudrpzfVkVWQ1jztQ2Aarf4W3CvTitjWEqTCkpA",
+     8,
+     null
+    ],
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     4,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "3rb7jngmTaf3wp5C7TNFSHfUixgmRsSvTYfBE6HiYKQw",
+     "tx_read": 33,
+     "complete": true,
+     "out_top": [
+      [
+       "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+       193.826,
+       "Bybit hot wallet"
+      ]
+     ],
+     "second_hop": {}
+    }
+   ]
+  },
+  {
+   "group": "burst_140_2025-01-28",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     3
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     3
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     3
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     3
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     3
+    ],
+    [
+     "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+     3
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     3,
+     null
+    ],
+    [
+     "7Jjq757mqqv5fKGaZgPujfTUkm1D9tDPkEy2KTA9qL6v",
+     1,
+     null
+    ],
+    [
+     "4qNkgtZ8pg2xAfhnZjzYdzepzNRbjNKqiy8mZBcEMrsR",
+     1,
+     null
+    ],
+    [
+     "531Bxp1oYEttYSiKGYWdsZzhpBKgVuN5umRsqaHtKWgr",
+     1,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV",
+       5.0,
+       null
+      ],
+      [
+       "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+       5.0,
+       null
+      ],
+      [
+       "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+       5.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV": [
+       [
+        "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+        5.0,
+        "ChangeNOW gateway (public attribution)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_141_2025-01-28",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     13
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     13
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     13
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     13
+    ],
+    [
+     "MaestroAAe9ge5HTc64VbBQZ6fP77pwvrhM8i1XWSAx",
+     13
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     13
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     13,
+     null
+    ],
+    [
+     "MaestroUL88UBnZr3wfoN7hqmNWFi3ZYCGqZoJJHE36",
+     13,
+     null
+    ],
+    [
+     "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5",
+     3,
+     null
+    ],
+    [
+     "ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt",
+     1,
+     null
+    ],
+    [
+     "NexTbLoCkWykbLuB1NkjXgFWkX9oAtcoagQegygXXA2",
+     1,
+     null
+    ],
+    [
+     "HFqU5x63VTqvQss8hp11i4wVV8bD44PvwucfZ2bU7gRe",
+     1,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV",
+       5.0,
+       null
+      ],
+      [
+       "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+       5.0,
+       null
+      ],
+      [
+       "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+       5.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV": [
+       [
+        "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+        5.0,
+        "ChangeNOW gateway (public attribution)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "burst_142_2025-01-28",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     45
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     45
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     45
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     43
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     42
+    ],
+    [
+     "BSfD6SHZigAfDWSjzD5Q41jw8LmKwtmjskPH9XW1mrRW",
+     33
+    ],
+    [
+     "MaestroAAe9ge5HTc64VbBQZ6fP77pwvrhM8i1XWSAx",
+     12
+    ],
+    [
+     "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+     3
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     42,
+     null
+    ],
+    [
+     "AVUCZyuT35YSuj4RH7fwiyPu82Djn2Hfg7y2ND2XcnZH",
+     33,
+     null
+    ],
+    [
+     "7ks326H4LbMVaUC8nW5FpC5EoAf5eK5pf4Dsx4HDQLpq",
+     33,
+     null
+    ],
+    [
+     "MaestroUL88UBnZr3wfoN7hqmNWFi3ZYCGqZoJJHE36",
+     12,
+     null
+    ],
+    [
+     "TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq",
+     2,
+     null
+    ],
+    [
+     "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5",
+     2,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV",
+       5.0,
+       null
+      ],
+      [
+       "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+       5.0,
+       null
+      ],
+      [
+       "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+       5.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV": [
+       [
+        "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t",
+        5.0,
+        "ChangeNOW gateway (public attribution)"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "group": "published_fleet",
+   "programs": [
+    [
+     "11111111111111111111111111111111",
+     30
+    ],
+    [
+     "ComputeBudget111111111111111111111111111111",
+     30
+    ],
+    [
+     "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+     30
+    ],
+    [
+     "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+     21
+    ],
+    [
+     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+     20
+    ],
+    [
+     "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+     10
+    ]
+   ],
+   "fee_accounts": [
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     20,
+     null
+    ],
+    [
+     "BTQyUXhxiLrFPD5JUANCwg4ViibmNY39McmWk4bVNxLA",
+     18,
+     null
+    ],
+    [
+     "F34kcgMgCF7mYWkwLN3WN7KrFprr2NbwxuLvXx4fbztj",
+     12,
+     null
+    ],
+    [
+     "ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt",
+     4,
+     null
+    ],
+    [
+     "ADaUMid9yfUytqMBgopwjb2DTLSokTSzL1zt6iGPaS49",
+     4,
+     null
+    ],
+    [
+     "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5",
+     4,
+     null
+    ]
+   ],
+   "paths": [
+    {
+     "wallet": "ERGbjcz9fs95YKvM6zXqvEaicK4VPPo2JwNV8beGKZM4",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "AwzntLkaND9bq6CBrB4gAyUb41KBePj4TofdTeMXbKyL",
+       80.0,
+       null
+      ],
+      [
+       "GpttcbJugWevhWtwJXy4vgpXpnbqqMFChjAPPwnyHjDp",
+       37.509,
+       null
+      ],
+      [
+       "Rmtdkh8rd7pnJEVzC7iqXKTrTpbqoH8SN4LrqzcCQj1",
+       9.0,
+       null
+      ]
+     ],
+     "second_hop": {
+      "AwzntLkaND9bq6CBrB4gAyUb41KBePj4TofdTeMXbKyL": [
+       [
+        "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+        438.736,
+        null
+       ]
+      ]
+     }
+    },
+    {
+     "wallet": "AwzntLkaND9bq6CBrB4gAyUb41KBePj4TofdTeMXbKyL",
+     "tx_read": 200,
+     "complete": false,
+     "out_top": [
+      [
+       "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE",
+       847.561,
+       null
+      ]
+     ],
+     "second_hop": {
+      "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE": [
+       [
+        "5PqttB3mw9aC4aMAqzD5yx1yhMXwcnCLozqyXnsmc3f9",
+        37.129,
+        null
+       ],
+       [
+        "3A8t52vdaV6AY2W3ZA2DgXbq5Dnd7CTd3iZvxYPKyT6v",
+        36.69,
+        null
+       ],
+       [
+        "FZyLQwWMTCgQWxD9iKroqfo82aHcZLt3VUjb1trLsA5X",
+        12.498,
+        null
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "joins": [
+  {
+   "a": "burst_140_2025-01-28",
+   "b": "burst_141_2025-01-28",
+   "shared": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+    "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+    "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+    "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV"
+   ]
+  },
+  {
+   "a": "burst_140_2025-01-28",
+   "b": "burst_142_2025-01-28",
+   "shared": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+    "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+    "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+    "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV"
+   ]
+  },
+  {
+   "a": "burst_141_2025-01-28",
+   "b": "burst_142_2025-01-28",
+   "shared": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+    "8vfPFsiWAtXuKZMuCSGhREEXXSQurjj3dEDYs5ZyWEEJ",
+    "9YBoKKYAKkGtgJRkgbjZbU9GNgX1WnLstuARNZqjT8jo",
+    "Cqep6besQdNHL9BRkfWwq2PAKvapGchhDnP9SfauTCZV"
+   ]
+  }
+ ],
+ "fee_accounts_in_2_or_more_groups": [
+  [
+   "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+   9,
+   null
+  ],
+  [
+   "MaestroUL88UBnZr3wfoN7hqmNWFi3ZYCGqZoJJHE36",
+   4,
+   null
+  ],
+  [
+   "96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5",
+   4,
+   null
+  ],
+  [
+   "TEMPaMeCRFAS9EKF53Jd6KpHxgL47uWLcpFArU1Fanq",
+   3,
+   null
+  ],
+  [
+   "F34kcgMgCF7mYWkwLN3WN7KrFprr2NbwxuLvXx4fbztj",
+   2,
+   null
+  ],
+  [
+   "9RYJ3qr5eU5xAooqVcbmdeusjcViL5Nkiq7Gske3tiKq",
+   2,
+   null
+  ],
+  [
+   "28KqHiudrpzfVkVWQ1jztQ2Aarf4W3CvTitjWEqTCkpA",
+   2,
+   null
+  ],
+  [
+   "ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt",
+   2,
+   null
+  ]
+ ],
+ "net_calls": 54
+}

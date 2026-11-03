@@ -95,6 +95,22 @@
    "what": "the author's ledger, report and largest trips",
    "output": "private_trades/ (git-ignored)",
    "code": "investigations/trades_ledger.py, investigations/trades_report.py, investigations/trade_context.py"
+  },
+  {
+   "what": "fleet against gateway traffic",
+   "output": "reports/fleet_structure/results.json",
+   "code": "investigations/posthoc/fleet_vs_gateway.py"
+  },
+  {
+   "what": "one operator, a group or a service, plan docs/PLAN_fleet_hypotheses.md",
+   "output": "reports/fleet_structure/hypotheses.json",
+   "code": "investigations/fleet_hypotheses.py"
+  },
+  {
+   "what": "matched control of the signal, plan docs/PLAN_signal_matched.md",
+   "output": "private_trades/trade_context/ (git-ignored)",
+   "code": "investigations/signal_matched.py",
+   "seed": 20261104
   }
  ],
  "tests_last_run": "see the commit's CI run on GitHub: ci.yml, on forensics-v2"

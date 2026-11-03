@@ -12,6 +12,7 @@ import gzip
 import json
 import re
 from collections import Counter, defaultdict
+from pathlib import Path
 from typing import Any, Optional
 
 from ..decode import JITO_TIP, account_keys
@@ -144,6 +145,22 @@ def held(text: str) -> int:
 def match_cards(trips: list[dict[str, str]], meta: dict[str, Any]) -> list[dict[str, Any]]:
     """Every card against every trip of the same token symbol, with the figures of the written rule."""
     cards = json.loads((STUDY / "q1/captures_read.json").read_text())["cards"]
+    known = {c["sym"].lower() for c in cards}
+    fragments: dict[str, str] = {}
+    for lot in sorted(
+        (Path(__file__).resolve().parents[2] / "data/screens").glob("lot*.json")
+    ):  # the published transcription of the screenshots
+        rows = json.loads(lot.read_text())
+        for r in rows if isinstance(rows, list) else next(v for v in rows.values() if isinstance(v, list)):
+            sym = r.get("symbole")
+            if not sym or not r.get("gain_pct"):
+                continue
+            fragments.setdefault(sym.lower(), r.get("mint_fragment") or "")
+            if sym.lower() not in known:  # a screenshot the study's card list left out: same rule, without invested and gain
+                known.add(sym.lower())
+                cards.append(
+                    {"sym": sym, "pct": float(r["gain_pct"]), "held": r["duree"], "bot": None, "inv_sol": None, "gain_sol": None}
+                )
     by_sym: dict[str, list[dict[str, str]]] = defaultdict(list)
     for t in trips:
         by_sym[(meta.get(t["mint"], {}).get("symbol") or "").strip().lower()].append(t)
@@ -184,6 +201,10 @@ def match_cards(trips: list[dict[str, str]], meta: dict[str, Any]) -> list[dict[
                 "held": c["held"],
                 "pct": c["pct"],
                 "matches": hits,
+                "mint_fragment_on_screenshot": fragments.get(c["sym"].lower(), ""),
+                "fragment_agrees": bool(hits)
+                and bool(fragments.get(c["sym"].lower()))
+                and hits[0]["mint"][:8] == fragments[c["sym"].lower()][:8],
                 "same_symbol_trips": len(by_sym.get(c["sym"].lower(), [])),
             }
         )

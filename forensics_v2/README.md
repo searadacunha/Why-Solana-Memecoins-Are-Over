@@ -41,11 +41,12 @@ only the standard library; `store.py` needs DuckDB (`requirements.txt`).
 | [docs/EXTERNAL_REPOS_AUDIT.md](docs/EXTERNAL_REPOS_AUDIT.md) | 15 repositories read: integrate, adapt or reject |
 | [docs/baseline/](docs/baseline/) | Test state before any change |
 | [reports/nine_wallets/README.md](reports/nine_wallets/README.md) | The published case, rebuilt from signatures and reconciled: the nine are inside the fifteen |
+| [reports/fleet_structure/README.md](reports/fleet_structure/README.md) | The fleet against ordinary gateway traffic, and one operator, a group or a service. Plan: [docs/PLAN_fleet_hypotheses.md](docs/PLAN_fleet_hypotheses.md) |
 | [reports/cross_chain/README.md](reports/cross_chain/README.md) | What a bridge lets one prove, tested on a real transaction, and how rarely bridges appear here |
 | [reports/exits_2026/README.md](reports/exits_2026/README.md) | The 2026 sales and exits through the new engine. Plan: [docs/PLAN_exits_2026.md](docs/PLAN_exits_2026.md) |
 | [reports/cosigners_v2/README.md](reports/cosigners_v2/README.md) | Co-signers again, on those who actually pay. Plan: [docs/PLAN_cosigners_v2.md](docs/PLAN_cosigners_v2.md) |
 | [reports/gateway_bursts/README.md](reports/gateway_bursts/README.md) | Do same-amount bursts behave as groups? Plan: [docs/PLAN_gateway_bursts.md](docs/PLAN_gateway_bursts.md) |
 | [reports/cosigners/README.md](reports/cosigners/README.md) | Very active co-signers: not settled. Plan: [docs/PLAN_cosigners.md](docs/PLAN_cosigners.md) |
-| [docs/PLAN_trade_context.md](docs/PLAN_trade_context.md), [docs/PLAN_attribution_2024.md](docs/PLAN_attribution_2024.md) | The author's own trades and wallets. Results stay private |
+| [docs/PLAN_trade_context.md](docs/PLAN_trade_context.md), [docs/PLAN_attribution_2024.md](docs/PLAN_attribution_2024.md), [docs/PLAN_signal_matched.md](docs/PLAN_signal_matched.md) | The author's own trades and wallets. Results stay private |
 
 State of the work: [PROJECT_STATE.md](PROJECT_STATE.md), [TODO.md](TODO.md), [DECISIONS.md](DECISIONS.md), [BLOCKERS.md](BLOCKERS.md).
