@@ -26,7 +26,10 @@ MAX_RSS_BYTES = 1_500_000_000  # machine has 17 GB shared with other sessions: s
 
 def row_of(wallet: str, sig: str) -> dict[str, Any]:
     with open(CACHE / (sig + ".json")) as f:
-        raw = json.load(f)["result"]
+        return row_from_raw(wallet, sig, json.load(f)["result"])
+
+
+def row_from_raw(wallet: str, sig: str, raw: dict[str, Any]) -> dict[str, Any]:
     d = D.decode(raw)
     n = d.owners.get(wallet)
     at = d.keys.index(wallet) if wallet in d.keys else None
