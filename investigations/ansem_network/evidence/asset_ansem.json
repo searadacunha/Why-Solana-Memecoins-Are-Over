@@ -1,0 +1,79 @@
+{
+ "last_indexed_slot": 464855269,
+ "interface": "FungibleToken",
+ "id": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+ "content": {
+  "$schema": "https://schema.metaplex.com/nft1.0.json",
+  "json_uri": "https://meta.uxento.io/data/7f4c8448-c38e-4c34-aa37-a28cff9806d0",
+  "files": [
+   {
+    "uri": "https://edge.uxento.io/image/Cx83EqERns2VuiKrkwHegTuECVqZebsNhJ3dCU8CucWG",
+    "cdn_uri": "https://cdn.helius-rpc.com/cdn-cgi/image//https://edge.uxento.io/image/Cx83EqERns2VuiKrkwHegTuECVqZebsNhJ3dCU8CucWG",
+    "mime": "image/png"
+   }
+  ],
+  "metadata": {
+   "json_name": "The Black Bull",
+   "name": "The Black Bull",
+   "symbol": "ANSEM"
+  },
+  "links": {
+   "image": "https://edge.uxento.io/image/Cx83EqERns2VuiKrkwHegTuECVqZebsNhJ3dCU8CucWG"
+  }
+ },
+ "authorities": [],
+ "compression": {
+  "eligible": false,
+  "compressed": false,
+  "data_hash": "",
+  "creator_hash": "",
+  "asset_hash": "",
+  "tree": "",
+  "seq": 0,
+  "leaf_id": 0
+ },
+ "grouping": [],
+ "royalty": {
+  "royalty_model": "creators",
+  "target": null,
+  "percent": 0.0,
+  "basis_points": 0,
+  "primary_sale_happened": false,
+  "locked": false
+ },
+ "creators": [],
+ "ownership": {
+  "frozen": false,
+  "delegated": false,
+  "delegate": null,
+  "ownership_model": "token",
+  "owner": ""
+ },
+ "supply": null,
+ "mutable": true,
+ "burnt": false,
+ "mint_extensions": {
+  "metadata": {
+   "uri": "https://meta.uxento.io/data/7f4c8448-c38e-4c34-aa37-a28cff9806d0",
+   "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+   "name": "The Black Bull",
+   "symbol": "ANSEM",
+   "update_authority": null,
+   "additional_metadata": []
+  },
+  "metadata_pointer": {
+   "authority": null,
+   "metadata_address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+  }
+ },
+ "token_info": {
+  "symbol": "ANSEM",
+  "supply": 997359159421951,
+  "decimals": 6,
+  "token_program": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+  "price_info": {
+   "price_per_token": 0.040391877,
+   "currency": "USDC"
+  }
+ }
+}

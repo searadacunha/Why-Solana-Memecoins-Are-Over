@@ -1,0 +1,4768 @@
+{
+ "slot": 426930467,
+ "block_time": 1781643948,
+ "block_time_utc": "2026-06-16 21:05:48",
+ "block_hash": "5mCYTjD2FGkSXwqcBSvkA42pByMW1mmtxp62Ypsg8qTZ",
+ "parent_slot": 426930466,
+ "transactions_in_block": 1551,
+ "touching_mint": 18,
+ "touching_mint_ok": 5,
+ "touching_mint_failed": 13,
+ "rows": [
+  {
+   "index_in_block": 279,
+   "signature": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+   "ok": true,
+   "err": null,
+   "fee_payer": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "signers": [
+    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+    "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+   ],
+   "fee_lamports": 10000,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ"
+   ],
+   "version": 0,
+   "compute_budget": {},
+   "lookup_tables": [
+    "HQ4G6FjmW8yZ15XGoiQdGDvbi5C7fJKktNg6pzCzdHg4"
+   ],
+   "jito_tips": [],
+   "trades": [
+    {
+     "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     "sol": 84740740739,
+     "tok": 792454486758954,
+     "buy": true,
+     "user": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     "ts": 1781643948,
+     "vsol": 114740740739,
+     "vtok": 280545513241046,
+     "rsol": 84740740739,
+     "rtok": 645513241046,
+     "sol_ui": 84.740740739,
+     "tok_ui": 792454486.758954
+    }
+   ],
+   "owner_nets": {
+    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe": {
+     "sol_change": -86.06810776,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": 792454486.758954
+     }
+    },
+    "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": {
+     "sol_change": 0.00368184,
+     "tokens": {}
+    },
+    "moonKfftMiGSak3cezvhEqvkPSzwrmQxQHXuspC96yj": {
+     "sol_change": 0.003,
+     "tokens": {}
+    },
+    "FxC6pJJSiu6efSn8PmBMQjQaYm6dkSqmQYohui6NPnrf": {
+     "sol_change": 84.744756659,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": 207545513.241046
+     }
+    },
+    "3nB21QkztijXVgA3TB5QpNPY93hpnNJaeFBMozjXoFoN": {
+     "sol_change": 0.254222223,
+     "tokens": {}
+    },
+    "uxtoRPdPjRekYmxs1uUqVRZWh38iqonc9KgPuZXPeSY": {
+     "sol_change": 0.2574,
+     "tokens": {}
+    },
+    "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV": {
+     "sol_change": 0.402518519,
+     "tokens": {}
+    },
+    "5cjcW9wExnJJiqgLjq7DEG75Pm6JBgE1hNv4B2vHXUW6": {
+     "sol_change": 0.402518519,
+     "tokens": {}
+    }
+   },
+   "mint_ops": [
+    {
+     "kind": "mint",
+     "dst": "6h19hTXkE4TYCUR3arffCgAN61eRNrJn12cZGzx3bDHk",
+     "dst_owner": "FxC6pJJSiu6efSn8PmBMQjQaYm6dkSqmQYohui6NPnrf",
+     "amount": 1000000000.0
+    }
+   ]
+  },
+  {
+   "index_in_block": 1383,
+   "signature": "UGfH7ngiC1bq14Lwdw9Jp5PVCeDBksBJcenAPpoQCSZJhhmmxNF7YRFBjjL9NNzW4GbabZi7GG4RbFzga4bybjz",
+   "ok": true,
+   "err": null,
+   "fee_payer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+   "signers": [
+    "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq"
+   ],
+   "fee_lamports": 589387625,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "J7iAnje8zMfiTtUzNhHCyr2tHwVjPVVDu2XCD8sAXGy9",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_price": 3274347916,
+    "unit_limit": 180000
+   },
+   "lookup_tables": [
+    "5c6UWibveksNaT2Pz5vmBmJf4jhkUMD8pSrB7DfBCLop"
+   ],
+   "jito_tips": [],
+   "trades": [
+    {
+     "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     "sol": 264618319,
+     "tok": 645513241046,
+     "buy": true,
+     "user": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     "ts": 1781643948,
+     "vsol": 115005359058,
+     "vtok": 279900000000000,
+     "rsol": 85005359058,
+     "rtok": 0,
+     "sol_ui": 0.264618319,
+     "tok_ui": 645513.241046
+    }
+   ],
+   "owner_nets": {
+    "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": {
+     "sol_change": -0.862313674,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": 645513.241046
+     }
+    },
+    "nozrwQtWhEdrA6W8dkbt9gnUaMs52PdAv5byipnadq3": {
+     "sol_change": 0.005,
+     "tokens": {}
+    },
+    "3nB21QkztijXVgA3TB5QpNPY93hpnNJaeFBMozjXoFoN": {
+     "sol_change": 0.000793855,
+     "tokens": {}
+    },
+    "FxC6pJJSiu6efSn8PmBMQjQaYm6dkSqmQYohui6NPnrf": {
+     "sol_change": 0.264618319,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": -645513.241046
+     }
+    },
+    "5eHhjP8JaYkz83CWwvGU2uMUXefd3AazWGx4gpcuEEYD": {
+     "sol_change": 0.001256937,
+     "tokens": {}
+    },
+    "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM": {
+     "sol_change": 0.001256938,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1384,
+   "signature": "Q8uA1zn27PzG7zhe53VPm5qkE7duD4MLdPpj5s8Ugf8FMNksqUDN5aAPTuZSV6MRmC4C57UxypxF6zaHzt1QT8K",
+   "ok": true,
+   "err": null,
+   "fee_payer": "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+   "signers": [
+    "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq"
+   ],
+   "fee_lamports": 589387624,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "J7iAnje8zMfiTtUzNhHCyr2tHwVjPVVDu2XCD8sAXGy9",
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+    "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_price": 1133428123,
+    "unit_limit": 520000
+   },
+   "lookup_tables": [
+    "5c6UWibveksNaT2Pz5vmBmJf4jhkUMD8pSrB7DfBCLop"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": {
+     "sol_change": -15.231725613,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": 30077097.302155
+     }
+    },
+    "nozrwQtWhEdrA6W8dkbt9gnUaMs52PdAv5byipnadq3": {
+     "sol_change": 0.005,
+     "tokens": {}
+    },
+    "CevNeicTXqL1oAjqZ3FNmexftzKD4ozqev5DgX2sAgFq": {
+     "sol_change": 0.0014616,
+     "tokens": {}
+    },
+    "FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC": {
+     "sol_change": 99.456589934,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": 176822902.697845
+     }
+    },
+    "FxC6pJJSiu6efSn8PmBMQjQaYm6dkSqmQYohui6NPnrf": {
+     "sol_change": -85.005359058,
+     "tokens": {
+      "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump": -206900000.0
+     }
+    },
+    "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg": {
+     "sol_change": 0.006828961,
+     "tokens": {}
+    },
+    "BbmS8ASj63NpNoZRAmNKdpqDcysbrtMi1TqYUGEAoM6H": {
+     "sol_change": 0.043369891,
+     "tokens": {}
+    },
+    "7VtfL8fvgNfhz17qKRMjzQEXgbdpnHHHQRh54R9jP2RJ": {
+     "sol_change": 0.067223331,
+     "tokens": {}
+    },
+    "5eHhjP8JaYkz83CWwvGU2uMUXefd3AazWGx4gpcuEEYD": {
+     "sol_change": 0.06722333,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1393,
+   "signature": "5NUbqeDKBMbJpPwbu8A7Y8Lw9VXSnsqLeYEGwUuHXAv8e96AEWBChKEVPXXKGGSo9ZmxqwdxdvCH7rd6SfPG9fyN",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     0,
+     "InvalidAccountData"
+    ]
+   },
+   "fee_payer": "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+   "signers": [
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw"
+   ],
+   "fee_lamports": 39137,
+   "programs": [
+    "3Wn9MScovnLzVB4B8DxtchiPrX7jSanSgvUqSQfBM3MW",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 150000,
+    "unit_price": 227574
+   },
+   "lookup_tables": [
+    "2HwcWZ5WvD19qKGN8doMYenp3m9bPRe7p5N9ieu3UieD"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw": {
+     "sol_change": -3.9137e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1396,
+   "signature": "5NP4KBLE5Xmysz214bgQwzmTPxdhRKNKtkECRuLqcTmyzGXvATQd4MisDM6t2ACQFC6ERrJKFPjY1fY83cqtQWwq",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     2,
+     "InvalidArgument"
+    ]
+   },
+   "fee_payer": "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+   "signers": [
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw"
+   ],
+   "fee_lamports": 31000,
+   "programs": [
+    "11111111111111111111111111111111",
+    "3Wn9MScovnLzVB4B8DxtchiPrX7jSanSgvUqSQfBM3MW",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 500001,
+    "unit_price": 51999
+   },
+   "lookup_tables": [
+    "2HwcWZ5WvD19qKGN8doMYenp3m9bPRe7p5N9ieu3UieD"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw": {
+     "sol_change": -3.1e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1406,
+   "signature": "3YtDxoe1nepwi5BLyQpFZE1dXZmYYg8KGGa2AXmjUKb9Xu5pJVAZEtDJDfZPk8ChYFsBZUsrWtLqCPzyuKRARDVm",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 6005
+     }
+    ]
+   },
+   "fee_payer": "HKCFgNYUt7Fpm6G4DgNCiYFrG4V6XvfB9DjzSgY9pv5g",
+   "signers": [
+    "HKCFgNYUt7Fpm6G4DgNCiYFrG4V6XvfB9DjzSgY9pv5g"
+   ],
+   "fee_lamports": 5005001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7F2k5rXvmthLXJWCzxoCFbcuHdJx3JL1FxHFKSVxs8QB",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "od1NboTcsrqEhAN92nBzzJon3HYXSeTcT48fw8iXVtB"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 135000,
+    "unit_price": 37037038
+   },
+   "lookup_tables": [
+    "4nxZJ3rZwxbghNhdASn9j6vPTbx3FfdLuCJ91scubdkF"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "HKCFgNYUt7Fpm6G4DgNCiYFrG4V6XvfB9DjzSgY9pv5g": {
+     "sol_change": -0.005005001,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1407,
+   "signature": "4CEh2iDSCDvFtofrdReRdWPUsmzAMAhkN17SRv4vzvY6Ly7xxReUySJbFPunoaQjVrNZNZpb9q6FYS7ZcBxzyJur",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     6,
+     {
+      "Custom": 6005
+     }
+    ]
+   },
+   "fee_payer": "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc",
+   "signers": [
+    "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc"
+   ],
+   "fee_lamports": 6500,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "DashPVgj1bygAvFidJjXCpVfsocPdHg9gZA1EJpcjcsT",
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 150000,
+    "unit_price": 10000
+   },
+   "lookup_tables": [
+    "FRqyJnxtqQTSMCzKMcd8ib9Hv9mg9QVPJ2GZJ94WfjZi"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc": {
+     "sol_change": -6.5e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1421,
+   "signature": "2t1ezYJ2uoUnoQHqWa8KRNXqdSL28CmYivHqEKwJyr2ZY2quM3y5AQHTsy3MkAqLnV4vTTisaomanvT6dMm4VuMX",
+   "ok": true,
+   "err": null,
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 46200,
+   "programs": [
+    "11111111111111111111111111111111",
+    "ComputeBudget111111111111111111111111111111",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_price": 200000
+   },
+   "lookup_tables": [],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -4.62e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1441,
+   "signature": "5Dr9zLpRae8vJW9nNfovw5vgcJiwkLRR5zBqQVioXRkeJNtR5TzyU1mtBEhk18ZuPekkvHLdZvszPs8TuGqEqY3k",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     5,
+     {
+      "Custom": 6005
+     }
+    ]
+   },
+   "fee_payer": "7mTX78HLfccVky8ha6gj1MfTTtGjeb6KgXVBrwH16dJJ",
+   "signers": [
+    "7mTX78HLfccVky8ha6gj1MfTTtGjeb6KgXVBrwH16dJJ"
+   ],
+   "fee_lamports": 100000,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "b1oomGGqPKGD6errbyfbVMBuzSC8WtAAYo8MwNafWW1"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 181038,
+    "unit_price": 524751
+   },
+   "lookup_tables": [
+    "3xRUDpys1Yy96y5QVBfhW94ukphuDXHsKh4mTAFofA6S"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "7mTX78HLfccVky8ha6gj1MfTTtGjeb6KgXVBrwH16dJJ": {
+     "sol_change": -0.0001,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1446,
+   "signature": "579r4SLuRmyXqn2Q1DNta2tzJkz6Y9rxyoDEwQCh2TVt88zMymvuaQo35xmRbUXi4829DCB2wsDQjAsXyfNBpmQ9",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     6,
+     {
+      "Custom": 6004
+     }
+    ]
+   },
+   "fee_payer": "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc",
+   "signers": [
+    "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc"
+   ],
+   "fee_lamports": 5000,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "ComputeBudget111111111111111111111111111111",
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+    "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+    "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 520000
+   },
+   "lookup_tables": [
+    "FRqyJnxtqQTSMCzKMcd8ib9Hv9mg9QVPJ2GZJ94WfjZi"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc": {
+     "sol_change": -5e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1451,
+   "signature": "3MBFBeLRyD6mRN6sbrooXzm7R2jn49YqY1RcF2oLfJmshL1rDQGoCgxG3yNaUUZvKdazKzhTGxoQ3mNnryK6hcpi",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7044,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 102177,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.044e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1455,
+   "signature": "5LSe4MvaxGaKn6XVZCvJrtFdSBZyisFvpDGocGGtG6V2S9nf2DoxWLykBGiTvpixizzgHBECV4JnnZcr1iiXhCLm",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 7000,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 86558,
+    "unit_price": 23105
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -7e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1472,
+   "signature": "5gE3TxGnkoWUuANq2PWX2ny1g4gsGnawNioGrPM21CR6t51ccscuNgqQ8TxSbn52EY9D2pRmMnQtTMfXi5yjy8Yk",
+   "ok": true,
+   "err": null,
+   "fee_payer": "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+   "signers": [
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw"
+   ],
+   "fee_lamports": 30000,
+   "programs": [
+    "3Wn9MScovnLzVB4B8DxtchiPrX7jSanSgvUqSQfBM3MW",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 125000,
+    "unit_price": 200000
+   },
+   "lookup_tables": [
+    "2HwcWZ5WvD19qKGN8doMYenp3m9bPRe7p5N9ieu3UieD"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw": {
+     "sol_change": -3e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1484,
+   "signature": "JLaCJsaQnRsCHxvXipqSThykgaUsu2ZKXzw1jUoiaXC4DS9rXWi8MjY7mUFQcynC6JmhsV9BtvsJQqTDW7Pgc8E",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "ComputeBudget111111111111111111111111111111",
+    "sp4mxxMs17wbVv6YvTJ6LxAyzDV2gVypY39twYq2gKp"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 99233,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1510,
+   "signature": "4UQNKaC8eyFqjCgmzqBuvKdVDzfs2PPjJr9j1XXHYvKpEi6TbRadArS9FTQeBF7gRww2743XEq3QaZcaDH88Qpqe",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     "InvalidArgument"
+    ]
+   },
+   "fee_payer": "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+   "signers": [
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw"
+   ],
+   "fee_lamports": 17500,
+   "programs": [
+    "3Wn9MScovnLzVB4B8DxtchiPrX7jSanSgvUqSQfBM3MW",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 500000,
+    "unit_price": 25000
+   },
+   "lookup_tables": [
+    "2HwcWZ5WvD19qKGN8doMYenp3m9bPRe7p5N9ieu3UieD"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw": {
+     "sol_change": -1.75e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1539,
+   "signature": "2uvbBuivHHp3BHhZjVqtpuNqgaKXqudjUFkdLnDPGoL9YnXTBRWvPEcRups8mFCM5fL9hRNE4uC5FPNvhJYaPmtq",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7044,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 102182,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.044e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1542,
+   "signature": "4RG7CQo7j4AWwGjoJpSrR2yYongbdZpYUjJuJcpcSuJJX2JLSnerhWZ3w2SYQNwtQfop56Md4jhQCxy8kukipPCh",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "ComputeBudget111111111111111111111111111111",
+    "sp4mxxMs17wbVv6YvTJ6LxAyzDV2gVypY39twYq2gKp"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 99469,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1549,
+   "signature": "5ndEWYm4jh7up69A3v3WkuAMQRHRq8hgLaPyKiunHhKZnJS6ckdvnMyky8cs99qC31KR9pWX6bY91DwvcbUH4kHC",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5787,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 68000,
+    "unit_price": 11573
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.787e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  }
+ ],
+ "same_signer_other_tx": [
+  {
+   "index_in_block": 10,
+   "signature": "4hRyeTKqpGotHRnVWgVdKXJgdw7TunQjVSLRnNM2dKTnTa87tiahjJeD5xq8Nient2FhAw3HkeyM3CJJ6MbfNBn1",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13299,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3299e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 11,
+   "signature": "36czLohvJLTPGSqugf3pSS427oRfTFTA17YdhsfVCL9BVeq3jEuaAAuBbZB6Yfra67PhffngjaJK4vTA1KNxe3z5",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 12,
+   "signature": "3kngC7maYAyThgQ1sJHkT4Xw5TcHVYDEQQVK3er8BsB9ZcwYig3YJq3hmY2TZUwMvPcj5Y5DkmtkW9friUzZf7LF",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 14,
+   "signature": "3iao3h4xZj43vVnQDFD1zuKt9vxg43Q2xqkZ7aF1cjk62sCvRNTbrzmDTZ3zyVkMFVTAyfdHvoqXBBCFHaviHry1",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13838,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73644,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.3838e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 18,
+   "signature": "52x1XVHxpXe3Lf4CAcKXdu6tX8dDEu886MKhzv5W2un83jReRPkHsSnQ8wNPwPPYdSjWrbq1zrEBx2cGaTArMAJZ",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6380,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 68961,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.38e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 22,
+   "signature": "2nErvDSpkvms3y7nbgPDu681xpD3tmu9QkcfSRuaMGBS5ZBDwvigBVjJJLRWuwh8mtM3PM4oSA7Fmk942uxvms9a",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6380,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 68996,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.38e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 23,
+   "signature": "4QEXPfJgNaMFYbZbxhn1f5XjqTag2Mzs1fv5WNWCSs4VnsmDae3eUWCCzzMww8AXopFVJ8KfVEtphrNj46Rjar85",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69020,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 24,
+   "signature": "33X7yZ7Ar6CyHHcUqoomeSXQFjx2WwVpuYLYrMxihc69wq5B8Dti51kB2DJ41SbtsxvbKxSebK1WpKPMQ1J4w44s",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6473,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73604,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.473e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 25,
+   "signature": "1cshdFrsTtdWpcD9qUWHC3pZ6MVSkBkP1nwyqMK3fAcQF3sJFbYN4jktW2TLm7Cfx8aJDNY2vYVZLzQtn4ptgqe",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6473,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73642,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.473e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 26,
+   "signature": "3Dkka13UtNuBfC1aDnLwZE3gwUGSbaFHszpueWRsCASLwsVBPn1khh5dPnxYQh1KJTqGckq3wX9DC2MiDKnUYRVb",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5772,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 10810
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.772e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 29,
+   "signature": "66Y5hq8RdRRQckSMSqgBVMDuw8dfNFPCXqzYYiBfkBKVknBjzwxf3iqezcpfNpSYYjJEwzcuiVSNoGkqwToRoMdT",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7276,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113754,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.276e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 30,
+   "signature": "2VfahDjnKchtm8bt8isE3tUxE9BFbCzveWJBGtibVALFwM9MRhpC12GJA629S29YGaCv9W2B35kjRzN5NkJQEZKY",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7276,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113788,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.276e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 31,
+   "signature": "2beYoUUVQiPRgPUKyZbeppzhqzEormxh7xUFmMWfkDzCPd8uibpR7qrXkcWi9d8oJg2wH4C5j77VmKX3KAZekEDt",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113827,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 40,
+   "signature": "55mGXFiU9Rr2hh4igjRiY7aKf27JfxJcssa3SBLLzE41afzs9fnE5Qp1E4oSFcc6QfpRDQYMiGy78PFFu4VY8RY",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9495,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.495e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 41,
+   "signature": "34z3tAUYtqVF4S27iWf11x9n2VtFg7kGfBG8GK5HJfbSduJEEHQ9cgKr4h6ivqdRrkCK8UHArebQHoPExwah1wnb",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 42,
+   "signature": "5j1WZXbjUtGHHLBdW6CAHaMuwgyiD6LK9dub1MPxYh6G74Eviex3TUdTWUQyRyJDmxxVRVokbhwMHmQKJQuRR6dt",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 43,
+   "signature": "DiPdgStU38VqMk8pe3QwKjyRHh8Xomsf34v91o9yEK2J93gbqaPAAESGHSnnBKjRb1rbAkSVE9V77cizxnfR9wg",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5600,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 8402
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.6e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 57,
+   "signature": "3sbq1XiTE7DVpAKKRf6uBwmEcHBVcc24NixsBNZ5Q2qmz4gPJrDGShv5wnPPDJAcrW9Nfcg4FiSvx3rAYWN7TJnV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113831,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 59,
+   "signature": "mc9HZbKNaUeSPtjmBnsREkSosYSZEesUtDcsS3Bbdoo6pB57Fj63NKvJ43kqovNiS9qe8LYT38dMvRHKBpxkFTW",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6473,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73648,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.473e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 65,
+   "signature": "4KFfw1HVgaQkFxxiVCMwgN41yhLsL21zVyfECZWyVUkGYC3Yf5eY1RYT9hrxxwSUJxVE5ZsE9Y7Xo53egfCxS1SZ",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13283,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69024,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.3283e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 98,
+   "signature": "2M83LYCTwHBFi9fWvsVWmuq1Dj5GfET957Rb5LYanF1kjYXWJdfZtsCH4AFrCAkSCgS2ie7R3TWB4gYLirAPcvBP",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6473,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73646,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.473e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 99,
+   "signature": "3y1gmxUhxzPH15pVrfTZrgDCciRMx43PbVBDQWDhNL4W7Sd41x94kNMCd7zCHWMUmDRkUf3JncCY6fFJyvWjW1ed",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 100,
+   "signature": "54VGmoSFjNJDe1P8XENgxGQaciAdRt8YohSww2EqjYKap2ienC2gtnC9eykesBDGVzawjAX5AsRAqNVSzCKkQVZQ",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 126,
+   "signature": "44a6TBThzykm2aQ3tkPhjwuwpWeuU2cxcK6XGMNxn8k5wHeQAD2vVsSo4pBroUWJoXxSzUub9t4LxUL2DXTTbfJb",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 137,
+   "signature": "5iLcWyffPwJgtwafwbfdYddFgPyYT8EjJukwBT7r26KgTxgdwDz9xb4MZTyxJqpkWMym5VovGvMr5XMRrh8Mv78t",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113810,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 145,
+   "signature": "2Z5L77jh9aAMNu9oGnqW5zmF72nX9pAuDKfeaVvP5VebqR7n1nHt9qoaiadwNXcuahBat2T1m2AdvWUW4jsjfnq1",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69028,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 146,
+   "signature": "rBvMSs4ePyoP2rUrhh4zDUFARQreomrxxCpGXPSXX6Pu3KynrN8qCouZS5YUzPeSdAsVZ4s9tG2gusZ2ih6Quzi",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73652,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 159,
+   "signature": "2onqnRyYqQoNFNx7U74EvLkY8fvVVKbg1afjVMDhvKnwP17vhHJ5QK8CL5pLXVPPbsC7f2AXWpNCQ2FNKavomtfV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6473,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73650,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.473e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 160,
+   "signature": "5Z4j8MaMtThPymTWduFnUGNKQUCS4SfqmZ3c94xiYdVUbqLyRDGxyUzpCNE6kYdSHirtBqtfLvVmPv9fbmXpU1mk",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5887,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 12421
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.887e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 189,
+   "signature": "555nd7pUoDocFb2FpKe8JUTyKzS7V5mDhZFX2oHy87gB65PEY3CASrTRXMReidU7p6gnMuZjNSf1rXhB4pT7oJ3f",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113835,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 190,
+   "signature": "iBnWRYY9fQrNqueAuue6atao33Y6yEvdpXsN3jA4K9FBB6giTgnqocv1wdyEU6QRRX7ixhDxSanuPBzfB66pxmB",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 192,
+   "signature": "4PDxiEs3iyyc8iJ41EAqJYQFreXCfqx3zCrHATtAMF2Q4Yso8JcjtJAKQgFjhsTMVkKmjMctiHyibDe8ouMvfFQS",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73774,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 193,
+   "signature": "54YQra2SKTzuJ5NLxDa1oeYVuCXX4tWwP6FD5AXJmRbDsbxzHYdXH64Nvk6UDkjqdZ28fayRjKr2QhxHgJbxThuU",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 233,
+   "signature": "5LLPCAqvyJNSbRTKnVuj81e68jWQvBt37bGyGYhLpHzzjMzhMfW6RwXr5VHNYYdBC4u9ZCq9uySRpgSmZgqCD6Tb",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73655,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 242,
+   "signature": "25CMz4pqPgQ983VDcvf54rpRxHqi6XGRPhyUY7dfRvWVm1AiiDHZm7iDLKUGfhEdhGS5ZRWRQuxCF3WGchmFH4ra",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73655,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 256,
+   "signature": "4epUWQQo2XaY4KNMAxcEXtS3qfi5NTAoj3ppkXe1vGGMGwjLDifrGq8wAiGRfxRNKiJKw8Cpm28SYYfUhq55Kw4n",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69032,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 273,
+   "signature": "4gGErRGwJoetmppbZeUDKC1vdCnx5pPexKodzuTXoQvWUfawBa1HxHDmAY6ADUHcmeDtW8gVQefVz5jewsw5eWCt",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5643,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 9004
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.643e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 274,
+   "signature": "4Jm2Z8Ld31PcmVRKnLKNX1ZTUwmVMeh91xVmxmaAM8jUBvDhKqBDLuT4iTjsFNAWMmMduoXss2QLFmJD1bnnV4k9",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 275,
+   "signature": "5PoheodkUSmVuhZ37gCCaVo2YQeqi4rayZHPHMQegEhAKz7q5w2hBgZNaEXELsbgmRVyEJgzb8N3edDoQpYS6rmr",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 276,
+   "signature": "5ZwEgyXSNAcQXkRewLmvNrQ4jfJRbLjTLLYyvUB7o1By95sEe5dbVdratUHNi894qAp2npfSvN8rcsY3VLWDzmFY",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 328,
+   "signature": "5wmnhZwp69ytM6ELaFZzhzBKRx9GaqrAwpjajfeJKKKuLva6dskcP8qKFWdqyrjiet1RnDksH722YJipfJwyVWPV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13840,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73659,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.384e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 330,
+   "signature": "5M51HSMm4M1k4qt46aVthRx4FFN1HoWzc1kg2DbBqPTexb3gEJFPtH2KLYmS535bGLnnWrZSdhD2LSuAhC1AHgSL",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69036,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 340,
+   "signature": "3ECd4NwHVkSPx98WW2tGMUpK1vAtzPfMovYu1hWG1pmZJPYqkU3MUmZMp1Jrv8U3dNNWb1w6bFiTRFUoyCAHEbXA",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113841,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 341,
+   "signature": "4RqxoEp71qicZ7eVwoAPmyLKsKhLhEsTpLJbEcNM533V4Vo2NyNUZoamoh4YEVsPFQLSM8XbCyDhoFDMAgNpY4ws",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 342,
+   "signature": "5AR4UgSRQp9fs5HJuNsyZTyuBrqjRpY3RWjBBEqiyvfc7eZ4X1RocKPYxg7z695AbNh27mjL1PQfZ4Q7daYg1ebG",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 343,
+   "signature": "2uRQoVa9fEfuThS8ZV3h2uR7yQ5t2ScKj3mBr1cHrWec9RsgqrfApoFSYqTnXgiHzw9cmrvbHSmzQWSQHfReAbmP",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 369,
+   "signature": "2wVa6AQQzJoZhDmiKobF7LqtVuj8ETgodMhh7G4QXBjKcZfMg1rhN1cbBLeEmRBuytLpzBuaSzTMt7jDA73ZS4o5",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5866,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 12127
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.866e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 557,
+   "signature": "313RYtuBsTaHQv9Fb6jg4CuufSGvFvfJF6gRv8HwE2dXGrH7reDnrmpmhZ3UhLLLeKxkV9iBURoxteXYeL2Y4ryf",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9495,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.495e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 558,
+   "signature": "2Vss7gwXGLjmQ6KRE9kL4d9FBiEifo4cCgfUaZgo4KjS6AfZu6A4DWF2ZXuFTQ93AAqYp4txQUgKN8sjSFRQo9nV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 559,
+   "signature": "2m4aGBLY8s9Z7djeSqhgjcRF7xyXYh6xfwFoZC4aC92qvTrvQiBrkVTbzwzbgbfoFWYKWE42UCheRfNL1zYAAbag",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 615,
+   "signature": "4QfhJvW51jjmP22mGgU3sJzRF2tnxMHUtktcyrw5v2ksL7c9S6pWF6EQJnqZbMA3jK37MbLrfcG8LhFRnEUKRfo",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69040,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 663,
+   "signature": "3d4epmPiX5n3WpdnoHsc9TfnEHoVwa8mTHyhGRUWGR81MMf7bfocTzE31o9QqiEVbumZDG6bAWMJbDkdC9LN36df",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73663,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 664,
+   "signature": "58JTdcysk4TWP5kAuU1P3Msh7ud7n8ZNedH8Bhws8aYqQ46i8ksniAjq6s3z4yAK43Ls6EHw18S4xCA7PqatmfTa",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7277,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113847,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.277e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 790,
+   "signature": "Ji5saPBZoJjchB8n76yM8mFQb8kJjgdtnAXiKsdW8h1sU3Nz8zWCRnHP3tq5quTQ4tGrfZamr7Smyq4QCfBzLyk",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13840,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73663,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.384e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 955,
+   "signature": "3zdzTQn7w8BKjwLT1Ygyo2mZ5CDoPWxBEphK8X9XLworMkSy5RcfvzwKxcmvwyXyrujzGphqBQUnp4bV6LGf3onD",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 956,
+   "signature": "41P3KpERzd2G81BudhGMDpyDqa99Ws8q34QpXtSevuNYz13WK5WvyuENgbRZmiVmb8dWBYPUVKfE3AeoScVaqhcj",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 965,
+   "signature": "FhANmH6F6T3svxyCSe89k5tvSp4b4EmSgzwmhB3pFjL4CYZsGSbTVNwWsZKxKRgZMZg9ou8Wm9cN6ojhXo5hkQ4",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13299,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69152,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3299e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 966,
+   "signature": "3qNqK8aCVSgpyzj743m7FSVSscMpQdzgxs3GBz7aCvRydcTVinLZBh4cjd6uWYQfqWcjZ1tUuZgnivbhJmoY2sH6",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13299,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3299e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 967,
+   "signature": "38LXh5hTQKN4m79xcKGAPGjSy2oZRprGKUkBZL97Wdak8UVT4feKQnKjXibvJjpDPRiH77CZd5tHqbyrYxF4HwWf",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 968,
+   "signature": "5CCZGFnvR5xPojBbSqvaFfM5EpC2UFoZgdprFuwT1Ak5NPCWdaV12XMJLCX8TMMREdT7guxFTjuRoZGBqUfT1tHR",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 13853,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -1.3853e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1010,
+   "signature": "2PAJy7VcJNwiUuQ51UTUVsHHYEc2WVeoJBjEm2xx3XDDRpyq2N2Y6BdFA4kEHRRs9CdtBpi87r6jy21kMoCuvn92",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13286,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69044,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.3286e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1034,
+   "signature": "2YDxJGX3nsSRwi3Zkv3kvTKpEE7D52xyK1gcodeVPvsPokf1YRXehJyRksKHe6gxeik9kE7vWfdJJyS5TK9sDj3r",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73667,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1039,
+   "signature": "zYbjcVfGQnPSS5e1zXw1UjQMtpo72boV6KGJbYoFRXPLPG6ArANqRYBWK11qB9KbeE25QVwezS5mciMkh8W2wxU",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73667,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1062,
+   "signature": "4pswyqg7Fh4FczFrihgf8fcWPjEZbb56nPKWG6voEqyLHrBdskGW3PKk8h9mz6hP1qNDzqbaJU6wt1763jMBLerg",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9495,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.495e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1063,
+   "signature": "2n5SyiwX3QpJ6DdWTo1geuErUyM39vaB4quErorxe79G2uKeT1Kx1gDNVsZ73t2rM2qJQCiDYCdZP9MaMUkPVjSV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1093,
+   "signature": "2MyPYUQgiSEom9vtEUXSkKq8rxw533r1QXx1Hv4B34WoiPZ831Pu5cz2TgvdFYKQHUp1VnQp94pA41nzLEyw5jFr",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5437,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 6119
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.437e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1103,
+   "signature": "UC9AA5h5eRbzwYTg5viY3gcFo7JeE6pVeueAS6MrakKbi1HQPdwKtCcMdhe8yJLm8gdo4FYfNETXrAwhi8iovPw",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73669,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1135,
+   "signature": "3Y2uFQ64EXAv2sRUeHPZnSc5EbVnYUqEcvPTTkeb7X4grEfuqNgAhoy1FGy1kWdYwGbZRNLwuEf6CJMnupFVmpQL",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1140,
+   "signature": "38zm18NDNgTvvMGxjM5qAsBWC9vaPgKQVahob1vG5pTDufawoakgBcyQygZ5q8qV65YyfNZ5eCKgNnXfiDBRxbVP",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7278,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113855,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.278e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1145,
+   "signature": "35YS4Fy3ThoKtHK1Jni2EFWTCAYWK21rZg5vpDqFbH89y74KzjHNSgKWocZaguwkbxvSDCL8juj8M9dLik7e4BDT",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1146,
+   "signature": "4JfswsmnynafTspzW5sicnzrVDcuU2PGNhXMBHCr78mQQ557GMn3F7zA6XUweJw9mscupgbEwxkbtkVmuNgeGoUf",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1226,
+   "signature": "3MakKkHP1fxg1RiZ1nJYQqbysLbMxgzkcyYeSeraDFL7WXRNqmp7UXqjyxBWtjenJeG7i9uQ52wcztrmHZvZM3eV",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6381,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69049,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.381e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1358,
+   "signature": "4fJX2BiCC3xsYemgvYX7XVpBSmyr7tcwx3Yo3oXFQL4tRtjpdetHq6L4kdEGrYqYSTpXyLT71Zdes7p679JkheKk",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 18664,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113859,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.8664e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1359,
+   "signature": "4EEFMQck5gE6wAgF4ndM5386VWAQYUdjg1fJsiSpYqjEbghXTcKCpygeoLKUFZckpLepWbyRviprp8LcupTWeGs2",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6382,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69052,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.382e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1360,
+   "signature": "2bNKygvnX1VzW61CitTjY9Nsd9KFaPwPcoZBKHm2roDk2QsEoLjyMD64Ug1yZgaox7A9uHVp7uw3oUyA8RZdNoGc",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73674,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1361,
+   "signature": "4cd5qHawPSAdw7gqsvSgQTvLLT49h1wwRKdSfbkdt9mPD1zDTFg64iahGpvo9KmFc6TTwMG1rc3L4xZ2w3z6b7Bh",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73676,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1362,
+   "signature": "29TKXzWzKfQ3JobaS1Fo4SHPpz6qAy22RFQFC1Q5m4QQtLprCvayWKrNYmt3B9ss1zn5VxuexhgBb7BWL1Zf3ahc",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1368,
+   "signature": "31pzLTqD6X2Sc22uygfSqbumqA6GLWfGZCRLhK7QpNma7Bok8MMWq2osT2EzwYT9S3B6ydLxzcWrYi9a5d6NxDQK",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 18661,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113839,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.8661e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1390,
+   "signature": "2DuKFdD9pbHzdmFA2xFU8UfWkvEDJn3iHNK3kDSLitBBME6PboVuAQMCWMGYPQWuzZg51JgN4pxSyRa94FFV8rCD",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5821,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 11496
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.821e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1410,
+   "signature": "zjMBhXoDg8Eo1KGQRknyU1rK6P7ubVZVQbtYy2qAmrkyGYzZEQF2aUym8AcUnW8Fha5M9HuRE6Nyk7DsyeFr2QE",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1411,
+   "signature": "5HLCeLnkg2gZSCPaL3fCQgbGmw4umYgprpNYE5rGffcLwfZiHQLWRi5N27eRVTkxbKV7vegqmcVJNGeyLp3Ebw98",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1422,
+   "signature": "4tTeMfdGksSGVwDeCZnMroDZAKJopCtXP3DAoQYnuu6Sm48egGkKdDkbKzmLT9YrLaahuJL3PDyBbhQpgBSCFqX1",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69152,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1423,
+   "signature": "3kFgtcWvAy63DoRjkZxhp3BGd6mZu31B89YSwg5AWvFHH6AcihE2gZUWdg6TJdTd86vSyK9nVLedfBJCorUyMnzF",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1447,
+   "signature": "4tA5gbQwvbBhqx1ELMhjjhzyZq6cm8p46dhEahU3VfgVEo7AcPopxy5V46263tqYKdyQvEnZt8xnY2warirgpP8n",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 7278,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 113863,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -7.278e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1450,
+   "signature": "nnUyo82BJDyPVovffQfcLUXNXNriYLEB2uubzL7VCFS1zn8ueWeuNFLbBTPaDEnPuZoni5k1T5RW2R9SEk8Vyy2",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73680,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1457,
+   "signature": "t9nhGrX9uW965aUG2xGiQ2fQu9f8H29xXA2UmnMXDzUFPkNhf9N4tL2Fe33vEGfUAuQvrEUbyxZByq9ZdG2BQpZ",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5902,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 12631
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.902e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1481,
+   "signature": "3mwsu6DVG3jp9H8Ls8vqJqZVF6Scv8tkNfhfcFt6m64aydkCkD8Cyfy8WvX4SXPafSc4uTkJ4ejQM5uoxWeADsas",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1482,
+   "signature": "vyuzL4f8HAqAEqK6C7ShsVqPwTDsCrrJYUDBAg6ef23kMpdnpSvy1MPutD7fw6He9JMi4m6k7YsTB7kRq2L7UVh",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1483,
+   "signature": "az9SUjm3DiYBCVwmb8DT6pVU1PXKe6uFQyfDL1rAN7VuWPXRGwQVAdYno61GbMDKYfbiG83PgsboVngyPyWYG4W",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1489,
+   "signature": "2HxXLgkfBScnVrx8kbZZixKNh2XTvNcbuWFc9VEew3AvsTWoSWHTRd5otSziTuPa2d99KNeqYXs6BrXmGP2QwyCe",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 13842,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73678,
+    "unit_price": 120000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -1.3842e-05,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1527,
+   "signature": "2frV1n1D1s9xpikNwqfyVbZH2Y3141vRcHkdgkuh5jXYJdBZjghQtV6VVrZf2MTxP1CZ6QaWaQjrihfekFkVWUh2",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6382,
+   "programs": [
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69061,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.382e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1537,
+   "signature": "2n8iTTHuYb8KuYDs6n3wJ5w8DQ1jxxgDdN64M6zetHBBK4huhyjDWCW2H8f37hnLmc1UYS1LMbbibnrquJMVMEob",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 9796,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 65000
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -9.796e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1540,
+   "signature": "3TkkWfGcjm4HLdoRGeF3pxg4ee172xSmdL9TQfWsMdfyBV9eP2J6Jc1uytPFDLdJCZ7tgrsGKncyoayLrBHWyabW",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 69153,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1541,
+   "signature": "rNjQCEksRk5vw8UR56WfbuTzEYhQdjXaeQ4nB8cUsy1Qc9LyHCTaCSZLGwyDuzcHUhXSRBhvjkvmNx17wN1PMYe",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 3
+     }
+    ]
+   },
+   "fee_payer": "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp",
+   "signers": [
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp"
+   ],
+   "fee_lamports": 5001,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "BoomYLwca6TXDmMZ9cbtt6i1DDg9A8trzSW741PH25e",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73775,
+    "unit_price": 1
+   },
+   "lookup_tables": [
+    "6EvRtCLjwUcktum4GAFvJuJRANZtLUYFPgtCrVYe9zBC"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "1mGRiNd5QgddUpASfGRftpQRKMB2peE5hj1gMF6f5Hp": {
+     "sol_change": -5.001e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1547,
+   "signature": "5RbkcVdvGoCVFqVx7NDxdCWMD8kj7NMsAFXbgvW3hoFLqnpgXGfnB7BWqMcvLGePXANbUW9tVdXSQzDKLwVt6bWt",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     4,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8",
+   "signers": [
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8"
+   ],
+   "fee_lamports": 6474,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "ComputeBudget111111111111111111111111111111",
+    "terroreHWdWwHC4oRABq3Sca2cew8NN7yVg1MDMyFpd"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 73685,
+    "unit_price": 20000
+   },
+   "lookup_tables": [
+    "Gr7qgA1zd6jiSG1g7urPmNfuzkBEj5QJAGTfQ4h2uAtc"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "Bot5Xi6EKPXZqXobzgLPLnimKaBR1DsNZgRSjC2FcKS8": {
+     "sol_change": -6.474e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  },
+  {
+   "index_in_block": 1548,
+   "signature": "U3aTBvfbEhVi6GzepuJhUDCekkDXhbtgawp2tDoc2bJMqXWqU7H3WW7kNzhAJ3pfnum2jpdDsJqFTFcqDXR3S5E",
+   "ok": false,
+   "err": {
+    "InstructionError": [
+     3,
+     {
+      "Custom": 7
+     }
+    ]
+   },
+   "fee_payer": "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK",
+   "signers": [
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK"
+   ],
+   "fee_lamports": 5936,
+   "programs": [
+    "11111111111111111111111111111111",
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "7JwTi9ambvCTYwZbNQEZA8hzpG3ymPWRZpAxgKPJ94ZG",
+    "ComputeBudget111111111111111111111111111111"
+   ],
+   "version": 0,
+   "compute_budget": {
+    "unit_limit": 71410,
+    "unit_price": 13107
+   },
+   "lookup_tables": [
+    "9ZeiBm6a2aABn4jcug6q8sLbszs9daEc6k2PXf8N5oBu"
+   ],
+   "jito_tips": [],
+   "trades": [],
+   "owner_nets": {
+    "3ntEpydDjraXrnwWTCJM7DvfBvtYUMc7q1oHADMCoFuK": {
+     "sol_change": -5.936e-06,
+     "tokens": {}
+    }
+   },
+   "mint_ops": []
+  }
+ ]
+}
