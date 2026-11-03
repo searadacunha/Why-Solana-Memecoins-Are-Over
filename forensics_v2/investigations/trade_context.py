@@ -178,8 +178,9 @@ def priority_trips() -> list[dict[str, Any]]:
         if k in done or k in seen or r["first_buy_sig"] not in t_open:
             continue
         seen.add(k)
-        out.append({"group": "PRIORITY", "wallet": r["wallet"], "mint": r["mint"], "t_open": t_open[r["first_buy_sig"]], "t_open_utc": r["t_open_utc"],
-                    "class": r["class_frozen"], "closed": True, "realised_sol": int(r["realised_lamports"]) / 1e9, "card_v2": r["card_v2"], "symbol": r["symbol"]})
+        out.append({"group": "PRIORITY", "wallet": r["wallet"], "mint": r["mint"], "t_open": t_open[r["first_buy_sig"]],
+                    "t_open_utc": r["t_open_utc"], "class": r["class_frozen"], "closed": True,
+                    "realised_sol": int(r["realised_lamports"]) / 1e9, "card_v2": r["card_v2"], "symbol": r["symbol"]})
     return out
 
 
@@ -193,7 +194,8 @@ def collect_priority(credits: int) -> int:
     print("trips", len(trips), "mints", len({r["mint"] for r in trips}), flush=True)
     for i, t in enumerate(trips):
         try:
-            out.append({**classify(t, read_mint(c, t["mint"], t["t_open"], mints), c, buyers), "card_v2": t["card_v2"], "symbol": t["symbol"]})
+            read = classify(t, read_mint(c, t["mint"], t["t_open"], mints), c, buyers)
+            out.append({**read, "card_v2": t["card_v2"], "symbol": t["symbol"]})
         except RuntimeError as e:  # credits or quota: keep what was read
             stopped = str(e)[:140]
             print("stopped", stopped, flush=True)
