@@ -55,3 +55,9 @@ Same code as for his trades, with that buy as the entry. Reported for all and fo
 
 A signal present before a trade does not show that it was why he bought. Curve trades are not all his trades. 2 % is one threshold, and
 a group buying 0.2 % each, as in the published case, is invisible to S1 and S2. Attribution of the gateway is public, not proven here.
+
+## Amendment, 2026-11-03, written before this read
+
+The launches of the trips that weigh most are read too: every trip matched to a PnL card, and the 40 largest gains and 40 largest losses among closed trips of
+2024-10-01 to 2025-02-02, whatever their venue, skipping those already read. Same code and same definitions of S0, S1, S2. These trips are chosen on their result,
+so this is a case list and never a rate: the only rate stays group C. Ceiling 10,000 credits, on the two keys of the pool that still answer.

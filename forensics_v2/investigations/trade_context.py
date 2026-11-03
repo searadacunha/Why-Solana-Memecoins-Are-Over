@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import csv
 import json
 import random
 import sys
@@ -154,6 +155,53 @@ def collect(credits: int) -> int:
             print(i, "net", c.net_calls, flush=True)
             write_private("PATTERN_MATCHES.json", json.dumps({"stopped": stopped, "partial": True, "trips": out}, indent=1))
     write_private("PATTERN_MATCHES.json", json.dumps({"stopped": stopped, "partial": bool(stopped), "trips": out}, indent=1))
+    print({"trips": len(out), "stopped": stopped, "net": c.net_calls, "buyers_read": len(buyers)})
+    return 0
+
+
+def priority_trips() -> list[dict[str, Any]]:
+    """Amendment of 2026-11-03: card trips and the largest gains and losses. Chosen on their result: a case list, never a rate."""
+    with open(PRIVATE / "TRADES_V2.csv") as f:
+        rows = list(csv.DictReader(f))
+    done = {(t["wallet"], t["mint"]) for t in json.loads((PRIVATE / "PATTERN_MATCHES.json").read_text())["trips"]}
+    closed = sorted((r for r in rows if r["closed"] == "True"), key=lambda r: int(r["realised_lamports"]))
+    chosen = closed[:40] + closed[-40:] + [r for r in rows if r["card_v2"]]
+    t_open = {}
+    with open(PRIVATE / "TRADE_EVIDENCE.jsonl") as f:
+        for line in f:
+            e = json.loads(line)
+            if e["side"] == "buy":
+                t_open[e["sig"]] = e["t_open"]
+    seen, out = set(), []
+    for r in chosen:
+        k = (r["wallet"], r["mint"])
+        if k in done or k in seen or r["first_buy_sig"] not in t_open:
+            continue
+        seen.add(k)
+        out.append({"group": "PRIORITY", "wallet": r["wallet"], "mint": r["mint"], "t_open": t_open[r["first_buy_sig"]], "t_open_utc": r["t_open_utc"],
+                    "class": r["class_frozen"], "closed": True, "realised_sol": int(r["realised_lamports"]) / 1e9, "card_v2": r["card_v2"], "symbol": r["symbol"]})
+    return out
+
+
+def collect_priority(credits: int) -> int:
+    trips = priority_trips()
+    c = client(credits)
+    mints: dict[str, Any] = {}
+    buyers: dict[str, Any] = {}
+    out: list[dict[str, Any]] = []
+    stopped: Optional[str] = None
+    print("trips", len(trips), "mints", len({r["mint"] for r in trips}), flush=True)
+    for i, t in enumerate(trips):
+        try:
+            out.append({**classify(t, read_mint(c, t["mint"], t["t_open"], mints), c, buyers), "card_v2": t["card_v2"], "symbol": t["symbol"]})
+        except RuntimeError as e:  # credits or quota: keep what was read
+            stopped = str(e)[:140]
+            print("stopped", stopped, flush=True)
+            break
+        if i % 20 == 0:
+            print(i, "net", c.net_calls, flush=True)
+            write_private("PATTERN_PRIORITY.json", json.dumps({"stopped": stopped, "partial": True, "trips": out}, indent=1))
+    write_private("PATTERN_PRIORITY.json", json.dumps({"stopped": stopped, "partial": bool(stopped), "trips": out}, indent=1))
     print({"trips": len(out), "stopped": stopped, "net": c.net_calls, "buyers_read": len(buyers)})
     return 0
 
@@ -314,6 +362,8 @@ def main() -> int:
         return collect(int(sys.argv[2]))
     if sys.argv[1] == "collect_control":
         return collect_control(int(sys.argv[2]))
+    if sys.argv[1] == "collect_priority":
+        return collect_priority(int(sys.argv[2]))
     if sys.argv[1] == "analyse_control":
         return analyse_control()
     return analyse()
