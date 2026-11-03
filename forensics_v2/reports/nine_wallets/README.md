@@ -8,6 +8,50 @@ and `investigations/posthoc/nine_*.py`.
 **The nine credits are real, but the group is fifteen wallets, and this token was not its reason to exist. The fifteen were funded
 together, then traded nine tokens as one fleet in four days. They made +49.81 SOL overall, and lost 4.66 SOL on this one.**
 
+## Reconciliation: nine in 343 s against fifteen in 380 s
+
+**The nine are all inside the fifteen. It is one population, partly counted. The published nine, their times and their 343 s are correct as far as they go.**
+Data: [reconciliation.json](reconciliation.json), with signatures. Code: `investigations/posthoc/nine_reconcile.py`. Each credit was read twice, from this engine's raw cache and from the
+public Solana RPC, with no key: both give the same reading on all 15.
+
+| Wallet | Credit, UTC | Slot | Lamports | First transaction of the wallet | Rank on the curve in the published `e6` | Published? |
+|---|---|---:|---:|---|---:|---|
+| `Ek9KG4V4` | 07:07:12 | 307170732 | 2,976,815,600 | yes | 139 | not published |
+| `Csye9QE8` | 07:07:49 | 307170824 | 2,976,815,600 | yes | 138 | **in the nine** |
+| `BmkuX6Da` | 07:08:02 | 307170855 | 2,976,815,600 | yes | 144 | **in the nine** |
+| `HMzrigYC` | 07:08:41 | 307170952 | 2,976,815,600 | yes | 135 | not published |
+| `AwQqcqdQ` | 07:09:04 | 307171008 | 2,976,815,600 | yes | 141 | **in the nine** |
+| `73u1CWYf` | 07:09:28 | 307171065 | 2,976,815,600 | yes | 145 | not published |
+| `3bBaA1Mp` | 07:10:12 | 307171171 | 2,976,815,600 | yes | 136 | **in the nine** |
+| `CDvfNWia` | 07:10:31 | 307171218 | 2,976,815,600 | yes | 147 | **in the nine** |
+| `92w4K8uL` | 07:10:53 | 307171270 | 2,976,815,600 | yes | 133 | **in the nine** |
+| `6QMshP9z` | 07:11:20 | 307171335 | 2,976,815,600 | yes | 137 | **in the nine** |
+| `BXuznwXT` | 07:11:53 | 307171413 | 2,976,815,600 | yes | 142 | **in the nine** |
+| `AMgwVTFS` | 07:12:32 | 307171507 | 2,976,815,600 | yes | 134 | not published |
+| `2M3cBCG4` | 07:12:57 | 307171568 | 2,976,815,600 | yes | 140 | not published |
+| `JCVPTRSH` | 07:13:05 | 307171584 | 2,976,815,600 | yes | 146 | not published |
+| `5ibajLye` | 07:13:32 | 307171650 | 2,976,815,600 | yes | 143 | **in the nine** |
+
+For all 15: the System Transfer is outer instruction 1, its source is the gateway `G2YxRa6w…`, the wallet held 0 lamports before and exactly the credit after, and no other System Transfer is in the transaction.
+The fee payer is not the gateway: all 15 are paid by `E9vf42zJ…` and co-signed by `DScDQ1zV…`, the same three signers each time. That is the gateway's own sending setup as far as these 15 show, and it was not measured further.
+
+**Where the 37 extra seconds come from.** One wallet, `Ek9KG4V4`, was credited at 07:07:12, 37 s before the first published credit. The last credit, 07:13:32, is the same in both. The other five added wallets fall inside the published 343 s, so the published span was not wrong about its nine; it missed the group's start.
+
+**Why the two counts differ.** Same chain, different rules:
+
+| | Historical count | Rebuilt count |
+|---|---|---|
+| Who is looked at | 223 distinct wallets in `all_buyers_g2y.json`. The script that wrote it is not in the repository; the sister script `code/scan_gateway_dispatch.py` counts every fee payer on the curve | 184 wallets with a buy TradeEvent |
+| Unreadable wallets | 90 of the 223 left out, with no list of which | None of the 184 |
+| How the credit is read | Helius's parsed `nativeTransfers` | The raw transaction: instruction, balances |
+| What makes a group | Largest set of exactly equal credits among wallets that could be read | Exactly equal token purchases on the curve, then each wallet's credit and full history |
+
+**Where the six went.** All six are in the published curve-buyer list `e6`, so they were on the scanned curve. None is in the published file's wallets. Each is fresh and credited by the gateway, which that file would have kept had it read them. So they most likely sit among the 90 unreadable wallets (`STRONG_TECHNICAL_INFERENCE`). The file keeps no list of those 90, so this cannot be proved from it.
+
+**What stands and what does not, from the published text.** Stands: exact amount to nine decimals, fresh wallets, common gateway, funding hours before the token, 7.6 hours from the last credit. Incomplete: the count and the span, now 15 and 380 s. Not supported as stated: reading that funding as preparation for this token, for the reasons in the section "What this changes" below.
+
+**Not checked.** Whether any of the 23 other recipients of this amount that day also bought this token with a different size. The group is defined by the purchase, so this does not change the 15; it could only add a looser ring around them.
+
 ## What the signatures show
 
 | | Published | Rebuilt |

@@ -129,6 +129,8 @@ One example:
 * all funded within **343 seconds**
 * token launched **7.6 hours later**
 
+A later rebuild from signatures finds 15 such wallets in 380 seconds, these nine included, and shows them trading another token first: [forensics_v2/reports/nine_wallets](forensics_v2/reports/nine_wallets/README.md).
+
 The interesting question was no longer:
 
 > "Who is buying this token?"

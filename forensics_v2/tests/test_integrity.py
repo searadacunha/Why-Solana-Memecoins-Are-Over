@@ -19,13 +19,17 @@ def _tracked():
 
 
 def test_nothing_outside_forensics_v2_changed():
-    """Historical code, data and the README stay as published on the branch base."""
+    """Historical code and data stay as published on the branch base, and the README only gains one sentence."""
     try:
         _git("cat-file", "-e", BASE)
     except subprocess.CalledProcessError:
         pytest.skip("base commit not in this clone")
     changed = [p for p in _git("diff", "--name-only", BASE, "--").split("\n") if p]
-    assert [p for p in changed if not p.startswith(("forensics_v2/", ".github/workflows/forensics_v2"))] == []
+    outside = [p for p in changed if p != "README.md" and not p.startswith(("forensics_v2/", ".github/workflows/forensics_v2"))]
+    assert outside == []
+    # The one correction the author allowed after the reconciliation: a line added, none changed.
+    readme = _git("diff", "--numstat", BASE, "--", "README.md").split()
+    assert readme[:2] in ([], ["2", "0"]), readme
 
 
 def test_no_api_key_shape_in_tracked_files():
