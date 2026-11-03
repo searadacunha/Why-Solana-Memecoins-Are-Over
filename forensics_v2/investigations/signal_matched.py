@@ -75,8 +75,8 @@ def holm(ps: list[float]) -> list[float]:
     return out
 
 
-def fresh_sample() -> list[dict[str, Any]]:
-    """Curve entries whose launch was never read, in a fixed order, then the plan's draw."""
+def unread_curve_trips() -> tuple[list[dict[str, str]], dict[str, int]]:
+    """Curve entries whose launch was never read, in a fixed order, with each one's opening time."""
     with open(PRIVATE / "TRADES_V2.csv") as f:
         rows = [
             r
@@ -92,6 +92,12 @@ def fresh_sample() -> list[dict[str, Any]]:
     rows = sorted(
         (r for r in rows if r["first_buy_sig"] in t_open), key=lambda r: (t_open[r["first_buy_sig"]], r["wallet"], r["mint"])
     )
+    return rows, t_open
+
+
+def fresh_sample() -> list[dict[str, Any]]:
+    """The plan's draw."""
+    rows, t_open = unread_curve_trips()
     early = [r for r in rows if t_open[r["first_buy_sig"]] < DEC1]
     late = [r for r in rows if t_open[r["first_buy_sig"]] >= DEC1]
     rng = random.Random(SEED)
