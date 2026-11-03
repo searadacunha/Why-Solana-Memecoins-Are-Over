@@ -1,0 +1,391 @@
+{
+ "creation_wallets_on_ansem": {
+  "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe": {
+   "net_sol": 73.335163804,
+   "tokens_left_raw": 0,
+   "txs": 9
+  },
+  "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": {
+   "net_sol": 19.937308995,
+   "tokens_left_raw": 0,
+   "txs": 7
+  }
+ },
+ "last_15_min_before_post": {
+  "rows": 156,
+  "buyers": 27,
+  "net_sol_bought": 6.375641874,
+  "net_sol_received_by_sellers": 16.601367628
+ },
+ "slot_429250207": {
+  "rows": 17,
+  "wallets": 17,
+  "sol_in": 5.659244023,
+  "time": "2026-06-27 13:58:54"
+ },
+ "first_buy_of_5_sol_after_post": {
+  "time": "2026-06-27 14:03:31",
+  "seconds_after_post": 23,
+  "wallet": "CEUA7zVoDRqRYoeHTP58UHU6TR8yvtVbeLrX1dppqoXJ",
+  "sol": 11.000205,
+  "sig": "3Rkq9qDdW98RS1fKjjCah744mQy1AAv5H649m7dK2NuGuxPLTyStNS8e3yoqGGPAPZrwVSkLXTroZdt3rP4iX7EW"
+ },
+ "buys_of_5_sol_in_hour_before_post": 1,
+ "sol_in_first_218s_after_post": 432.358754703,
+ "one_slot_buyer_groups_25_to_27_june": {
+  "slots_with_a_buyer": 2399,
+  "slots_5_plus": 27,
+  "slots_10_plus": 9,
+  "largest": [
+   [
+    428784255,
+    33,
+    7.875458719
+   ],
+   [
+    428783565,
+    25,
+    6.268624611
+   ],
+   [
+    429222989,
+    16,
+    3.66602449
+   ],
+   [
+    428783564,
+    15,
+    6.467195151
+   ],
+   [
+    429155654,
+    15,
+    2.273460663
+   ],
+   [
+    429250207,
+    15,
+    5.659244023
+   ]
+  ],
+  "buyers_slot_429250207": 15,
+  "rank_slot_429250207": 6
+ },
+ "ansem_wallet": {
+  "sol_in": [
+   29889,
+   9011,
+   24472.505184957
+  ],
+  "sol_out": [
+   349,
+   263,
+   21022.08642049
+  ],
+  "ansem_in_tokens": [
+   5772,
+   654.277825386866
+  ],
+  "ansem_out_signed": [
+   1335,
+   1319,
+   567.051053777716,
+   1782612473,
+   1792593288
+  ],
+  "token_out_not_signed": [
+   17630,
+   36
+  ],
+  "token_senders": [
+   6759,
+   8698,
+   65378
+  ]
+ },
+ "control_gifts_100M": {
+  "transfers": 1065,
+  "senders": 635,
+  "mints": 971,
+  "first_24h_senders": 9,
+  "before_first_airdrop_post": 38,
+  "before_post_senders": 23,
+  "by_deployer": 41
+ },
+ "deployer": {
+  "launches": 839,
+  "first": "2026-04-20 13:06:58",
+  "last": "2026-11-02 16:39:43",
+  "family_launches": 952,
+  "sum_dev_buy_sol": 27226.96,
+  "sum_net_sol_creator_only": 18227.27,
+  "with_gift_to_ansem": 50,
+  "fee_share_to_ansem": 32,
+  "fee_shares_read_for": 733,
+  "same_recipe_650M_plus_after_ansem": 21,
+  "in_repo_corpus": 24,
+  "first_launch_gifted_to_ansem": "2026-06-16 21:05:48"
+ },
+ "deployer_cranks": {
+  "cranks": 325,
+  "recipients": 304,
+  "sol": 868.96,
+  "to_ansem_wallet_sol": 640.16,
+  "to_ansem_wallet_cranks": 20,
+  "share_of_sol": 0.7367,
+  "max_cranks_any_other": 2,
+  "last_to_ansem": "2026-06-29 15:22:28"
+ },
+ "cited_posts": {
+  "metadata_read": 761,
+  "metadata_failed": 78,
+  "launches_citing_a_post": 541,
+  "median_delay_s": 31,
+  "p10": 12,
+  "p90": 195,
+  "within_10_min": 509,
+  "before_post": 0,
+  "accounts": 106,
+  "top_accounts": [
+   [
+    "supermanonchain",
+    182
+   ],
+   [
+    "nikolaifrandsen",
+    135
+   ],
+   [
+    "roaringkittycat",
+    21
+   ],
+   [
+    "lastmanonchain",
+    19
+   ],
+   [
+    "zitobondoor",
+    18
+   ],
+   [
+    "donnieonchain",
+    10
+   ],
+   [
+    "blknoiz06",
+    9
+   ],
+   [
+    "robin86654",
+    6
+   ],
+   [
+    "bugyumaa",
+    6
+   ],
+   [
+    "felixonchaain",
+    6
+   ],
+   [
+    "memepfx",
+    5
+   ],
+   [
+    "supermanbackup",
+    5
+   ]
+  ]
+ },
+ "kol_enrichment_exploratory": {
+  "snapshot_wallets": 472,
+  "recipients_1M_tokens_2_launches": 888,
+  "of_which_on_snapshot": 25,
+  "fee_share_recipients": 202,
+  "fee_share_on_snapshot": 12,
+  "ansem_traders_before_post": 28880,
+  "ansem_traders_on_snapshot": 26,
+  "kol_recipients": [
+   [
+    "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
+    "Gake",
+    18,
+    1
+   ],
+   [
+    "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
+    "Gake",
+    18,
+    1
+   ],
+   [
+    "8zFZHuSRuDpuAR7J6FzwyF3vKNx4CVW3DFHJerQhc7Zd",
+    "Pow",
+    16,
+    0
+   ],
+   [
+    "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
+    "Mitch",
+    13,
+    2
+   ],
+   [
+    "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
+    "Mitch",
+    13,
+    2
+   ],
+   [
+    "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
+    "Ansem",
+    5,
+    7
+   ],
+   [
+    "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
+    "Ansem",
+    5,
+    7
+   ],
+   [
+    "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
+    "decu",
+    7,
+    1
+   ],
+   [
+    "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
+    "decu",
+    7,
+    1
+   ],
+   [
+    "BAr5csYtpWoNpwhUjixX7ZPHXkUciFZzjBp9uNxZXJPh",
+    "Jack Duval\ud83c\udf0a",
+    4,
+    3
+   ],
+   [
+    "BAr5csYtpWoNpwhUjixX7ZPHXkUciFZzjBp9uNxZXJPh",
+    "Jack Duval\ud83c\udf0a",
+    4,
+    3
+   ],
+   [
+    "2fg5QD1eD7rzNNCsvnhmXFm5hqNgwTTG8p7kQ6f3rx6f",
+    "Cupsey",
+    4,
+    2
+   ],
+   [
+    "2fg5QD1eD7rzNNCsvnhmXFm5hqNgwTTG8p7kQ6f3rx6f",
+    "Cupsey",
+    4,
+    2
+   ],
+   [
+    "215nhcAHjQQGgwpQSJQ7zR26etbjjtVdW74NLzwEgQjP",
+    "OGAntD",
+    4,
+    1
+   ],
+   [
+    "215nhcAHjQQGgwpQSJQ7zR26etbjjtVdW74NLzwEgQjP",
+    "OGAntD",
+    4,
+    1
+   ],
+   [
+    "As7HjL7dzzvbRbaD3WCun47robib2kmAKRXMvjHkSMB5",
+    "Otta",
+    4,
+    0
+   ],
+   [
+    "BCagckXeMChUKrHEd6fKFA1uiWDtcmCXMsqaheLiUPJd",
+    "dv",
+    4,
+    0
+   ],
+   [
+    "5M8ACGKEXG1ojKDTMH3sMqhTihTgHYMSsZc6W8i7QW3Y",
+    "Unipcs (aka 'Bonk Guy')",
+    4,
+    0
+   ],
+   [
+    "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
+    "Daumen",
+    2,
+    2
+   ],
+   [
+    "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
+    "Daumen",
+    2,
+    2
+   ],
+   [
+    "FTg1gqW7vPm4kdU1LPM7JJnizbgPdRDy2PitKw6mY27j",
+    "7",
+    3,
+    0
+   ],
+   [
+    "9yYya3F5EJoLnBNKW6z4bZvyQytMXzDcpU5D6yYr4jqL",
+    "Loopierr",
+    3,
+    0
+   ],
+   [
+    "FixmSpsBa7ew26gWdiqpoMAgKRFgbSXFbGAgfMZw67X",
+    "Marcell",
+    3,
+    0
+   ],
+   [
+    "86AEJExyjeNNgcp7GrAvCXTDicf5aGWgoERbXFiG1EdD",
+    "Publix",
+    3,
+    0
+   ],
+   [
+    "99xnE2zEFi8YhmKDaikc1EvH6ELTQJppnqUwMzmpLXrs",
+    "Coler",
+    3,
+    0
+   ],
+   [
+    "5XVKfruE4Zzeoz3aqBQfFMb5aSscY5nSyc6VwtQwNiid",
+    "I\u0336l\u0337y\u0336",
+    2,
+    1
+   ],
+   [
+    "DuQabFqdC9eeBULVa7TTdZYxe8vK8ct5DZr4Xcf7docy",
+    "orangie",
+    2,
+    1
+   ],
+   [
+    "5XVKfruE4Zzeoz3aqBQfFMb5aSscY5nSyc6VwtQwNiid",
+    "I\u0336l\u0337y\u0336",
+    2,
+    1
+   ],
+   [
+    "DuQabFqdC9eeBULVa7TTdZYxe8vK8ct5DZr4Xcf7docy",
+    "orangie",
+    2,
+    1
+   ],
+   [
+    "8deJ9xeUvXSJwicYptA9mHsU2rN2pDx37KWzkDkEXhU6",
+    "Cooker",
+    2,
+    0
+   ]
+  ]
+ }
+}

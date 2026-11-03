@@ -1,0 +1,645 @@
+[
+ {
+  "id": "E01",
+  "claim": "Ansem says he linked his X to a pump.fun account and links the wallet GV6UUmNx in his post. Self-claim of the wallet, 2026-06-16 20:59:26 UTC.",
+  "kind": "R5 grade for ownership of this wallet only",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2066989048497905753",
+    "contains": "i just linked my X to a pumpfun account"
+   }
+  ]
+ },
+ {
+  "id": "E02",
+  "claim": "The wallet has no transaction before the second of that post. Its first transactions are third parties naming it in their creator-fee settings, and it does not sign them.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "evVqcN5GFnkvc4t2FdUaQUtqGcgkKUResfoSRouv7ohvfqNXREc7RsdU7hm14ZwNMvXvV6WsH7NoCX8GUfh3dhL",
+    "check": "time",
+    "arg": 1781643566
+   },
+   {
+    "sig": "evVqcN5GFnkvc4t2FdUaQUtqGcgkKUResfoSRouv7ohvfqNXREc7RsdU7hm14ZwNMvXvV6WsH7NoCX8GUfh3dhL",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E03",
+  "claim": "In the same thread he denies the wallet AVAZvHLR that Kolscan attributes to him, and says the other wallet is not his.",
+  "kind": "His statement, not verifiable on chain",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2066926449466966216",
+    "contains": "ive asked kolscan to take my X account off"
+   },
+   {
+    "id": "2066991697842655572",
+    "contains": "no"
+   }
+  ]
+ },
+ {
+  "id": "E04",
+  "claim": "The deployer yHCxHBEa sends 20,000,000 of another token to GV6UUmNx 94 seconds after that post. GV6UUmNx does not sign.",
+  "kind": "Direct transfer, one way",
+  "checks": [
+   {
+    "sig": "kWZYJ8v2SfEt8Z9W3U9NdWRxGVYQ4v9PpUvFbP8YdCBRmYbYMSXGNxzKG3x1NSGe2iLyive9vqxjF2N43Wj4vQi",
+    "check": "time",
+    "arg": 1781643660
+   },
+   {
+    "sig": "kWZYJ8v2SfEt8Z9W3U9NdWRxGVYQ4v9PpUvFbP8YdCBRmYbYMSXGNxzKG3x1NSGe2iLyive9vqxjF2N43Wj4vQi",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "kWZYJ8v2SfEt8Z9W3U9NdWRxGVYQ4v9PpUvFbP8YdCBRmYbYMSXGNxzKG3x1NSGe2iLyive9vqxjF2N43Wj4vQi",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "kWZYJ8v2SfEt8Z9W3U9NdWRxGVYQ4v9PpUvFbP8YdCBRmYbYMSXGNxzKG3x1NSGe2iLyive9vqxjF2N43Wj4vQi",
+    "check": "owner_token_any",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     20000000000000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E05",
+  "claim": "A public post by @Donnieonchain announces the plan 4 min 7 s before the token exists: sending 60%, so that it is not a micro cap.",
+  "kind": "Third-party post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2066989612200079857",
+    "contains": "sending 60%"
+   }
+  ]
+ },
+ {
+  "id": "E06",
+  "claim": "The token's metadata links a rewritten post by the same account, 69 seconds before creation.",
+  "kind": "Metadata plus post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2066990360115683402",
+    "contains": "not endorsing micro caps"
+   }
+  ]
+ },
+ {
+  "id": "E07",
+  "claim": "Creation in one transaction, signed by the deployer and the mint key, slot 426930467: pays 84.740740739 SOL into the curve for 792,454,486.758954 tokens, total out 86.06810776 SOL. No Jito tip in the transaction.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "signer",
+    "arg": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "slot",
+    "arg": 426930467
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "trade_sol",
+    "arg": 84740740739
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "owner_sol",
+    "arg": [
+     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     -86068107760
+    ]
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "owner_token",
+    "arg": [
+     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     792454486758954
+    ]
+   },
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "no_jito_tip",
+    "arg": null
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E08",
+  "claim": "The launch tool's fee account receives exactly 0.3 % of an 85.8 SOL input, 0.2574 SOL. The metadata is hosted by the same tool, uxento.io.",
+  "kind": "R2 infrastructure, a commercial tool",
+  "checks": [
+   {
+    "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
+    "check": "owner_sol",
+    "arg": [
+     "uxtoRPdPjRekYmxs1uUqVRZWh38iqonc9KgPuZXPeSY",
+     257400000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E09",
+  "claim": "One second after creation the deployer already tries to give 100 % of creator fees to GV6UUmNx. That transaction fails.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "3UCYaGue2RyAj3W58uRKnvpcySKBEuBfYtbBHzzCZrgsQvVa5ouUVVoPrP4quTjMfdAKx15odY3Sc8aDB5PcmUZg",
+    "check": "failed",
+    "arg": null
+   },
+   {
+    "sig": "3UCYaGue2RyAj3W58uRKnvpcySKBEuBfYtbBHzzCZrgsQvVa5ouUVVoPrP4quTjMfdAKx15odY3Sc8aDB5PcmUZg",
+    "check": "fee_share",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     10000
+    ]
+   },
+   {
+    "sig": "3UCYaGue2RyAj3W58uRKnvpcySKBEuBfYtbBHzzCZrgsQvVa5ouUVVoPrP4quTjMfdAKx15odY3Sc8aDB5PcmUZg",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E10",
+  "claim": "650,000,000 tokens from the deployer to GV6UUmNx, 37 seconds after creation. GV6UUmNx does not sign.",
+  "kind": "Direct transfer, one way",
+  "checks": [
+   {
+    "sig": "5SGKQKgDfKYRv8XerDKWWEycXpz44JCdThmm4Rx6FzuaJujoGRhyYWf1dCVdakkHZPSeKTy3R9KgAR9TNfmEB3Db",
+    "check": "time",
+    "arg": 1781643985
+   },
+   {
+    "sig": "5SGKQKgDfKYRv8XerDKWWEycXpz44JCdThmm4Rx6FzuaJujoGRhyYWf1dCVdakkHZPSeKTy3R9KgAR9TNfmEB3Db",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     650000000000000
+    ]
+   },
+   {
+    "sig": "5SGKQKgDfKYRv8XerDKWWEycXpz44JCdThmm4Rx6FzuaJujoGRhyYWf1dCVdakkHZPSeKTy3R9KgAR9TNfmEB3Db",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E11",
+  "claim": "The deployer sells its remaining 142,454,486.76 tokens in seven transactions over 9 seconds for 159.405670644 SOL. Net on trading: +73.34 SOL.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4WAEncCHFYKWSqjZAFk8VNv3JbGRFVyFerUEQin4gurkBXKbi48H6DKfkYz63XjGc9nmecTiE7JPzcRXmeYCqfDh",
+    "check": "owner_sol",
+    "arg": [
+     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     55381300000,
+     "approx"
+    ]
+   },
+   {
+    "sig": "qZqNofWAHStR5szKWHvnxw7R71pDw45o3MuEwMxqR26tiJB5FGdYZL2U6Z5ZbCabVWF3ABxf2xT5YJQbUAABBPX",
+    "check": "owner_sol",
+    "arg": [
+     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     15397000000,
+     "approx"
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E12",
+  "claim": "The fee setting succeeds at 21:07:55, with GV6UUmNx at 10,000 basis points. In the same transaction the deployer collects 0.4857 SOL of accrued fees for itself.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4ac9uBpNZZfraa5h2UPALPe5yPJKyrTnCpsabKDrS94e9691V5kH2dEWXoUFTx94mHD3GmRtTwwQtA9SsPdeaytV",
+    "check": "fee_share",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     10000
+    ]
+   },
+   {
+    "sig": "4ac9uBpNZZfraa5h2UPALPe5yPJKyrTnCpsabKDrS94e9691V5kH2dEWXoUFTx94mHD3GmRtTwwQtA9SsPdeaytV",
+    "check": "owner_sol",
+    "arg": [
+     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+     485700000,
+     "approx"
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E13",
+  "claim": "The deployer itself signs and pays the transactions that push ANSEM's creator fees to GV6UUmNx: 15.31 SOL at 21:11:00, 165.44 SOL on 22 June, without any signature from GV6UUmNx.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4QpDtDxTgr7vA7AvvKfVZoMZcK3cYDdcs61yvESWuodkcxQKyEfMAz48JNYgd3C1wD9thUMroiMjJstcGuYfxdAP",
+    "check": "owner_sol",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     15308600000,
+     "approx"
+    ]
+   },
+   {
+    "sig": "4QpDtDxTgr7vA7AvvKfVZoMZcK3cYDdcs61yvESWuodkcxQKyEfMAz48JNYgd3C1wD9thUMroiMjJstcGuYfxdAP",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "SYRD8132rLvgbCiX74YRcYxeoG8oj1go55dGwnT7E16G7XMZ4Y3t53QsihSAcAiyCnaAiMoLs56UT5Z671yGvfR",
+    "check": "owner_sol",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     165444300000,
+     "approx"
+    ]
+   },
+   {
+    "sig": "SYRD8132rLvgbCiX74YRcYxeoG8oj1go55dGwnT7E16G7XMZ4Y3t53QsihSAcAiyCnaAiMoLs56UT5Z671yGvfR",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E14",
+  "claim": "9ryBR3Sn is a bot that reacts in the same slot, 1,104 positions later: it buys the last 645,513 tokens, then triggers the migration and buys 30,077,097 tokens on the new pool. Cost 16.09 SOL, including 1.18 SOL of priority fees.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "UGfH7ngiC1bq14Lwdw9Jp5PVCeDBksBJcenAPpoQCSZJhhmmxNF7YRFBjjL9NNzW4GbabZi7GG4RbFzga4bybjz",
+    "check": "index",
+    "arg": 1383
+   },
+   {
+    "sig": "UGfH7ngiC1bq14Lwdw9Jp5PVCeDBksBJcenAPpoQCSZJhhmmxNF7YRFBjjL9NNzW4GbabZi7GG4RbFzga4bybjz",
+    "check": "owner_sol",
+    "arg": [
+     "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     -862313674
+    ]
+   },
+   {
+    "sig": "Q8uA1zn27PzG7zhe53VPm5qkE7duD4MLdPpj5s8Ugf8FMNksqUDN5aAPTuZSV6MRmC4C57UxypxF6zaHzt1QT8K",
+    "check": "index",
+    "arg": 1384
+   },
+   {
+    "sig": "Q8uA1zn27PzG7zhe53VPm5qkE7duD4MLdPpj5s8Ugf8FMNksqUDN5aAPTuZSV6MRmC4C57UxypxF6zaHzt1QT8K",
+    "check": "owner_sol",
+    "arg": [
+     "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     -15231725613
+    ]
+   },
+   {
+    "sig": "Q8uA1zn27PzG7zhe53VPm5qkE7duD4MLdPpj5s8Ugf8FMNksqUDN5aAPTuZSV6MRmC4C57UxypxF6zaHzt1QT8K",
+    "check": "owner_token",
+    "arg": [
+     "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     30077097302155
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E15",
+  "claim": "The first transaction GV6UUmNx ever signs is on 23 June, a purchase of another token. It first moves ANSEM on 28 June.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4riXtXs72gSry6pd9JrvjsDM9bjhDsk7jrx1diXGhPPt88DsgaR4ePqN2s4PrEYPaZx7rzNCk1RrCv3GPuEqXJuL",
+    "check": "signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "4riXtXs72gSry6pd9JrvjsDM9bjhDsk7jrx1diXGhPPt88DsgaR4ePqN2s4PrEYPaZx7rzNCk1RrCv3GPuEqXJuL",
+    "check": "time",
+    "arg": 1782180517
+   },
+   {
+    "sig": "5cn8EKLLtE1VZRw49BnY54po5YBqGGdHhKUcVJNxr3Wt7n3ybcsK6an9p7d6ZuAsAUX4wb7D742nZV4qXuftPwmR",
+    "check": "signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "5cn8EKLLtE1VZRw49BnY54po5YBqGGdHhKUcVJNxr3Wt7n3ybcsK6an9p7d6ZuAsAUX4wb7D742nZV4qXuftPwmR",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     -10000000000000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E16",
+  "claim": "First public adoption by him: the post on airdropping the fees directed to his profile, 14:03:08 UTC on 27 June, reposted at 14:06:38. It answers a suggestion from another account.",
+  "kind": "His post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2070870549492883555",
+    "contains": "airdrop portions of the creator fees"
+   },
+   {
+    "id": "2070871430191800832",
+    "contains": "airdrop portions of the creator fees"
+   },
+   {
+    "id": "2070607672785744258",
+    "contains": "Ansem should launch his own token"
+   }
+  ]
+ },
+ {
+  "id": "E17",
+  "claim": "First buy of 5 SOL or more after that post comes 23 seconds later: 11.0 SOL at 14:03:31.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "3Rkq9qDdW98RS1fKjjCah744mQy1AAv5H649m7dK2NuGuxPLTyStNS8e3yoqGGPAPZrwVSkLXTroZdt3rP4iX7EW",
+    "check": "time",
+    "arg": 1782569011
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E18",
+  "claim": "He describes it as a community takeover, says not to send coins to his wallet, and reports about $7M airdropped.",
+  "kind": "His posts",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2075325346547650772",
+    "contains": "I CTOd the $ANSEM token"
+   },
+   {
+    "id": "2071204680248545493",
+    "contains": "dont send it to my wallet"
+   },
+   {
+    "id": "2071573866875429166",
+    "contains": "have airdropped about ~$7M"
+   },
+   {
+    "id": "2072375992555831586",
+    "contains": "instead of sending me the supply"
+   }
+  ]
+ },
+ {
+  "id": "E19",
+  "claim": "The deployer had launched a first token named The Black Bull, symbol ANSEM, the same day at 15:45:50, 5 h 20 min before. All of it, 400 M tokens, and 100 % of its fees went to a different wallet, Dt4gYgAU.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4VuY1xLQrLH3okjtyL3GJVcKCa262bZFnjoBJ1qFyyLFEf84JWNDLVmepVQj3qx8CVxr3eK4XC9Cxcs9yewNLFyT",
+    "check": "time",
+    "arg": 1781624750
+   },
+   {
+    "sig": "4VuY1xLQrLH3okjtyL3GJVcKCa262bZFnjoBJ1qFyyLFEf84JWNDLVmepVQj3qx8CVxr3eK4XC9Cxcs9yewNLFyT",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E20",
+  "claim": "The same recipe on later launches, with him asking publicly not to be sent coins: about 86 SOL bought, 650 M tokens to GV6UUmNx, 100 % of fees, the rest sold.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "543QxeoLNEkp9qnkQYniZD5u5h7wmmqYqzxyh8UKqSBKCe3LSNjvWw33CP8gm2MkVnxyXkRz7ZNZzcsqREohA8mq",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "dUaSdZm38CStjhp1VSJWGFQqSxf6DQB2hfjMXmVpump",
+     650000000000000
+    ]
+   },
+   {
+    "sig": "28D38QWjBkQEi9bnDX2KDxWfjYAePdCvZJubU8yePh6Bz3qx3qoyfa4whzn9uA475mNhJeVGN8ufAN4aLX5CsjPW",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "9j4sMShA1UBHbaJFXJUTjGLCQe8zcsZAd7bWNFKKpump",
+     650000000000000
+    ]
+   },
+   {
+    "sig": "4aMnWtoGrmD772HPR8hisXS3pLSBN99pksP1FP75dDCE8wDGdgqjBM6CiUh8TUeSJhUm2wo8KpBH4cGkP3vPjjCM",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "8RF5i3GuHpaPGHkJ7tH2L7wANj2ASprq2VEXQse3pump",
+     700000000000000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E21",
+  "claim": "A token transfer out of GV6UUmNx is not proof that he sent it. This one, to the deployer, is signed by a third wallet that holds a permanent delegate on the mint.",
+  "kind": "On-chain fact, trap",
+  "checks": [
+   {
+    "sig": "kSURJqBpNNCYUb6r3EWzLRP4hBDkL4NCUk6zE1xJHuYn9MVEiVk7LJ3rqA7iJ1qyDQtW6xwi7VH1VQFRfSvMqCz",
+    "check": "signer",
+    "arg": "FJ2Q9YPYucxPAHnjWzxM6JRJ6qmz5CUsv695dqx5mhhj"
+   },
+   {
+    "sig": "kSURJqBpNNCYUb6r3EWzLRP4hBDkL4NCUk6zE1xJHuYn9MVEiVk7LJ3rqA7iJ1qyDQtW6xwi7VH1VQFRfSvMqCz",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "kSURJqBpNNCYUb6r3EWzLRP4hBDkL4NCUk6zE1xJHuYn9MVEiVk7LJ3rqA7iJ1qyDQtW6xwi7VH1VQFRfSvMqCz",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "278DWFskyaXcFy73rgtd4z1ao5PhLCQXKCWvSUqRGmsg",
+     -10000000000000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E22",
+  "claim": "The deployer and FkCcgvCo exchange SOL in both directions from the deployer's first hours.",
+  "kind": "R3 same financial network",
+  "checks": [
+   {
+    "sig": "3dsLwZLx7qLirUthoDoLvCdYh72DPQpY66UjSa3vikjwAtjc3XQ8DMuqkWVTfeXna2evpry2JiB1cYc8we78Cg77",
+    "check": "owner_sol_gain",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "3XYYUhF2jVQh7CU3dZ7sKzN158K9RwLTu8SaBPyekY8xfMsKQgm7FPA5UKT64JRRtEX85AWMSqqeQi6hmERGJkhT",
+    "check": "owner_sol_gain",
+    "arg": "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E23",
+  "claim": "GV6UUmNx's large exits go through wallets used once, into high-volume hot wallets. No such hop is shared with the deployer's side.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4kKiZFGC3wvfuy6E8sVmRKeqFcu9wxfEAT63oWD9zVrTHYd49hcmGiFjaKxnZe7byeAehHwUnzp94fgent1pqCSi",
+    "check": "owner_sol",
+    "arg": [
+     "H3t5AYjF4ukuZ1HL2WCQqtSucRWWSZSoaiwYoWeshKPJ",
+     3000000000000,
+     "approx"
+    ]
+   },
+   {
+    "sig": "4kKiZFGC3wvfuy6E8sVmRKeqFcu9wxfEAT63oWD9zVrTHYd49hcmGiFjaKxnZe7byeAehHwUnzp94fgent1pqCSi",
+    "check": "signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E24",
+  "claim": "490 M ANSEM move from GV6UUmNx to a new wallet on 1 August, which an exchange-like hot wallet funded hours earlier. Signed by GV6UUmNx.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "4mKqcX4taUZsv3v8aDmYEacW3HwQfjX7z96LxxUUMmRU47XKfZ23X8ps8pQJFUHCt9NAZfpG6mC6emHzH4NSrJC9",
+    "check": "signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "4mKqcX4taUZsv3v8aDmYEacW3HwQfjX7z96LxxUUMmRU47XKfZ23X8ps8pQJFUHCt9NAZfpG6mC6emHzH4NSrJC9",
+    "check": "owner_token",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+     -490000000000000
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E25",
+  "claim": "Third parties name the deployer: Lookonchain on the 650 M transfer; others call yHCxHBEa the dev wallet of @Supermanonchain's token. These are claims, not proof.",
+  "kind": "Third-party claims",
+  "checks": [
+   {
+    "sig": "2DrzWKeXYHwu4qPQerMqkGs3zkeFcwZsoF8yg4AWMeEqMEcagrfCigd4NHYPZPuTEHt2vyyTBt1CxMYjw4LswU1G",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   }
+  ],
+  "posts": [
+   {
+    "id": "2071422705262543187",
+    "contains": "yHCxHB"
+   },
+   {
+    "id": "2072432739257549257",
+    "contains": "dev wallet"
+   },
+   {
+    "id": "2072603129212711417",
+    "contains": "Dev wallet"
+   }
+  ]
+ },
+ {
+  "id": "E26",
+  "claim": "Ansem's only located public reply to @Supermanonchain is hostile: when you stop vamping good projects.",
+  "kind": "His post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2077780523175280888",
+    "contains": "stop vamping good projects"
+   }
+  ]
+ },
+ {
+  "id": "E27",
+  "claim": "Before this launch, another account publicly proposed coining him and sending supply and fees to AVAZvHLR. The idea is public and older than GV6UUmNx.",
+  "kind": "Third-party post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2053638871305351384",
+    "contains": "send him supply and fees"
+   }
+  ]
+ },
+ {
+  "id": "E28",
+  "claim": "Bubblemaps' public count of the airdrop.",
+  "kind": "Third-party post",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2071608832728686966",
+    "contains": "airdropped $6.7M"
+   }
+  ]
+ }
+]

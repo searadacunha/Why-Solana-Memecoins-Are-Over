@@ -9,7 +9,7 @@ import json
 import sys
 import time
 
-from lib import DATA, MINT, client, guard, utc
+from lib import DATA, MINT, client, guard
 
 from forensics_v2 import decode as D
 

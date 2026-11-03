@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANSEM network: wallets, tokens and flows</title>
+<style>
+:root{--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--grid:#d8d7d2;--edge:#8d8c86;
+ --family:#2a78d6;--ansem:#eb6834;--side:#1baf7a;--early:#eda100;--other:#e87ba4;--service:#9a9992;--token:#6250d6}
+@media (prefers-color-scheme:dark){:root{--surface:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--grid:#3a3a37;--edge:#7d7c76;
+ --family:#3987e5;--ansem:#d95926;--side:#199e70;--early:#c98500;--other:#d55181;--service:#77766f;--token:#9085e9}}
+body{margin:0;background:var(--surface);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+.viz-root{max-width:1320px;margin:0 auto;padding:18px}
+h1{font-size:20px;margin:0 0 4px}p{margin:4px 0 10px;color:var(--ink2);max-width:90ch}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0}
+.controls label{display:inline-flex;gap:5px;align-items:center;cursor:pointer;color:var(--ink2)}
+.swatch{width:11px;height:11px;border-radius:3px;display:inline-block}
+#stage{position:relative;border:1px solid var(--grid);border-radius:8px;overflow:hidden}
+svg{display:block;width:100%;height:auto;background:var(--surface)}
+.edge{fill:none;stroke:var(--edge);stroke-opacity:.55}.edge.gift{stroke-dasharray:5 4}.edge.fee{stroke-dasharray:1 4;stroke-linecap:round}
+.edge.hi{stroke-opacity:1;stroke:var(--ink)}
+.node{cursor:pointer}.node circle,.node rect{stroke:var(--surface);stroke-width:2}
+.node text{font-size:10.5px;fill:var(--ink2);pointer-events:none}.node.big text{font-size:12.5px;font-weight:600;fill:var(--ink)}
+.dim{opacity:.13}
+#tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--grid);border-radius:6px;padding:7px 9px;max-width:380px;font-size:12.5px;display:none;box-shadow:0 2px 10px rgba(0,0,0,.14)}
+#panel{margin-top:12px;border:1px solid var(--grid);border-radius:8px;padding:10px 12px;min-height:44px}
+code{font-size:12px}a{color:inherit}
+table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:8px}th,td{text-align:left;padding:4px 7px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+details{margin-top:12px}summary{cursor:pointer;font-weight:600}
+input[type=range]{width:280px}
+</style>
+</head>
+<body>
+<div class="viz-root">
+<h1>ANSEM: who is connected to whom</h1>
+<p>Each line is a transaction or a group of them, with a signature. Solid lines are SOL. Dashed lines are tokens given. Dotted lines are creator fees. Note what is missing: no SOL line joins the deployer family (left) to the Ansem wallet (right). A line says money moved. It does not say two wallets have one owner. Services and pools are off by default because a shared service is not a link: tick the box to see them.</p>
+<div class="controls" id="groups"></div>
+<div class="controls">
+ <label>Show flows that began up to <input type="range" id="date" min="0" max="100" value="100"> <strong id="dateText"></strong></label>
+ <label><input type="checkbox" id="k-sol" checked> SOL</label>
+ <label><input type="checkbox" id="k-gift" checked> Tokens given</label>
+ <label><input type="checkbox" id="k-fee" checked> Fees</label>
+ <label><input type="checkbox" id="k-create" checked> Created</label>
+</div>
+<div id="stage"><svg id="g" viewBox="0 0 1280 780" role="img" aria-label="Network of wallets and tokens. The same data is in the table below."></svg><div id="tip"></div></div>
+<div id="panel">Select a wallet or a token to read its role and its flows.</div>
+<details open><summary>Table of all flows</summary><table id="tbl"><thead><tr><th>From</th><th>To</th><th>What</th><th>Amount</th><th>Tx</th><th>First UTC</th><th>Reference</th></tr></thead><tbody></tbody></table></details>
+<p style="margin-top:12px">Data: <code>evidence/graph.json</code>, built by <code>code/ana_60_wallets_graph.py</code> from on-chain rows. Status of each claim: <code>REPORT.md</code>, <code>EVIDENCE_LEDGER.csv</code>.</p>
+</div>
+<script>
+const DATA=/*DATA*/null;
+const band={family:[.16,.5],token:[.42,.5],ansem:[.64,.42],side:[.86,.3],early:[.86,.8],other:[.42,.9],service:[.6,.07]};
+const W=1280,H=780,svg=document.getElementById('g'),NS='http://www.w3.org/2000/svg';
+const nodes=DATA.nodes.map((n,i)=>({...n,i})),byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+const edges=DATA.edges.filter(e=>byId[e.s]&&byId[e.t]);
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+nodes.forEach(n=>{const b=band[n.group];n.x=b[0]*W+(rnd()-.5)*180;n.y=b[1]*H+(rnd()-.5)*220;n.vx=0;n.vy=0;n.r=(n.label.startsWith('Deployer')||n.label.startsWith('Ansem wallet'))?15:n.group==='token'?8:7});
+for(let it=0;it<500;it++){const a=1-it/500;
+ for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const p=nodes[i],q=nodes[j];let dx=q.x-p.x,dy=q.y-p.y,d=Math.hypot(dx,dy)||1;const f=1500/(d*d)*a;dx/=d;dy/=d;p.vx-=dx*f;p.vy-=dy*f;q.vx+=dx*f;q.vy+=dy*f}
+ edges.forEach(e=>{const p=byId[e.s],q=byId[e.t];if(p.group!==q.group)return;let dx=q.x-p.x,dy=q.y-p.y,d=Math.hypot(dx,dy)||1;const f=(d-80)*.004*a;p.vx+=dx/d*f;p.vy+=dy/d*f;q.vx-=dx/d*f;q.vy-=dy/d*f});
+ nodes.forEach(n=>{const b=band[n.group];n.vx+=(b[0]*W-n.x)*.012*a;n.vy+=(b[1]*H-n.y)*.012*a;n.x+=n.vx*.6;n.y+=n.vy*.6;n.vx*=.8;n.vy*=.8;n.x=Math.max(34,Math.min(W-70,n.x));n.y=Math.max(22,Math.min(H-22,n.y))})}
+const color=g=>`var(--${g})`;
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+const eLayer=el('g',{}),nLayer=el('g',{});svg.append(eLayer,nLayer);
+const fmt=e=>e.sol!=null?e.sol.toLocaleString('en-US',{maximumFractionDigits:2})+' SOL':e.tokens!=null?(e.tokens/1e6).toLocaleString('en-US',{maximumFractionDigits:0})+' M tokens':'';
+const utc=t=>new Date(t*1000).toISOString().slice(0,16).replace('T',' ');
+edges.forEach(e=>{const p=byId[e.s],q=byId[e.t],mx=(p.x+q.x)/2,my=(p.y+q.y)/2-Math.min(40,Math.abs(q.x-p.x)*.08);
+ const w=e.sol?Math.max(1,Math.min(5,Math.log10(e.sol+1)*1.4)):2;
+ e.el=el('path',{class:'edge '+e.kind,d:`M${p.x} ${p.y}Q${mx} ${my} ${q.x} ${q.y}`,'stroke-width':w});eLayer.append(e.el);
+ e.el.addEventListener('mousemove',ev=>tip(ev,`<b>${e.label}</b><br>${p.label} to ${q.label}<br>${fmt(e)}, ${e.count} tx<br>first ${utc(e.t0)} UTC`));e.el.addEventListener('mouseleave',hide)});
+nodes.forEach(n=>{const g=el('g',{class:'node'+(n.r>10?' big':''),tabindex:0,role:'button','aria-label':n.label+'. '+n.role});
+ const s=n.group==='token'?el('rect',{x:n.x-n.r,y:n.y-n.r,width:n.r*2,height:n.r*2,rx:3,fill:color(n.group)}):el('circle',{cx:n.x,cy:n.y,r:n.r,fill:color(n.group)});
+ const t=n.r>10?el('text',{x:n.x,y:n.y-n.r-6,'text-anchor':'middle'}):el('text',{x:n.x+n.r+3,y:n.y+4});t.textContent=n.label;g.append(s,t);nLayer.append(g);n.el=g;
+ g.addEventListener('mousemove',ev=>tip(ev,`<b>${n.label}</b><br><code>${n.id}</code><br>${n.role}`));g.addEventListener('mouseleave',hide);
+ g.addEventListener('click',()=>select(n));g.addEventListener('keydown',ev=>{if(ev.key==='Enter')select(n)})});
+const tipEl=document.getElementById('tip'),stage=document.getElementById('stage');
+function tip(ev,html){const r=stage.getBoundingClientRect();tipEl.innerHTML=html;tipEl.style.display='block';tipEl.style.left=Math.min(ev.clientX-r.left+12,r.width-390)+'px';tipEl.style.top=(ev.clientY-r.top+12)+'px'}
+function hide(){tipEl.style.display='none'}
+function link(id){return `<a href="https://solscan.io/${id.length>60?'tx':'account'}/${id}" target="_blank" rel="noopener">${id.slice(0,10)}…</a>`}
+function select(n){const rel=edges.filter(e=>e.s===n.id||e.t===n.id);nodes.forEach(m=>m.el.classList.toggle('dim',m!==n&&!rel.some(e=>e.s===m.id||e.t===m.id)));edges.forEach(e=>e.el.classList.toggle('hi',rel.includes(e)));
+ document.getElementById('panel').innerHTML=`<b>${n.label}</b> <code>${n.id}</code> ${link(n.id)}<br>${n.role}<br>${rel.length} flows here: `+rel.slice(0,14).map(e=>`${byId[e.s].label} to ${byId[e.t].label}: ${fmt(e)}`).join('; ')+(rel.length>14?'; see the table':'')}
+const on=Object.fromEntries(DATA.groups.map(g=>[g[0],g[0]!=='service']));
+const box=document.getElementById('groups');DATA.groups.forEach(([g,name])=>{const l=document.createElement('label');l.innerHTML=`<input type="checkbox" ${g==='service'?'':'checked'} data-g="${g}"><span class="swatch" style="background:${color(g)}"></span>${name}`;box.append(l)});
+const tmin=Math.min(...edges.map(e=>e.t0)),tmax=Math.max(...edges.map(e=>e.t0));
+function apply(){const v=+document.getElementById('date').value/100,lim=tmin+(tmax-tmin)*v;document.getElementById('dateText').textContent=utc(lim).slice(0,10);
+ const k={sol:document.getElementById('k-sol').checked,gift:document.getElementById('k-gift').checked,fee:document.getElementById('k-fee').checked,create:document.getElementById('k-create').checked};
+ box.querySelectorAll('input').forEach(i=>on[i.dataset.g]=i.checked);
+ const vis=new Set();edges.forEach(e=>{const show=e.t0<=lim&&k[e.kind]&&on[byId[e.s].group]&&on[byId[e.t].group];e.el.style.display=show?'':'none';if(show){vis.add(e.s);vis.add(e.t)}});
+ nodes.forEach(n=>{n.el.style.display=on[n.group]&&(vis.has(n.id)||n.r>10)?'':'none'})}
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',apply));apply();
+svg.addEventListener('click',ev=>{if(ev.target===svg){nodes.forEach(m=>m.el.classList.remove('dim'));edges.forEach(e=>e.el.classList.remove('hi'))}});
+const tb=document.querySelector('#tbl tbody');edges.slice().sort((a,b)=>a.t0-b.t0).forEach(e=>{const r=document.createElement('tr');r.innerHTML=`<td>${byId[e.s].label}</td><td>${byId[e.t].label}</td><td>${e.label}</td><td class="n">${fmt(e)}</td><td class="n">${e.count}</td><td>${utc(e.t0)}</td><td>${e.sig.length>60?link(e.sig):e.sig}</td>`;tb.append(r)});
+</script>
+</body>
+</html>

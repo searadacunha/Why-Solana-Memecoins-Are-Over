@@ -1,0 +1,7 @@
+# The repository's rules. Long lines are tables of claims and addresses, kept on one line to stay greppable.
+extend = "../../ruff.toml"
+line-length = 240
+
+[lint.per-file-ignores]
+"code/build_ledger.py" = ["E501"]
+"code/ana_60_wallets_graph.py" = ["E501"]

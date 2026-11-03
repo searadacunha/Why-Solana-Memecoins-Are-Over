@@ -1,0 +1,122 @@
+{
+ "launches": 343,
+ "wallets": 1856,
+ "wallets_tested": 60,
+ "draws": 10000,
+ "controls": {
+  "planted_pair_p": 0.005988023952095809,
+  "shuffled_wallets": 40,
+  "shuffled_flagged_p_lt_0.01": 0
+ },
+ "seeds_absent_from_corpus": [
+  "HKCFgNYU",
+  "1mGRiNd5",
+  "7mTX78HL",
+  "Bot5Xi6E",
+  "3ntEpydD",
+  "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+ ],
+ "seeds": {
+  "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe": {
+   "launches": 24,
+   "observed": 15,
+   "p": 0.6554344565543445,
+   "top_partners": [
+    [
+     "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
+     15
+    ],
+    [
+     "RDCT-d4fb6b1f86",
+     14
+    ],
+    [
+     "5xTa1Jk8D8qMKQdFz4Zf6bq2v3k3J3FErp3i8QDwUF6b",
+     10
+    ],
+    [
+     "BphLTDUQPLUrbrePpjgBbb6SxvbFSdqQ9KoMhH1jSa4d",
+     8
+    ]
+   ],
+   "group_size": 4,
+   "group_at_or_below_same_p": 1
+  },
+  "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": {
+   "launches": 54,
+   "observed": 24,
+   "p": 0.9994000599940006,
+   "top_partners": [
+    [
+     "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
+     24
+    ],
+    [
+     "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw",
+     21
+    ],
+    [
+     "BnnNJJgy9w2MLQ9XBKJKG9FQa2r9qdW7u5VpzEkwUcc3",
+     18
+    ],
+    [
+     "RDCT-d4fb6b1f86",
+     16
+    ]
+   ],
+   "group_size": 0,
+   "group_at_or_below_same_p": 0
+  },
+  "LfEcaUf77iEhnz6gFpLqYgDb5Uk6Ekc5n69wu7Qa9Uw": {
+   "launches": 91,
+   "observed": 68,
+   "p": 9.999000099990002e-05,
+   "top_partners": [
+    [
+     "RDCT-d4fb6b1f86",
+     68
+    ],
+    [
+     "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
+     51
+    ],
+    [
+     "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     21
+    ],
+    [
+     "BnnNJJgy9w2MLQ9XBKJKG9FQa2r9qdW7u5VpzEkwUcc3",
+     19
+    ]
+   ],
+   "group_size": 1,
+   "group_at_or_below_same_p": 1
+  },
+  "dshAybqFXYVVTd4mzy9Uk6KD7km8wE9iZgPMYZdzEXc": {
+   "launches": 23,
+   "observed": 11,
+   "p": 0.9851014898510149,
+   "top_partners": [
+    [
+     "zAnr3GphY5t6xPahAaCQKPNBSxhYEtvV41JTqPFqmbb",
+     11
+    ],
+    [
+     "BnnNJJgy9w2MLQ9XBKJKG9FQa2r9qdW7u5VpzEkwUcc3",
+     9
+    ],
+    [
+     "RDCT-d4fb6b1f86",
+     8
+    ],
+    [
+     "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq",
+     5
+    ]
+   ],
+   "group_size": 4,
+   "group_at_or_below_same_p": 3
+  }
+ },
+ "note": "A low p means the wallet shares launches with one partner more than chance. It says nothing about ownership: shared bots do this too."
+}

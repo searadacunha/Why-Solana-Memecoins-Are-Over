@@ -111,6 +111,8 @@ def main() -> None:
         w = csv.writer(f)
         w.writerow(["recipient", "n_launches_gifted", "tokens_gifted", "first_gift_utc", "last_gift_utc", "n_launches_fee_share"])
         for o, r in sorted(rec.items(), key=lambda x: -len(x[1]["mints"])):
+            if o not in fee_rec and not (r["tok"] >= 10**12 and len(r["mints"]) >= 2):  # dust sprays stay out of the published table
+                continue
             w.writerow([o, len(r["mints"]), r["tok"] / 1e6, utc(r["first"]), utc(r["last"]), fee_rec.get(o, 0)])
         for o, c in fee_rec.items():
             if o not in rec:
