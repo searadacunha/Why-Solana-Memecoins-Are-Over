@@ -1,8 +1,8 @@
 {
  "branch": "forensics-v2",
  "base": "6565245e3f5d48b0e6a987ebe6f2aa5954fb00be",
- "as_of": "2026-11-02",
- "python": "3.13.1 for the core, 3.13.1 venv with duckdb 2.0.0 for store.py",
+ "as_of": "2026-11-03",
+ "python": "3.13.1, ~/.local/share/forensics_v2/venv, with duckdb 2.0.0, pytest 9.2.0, mypy, ruff",
  "credits": {
   "ceiling_set_by_this_work": 300000,
   "counter_file": "<data root>/checkpoints/credits",
@@ -10,23 +10,92 @@
  },
  "keys": {
   "found": 11,
-  "answering": 11,
-  "used": 5,
-  "reserved_for_other_uses": 6,
+  "answering_max_usage_on_2026_11_03": 3,
+  "used_by_this_work": 5,
+  "still_answering_in_this_pool": 2,
+  "outside_this_pool_not_used": 6,
   "quota_and_plan": "not visible from a key"
  },
  "data": {
-  "work_area": "~/.local/state/forensics_v2/hot",
+  "work_area": "~/.local/state/forensics_v2/hot, copied to the external volume with sync_cold",
   "external_volume": "/Volumes/PHI-Data/solana_forensics_v2",
-  "frozen_inputs_read_only": ["historical_edge_2024/data/cache/getTransaction", "historical_edge_2024/derived", "funder_network/derived", "exit_destination/derived"]
+  "frozen_inputs_read_only": [
+   "historical_edge_2024/data/cache/getTransaction",
+   "historical_edge_2024/derived",
+   "funder_network/derived",
+   "exit_destination/derived"
+  ]
  },
  "runs": [
-  {"what": "baseline tests before any change", "output": "docs/baseline/SUMMARY.txt"},
-  {"what": "published case rebuilt from signatures", "output": "reports/nine_wallets/", "code": "investigations/nine_wallets.py, investigations/posthoc/nine_*.py, investigations/gateway_day.py"},
-  {"what": "gateway bursts, plan docs/PLAN_gateway_bursts.md", "output": "reports/gateway_bursts/results.json", "code": "investigations/gateway_bursts.py", "seed": 20261102},
-  {"what": "co-signers, plan docs/PLAN_cosigners.md", "output": "reports/cosigners/results.json, posthoc.json", "code": "investigations/cosigners.py, investigations/posthoc/cosigners_posthoc.py", "seed": 20261102},
-  {"what": "launch context of the author's trades, plan docs/PLAN_trade_context.md, comparison added after reading", "output": "reports/trade_context/, private_trades/PATTERN_MATCHES.json", "code": "investigations/trade_context.py", "seeds": [20261102, 20261103]},
-  {"what": "private trade files", "output": "private_trades/ (git-ignored)", "code": "investigations/trades_2024.py, investigations/card_scan.py, investigations/load_store.py"}
+  {
+   "what": "baseline tests before any change",
+   "output": "docs/baseline/SUMMARY.txt"
+  },
+  {
+   "what": "published case rebuilt from signatures",
+   "output": "reports/nine_wallets/",
+   "code": "investigations/nine_wallets.py, investigations/posthoc/nine_*.py, investigations/gateway_day.py"
+  },
+  {
+   "what": "gateway bursts, plan docs/PLAN_gateway_bursts.md",
+   "output": "reports/gateway_bursts/results.json",
+   "code": "investigations/gateway_bursts.py",
+   "seed": 20261102
+  },
+  {
+   "what": "co-signers, plan docs/PLAN_cosigners.md",
+   "output": "reports/cosigners/results.json, posthoc.json",
+   "code": "investigations/cosigners.py, investigations/posthoc/cosigners_posthoc.py",
+   "seed": 20261102
+  },
+  {
+   "what": "launch context of the author's trades, plan docs/PLAN_trade_context.md, comparison added after reading",
+   "output": "reports/trade_context/, private_trades/PATTERN_MATCHES.json",
+   "code": "investigations/trade_context.py",
+   "seeds": [
+    20261102,
+    20261103
+   ]
+  },
+  {
+   "what": "private trade files",
+   "output": "private_trades/ (git-ignored)",
+   "code": "investigations/trades_2024.py, investigations/card_scan.py, investigations/load_store.py"
+  },
+  {
+   "what": "nine against fifteen, two sources per credit",
+   "output": "reports/nine_wallets/reconciliation.json",
+   "code": "investigations/posthoc/nine_reconcile.py",
+   "network": "public RPC, no credit"
+  },
+  {
+   "what": "deployers of the fleet's tokens",
+   "output": "reports/nine_wallets/fleet_deployers.json",
+   "code": "investigations/posthoc/nine_deployers.py"
+  },
+  {
+   "what": "2026 exits, plan docs/PLAN_exits_2026.md",
+   "output": "reports/exits_2026/results.json",
+   "code": "investigations/exits_2026.py",
+   "seed": 20261103
+  },
+  {
+   "what": "co-signers on paying wallets, plan docs/PLAN_cosigners_v2.md",
+   "output": "reports/cosigners_v2/results.json",
+   "code": "investigations/cosigners_v2.py",
+   "seed": 20261103
+  },
+  {
+   "what": "cross-chain proofs",
+   "output": "reports/cross_chain/README.md",
+   "code": "crosschain.py",
+   "network": "public endpoints, no credit"
+  },
+  {
+   "what": "the author's ledger, report and largest trips",
+   "output": "private_trades/ (git-ignored)",
+   "code": "investigations/trades_ledger.py, investigations/trades_report.py, investigations/trade_context.py"
+  }
  ],
  "tests_last_run": "see the commit's CI run on GitHub: ci.yml, on forensics-v2"
 }

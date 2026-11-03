@@ -1,0 +1,57 @@
+{
+ "plan": "docs/PLAN_cosigners_v2.md",
+ "seed": 20261103,
+ "n_cosigners": 106,
+ "n_controls": 25,
+ "credits_spent": 0,
+ "verdicts": {
+  "cosigners": {
+   "service": 4,
+   "not_separated": 75,
+   "private": 25,
+   "no_payer": 2
+  },
+  "controls": {
+   "not_separated": 9,
+   "no_payer": 6,
+   "service": 2,
+   "private": 8
+  }
+ },
+ "fisher_service_share_p": 0.32165437618495807,
+ "discriminates": false,
+ "tests": {
+  "M1": {
+   "median_cosigners": 0.0,
+   "median_controls": 1.0,
+   "p": 0.000999900009999,
+   "passes_bonferroni": true
+  },
+  "M2": {
+   "median_cosigners": 0.0,
+   "median_controls": 0.05886137812394726,
+   "p": 9.999000099990002e-05,
+   "passes_bonferroni": true
+  },
+  "M3": {
+   "median_cosigners": 0.0,
+   "median_controls": 0.0,
+   "p": 1.0,
+   "passes_bonferroni": false
+  },
+  "M4": {
+   "median_cosigners": 0.2074466693424466,
+   "median_controls": 0.0551327579570516,
+   "p": 0.11808819118088192,
+   "passes_bonferroni": false
+  },
+  "M5": {
+   "median_cosigners": 0.6541252110840512,
+   "median_controls": 0.5912868086701205,
+   "p": 0.20387961203879612,
+   "passes_bonferroni": false
+  }
+ },
+ "payers_total": 2729,
+ "payers_shared": 697
+}

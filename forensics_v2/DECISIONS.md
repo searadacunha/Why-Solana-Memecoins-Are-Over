@@ -58,3 +58,22 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
 15. **Work area moved out, 2026-11-03.** The internal disk reached 12.08 GB free, under the 13.5 GB floor. This session's work area, 1.9 GB of its own cache,
     was copied to the external volume and checked (database and Parquet by hash, 400 random transactions byte for byte, every checkpoint, the call log), then
     removed from the internal disk. The configuration now points at the external volume. What used the rest of the disk was not established.
+
+## 2026-11-03
+
+16. **Branch history.** Rewritten once with the author's written permission, limited to this branch: figures of his unpublished study and notes about keys were taken out of
+    14 commits, with `main` and every other branch untouched. Dates and authors are kept. A full copy of the old history is kept privately. Commit hashes cited as proof that a
+    plan came first therefore changed; those plans' dates in `git log` are the original ones.
+17. **Comparison changed after a failed first run.** The plan for the 2026 exits said no disagreement would be fixed by changing the comparison. The first run agreed on 135 of 427
+    transactions. All 292 differences were exactly the fee: the frozen table's `dsol` adds it back when the wallet signs (`exit_destination/code/ed_trace.py:175`). The comparison
+    now applies that convention, and agrees on 427 of 427. The first figure stays in the report and in `results.json`.
+18. **Work area back on the internal disk.** Other sessions saturated the external mechanical disk: one history read sat in disk wait for minutes. `data_root` is back on
+    `~/.local/state/forensics_v2/hot`, quota 1.5 GB, reservation through the disk guard, and copied out with `sync_cold` at the end. Cached transaction bodies on the external disk are
+    no longer looked up during a run, so some repeated reads cost credits again. A bounded cost, against a whole session stuck behind a busy disk.
+19. **Keys, measured.** One `getHealth` per key: 3 of the 5 keys of this pool answer "max usage reached", the other 2 and the 5 outside the pool answer. A key that says this has a hard
+    stop, so it cannot bill past its quota. Other sessions on this machine may use the same keys, so a spent key does not measure this work. Replies carry no plan, credit or account
+    header, so which keys share an account is not visible from a key: it needs the dashboard. This work stays on the 2 pool keys that answer, and the keys outside the pool are not used.
+20. **Python.** On this machine `python3` resolves to a 3.14 virtual environment of another tool. The repository's CI and byte-for-byte reproduction are on 3.12 and 3.13, so this work runs from
+    its own environment, `~/.local/share/forensics_v2/venv`, Python 3.13.1, with `duckdb`, `pytest`, `mypy` and `ruff`.
+21. **Venue list.** Moonshot added to `decode.VENUES`, after 138 token transactions showed no venue. No total changes: buy and sell are decided by sign.
+

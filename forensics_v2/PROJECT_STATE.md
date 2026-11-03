@@ -1,42 +1,47 @@
 # State of the work
 
-Checkpoint: 2026-11-02. Rewritten at each step; history is in `git log` and in the project journal.
+Checkpoint: 2026-11-03. Rewritten at each step; history is in `git log` and in the project journal.
 
 ## Done and checked
 
 - **Engine:** decoder, client, tracer, DuckDB store, volume guard, with tests. The trip builder matches the frozen 2024 table to the lamport.
   Same convention and same data, separate code: this validates the implementation, it is not independent evidence about the trades.
-- **Baseline** recorded before any change (`docs/baseline/`). **External repositories** read (`docs/EXTERNAL_REPOS_AUDIT.md`).
-- **Published case** rebuilt from signatures, including its own day at the gateway: 15 wallets, not 9 (`reports/nine_wallets/`).
-- **Gateway bursts** and **co-signers**: plans committed before results, reports written (`reports/gateway_bursts/`, `reports/cosigners/`).
-- **The author's own trades:** private deliverables built, launch context read, comparison group read. Only in `private_trades/`, git-ignored.
-- **Independent review** of the new code by a silent-failure agent; findings checked on the data, in `DECISIONS.md` 13d.
+- **Branch history:** rewritten once on the author's written permission, `DECISIONS.md` 16. CI green on the rewritten tip.
+- **Environment:** isolated Python 3.13 (see Resume). Existing and new tests run from it, in a fresh clone, with the artefacts unchanged byte for byte.
+- **Published case:** nine against fifteen reconciled, each credit read from two sources: the nine are all inside the fifteen (`reports/nine_wallets/`). The README gains one sentence, none changed.
+- **The author's own trades:** rebuilt as a ledger of every transaction, with a capital statement that closes to the lamport and a balance chain showing the ledger is complete for its wallets.
+  Tips paid in their own transaction are attached to their trade. PnL cards are matched by token symbol, wallets get a level from a rule fixed in advance. Everything is in `private_trades/`, git-ignored.
+- **Cross-chain module:** three levels of proof, tested on a real transaction from Solana to Ethereum (`crosschain.py`, `reports/cross_chain/`).
+- **2026 exits through the new engine:** 427 of 427 transactions agree with the frozen tables after one stated convention, and the engine recovers what their cap hid (`reports/exits_2026/`).
+- **Fleet of the published case:** deployers of its nine tokens read, none in the fleet, two funding chains among them (`reports/nine_wallets/`).
+- **Co-signers, second test:** on paying wallets, plan fixed first, no credit spent (`reports/cosigners_v2/`).
+- **Gateway bursts, first co-signer test, baseline, external repositories:** as reported on 2026-11-02.
 
 ## Not done
 
-See TODO.md. Not started: the cross-chain module, launch context of Raydium entries, tracing the fleet's other tokens and the common wallet further.
+See `TODO.md`.
 
 ## Where the data is
 
-- Everything is on the external volume: `/Volumes/PHI-Data/solana_forensics_v2`. It is a mechanical USB disk (image on `VERBATIM HD`), not an SSD, so runs
-  are slow while other sessions use it. The internal work area used during the session was moved there and removed on 2026-11-03, when the internal disk
-  fell under its floor (DECISIONS.md 15).
-- To work on the internal disk again for a run, set `data_root` to a folder holding the marker file and add `internal_quota_bytes` to
-  `~/.config/forensics_v2/config.json`, with `legacy_root` and `cold_root` on the volume. `python -m forensics_v2.investigations.sync_cold` then copies it out, adding only.
-- Private results: `forensics_v2/private_trades/`, git-ignored, mode 700. Start with `PATTERN_REPORT.md`, `PNL_RECONSTRUCTION.md`, `UNRESOLVED_TRADES.md`.
+- Work area of the last runs: `~/.local/state/forensics_v2/hot`, internal disk, 1.5 GB quota, reserved through the disk guard (`DECISIONS.md` 18).
+- Everything else, and copies of the work area and private results: `/Volumes/PHI-Data/solana_forensics_v2`, a disk image on the mechanical USB disk `VERBATIM HD`.
+- Private results: `forensics_v2/private_trades/`, git-ignored, mode 700, copied to `private_reports/` on that volume. Start with `RAPPORT_TRADES_2024_V2.md`.
 
 ## Resume
 
+Run from the repository, never from the home folder, and not with the machine's default `python3`, which is 3.14 inside another tool's environment.
+
 ```bash
-cd ~/Documents/Crypto/WSMO-forensics-v2
-PY=/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
-$PY -m pytest -q
+cd ~/Documents/Crypto/WSMO-forensics-v2                    # branch forensics-v2
+uv venv --python 3.13 ~/.local/share/forensics_v2/venv     # once
+uv pip install --python ~/.local/share/forensics_v2/venv/bin/python duckdb==2.0.0 pytest==9.2.0 mypy ruff   # once
+PY=~/.local/share/forensics_v2/venv/bin/python
+$PY -m pytest -q                                           # existing tests and V2
+$PY code/run_all.py --strict                               # rewrites artefacts to compare them: run it in a fresh clone
+$PY -m forensics_v2.investigations.trades_ledger extract   # private, no network
+$PY -m forensics_v2.investigations.trades_report           # private, no network
+$PY -m forensics_v2.crosschain prove <signature>           # public endpoints, no key
 $PY -m forensics_v2 trace <wallet> --direction both --hops 2 --credits 2000
-$PY -m forensics_v2.investigations.trades_2024 build
-$PY -m forensics_v2.investigations.trade_context analyse
-$PY -m forensics_v2.investigations.trade_context analyse_control
-$PY -m forensics_v2.investigations.card_scan 8000 <targets.json>     # resumes; symx and h2w6gm6jz stopped at 25,000 transactions
 ```
 
-Everything resumes from `checkpoints/`. The core runs on the standard library with that Python. `store.py` needs DuckDB, from the venv in
-`/Volumes/PHI-Data/solana_forensics_v2/tooling/venv`, slow to start while the disk is busy.
+Everything that reads the network resumes from `checkpoints/`. `sync_cold` copies the work area to the volume, adding only.

@@ -34,8 +34,8 @@ def events() -> list[dict[str, Any]]:
 def compare_read(read: dict[str, Any], d: D.Decoded, wallet: str) -> list[str]:
     """What the frozen parser recorded against this engine's reading of the raw transaction. Empty means they agree."""
     bad = []
-    # The frozen table's dsol adds the fee back when the wallet signs (exit_destination/code/ed_trace.py:175). The first run of this
-    # comparison missed that and disagreed on 292 of 427, each by exactly the fee: amendment in DECISIONS.md 17.
+    # The frozen table's dsol adds the fee back when the wallet signs (exit_destination/code/ed_trace.py:175). The first run
+    # missed that and disagreed on 292 of 427, each by exactly the fee: amendment in DECISIONS.md 17.
     native = d.lamport_delta.get(wallet, 0) + (d.fee if d.fee_payer == wallet else 0)
     n = d.owners.get(wallet)
     wsol = n.wsol if n else 0
