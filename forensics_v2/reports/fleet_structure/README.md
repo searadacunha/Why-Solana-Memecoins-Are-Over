@@ -1,8 +1,8 @@
 # The published fleet against the gateway's ordinary traffic
 
-Figures: [results.json](results.json) and [hypotheses.json](hypotheses.json). Code: `investigations/posthoc/fleet_vs_gateway.py`, `investigations/fleet_hypotheses.py`, `investigations/posthoc/g9x7_float.py`. Plan for the second part, committed before reading: [../../docs/PLAN_fleet_hypotheses.md](../../docs/PLAN_fleet_hypotheses.md). Payouts come from the frozen study's list of public transfers, 91,789 over 49 days. 60 calls for the second part and the loop test. Nothing here identifies a person.
+Figures: [results.json](results.json), [hypotheses.json](hypotheses.json) and [network_links.json](network_links.json). Code: `investigations/posthoc/fleet_vs_gateway.py`, `investigations/fleet_hypotheses.py`, `investigations/posthoc/g9x7_float.py`. Plan for the second part, committed before reading: [../../docs/PLAN_fleet_hypotheses.md](../../docs/PLAN_fleet_hypotheses.md). Payouts come from the frozen study's list of public transfers, 91,789 over 49 days. 60 calls for the second part and the loop test. Nothing here identifies a person.
 
-**The exact amount links nobody: 2.9768156 SOL fits the gateway's fee line on a round 3 SOL, and it was paid 1,753 times in 49 days. What sets the fleet apart is acting together, and it is not alone in that: 5 of 150 sampled bursts repeat the same purchase on 3 tokens or more, as it does. The 8 strict bursts are not one operator. Their tools point to third-party bots, and only 3 of them, on the same day, share a destination. The fleet's money enters a loop, but through a wallet that looks like a busy service.**
+**The exact amount links nobody: 2.9768156 SOL fits the gateway's fee line on a round 3 SOL, and it was paid 1,753 times in 49 days. What sets the fleet apart is acting together, and it is not alone in that: 5 of 150 sampled bursts repeat the same purchase on 3 tokens or more, as it does. The 8 strict bursts are not one operator. Their tools point to third-party bots, and only 3 of them, on the same day, share a destination. The fleet's money enters a loop, but through a wallet that looks like a busy service. A later test takes back the one join found between bursts: their shared wallet looks service-like, though only 2 of the 3 bursts buy the same tokens ([below](#three-destinations-and-the-bursts-of-2025-01-28)).**
 
 ## The amount
 
@@ -71,6 +71,47 @@ So `G9X7F4Jz…`, `ERGbjcz9…` and `AwzntLka…` form a loop running in paralle
 | Different destinations per window | 25 to 47 |
 
 Nearly everything passing through it comes from and goes to wallets outside the loop. **So this fits a busy service better than a treasury of the fleet, and the loop and the two deployers are weak evidence of a common owner.** The test does not exclude a large operator with many wallets, whose relation to these flows was not read. SOL is fungible, so nothing here shows that the fleet's own lamports reached a deployer. Owner `UNRESOLVED`. The historical study had already called this wallet a high-throughput service (`data/trace_h2w6/e8_fenetres_G9X7F4Jz.json`), and this measure agrees.
+
+## Three destinations and the bursts of 2025-01-28
+
+Plan committed before reading: [../../docs/PLAN_network_links.md](../../docs/PLAN_network_links.md). Code: `investigations/network_links.py`. 75 calls on the first run; the file was then rebuilt from cached pages, so it records 0. The table above is the earlier reading. This section changes it where it says so.
+
+**The join of bursts 140, 141 and 142 no longer stands by the plan's rule.** `6aRTeY51…` shows up to 37 distinct senders in 100 transactions, over the 18 that make it `service-like`, so the reading fixed in advance is `service or shared sweep`.
+
+| `6aRTeY51…`, 480 transactions read | |
+|---|---:|
+| Wallets sending it at least 0.1 SOL | 115 |
+| Of those, in the 3 bursts | 25, 61.11 SOL |
+| From all the others | 324.43 SOL |
+
+**That label may be too quick, and the rule could not see it.** These three counts were added after reading, so they are descriptive: 27 of its 30 largest other senders have a gateway credit as their first transaction, 15 of the 30 were also paid by it, and 137 of the 138 wallets it paid received a round total, in tenths of a SOL. A wallet farm's own treasury would look the same. Its owner stays `UNRESOLVED`, and neither a service nor one operator is shown.
+
+**Purchases.** Mints bought by a member of two bursts within the same hour:
+
+| Bursts | Same mint, same hour | Mints of each |
+|---|---:|---:|
+| 141 and 142 | 7 | 11 and 39 |
+| 140 and 141 | 0 | 19 and 11 |
+| 140 and 142 | 0 | 19 and 39 |
+| 138, control, against each | 0 | 1 |
+
+So 141 and 142 are tied by the same tokens at the same hour as well as a shared sweep, and 140 only by that sweep. The control is weak: 3 members of burst 138 were read, and they bought one mint. All members of the other three were read, first page only, so these are lower bounds.
+
+**The three destinations join no other group.** The only match the code found was pump.fun's fee account, on two paths, which is no link. It was then added to the labels.
+
+| Wallet | Transactions read | Most senders in the read | Top 5 senders' share of SOL | Label by the code |
+|---|---:|---:|---:|---|
+| `godTjnH7…` | 16 | 3 | 100 % | `undetermined` |
+| `C7ZxQvvj…` | 17 | 1 | 100 % | `undetermined` |
+| `godxpxo7…` | 13 | 2 | 100 % | `undetermined` |
+| `5FaGXg95…` | 69 | 4 | 100 % | `undetermined` |
+| `FuDyM3ML…` | 28 | 9 | 98.4 % | `undetermined` |
+
+- **Why `undetermined`.** The code gives `private-like` only on at least 100 transactions, a choice of mine that the plan did not state. These wallets have fewer, so they stay there. They look nothing like a busy service.
+- **The first four pass the same money round, `ONCHAIN_VERIFIED` for the transfers.** `D15CAtUp…` → `C7ZxQvvj…` → `godTjnH7…` → `godxpxo7…` → `D15CAtUp…` for about 600 SOL, and `D15CAtUp…` → `godTjnH7…` → `5FaGXg95…` → `D15CAtUp…` for 609 SOL. `5FaGXg95…` also pays `D15CAtUp…` more than that in all, 1,318.87 SOL. This fits one holder's own wallets better than a shared service. It does not say who that is, nor why the money circles.
+- **`FuDyM3ML…`:** 304 SOL in, 32.7 SOL on to `GQcbmJQW…`. Nothing more is established.
+
+None of these wallets pays the gateway directly in what was read. Short reads, and no label means no label.
 
 ## Limits
 

@@ -209,7 +209,7 @@ def own_rows() -> dict[str, list[dict[str, Any]]]:
 
 
 def shared_links(level: dict[str, str]) -> dict[str, Any]:
-    """Funders and destinations shared by a wallet not established and a certain or probable wallet, services left out. No test."""
+    """Funders and destinations shared by a wallet not established and a reference wallet, services left out. No test."""
     skip = (
         {HOT, DEPOSIT, G2Y, TOOL_FEE, PUMP_FEE} | set(JITO_TIP) | {w for w, v in level.items() if v == "EXCLUDED_INFRASTRUCTURE"}
     )

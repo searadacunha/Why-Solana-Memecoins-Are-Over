@@ -1,0 +1,441 @@
+{
+ "plan": "docs/PLAN_network_links.md",
+ "stopped": null,
+ "destinations": [
+  {
+   "wallet": "godTjnH7RZ3KAG6oEVTU7mH22TZR5oV4JKJheF9ZAjc",
+   "public_label": null,
+   "label": "undetermined",
+   "tx_read": 16,
+   "max_senders_per_100_tx": 3,
+   "busiest_hour_tx": 16,
+   "top5_share_of_sol_received": 1.0,
+   "pays": [
+    [
+     "5FaGXg95BA7Wb1nqj7unqoCBgquywFMnb2uy2dBG5hY",
+     609.0,
+     null
+    ],
+    [
+     "godxpxo7vYWyLCwHiWnwJmKivibyvfbdekMeSXQQ6TK",
+     600.541,
+     null
+    ],
+    [
+     "AApd5QiJYGDUg8xCHHsA5tHLp8vYj9aQ4FhujJqhYPbP",
+     1.466,
+     null
+    ],
+    [
+     "EJYGpSzjZdVi85k2oYu8RziZ4ZrE1E2fY3g95Royc2pH",
+     0.015,
+     null
+    ],
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     0.015,
+     "pump.fun fee account"
+    ]
+   ],
+   "to_gateway": []
+  },
+  {
+   "wallet": "C7ZxQvvjwB3N466Ysp6dWiktBDDcLNLMhhoukQUjsTA2",
+   "public_label": null,
+   "label": "undetermined",
+   "tx_read": 17,
+   "max_senders_per_100_tx": 1,
+   "busiest_hour_tx": 10,
+   "top5_share_of_sol_received": 1.0,
+   "pays": [
+    [
+     "godTjnH7RZ3KAG6oEVTU7mH22TZR5oV4JKJheF9ZAjc",
+     600.0,
+     null
+    ],
+    [
+     "D15CAtUpCVE6z7NeFhAKrYCUq7R9Xh98cypCFrV33HAi",
+     1.1,
+     null
+    ],
+    [
+     "Cp9CtU9M1XvRTKnu9mwb79i1mPLMnKChbx4d87n6aMtD",
+     1.0,
+     null
+    ]
+   ],
+   "to_gateway": []
+  },
+  {
+   "wallet": "FuDyM3MLFYgvSM8CL8VTjrfSaMhxzizn1xiuxpM3obZb",
+   "public_label": null,
+   "label": "undetermined",
+   "tx_read": 28,
+   "max_senders_per_100_tx": 9,
+   "busiest_hour_tx": 27,
+   "top5_share_of_sol_received": 0.984,
+   "pays": [
+    [
+     "GQcbmJQWrYqG4YK7AuxnDwDZQtuCKKMM5Gi6LojSWMnT",
+     32.7,
+     null
+    ],
+    [
+     "Cj7YBtNFKXiP6u3ncEF7J1mLqBEZNdxF3g7XJ35ByXrZ",
+     0.013,
+     null
+    ]
+   ],
+   "to_gateway": []
+  },
+  {
+   "wallet": "godxpxo7vYWyLCwHiWnwJmKivibyvfbdekMeSXQQ6TK",
+   "public_label": null,
+   "label": "undetermined",
+   "tx_read": 13,
+   "max_senders_per_100_tx": 2,
+   "busiest_hour_tx": 13,
+   "top5_share_of_sol_received": 1.0,
+   "pays": [
+    [
+     "D15CAtUpCVE6z7NeFhAKrYCUq7R9Xh98cypCFrV33HAi",
+     605.053,
+     null
+    ],
+    [
+     "CWoHhWTymPmBfi82RSruccAHT5jRQrhi5y6oJinkEFr2",
+     3.083,
+     null
+    ],
+    [
+     "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM",
+     0.031,
+     "pump.fun fee account"
+    ],
+    [
+     "81Y6ogtuHfHMnrhEKcmbogXXdb9rj3qJ7BaRWbfeDb1C",
+     0.015,
+     null
+    ]
+   ],
+   "to_gateway": []
+  },
+  {
+   "wallet": "5FaGXg95BA7Wb1nqj7unqoCBgquywFMnb2uy2dBG5hY",
+   "public_label": null,
+   "label": "undetermined",
+   "tx_read": 69,
+   "max_senders_per_100_tx": 4,
+   "busiest_hour_tx": 7,
+   "top5_share_of_sol_received": 1.0,
+   "pays": [
+    [
+     "D15CAtUpCVE6z7NeFhAKrYCUq7R9Xh98cypCFrV33HAi",
+     1318.874,
+     null
+    ],
+    [
+     "2CxnzrHT44UQYKqVDGHGKvJLfeeUP87DMUTTWe2zVHDF",
+     693.5,
+     null
+    ],
+    [
+     "7J8jzd8ZTtTWwPW8nML2xKuZuCbiDHg75dT4QJEM3Y85",
+     180.0,
+     null
+    ],
+    [
+     "49ECgG4b5z8ndo7Gg2ZWkZdMqgf29L1LJvRK8V66aNfZ",
+     101.0,
+     null
+    ],
+    [
+     "7JT7wEEU3xgZ1BVojcPeWARCAr2Q5Ckm7Dk2EVyeLRsM",
+     50.0,
+     null
+    ],
+    [
+     "4awrNdL3M6FGjVcQLL4TpvvNaPgKCDoQprRoGhBoh71P",
+     4.0,
+     null
+    ],
+    [
+     "GftPhJzDdgmHzgrpRPT2wSG97Rw3JM9QW4pSQWtdomgZ",
+     0.645,
+     null
+    ]
+   ],
+   "to_gateway": []
+  }
+ ],
+ "joins": [],
+ "sweep": {
+  "wallet": "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp",
+  "public_label": null,
+  "label": "service-like",
+  "tx_read": 480,
+  "max_senders_per_100_tx": 37,
+  "busiest_hour_tx": 60,
+  "top5_share_of_sol_received": 0.171,
+  "pays": [
+   [
+    "CbAuqhn4Kk9UbUUk7MWJMCbbPcwXQMGoSkfKowxFnRWF",
+    13.0,
+    null
+   ],
+   [
+    "DdgvtoXZ6dr8Y4BS88BML9WZ3krmYmp3Nm7YUawb3ow9",
+    13.0,
+    null
+   ],
+   [
+    "9Jr68YT7PGQmvY8nemcDwkdPn4C2B4jJcy4YcsP3mXJ2",
+    13.0,
+    null
+   ],
+   [
+    "BGPVerrLxbDGGCgnFrVo6ovPVwguXCjG7bNn385uhME4",
+    13.0,
+    null
+   ],
+   [
+    "BAySLiY5oqxj8quMCXPYaCqiDG6fp2axopotnBJKSEQZ",
+    13.0,
+    null
+   ],
+   [
+    "ywS2prFQQUgLNQSohmWhxCKGk9YKyHRPKZ5xvNDM7D2",
+    11.0,
+    null
+   ],
+   [
+    "FKsKceQQbJLJNXHXpuqpo6ishh53PnLQWkW82hAv5Chs",
+    6.0,
+    null
+   ],
+   [
+    "6Ag7xzNrE2QXYyc9pska45FMJXFbd7Z6fM862mMh3m8z",
+    6.0,
+    null
+   ]
+  ],
+  "to_gateway": [],
+  "senders_at_least_0_1_sol": 115,
+  "senders_in_the_3_bursts": 25,
+  "sol_from_the_3_bursts": 61.111,
+  "sol_from_others": 324.432,
+  "other_senders_read": [
+   {
+    "wallet": "BAySLiY5oqxj8quMCXPYaCqiDG6fp2axopotnBJKSEQZ",
+    "sol_sent": 15.593,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "BGPVerrLxbDGGCgnFrVo6ovPVwguXCjG7bNn385uhME4",
+    "sol_sent": 15.088,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "CbAuqhn4Kk9UbUUk7MWJMCbbPcwXQMGoSkfKowxFnRWF",
+    "sol_sent": 13.771,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "9Jr68YT7PGQmvY8nemcDwkdPn4C2B4jJcy4YcsP3mXJ2",
+    "sol_sent": 11.965,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "7qiT292aNGsnZ6dUdpzKMwBXgjZiUBbNp34mVnwiN8p3",
+    "sol_sent": 9.662,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "DdgvtoXZ6dr8Y4BS88BML9WZ3krmYmp3Nm7YUawb3ow9",
+    "sol_sent": 9.134,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "EQTamjBgF5sTsvsckj611DXzMj1TXp4zNzTgeDnfM7N9",
+    "sol_sent": 8.442,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "ywS2prFQQUgLNQSohmWhxCKGk9YKyHRPKZ5xvNDM7D2",
+    "sol_sent": 8.328,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "FKsKceQQbJLJNXHXpuqpo6ishh53PnLQWkW82hAv5Chs",
+    "sol_sent": 7.304,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "ApDBFrABS3mFX1eySXbmd5kG4iurC4YZwccyM8SyNf5d",
+    "sol_sent": 7.3,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "42ib1q9P7DRz6jcUUpZncvSHt3dwvL34eJEUb7djfKrQ",
+    "sol_sent": 6.663,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "44Gjg1pTVuApPWqrBWZdSJ4jxnvPy3JC8srnxTqpBrU8",
+    "sol_sent": 6.598,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "F74gY4JwGh3Xzeo7S6rHzCGJoJUAh4YnxE3ojritpg7H",
+    "sol_sent": 6.556,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "FSZvYysXmQtBbAhsaERWcyEwHC8XQZtxaXv34Ppdd35J",
+    "sol_sent": 6.414,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "GXZPXGbceiShnDsrHiLh4PFTAfjiYxVLZpw4yA6SSyAA",
+    "sol_sent": 6.15,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "AxNfgQKKx6ASzH5EEFzM9WhM1DUCyB5NLRhU7TBCehEB",
+    "sol_sent": 6.068,
+    "first_is_gateway": false
+   },
+   {
+    "wallet": "3LCuFNHDWbr4c5tBLyGs1qLwptxPZ6urDYYP1uceURT2",
+    "sol_sent": 5.801,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "CNFEae9x4dtPSw7muGPLvEBMj5b5HXE9WSXpGnwonUfF",
+    "sol_sent": 5.73,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "6Ag7xzNrE2QXYyc9pska45FMJXFbd7Z6fM862mMh3m8z",
+    "sol_sent": 5.392,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "DhenJgyN1i5tejrvbm6hr8rSGZyYFYFFEeXDnPkQyeGi",
+    "sol_sent": 5.222,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "61VFvMX5FYCCjnKNA4MgbYUwQ6vrcBoKwwhCDTHsQwqA",
+    "sol_sent": 5.195,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "GkJ8ZyxSnYKHCwK2DjK2U6PpMAqSvQBDb6NNmiYwKu3k",
+    "sol_sent": 5.036,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "3YsHQvujwshNsiZefuP9AvaWqzBq7fLd2A34XGu9Yfqz",
+    "sol_sent": 5.029,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "p6MBx7Hks3nmTfM9WG52BJWGLED2Bf8ReidV2Q9wkQK",
+    "sol_sent": 4.979,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "2P7g47BPr32n4HUDHhXn7bvYxvZnGVJMGtFkwdMjgCR5",
+    "sol_sent": 4.732,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "DymuzkXs7RTLTniiY5x6NMncMJqfw7Mp53fnm9A4cm2j",
+    "sol_sent": 4.472,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "FzhZYtVhY7w11U88fxsXv87qxgwgpyR6kpNscsJ5SXbZ",
+    "sol_sent": 4.364,
+    "first_is_gateway": false
+   },
+   {
+    "wallet": "ERXRD8QZxAai9ZCTrfAq5ih5WnKHFqRVapYcTmcWJsVt",
+    "sol_sent": 4.318,
+    "first_is_gateway": false
+   },
+   {
+    "wallet": "HWsPA9vH7YEqYmPNoxMf4VyjSfMYyhG7qTgc3mM6kgNa",
+    "sol_sent": 4.295,
+    "first_is_gateway": true
+   },
+   {
+    "wallet": "GUo8xvFGuomVmt3UJjHS8tjtaCdjKqVQPBcpLEHw1ELW",
+    "sol_sent": 4.184,
+    "first_is_gateway": true
+   }
+  ],
+  "other_senders_gateway_funded": 27,
+  "reading_from_the_plan": "service or shared sweep",
+  "posthoc": {
+   "paid_at_least_0_1_sol": 138,
+   "round_totals_among_them": 137,
+   "other_senders_read_also_paid_by_it": 15,
+   "of_other_senders_read": 30
+  }
+ },
+ "purchases": {
+  "members": {
+   "140": 12,
+   "141": 12,
+   "142": 11
+  },
+  "control_members_read": 3,
+  "pairs": {
+   "140_141": {
+    "mints_same_hour": 0,
+    "of_a": 19,
+    "of_b": 11,
+    "examples": []
+   },
+   "140_142": {
+    "mints_same_hour": 0,
+    "of_a": 19,
+    "of_b": 39,
+    "examples": []
+   },
+   "140_138": {
+    "mints_same_hour": 0,
+    "of_a": 19,
+    "of_b": 1,
+    "examples": []
+   },
+   "141_142": {
+    "mints_same_hour": 7,
+    "of_a": 11,
+    "of_b": 39,
+    "examples": [
+     "5VYpFWUbey8Wb6AMfmKPEQHEtt9cnrAfrQSghZAopump",
+     "BtpSaME215HBnaQHeFWBweNFdP8rQ4K8GCcv8MNapump",
+     "CS4nan8RkaVRpdmvevgpWQZs9iLVe8NTWUX4KRzEpump",
+     "CzPuA84MCKzJ3HUHkJxhbt3onj6ruL9Lm66pQiNgpump",
+     "GDWf6BeUpm7yMNjubRHFRfRDXpaLw299N1mesbHppump"
+    ]
+   },
+   "141_138": {
+    "mints_same_hour": 0,
+    "of_a": 11,
+    "of_b": 1,
+    "examples": []
+   },
+   "142_138": {
+    "mints_same_hour": 0,
+    "of_a": 39,
+    "of_b": 1,
+    "examples": []
+   }
+  }
+ },
+ "net_calls": 0
+}
