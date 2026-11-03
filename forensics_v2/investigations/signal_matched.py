@@ -10,10 +10,13 @@ import csv
 import json
 import random
 import sys
+from datetime import datetime, timezone
 from math import comb
+from pathlib import Path
 from typing import Any, Optional
 
 from .. import decode as D
+from .. import storage
 from ..__main__ import client
 from ..rpc import RpcError
 from .trade_context import _fisher_two_sided, classify, read_buyer, read_mint
@@ -316,5 +319,65 @@ def analyse() -> int:
     return 0
 
 
+def bias_checks() -> int:
+    """The earlier comparison, by month, hour, curve level and token age, and its Mantel-Haenszel odds ratio by strata. Private."""
+    root = json.loads(storage.CONFIG.read_text())["cold_root"]
+    x = json.loads((Path(root) / "intermediate/trade_context_group_x.json").read_text())["trips"]
+    trips = json.loads((PRIVATE / "PATTERN_MATCHES.json").read_text())["trips"]
+    c = [t for t in trips if t["group"] == "C"]
+    when = lambda t: datetime.fromtimestamp(t["t_open"], timezone.utc)  # noqa: E731
+    keys = {
+        "month": lambda t: when(t).strftime("%Y-%m"),
+        "hour_block": lambda t: when(t).hour // 6 * 6,
+        "curve": lambda t: str(
+            curve_band(int(t["curve_real_sol_after_entry"] * 1e9)) if t.get("curve_real_sol_after_entry") is not None else None
+        ),
+        "age": lambda t: str(age_band(t.get("entry_delay_after_creation_s"))),
+    }
+
+    def table(key: Any) -> dict[str, Any]:
+        out: dict[str, Any] = {}
+        for name, rows in (("C", c), ("X", x)):
+            for t in rows:
+                cell = out.setdefault(str(key(t)), {"C": [0, 0], "X": [0, 0]})[name]
+                cell[0] += bool(t["S1"])
+                cell[1] += 1
+        return out
+
+    def mantel_haenszel(key: Any) -> Optional[float]:
+        num = den = 0.0
+        for cell in table(key).values():
+            a, n1, b, n2 = cell["C"][0], cell["C"][1], cell["X"][0], cell["X"][1]
+            if n1 and n2:
+                num += a * (n2 - b) / (n1 + n2)
+                den += (n1 - a) * b / (n1 + n2)
+        return round(num / den, 2) if den else None
+
+    strata = {
+        "none": lambda t: 1,
+        **keys,
+        "month_curve_age": lambda t: (keys["month"](t), keys["curve"](t), keys["age"](t)),
+        "hour_curve_age": lambda t: (keys["hour_block"](t), keys["curve"](t), keys["age"](t)),
+    }
+    union = {(t["wallet"], t["mint"], t["t_open"]): t for t in trips if t["group"] in ("A", "B")}
+    curve_trips = sum(
+        1
+        for r in csv.DictReader(open(PRIVATE / "TRADES_V2.csv"))
+        if r["entry_venue"] == "pump" and r["t_open_utc"] < "2025-01-01"
+    )
+    weighted = (
+        sum(bool(t["S1"]) for t in union.values()) + (curve_trips - len(union)) * sum(bool(t["S1"]) for t in c) / len(c)
+    ) / curve_trips
+    res = {
+        "tables": {k: table(v) for k, v in keys.items()},
+        "mantel_haenszel": {k: mantel_haenszel(v) for k, v in strata.items()},
+        "weighted_rate_all_curve_trips": round(weighted, 4),
+        "curve_trips": curve_trips,
+    }
+    write_private("trade_context/bias_checks.json", json.dumps(res, indent=1))
+    print(res["mantel_haenszel"], res["weighted_rate_all_curve_trips"])
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(collect(int(sys.argv[2])) if sys.argv[1] == "collect" else analyse())
+    sys.exit({"collect": lambda: collect(int(sys.argv[2])), "analyse": analyse, "bias": bias_checks}[sys.argv[1]]())
