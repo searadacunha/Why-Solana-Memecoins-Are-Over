@@ -1,9 +1,9 @@
 """Cross-chain movements out of Solana, with what each level of proof rests on.
 
-A bridge program in a transaction is a fact on chain. The message identity is a fact when its sequence and emitter are found in that
-same transaction. The arrival is a fact only once the destination chain's own node shows the transaction, successful. Whatever
-comes from an indexer alone stays INDEXER_REPORTED. A custodial swap, ChangeNOW for instance, leaves no such link: nothing here
-can follow it.
+A bridge program in a transaction is a fact on chain. The message identity is a fact when its sequence and emitter are
+found in that same transaction. The arrival is a fact only once the destination chain's own node shows the transaction,
+successful. Whatever comes from an indexer alone stays INDEXER_REPORTED. A custodial swap, ChangeNOW for instance, leaves
+no such link: nothing here can follow it.
 
     python -m forensics_v2.crosschain prove <signature>     # public endpoints, no key, no credit
     python -m forensics_v2.crosschain scan <dir of raw JSON transactions>
