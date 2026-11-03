@@ -49,7 +49,6 @@ def main() -> None:
     out["side_wallets_with_either_side"] = q("""SELECT wallet,src,dst,count(*),sum(lamports)::DOUBLE/1e9,min(ts) FROM r WHERE kind='sol'
         AND ((src IN (SELECT a FROM sw) AND (dst IN (SELECT a FROM ds) OR dst IN (SELECT a FROM ag)))
           OR (dst IN (SELECT a FROM sw) AND (src IN (SELECT a FROM ds) OR src IN (SELECT a FROM ag)))) GROUP BY 1,2,3""")
-    created = {x[0] for x in q("SELECT DISTINCT mint FROM r WHERE kind='create' AND creator=wallet AND wallet IN (SELECT a FROM ds)")}
     out["launches_by_deployer_family"] = q("SELECT creator,count(DISTINCT mint),min(ts),max(ts) FROM r WHERE kind='create' AND creator=wallet AND wallet IN (SELECT a FROM ds) GROUP BY 1 ORDER BY 2 DESC")
     # Buys and sales of the Ansem wallet are in followups.json: a fee-payer filter drops transactions a relayer paid for.
     family = set(DEPLOYER_SIDE)

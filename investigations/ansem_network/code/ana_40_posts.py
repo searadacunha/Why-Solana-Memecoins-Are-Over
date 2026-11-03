@@ -59,7 +59,6 @@ def main() -> None:
         c = sum(hit(p[2], rng.choice(mints)) for p in pairs)
         sims.append(c)
         ge += c >= obs
-    pids = {pid for acc, pid in meta.values()}
     pid_of = {mint: pid for mint, (acc, pid) in meta.items()}
     cited = {pid_of[m] for m in rows if m in pid_of}
     out = {"launches_citing_a_post": len([m for m in rows if m in meta]), "distinct_posts": len(cited), "distinct_posts_readable": sum(1 for p in cited if posts.get(p, {}).get("readable")),

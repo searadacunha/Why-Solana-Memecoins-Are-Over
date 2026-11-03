@@ -123,6 +123,7 @@
   "last": "2026-11-02 16:39:43",
   "family_launches": 952,
   "sum_dev_buy_sol": 27226.96,
+  "sum_sol_in_creation_tx": 15526.7,
   "sum_net_sol_creator_only": 18227.27,
   "with_gift_to_ansem": 50,
   "fee_share_to_ansem": 32,

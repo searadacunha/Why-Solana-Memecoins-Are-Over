@@ -63,12 +63,12 @@ The deployer's net on the token is +73.34 SOL on trading, plus 0.4857 SOL of fee
 
 **The eleven days.** `GV6UUmNx` signs nothing until 23 June, when it buys another token, and does not move ANSEM until 28 June. Meanwhile the deployer keeps pushing ANSEM's fees to it: 144.81 SOL on 19 June, 165.44 SOL on 22 June, 55.05 SOL on 25 June.
 
-**27 June.** In the 15 minutes before his post, 27 wallets buy. The pool takes in 9.16 SOL from buyers and pays out 16.86 SOL to sellers. From 25 June up to the post it takes in 1,201.10 SOL and pays out 1,211.67 SOL (21 to 25 June not read). One buy reaches 5 SOL in the last hour.
+**27 June.** The windows and thresholds in this part were chosen after seeing data, so they are exploratory. In the 15 minutes before his post, 27 wallets buy. The pool takes in 9.16 SOL from buyers and pays out 16.86 SOL to sellers. From 25 June up to the post it takes in 1,201.10 SOL and pays out 1,211.67 SOL (21 to 25 June not read). One buy reaches 5 SOL in the last hour.
 
 - 13:50:36: "hit 1M followers".
 - 13:57:40: replies "lets ride" to "Delusional bulls always win". No token named.
-- 13:58:53: a holder of about 25 M tokens sells for 15.27 SOL.
-- 13:58:54: three slots later, 15 wallets buy in one slot, 5.66 SOL. Three slots since 25 June had more buyers, and nine had ten or more. 13 of the 15 sell within 52 seconds after his post, for 8.01 SOL. The timing fits a reaction to that sale. What binds these wallets is open: the August note found they fire together on a neutral day, and that 12 of 15 funding chains end at `BY4StcU9`, the deployer's first funder, which is unclassified (see "Limits"). None has a direct SOL flow with `GV6UUmNx` or with the family wallets read, and one later receives 354 tokens from `GV6UUmNx`. I did not walk these wallets themselves.
+- 13:58:53: a wallet sells 5.99 M tokens for 15.27 SOL.
+- 13:58:54: three slots later, 15 wallets buy in one slot, 5.66 SOL. Three slots since 25 June had more buyers, and nine had ten or more. 13 of the 15 start selling within 52 seconds after his post, 8.01 SOL by 14:06:38. The timing fits a reaction to that sale. What binds these wallets is open: the August note found they fire together on a neutral day, and that 12 of 15 funding chains end at `BY4StcU9`, the deployer's first funder, which is unclassified (see "Limits"). None has a direct SOL flow with `GV6UUmNx` or with the family wallets read, and one later receives 354 tokens from `GV6UUmNx`. I did not walk these wallets themselves.
 - **14:03:08: "sure i will airdrop portions of the creator fees that have been directed to my pump fun profile"**, quoting a suggestion from `@Clive_99`. Names no token. Reposted at 14:06:38.
 - **14:03:31: first buy of 5 SOL or more after that post, 11.0 SOL, 23 seconds later.** The pool price is flat until then. 432 SOL of buying, by owner, by 14:06:38.
 
@@ -90,7 +90,7 @@ The deployer's net on the token is +73.34 SOL on trading, plus 0.4857 SOL of fee
 | Deployer stops after he objects | **No.** 20 of the 21 launches come after "dont send it to my wallet" |
 | Heavy buying ahead of his post | **Not seen.** Sellers took out more than buyers put in, over the 15 minutes and since 25 June |
 | His wallet buys or sells family launches | **No,** beyond dust. 47 buys over 23 mints, 7,795.54 SOL. 9 sales, 3,216.54 SOL, none of ANSEM |
-| Addresses used by both sides | **No private hub identified, with gaps.** 29 addresses at the plan's 0.01 SOL limit: 9 program-owned, 12 high-volume, 3 closed, 5 unclassified (`evidence/shared_addresses.csv`). Nearly all the SOL is in one high-volume service and four pools |
+| Addresses used by both sides | **No private hub identified, with gaps.** 29 addresses at the plan's 0.01 SOL limit: 9 program-owned, 12 high-volume, 3 closed, 5 unclassified (`evidence/shared_addresses.csv`). Of the 3,574 SOL his side moved through these addresses, 97 % is in one high-volume wallet and four pools |
 | The same exit wallets | **None seen.** Three short-lived wallets take 6,532.87 of his 21,022.09 SOL out, and none receives from the family side. Another 2,180 SOL goes directly to a high-volume wallet |
 | The wallet he denies | `AVAZvHLR` has **no flow with `GV6UUmNx`**, and with the family only gifts received, 15 April to 31 July |
 
@@ -106,14 +106,14 @@ Rung R3. No statement about who they are.
 
 - `yHCxHBEa` is first funded on 20 April at 13:00:49 by `BY4StcU9Y2BpgH8quZzorg31EGE4L1rjomN8FNsCBEcx` (4.43 SOL, unclassified), then 96 seconds later by `FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv` (9.13 SOL). Its first launch comes under five minutes after that.
 - It sends 19,306 SOL to `FkCcgvCo` and receives 7,791 SOL back. Other main ties: `4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm`, `E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm`, `F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7`, `AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo`, `9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm`, `DxnxpqcUsErqRFRbfVrKr988F9AxayryC5eKWPKgvjmR`, `6xMLLrtZAh8ToWjeZ9Nm4RKtEC3uY2Qqscihz4yHp1jK`.
-- **The nine are a floor.** Ten wallets funded it at 21:01:38, nine of them outside this list, and `23xmd6BX` is one of those nine. They are now closed, and none has a direct flow with his side. `BbmS8ASj63NpNoZRAmNKdpqDcysbrtMi1TqYUGEAoM6H` also sends it 4,991.72 SOL across 1,423 transactions, in the pattern of protocol fees. I did not classify it.
+- **The nine are a floor.** Ten wallets funded it at 21:01:38, nine of them outside this list, and `23xmd6BX` is one of those nine. They are now closed, and none has a direct SOL flow with his side. `23xmd6BX` also sends him 700 M tokens on 28 June. `BbmS8ASj63NpNoZRAmNKdpqDcysbrtMi1TqYUGEAoM6H` also sends it 4,991.72 SOL across 1,423 transactions, in the pattern of protocol fees. I did not classify it.
 - `F5XqYtdU` is first funded through the ChangeNOW gateway, where tracing ends. `AQd3h5tkbdhTiWv7WmiCbm8uwjYi8vTBbMzEtAGtf1T5`, which receives 28,529 SOL from `F5XqYtdU` and sends it 14,885 SOL, held 13,537 SOL when read.
 - Launches found: `yHCxHBEa` 839, `FkCcgvCo` 74, `F5XqYtdU` 16, `AvYukzeA` 11, `E94dd6pn` 9, three others one each. `FkCcgvCo`, `F5XqYtdU`, `AvYukzeA`, `9bxyzm6M` and `4qcD8iSF` are read only in part, so 952 is a floor.
-- `yHCxHBEa` paid 27,227 SOL of dev buys and its signed sales net 18,227 SOL. That figure is low, because tokens moved to other wallets and sold there are not in it, as with $SUPERMAN (1,026 SOL bought, no sale signed by this wallet). I measured funding before one launch only, ANSEM, so "recycling" is not established launch by launch.
+- `yHCxHBEa` paid 27,227 SOL buying its own launches, about 15,527 SOL of it in the creation transactions, and its signed sales net 18,227 SOL. That figure is low, because tokens moved to other wallets and sold there are not in it, as with $SUPERMAN (1,026 SOL bought, no sale signed by this wallet). I measured funding before one launch only, ANSEM, so "recycling" is not established launch by launch.
 
-**The posts.** Of 761 launches with readable metadata, 541 link a specific X post, 508 distinct posts. The launch follows that post by a median of 31 seconds, 10th percentile 12 seconds, and never precedes it. 106 accounts are cited, led by `@Supermanonchain` (182 launches), `@NikolaiFrandsen` (135), `@RoaringKittyCat` (21), `@LastManOnchain` (19), `@zitobondoor` (18), `@Donnieonchain` (10) and `@blknoiz06` (9, with delays of 22 to 116 seconds, turning his own words into tokens).
+**The posts.** Of 761 launches with readable metadata, 541 link a specific X post, 508 distinct posts. The launch follows that post by a median of 31 seconds, 10th percentile 12 seconds, and never precedes it. 106 handles appear in those links, led by `@Supermanonchain` (182 launches), `@NikolaiFrandsen` (135), `@RoaringKittyCat` (21), `@LastManOnchain` (19), `@zitobondoor` (18), `@Donnieonchain` (10) and `@blknoiz06` (9, with delays of 22 to 116 seconds: 8 of his posts and 1 reply to him by another account). **These counts go by the handle in the link, which X does not verify.** 6 of the 107 citations I could read have a different author, so authorship of the unreadable ones is not established.
 
-Exploratory test: of 19 readable posts naming a share ("sending 5%"), forming 23 launch-post pairs from 8 accounts, 14 pairs match the largest gift in the launch within 3 points, against 1.09 expected when shuffled (p ≤ 0.0005, 2,000 draws, pairs treated as independent, which they are not). 9 pairs miss, 7 of them with no gift at all. ANSEM itself is "60 %" against a 65 % gift. None of the 19 posts is his. 414 of the 508 posts cannot be read through the public endpoint, and that includes every post of the three most cited accounts, so 338 launches are untested. `@Supermanonchain` showed as suspended on 3 November (`evidence/x_searches.md`).
+Exploratory test: of 19 readable posts naming a share ("sending 5%"), forming 23 launch-post pairs from 8 accounts, 14 pairs match the largest gift in the launch within 3 points, against 1.09 expected when shuffled (p ≤ 0.0005, 2,000 draws, pairs treated as independent, which they are not). 9 pairs miss, 7 of them with no gift at all. ANSEM itself is "60 %" against a 65 % gift. None of the 19 posts is his. 414 of the 508 posts cannot be read through the public endpoint, and that includes every link under the three most cited handles, so 338 launches are untested. `@Supermanonchain` showed as suspended on 3 November (`evidence/x_searches.md`).
 
 So the launches follow these posts closely. That fits a shared operator, a launch tool fed by these accounts, or an independent fast reaction, and this data does not choose between them. Two third-party posts call `yHCxHBEa` the dev wallet of `@Supermanonchain`'s token, unverified. **None of this says who wrote the posts, and none of it touches Ansem.**
 
@@ -123,7 +123,9 @@ So the launches follow these posts closely. That fits a shared operator, a launc
 
 ## What still looks odd
 
-- **The deployer treats his wallet more than any other, by every count.** 25 gifts of 650 M or more, next wallet 7. 32 launches with a 100 % fee share, next wallet 12. 20 of its 325 fee pushes, 640.16 of 868.96 SOL; no other recipient gets more than 2 pushes. 11 of the 20 come from ANSEM's vault, 513.61 SOL, the last on 27 June at 15:00:39, long after the deployer had sold. Why it did this is not measured.
+All counted after seeing data, so exploratory.
+
+- **The deployer treats his wallet more than any other, by every count.** 25 gifts of 650 M or more, next wallet 7. 32 launches with a 100 % fee share, next wallet 9. 20 of its 325 fee pushes, 640.16 of 868.96 SOL; no other recipient gets more than 2 pushes. 11 of the 20 come from ANSEM's vault, 513.61 SOL, the last on 27 June at 15:00:39, long after the deployer had sold. Why it did this is not measured.
 - **Timing on launch day.** The deployer's funding burst comes 3 seconds before the "sending 60%" post. Bursts are routine for it, and I report this as a fact only.
 - **`8wvqvPt1DDdjdghpMpp7ueQFUL5Js5zux4pPeRFXWteB`** pushes at least 5,131.56 SOL of fees to his wallet from 21:56 on 28 June, the day after he wrote that they need a way to claim in bulk. That count stops at 22:28, where the transaction bodies I kept end. In a sample of 231 pushes, 200 go to his wallet between 21:55 and 22:20, and 31 go to one other wallet from 23:40. So it is not exclusive to him, and I do not know who runs it. It has no SOL flow with his wallet. I read it only for 11 hours in April and about 6 hours on 28 and 29 June. Its first funder, also the first funder of `GeBJSHK4WsGrz2HRvTbqvWGx4JRMpHfJG2ikzrYBDuwR`, is a program-owned account holding 10,507 SOL.
 - **`49SecDmFPyFKphUKckC8oWDxKQWp5NN4QD8Wg6CT6Gy3`** gets exactly 1.0 SOL from the deployer on 1 July and 1.0 SOL signed by `GV6UUmNx` on 2 July. Read only for April to July 2024 and 25 June to 15 July 2026. Too thin to mean anything, reported because it is the one small wallet with the same amount from both sides.
@@ -162,9 +164,9 @@ Listed in full, with dates, in [AMENDMENTS.md](AMENDMENTS.md). In short: the pop
 
 | File | What |
 |---|---|
-| [TOKENS.csv](TOKENS.csv) | 952 launches of the family: buy, gifts, fee share, cited post, degree of proof. Token names are on-chain data, some offensive, kept as they are |
+| [TOKENS.csv](TOKENS.csv) | 952 launches of the family: buy, gifts, fee share, cited post, degree of proof. `dev_buy_sol` counts every buy by the creator on that launch, `sol_in_creation_tx` the part in the creation transaction. Token names are on-chain data, some offensive, kept as they are |
 | [TOKENS_SENT_TO_ANSEM_WALLET.csv](TOKENS_SENT_TO_ANSEM_WALLET.csv) | Every transfer of at least 100 M tokens to his wallet, with what is known of the sender |
-| [WALLETS.csv](WALLETS.csv) | Roles, funders, destinations, how much of each history was read |
+| [WALLETS.csv](WALLETS.csv) | Roles, funders, destinations, how much of each history was read. `first_row_read_utc` is the first row read, not the wallet's first activity |
 | [graph.html](graph.html) | Interactive graph, with a date filter and a table |
 | [TIMELINE.md](TIMELINE.md) | X and chain together, UTC |
 | [EVIDENCE_LEDGER.csv](EVIDENCE_LEDGER.csv) | Claim to signature or post |

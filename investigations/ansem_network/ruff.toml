@@ -6,3 +6,5 @@ line-length = 240
 "code/build_ledger.py" = ["E501"]
 "code/ana_60_wallets_graph.py" = ["E501"]
 "code/ana_50_numbers.py" = ["E501"]
+"code/ana_32_followups.py" = ["E501"]
+"code/ana_33_checks.py" = ["E501"]

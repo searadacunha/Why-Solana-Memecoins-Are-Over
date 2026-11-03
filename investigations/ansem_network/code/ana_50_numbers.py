@@ -113,7 +113,7 @@ def main() -> None:
     rows = list(csv.DictReader(open(OUT.parent / "TOKENS.csv")))
     mine = [r for r in rows if r["creator_wallet"] == CREATOR]
     out["deployer"] = {"launches": len(mine), "first": min(r["created_utc"] for r in mine), "last": max(r["created_utc"] for r in mine),
-                       "family_launches": len(rows), "sum_dev_buy_sol": round(sum(float(r["dev_buy_sol"]) for r in mine), 2),
+                       "family_launches": len(rows), "sum_dev_buy_sol": round(sum(float(r["dev_buy_sol"]) for r in mine), 2), "sum_sol_in_creation_tx": round(sum(float(r["sol_in_creation_tx"]) for r in mine), 2),
                        "sum_net_sol_creator_only": round(sum(float(r["net_sol_creator_only"]) for r in mine), 2),
                        "with_gift_to_ansem": sum(float(r["gift_to_ansem_wallet"]) > 0 for r in mine),
                        "fee_share_to_ansem": sum(r["fee_share_to_ansem_wallet"] == "yes" for r in mine),

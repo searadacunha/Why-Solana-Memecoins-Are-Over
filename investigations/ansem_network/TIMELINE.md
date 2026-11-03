@@ -29,7 +29,7 @@ All times UTC. Times of X posts come from the post ID and agree with the endpoin
 | 2026-06-27 13:50:36 | X | Ansem: hit 1M followers | [post](https://x.com/i/status/2070867396605182031) |
 | 2026-06-27 13:53:49 | X | @_BabyMargiela tags him with $ANSEM in a reply | [post](https://x.com/i/status/2070868206441406828) |
 | 2026-06-27 13:57:40 | X | Ansem replies 'lets ride' to @OnlyLJC ('Delusional bulls always win'). No token named | [post](https://x.com/i/status/2070869174889451774) |
-| 2026-06-27 13:58:53 | chain | A large holder sells for 15.27 SOL | `E33` |
+| 2026-06-27 13:58:53 | chain | A wallet sells 5.99 M tokens for 15.27 SOL | `E33` |
 | 2026-06-27 13:58:54 | chain | 15 wallets buy in one slot, 5.66 SOL. Three slots since 25 June had more buyers | `evidence/numbers.json` |
 | 2026-06-27 14:03:08 | X | Ansem: will airdrop portions of the creator fees directed to his profile. Names no token | `E16` |
 | 2026-06-27 14:03:31 | chain | First buy of 5 SOL or more after the post: 11.0 SOL. 432 SOL of buying, by owner, by 14:06:38 | `E17` |

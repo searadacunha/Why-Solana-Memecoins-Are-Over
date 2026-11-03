@@ -21,7 +21,7 @@ It presents these as "my original observation, not reproduced by the published a
 
 The older text is no longer on the branch. It gave `yHCxHBEa` 84.743 SOL (the curve receives 84.7407, and 86.0681 leaves the wallet with fees and rent) and `9ryBR3Sn` 0.265 SOL (0.2646 for the last curve tokens, then 30.08 M more tokens on the pool, 16.09 SOL in all). It also called this signature "now the norm". This launch is one create-and-buy transaction with no tip, not a multi-wallet bundle.
 
-The footnote URLs on the 7 M$ airdrop agree with his own post saying about $7M (E18). That is his statement, and the on-chain amount in dollars was not measured here. "$6,300" is Lookonchain's figure, in line with 86.07 SOL at the time, not re-derived.
+The footnote URLs on the 7 M$ airdrop agree with his own post saying about $7M (E18). That is his statement, and the on-chain amount in dollars was not measured here. The "$6.3K" in public coverage is Lookonchain's figure, in line with 86.07 SOL at the time, not re-derived.
 
 ## August notes in `ansem_enquete`
 
@@ -38,7 +38,7 @@ The footnote URLs on the 7 M$ airdrop agree with his own post saying about $7M (
 
 ## Public sources against the chain
 
-The articles were read through a fetch on 2026-11-03 and no copy is kept here, so these two rows cannot be checked offline. Sources: [Bitquery](https://bitquery.io/investigations/ansem-black-bull-370x-investigation), [AMBCrypto](https://ambcrypto.com/ansem-deployer-sends-60-of-supply-to-ansem-who-says-he-has-airdropped-7m-to-holders/).
+The [Bitquery article](https://bitquery.io/investigations/ansem-black-bull-370x-investigation) was read through a fetch on 2026-11-03 and no copy is kept here, so its row cannot be checked offline. Lookonchain's post is saved in `evidence/x_posts.jsonl`.
 
 | Source | Says | Chain says |
 |---|---|---|

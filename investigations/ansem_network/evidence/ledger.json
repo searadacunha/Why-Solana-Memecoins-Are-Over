@@ -153,7 +153,7 @@
  {
   "id": "E08",
   "claim": "The launch tool's fee account receives exactly 0.3 % of an 85.8 SOL input, 0.2574 SOL. The metadata is hosted by the same tool, uxento.io.",
-  "kind": "R2 infrastructure, a commercial tool",
+  "kind": "Commercial tool, R2 not met as written",
   "checks": [
    {
     "sig": "4LteGjWEqA5RZ3EAgQMsw2pgNNnWs7ceKFebkkDSaah6uyYT91Vp8NQLNaRe2rytnSaDHCjoaMeiBnN1SgWQYc2u",
@@ -657,7 +657,7 @@
  {
   "id": "E30",
   "claim": "Ten wallets send the deployer 79.23 SOL in one second at 21:01:38, 3 seconds before the '60%' post. Nine are outside the family table, one later gives a large gift to the Ansem wallet. Such bursts are routine for this wallet: 127 seconds in its history have five or more inflows.",
-  "kind": "R3 for these edges",
+  "kind": "Direct edges, rung not assessed",
   "checks": [
    {
     "sig": "2vLBjnKQVDE4EtfGe4AHZihfNxuZFvft13cX8zNUpo3wkZ1vydiu4u97YQR59ioouSxTBJuQXLQ3xjiW4v2DoNkA",
@@ -734,7 +734,7 @@
  },
  {
   "id": "E33",
-  "claim": "A holder of about 25 M tokens sells for 15.27 SOL at 13:58:53, one second and three slots before the one-slot group of 15 buyers.",
+  "claim": "A wallet sells 5.99 M tokens for 15.27 SOL at 13:58:53, one second and three slots before the one-slot group of 15 buyers.",
   "kind": "On-chain fact",
   "checks": [
    {

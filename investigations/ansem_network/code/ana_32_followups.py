@@ -82,8 +82,9 @@ def main() -> None:
     # 3. addresses touching both sides at the plan's dust limit
     con.execute("""CREATE TABLE cp AS SELECT w, other, count(*) n, sum(lamports)::DOUBLE/1e9 v FROM
         (SELECT src w, dst other, lamports, sig FROM s WHERE lamports>=10000000 UNION ALL SELECT dst w, src other, lamports, sig FROM s WHERE lamports>=10000000) GROUP BY 1,2""")
-    shared = q("""SELECT a.other, sum(a.v), min(a.n), sum(d.v) FROM cp a JOIN cp d ON a.other=d.other
-        WHERE a.w IN (SELECT a FROM ag) AND d.w IN (SELECT a FROM ds) AND a.other NOT IN (SELECT a FROM ag) AND a.other NOT IN (SELECT a FROM ds) GROUP BY 1 ORDER BY 2 DESC""")
+    shared = q("""WITH x AS (SELECT other, sum(v) v, sum(n) n FROM cp WHERE w IN (SELECT a FROM ag) AND other NOT IN (SELECT a FROM ag) AND other NOT IN (SELECT a FROM ds) GROUP BY 1),
+                       y AS (SELECT other, sum(v) v FROM cp WHERE w IN (SELECT a FROM ds) AND other NOT IN (SELECT a FROM ag) AND other NOT IN (SELECT a FROM ds) GROUP BY 1)
+                  SELECT x.other, x.v, x.n, y.v FROM x JOIN y ON x.other=y.other ORDER BY 2 DESC""")
     out["addresses_shared_at_0_01_SOL"] = [[a, round(v, 3), round(d, 3)] for a, v, _, d in shared]
 
     # 4. real buys and sales of the Ansem wallet, by its SOL change: a fee payer filter drops transactions a relayer paid for
@@ -125,6 +126,9 @@ def main() -> None:
     t_rows = {r["mint"]: r for r in csv.DictReader(open(OUT.parent / "TOKENS.csv"))}
     recipe = [m for m in own if per[m].get(GV, 0) >= 650_000_000 * 10**6 and m != MINT]
     full = [m for m in recipe if 80 <= float(t_rows[m]["dev_buy_sol"]) <= 95 and rows.get(m, {}).get("fee_shares") == GV + ":10000"]
+    next_100 = Counter(o.split(":")[0] for r in rows.values() for o in r["fee_shares"].split(";") if o.endswith(":10000"))
+    next_any = Counter(o.split(":")[0] for r in rows.values() for o in r["fee_shares"].split(";") if o)
+    out["fee_share_recipients"] = {"at_100_pct_top": next_100.most_common(3), "any_share_top": next_any.most_common(3)}
     out["recipe_check"] = {"launches_at_650M_after_ansem": len(recipe), "with_about_86_sol_and_100pct_fee_share": len(full),
                            "fee_share_unread": sum(1 for m in recipe if m not in rows), "buy_over_95_sol": sum(float(t_rows[m]["dev_buy_sol"]) > 95 for m in recipe),
                            "fee_share_100pct_all_launches": sum(1 for r in rows.values() if r["fee_shares"] == GV + ":10000"), "fee_share_any_all_launches": sum(GV in r["fee_shares"] for r in rows.values())}

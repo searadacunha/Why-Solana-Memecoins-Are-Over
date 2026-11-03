@@ -78,7 +78,7 @@ def main() -> None:
     ck = DATA / "checkpoints" / "stream"
     with open(OUT.parent / "WALLETS.csv", "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["address", "group", "role", "history_read", "first_seen_utc", "first_sol_from", "sol_in", "sol_out", "largest_destination", "largest_destination_sol", "evidence_level"])
+        w.writerow(["address", "group", "role", "history_read", "first_row_read_utc", "first_sol_from", "sol_in", "sol_out", "largest_destination", "largest_destination_sol", "evidence_level"])
         for g, name, members in GROUPS:
             for a in members:
                 hist = "not walked"
@@ -95,7 +95,7 @@ def main() -> None:
                 row = con.execute("SELECT min(ts), arg_min(src, ts) FILTER (WHERE dst=?), sum(lamports) FILTER (WHERE dst=?)::DOUBLE, sum(lamports) FILTER (WHERE src=?)::DOUBLE FROM (SELECT DISTINCT sig,src,dst,ts,lamports FROM r WHERE wallet=?)", [a, a, a, a]).fetchone()
                 top = con.execute("SELECT dst, sum(lamports)::DOUBLE s FROM (SELECT DISTINCT sig,src,dst,lamports FROM r WHERE wallet=? AND src=?) GROUP BY 1 ORDER BY s DESC LIMIT 1", [a, a]).fetchone()
                 lvl = {"family": "R3 same financial network, each edge has a signature", "ansem": "Self-claimed" if a == GV else "Direct transfers from the self-claimed wallet; ownership inferred, not claimed",
-                       "side": "Received tokens from the self-claimed wallet; no ownership claim", "early": "Trader on the token; no link found", "other": "See role", "service": "Stop point, not a link"}[g]
+                       "side": "Received tokens from the self-claimed wallet; no ownership claim", "early": "Trader on the token; no link found", "other": "See role", "service": "Unclassified, not a stop point" if a.startswith("BY4StcU9") else "Stop point, not a link"}[g]
                 role = ROLE.get(a) or SERVICES.get(a) or {"family": "Exchanges SOL with the deployer's side", "side": "Received ANSEM signed by GV6UUmNx", "early": "Large early holder or buyer"}.get(g, "")
                 w.writerow([a, name, role, hist, utc(row[0]), row[1] or "", "" if hist == "not walked" else sol(int(row[2] or 0)), "" if hist == "not walked" else sol(int(row[3] or 0)), top[0] if top else "", sol(int(top[1])) if top else "",
                             "Not walked: seen only through wallets that were" if hist == "not walked" and g == "family" else lvl])

@@ -15,6 +15,7 @@ Dated. The plan itself was not rewritten. Items 8 to 12 were found by an indepen
 9. **Hub test.** First written with a 1 SOL cut that the plan does not have. The report now uses the plan's 0.01 SOL, and `evidence/shared_addresses.csv` classifies all 29 addresses by owner program and activity. The 500-counterparty service test was run only where stated.
 10. **Corrections from the audit.** The comparison group is not independent (at least 6 tied senders). The 15-minute window was recounted from the pool, because the first count missed an aggregator buy. The Ansem wallet's buys and sales were recounted, because a fee-payer filter had dropped 5 transactions. "Adoption" now dates from 28 June, because the 27 June post names no token. Tables that double counted transfers read from both sides were fixed. The rungs are now stated as the plan writes them.
 11. **Removed from publication.** The list of wallet-to-person pairs from the third-party Kolscan snapshot. Only counts stay, because the pairs are unverified and one is disputed by the person named.
-12. **For the author to decide.** Whether these deviations are acceptable for a published conclusion, and whether `BY4StcU9` should be classified before anything cites it.
+12. **Handles in links.** Counts of cited accounts go by the handle in the link URL, which X does not verify. 6 of 107 readable citations have another author.
+13. **For the author to decide.** Whether these deviations are acceptable for a published conclusion, and whether `BY4StcU9` should be classified before anything cites it.
 
 Credits used: see `RUN_MANIFEST.json`. The ceiling of 150,000 was not raised.
