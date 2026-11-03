@@ -337,7 +337,10 @@ def enrich_trips(
         for e in map(json.loads, open(PRIVATE / "TRADE_EVIDENCE.jsonl"))
         if e["side"] == "buy"
     }
-    pm = {(t["wallet"], t["mint"], t["t_open"]): t for t in json.loads((PRIVATE / "PATTERN_MATCHES.json").read_text())["trips"]}
+    pm = {}
+    for name in ("PATTERN_MATCHES.json", "PATTERN_PRIORITY.json"):
+        if (PRIVATE / name).exists():
+            pm.update({(t["wallet"], t["mint"], t["t_open"]): t for t in json.loads((PRIVATE / name).read_text())["trips"]})
     card_of = {(m["wallet"], m["first_buy_sig"]): c["card"] for c in cards for m in c["matches"]}
     out = []
     for t in trips:

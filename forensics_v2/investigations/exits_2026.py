@@ -34,7 +34,9 @@ def events() -> list[dict[str, Any]]:
 def compare_read(read: dict[str, Any], d: D.Decoded, wallet: str) -> list[str]:
     """What the frozen parser recorded against this engine's reading of the raw transaction. Empty means they agree."""
     bad = []
-    native = d.lamport_delta.get(wallet, 0)
+    # The frozen table's dsol adds the fee back when the wallet signs (exit_destination/code/ed_trace.py:175). The first run of this
+    # comparison missed that and disagreed on 292 of 427, each by exactly the fee: amendment in DECISIONS.md 17.
+    native = d.lamport_delta.get(wallet, 0) + (d.fee if d.fee_payer == wallet else 0)
     n = d.owners.get(wallet)
     wsol = n.wsol if n else 0
     if abs((native + wsol) - round((read["dsol"] + read.get("dws", 0.0)) * 1e9)) > 2:
@@ -112,8 +114,15 @@ def main() -> int:
                 "table_destinations": sorted(old_dest),
             }
         )
+    same_dest = [r for r in rows if r["top_destination"] and r["table_destinations"]]
     res = {
         "seed": SEED,
+        "first_run_before_fee_convention": {"agree": 135, "disagree": 292, "all_by_exactly_the_fee": True},
+        "destination_matches_table": {
+            "compared": len(same_dest),
+            "same": sum(r["top_destination"] in r["table_destinations"] for r in same_dest),
+            "new_where_table_had_none": sum(1 for r in rows if r["top_destination"] and not r["table_destinations"]),
+        },
         "validation": {
             "events": len(val),
             "transactions": n_tx,

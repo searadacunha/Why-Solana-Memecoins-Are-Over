@@ -132,6 +132,19 @@ rule was not rebuilt. Ranks inside a slot also differ from `e6`; this report ord
 - **It is a pass-through.** Most of its SOL leaves to `AwzntLka…` (1,576.95 SOL, 72 transfers), and the fleet's last sweep goes straight on to `5x7FPWyC…` (97 SOL
   within hours). It also receives 101.19 SOL directly from the gateway. Those wallets were not read further, so where this capital ends is `UNRESOLVED`.
 
+## Who deployed the fleet's tokens
+
+Read after the report's first version, [fleet_deployers.json](fleet_deployers.json), `investigations/posthoc/nine_deployers.py`, 50 calls. Nine tokens, nine distinct deployers. None is in the fleet, and none sent SOL to or received SOL from it in the history read (2 pages per deployer). So the fleet was not seen paying or being paid by these launchers.
+
+The deployers' own funding does show links among them, first inflow of each:
+
+- `G9X7F4Jz…` funds the deployers of `BpXjLp1x…` and `FLfwkCVG…`. It is the very active wallet already named above as paying the fleet's common wallet.
+- The deployer of `FLfwkCVG…` funds the deployer of `4Z3SXT4A…`, and the deployer of `9VAUxZwN…` funds the deployer of `HYFwkjJb…`.
+
+This makes 4 of the 9 deployers part of two funding chains (`STRONG_TECHNICAL_INFERENCE` for the transfers' existence, `EXPLORATORY_HYPOTHESIS` for any common operator). Whether the fleet bought those tokens because of that, or the overlap comes from one very active funder, is `UNRESOLVED`.
+
+Going forward from the common wallet (600 of its transactions, 400 credits): the largest destination stays `AwzntLka…`, 484.5 SOL in 24 transfers in that part, and its largest source `G9X7F4Jz…`, 291.8 SOL. The trace stopped at the seed's page limit, so the next hop was not read.
+
 ## Rarity
 
 Same-amount bursts are not rare at this gateway, and neither is linked behaviour: [gateway bursts](../gateway_bursts/README.md), run with a plan
@@ -150,5 +163,4 @@ swap's internal ledger is not on chain.
 
 ## Limits
 
-Transfers below 0.01 SOL are not in the tables above. The fleet's other tokens were not traced to their deployers, so who launched them is not
-known here. Nothing here identifies a person.
+Transfers below 0.01 SOL are not in the tables above. Nothing here identifies a person.

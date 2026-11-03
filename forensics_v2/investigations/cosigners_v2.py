@@ -80,11 +80,7 @@ def main() -> int:
     shared = {p for p, n in hubs.items() if n >= 2}
     table = {w: measures(payers[w], sol[w], known, shared) for w in rows}
     verdicts = {w: verdict(table[w], bool(sol[w])) for w in rows}
-    controls = (
-        set(lst["controls"])
-        if isinstance(lst, dict) and "controls" in lst
-        else set(json.loads((store / "list.json").read_text()).get("controls", []))
-    )
+    controls = set(lst["controls"])
     cos = [w for w in rows if w not in controls]
     con = [w for w in rows if w in controls]
     rng = random.Random(SEED)

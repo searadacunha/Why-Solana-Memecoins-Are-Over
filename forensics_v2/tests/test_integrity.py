@@ -1,4 +1,5 @@
 """What this branch promises about the rest of the repository and about publication."""
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -57,6 +58,12 @@ def test_no_private_trade_figure_in_tracked_files():
     lamports = sum(int(r["realised_lamports"]) for r in closed)
     figures = {"%.2f" % (lamports / 1e9), "%.3f" % (lamports / 1e9), str(lamports), "{:,}".format(len(q4)),
                "{:,}".format(len(closed))}
+    core = trades.parent / "derived" / "report_core.json"
+    if core.exists():  # the totals after tips, and the capital side
+        flows = json.loads(core.read_text())["capital"]["oct_dec"]["flows"]
+        net = sum(flows[k] for k in ("buy", "sell", "token_other", "failed", "tip"))
+        figures |= {"%.2f" % (net / 1e9), "%.2f" % (flows["tip"] / -1e9), "%.2f" % (flows["from_hot"] / 1e9),
+                    "%.2f" % (flows["to_deposit"] / -1e9)}
     for p in _tracked():
         if not p.is_file() or p.suffix == ".json" or "docs/baseline" in str(p) or "AUDIT" in p.name:
             continue  # raw on-chain numbers in data files can repeat a figure by chance
