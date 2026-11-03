@@ -111,6 +111,28 @@
    "output": "private_trades/trade_context/ (git-ignored)",
    "code": "investigations/signal_matched.py",
    "seed": 20261104
+  },
+  {
+   "what": "same-operator test, plan docs/PLAN_same_operator.md",
+   "output": "private_trades/same_operator/ (git-ignored)",
+   "code": "investigations/same_operator.py, investigations/posthoc/wallet_succession.py",
+   "seed": 20261105
+  },
+  {
+   "what": "popularity-matched replication, plan docs/PLAN_signal_popularity.md",
+   "output": "private_trades/trade_context/ (git-ignored)",
+   "code": "investigations/signal_popularity.py",
+   "seed": 20261105
+  },
+  {
+   "what": "joined bursts and three destinations, plan docs/PLAN_network_links.md",
+   "output": "reports/fleet_structure/network_links.json",
+   "code": "investigations/network_links.py"
+  },
+  {
+   "what": "search for the last card, consolidated statement",
+   "output": "private_trades/ (git-ignored)",
+   "code": "investigations/posthoc/bwick_search.py, bwick_scan.py, bilan_v3.py"
   }
  ],
  "tests_last_run": "see the commit's CI run on GitHub: ci.yml, on forensics-v2"

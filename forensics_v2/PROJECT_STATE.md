@@ -1,6 +1,6 @@
 # State of the work
 
-Checkpoint: 2026-11-03, second session of the day. Rewritten at each step; history is in `git log` and in the project journal.
+Checkpoint: 2026-11-03, third session of the day, stopped by a usage limit. Rewritten at each step; history is in `git log` and in the project journal.
 
 ## Done and checked
 
@@ -17,6 +17,8 @@ Checkpoint: 2026-11-03, second session of the day. Rewritten at each step; histo
 - **Signal before the author's entries:** a control on new trips, matched and fixed in advance, read in the private folder (`docs/PLAN_signal_matched.md`).
 - **Co-signers, second test:** on paying wallets, plan fixed first, no credit spent (`reports/cosigners_v2/`).
 - **Gateway bursts, first co-signer test, baseline, external repositories:** as reported on 2026-11-02.
+- **Third session, plans committed first:** same-operator test (`docs/PLAN_same_operator.md`), popularity-matched replication of the signal (`docs/PLAN_signal_popularity.md`), joined bursts and three destinations (`docs/PLAN_network_links.md`, `reports/fleet_structure/`). Results of the first two are private.
+- **Not finished in that session:** two independent checks were stopped by the usage limit, so these results have not been independently re-audited. See `TODO.md`.
 
 ## Not done
 
