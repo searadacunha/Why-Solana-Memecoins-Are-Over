@@ -73,7 +73,9 @@ def main() -> None:
     src = str(DATA / "rows" / (GV + ".jsonl"))
     con.execute(f"""CREATE TABLE g AS SELECT DISTINCT kind, sig, ts, src, dst, lamports, mint, raw, list_contains(signers, src) ss FROM read_json('{src}',
         maximum_object_size=8000000, sample_size=20000, columns={{kind:'VARCHAR',sig:'VARCHAR',ts:'BIGINT',src:'VARCHAR',dst:'VARCHAR',lamports:'HUGEINT',mint:'VARCHAR',raw:'HUGEINT',signers:'VARCHAR[]'}}) WHERE kind IN ('sol','token_transfer')""")
-    q = lambda s, *p: con.execute(s, list(p)).fetchall()
+    def q(s, *p):
+        return con.execute(s, list(p)).fetchall()
+
     out["ansem_wallet"] = {
         "sol_in": q("SELECT count(*),count(DISTINCT src),sum(lamports)::DOUBLE/1e9 FROM g WHERE kind='sol' AND dst=?", GV)[0],
         "sol_out": q("SELECT count(*),count(DISTINCT dst),sum(lamports)::DOUBLE/1e9 FROM g WHERE kind='sol' AND src=?", GV)[0],

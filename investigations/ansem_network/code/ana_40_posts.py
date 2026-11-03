@@ -47,7 +47,9 @@ def main() -> None:
         h = PCT.search(p["text"])
         if h:
             pairs.append((mint, acc, float(h.group(1) or h.group(2)), p["text"][:140], pid))
-    hit = lambda pct, m: abs(share.get(m, 0.0) - pct) <= 3.0
+    def hit(pct: float, m: str) -> bool:
+        return abs(share.get(m, 0.0) - pct) <= 3.0
+
     obs = sum(hit(p[2], p[0]) for p in pairs)
     mints = list(rows)
     rng = random.Random(5)

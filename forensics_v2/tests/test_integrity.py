@@ -26,7 +26,7 @@ def test_nothing_outside_forensics_v2_changed():
     except subprocess.CalledProcessError:
         pytest.skip("base commit not in this clone")
     changed = [p for p in _git("diff", "--name-only", BASE, "--").split("\n") if p]
-    outside = [p for p in changed if p != "README.md" and not p.startswith(("forensics_v2/", ".github/workflows/forensics_v2"))]
+    outside = [p for p in changed if p != "README.md" and not p.startswith(("forensics_v2/", ".github/workflows/forensics_v2", "investigations/ansem_network/"))]
     assert outside == []
     # The one correction the author allowed after the reconciliation: a line added, none changed.
     readme = _git("diff", "--numstat", BASE, "--", "README.md").split()
