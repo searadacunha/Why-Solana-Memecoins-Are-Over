@@ -18,10 +18,11 @@ See TODO.md. Not started: the cross-chain module, launch context of Raydium entr
 
 ## Where the data is
 
-- Work area: `~/.local/state/forensics_v2/hot` on the internal disk, under `internal_quota_bytes` and above the machine's 13.5 GB floor. Past either limit
-  the cache continues on the external volume by itself, slower while other sessions use that disk.
-- External volume: `/Volumes/PHI-Data/solana_forensics_v2`. It is a mechanical USB disk (image on `VERBATIM HD`), not an SSD.
-- To copy the work area out, adding only: `python -m forensics_v2.investigations.sync_cold`.
+- Everything is on the external volume: `/Volumes/PHI-Data/solana_forensics_v2`. It is a mechanical USB disk (image on `VERBATIM HD`), not an SSD, so runs
+  are slow while other sessions use it. The internal work area used during the session was moved there and removed on 2026-11-03, when the internal disk
+  fell under its floor (DECISIONS.md 15).
+- To work on the internal disk again for a run, set `data_root` to a folder holding the marker file and add `internal_quota_bytes` to
+  `~/.config/forensics_v2/config.json`, with `legacy_root` and `cold_root` on the volume. `python -m forensics_v2.investigations.sync_cold` then copies it out, adding only.
 - Private results: `forensics_v2/private_trades/`, git-ignored, mode 700. Start with `PATTERN_REPORT.md`, `PNL_RECONSTRUCTION.md`, `UNRESOLVED_TRADES.md`.
 
 ## Resume

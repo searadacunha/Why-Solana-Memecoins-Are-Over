@@ -55,3 +55,6 @@ Append only. Each line says what was chosen and why. Anything that needs the aut
     `~/.local/state/forensics_v2/hot`, capped at 1.5 GB then 1.8 GB, reserved through the disk guard. Past the cap, or near the 13.5 GB floor,
     it continues on the external volume by itself, as the author asked on 2026-11-02; that switch happened once on its own. `sync_cold` copies
     everything out, adding only.
+15. **Work area moved out, 2026-11-03.** The internal disk reached 12.08 GB free, under the 13.5 GB floor. This session's work area, 1.9 GB of its own cache,
+    was copied to the external volume and checked (database and Parquet by hash, 400 random transactions byte for byte, every checkpoint, the call log), then
+    removed from the internal disk. The configuration now points at the external volume. What used the rest of the disk was not established.
