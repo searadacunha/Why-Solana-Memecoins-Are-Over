@@ -1,11 +1,12 @@
 """The author's trades as a ledger of every transaction: no trip cutting, exact chain values, private outputs only.
 
 Reads the frozen study's raw cache, no network, and writes one row per (wallet, transaction) with what that wallet's accounts did:
-native lamports, wrapped SOL, token-account rent, token changes, its transfers and which venues ran. Every later figure is a sum over
+native lamports, wrapped SOL, token-account rent, token changes, its transfers and venues. Every later figure is a sum over
 these rows, so that it can be recomputed by anyone holding the private folder.
 
     python -m forensics_v2.investigations.trades_ledger extract
 """
+
 from __future__ import annotations
 
 import gzip
@@ -36,11 +37,28 @@ def row_of(wallet: str, sig: str) -> dict[str, Any]:
                 moves.append({"k": t.kind, "src": t.src, "dst": t.dst, "n": t.amount})
         elif wallet in (t.src_owner, t.dst_owner):
             moves.append({"k": t.kind, "src": t.src_owner, "dst": t.dst_owner, "n": t.amount, "mint": t.mint})
-    return {"w": wallet, "sig": sig, "slot": d.slot, "t": d.block_time, "ok": d.ok, "fee": d.fee, "payer": d.fee_payer, "signers": d.signers,
-            "pre": raw["meta"]["preBalances"][at] if at is not None else None, "post": raw["meta"]["postBalances"][at] if at is not None else None,
-            "native": d.lamport_delta.get(wallet, 0), "wsol": n.wsol if n else 0, "rent": n.rent if n else 0, "tok": D.traded_mints(d, wallet),
-            "moves": moves, "edges": [[e.src, e.dst, e.lamports, e.basis] for e in d.edges if wallet in (e.src, e.dst)], "venues": d.venues,
-            "programs": d.programs, "unresolved": d.unresolved_sol.get(wallet, 0), "conserved": d.conserved}
+    return {
+        "w": wallet,
+        "sig": sig,
+        "slot": d.slot,
+        "t": d.block_time,
+        "ok": d.ok,
+        "fee": d.fee,
+        "payer": d.fee_payer,
+        "signers": d.signers,
+        "pre": raw["meta"]["preBalances"][at] if at is not None else None,
+        "post": raw["meta"]["postBalances"][at] if at is not None else None,
+        "native": d.lamport_delta.get(wallet, 0),
+        "wsol": n.wsol if n else 0,
+        "rent": n.rent if n else 0,
+        "tok": D.traded_mints(d, wallet),
+        "moves": moves,
+        "edges": [[e.src, e.dst, e.lamports, e.basis] for e in d.edges if wallet in (e.src, e.dst)],
+        "venues": d.venues,
+        "programs": d.programs,
+        "unresolved": d.unresolved_sol.get(wallet, 0),
+        "conserved": d.conserved,
+    }
 
 
 def _wallet(job: tuple[str, list[str]]) -> list[dict[str, Any]]:
@@ -67,15 +85,20 @@ def extract() -> int:
 def token_meta() -> int:
     """Name and symbol of every mint traded, by DAS batches of 1,000: 10 credits a call, a handful of calls. Kept privately."""
     from ..__main__ import client
+
     mints = sorted({m for line in gzip.open(ROWS, "rt") for m in json.loads(line)["tok"]})
     c = client(100)
     out: dict[str, Any] = {}
     for i in range(0, len(mints), 1000):
-        for a in c.call("getAssetBatch", {"ids": mints[i:i + 1000]}, "token_meta", credits=10):  # type: ignore[arg-type]
+        for a in c.call("getAssetBatch", {"ids": mints[i : i + 1000]}, "token_meta", credits=10):  # type: ignore[arg-type]
             if a:
                 md = a.get("content", {}).get("metadata", {})
-                out[a["id"]] = {"symbol": md.get("symbol"), "name": md.get("name"), "decimals": a.get("token_info", {}).get("decimals"),
-                                "supply": a.get("token_info", {}).get("supply")}
+                out[a["id"]] = {
+                    "symbol": md.get("symbol"),
+                    "name": md.get("name"),
+                    "decimals": a.get("token_info", {}).get("decimals"),
+                    "supply": a.get("token_info", {}).get("supply"),
+                }
     (DERIVED / "token_meta.json").write_text(json.dumps(out))
     print("mints", len(mints), "with metadata", len(out), "credits this run", c.budget.used() if hasattr(c, "budget") else "?")
     return 0
