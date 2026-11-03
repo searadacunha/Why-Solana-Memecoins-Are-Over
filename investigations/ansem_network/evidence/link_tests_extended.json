@@ -375,39 +375,6 @@
    1779399491
   ]
  ],
- "ansem_wallet_buys": {
-  "n": 44,
-  "distinct_mints": 23,
-  "sol_spent": 4845.789572627,
-  "of_deployer_family_launches": [
-   [
-    "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-    376109376,
-    -8533,
-    "2e5b1g6R5WuEnSmwXMmmJoQjyUGyD3bQ85HGZ6tSBupYLS9hLxt3VdJBkxrVFjBkUqUvfn1ZdaMdc1aCqVg8xYUf"
-   ],
-   [
-    "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-    57291745,
-    -10024,
-    "4zdJK2eDXNxmSHvc51rV5A11hkCMhenvyQx2FJJ9nwexftgPqWrucV8gpcyAvA9QDjFfPRFfUrB8D2afZqaDu8su"
-   ],
-   [
-    "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-    253024806,
-    -9973,
-    "3XynJYneTZJrQMbgwZjGdh3USttQhdHBKb76frtAA1mzziY5n2JnRog2WPRisRTscstpEuZ3VJtCdwxLu21KXPSx"
-   ]
-  ]
- },
- "ansem_wallet_sales": {
-  "n": 7,
-  "sol": 2901.302242697,
-  "of_ANSEM": [],
-  "of_deployer_family_launches": [],
-  "n_of_deployer_family": 0,
-  "sol_of_deployer_family": 0.0
- },
  "deployer_family_in_ANSEM_trades_after_its_exit": {},
  "signed_ansem_out": [
   [

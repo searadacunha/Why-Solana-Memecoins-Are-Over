@@ -1,6 +1,68 @@
 {
- "posts_readable": 107,
- "posts_gone": 434,
+ "launches_citing_a_post": 541,
+ "distinct_posts": 508,
+ "distinct_posts_readable": 94,
+ "distinct_posts_naming_a_share": 19,
+ "accounts_naming_a_share": 8,
+ "share_posts_by_blknoiz06": 0,
+ "misses": [
+  {
+   "mint": "7nuag9KqDV6oauJ3AUqYDVNmzjCftP3GRu8A6s9Fpump",
+   "account": "lastmanonchain",
+   "stated_pct": 5.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "7h5WpLJyR1VCzLSrDaeyhVUJpUFmj3RExv2AQ13apump",
+   "account": "zitobondoor",
+   "stated_pct": 50.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "9FogTy3ZiXHEcccpNBqna7nvrJ21DwEsrDFXxZMhpump",
+   "account": "zitobondoor",
+   "stated_pct": 50.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "9Hmh2X2stBUKu51suDMfukkehtS7gRp7daUu1EU2pump",
+   "account": "oliverhawk22",
+   "stated_pct": 40.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "6xqXiN14fruW4jev6rdCt5gSjZA8Gs2xtJiKX4gppump",
+   "account": "oliverhawk22",
+   "stated_pct": 40.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "3m7e7KQjGfCFBK6V9vDbUXHygSDNMH5gzFg33uvypump",
+   "account": "felixonchaain",
+   "stated_pct": 40.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "AChxkcf259CQtFtMPP3PXv544q7DM6Utd1A78P3pump",
+   "account": "felixonchaain",
+   "stated_pct": 40.0,
+   "largest_gift_pct": 0.0
+  },
+  {
+   "mint": "8pGWyByG8J42RrMuaG9tDYTjwDPcVwXeTo8dLfAjpump",
+   "account": "burgosasbu",
+   "stated_pct": 15.0,
+   "largest_gift_pct": 65.0
+  },
+  {
+   "mint": "jM9r9PJFyPaMEbhGZPbDeZJiysn2pfyz5TzdDs5pump",
+   "account": "timothywilqrmx",
+   "stated_pct": 99.0,
+   "largest_gift_pct": 70.85
+  }
+ ],
+ "launches_citing_posts_readable": 107,
+ "launches_citing_posts_unreadable": 434,
  "readable_by_account": [
   [
    "lastmanonchain",
@@ -63,7 +125,7 @@
    1
   ]
  ],
- "gone_by_account": [
+ "unreadable_by_account": [
   [
    "supermanonchain",
    182
@@ -125,7 +187,7 @@
    2
   ]
  ],
- "posts_naming_a_share": 23,
+ "launch_post_pairs_naming_a_share": 23,
  "matches_within_3_points": 14,
  "baseline_mean_matches": 1.088,
  "p_shuffled": 0.0004997501249375312,

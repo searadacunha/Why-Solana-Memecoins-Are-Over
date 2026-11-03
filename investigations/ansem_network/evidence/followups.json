@@ -1,0 +1,604 @@
+{
+ "comparison_senders": 634,
+ "comparison_senders_with_direct_sol_tie_to_family": [
+  [
+   "2SA6T5FAMdv4MZiE6283n7QkMMaBB3bG7rk2Lhgts1FB",
+   25,
+   174.998,
+   "2026-04-06 18:54:07",
+   "2026-07-13 12:53:43",
+   "2LTXtuKvoZKrU9f6QpyxYxuR3xsA2Aeew4AbzMJ68FvAY7PTS5R8J7ruQxUCC3fmbbr17VXZDSm3VbRsvA5PwDrg"
+  ],
+  [
+   "23xmd6BXDNVc65ogLAf6j7EAx4R1Je5cEL8ju1dxtvKc",
+   21,
+   168.495,
+   "2026-04-02 14:05:49",
+   "2026-06-29 13:15:45",
+   "2BTk6eYyoPVkq2NuUZ4UUVZDzrCWRCJ3sy3xijHyAPAutNwwhJpKmq8fBLkzYmuaTsDXYMZwKZsRYAKULDRGztLv"
+  ],
+  [
+   "7Ua7QXx8QZGUgHyj5xKiUT9ecrmHhoPQxVNXnDPDQexe",
+   5,
+   110.03,
+   "2026-08-07 21:06:27",
+   "2026-10-19 00:35:51",
+   "2HAih6BAMjDcQ2EapjEmMdLjBfFMxJPhxnwYfPGYntk4TgrhFtPimvXF5rRycM44H6z5gb5ytyHvEXRZab3sDDce"
+  ],
+  [
+   "dropEpU7PJEUA3Mu5fgQchGRAYbb33hJGW3ejT68fuv",
+   2,
+   50.0,
+   "2026-07-07 12:23:47",
+   "2026-07-07 12:27:10",
+   "3mMcHRDm9apb3zwF3JCLeKMQ8K31sFRipfLrNSpM71zEndKDnZhjPoGacU1UEiT4yDNLZqjPDmV7aHYactbDAu9y"
+  ]
+ ],
+ "comparison_senders_walked": [
+  "2xpKBkzBoAretBBsJYmhzouZR1WZuZFuT6jwoRSFz8Ed",
+  "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC",
+  "GLC6w9gud93rW7XhFU2QH2eS9Z1qtu8umSXK7BwuA8oe",
+  "GeBJSHK4WsGrz2HRvTbqvWGx4JRMpHfJG2ikzrYBDuwR",
+  "HDixbrzwwLXczhDBk1JVrurPQsuLE8FUKnW2pucSXN3o"
+ ],
+ "comparison_senders_forwarding_mints_got_from_deployer": [
+  [
+   "5hh7UE6i2BtyCvaMMadS71wFwK88JRmtRTfXkjZ3CHvF",
+   1,
+   100000000
+  ],
+  [
+   "uGuTB2QsYQbJXSVBYCYmA2GtmjaAcw27q8UvWMdQ3pe",
+   1,
+   402608548
+  ],
+  [
+   "dropEpU7PJEUA3Mu5fgQchGRAYbb33hJGW3ejT68fuv",
+   1,
+   389199991
+  ]
+ ],
+ "gifts_before_post": {
+  "transfers": 38,
+  "senders": 23,
+  "not_by_deployer_transfers": 29,
+  "not_by_deployer_senders": 22
+ },
+ "comparison_senders_tied_to_family_floor": [
+  "23xmd6BXDNVc65ogLAf6j7EAx4R1Je5cEL8ju1dxtvKc",
+  "2SA6T5FAMdv4MZiE6283n7QkMMaBB3bG7rk2Lhgts1FB",
+  "5hh7UE6i2BtyCvaMMadS71wFwK88JRmtRTfXkjZ3CHvF",
+  "7Ua7QXx8QZGUgHyj5xKiUT9ecrmHhoPQxVNXnDPDQexe",
+  "dropEpU7PJEUA3Mu5fgQchGRAYbb33hJGW3ejT68fuv",
+  "uGuTB2QsYQbJXSVBYCYmA2GtmjaAcw27q8UvWMdQ3pe"
+ ],
+ "sol_into_deployer_15_min_before_creation": [
+  [
+   "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+   0.2694,
+   "2026-06-16 21:01:31",
+   "yfcWj9qbtbBo6JXYAVCYHjjfqbRz2VvP6hgVPstoxeeoNvQyoChQn5BjSaSzfPnc4s7q8pbRcEXg3eNUZ2JVTSg"
+  ],
+  [
+   "5aLNJiyqpLyBidUrAaZzf2fHWqHN9F7AvghaeLVetksp",
+   6.8905,
+   "2026-06-16 21:01:38",
+   "5CHDx7u7bvCiGNY9zjfxyRnwpe7B8vufnMDftaco4JCETdCd84C53Q9kZvuLEJdf5mrnRfqpH8XSHE418yk5FE7B"
+  ],
+  [
+   "7tJx8rxJx37S3S1egDDAbwpv68kDteCbXKWUm75B7q1i",
+   9.1938,
+   "2026-06-16 21:01:38",
+   "45rKp9k7k9fJw2XsYYsjqyNfwYv6oV33XUriwqnZvbWMfX3TsNKXhn3L6A5JJ4U6y8BNnBRk7We9JRzXfTDdXutz"
+  ],
+  [
+   "GDW9y6sT4bXKMqmZFh7CUStjqwAexyfafzBkrRYVnTHf",
+   6.3907,
+   "2026-06-16 21:01:38",
+   "3vZkSXGjSyXPM6Mu2BerANREmuzAYnD1FZbLMGNUZ83DZYrUip4KWA5KDSqDojz8stnebs999WVRwYWdrtEEbMjm"
+  ],
+  [
+   "94yrHzw2RizzReNWoKR5MrzygjpzyABBH92Lw1zxutz1",
+   6.7191,
+   "2026-06-16 21:01:38",
+   "59hY2j84y6rsh1GiSnCnpyQxBXfTWuTWRngA6QH8ajg7Kkkt4wRygNg6CDwSwLUcrAKRupMhJc7PDp7zzLCDUFup"
+  ],
+  [
+   "3AUdGcxHNhgRipbsT8ge8T899xBejRoiCvAhirDx9fvd",
+   6.9531,
+   "2026-06-16 21:01:38",
+   "3Qq1wxUTFWxq5djXmqzs4SLfvMkRSttPCKM84ynRB2LkaapJeFsK4PKymdzeD68PoQyVj21hWWexQ77EDHMMGnGq"
+  ],
+  [
+   "73y3pskdVhF7U99icJXvEvLSEvhyzPZbotd6FfCnjVtn",
+   7.1055,
+   "2026-06-16 21:01:38",
+   "5RGXcPeq4aaxT3ecxfALtzBar26186S1jXbbfwS3Xhva5giaRuJRHZ7kMWnPxJvdkfQmvGwqemGrCgNoTF5JHipN"
+  ],
+  [
+   "HvEu15xLgndNraJZ5D62ByxQ9G3wTBrSKUQRgPtoDW2k",
+   7.9539,
+   "2026-06-16 21:01:38",
+   "c8Bk7HKXLy3KBu1ZqDnE11n6reaBvy97MmktK2gvAK61FEXKAoHgKjTBxsKxK4QuB9DAyyH2eqpfnkdgjGiHB69"
+  ],
+  [
+   "23xmd6BXDNVc65ogLAf6j7EAx4R1Je5cEL8ju1dxtvKc",
+   9.5474,
+   "2026-06-16 21:01:38",
+   "2vLBjnKQVDE4EtfGe4AHZihfNxuZFvft13cX8zNUpo3wkZ1vydiu4u97YQR59ioouSxTBJuQXLQ3xjiW4v2DoNkA"
+  ],
+  [
+   "SxDasgLe2c97QU14P1oqa1JUoC4pST2tspC3Q7FyZzU",
+   5.4257,
+   "2026-06-16 21:01:38",
+   "4BYnnT34DUe8Kg97GVEtLTS1Ha3CERiLsKsifMGSLtRbAikjtMZZumdAtdFKkPNq7WqiAvfeLCJBuF3R6XL6UJrf"
+  ],
+  [
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+   13.0537,
+   "2026-06-16 21:01:38",
+   "25A4WR8gjAXTxMYn5DcdM3SDtmyfKHr8RFLLAoEQ1i3uoBW74cXWcrjRu4ZtyCWzhy2SDoMiM9XSeDrf3USDT6Ye"
+  ],
+  [
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+   5.7149,
+   "2026-06-16 21:03:41",
+   "E3NHnQpBaD83bGuP6U7avykz4rHnVTdJuiHrj7jf8S3fAK86Rw8wzqgZxrCpeirJXjTWyU5LXAHfeLxRtdmQqfE"
+  ]
+ ],
+ "seconds_with_5_or_more_inflows_to_deployer": 127,
+ "sweep_21_01_38": {
+  "wallets": 10,
+  "sol": 79.233,
+  "from": [
+   [
+    "GDW9y6sT4bXKMqmZFh7CUStjqwAexyfafzBkrRYVnTHf",
+    6.391,
+    "3vZkSXGjSyXPM6Mu2BerANREmuzAYnD1FZbLMGNUZ83DZYrUip4KWA5KDSqDojz8stnebs999WVRwYWdrtEEbMjm"
+   ],
+   [
+    "94yrHzw2RizzReNWoKR5MrzygjpzyABBH92Lw1zxutz1",
+    6.719,
+    "59hY2j84y6rsh1GiSnCnpyQxBXfTWuTWRngA6QH8ajg7Kkkt4wRygNg6CDwSwLUcrAKRupMhJc7PDp7zzLCDUFup"
+   ],
+   [
+    "3AUdGcxHNhgRipbsT8ge8T899xBejRoiCvAhirDx9fvd",
+    6.953,
+    "3Qq1wxUTFWxq5djXmqzs4SLfvMkRSttPCKM84ynRB2LkaapJeFsK4PKymdzeD68PoQyVj21hWWexQ77EDHMMGnGq"
+   ],
+   [
+    "73y3pskdVhF7U99icJXvEvLSEvhyzPZbotd6FfCnjVtn",
+    7.106,
+    "5RGXcPeq4aaxT3ecxfALtzBar26186S1jXbbfwS3Xhva5giaRuJRHZ7kMWnPxJvdkfQmvGwqemGrCgNoTF5JHipN"
+   ],
+   [
+    "HvEu15xLgndNraJZ5D62ByxQ9G3wTBrSKUQRgPtoDW2k",
+    7.954,
+    "c8Bk7HKXLy3KBu1ZqDnE11n6reaBvy97MmktK2gvAK61FEXKAoHgKjTBxsKxK4QuB9DAyyH2eqpfnkdgjGiHB69"
+   ],
+   [
+    "23xmd6BXDNVc65ogLAf6j7EAx4R1Je5cEL8ju1dxtvKc",
+    9.547,
+    "2vLBjnKQVDE4EtfGe4AHZihfNxuZFvft13cX8zNUpo3wkZ1vydiu4u97YQR59ioouSxTBJuQXLQ3xjiW4v2DoNkA"
+   ],
+   [
+    "SxDasgLe2c97QU14P1oqa1JUoC4pST2tspC3Q7FyZzU",
+    5.426,
+    "4BYnnT34DUe8Kg97GVEtLTS1Ha3CERiLsKsifMGSLtRbAikjtMZZumdAtdFKkPNq7WqiAvfeLCJBuF3R6XL6UJrf"
+   ],
+   [
+    "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+    13.054,
+    "25A4WR8gjAXTxMYn5DcdM3SDtmyfKHr8RFLLAoEQ1i3uoBW74cXWcrjRu4ZtyCWzhy2SDoMiM9XSeDrf3USDT6Ye"
+   ],
+   [
+    "5aLNJiyqpLyBidUrAaZzf2fHWqHN9F7AvghaeLVetksp",
+    6.89,
+    "5CHDx7u7bvCiGNY9zjfxyRnwpe7B8vufnMDftaco4JCETdCd84C53Q9kZvuLEJdf5mrnRfqpH8XSHE418yk5FE7B"
+   ],
+   [
+    "7tJx8rxJx37S3S1egDDAbwpv68kDteCbXKWUm75B7q1i",
+    9.194,
+    "45rKp9k7k9fJw2XsYYsjqyNfwYv6oV33XUriwqnZvbWMfX3TsNKXhn3L6A5JJ4U6y8BNnBRk7We9JRzXfTDdXutz"
+   ]
+  ],
+  "outside_family": 9
+ },
+ "sweep_wallets_touching_ansem_side": [],
+ "BbmS8ASj_to_deployer": {
+  "tx": 1423,
+  "sol": 4991.72
+ },
+ "addresses_shared_at_0_01_SOL": [
+  [
+   "2snHHreXbpJ7UwZxPe37gnUNf7Wx7wv6UKDSR2JckKuS",
+   5768.017,
+   519.242
+  ],
+  [
+   "4rJggoVMajEUtipev1XhSMjESYk8Zibz6CDHPtUe1mem",
+   1563.635,
+   843.688
+  ],
+  [
+   "GMCJvYGf5Ex2ARiMquaBDqU6iKM8uiEQkB8jCnoNfHpC",
+   807.891,
+   11.357
+  ],
+  [
+   "7yD7gfXv49SFxhx9uTc11dEd7Nj98rGWeYMdZJgheZbG",
+   595.992,
+   72.058
+  ],
+  [
+   "8FnX3xo2yYw3EUE6w3nQA4GfXGS9wpK6oj3veJpbFzLo",
+   203.265,
+   1129.063
+  ],
+  [
+   "6gUCcs86fVdJwHgXDahKmZDH4Dbh1ZbtEAihazeYTz81",
+   67.485,
+   1.476
+  ],
+  [
+   "FPXTg75VE9EuZZ9qdEEjsC1SSjULBd5pGnq9r5nYkykc",
+   14.461,
+   7.009
+  ],
+  [
+   "GUuqe4JKBFWQt3X5UBGeiNkKzGMdrXdz9L6Qrjo2Zjct",
+   12.288,
+   0.056
+  ],
+  [
+   "7iWnBRRhBCiNXXPhqiGzvvBkKrvFSWqqmxRyu9VyYBxE",
+   8.566,
+   0.262
+  ],
+  [
+   "8ekCy2jHHUbW2yeNGFWYJT9Hm9FW7SvZcZK66dSZCDiF",
+   7.019,
+   153.719
+  ],
+  [
+   "HFqp6ErWHY6Uzhj8rFyjYuDya2mXUpYEk8VW75K9PSiY",
+   3.09,
+   0.188
+  ],
+  [
+   "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   2.392,
+   87.649
+  ],
+  [
+   "3CgvbiM3op4vjrrjH2zcrQUwsqh5veNVRjFCB9N6sRoD",
+   1.189,
+   0.806
+  ],
+  [
+   "49SecDmFPyFKphUKckC8oWDxKQWp5NN4QD8Wg6CT6Gy3",
+   1.0,
+   1.0
+  ],
+  [
+   "69yhtoJR4JYPPABZcSNkzuqbaFbwHsCkja1sP1Q2aVT5",
+   0.895,
+   0.079
+  ],
+  [
+   "GP8StUXNYSZjPikyRsvkTbvRV1GBxMErb59cpeCJnDf1",
+   0.4,
+   0.323
+  ],
+  [
+   "DSN3j1ykL3obAVNv7ZX49VsFCPe4LqzxHnmtLiPwY6xg",
+   0.271,
+   0.136
+  ],
+  [
+   "9rPYyANsfQZw3DnDmKE3YCQF5E8oD89UXoHn9JFEhJUz",
+   0.202,
+   10.734
+  ],
+  [
+   "5eHhjP8JaYkz83CWwvGU2uMUXefd3AazWGx4gpcuEEYD",
+   0.134,
+   14.869
+  ],
+  [
+   "FWsW1xNtWscwNmKv6wVsU1iTzRN6wmmk3MjxRP5tT7hz",
+   0.131,
+   6.864
+  ],
+  [
+   "9LhCdvUSgjYUramUDG3CwzJbohkFLycRXANLk4yXf9Ru",
+   0.128,
+   11.74
+  ],
+  [
+   "7VtfL8fvgNfhz17qKRMjzQEXgbdpnHHHQRh54R9jP2RJ",
+   0.125,
+   12.109
+  ],
+  [
+   "DEEmLLh7DtrreU6VYt73YBX9qKM618xGrugardxV9EA1",
+   0.112,
+   0.112
+  ],
+  [
+   "5cjcW9wExnJJiqgLjq7DEG75Pm6JBgE1hNv4B2vHXUW6",
+   0.11,
+   15.591
+  ],
+  [
+   "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+   0.104,
+   14.851
+  ],
+  [
+   "6QkvbBAz8q1Z7X67vQ46FF3teavZKPDr395WJF1zUEzd",
+   0.048,
+   0.048
+  ],
+  [
+   "FhgGT9LCwzqmpZXkDaHMScqax1h1QMMVVFpV2yr4AUKX",
+   0.025,
+   0.025
+  ],
+  [
+   "D5N9zyNnY1ixVjwtZRczwWimMH4QbKLaX1KQLpT2DVsR",
+   0.011,
+   0.011
+  ],
+  [
+   "EMZh4Qp4mDSUnaQmfeuzXJPSvz6MbYH1FTa61HGUsoJx",
+   0.01,
+   0.02
+  ]
+ ],
+ "ansem_wallet_buys": {
+  "n": 47,
+  "mints": 23,
+  "sol": 7795.54,
+  "largest": [
+   [
+    "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    2000.0
+   ],
+   [
+    "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    1500.0
+   ],
+   [
+    "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    1000.0
+   ],
+   [
+    "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    900.0
+   ],
+   [
+    "CbcyNo7m1amFWqEQm2m4PLv1UNvpcL3C1Ujm6AkzpKoU",
+    300.0
+   ]
+  ],
+  "of_family_launches_over_dust": []
+ },
+ "ansem_wallet_sales": {
+  "n": 9,
+  "sol": 3216.54,
+  "of_ANSEM": 0,
+  "of_family_launches": 0
+ },
+ "BrV2WXWw_rows_touching_ANSEM": {
+  "tx": 280,
+  "net_sol": 1037.48,
+  "note": "liquidity provision is not classified, so this is not a sale figure"
+ },
+ "ansem_out_signed_split": {
+  "to_7oU9_M": 491.0001,
+  "total_M": 567.051053777716
+ },
+ "sol_out_to_ansem_side_hops": 11681.14,
+ "deployer_gifts_at_least_650M": {
+  "gifts": 176,
+  "recipients": 111,
+  "top": [
+   [
+    "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+    25
+   ],
+   [
+    "6DtEedWf9Wk5hA7Xth82Eq441yf5DA4aGLqaQAVfDokm",
+    7
+   ],
+   [
+    "4jRX4iW2F5wBnfYMyB7RjS2PU5MjXrST3fB9DoV4BjHa",
+    7
+   ],
+   [
+    "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
+    6
+   ],
+   [
+    "mpa4abUkjQoAvPzREkh5Mo75hZhPFQ2FSH6w7dWKuQ5",
+    5
+   ]
+  ],
+  "to_ansem_wallet": 25
+ },
+ "deployer_gifts_at_least_100M": {
+  "gifts": 404,
+  "recipients": 241,
+  "top": [
+   [
+    "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+    41
+   ],
+   [
+    "6DtEedWf9Wk5hA7Xth82Eq441yf5DA4aGLqaQAVfDokm",
+    31
+   ],
+   [
+    "86xCnPeV69n6t3DnyGvkKobf9FdN2H9oiVDdaMpo2MMY",
+    13
+   ],
+   [
+    "5M8ACGKEXG1ojKDTMH3sMqhTihTgHYMSsZc6W8i7QW3Y",
+    11
+   ],
+   [
+    "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
+    9
+   ]
+  ],
+  "to_ansem_wallet": 41
+ },
+ "mints_deployer_sent_to_ansem_wallet": {
+  "all": 75,
+  "own_launches": 50,
+  "bought_and_forwarded": 25,
+  "at_650M_after_ansem_own": 21,
+  "at_650M_not_own": [
+   "6VhsEMoJYj7bLes24qTTp8XYRjGNgLufWJt3FwGCdjzT",
+   "B8tto7cPpsFqrQhakRkQFtfJyLAaDz6JDPLYiLw7BAGS",
+   "oPhSkEkyviAvZnMTvGFK4Yz6JUNgMYrNUFPxEBgbonk"
+  ]
+ },
+ "recipe_check": {
+  "launches_at_650M_after_ansem": 21,
+  "with_about_86_sol_and_100pct_fee_share": 14,
+  "fee_share_unread": 1,
+  "buy_over_95_sol": 4,
+  "fee_share_100pct_all_launches": 32,
+  "fee_share_any_all_launches": 32
+ },
+ "deployer_pushes_to_ansem_wallet_by_vault": {
+  "AdPnUcnMJY4JExDWXb2Zd3QD76VYP1c6KHszwVZqjUfv": [
+   11,
+   513.61,
+   "2026-06-27 15:00:39"
+  ],
+  "AvMBidLWzPxsbaBucc9C7nbX9rfVJAygpfDJY6oWTv6o": [
+   5,
+   86.47,
+   "2026-06-27 20:12:44"
+  ],
+  "8QZJA9FoEzKPEEzUw1PY6KzLwHAAFUgXzrHB2dJV1FkF": [
+   1,
+   31.0,
+   "2026-06-28 11:08:48"
+  ],
+  "6pmuS66LUvftGnNJuM75KPj4hA9FpnmFJVyBvB62FV2z": [
+   2,
+   3.02,
+   "2026-06-28 17:57:02"
+  ],
+  "7w5Jyc2hcBqnXNBA4wn23FtzdKhaZpicNY8P4UmB59Yr": [
+   1,
+   6.05,
+   "2026-06-29 15:22:28"
+  ]
+ },
+ "ansem_vault_to_ansem_wallet": {
+  "tx_all_time": 590,
+  "sol_all_time": 3452.84,
+  "first": "2026-06-16 21:11:00",
+  "last": "2026-10-11 13:08:16",
+  "tx_to_28_june": 15,
+  "sol_to_28_june": 966.64
+ },
+ "first_citing_wallet_in_deployer_rows": 0,
+ "unsigned_mints_with_permanent_delegate": {
+  "unsigned_mints": 36,
+  "with_permanent_delegate": 36
+ },
+ "coverage_probes": {
+  "8wvqvPt1": {
+   "file": "eB_1782680400_1782702000.jsonl",
+   "rows": 19,
+   "counterparties": 16,
+   "sol": 1.3,
+   "sigs": 7,
+   "t0": "2026-06-29 00:31:43",
+   "t1": "2026-06-29 02:57:04",
+   "top_dst": [
+    [
+     "6rVvayJhzL",
+     1,
+     1.0
+    ],
+    [
+     "9nfQzQpfYd",
+     1,
+     0.3
+    ],
+    [
+     "8jo8Sc4LTH",
+     3,
+     0.02
+    ],
+    [
+     "Ai197jF3Ab",
+     1,
+     0.01
+    ],
+    [
+     "9rPYyANsfQ",
+     2,
+     0.0
+    ],
+    [
+     "A7hAgCzFw1",
+     1,
+     0.0
+    ],
+    [
+     "9M4giFFMxm",
+     1,
+     0.0
+    ],
+    [
+     "2NW7Zp5V75",
+     1,
+     0.0
+    ]
+   ]
+  },
+  "2snHHreX": {
+   "file": "uS_1790640000_1790686800.jsonl",
+   "rows": 439,
+   "counterparties": 283,
+   "sol": 486.7,
+   "sigs": 341,
+   "t0": "2026-09-29 00:00:53",
+   "t1": "2026-09-29 03:58:17"
+  },
+  "BY4StcU9": {
+   "file": "cx_1776679200_1776700800.jsonl",
+   "rows": 346,
+   "counterparties": 248,
+   "sol": 10229.3,
+   "sigs": 346,
+   "t0": "2026-04-20 10:03:48",
+   "t1": "2026-04-20 15:14:01"
+  }
+ },
+ "8wvqvPt1_sample": {
+  "transactions_read": 36,
+  "fee_pushes": 32,
+  "distinct_recipients": 2,
+  "top": [
+   [
+    "71zpR8ZGSo4tEgWf8AmyuPcx3fzYjqwTDSAuhwQxBmSd",
+    31
+   ],
+   [
+    "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+    1
+   ]
+  ]
+ },
+ "to_7uTT8Xi5": 2180.0,
+ "ansem_out_first_7_wallets_M": 49.89
+}

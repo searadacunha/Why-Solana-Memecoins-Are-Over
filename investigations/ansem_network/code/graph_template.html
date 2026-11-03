@@ -34,7 +34,7 @@ input[type=range]{width:280px}
 <body>
 <div class="viz-root">
 <h1>ANSEM: who is connected to whom</h1>
-<p>Each line is a transaction or a group of them, with a signature. Solid lines are SOL. Dashed lines are tokens given. Dotted lines are creator fees. Note what is missing: no SOL line joins the deployer family (left) to the Ansem wallet (right). A line says money moved. It does not say two wallets have one owner. Services and pools are off by default because a shared service is not a link: tick the box to see them.</p>
+<p>Each line is a transaction or a group of them, with a signature. Solid lines are SOL. Dashed lines are tokens given. Dotted lines are creator fees. Note what is missing: no SOL line joins the deployer family (left) to the wallets tied to Ansem (right), among the wallets read. Some family wallets are read only in part: see <code>WALLETS.csv</code>. A line says money moved. It does not say two wallets have one owner. Services and pools are off by default because a shared service is not a link: tick the box to see them.</p>
 <div class="controls" id="groups"></div>
 <div class="controls">
  <label>Show flows that began up to <input type="range" id="date" min="0" max="100" value="100"> <strong id="dateText"></strong></label>

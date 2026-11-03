@@ -78,7 +78,7 @@
  },
  {
   "id": "E05",
-  "claim": "A public post by @Donnieonchain announces the plan 4 min 7 s before the token exists: sending 60%, so that it is not a micro cap.",
+  "claim": "A public post by @Donnieonchain says 'sending 60%', 4 min 7 s before the token exists. The largest gift is then 65 %. Who wrote it, and whether it relates to the deployer, is not established.",
   "kind": "Third-party post",
   "checks": [],
   "posts": [
@@ -383,7 +383,7 @@
  },
  {
   "id": "E16",
-  "claim": "First public adoption by him: the post on airdropping the fees directed to his profile, 14:03:08 UTC on 27 June, reposted at 14:06:38. It answers a suggestion from another account.",
+  "claim": "His post on airdropping the fees directed to his profile, 14:03:08 UTC on 27 June, reposted at 14:06:38. It quotes a suggestion from another account and names no token.",
   "kind": "His post",
   "checks": [],
   "posts": [
@@ -403,7 +403,7 @@
  },
  {
   "id": "E17",
-  "claim": "First buy of 5 SOL or more after that post comes 23 seconds later: 11.0 SOL at 14:03:31.",
+  "claim": "The first buy of 5 SOL or more after that post comes 23 seconds later: 11.0 SOL at 14:03:31.",
   "kind": "On-chain fact",
   "checks": [
    {
@@ -458,7 +458,7 @@
  },
  {
   "id": "E20",
-  "claim": "The same recipe on later launches, with him asking publicly not to be sent coins: about 86 SOL bought, 650 M tokens to GV6UUmNx, 100 % of fees, the rest sold.",
+  "claim": "Three examples of later launches: about 86 SOL bought and 650 M or more tokens to GV6UUmNx. Counts in evidence/followups.json.",
   "kind": "On-chain fact",
   "checks": [
    {
@@ -538,7 +538,7 @@
  },
  {
   "id": "E23",
-  "claim": "GV6UUmNx's large exits go through wallets used once, into high-volume hot wallets. No such hop is shared with the deployer's side.",
+  "claim": "6,532.87 of the 21,022.09 SOL sent by GV6UUmNx goes through three short-lived wallets into high-volume wallets. None of the three receives from the deployer's side.",
   "kind": "On-chain fact",
   "checks": [
    {
@@ -560,7 +560,7 @@
  },
  {
   "id": "E24",
-  "claim": "490 M ANSEM move from GV6UUmNx to a new wallet on 1 August, which an exchange-like hot wallet funded hours earlier. Signed by GV6UUmNx.",
+  "claim": "490 M ANSEM move from GV6UUmNx to a new wallet on 1 August, which a high-volume wallet funded about an hour earlier. Signed by GV6UUmNx.",
   "kind": "On-chain fact",
   "checks": [
    {
@@ -608,7 +608,7 @@
  },
  {
   "id": "E26",
-  "claim": "Ansem's only located public reply to @Supermanonchain is hostile: when you stop vamping good projects.",
+  "claim": "An X search for his replies naming the five most cited accounts returns one post, to @Supermanonchain: when you stop vamping good projects. The post it answers cannot be read.",
   "kind": "His post",
   "checks": [],
   "posts": [
@@ -641,5 +641,116 @@
     "contains": "airdropped $6.7M"
    }
   ]
+ },
+ {
+  "id": "E29",
+  "claim": "In the posts saved here, he first names $ANSEM on 28 June at 12:01:43.",
+  "kind": "His post; search limits in evidence/x_searches.md",
+  "checks": [],
+  "posts": [
+   {
+    "id": "2071202382239686687",
+    "contains": "$ANSEM"
+   }
+  ]
+ },
+ {
+  "id": "E30",
+  "claim": "Ten wallets send the deployer 79.23 SOL in one second at 21:01:38, 3 seconds before the '60%' post. Nine are outside the family table, one later gives a large gift to the Ansem wallet. Such bursts are routine for this wallet: 127 seconds in its history have five or more inflows.",
+  "kind": "R3 for these edges",
+  "checks": [
+   {
+    "sig": "2vLBjnKQVDE4EtfGe4AHZihfNxuZFvft13cX8zNUpo3wkZ1vydiu4u97YQR59ioouSxTBJuQXLQ3xjiW4v2DoNkA",
+    "check": "owner_sol_gain",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "2vLBjnKQVDE4EtfGe4AHZihfNxuZFvft13cX8zNUpo3wkZ1vydiu4u97YQR59ioouSxTBJuQXLQ3xjiW4v2DoNkA",
+    "check": "time",
+    "arg": 1781643698
+   },
+   {
+    "sig": "25A4WR8gjAXTxMYn5DcdM3SDtmyfKHr8RFLLAoEQ1i3uoBW74cXWcrjRu4ZtyCWzhy2SDoMiM9XSeDrf3USDT6Ye",
+    "check": "owner_sol_gain",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "25A4WR8gjAXTxMYn5DcdM3SDtmyfKHr8RFLLAoEQ1i3uoBW74cXWcrjRu4ZtyCWzhy2SDoMiM9XSeDrf3USDT6Ye",
+    "check": "time",
+    "arg": 1781643698
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E31",
+  "claim": "8wvqvPt1 signs a push of 930.135 SOL of fees to GV6UUmNx, without its signature, for a different token called The Black Bull. In a sample of 231 pushes, 200 go to GV6UUmNx and 31 to one other wallet.",
+  "kind": "On-chain fact, owner unknown",
+  "checks": [
+   {
+    "sig": "66AJCDGDwyJmniaLWerVt8oDjHBN9oqxiXZK8kpKfkH7AzqMyZ74ABiB2BFHQdJqvz5s5LwM325Tf9nuBwCorQ4p",
+    "check": "signer",
+    "arg": "8wvqvPt1DDdjdghpMpp7ueQFUL5Js5zux4pPeRFXWteB"
+   },
+   {
+    "sig": "66AJCDGDwyJmniaLWerVt8oDjHBN9oqxiXZK8kpKfkH7AzqMyZ74ABiB2BFHQdJqvz5s5LwM325Tf9nuBwCorQ4p",
+    "check": "not_signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "66AJCDGDwyJmniaLWerVt8oDjHBN9oqxiXZK8kpKfkH7AzqMyZ74ABiB2BFHQdJqvz5s5LwM325Tf9nuBwCorQ4p",
+    "check": "owner_sol",
+    "arg": [
+     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+     930135000000,
+     "approx"
+    ]
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E32",
+  "claim": "A small wallet receives exactly 1.0 SOL from the deployer on 1 July and 1.0 SOL signed by GV6UUmNx on 2 July.",
+  "kind": "On-chain fact, meaning unknown",
+  "checks": [
+   {
+    "sig": "2HuRxiKPvVbm69afyUWBPd6w8ADnZeyPxgB8HrPg55ktnv2Xo4gvXBXAvwkj2dW9N66PpW9eJpESoCvn46fske34",
+    "check": "signer",
+    "arg": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe"
+   },
+   {
+    "sig": "2ZUDY5j8nLqNMZcxVy41NZBXpz49DRQMvs6jsBoEinY8Wbw7bPKzCpNUshenkdZcU54J3fm5Egnxe5UFErKnCC5L",
+    "check": "signer",
+    "arg": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
+   },
+   {
+    "sig": "2ZUDY5j8nLqNMZcxVy41NZBXpz49DRQMvs6jsBoEinY8Wbw7bPKzCpNUshenkdZcU54J3fm5Egnxe5UFErKnCC5L",
+    "check": "owner_sol_gain",
+    "arg": "49SecDmFPyFKphUKckC8oWDxKQWp5NN4QD8Wg6CT6Gy3"
+   }
+  ],
+  "posts": []
+ },
+ {
+  "id": "E33",
+  "claim": "A holder of about 25 M tokens sells for 15.27 SOL at 13:58:53, one second and three slots before the one-slot group of 15 buyers.",
+  "kind": "On-chain fact",
+  "checks": [
+   {
+    "sig": "5sXPigJesUYPcEXhcSAUTAQsv27BUVhtumvPBGiCieT814MzrTMCHow1FREMoEsaUdsEtMnZcDCzHsdbrkvZsyum",
+    "check": "time",
+    "arg": 1782568733
+   },
+   {
+    "sig": "5sXPigJesUYPcEXhcSAUTAQsv27BUVhtumvPBGiCieT814MzrTMCHow1FREMoEsaUdsEtMnZcDCzHsdbrkvZsyum",
+    "check": "owner_sol",
+    "arg": [
+     "8dut5xTs5V7EG9ccek11xDG5eBHkfYc3NdqcxjtWNsbS",
+     15273505972
+    ]
+   }
+  ],
+  "posts": []
  }
 ]

@@ -43,6 +43,7 @@ def main() -> None:
                     lamports:'HUGEINT', mint:'VARCHAR', raw:'HUGEINT', basis:'VARCHAR', signers:'VARCHAR[]'}})
                     WHERE kind IN ('sol','token_transfer')""")
     print("rows", con.execute("SELECT count(*) FROM r").fetchone()[0], flush=True)
+    con.execute("CREATE TABLE u AS SELECT DISTINCT kind, sig, ts, src, dst, lamports, mint, raw, basis, src_signed FROM r")  # a transfer read from both sides counts once
     con.execute("CREATE TABLE ds AS SELECT unnest(?::VARCHAR[]) a", [DEPLOYER_SIDE])
     out: dict = {"deployer_side": DEPLOYER_SIDE, "ansem_wallet": GV, "dust_lamports": DUST}
 
@@ -50,13 +51,13 @@ def main() -> None:
         return con.execute(q, list(p)).fetchall()
 
     # 1. Value moved by the Ansem wallet to the deployer's side.
-    out["sol_from_ansem_to_deployer_side"] = rows("SELECT src,dst,count(*),sum(lamports)::DOUBLE/1e9 FROM r WHERE kind='sol' AND src=? AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
-    out["tokens_signed_by_ansem_to_deployer_side"] = rows("SELECT dst,mint,count(*),sum(raw)::DOUBLE FROM r WHERE kind='token_transfer' AND src=? AND src_signed AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
-    out["tokens_not_signed_by_ansem_to_deployer_side"] = rows("SELECT dst,mint,count(*),sum(raw)::DOUBLE FROM r WHERE kind='token_transfer' AND src=? AND NOT src_signed AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
+    out["sol_from_ansem_to_deployer_side"] = rows("SELECT src,dst,count(*),sum(lamports)::DOUBLE/1e9 FROM u WHERE kind='sol' AND src=? AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
+    out["tokens_signed_by_ansem_to_deployer_side"] = rows("SELECT dst,mint,count(*),sum(raw)::DOUBLE FROM u WHERE kind='token_transfer' AND src=? AND src_signed AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
+    out["tokens_not_signed_by_ansem_to_deployer_side"] = rows("SELECT dst,mint,count(*),sum(raw)::DOUBLE FROM u WHERE kind='token_transfer' AND src=? AND NOT src_signed AND dst IN (SELECT a FROM ds) GROUP BY 1,2", GV)
 
     # 2. Value moved by the deployer's side to the Ansem wallet.
-    out["sol_from_deployer_side_to_ansem"] = rows("SELECT src,count(*),sum(lamports)::DOUBLE/1e9,min(ts),max(ts) FROM r WHERE kind='sol' AND dst=? AND src IN (SELECT a FROM ds) GROUP BY 1", GV)
-    out["tokens_from_deployer_side_to_ansem"] = rows("SELECT src,count(DISTINCT mint),count(*),sum(raw)::DOUBLE/1e6,min(ts),max(ts) FROM r WHERE kind='token_transfer' AND dst=? AND src_signed AND src IN (SELECT a FROM ds) GROUP BY 1", GV)
+    out["sol_from_deployer_side_to_ansem"] = rows("SELECT src,count(*),sum(lamports)::DOUBLE/1e9,min(ts),max(ts) FROM u WHERE kind='sol' AND dst=? AND src IN (SELECT a FROM ds) GROUP BY 1", GV)
+    out["tokens_from_deployer_side_to_ansem"] = rows("SELECT src,count(DISTINCT mint),count(*),sum(raw)::DOUBLE/1e6,min(ts),max(ts) FROM u WHERE kind='token_transfer' AND dst=? AND src_signed AND src IN (SELECT a FROM ds) GROUP BY 1", GV)
 
     # 3. Counterparties in common over the dust limit, each with how many others use it: a shared service is not a link.
     con.execute("""CREATE TABLE cp AS
@@ -89,7 +90,7 @@ def main() -> None:
 
     # 6. Ties inside the deployer's side, as a positive control: the same query must find these.
     out["positive_control_deployer_side_internal"] = rows("""
-        SELECT src,dst,count(*),sum(lamports)::DOUBLE/1e9,min(ts),max(ts) FROM r
+        SELECT src,dst,count(*),sum(lamports)::DOUBLE/1e9,min(ts),max(ts) FROM u
         WHERE kind='sol' AND src IN (SELECT a FROM ds) AND dst IN (SELECT a FROM ds) GROUP BY 1,2 ORDER BY 4 DESC""")
     assert out["positive_control_deployer_side_internal"], "the query finds no tie inside the side it should find them in"
 

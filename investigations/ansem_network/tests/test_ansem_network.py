@@ -86,3 +86,13 @@ def test_no_private_wallet_of_the_author():
 def test_plain_writing_in_the_deliverables():
     for name in ("REPORT.md", "TOP10.md", "README.md", "PROVENANCE.md", "TIMELINE.md"):
         assert "—" not in (ROOT / name).read_text(), name
+
+
+def test_fee_account_is_paid_by_every_buyer_sampled():
+    d = json.load(open(ROOT / "evidence" / "small_checks.json"))
+    assert {x["where"] for x in d["fee_account_sample"]} == {"in group", "outside"}
+    assert all(x["fee_account_gain"] > 0 for x in d["fee_account_sample"])
+
+
+def test_no_person_to_wallet_list_is_published():
+    assert "kol_recipients" not in json.load(open(ROOT / "evidence" / "numbers.json"))["kol_enrichment_exploratory"]

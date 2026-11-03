@@ -59,12 +59,20 @@ def main() -> None:
         c = sum(hit(p[2], rng.choice(mints)) for p in pairs)
         sims.append(c)
         ge += c >= obs
-    out = {"posts_readable": sum(read.values()), "posts_gone": sum(gone.values()), "readable_by_account": read.most_common(15), "gone_by_account": gone.most_common(15),
-           "posts_naming_a_share": len(pairs), "matches_within_3_points": obs, "baseline_mean_matches": sum(sims) / len(sims), "p_shuffled": (ge + 1) / 2001,
+    pids = {pid for acc, pid in meta.values()}
+    pid_of = {mint: pid for mint, (acc, pid) in meta.items()}
+    cited = {pid_of[m] for m in rows if m in pid_of}
+    out = {"launches_citing_a_post": len([m for m in rows if m in meta]), "distinct_posts": len(cited), "distinct_posts_readable": sum(1 for p in cited if posts.get(p, {}).get("readable")),
+           "distinct_posts_naming_a_share": len({p[4] for p in pairs}), "accounts_naming_a_share": len({p[1] for p in pairs}),
+           "share_posts_by_blknoiz06": sum(p[1] == "blknoiz06" for p in pairs),
+           "misses": [{"mint": p[0], "account": p[1], "stated_pct": p[2], "largest_gift_pct": round(share.get(p[0], 0.0), 2)} for p in pairs if not hit(p[2], p[0])],
+           "launches_citing_posts_readable": sum(read.values()), "launches_citing_posts_unreadable": sum(gone.values()), "readable_by_account": read.most_common(15), "unreadable_by_account": gone.most_common(15),
+           "launch_post_pairs_naming_a_share": len(pairs), "matches_within_3_points": obs, "baseline_mean_matches": sum(sims) / len(sims), "p_shuffled": (ge + 1) / 2001,
            "examples": [{"mint": p[0], "account": p[1], "stated_pct": p[2], "largest_gift_pct": round(share.get(p[0], 0.0), 2), "text": p[3], "post": p[4]} for p in pairs if hit(p[2], p[0])][:25],
            "status": "exploratory, not in PLAN.md"}
     (OUT / "post_vs_launch.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    print({k: v for k, v in out.items() if k != "examples"})
+    print({k: v for k, v in out.items() if k not in ("examples", "misses")})
+    print(out["misses"])
     for e in out["examples"][:14]:
         print(e["account"], e["stated_pct"], e["largest_gift_pct"], "|", e["text"][:110].replace("\n", " "))
 

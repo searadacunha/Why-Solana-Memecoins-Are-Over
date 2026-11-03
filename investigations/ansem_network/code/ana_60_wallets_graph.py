@@ -22,8 +22,8 @@ OTHERS = ["7ZV54HcwtzRhZSEPskT8ox5hn9yNocK9xpe4BQXoziaP", "GeBJSHK4WsGrz2HRvTbqv
 SERVICES = {"9obNtb5GyUegcs3a1CbBkLuc5hEWynWfJC6gjz5uWQkE": "High-volume hot wallet, 15,861 SOL, not labelled",
             "4NyK1AdJBNbgaJ9EsKz3J4rfeHsuYdjkTPg3JaNdLeFw": "High-volume hot wallet, 17,873 SOL, not labelled",
             "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS": "High-volume hot wallet, 1,192 SOL, not labelled",
-            "2snHHreXbpJ7UwZxPe37gnUNf7Wx7wv6UKDSR2JckKuS": "Service by the plan's test: 537 counterparties in its first 1,000 transactions",
-            "BY4StcU9Y2BpgH8quZzorg31EGE4L1rjomN8FNsCBEcx": "Labelled HTX in the author's August notes, not verified on chain",
+            "2snHHreXbpJ7UwZxPe37gnUNf7Wx7wv6UKDSR2JckKuS": "Service by the plan's test in Nov 2024: 537 counterparties in 1,000 transactions. 283 in a sample of 29 Sep 2026",
+            "BY4StcU9Y2BpgH8quZzorg31EGE4L1rjomN8FNsCBEcx": "Unclassified. The August notes call it HTX and a wallet factory. 248 counterparties in 1,000 transactions on 20 April, under the plan's service test",
             "FpwQQhQQoEaVu3WU2qZMfF1hx48YyfwsLoRgXG83E99Q": "High-volume hot wallet, 17,690 SOL, not labelled",
             "5F1seMKUqSNhv45f6FhB2cFmgJbk8U1avJw7M6TexUq1": "High-volume hot wallet, 1,267 SOL, not labelled",
             "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t": "ChangeNOW gateway, public attribution in forensics_v2",
@@ -32,10 +32,10 @@ SERVICES = {"9obNtb5GyUegcs3a1CbBkLuc5hEWynWfJC6gjz5uWQkE": "High-volume hot wal
             "8FnX3xo2yYw3EUE6w3nQA4GfXGS9wpK6oj3veJpbFzLo": "Pool, owned by the BisonFi program",
             "uxtoRPdPjRekYmxs1uUqVRZWh38iqonc9KgPuZXPeSY": "Fee account of the Uxento launch tool (name inferred from its metadata host)"}
 ROLE = {Y: "Deployer of ANSEM and of 839 launches", GV: "Wallet Ansem links in his own post",
-        "7oU9nR9VEvFPwvp2PpXo2LQc6A92QRhcUTwhLWT7MsDM": "Receives 491 M ANSEM from GV6UUmNx", "BrV2WXWw5wU9pca4Nu4FJLhLU5cAbrkmLfXQmYm3ZZJG": "Receives 5,148 SOL from GV6UUmNx, then provides liquidity on Meteora",
+        "7oU9nR9VEvFPwvp2PpXo2LQc6A92QRhcUTwhLWT7MsDM": "Receives 491 M ANSEM from GV6UUmNx", "BrV2WXWw5wU9pca4Nu4FJLhLU5cAbrkmLfXQmYm3ZZJG": "Receives 5,148 SOL from GV6UUmNx, then moves SOL through a Meteora-owned account",
         "H3t5AYjF4ukuZ1HL2WCQqtSucRWWSZSoaiwYoWeshKPJ": "One-use hop, 3,000 SOL", "EvktFyjtaToEGWnKVSJnwJacDvFBddzrxtUmiN795k8D": "One-use hop, 2,200 SOL", "2YPypQAQkFFtmwNgEcmnyqe2EJTThzoMTeUuMYmYcPiT": "One-use hop, 1,333 SOL",
         "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm": "Kolscan calls it Ansem. He denies it", "Dt4gYgAUts6puim6yj4m874V5TuGUGFyZVv4RNpFvUkY": "Received the first Black Bull's 400 M tokens and fees",
-        "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": "Bot: last curve buy and migration in the creation slot", "8wvqvPt1DDdjdghpMpp7ueQFUL5Js5zux4pPeRFXWteB": "Pushed 5,132 SOL of fees to GV6UUmNx on 28 June, owner unknown",
+        "9ryBR3SnxgGPhWsKvsfxuNHUCTt6tSpLe8wrKCShXLaq": "Bot: last curve buy and migration in the creation slot", "8wvqvPt1DDdjdghpMpp7ueQFUL5Js5zux4pPeRFXWteB": "Pushed at least 5,132 SOL of fees to GV6UUmNx on 28 June, and fees to another wallet in a later sample. Owner unknown",
         "DiDDYQpUrWNcaM5AwxkoWJ7VAjBuZyg25Jkvsa9ZosQB": "Pushes fees, owner unknown", "EnNEiTdV9g2Yau2pHipMvxjjrrMtkECG8Hj8a9WqXGzw": "Pushes fees, owner unknown",
         "7ZV54HcwtzRhZSEPskT8ox5hn9yNocK9xpe4BQXoziaP": "Other deployer: 300 M of its token to GV6UUmNx at 21:02:21", "GeBJSHK4WsGrz2HRvTbqvWGx4JRMpHfJG2ikzrYBDuwR": "Other deployer: 20 mints gifted to GV6UUmNx",
         "GLC6w9gud93rW7XhFU2QH2eS9Z1qtu8umSXK7BwuA8oe": "Other sender: 29 mints gifted to GV6UUmNx", "2xpKBkzBoAretBBsJYmhzouZR1WZuZFuT6jwoRSFz8Ed": "Other deployer: 17 mints gifted to GV6UUmNx"}
@@ -71,7 +71,8 @@ def main() -> None:
         if g > 0:
             edges.append({"s": r["mint"], "t": GV, "kind": "gift", "tokens": g, "count": 1, "t0": ts, "t1": ts, "sig": r["create_signature"], "label": "%.0f M tokens given, not signed by the receiver" % (g / 1e6)})
     edges.append({"s": first["mint"], "t": "Dt4gYgAUts6puim6yj4m874V5TuGUGFyZVv4RNpFvUkY", "kind": "gift", "tokens": 4e8, "count": 1, "t0": 1781624750, "t1": 1781624793, "sig": first["create_signature"], "label": "400 M tokens given"})
-    edges.append({"s": MINT, "t": GV, "kind": "fee", "sol": 966.64, "count": 15, "t0": 1781644260, "t1": 1782683048, "sig": "see EVIDENCE_LEDGER.csv E13", "label": "creator fees of ANSEM until 28 June"})
+    fv = json.load(open(OUT / "followups.json"))["ansem_vault_to_ansem_wallet"]
+    edges.append({"s": MINT, "t": GV, "kind": "fee", "sol": fv["sol_all_time"], "count": fv["tx_all_time"], "t0": 1781644260, "t1": 1791000000, "sig": "see EVIDENCE_LEDGER.csv E13", "label": "creator fees of ANSEM, all time read"})
 
     # wallets table
     ck = DATA / "checkpoints" / "stream"
@@ -81,17 +82,23 @@ def main() -> None:
         for g, name, members in GROUPS:
             for a in members:
                 hist = "not walked"
-                for p in list(ck.glob(a + "_*.json")):
+                done, read = False, 0
+                for p in ck.glob(a + "_*.json"):  # a wallet can have several walks: whole-history pieces and windows
                     st = json.loads(p.read_text())
-                    first_walk = DATA / "checkpoints" / "gtfa" / (a + "_start_end_balanceChanged.jsonl")
-                    extra = sum(len(json.loads(x)["sigs"]) for x in open(first_walk)) if first_walk.exists() else 0
-                    hist = ("complete" if st["done"] else "capped") + ", %d tx" % (st["txs"] + extra)
+                    read += st["txs"]
+                    done = done or (st["done"] and p.name == a + "_start_end.json")
+                first_walk = DATA / "checkpoints" / "gtfa" / (a + "_start_end_balanceChanged.jsonl")
+                if first_walk.exists():
+                    read += sum(len(json.loads(x)["sigs"]) for x in open(first_walk))
+                if read:
+                    hist = ("complete" if done else "partial") + ", %d tx" % read
                 row = con.execute("SELECT min(ts), arg_min(src, ts) FILTER (WHERE dst=?), sum(lamports) FILTER (WHERE dst=?)::DOUBLE, sum(lamports) FILTER (WHERE src=?)::DOUBLE FROM (SELECT DISTINCT sig,src,dst,ts,lamports FROM r WHERE wallet=?)", [a, a, a, a]).fetchone()
                 top = con.execute("SELECT dst, sum(lamports)::DOUBLE s FROM (SELECT DISTINCT sig,src,dst,lamports FROM r WHERE wallet=? AND src=?) GROUP BY 1 ORDER BY s DESC LIMIT 1", [a, a]).fetchone()
                 lvl = {"family": "R3 same financial network, each edge has a signature", "ansem": "Self-claimed" if a == GV else "Direct transfers from the self-claimed wallet; ownership inferred, not claimed",
                        "side": "Received tokens from the self-claimed wallet; no ownership claim", "early": "Trader on the token; no link found", "other": "See role", "service": "Stop point, not a link"}[g]
                 role = ROLE.get(a) or SERVICES.get(a) or {"family": "Exchanges SOL with the deployer's side", "side": "Received ANSEM signed by GV6UUmNx", "early": "Large early holder or buyer"}.get(g, "")
-                w.writerow([a, name, role, hist, utc(row[0]), row[1] or "", sol(int(row[2] or 0)), sol(int(row[3] or 0)), top[0] if top else "", sol(int(top[1])) if top else "", lvl])
+                w.writerow([a, name, role, hist, utc(row[0]), row[1] or "", "" if hist == "not walked" else sol(int(row[2] or 0)), "" if hist == "not walked" else sol(int(row[3] or 0)), top[0] if top else "", sol(int(top[1])) if top else "",
+                            "Not walked: seen only through wallets that were" if hist == "not walked" and g == "family" else lvl])
 
     nodes = [{"id": a, "group": g, "label": ("Deployer " if a == Y else "Ansem wallet " if a == GV else "") + a[:6], "role": ROLE.get(a) or SERVICES.get(a) or ""} for a, g in group_of.items()]
     touched = {e["s"] for e in edges} | {e["t"] for e in edges}

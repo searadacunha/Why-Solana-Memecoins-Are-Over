@@ -51,23 +51,7 @@ def main() -> None:
           OR (dst IN (SELECT a FROM sw) AND (src IN (SELECT a FROM ds) OR src IN (SELECT a FROM ag)))) GROUP BY 1,2,3""")
     created = {x[0] for x in q("SELECT DISTINCT mint FROM r WHERE kind='create' AND creator=wallet AND wallet IN (SELECT a FROM ds)")}
     out["launches_by_deployer_family"] = q("SELECT creator,count(DISTINCT mint),min(ts),max(ts) FROM r WHERE kind='create' AND creator=wallet AND wallet IN (SELECT a FROM ds) GROUP BY 1 ORDER BY 2 DESC")
-    bought = []
-    for sig, sol, mints in q("SELECT sig,sol,mints FROM r WHERE kind='trade' AND wallet=? AND fee_payer=?", GV, GV):
-        for m, dt in json.loads(mints).items():
-            if dt > 0 and sol < 0:
-                bought.append((m, dt, sol, sig))
-    out["ansem_wallet_buys"] = {"n": len(bought), "distinct_mints": len({b[0] for b in bought}),
-                                "sol_spent": sum(-b[2] for b in bought) / 1e9,
-                                "of_deployer_family_launches": [b for b in bought if b[0] in created]}
-    sells = []
-    for sig, sol, mints, ts in q("SELECT sig,sol,mints,ts FROM r WHERE kind='trade' AND wallet=? AND fee_payer=?", GV, GV):
-        for m, dt in json.loads(mints).items():
-            if dt < 0 and sol > 0:
-                sells.append((m, dt, sol, sig, ts))
-    out["ansem_wallet_sales"] = {"n": len(sells), "sol": sum(s[2] for s in sells) / 1e9, "of_ANSEM": [s for s in sells if s[0] == MINT],
-                                 "of_deployer_family_launches": [s for s in sells if s[0] in created][:40],
-                                 "n_of_deployer_family": sum(s[0] in created for s in sells),
-                                 "sol_of_deployer_family": sum(s[2] for s in sells if s[0] in created) / 1e9}
+    # Buys and sales of the Ansem wallet are in followups.json: a fee-payer filter drops transactions a relayer paid for.
     family = set(DEPLOYER_SIDE)
     reentry = {}
     for name in ("launch_to_takeoff", "pre_takeoff", "takeoff"):

@@ -43,8 +43,21 @@ def main() -> None:
                 pre.append((r["ts"], o, n["tok"], n["sol"], r["slot"], r["sig"]))
     win = [x for x in pre if POST_0 - 900 <= x[0] <= POST_0]
     buyers = {x[1] for x in win if x[2] > 0}
-    out["last_15_min_before_post"] = {"rows": len(win), "buyers": len(buyers), "net_sol_bought": sol(-sum(x[3] for x in win if x[2] > 0 and x[3] < 0)),
-                                      "net_sol_received_by_sellers": sol(sum(x[3] for x in win if x[2] < 0 and x[3] > 0))}
+    # Read from the pool's side: an owner's own SOL change misses a buy routed through an aggregator.
+    pool_b = pool_s = pool_b15 = pool_s15 = 0
+    for r in mint_rows("pre_takeoff"):
+        n = r["nets"].get(POOL)
+        if not n:
+            continue
+        in_15 = POST_0 - 900 <= r["ts"] <= POST_0
+        if n["tok"] < 0:
+            pool_b += n["sol"]
+            pool_b15 += n["sol"] if in_15 else 0
+        elif n["tok"] > 0:
+            pool_s -= n["sol"]
+            pool_s15 -= n["sol"] if in_15 else 0
+    out["last_15_min_before_post"] = {"rows": len(win), "buyers": len(buyers), "pool_sol_from_buys": sol(pool_b15), "pool_sol_paid_to_sellers": sol(pool_s15)}
+    out["since_25_june_to_post"] = {"pool_sol_from_buys": sol(pool_b), "pool_sol_paid_to_sellers": sol(pool_s), "note": "21 to 25 June not read"}
     slot = [x for x in win if x[4] == 429250207]
     out["slot_429250207"] = {"rows": len(slot), "wallets": len({x[1] for x in slot}), "sol_in": sol(-sum(x[3] for x in slot if x[3] < 0)), "time": utc(slot[0][0]) if slot else None}
     post = []
@@ -56,7 +69,7 @@ def main() -> None:
     out["first_buy_of_5_sol_after_post"] = {"time": utc(big[0]), "seconds_after_post": big[0] - POST_0, "wallet": big[1], "sol": sol(-big[3]), "sig": big[4]}
     b4 = [x for x in pre if x[0] < POST_0 and x[0] >= POST_0 - 3600 and -x[3] >= 5e9 and x[2] > 0]
     out["buys_of_5_sol_in_hour_before_post"] = len(b4)
-    out["sol_in_first_218s_after_post"] = sol(-sum(x[3] for x in post if x[3] < 0 and x[2] > 0))
+    out["sol_in_first_210s_after_post"] = sol(-sum(x[3] for x in post if x[3] < 0 and x[2] > 0))
 
     groups = defaultdict(set)
     gsol = defaultdict(int)
@@ -146,7 +159,7 @@ def main() -> None:
     out["kol_enrichment_exploratory"] = {"snapshot_wallets": len(kol), "recipients_1M_tokens_2_launches": len(sub), "of_which_on_snapshot": sum(r["recipient"] in kol for r in sub),
                                          "fee_share_recipients": len(feeonly), "fee_share_on_snapshot": sum(r["recipient"] in kol for r in feeonly),
                                          "ansem_traders_before_post": len(traders), "ansem_traders_on_snapshot": len(traders & set(kol)),
-                                         "kol_recipients": sorted([(r["recipient"], kol[r["recipient"]][0], int(r["n_launches_gifted"]), int(r["n_launches_fee_share"])) for r in sub + feeonly if r["recipient"] in kol], key=lambda x: -x[2] - x[3])[:30]}
+                                         "note": "Counts only. The list maps wallets to people, unverified, so the pairs are not published."}
     (OUT / "numbers.json").write_text(json.dumps(out, indent=1, default=str) + "\n")
     print(json.dumps(out, indent=0, default=str)[:5200])
 

@@ -18,8 +18,8 @@
   [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    "278DWFskyaXcFy73rgtd4z1ao5PhLCQXKCWvSUqRGmsg",
-   26,
-   260000000000000.0
+   13,
+   130000000000000.0
   ]
  ],
  "sol_from_deployer_side_to_ansem": [],
@@ -27,8 +27,8 @@
   [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    75,
-   162,
-   63058132217.88296,
+   81,
+   31529066108.94148,
    1781643660,
    1793216050
   ]
@@ -587,46 +587,22 @@
  ],
  "side_and_early_wallet_first_funder": [
   [
-   "49foKJpRnZUaPKsDgnQhUFRMk7NX4zD5KgtVpxgvctLa",
-   "7hK3DfhmVBUw4SRz1cu9AE11jC9EkskQQXtuTzFSGxc2",
-   1751930704,
-   0.2
-  ],
-  [
-   "6btcCbEdYnCUyuzV3JEMDpw9YbbF1tPFzNSN2Sfwg5eT",
-   "FnhikuhNjBpxKefqMvtfDgJR2ywEtScE2YFjEASKpDjk",
-   1740306607,
-   0.5
-  ],
-  [
    "8dut5xTs5V7EG9ccek11xDG5eBHkfYc3NdqcxjtWNsbS",
    "FpwQQhQQoEaVu3WU2qZMfF1hx48YyfwsLoRgXG83E99Q",
    1781387312,
    30.148743437
   ],
   [
-   "9nGDHK9mp8JvKiNghu395xr188hXXXNYE4X1GTQjgHTd",
-   "8d9FNC7AgKLTCPKNd3MMkLLXZYLmiYFYR3vfXMBNJVNx",
-   1778003859,
-   7.448674046
-  ],
-  [
-   "CeZbzsqje88U7GCCrAiGUr5BrZrBJ3AkQMyG9aggDiqQ",
-   "CnCk4a2YeWKgwNjurD7H8q54MRRrPj1ZAcTXUMkce7ZL",
-   1755623513,
-   0.651097403
-  ],
-  [
-   "2M2vLX34LXMg24dMEnjWHvRXS1tshpEDRWzmXgV8ENNZ",
-   "CddEBriB2aDJYc125W3Da8qsCUXs7kzgGkBmdDn7LJuN",
-   1736610462,
-   0.05
-  ],
-  [
    "3nyg554J8SmDuhr8f6ZAvemWd35ngdzzw4QW678KZTqW",
    "CA77rz8jS9uNurVJf1H6VStmohcgk31EzKc4Ntxs3rGF",
    1780244300,
    1.0
+  ],
+  [
+   "49foKJpRnZUaPKsDgnQhUFRMk7NX4zD5KgtVpxgvctLa",
+   "7hK3DfhmVBUw4SRz1cu9AE11jC9EkskQQXtuTzFSGxc2",
+   1751930704,
+   0.2
   ],
   [
    "H6KiqN3wwirFumem4ZqxbF3hhHNTjpyps3q7TTLX3n33",
@@ -647,40 +623,34 @@
    29.900816634
   ],
   [
+   "9nGDHK9mp8JvKiNghu395xr188hXXXNYE4X1GTQjgHTd",
+   "8d9FNC7AgKLTCPKNd3MMkLLXZYLmiYFYR3vfXMBNJVNx",
+   1778003859,
+   7.448674046
+  ],
+  [
+   "CeZbzsqje88U7GCCrAiGUr5BrZrBJ3AkQMyG9aggDiqQ",
+   "CnCk4a2YeWKgwNjurD7H8q54MRRrPj1ZAcTXUMkce7ZL",
+   1755623513,
+   0.651097403
+  ],
+  [
+   "2M2vLX34LXMg24dMEnjWHvRXS1tshpEDRWzmXgV8ENNZ",
+   "CddEBriB2aDJYc125W3Da8qsCUXs7kzgGkBmdDn7LJuN",
+   1736610462,
+   0.05
+  ],
+  [
+   "6btcCbEdYnCUyuzV3JEMDpw9YbbF1tPFzNSN2Sfwg5eT",
+   "FnhikuhNjBpxKefqMvtfDgJR2ywEtScE2YFjEASKpDjk",
+   1740306607,
+   0.5
+  ],
+  [
    "CEUA7zVoDRqRYoeHTP58UHU6TR8yvtVbeLrX1dppqoXJ",
    "3yiEwPoyHKtoDqsQUxx2SDBkLNHenz6phvM28MC8rZUQ",
    1740352632,
    10.696413746
-  ],
-  [
-   "9aP2vSFp2rydWR7C7kVZSQLQa2sT62w23ZHVP8BVSR5T",
-   "B48kNVXs4YK4amkBCH2XokQiv1SeiVQGHDR17xDeKAAn",
-   1778088464,
-   4.02808861
-  ],
-  [
-   "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC",
-   "CjZLvgcBZU9tXbBXduQRPihi8eoUTHut8cwMcZ1QUR2C",
-   1764224011,
-   0.04
-  ],
-  [
-   "HDixbrzwwLXczhDBk1JVrurPQsuLE8FUKnW2pucSXN3o",
-   "9obNtb5GyUegcs3a1CbBkLuc5hEWynWfJC6gjz5uWQkE",
-   1763134877,
-   4.9999
-  ],
-  [
-   "XXXXXahGswEH6i3Czn19XbGxQrobJoY1TYJegPxp3ex",
-   "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
-   1748963275,
-   69.32296307
-  ],
-  [
-   "5URyNUmhcuWdZiiQrtNdFrSbQPfq72UV2gqQasr9c19Y",
-   "5F1seMKUqSNhv45f6FhB2cFmgJbk8U1avJw7M6TexUq1",
-   1780829251,
-   4.343
   ],
   [
    "6F5x9fKqXCfPf8Rufs6ZvLjzPfCicytUgWexzx6LxoDi",
@@ -689,10 +659,34 @@
    6.0
   ],
   [
+   "9aP2vSFp2rydWR7C7kVZSQLQa2sT62w23ZHVP8BVSR5T",
+   "B48kNVXs4YK4amkBCH2XokQiv1SeiVQGHDR17xDeKAAn",
+   1778088464,
+   4.02808861
+  ],
+  [
+   "CxCTVjvgK3bWcgavMKo8PushR8ycw1atrWiSTruZrdtT",
+   "Ei6B6oh2mPC87XKCmHwqDfJu8MsSk3LycWmPmEZdQWmK",
+   1746342511,
+   0.14
+  ],
+  [
+   "XXXXXahGswEH6i3Czn19XbGxQrobJoY1TYJegPxp3ex",
+   "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+   1748963275,
+   69.32296307
+  ],
+  [
    "AmNDxHzjmkx7FS8sT7QpCYmVt9GTdpAFtmMi33YKgZLZ",
    "H8sMJSCQxfKiFTCfDR3DUMLPwcRbM61LGFJ8N4dK3WjS",
    1633712132,
    6.05
+  ],
+  [
+   "DAEdBmTPEKM6xkwfzC3d411QUe6coKpkND6UURa4CvHC",
+   "CjZLvgcBZU9tXbBXduQRPihi8eoUTHut8cwMcZ1QUR2C",
+   1764224011,
+   0.04
   ],
   [
    "5FGoPPj1nL8LCnfVnpTmreqQtqLuMXXAwuS1uahMrp8V",
@@ -701,10 +695,16 @@
    77.026803022
   ],
   [
-   "CxCTVjvgK3bWcgavMKo8PushR8ycw1atrWiSTruZrdtT",
-   "Ei6B6oh2mPC87XKCmHwqDfJu8MsSk3LycWmPmEZdQWmK",
-   1746342511,
-   0.14
+   "5URyNUmhcuWdZiiQrtNdFrSbQPfq72UV2gqQasr9c19Y",
+   "5F1seMKUqSNhv45f6FhB2cFmgJbk8U1avJw7M6TexUq1",
+   1780829251,
+   4.343
+  ],
+  [
+   "HDixbrzwwLXczhDBk1JVrurPQsuLE8FUKnW2pucSXN3o",
+   "9obNtb5GyUegcs3a1CbBkLuc5hEWynWfJC6gjz5uWQkE",
+   1763134877,
+   4.9999
   ]
  ],
  "ansem_token_moves_on_deployer_side_after_exit": [
@@ -792,6 +792,14 @@
    "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
    "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
    "WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh",
+   891.131525,
+   1790984788,
+   "4P5W4YzwZRGHcAKbSF6wT85LUbfkJfUdEtJ3eVjvqPd2JgdFt9H37DBiHg9XAxBKnpMEqEmvaHfQN1vySKwGcEET"
+  ],
+  [
+   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
+   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
+   "WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh",
    890.774954,
    1790984788,
    "3ZRKq3h2ugqo4ckWBSYptXCP88qh4T4brygESyT2J1jrCQLCB189iC5zBPqmPauXgX44yqTEBD5jyFDLuVty3wHT"
@@ -803,14 +811,6 @@
    890.774954,
    1790984788,
    "3ZRKq3h2ugqo4ckWBSYptXCP88qh4T4brygESyT2J1jrCQLCB189iC5zBPqmPauXgX44yqTEBD5jyFDLuVty3wHT"
-  ],
-  [
-   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
-   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
-   "WLHv2UAZm6z4KyaaELi5pjdbJh6RESMva1Rnn8pJVVh",
-   891.131525,
-   1790984788,
-   "4P5W4YzwZRGHcAKbSF6wT85LUbfkJfUdEtJ3eVjvqPd2JgdFt9H37DBiHg9XAxBKnpMEqEmvaHfQN1vySKwGcEET"
   ],
   [
    "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
@@ -855,156 +855,124 @@
  ],
  "positive_control_deployer_side_internal": [
   [
-   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
-   413,
-   21074.356,
-   1763339308,
-   1783461981
-  ],
-  [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   344,
-   19613.814593843,
+   324,
+   19306.180299223,
    1776690548,
    1784307138
   ],
   [
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
+   286,
+   18240.236,
+   1763339308,
+   1783461981
+  ],
+  [
    "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
    "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
-   139,
-   19409.83,
+   77,
+   10841.8,
    1783946419,
    1793663145
   ],
   [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
-   141,
-   16901.847983012,
+   81,
+   9768.105935787,
    1783643074,
    1793663138
   ],
   [
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+   "9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm",
+   155,
+   9646.01596,
+   1736661067,
+   1783462156
+  ],
+  [
    "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
    "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
-   544,
-   12390.94,
+   422,
+   8499.34,
    1761752566,
    1783461984
   ],
   [
    "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
-   330,
-   11305.77,
-   1772324816,
-   1779296608
-  ],
-  [
-   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   "9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm",
-   176,
-   10099.33596,
-   1736661067,
-   1783462156
-  ],
-  [
-   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   267,
-   8179.027201864,
+   245,
+   7791.349043686,
    1776690145,
    1784307124
   ],
   [
-   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
    "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
-   277,
-   6000.626,
-   1761769955,
-   1783462125
-  ],
-  [
-   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
-   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   4,
-   6000.0,
-   1778690565,
-   1779399214
-  ],
-  [
-   "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
-   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   81,
-   5656.30602965,
-   1784333319,
-   1793634138
+   202,
+   6437.01,
+   1772324816,
+   1779296608
   ],
   [
    "9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm",
    "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   113,
-   5650.670565912,
+   100,
+   5376.673287504,
    1736471159,
    1788130573
   ],
   [
-   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
-   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   146,
-   5607.97,
-   1772333130,
-   1779329564
-  ],
-  [
-   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
-   "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
-   47,
-   5301.88,
-   1783643405,
-   1793313453
-  ],
-  [
-   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
-   30,
-   5175.96,
-   1783642957,
-   1793144714
-  ],
-  [
    "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
    "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
-   137,
-   4767.98,
+   91,
+   4055.38,
    1763347143,
    1783462115
   ],
   [
-   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
-   56,
-   4718.8,
-   1779032471,
-   1783104243
+   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
+   181,
+   3828.083,
+   1761769955,
+   1783462125
   ],
   [
-   "DxnxpqcUsErqRFRbfVrKr988F9AxayryC5eKWPKgvjmR",
-   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
-   2,
-   4000.107968572,
-   1779399571,
-   1779399571
+   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
+   "FkCcgvCoR6p6BRucCnU1t1DXP97Y3rJeMYBiU1o31nuv",
+   90,
+   3369.31,
+   1772333130,
+   1779329564
   ],
   [
+   "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   "DxnxpqcUsErqRFRbfVrKr988F9AxayryC5eKWPKgvjmR",
+   46,
+   3282.935470325,
+   1784333319,
+   1793634138
+  ],
+  [
+   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
+   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    2,
-   4000.0,
-   1779399275,
-   1779399275
+   3000.0,
+   1778690565,
+   1779399214
+  ],
+  [
+   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
+   "4qcD8iSFLC5VDZphBtM7pSeevtHtD8Chi7Zmhcm9TvHm",
+   28,
+   2907.65,
+   1783643405,
+   1793313453
   ],
   [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
@@ -1016,35 +984,51 @@
   ],
   [
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
+   15,
+   2587.98,
+   1783642957,
+   1793144714
+  ],
+  [
+   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
+   28,
+   2359.4,
+   1779032471,
+   1783104243
+  ],
+  [
+   "DxnxpqcUsErqRFRbfVrKr988F9AxayryC5eKWPKgvjmR",
+   "F5XqYtdUWUT7bbuuKEjckDs8Hwk7j7mhdwGe3YKn5Xf7",
+   1,
+   2000.053984286,
+   1779399571,
+   1779399571
+  ],
+  [
+   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "DxnxpqcUsErqRFRbfVrKr988F9AxayryC5eKWPKgvjmR",
+   1,
+   2000.0,
+   1779399275,
+   1779399275
+  ],
+  [
+   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
    "9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm",
-   4,
-   1300.0,
+   2,
+   650.0,
    1782072538,
    1783599172
   ],
   [
    "9bxyzm6MFn3TWEedvYuMzSaZkkGWKSyTgWpRXCzMP3dm",
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   2,
-   700.0,
+   1,
+   350.0,
    1781817855,
    1781817855
-  ],
-  [
-   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   "6xMLLrtZAh8ToWjeZ9Nm4RKtEC3uY2Qqscihz4yHp1jK",
-   2,
-   500.0,
-   1778873117,
-   1778873117
-  ],
-  [
-   "6xMLLrtZAh8ToWjeZ9Nm4RKtEC3uY2Qqscihz4yHp1jK",
-   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
-   2,
-   499.999981,
-   1778873479,
-   1778873479
   ],
   [
    "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
@@ -1055,10 +1039,26 @@
    1782846300
   ],
   [
+   "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+   "6xMLLrtZAh8ToWjeZ9Nm4RKtEC3uY2Qqscihz4yHp1jK",
+   1,
+   250.0,
+   1778873117,
+   1778873117
+  ],
+  [
+   "6xMLLrtZAh8ToWjeZ9Nm4RKtEC3uY2Qqscihz4yHp1jK",
+   "AvYukzeAFzFo66i1GJHShcdBbb4jeSkZiEJnNMds54mo",
+   1,
+   249.9999905,
+   1778873479,
+   1778873479
+  ],
+  [
    "E94dd6pnFhE7LNbC7oSbyWmCCQ9kNoEhSa6cKN6brSAm",
    "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
-   2,
-   165.6,
+   1,
+   82.8,
    1790953957,
    1790953957
   ],

@@ -1,0 +1,189 @@
+{
+ "group": [
+  "2zPmi3kkTcCZ1y2v5wyAkp4BvQkn4fURZfARUqvdKAEt",
+  "3q1815j6UC4NXzPqPr9ZACYtFehsePd2t83pxRsna41X",
+  "64A4HMRTY1Ars3BLbTNsCyJRi7ctC6JSAugWmCoB7zTP",
+  "76WoCZAGzoVSinUrsdbjJzki9z8qVs7ixbLfW2gTrMmv",
+  "7Gi3RNdV3nZU9fhnLodZ6p662dQgQDe5ck2VWn9d45Tn",
+  "8aJEPXG7VLoLhpGDVkv1NszzcstwLxxCXLKd3FoF75bA",
+  "91qBrQrZdDXv7JrV3ypB7YfTL1oJpVqjPJRzQcgmu9CL",
+  "AJ8Be7wjoJgj2WTFDWN6kAcssJMeAXmLqGQuS1c5hsWb",
+  "B9D6JC5QB8nTmVQTa97BSV1soVE7VB8k7Q41our5y9FT",
+  "CEq8qbEpk2sWr7Pi7T8kXScWUaM6NmCJCCdni1uortz5",
+  "EGaQ32XG2tysbaW3URoxT3ggSRtT6dh183UerJPnY69n",
+  "F353AjdpmPBQB9ePYBxGZNPyH88ToqC7HtXq5Tg6amGm",
+  "Fxmyd3PeTMpVe7bWio4aKAtpkSruLqZYdnNWRq6GyqGt",
+  "GC2ugRit4gEu7HqZpTxt9d7kxXxS7JSwFYNM3PHYH1Qg",
+  "HzUWCGMfLFo3dmus5VYA5oFemEzg59YzSpcsE3y7n2WF"
+ ],
+ "fee_account_sample": [
+  {
+   "sig": "4umUiwr8wBfi7UGe3az2ZmJqJCnaRQBcPRPuUhp3uenfogak2fDqXie1pRmySd54p5NAWfc35KEfJsmPYDv3jKUR",
+   "where": "in group",
+   "fee_account_gain": 444884,
+   "vault_owner_gain": 444884
+  },
+  {
+   "sig": "2VnWLZswzu4eocNUVdZVza4DvTBP4hmD3B8WaJZo3udCrkDgRqknv2gk1tM79LXTvb5WQNLtsxPoxw8p5KmhBfom",
+   "where": "in group",
+   "fee_account_gain": 4448839,
+   "vault_owner_gain": 4448839
+  },
+  {
+   "sig": "gjuj8c3h2aJTWxk6SshB5RhT7VEpP5QxbxgtAGriCeEbHtauLPXMNcC5WFgfFsXYmafAN4ndiWmURGX7jovTHEq",
+   "where": "in group",
+   "fee_account_gain": 5450838,
+   "vault_owner_gain": 5450838
+  },
+  {
+   "sig": "4AhVcBEoXMCFdc4UqPN4Njb17xQNmwGaHw3wBC3wviCrzxhonTNtSCNRbkST5K4VwphPgF5XSACaGDoCxS5gMm1C",
+   "where": "in group",
+   "fee_account_gain": 423932,
+   "vault_owner_gain": 423932
+  },
+  {
+   "sig": "3humb8fEWv6Ztaj6V6WtBAQziMDPKkD3svjyR2rJ2DaFGfwBPv1ULrYhcDzH1yewQ3YvN8aZsAPuCYqXuUCAEqAE",
+   "where": "outside",
+   "fee_account_gain": 3549943,
+   "vault_owner_gain": 3549943
+  },
+  {
+   "sig": "3UqLrBMSLt2gNHwPAGsU5hBjNZPC4f3ZoXxDL8LhXiYCyEmgU4pVzAP3qPDxMKUHMAJTGKb5ptDargJUtoyAaQmT",
+   "where": "outside",
+   "fee_account_gain": 843325,
+   "vault_owner_gain": 843325
+  },
+  {
+   "sig": "4t54oybeaUfUyXx6suRoL5SW2j34YaF9yKTZs2uinpMHzkjDRJwdXBDq7mKbhdu85AxqvqNgYzAvM6iYSwGN3uy6",
+   "where": "outside",
+   "fee_account_gain": 843936,
+   "vault_owner_gain": 843936
+  },
+  {
+   "sig": "nx4hmfvt4WQwMzGVJ2fP5ZPPgrjsk2DJ88L5mRvN4p2u2oCWF5JoeGVvw2sUDp2UCHaugfwPDn6KuyDuF6UzR2s",
+   "where": "outside",
+   "fee_account_gain": 160751,
+   "vault_owner_gain": 160751
+  },
+  {
+   "sig": "3YzrSeUjr9b8imHamgu8v4JUBX9hzhwPYm8n5MGkYuCVJBbVgSi4Ht2tL2MyAHu9Zmp3s9jU8akA3tuBQpEMMuuk",
+   "where": "outside",
+   "fee_account_gain": 528800,
+   "vault_owner_gain": 528800
+  },
+  {
+   "sig": "q1J8cSqLFF49YBDA1qbNswBsjHLmAfsoQoQacW9iZFEEemnmCpYboFa87FkLdcDzpomgscAcVf42Ph66nhmX4G9",
+   "where": "outside",
+   "fee_account_gain": 479698,
+   "vault_owner_gain": 479698
+  },
+  {
+   "sig": "587kP3KSPvehZebFzmKXDbZvSg3V28bGPwzLYTfDXFmTqipAVvY4d4yrtigMCp8weKCsNq4DyDGaRrcptVpqynci",
+   "where": "outside",
+   "fee_account_gain": 908645,
+   "vault_owner_gain": 908645
+  },
+  {
+   "sig": "hsxT2HKxWVoH4Zr9efNU4JkbsXQzm6L4spedm3VgwAQJtdxdCCPdALdYpYaEZCD4nKAiKxaVfor54PN7n29cLeW",
+   "where": "outside",
+   "fee_account_gain": 4161722,
+   "vault_owner_gain": 4161722
+  },
+  {
+   "sig": "fsbDX6DkcV29NKyfsDzFFqpPhbk16tJYtks9Pd1rrsVwYVivALojvfsXGqdpjcrD9XzmSprxuvaoo2MeFKTswb7",
+   "where": "outside",
+   "fee_account_gain": 840752,
+   "vault_owner_gain": 840752
+  }
+ ],
+ "first_tx": {
+  "sig": "evVqcN5GFnkvc4t2FdUaQUtqGcgkKUResfoSRouv7ohvfqNXREc7RsdU7hm14ZwNMvXvV6WsH7NoCX8GUfh3dhL",
+  "signers": [
+   "F3aJ28RrFAceShmtG1wJPmwgPZqQhVabzonsSao7qjEo"
+  ],
+  "gv_in_keys": true,
+  "time": "2026-06-16 20:59:26",
+  "logs": [
+   "CreateFeeSharingConfig",
+   "MigrateBondingCurveCreator",
+   "UpdateFeeShares",
+   "DistributeCreatorFees"
+  ],
+  "fee_payer_sol_with_family": 0
+ },
+ "group_sol_with_ansem_wallet": [],
+ "group_ansem_from_ansem_wallet": [
+  [
+   "91qBrQrZdDXv7JrV3ypB7YfTL1oJpVqjPJRzQcgmu9CL",
+   1,
+   354.0,
+   1782905133
+  ]
+ ],
+ "group_sol_with_family": [],
+ "first_funder_8wvqvPt1": [
+  [
+   "4AV2Qzp3N4c9RfzyEbNZs2wqWfW4EwKnnxFAZCndvfGh",
+   3.48175,
+   1776386161
+  ]
+ ],
+ "first_funder_GeBJSHK4": [
+  [
+   "4AV2Qzp3N4c9RfzyEbNZs2wqWfW4EwKnnxFAZCndvfGh",
+   18.9275,
+   1771333225
+  ]
+ ],
+ "pusher_sample": {
+  "transactions": 236,
+  "pushes": 231,
+  "recipients": [
+   [
+    "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+    200
+   ],
+   [
+    "71zpR8ZGSo4tEgWf8AmyuPcx3fzYjqwTDSAuhwQxBmSd",
+    31
+   ]
+  ],
+  "by_page": [
+   [
+    "2026-06-28 21:55:00",
+    100,
+    [
+     [
+      "GV6UUmNx",
+      100
+     ]
+    ]
+   ],
+   [
+    "2026-06-28 22:16:40",
+    100,
+    [
+     [
+      "GV6UUmNx",
+      100
+     ]
+    ]
+   ],
+   [
+    "2026-06-28 23:40:00",
+    33,
+    [
+     [
+      "71zpR8ZG",
+      31
+     ]
+    ]
+   ],
+   [
+    "2026-06-29 01:53:20",
+    3,
+    []
+   ]
+  ]
+ }
+}

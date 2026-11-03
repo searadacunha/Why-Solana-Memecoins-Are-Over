@@ -14,8 +14,13 @@
  "last_15_min_before_post": {
   "rows": 156,
   "buyers": 27,
-  "net_sol_bought": 6.375641874,
-  "net_sol_received_by_sellers": 16.601367628
+  "pool_sol_from_buys": 9.163299988,
+  "pool_sol_paid_to_sellers": 16.863228221
+ },
+ "since_25_june_to_post": {
+  "pool_sol_from_buys": 1201.103605685,
+  "pool_sol_paid_to_sellers": 1211.670704013,
+  "note": "21 to 25 June not read"
  },
  "slot_429250207": {
   "rows": 17,
@@ -31,7 +36,7 @@
   "sig": "3Rkq9qDdW98RS1fKjjCah744mQy1AAv5H649m7dK2NuGuxPLTyStNS8e3yoqGGPAPZrwVSkLXTroZdt3rP4iX7EW"
  },
  "buys_of_5_sol_in_hour_before_post": 1,
- "sol_in_first_218s_after_post": 432.358754703,
+ "sol_in_first_210s_after_post": 432.358754703,
  "one_slot_buyer_groups_25_to_27_june": {
   "slots_with_a_buyer": 2399,
   "slots_5_plus": 27,
@@ -205,187 +210,6 @@
   "fee_share_on_snapshot": 12,
   "ansem_traders_before_post": 28880,
   "ansem_traders_on_snapshot": 26,
-  "kol_recipients": [
-   [
-    "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
-    "Gake",
-    18,
-    1
-   ],
-   [
-    "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
-    "Gake",
-    18,
-    1
-   ],
-   [
-    "8zFZHuSRuDpuAR7J6FzwyF3vKNx4CVW3DFHJerQhc7Zd",
-    "Pow",
-    16,
-    0
-   ],
-   [
-    "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
-    "Mitch",
-    13,
-    2
-   ],
-   [
-    "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
-    "Mitch",
-    13,
-    2
-   ],
-   [
-    "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
-    "Ansem",
-    5,
-    7
-   ],
-   [
-    "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
-    "Ansem",
-    5,
-    7
-   ],
-   [
-    "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
-    "decu",
-    7,
-    1
-   ],
-   [
-    "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
-    "decu",
-    7,
-    1
-   ],
-   [
-    "BAr5csYtpWoNpwhUjixX7ZPHXkUciFZzjBp9uNxZXJPh",
-    "Jack Duval\ud83c\udf0a",
-    4,
-    3
-   ],
-   [
-    "BAr5csYtpWoNpwhUjixX7ZPHXkUciFZzjBp9uNxZXJPh",
-    "Jack Duval\ud83c\udf0a",
-    4,
-    3
-   ],
-   [
-    "2fg5QD1eD7rzNNCsvnhmXFm5hqNgwTTG8p7kQ6f3rx6f",
-    "Cupsey",
-    4,
-    2
-   ],
-   [
-    "2fg5QD1eD7rzNNCsvnhmXFm5hqNgwTTG8p7kQ6f3rx6f",
-    "Cupsey",
-    4,
-    2
-   ],
-   [
-    "215nhcAHjQQGgwpQSJQ7zR26etbjjtVdW74NLzwEgQjP",
-    "OGAntD",
-    4,
-    1
-   ],
-   [
-    "215nhcAHjQQGgwpQSJQ7zR26etbjjtVdW74NLzwEgQjP",
-    "OGAntD",
-    4,
-    1
-   ],
-   [
-    "As7HjL7dzzvbRbaD3WCun47robib2kmAKRXMvjHkSMB5",
-    "Otta",
-    4,
-    0
-   ],
-   [
-    "BCagckXeMChUKrHEd6fKFA1uiWDtcmCXMsqaheLiUPJd",
-    "dv",
-    4,
-    0
-   ],
-   [
-    "5M8ACGKEXG1ojKDTMH3sMqhTihTgHYMSsZc6W8i7QW3Y",
-    "Unipcs (aka 'Bonk Guy')",
-    4,
-    0
-   ],
-   [
-    "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
-    "Daumen",
-    2,
-    2
-   ],
-   [
-    "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
-    "Daumen",
-    2,
-    2
-   ],
-   [
-    "FTg1gqW7vPm4kdU1LPM7JJnizbgPdRDy2PitKw6mY27j",
-    "7",
-    3,
-    0
-   ],
-   [
-    "9yYya3F5EJoLnBNKW6z4bZvyQytMXzDcpU5D6yYr4jqL",
-    "Loopierr",
-    3,
-    0
-   ],
-   [
-    "FixmSpsBa7ew26gWdiqpoMAgKRFgbSXFbGAgfMZw67X",
-    "Marcell",
-    3,
-    0
-   ],
-   [
-    "86AEJExyjeNNgcp7GrAvCXTDicf5aGWgoERbXFiG1EdD",
-    "Publix",
-    3,
-    0
-   ],
-   [
-    "99xnE2zEFi8YhmKDaikc1EvH6ELTQJppnqUwMzmpLXrs",
-    "Coler",
-    3,
-    0
-   ],
-   [
-    "5XVKfruE4Zzeoz3aqBQfFMb5aSscY5nSyc6VwtQwNiid",
-    "I\u0336l\u0337y\u0336",
-    2,
-    1
-   ],
-   [
-    "DuQabFqdC9eeBULVa7TTdZYxe8vK8ct5DZr4Xcf7docy",
-    "orangie",
-    2,
-    1
-   ],
-   [
-    "5XVKfruE4Zzeoz3aqBQfFMb5aSscY5nSyc6VwtQwNiid",
-    "I\u0336l\u0337y\u0336",
-    2,
-    1
-   ],
-   [
-    "DuQabFqdC9eeBULVa7TTdZYxe8vK8ct5DZr4Xcf7docy",
-    "orangie",
-    2,
-    1
-   ],
-   [
-    "8deJ9xeUvXSJwicYptA9mHsU2rN2pDx37KWzkDkEXhU6",
-    "Cooker",
-    2,
-    0
-   ]
-  ]
+  "note": "Counts only. The list maps wallets to people, unverified, so the pairs are not published."
  }
 }
