@@ -1,6 +1,6 @@
 # State of the work
 
-Checkpoint: 2026-11-03. Rewritten at each step; history is in `git log` and in the project journal.
+Checkpoint: 2026-11-03, second session of the day. Rewritten at each step; history is in `git log` and in the project journal.
 
 ## Done and checked
 
@@ -19,7 +19,7 @@ Checkpoint: 2026-11-03. Rewritten at each step; history is in `git log` and in t
 
 ## Not done
 
-See `TODO.md`.
+See `TODO.md`. Next, in this order: search local files for the 24 undetermined wallets and the last card, fix a matched control for the signal rate before reading it, then the fleet against ordinary gateway traffic, `AwzntLka…` and the 8 strict bursts, each only if it can separate one operator, a coordinated group and a shared service.
 
 ## Where the data is
 
