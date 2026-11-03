@@ -12,6 +12,7 @@ from .test_decode import A, B, SYS, mk, sys_transfer
 def test_root_needs_a_marker(tmp_path, monkeypatch):
     monkeypatch.setenv("FORENSICS_DATA_ROOT", str(tmp_path))
     monkeypatch.setattr(S, "MIN_FREE_BYTES", 0)
+    monkeypatch.setattr(S, "INTERNAL_MIN_FREE_BYTES", 0)  # the marker is under test, not this machine's free space
     with pytest.raises(S.StorageError):
         S.data_root(allow_internal=True)
     (tmp_path / S.MARKER).write_text("")
