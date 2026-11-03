@@ -5,7 +5,7 @@
  "python": "~/.local/share/forensics_v2/venv (3.13, duckdb)",
  "credits": {
   "ceiling": 150000,
-  "used_counted_by_this_code": 71863,
+  "used_counted_by_this_code": 72748,
   "note": "Counted at 1 per standard call and 10 per history page, per Helius docs. Helius own figures not read."
  },
  "keys": {
