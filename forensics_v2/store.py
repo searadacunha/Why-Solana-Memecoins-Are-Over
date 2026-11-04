@@ -66,38 +66,49 @@ def connect(path: Optional[Path] = None) -> Any:
 
 
 def ingest(con: Any, txs: Iterable[D.Decoded], tx_index: Optional[dict[str, int]] = None) -> int:
-    """Add decoded transactions. Returns how many were new; a replay returns 0 and changes nothing."""
+    """Add a batch atomically; a replay adds nothing. Manages its own transaction.
+
+    A failed insert rolls back the batch's parent and child rows, so a stored
+    signature cannot make a later retry silently skip an incomplete record.
+    """
     new = 0
-    for d in txs:
-        before = con.execute("SELECT count(*) FROM transactions WHERE signature = ?", [d.signature]).fetchone()[0]
-        if before:
-            continue
-        new += 1
-        con.execute("INSERT INTO transactions VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                    [d.signature, d.slot, (tx_index or {}).get(d.signature), d.block_time, d.ok, d.fee, d.fee_payer,
-                     d.conserved, len(d.residual), len(d.token_residual), ",".join(d.venues)])
-        seen = set()
-        for t in d.transfers:
-            if (t.path, t.kind) in seen:
+    con.execute("BEGIN TRANSACTION")
+    try:
+        for d in txs:
+            before = con.execute("SELECT count(*) FROM transactions WHERE signature = ?", [d.signature]).fetchone()[0]
+            if before:
                 continue
-            seen.add((t.path, t.kind))
-            con.execute("INSERT INTO instructions VALUES (?,?,?,?,?,?,?,?,?)",
-                        [d.signature, t.path, t.kind, t.src, t.dst, t.amount, t.mint, t.src_owner, t.dst_owner])
-        for owner, n in d.owners.items():
-            con.execute("INSERT INTO balance_movements VALUES (?,?,?,?,?)", [d.signature, owner, n.native, n.wsol, n.rent])
-            for mint, amount in n.tokens.items():
-                con.execute("INSERT INTO token_movements VALUES (?,?,?,?)", [d.signature, owner, mint, amount])
-            for mint, dt in D.traded_mints(d, owner).items():
-                side = "buy" if dt > 0 and n.sol < 0 else "sell" if dt < 0 and n.sol > 0 else "other"
-                con.execute("INSERT INTO swap_events VALUES (?,?,?,?,?,?,?)",
-                            [d.signature, owner, mint, dt, n.sol, side, ",".join(d.venues)])
-        for acct, ta in d.token_accounts.items():
-            con.execute("INSERT OR IGNORE INTO token_accounts VALUES (?,?,?,?)", [acct, ta.mint, ta.owner, ta.program])
-        for e in d.edges:
-            con.execute("INSERT OR IGNORE INTO funding_edges VALUES (?,?,?,?,?,?,?)",
-                        [d.signature, e.src, e.dst, e.lamports, e.evidence, e.basis, e.path or ""])
-        for owner, v in d.unresolved_sol.items():
-            con.execute("INSERT INTO unresolved_sol VALUES (?,?,?)", [d.signature, owner, v])
+            con.execute("INSERT INTO transactions VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                        [d.signature, d.slot, (tx_index or {}).get(d.signature), d.block_time, d.ok, d.fee, d.fee_payer,
+                         d.conserved, len(d.residual), len(d.token_residual), ",".join(d.venues)])
+            seen = set()
+            for t in d.transfers:
+                if (t.path, t.kind) in seen:
+                    continue
+                seen.add((t.path, t.kind))
+                con.execute("INSERT INTO instructions VALUES (?,?,?,?,?,?,?,?,?)",
+                            [d.signature, t.path, t.kind, t.src, t.dst, t.amount, t.mint, t.src_owner, t.dst_owner])
+            for owner, n in d.owners.items():
+                con.execute("INSERT INTO balance_movements VALUES (?,?,?,?,?)",
+                            [d.signature, owner, n.native, n.wsol, n.rent])
+                for mint, amount in n.tokens.items():
+                    con.execute("INSERT INTO token_movements VALUES (?,?,?,?)", [d.signature, owner, mint, amount])
+                for mint, dt in D.traded_mints(d, owner).items():
+                    side = "buy" if dt > 0 and n.sol < 0 else "sell" if dt < 0 and n.sol > 0 else "other"
+                    con.execute("INSERT INTO swap_events VALUES (?,?,?,?,?,?,?)",
+                                [d.signature, owner, mint, dt, n.sol, side, ",".join(d.venues)])
+            for acct, ta in d.token_accounts.items():
+                con.execute("INSERT OR IGNORE INTO token_accounts VALUES (?,?,?,?)", [acct, ta.mint, ta.owner, ta.program])
+            for e in d.edges:
+                con.execute("INSERT OR IGNORE INTO funding_edges VALUES (?,?,?,?,?,?,?)",
+                            [d.signature, e.src, e.dst, e.lamports, e.evidence, e.basis, e.path or ""])
+            for owner, v in d.unresolved_sol.items():
+                con.execute("INSERT INTO unresolved_sol VALUES (?,?,?)", [d.signature, owner, v])
+            new += 1
+        con.execute("COMMIT")
+    except BaseException:  # rollback on interruption too, then propagate
+        con.execute("ROLLBACK")
+        raise
     return new
 
 

@@ -49,6 +49,17 @@ def test_both_directions_with_signatures_and_evidence():
     assert g.nodes[A]["coverage"]["reached_genesis"] and g.nodes[A]["coverage"]["first_observable_is_first_activity"]
 
 
+def test_distinct_transfers_in_one_transaction_survive_graph_deduplication():
+    k = [A, B, SYS]
+    tx = mk(k, [100_000, 0, 1], [93_800, 1200, 1],
+            [sys_transfer(k, A, B, 700), sys_transfer(k, A, B, 500)])
+    # Read the same transaction from both endpoints and directions. Keep each
+    # instruction once, rather than retaining only the first A -> B payment.
+    g = trace(FakeClient([tx]), A, "both", hops=1, min_lamports=1, services={})
+    assert [(e["instruction"], e["lamports"]) for e in g.edges] == [("0", 700), ("1", 500)]
+    assert sum(e["lamports"] for e in g.edges) == 1200
+
+
 def test_a_service_ends_the_path_and_says_why():
     c = FakeClient(WORLD)
     g = trace(c, A, "back", hops=2, services={SERVICE: {"name": "svc"}})

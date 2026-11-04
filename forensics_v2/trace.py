@@ -202,7 +202,7 @@ def trace(client: RpcClient, seed: str, direction: str = "both", hops: int = 2, 
     g = Graph(seed, direction, hops, min_lamports)
     frontier = [(seed, 0, d) for d in (("back", "forward") if direction == "both" else (direction,))]
     expanded: set[tuple[str, str]] = set()
-    seen_edges: set[tuple[str, str, str]] = set()
+    seen_edges: set[tuple[str, str, str, str, Optional[str]]] = set()
     while frontier:
         addr, depth, way = frontier.pop(0)
         if (addr, way) in expanded:
@@ -228,7 +228,7 @@ def trace(client: RpcClient, seed: str, direction: str = "both", hops: int = 2, 
             g.stops.append({"address": addr, "direction": way, "reason": "history_truncated",
                             "note": "signature walk capped: edges below are a lower bound"})
         for f in flows:
-            key = (f.signature, f.src, f.dst)
+            key = (f.signature, f.src, f.dst, f.basis, f.path)
             if f.lamports >= min_lamports and key not in seen_edges:
                 seen_edges.add(key)
                 g.edges.append({"src": f.src, "dst": f.dst, "lamports": f.lamports, "signature": f.signature,
