@@ -67,10 +67,12 @@ class Budget:
         path.parent.mkdir(parents=True, exist_ok=True)
 
     def charge(self, credits: int = 1) -> None:
-        if self.run_limit is not None and self.run_spent + credits > self.run_limit:
-            raise BudgetExhausted("this run's limit reached: %d of %d" % (self.run_spent, self.run_limit))
         with open(self.path, "a+") as f:
             fcntl.flock(f, fcntl.LOCK_EX)
+            # Each call opens its own descriptor: this lock also serializes the
+            # run allowance for threads that share this Budget instance.
+            if self.run_limit is not None and self.run_spent + credits > self.run_limit:
+                raise BudgetExhausted("this run's limit reached: %d of %d" % (self.run_spent, self.run_limit))
             f.seek(0)
             used = int(f.read() or 0)
             if used + credits > self.ceiling:
@@ -78,7 +80,8 @@ class Budget:
             f.seek(0)
             f.truncate()
             f.write(str(used + credits))
-        self.run_spent += credits
+            f.flush()  # Do not charge the run if the counter write fails.
+            self.run_spent += credits
 
     def used(self) -> int:
         return int(self.path.read_text() or 0) if self.path.exists() else 0
