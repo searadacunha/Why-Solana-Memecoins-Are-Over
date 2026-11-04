@@ -174,11 +174,10 @@ def cluster_bootstrap_mean_ci(values_by_cluster, n_boot=2000, seed=999, alpha=0.
     independently with replacement using a local seeded generator, then give
     each drawn cluster mean equal weight. Averaging the pooled tokens instead
     would target a different, cluster-size-weighted statistic."""
-    keys = sorted(values_by_cluster)
+    cmeans = {k: sum(v) / len(v) for k, v in values_by_cluster.items() if v}
+    keys = sorted(cmeans)
     if len(keys) < 3:
         return (None, None)
-    cmeans = {k: sum(v) / len(v) for k, v in values_by_cluster.items() if v}
-    keys = [k for k in keys if k in cmeans]
     rng = random.Random(seed)
     out = []
     for _ in range(n_boot):

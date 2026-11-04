@@ -80,12 +80,14 @@ def first_signature(addr: str) -> tuple[Optional[str], Optional[int], int, bool]
     address's age rather than its first.
     """
     CAP = 40           # 40 * 1000 = 40 000 signatures max
-    before, last, n = None, None, 0
+    before: Optional[str] = None
+    last: Optional[dict[str, Any]] = None
+    n = 0
     while n < CAP:
         r = get_sigs(addr, 1000, before)
         n += 1
         if not r:
-            break
+            return (last or {}).get("signature"), (last or {}).get("blockTime"), n, False
         last = r[-1]
         if len(r) < 1000:
             return last["signature"], last.get("blockTime"), n, False

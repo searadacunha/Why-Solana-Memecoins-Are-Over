@@ -2,6 +2,8 @@
 whole hardening rests on ("a failed call raises, never a silent empty result").
 Tested with a mocked transport; no network."""
 import json
+from concurrent.futures import ThreadPoolExecutor
+from threading import Barrier
 import urllib.error
 import urllib.request
 
@@ -125,3 +127,28 @@ def test_walk_sigs_stops_at_until_ts_without_raising(monkeypatch):
     _patch_response(monkeypatch, full)
     out, pages = rpc_client.walk_sigs("SomeAddr", until_ts=100, max_pages=2)
     assert len(out) == 1000 and pages == 1
+
+
+def test_concurrent_cache_writers_do_not_share_a_temporary_file(monkeypatch, tmp_path):
+    # Both misses finish writing before either publishes. A fixed name such as
+    # <key>.json.tmp lets one writer remove the other writer's pending file.
+    ready = Barrier(2)
+    real_replace = rpc_client.os.replace
+
+    def publish(src, dst):
+        ready.wait(timeout=5)
+        return real_replace(src, dst)
+
+    monkeypatch.setattr(rpc_client.os, "replace", publish)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = [pool.submit(rpc_client.cached, "shared", lambda: {"value": 42}, str(tmp_path))
+                   for _ in range(2)]
+        assert [future.result(timeout=10) for future in futures] == [{"value": 42}] * 2
+    assert json.loads((tmp_path / "shared.json").read_text()) == {"value": 42}
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["shared.json"]
+
+
+def test_failed_cache_serialization_leaves_no_partial_file(tmp_path):
+    with pytest.raises(TypeError):
+        rpc_client.cached("bad", lambda: {"not_json": object()}, str(tmp_path))
+    assert list(tmp_path.iterdir()) == []
