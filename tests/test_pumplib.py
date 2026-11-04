@@ -144,6 +144,19 @@ def test_cluster_bootstrap_mean_ci_refuses_fewer_than_three_clusters():
     assert P.cluster_bootstrap_mean_ci({"a": [1.0], "b": [2.0]}) == (None, None)
 
 
+@pytest.mark.parametrize("observed", [[], [1.0], [1.0, 2.0]])
+def test_cluster_bootstrap_empty_groups_do_not_inflate_the_sample(observed):
+    by = {str(i): [value] for i, value in enumerate(observed)}
+    by.update({"empty_a": [], "empty_b": [], "empty_c": []})
+    assert P.cluster_bootstrap_mean_ci(by, n_boot=10) == (None, None)
+
+
+def test_cluster_bootstrap_empty_groups_do_not_change_a_valid_interval():
+    by = {"a": [1.0], "b": [2.0], "c": [4.0]}
+    assert P.cluster_bootstrap_mean_ci({**by, "empty": []}, n_boot=100) == P.cluster_bootstrap_mean_ci(
+        by, n_boot=100)
+
+
 def test_cluster_bootstrap_mean_ci_is_deterministic():
     by = {"c%d" % i: [float(i), float(i) + 1] for i in range(7)}
     runs = {P.cluster_bootstrap_mean_ci(by, n_boot=300, seed=3) for _ in range(3)}

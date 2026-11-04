@@ -96,7 +96,11 @@ def rpc(method: str, params: list[Any], tolerate: tuple[int, ...] = (), tries: i
             if code in tolerate:
                 return None
             raise HeliusError("%s: %s" % (method, json.dumps(err)[:200]))
-        return out.get("result") if isinstance(out, dict) else None
+        if not isinstance(out, dict) or "result" not in out:
+            raise HeliusError("%s: malformed RPC response (missing result)" % method)
+        if method == "getSignaturesForAddress" and not isinstance(out["result"], list):
+            raise HeliusError("getSignaturesForAddress -> expected a list")
+        return out["result"]
     STATS["fail"] += 1
     raise HeliusError("%s: gave up after %d failures and %d 429s: %s" % (method, t, n429, last))
 

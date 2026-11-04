@@ -59,16 +59,21 @@ def test_hitting_the_cap_is_reported_as_censored(monkeypatch):
 
 
 def test_an_address_with_no_signature_returns_nothing(monkeypatch):
-    """Nothing found: the caller gets None rather than a fabricated date.
-
-    Note the flag comes back True here, which reads as 'truncated' although the
-    walk simply found an empty history. v08_ages.py is unaffected because it
-    also requires first_ts, which is None in this case.
-    """
+    """An empty history is complete, but has no fabricated first activity."""
     _pages(monkeypatch, [[]])
     sig, ts, pages, censored = lib_verif.first_signature("A")
     assert sig is None and ts is None
     assert pages == 1
+    assert censored is False
+
+
+def test_empty_page_after_a_full_page_confirms_genesis(monkeypatch):
+    # Exactly 1,000 signatures needs an empty second page. This is a natural
+    # end, just like a short non-empty page, and must not censor the date.
+    full = [_sig("s%d" % i, 2000 - i) for i in range(1000)]
+    calls = _pages(monkeypatch, [full, []])
+    assert lib_verif.first_signature("A") == ("s999", 1001, 2, False)
+    assert calls == [None, "s999"]
 
 
 # ------------------------------------------------------------------ stats ---

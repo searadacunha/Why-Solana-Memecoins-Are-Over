@@ -28,6 +28,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -245,9 +246,9 @@ def enhanced(addr: str, limit: int = 100, before: Optional[str] = None,
 # ------------------------------------------------------------------ cache ----
 def cached(name: str, fn: Callable[[], Any],
            cache_dir: Optional[str] = None) -> Any:
-    """Disk memoisation: cache_dir/<name>.json. The write is ATOMIC (a temp
-    file renamed into place), so a crash mid-write cannot leave a truncated
-    JSON that poisons the next run."""
+    """Disk memoisation: cache_dir/<name>.json. Each writer uses its own
+    temporary file, renamed atomically, so concurrent misses cannot corrupt
+    one another's write or publish a truncated JSON."""
     d = cache_dir or settings.CACHE
     os.makedirs(d, exist_ok=True)
     p = os.path.join(d, name + ".json")
@@ -255,8 +256,14 @@ def cached(name: str, fn: Callable[[], Any],
         with open(p) as f:
             return json.load(f)
     v = fn()
-    tmp = p + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(v, f)
-    os.replace(tmp, p)
+    fd, tmp = tempfile.mkstemp(prefix=os.path.basename(p) + ".", suffix=".tmp", dir=d)
+    try:
+        with os.fdopen(fd, "w") as f:
+            json.dump(v, f)
+        os.replace(tmp, p)
+    finally:
+        try:
+            os.unlink(tmp)
+        except FileNotFoundError:
+            pass  # a successful replace already removed this writer's file
     return v
