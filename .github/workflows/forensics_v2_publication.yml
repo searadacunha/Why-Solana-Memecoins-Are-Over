@@ -1,0 +1,64 @@
+name: Publication guard
+
+on:
+  push:
+    branches: [main, forensics-v2, ansem-network]
+  pull_request:
+    branches: [main, forensics-v2, ansem-network]
+
+permissions:
+  contents: read
+
+jobs:
+  publication:
+    name: publication-guard
+    runs-on: ubuntu-latest
+    env:
+      PUBLICATION_BRANCH: ${{ github.base_ref || github.ref_name }}
+      PUBLICATION_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check the real publication head against its destination
+        run: >-
+          python forensics_v2/publication_guard.py
+          --branch "$PUBLICATION_BRANCH" --commit "$PUBLICATION_COMMIT"
+
+      - name: Check the simulated merge tree
+        if: github.event_name == 'pull_request'
+        run: python forensics_v2/publication_guard.py --branch "$PUBLICATION_BRANCH" --commit HEAD
+
+      - name: Install the guard test runner
+        run: python -m pip install pytest==9.2.0
+
+      - name: Exercise the publication guard against temporary Git repositories
+        run: python -m pytest -q forensics_v2/tests/test_publication_guard.py
+
+      - name: Verify the main reliability regressions
+        if: env.PUBLICATION_BRANCH == 'main'
+        run: >-
+          python -m pytest -q tests/test_lib_verif.py tests/test_pumplib.py
+          tests/test_rpc_client.py tests/test_frpc.py
+
+      - name: Install the forensic storage test dependency
+        if: env.PUBLICATION_BRANCH != 'main'
+        run: python -m pip install duckdb==2.0.0
+
+      - name: Enforce the original historical boundary with its base available
+        if: env.PUBLICATION_BRANCH != 'main'
+        run: |
+          git cat-file -e 6565245e3f5d48b0e6a987ebe6f2aa5954fb00be^{commit}
+          python -m pytest -q forensics_v2/tests/test_integrity.py::test_nothing_outside_forensics_v2_changed
+
+      - name: Run the existing forensic storage and trace regressions
+        if: env.PUBLICATION_BRANCH != 'main'
+        run: |
+          python -c "import duckdb"
+          python -m pytest -q forensics_v2/tests/test_storage_store.py forensics_v2/tests/test_trace.py
