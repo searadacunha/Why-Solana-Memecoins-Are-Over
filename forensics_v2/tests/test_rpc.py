@@ -1,6 +1,9 @@
 """The client against scripted replies: every failure must stay a failure, never an empty history."""
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
 import io
 import json
+import threading
 import urllib.error
 
 import pytest
@@ -139,6 +142,54 @@ def test_run_limit_ignores_what_other_processes_spend(tmp_path):
     assert other.used() == 42
     with pytest.raises(R.BudgetExhausted):
         R.Budget(tmp_path / "credits", 42).charge(1)  # the shared ceiling still binds everyone
+
+
+def test_parallel_charges_cannot_exceed_the_run_limit(tmp_path, monkeypatch):
+    budget = R.Budget(tmp_path / "credits", ceiling=100, run_limit=1)
+    ready = threading.Barrier(2)
+    real_flock = R.fcntl.flock
+
+    def contend(stream, operation):
+        # Both workers reach the real file lock before either one can acquire it.
+        ready.wait(timeout=5)
+        return real_flock(stream, operation)
+
+    monkeypatch.setattr(R.fcntl, "flock", contend)
+
+    def charge_one(_):
+        try:
+            budget.charge()
+            return True
+        except R.BudgetExhausted:
+            return False
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        outcomes = list(executor.map(charge_one, range(2)))
+    assert sorted(outcomes) == [False, True]
+    assert budget.run_spent == budget.used() == 1
+
+
+@pytest.mark.parametrize("failed_operation", ["write", "flush"])
+def test_failed_counter_update_does_not_charge_the_run(tmp_path, monkeypatch, failed_operation):
+    budget = R.Budget(tmp_path / "credits", ceiling=100, run_limit=1)
+    real_open = open
+
+    def fail(*args, **kwargs):
+        raise OSError("counter unavailable")
+
+    @contextmanager
+    def faulty_open(*args, **kwargs):
+        with real_open(*args, **kwargs) as stream:
+            class Counter:
+                def __getattr__(self, name):
+                    return fail if name == failed_operation else getattr(stream, name)
+
+            yield Counter()
+
+    monkeypatch.setattr(R, "open", faulty_open, raising=False)
+    with pytest.raises(OSError, match="counter unavailable"):
+        budget.charge()
+    assert budget.run_spent == 0
 
 
 def test_null_transaction_is_not_found_and_never_cached(tmp_path):
