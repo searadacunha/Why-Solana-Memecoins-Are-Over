@@ -1,0 +1,106 @@
+{
+ "tokens": [
+  {
+   "mint": "DHq1eHTKEJkpXNGJ9iu3t2nQZ68oaDRosVimYNZApump",
+   "creator": "AXeUctg89j3ikNLAwTYQeZ8iqqaduyUqheDjYR5mdeCw",
+   "t_create": 1734076238,
+   "creator_is_fleet": false,
+   "first_events": 87,
+   "creator_tx_read": 58,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "H9bPp8gCrueraBsPJZjpr2U8D6JDe9wEv3qhHS8bXs1b"
+  },
+  {
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "creator": "ApBXF9f1tgk8FTDbUonjTmGnWBCJRyedKKD26HP3Tp7X",
+   "t_create": 1734101434,
+   "creator_is_fleet": false,
+   "first_events": 121,
+   "creator_tx_read": 200,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "8RU58KBpKYz5QRwfmR1QaQ1U75xtvPbLbuLfTN4nqz6v"
+  },
+  {
+   "mint": "BpXjLp1xSfRNiqTWRyzuV5X1CCsheWaR7ZZjdC6rpump",
+   "creator": "HbiwCcTwxqAzHnnTM3ZuonD8S3KPUWFVoT6FQpAN1nRs",
+   "t_create": 1734170332,
+   "creator_is_fleet": false,
+   "first_events": 119,
+   "creator_tx_read": 47,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+  },
+  {
+   "mint": "JDjsoEJXE4tgnrCYPRaWweSe9NXcyM92Thh2Whnzpump",
+   "creator": "6xcm3P2nPfsaHmtsVFLzU3GJgneJ2A8Jk77FceU9MxLp",
+   "t_create": 1734204108,
+   "creator_is_fleet": false,
+   "first_events": 158,
+   "creator_tx_read": 200,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "2cajJ61ZgkRs4SWUJsarU2g8F4YySRNhxXNTM7gaUYtn"
+  },
+  {
+   "mint": "FLfwkCVGakFa4LDS5ASKTdJQ24tU7RqGGCxwJ1gSpump",
+   "creator": "7TbLwhC3mr9hDotArKmmSRGJXvshkhfxn5obAAZ85E9e",
+   "t_create": 1734263905,
+   "creator_is_fleet": false,
+   "first_events": 109,
+   "creator_tx_read": 30,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "G9X7F4JzLzbSGMCndiBdWNi5YzZZakmtkdwq7xS3Q3FE"
+  },
+  {
+   "mint": "4Z3SXT4AtELLnnd9jFZxaKnUhf9VbVBEo8EY9Xmypump",
+   "creator": "5NC46gAFG9ujFEivLbwMzMz6o7NWruLAuZCKnWif2Adu",
+   "t_create": 1734266264,
+   "creator_is_fleet": false,
+   "first_events": 116,
+   "creator_tx_read": 41,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "7TbLwhC3mr9hDotArKmmSRGJXvshkhfxn5obAAZ85E9e"
+  },
+  {
+   "mint": "9VAUxZwNSCa5YbkcnAWjYBxDg9xACPMx19gTA7dapump",
+   "creator": "9LDBMEFag3HiSxnBnjxCg5deDEJkrCcoyeARkzzeMEGw",
+   "t_create": 1734345983,
+   "creator_is_fleet": false,
+   "first_events": 133,
+   "creator_tx_read": 79,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "9beVyPSoTu8iMMLzSCZqepQiPE3Qr9jnG6qUG16LoF5A"
+  },
+  {
+   "mint": "HYFwkjJbRaRuVg3V5PCFCH7YPq2YDFYRHChZ6dPSpump",
+   "creator": "F8MF4DYyHuLwagGqSBeetdHcpBK2qx3yVMDRhLoAusMH",
+   "t_create": 1734350048,
+   "creator_is_fleet": false,
+   "first_events": 171,
+   "creator_tx_read": 39,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "9LDBMEFag3HiSxnBnjxCg5deDEJkrCcoyeARkzzeMEGw"
+  },
+  {
+   "mint": "DvHm5wvfGDmaJdbkg4s9UBdLZ2CuQbqxaXjsJTTJpump",
+   "creator": "7gxAUwrxDEpkr8ddQvvPsbh8NPgRMusz8cRSMDbp4ccU",
+   "t_create": 1734358918,
+   "creator_is_fleet": false,
+   "first_events": 88,
+   "creator_tx_read": 89,
+   "creator_receives_from_fleet_lamports": 0,
+   "creator_sends_to_fleet_lamports": 0,
+   "creator_first_funder": "EonQAns8X4zHh5MPkb96ssDkSjrTt58tWBtJScrdL8pR"
+  }
+ ],
+ "distinct_creators": 9,
+ "creators_seen_twice": [],
+ "net_calls": 50
+}

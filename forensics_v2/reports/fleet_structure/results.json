@@ -1,0 +1,343 @@
+{
+ "payouts": 91789,
+ "days": 49,
+ "share_on_fee_line": 0.2205,
+ "share_repeated_exactly": 0.3772,
+ "distinct_amounts": 59175,
+ "top_amounts": [
+  {
+   "lamports": 1982815600,
+   "payouts": 3523,
+   "requested_sol": 2.0,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 1485815600,
+   "payouts": 1992,
+   "requested_sol": 1.5,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 2976815600,
+   "payouts": 1753,
+   "requested_sol": 3.0,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 1187615600,
+   "payouts": 1268,
+   "requested_sol": 1.2,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 1088215600,
+   "payouts": 1057,
+   "requested_sol": 1.1,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 2479815600,
+   "payouts": 995,
+   "requested_sol": 2.5,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 4944826000,
+   "payouts": 796,
+   "requested_sol": null,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 2181615600,
+   "payouts": 649,
+   "requested_sol": 2.2,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 9894826000,
+   "payouts": 602,
+   "requested_sol": null,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 2082215600,
+   "payouts": 459,
+   "requested_sol": 2.1,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 1585215600,
+   "payouts": 435,
+   "requested_sol": 1.6,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  },
+  {
+   "lamports": 1287015600,
+   "payouts": 425,
+   "requested_sol": 1.3,
+   "first": "2024-09-30",
+   "last": "2025-01-16"
+  }
+ ],
+ "days_with_over_half_on_line": 0,
+ "share_on_line_first_last_day": [
+  0.179,
+  0.0
+ ],
+ "windows_15_in_380s": 43,
+ "windows_on_fee_line": 28,
+ "windows_by_amount": [
+  [
+   1982815600,
+   5
+  ],
+  [
+   2181615600,
+   5
+  ],
+  [
+   2479815600,
+   5
+  ],
+  [
+   1485815600,
+   3
+  ],
+  [
+   2131915590,
+   3
+  ],
+  [
+   1600000000,
+   3
+  ],
+  [
+   1780000000,
+   3
+  ],
+  [
+   2976815600,
+   2
+  ]
+ ],
+ "fleet_amount_payouts": 1753,
+ "fleet_amount_per_active_day": 38.11,
+ "sampled_bursts": 150,
+ "by_strict_mint_count": {
+  "0": 142,
+  "1": 3,
+  "3": 4,
+  "4": 1
+ },
+ "strict_bursts": [
+  {
+   "i": 33,
+   "day": "2024-10-22",
+   "lamports": 2976815600,
+   "payouts": 40,
+   "wallets": 12,
+   "O1": true,
+   "strict_mints": [
+    "9DBJ9wT4w7b4m2QXVEBKXparaYCWxckPj1s5rnvnpump"
+   ],
+   "mints_5_wallets": [
+    "9DBJ9wT4w7b4m2QXVEBKXparaYCWxckPj1s5rnvnpump"
+   ],
+   "destinations_5_wallets": [
+    "D15CAtUpCVE6z7NeFhAKrYCUq7R9Xh98cypCFrV33HAi"
+   ],
+   "largest_destination_share": 5
+  },
+  {
+   "i": 106,
+   "day": "2024-12-03",
+   "lamports": 1982815600,
+   "payouts": 11,
+   "wallets": 11,
+   "O1": true,
+   "strict_mints": [
+    "BNRYAdTjiLDa48fp9KyKZSZ8vadxsYK7KyiJmgbkpump",
+    "BeFY5n9oqoNGpdMWtsi39GwvSAeTP4zN3TodirqSpump",
+    "EjCDHAnXXLSu3cezLJWgZasH3PmtrVME1YagMWumpump"
+   ],
+   "mints_5_wallets": [
+    "5znmTkBn25aZC6LbbdBhonpNqLDdihfwyMKn3GjZpump",
+    "BNRYAdTjiLDa48fp9KyKZSZ8vadxsYK7KyiJmgbkpump",
+    "BeFY5n9oqoNGpdMWtsi39GwvSAeTP4zN3TodirqSpump",
+    "EjCDHAnXXLSu3cezLJWgZasH3PmtrVME1YagMWumpump"
+   ],
+   "destinations_5_wallets": [
+    "GrmXv6qK672i9ToMtXoAiBqAFQD51m7TQm8P6MmRAc66"
+   ],
+   "largest_destination_share": 10
+  },
+  {
+   "i": 124,
+   "day": "2025-01-14",
+   "lamports": 1982815600,
+   "payouts": 11,
+   "wallets": 11,
+   "O1": true,
+   "strict_mints": [
+    "3WYH8DwufDpwytGYNHU6LfMCv7VZHmEuw37LqgXkpump",
+    "4W9WgPApec9NVtbVZFt3aCGYmb9i3EQUZ5simXctpump",
+    "8Gsb2FU71rThvLaEhwtQvRUyNGaNm7yvAjLTqgB5pump"
+   ],
+   "mints_5_wallets": [
+    "3WYH8DwufDpwytGYNHU6LfMCv7VZHmEuw37LqgXkpump",
+    "4W9WgPApec9NVtbVZFt3aCGYmb9i3EQUZ5simXctpump",
+    "8Gsb2FU71rThvLaEhwtQvRUyNGaNm7yvAjLTqgB5pump"
+   ],
+   "destinations_5_wallets": [
+    "8jPLUWVo6uVWYYY7prm9qxkSrSkjthBeJKk2fdZpLHzE"
+   ],
+   "largest_destination_share": 10
+  },
+  {
+   "i": 126,
+   "day": "2025-01-15",
+   "lamports": 1982815600,
+   "payouts": 10,
+   "wallets": 10,
+   "O1": true,
+   "strict_mints": [
+    "74XYNscywa47cs1LGX1XNf51b34BoW2giUeu6N9Zpump",
+    "CuFvNoB6To46CfKAeyk3rk4wNGKMKxBYdYF7zGiWpump",
+    "EzAVA4wPHZarHTUbHuj8JugS26ZX79zMZsaJmBNJpump"
+   ],
+   "mints_5_wallets": [
+    "74XYNscywa47cs1LGX1XNf51b34BoW2giUeu6N9Zpump",
+    "CuFvNoB6To46CfKAeyk3rk4wNGKMKxBYdYF7zGiWpump",
+    "EzAVA4wPHZarHTUbHuj8JugS26ZX79zMZsaJmBNJpump"
+   ],
+   "destinations_5_wallets": [
+    "Cxw6iN92GTxaQ74Xu39wofKFyMksfny5nKMfR7HGBy4s"
+   ],
+   "largest_destination_share": 9
+  },
+  {
+   "i": 138,
+   "day": "2025-01-28",
+   "lamports": 1000000000,
+   "payouts": 19,
+   "wallets": 12,
+   "O1": true,
+   "strict_mints": [
+    "9E1wHWJLRebEZKvDfqYK93bt9oW1HyXvgWBYbFgwpump"
+   ],
+   "mints_5_wallets": [
+    "9E1wHWJLRebEZKvDfqYK93bt9oW1HyXvgWBYbFgwpump"
+   ],
+   "destinations_5_wallets": [
+    "3rb7jngmTaf3wp5C7TNFSHfUixgmRsSvTYfBE6HiYKQw"
+   ],
+   "largest_destination_share": 12
+  },
+  {
+   "i": 140,
+   "day": "2025-01-28",
+   "lamports": 1987012970,
+   "payouts": 16,
+   "wallets": 12,
+   "O1": true,
+   "strict_mints": [
+    "9F8qoqzPa9k9VfNRv7xqNG8F9M1G15wZqg5ZuvRZpump"
+   ],
+   "mints_5_wallets": [
+    "9F8qoqzPa9k9VfNRv7xqNG8F9M1G15wZqg5ZuvRZpump"
+   ],
+   "destinations_5_wallets": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "largest_destination_share": 7
+  },
+  {
+   "i": 141,
+   "day": "2025-01-28",
+   "lamports": 1987012970,
+   "payouts": 13,
+   "wallets": 12,
+   "O1": true,
+   "strict_mints": [
+    "5VYpFWUbey8Wb6AMfmKPEQHEtt9cnrAfrQSghZAopump",
+    "CzPuA84MCKzJ3HUHkJxhbt3onj6ruL9Lm66pQiNgpump",
+    "HefqAhaP4av42gLNdvD37Q1cMY1m7j7VvCDyv8p7pump"
+   ],
+   "mints_5_wallets": [
+    "5VYpFWUbey8Wb6AMfmKPEQHEtt9cnrAfrQSghZAopump",
+    "CzPuA84MCKzJ3HUHkJxhbt3onj6ruL9Lm66pQiNgpump",
+    "HefqAhaP4av42gLNdvD37Q1cMY1m7j7VvCDyv8p7pump"
+   ],
+   "destinations_5_wallets": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "largest_destination_share": 9
+  },
+  {
+   "i": 142,
+   "day": "2025-01-28",
+   "lamports": 1987012970,
+   "payouts": 11,
+   "wallets": 11,
+   "O1": true,
+   "strict_mints": [
+    "BtpSaME215HBnaQHeFWBweNFdP8rQ4K8GCcv8MNapump",
+    "GDWf6BeUpm7yMNjubRHFRfRDXpaLw299N1mesbHppump",
+    "HXgZtYvrypPa7ekqZfFvmsB7Abnwwv7ihhRL9Htdpump",
+    "HfdRco158GAjiK5cM9XidSK9kGGT2KYVsL11mW3Upump"
+   ],
+   "mints_5_wallets": [
+    "BtpSaME215HBnaQHeFWBweNFdP8rQ4K8GCcv8MNapump",
+    "GDWf6BeUpm7yMNjubRHFRfRDXpaLw299N1mesbHppump",
+    "HXgZtYvrypPa7ekqZfFvmsB7Abnwwv7ihhRL9Htdpump",
+    "HfdRco158GAjiK5cM9XidSK9kGGT2KYVsL11mW3Upump"
+   ],
+   "destinations_5_wallets": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "largest_destination_share": 10
+  }
+ ],
+ "strict_pairs_sharing": [
+  {
+   "a": 140,
+   "b": 141,
+   "same_destination": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "same_strict_mints": 0,
+   "same_wallets": 0
+  },
+  {
+   "a": 140,
+   "b": 142,
+   "same_destination": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "same_strict_mints": 0,
+   "same_wallets": 0
+  },
+  {
+   "a": 141,
+   "b": 142,
+   "same_destination": [
+    "6aRTeY51oxJQd631spmMZnhRKLTw9WhGZiW6GHGpQSKp"
+   ],
+   "same_strict_mints": 0,
+   "same_wallets": 1
+  }
+ ],
+ "fleet_strict_tokens": 3,
+ "fleet_tokens": 9
+}

@@ -1,0 +1,3 @@
+# The repository's rules, with room for the store's SQL and the tests' hand-built transactions.
+extend = "../ruff.toml"
+line-length = 130

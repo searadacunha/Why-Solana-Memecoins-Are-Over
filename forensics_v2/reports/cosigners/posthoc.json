@@ -1,0 +1,56 @@
+{
+ "cosigner": {
+  "n": 198.0,
+  "fee_self": 0.4019866448040683,
+  "n_payers": 36.5,
+  "n_dests": 58.0,
+  "known_payers": 2.5,
+  "known_payer_sol_share": 0.2074466693424466,
+  "in_sol": 231.967051784,
+  "out_sol": 231.8592267765,
+  "top_payer_share": 0.23669462554839954,
+  "top_dest_share": 0.1894295635989018,
+  "signers_without_balance_change": 202.0,
+  "wallets": 106
+ },
+ "multi_operator": {
+  "n": 167.5,
+  "fee_self": 0.4139346061005047,
+  "n_payers": 40.5,
+  "n_dests": 64.5,
+  "known_payers": 2.0,
+  "known_payer_sol_share": 0.22153736035736976,
+  "in_sol": 263.7115218725,
+  "out_sol": 263.6933348325,
+  "top_payer_share": 0.25033339078415406,
+  "top_dest_share": 0.23217897415669053,
+  "signers_without_balance_change": 155.0,
+  "wallets": 16
+ },
+ "control": {
+  "n": 116.0,
+  "fee_self": 0.6123456790123457,
+  "n_payers": 26.0,
+  "n_dests": 45.0,
+  "known_payers": 1.0,
+  "known_payer_sol_share": 0.0551327579570516,
+  "in_sol": 1216.70615665,
+  "out_sol": 1002.517487144,
+  "top_payer_share": 0.3065221627291806,
+  "top_dest_share": 0.27519403555612115,
+  "signers_without_balance_change": 128.0,
+  "wallets": 25
+ },
+ "payers_reaching_2_or_more_of_these_wallets": 697,
+ "payers_total": 2729,
+ "destinations_reached_by_2_or_more": 861,
+ "destinations_total": 3998,
+ "top_shared_destination_fanin": [
+  79,
+  79,
+  57,
+  38,
+  33
+ ],
+ "hub_to_hub_edges": 33
+}

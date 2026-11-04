@@ -1,0 +1,59 @@
+{
+ "day": "2024-12-13",
+ "complete": true,
+ "stop": "window",
+ "pages": 73,
+ "transactions": 7189,
+ "payouts_at_least_1_sol": 1893,
+ "distinct_amounts": 1531,
+ "payouts_at_this_amount": 39,
+ "recipients_at_this_amount": 38,
+ "of_which_the_group": 15,
+ "group_seen_at_this_amount": 15,
+ "group_first_utc": "2024-12-13T07:07:12+00:00",
+ "group_span_s": 380,
+ "payouts_all_amounts_during_group_span": 18,
+ "payouts_this_amount_during_group_span": 15,
+ "not_group_this_amount_during_group_span": 0,
+ "bursts_rule": {
+  "min_size": 9,
+  "gap_s": 600
+ },
+ "bursts_that_day": 4,
+ "largest_bursts": [
+  25,
+  17,
+  15,
+  10
+ ],
+ "burst_of_this_amount_sizes": [
+  15
+ ],
+ "top_amounts": [
+  [
+   1982815600,
+   89
+  ],
+  [
+   2976815600,
+   39
+  ],
+  [
+   1088215600,
+   30
+  ],
+  [
+   1485815600,
+   30
+  ],
+  [
+   4944826000,
+   16
+  ],
+  [
+   2479815600,
+   14
+  ]
+ ],
+ "net_calls": 73
+}

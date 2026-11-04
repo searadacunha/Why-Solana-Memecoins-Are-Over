@@ -1,0 +1,8 @@
+{
+ "note": "Publicly attributed or protocol addresses where tracing stops. An attribution here names its source; none is inferred from behaviour.",
+ "entries": [
+  {"address": "G2YxRa6wt1qePMwfJzdXZG62ej4qaTC7YURzuh2Lwd3t", "name": "ChangeNOW gateway (public attribution)", "kind": "custodial_swap", "source": "docs/PATTERN.md section 1"},
+  {"address": "FWznbcNXWQuHTawe9RxvQ2LdCENssh12dsznf4RiouN5", "name": "Exchange hot wallet (sweep destination of the published deposit address)", "kind": "custodial_exchange", "source": "historical_edge_2024 results, on-chain sweeps"},
+  {"address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1", "name": "Raydium AMM v4 authority", "kind": "protocol", "source": "Raydium program authority"}
+ ]
+}

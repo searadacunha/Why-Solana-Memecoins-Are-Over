@@ -1,0 +1,849 @@
+{
+ "wallets": [
+  {
+   "wallet": "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+   "first_tx_is_credit": true,
+   "n_tx": 81,
+   "last_utc": "2024-12-17 12:23:42",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2848230834,
+   "bal_end": null
+  },
+  {
+   "wallet": "AMgwVTFSUHy4w3EXCaDHNWX9FgnoDBaMTiCDVPox5YdY",
+   "first_tx_is_credit": true,
+   "n_tx": 81,
+   "last_utc": "2024-12-17 12:10:33",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2960202665,
+   "bal_end": null
+  },
+  {
+   "wallet": "HMzrigYCMKtRhkobD1uAEXJNhsbEATFes95CGb9VVzuR",
+   "first_tx_is_credit": true,
+   "n_tx": 69,
+   "last_utc": "2024-12-17 12:18:27",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2696796471,
+   "bal_end": null
+  },
+  {
+   "wallet": "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+   "first_tx_is_credit": true,
+   "n_tx": 66,
+   "last_utc": "2024-12-17 12:15:25",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2792478066,
+   "bal_end": null
+  },
+  {
+   "wallet": "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW",
+   "first_tx_is_credit": true,
+   "n_tx": 88,
+   "last_utc": "2024-12-17 12:05:03",
+   "lamports_in": 2976815600,
+   "realised_lamports": 3293531662,
+   "bal_end": null
+  },
+  {
+   "wallet": "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+   "first_tx_is_credit": true,
+   "n_tx": 78,
+   "last_utc": "2024-12-17 12:23:00",
+   "lamports_in": 2976815600,
+   "realised_lamports": 4302020213,
+   "bal_end": null
+  },
+  {
+   "wallet": "Ek9KG4V42vQeehnvLo49uJEmE3axUUGgKYsEdZ56K9ce",
+   "first_tx_is_credit": true,
+   "n_tx": 74,
+   "last_utc": "2024-12-17 04:24:20",
+   "lamports_in": 2976815600,
+   "realised_lamports": 3055590125,
+   "bal_end": null
+  },
+  {
+   "wallet": "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+   "first_tx_is_credit": true,
+   "n_tx": 90,
+   "last_utc": "2024-12-17 12:13:39",
+   "lamports_in": 2976815600,
+   "realised_lamports": 5557798227,
+   "bal_end": null
+  },
+  {
+   "wallet": "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+   "first_tx_is_credit": true,
+   "n_tx": 83,
+   "last_utc": "2024-12-17 12:06:44",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2898822263,
+   "bal_end": null
+  },
+  {
+   "wallet": "2M3cBCG4HieuEd7RvDeRzbomA1j7PrEcHvscJUnmQAQV",
+   "first_tx_is_credit": true,
+   "n_tx": 72,
+   "last_utc": "2024-12-17 12:06:13",
+   "lamports_in": 2976815600,
+   "realised_lamports": 3197808996,
+   "bal_end": null
+  },
+  {
+   "wallet": "JCVPTRSHS6MLuy5vUDPwKZaNXTBvhAsoR954e8aZ4svR",
+   "first_tx_is_credit": true,
+   "n_tx": 84,
+   "last_utc": "2024-12-17 12:13:26",
+   "lamports_in": 2976815600,
+   "realised_lamports": 3017092808,
+   "bal_end": null
+  },
+  {
+   "wallet": "73u1CWYfKVVnPHgDSzPG4WdQQLmjvy3NSueiJ29aUsuw",
+   "first_tx_is_credit": true,
+   "n_tx": 65,
+   "last_utc": "2024-12-17 12:27:04",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2456827216,
+   "bal_end": null
+  },
+  {
+   "wallet": "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+   "first_tx_is_credit": true,
+   "n_tx": 81,
+   "last_utc": "2024-12-17 12:17:54",
+   "lamports_in": 2976815600,
+   "realised_lamports": 2577880041,
+   "bal_end": null
+  },
+  {
+   "wallet": "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+   "first_tx_is_credit": true,
+   "n_tx": 85,
+   "last_utc": "2024-12-17 12:03:37",
+   "lamports_in": 2976815600,
+   "realised_lamports": 3080282408,
+   "bal_end": null
+  },
+  {
+   "wallet": "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+   "first_tx_is_credit": true,
+   "n_tx": 72,
+   "last_utc": "2024-12-17 12:10:17",
+   "lamports_in": 2976815600,
+   "realised_lamports": 5079563747,
+   "bal_end": null
+  }
+ ],
+ "credits": [
+  {
+   "wallet": "Ek9KG4V42vQeehnvLo49uJEmE3axUUGgKYsEdZ56K9ce",
+   "sig": "4CMCb9TPV51qHSAAqqzJbPxu4kgyPSHvXpAvUJBK6BUw2Ek2HZGwpcPigYA6ePy5Akq52GfsiTS3y6QiAJ5Nzroz",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:07:12",
+   "slot": 307170732,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW",
+   "sig": "3tEhcn4ZzJ43VB6ynwT94caXUvHGnRMgyY1Hn2Bd7FeT9XDgJxhTL2w1zTe2h88zVSeKhW6UufZ3wFHFzTjHnprA",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:07:49",
+   "slot": 307170824,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+   "sig": "2ECz1DfPkDVwsmQS9xDuwGk8hrRVD19oBaBpHuzQ8jWgm422gyqgNgdDJV1owtgZUiyzboZAZim1Torc9oDqZM24",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:08:02",
+   "slot": 307170855,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "HMzrigYCMKtRhkobD1uAEXJNhsbEATFes95CGb9VVzuR",
+   "sig": "35zYaQfz4nRBeJnEmfLjTKibyQ9U6d3vE6szQzyCTGAAy2sDCFDmZi9R8KDzZRjH1rRGaEDjZzKZrij2ikxc2x6m",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:08:41",
+   "slot": 307170952,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+   "sig": "4113VeUgthGFKwFSUetZ5BRYWhAx64gib2W4H6GgzeDupSfFi7zeys1mCosiUHypqup19KDAf92DVeLgpT9yp58H",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:09:04",
+   "slot": 307171008,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "73u1CWYfKVVnPHgDSzPG4WdQQLmjvy3NSueiJ29aUsuw",
+   "sig": "5CPGruuhquUXTitTEowz6Rb3R58mgXRgGpwyyCo4kev1fD8hKLB28PAp94S2kYUKSPot3aG6JPCgi7ab7ZZXnXgL",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:09:28",
+   "slot": 307171065,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+   "sig": "5dV3EqCy4n7zHHAN6SrthBNy2sPxAn2EgV3b2Y5xHZR6RUQHXzChGujdX8evhygiF74gvfKC7QTb2WT3LVgeNYFG",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:10:12",
+   "slot": 307171171,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+   "sig": "36ufVPBUgG1Nf5kxyDtuyxmyWuBepipKV9VGtEetH2CsAs9RBJLXwF9ZVgg5mVkrRhXD9JYV1BmjVo4UV4mKu3Yu",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:10:31",
+   "slot": 307171218,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+   "sig": "4pEYDtmHbQqJ3xt9RYuQf9EQoAvQVMzSpecb6hfVUrmE9TtA9ZMvxDhgpi8z5ugs8WfyWQ3jvBL2uXU25N5oUkKP",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:10:53",
+   "slot": 307171270,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+   "sig": "2tGu7YvJgveMZN3qYKnhcLiMssKLotgQo1cKJzWxKVREK5D9s5T1F7KFYYT95RcJWonuxcMFbmdFhi6umHu3Lt2H",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:11:20",
+   "slot": 307171335,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+   "sig": "PWryFJwsntRy5mq1vt5q344AwraGHAzcX8ymRfjHnxdppmwu9Y2uJxeAZBFUz9wKuzxzPVWHyuzAm342bf9hEjp",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:11:53",
+   "slot": 307171413,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "AMgwVTFSUHy4w3EXCaDHNWX9FgnoDBaMTiCDVPox5YdY",
+   "sig": "2pz24YwazxVBFfMgamDENYSN1SNnnvzFjHR9Jfs9DSA92A5KFs1WQ4gng62qmDiPGfqaMQsoj41UDjNcKvAw3V3P",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:12:32",
+   "slot": 307171507,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "2M3cBCG4HieuEd7RvDeRzbomA1j7PrEcHvscJUnmQAQV",
+   "sig": "3a6fq12ioBfNtoFwjzHLdAmTzbTzCJzCAYwuDxNehQogcBa2NxPtb8sDQCn3hj7r3CB1U6wCfH7VSghYbw1AqJzf",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:12:57",
+   "slot": 307171568,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "JCVPTRSHS6MLuy5vUDPwKZaNXTBvhAsoR954e8aZ4svR",
+   "sig": "TCCDW8NiBapHF54s61FG5i9qnPvpHEkZf8a9gbad8NguWiuMCijsM49wTJ1ywQKmToaDbXVgikjP6LLT28FvLGm",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:13:05",
+   "slot": 307171584,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  },
+  {
+   "wallet": "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+   "sig": "2V3KjM6sadRFnTLfr2SjX1TVktErCSHYuax8qthFqkN6bkoC5psoHqBGK1RGBL3y2EtbNUih8Z613ZyiUDG5vesH",
+   "lamports": 2976815600,
+   "utc": "2024-12-13 07:13:32",
+   "slot": 307171650,
+   "instruction": "1",
+   "evidence": "ONCHAIN_VERIFIED"
+  }
+ ],
+ "sweeps": [
+  {
+   "wallet": "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW",
+   "sig": "48FsbM1q1AQ5ig3wb7DMv2n6uXJ6FV71S21zuoyE8UrZ7kD4nd5MQnpZq6LW48QHSt8wLowAwgSwPSspakeaYYVD",
+   "lamports": 4000000000,
+   "utc": "2024-12-13 08:56:02",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "Ek9KG4V42vQeehnvLo49uJEmE3axUUGgKYsEdZ56K9ce",
+   "sig": "53EU5ydcHkagGkf1vTFdWwiSn8aFZ1HeqMpPTvzgQ946SiPFyJnRzLFBmp4G9wUA8fihayAy3oe5Su7JsomoAE4w",
+   "lamports": 4000000000,
+   "utc": "2024-12-13 08:56:16",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+   "sig": "3bGFBMQPoPYdtV3TqsCXZLegzwmRPALFg54yuTmSHwFCRTJ93bEGiQmSXtBNbmpyDCFLveLLDDhNXwbnEwhxUMxS",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:56:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "JCVPTRSHS6MLuy5vUDPwKZaNXTBvhAsoR954e8aZ4svR",
+   "sig": "3TP4vgzuPa7JmFYXNBGzWbcU4oxN1xvYAi4XtgzCkZkrJaS1CyezaSyDphntoBASP6pHxNKiUjCJrLxGQfkehKPP",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:56:34",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "2M3cBCG4HieuEd7RvDeRzbomA1j7PrEcHvscJUnmQAQV",
+   "sig": "4fQbLkzgV2ARcGMFBxpDFbL8kP4agYLh76LcTKJZcC7rYRWbuKZsT5fKPy22wJkgzr18iBEYXrkXyPLjtnCsj18V",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:56:45",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "AMgwVTFSUHy4w3EXCaDHNWX9FgnoDBaMTiCDVPox5YdY",
+   "sig": "4WBrSKHWYWnEmQjcWkAoeTqsNTCNr1i3Rbq3p2AWbBJoNXj5e8q1CgZGVUPSVSNKjrZHwsYzxoVbtFrwk8MGLREF",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:56:53",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+   "sig": "5A7CqmhgdZcjMyDh2LCHQ75RQczbc6sZHNibG5ocaJJwXRs96dRCua3P7epZgtsyGKTTPA25dUdmYMnm2ZgSHNAV",
+   "lamports": 4500000000,
+   "utc": "2024-12-13 08:57:07",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+   "sig": "cfAYwW9WT3rksFSfPjFXbFRELYSdNH2hB1tSZzBCf5dV1WpoaSGunL9RH3ryeUqeXumXJYSJ4xVcieUSwA2KyCc",
+   "lamports": 4500000000,
+   "utc": "2024-12-13 08:57:19",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "HMzrigYCMKtRhkobD1uAEXJNhsbEATFes95CGb9VVzuR",
+   "sig": "2KL41NLRUZd8bJ1EbFjr5wcubPdYouFDYgaUQeK46FexsdrzRR5oXUyKGr4pzr6dTQaMUcUVo32GtcUDksGkQRJZ",
+   "lamports": 4500000000,
+   "utc": "2024-12-13 08:57:30",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+   "sig": "Hoq7VobTfUZXN4Ec1Xh2t78RfqUzkcWsshvAFGBKVYZgbjsDa3GaAtHAghcByXt9dknMUX6pYfjPTc6fusTb1NL",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:57:47",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+   "sig": "34GnJdETd2ovYiiyBik3tHVVomurURnX8fHDxD8NPepphucAHUpiMH8EZtj41KUvaKrs84bpzahHe4AJuyFU7gdA",
+   "lamports": 5000000000,
+   "utc": "2024-12-13 08:57:56",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+   "sig": "63fyKeopnisXYXNX4VUF4kJAVvucAErTsD95c78RvDdNVhySEGzq72FyHx2pfB2ZNySBaJkxoGKtsbKPv6ZJXdoH",
+   "lamports": 4000000000,
+   "utc": "2024-12-13 12:13:34",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "73u1CWYfKVVnPHgDSzPG4WdQQLmjvy3NSueiJ29aUsuw",
+   "sig": "568tCz9XsQpRJ7gxJ5Sm1CBQdjYjSfi2PajtyaPifeyXAwPb4CTtutEBxreMDzC1uicRsNyEoTXRf12BsX1cso5h",
+   "lamports": 4600000000,
+   "utc": "2024-12-13 12:13:55",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+   "sig": "KwGQ4ew7aesT1xjBh1mWKXKSLYJGMkqbRCipd5cW96P86vr6JEd4cdk9ANwcxbqCZ4hLoQ9ui7nWWo5fcHCr8cD",
+   "lamports": 4500000000,
+   "utc": "2024-12-13 12:14:09",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+   "sig": "5bozyJRwAnbU6YL861VfQpPCQY7hrnQmEvzZx7bozJ8YAbMe5kHmVL25qvxBdjZs2ut4Z9G7gs6rfJV5VjgtFckY",
+   "lamports": 4900000000,
+   "utc": "2024-12-13 12:14:32",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "AwQqcqdQQ3zydrtWMVF1PPDaWMNK7Lmhm3sUyDNGnSSY",
+   "sig": "5BxQoMsME5McLxYBmVm4xBRuzgB9eUiDHxCC1LKCxxq4fi2WGWQAtZFGxgcQFx3LrC1LkiCKUgVZ27ezqDCjjhdt",
+   "lamports": 1112039742,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "HMzrigYCMKtRhkobD1uAEXJNhsbEATFes95CGb9VVzuR",
+   "sig": "3KC48U58WJYhgJTfNz38MumAq3zcKc6v6RamGX3HqQR2MEBFvaghB8czwyhgFTB8QE6YZgc47vxbqW6EVTc6is4w",
+   "lamports": 1164609278,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "3bBaA1MpQZuQpHjWZBEig12JB1W1TTQikxYPjUgGG3kU",
+   "sig": "Nc4BMnV4HnRwyhpjHBB8ZbKkukcF4AhdHyHMoEnL92EfXCzad6ZATeiciZ23KU3U85UZsK6va3N8QvuQokj2SJ1",
+   "lamports": 1260290672,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "Csye9QE8LomP9RHzQAWLVh8XFdyNXvaopzrAuo3a1PoW",
+   "sig": "2eMdCvjkjHNW1bSVcuZfriNKGLmEUUKWwMiLuGh8XTy9z72qAxbukoQyQf9twt8P8wbVYZ2tDxX7j9zwKFcoSrJh",
+   "lamports": 2261345681,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "BXuznwXTXt4QbLtLTkQnKNaXwdJ4PDXHvDcXf9DMogxe",
+   "sig": "5rt9PzwGsEf8Xn9rjNVyY1DLzjMrY4MmpGUUTceECrkzNZ6bkp2aXPPksTg2B7tPkn7JzX4MDxu6mRy7wnyjsPdH",
+   "lamports": 2769834020,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "Ek9KG4V42vQeehnvLo49uJEmE3axUUGgKYsEdZ56K9ce",
+   "sig": "3Jd8ru26Tbqsq5RbiYdcj8auHgQqpME6oVoD6ZTvUBq1y4rJUjsuSmdaq7KsgsKGi64vPUAtsk5tcpEFxKUYStrG",
+   "lamports": 519398441,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "6QMshP9zwFXKbpLPh7w8EwadjA6vVasKAC7zu5HfMA22",
+   "sig": "4n4uRtEu48j3UHuHjdhD8DZ7RMvG6JZB969JMxU6Tg2TWYWgCf76tmtmWmby579Z7vv1ox1fqfvY2TfK3nwhmw5h",
+   "lamports": 3525612634,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "BmkuX6DaZUp9UCeR3XqAD6NjSpiFySnBvXyLT9uo7ZEA",
+   "sig": "63LyLs7VvF6cgifEP5RASiQYGTcwFxZpRU1f6LkdW1oPRWMrsQWBaC4euvL8SUYurz7GhurCve95AEoY9S8M4CvX",
+   "lamports": 1366636282,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "73u1CWYfKVVnPHgDSzPG4WdQQLmjvy3NSueiJ29aUsuw",
+   "sig": "3tDLJpquiibxTtFEDWZPKb4aPtJkMEuq4VN6739QdtgAYFWYH6p88NQEUGKyAkoXF4ZyE5tpM8qigv9mh5muToWm",
+   "lamports": 824639822,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "92w4K8uLg78KHWHxRovTDksLmou7MekcenY5PntPR34R",
+   "sig": "4NFhqeqgtFQAfSjJHDoi3XzPr7nqt14kQPL7nXW4ifen8uYmkEjJgL4K89AAJ183BN9cCRw7kEoTrWKSx4RRWZvw",
+   "lamports": 545693947,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "CDvfNWiamAR1B84GUgttvDCGtiQE5dvJ49toF4fzsV5g",
+   "sig": "5S56eS6fGvPouSwzjaudMwPKpJaA9vJG6zFg4QKquzpv12dwzrT2tsjZssczdqNfXNnKA5cfAMPXPAWsHurBFSA8",
+   "lamports": 3147377853,
+   "utc": "2024-12-16 14:29:25",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "AMgwVTFSUHy4w3EXCaDHNWX9FgnoDBaMTiCDVPox5YdY",
+   "sig": "QsE2Gr5tR3jgXfczmTfSTgAxhxZU7drKK3H7TqdJwiStCQxryPmuwWHVia9ff1se3HikJ5kZD7kpjpa54KkCLzH",
+   "lamports": 928016771,
+   "utc": "2024-12-16 14:29:26",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "2M3cBCG4HieuEd7RvDeRzbomA1j7PrEcHvscJUnmQAQV",
+   "sig": "3tzGct8Krbwb234gHBN3zR95BFxu8ieYrKmSt3WfPCuS37FXa3mum3WR3cE2jPdaq49ye2kpGvUrVEHoHgnMcWBP",
+   "lamports": 1165622302,
+   "utc": "2024-12-16 14:29:26",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "JCVPTRSHS6MLuy5vUDPwKZaNXTBvhAsoR954e8aZ4svR",
+   "sig": "9JX3efAP3ve6YBBnB8Q1Wg9cJaxsdUV5ejMvC3q21cbxZ4ZfQ1XapYZYrqwj2yKJpmdqv6QydemKujQHGNV9Fd4",
+   "lamports": 984907315,
+   "utc": "2024-12-16 14:29:26",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  },
+  {
+   "wallet": "5ibajLyeBmJhDfyZJN9FQsJBi48h8QSYg7eHGGhFjog6",
+   "sig": "2ZgAsTbVcwkYHUabSGpNPN8412eS9DCdmzJYKTzPNU6X3tNa53kRzWVKa1UfhH5YmSWQoDmNgawhvKD2euWFcEKg",
+   "lamports": 1048096817,
+   "utc": "2024-12-16 14:29:26",
+   "evidence": "ONCHAIN_VERIFIED",
+   "instruction": "2"
+  }
+ ],
+ "tokens": [
+  {
+   "mint": "DHq1eHTKEJkpXNGJ9iu3t2nQZ68oaDRosVimYNZApump",
+   "n_wallets": 15,
+   "sol_out": 25.277008367,
+   "sol_in": 98.995226674,
+   "realised": 73.718218307,
+   "first_buy": "2024-12-13 07:51:06",
+   "buy_span_s": 599,
+   "slot_span": 1450,
+   "top_size": [
+    2509216154243,
+    15
+   ],
+   "first_sell": "2024-12-13 07:54:10",
+   "sell_span_s": 435,
+   "venue_buy": [
+    [
+     "pump",
+     15
+    ],
+    [
+     "raydium_v4",
+     15
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     135
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 30
+   }
+  },
+  {
+   "mint": "FNqJtYs7rsP1H9GXWTtc5VnDoL2GhXEUKhYN46EEpump",
+   "n_wallets": 15,
+   "sol_out": 7.109035995,
+   "sol_in": 2.445022919,
+   "realised": -4.664013076,
+   "first_buy": "2024-12-13 14:53:06",
+   "buy_span_s": 1,
+   "slot_span": 3,
+   "top_size": [
+    2035147973459,
+    15
+   ],
+   "first_sell": "2024-12-13 14:57:40",
+   "sell_span_s": 0,
+   "venue_buy": [
+    [
+     "pump",
+     15
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     15
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 15
+   }
+  },
+  {
+   "mint": "BpXjLp1xSfRNiqTWRyzuV5X1CCsheWaR7ZZjdC6rpump",
+   "n_wallets": 15,
+   "sol_out": 19.086953286,
+   "sol_in": 21.622609961,
+   "realised": 2.535656675,
+   "first_buy": "2024-12-14 09:59:38",
+   "buy_span_s": 0,
+   "slot_span": 0,
+   "top_size": [
+    5494500560514,
+    15
+   ],
+   "first_sell": "2024-12-14 10:14:01",
+   "sell_span_s": 0,
+   "venue_buy": [
+    [
+     "pump",
+     15
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     15
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 15
+   }
+  },
+  {
+   "mint": "JDjsoEJXE4tgnrCYPRaWweSe9NXcyM92Thh2Whnzpump",
+   "n_wallets": 7,
+   "sol_out": 25.29176626,
+   "sol_in": 29.308229167,
+   "realised": 4.016462907,
+   "first_buy": "2024-12-14 19:34:49",
+   "buy_span_s": 52539,
+   "slot_span": 127481,
+   "top_size": [
+    617650090417,
+    1
+   ],
+   "first_sell": "2024-12-14 19:35:11",
+   "sell_span_s": 122950,
+   "venue_buy": [
+    [
+     "raydium_v4",
+     10
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     17
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 10
+   }
+  },
+  {
+   "mint": "FLfwkCVGakFa4LDS5ASKTdJQ24tU7RqGGCxwJ1gSpump",
+   "n_wallets": 8,
+   "sol_out": 7.225952071,
+   "sol_in": 6.789556972,
+   "realised": -0.436395099,
+   "first_buy": "2024-12-15 11:58:51",
+   "buy_span_s": 584,
+   "slot_span": 1426,
+   "top_size": [
+    5961362143999,
+    5
+   ],
+   "first_sell": "2024-12-15 12:14:06",
+   "sell_span_s": 0,
+   "venue_buy": [
+    [
+     "pump",
+     8
+    ]
+   ],
+   "venue_sell": [
+    [
+     "pump",
+     8
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 8
+   }
+  },
+  {
+   "mint": "4Z3SXT4AtELLnnd9jFZxaKnUhf9VbVBEo8EY9Xmypump",
+   "n_wallets": 12,
+   "sol_out": 3.059014952,
+   "sol_in": 9.181037724,
+   "realised": 6.122022772,
+   "first_buy": "2024-12-15 12:38:08",
+   "buy_span_s": 1,
+   "slot_span": 2,
+   "top_size": [
+    3264499388972,
+    12
+   ],
+   "first_sell": "2024-12-15 12:39:37",
+   "sell_span_s": 38,
+   "venue_buy": [
+    [
+     "pump",
+     12
+    ]
+   ],
+   "venue_sell": [
+    [
+     "pump",
+     24
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 12
+   }
+  },
+  {
+   "mint": "9VAUxZwNSCa5YbkcnAWjYBxDg9xACPMx19gTA7dapump",
+   "n_wallets": 15,
+   "sol_out": 42.29595821,
+   "sol_in": 15.640714999,
+   "realised": -26.655243211,
+   "first_buy": "2024-12-16 10:46:49",
+   "buy_span_s": 389,
+   "slot_span": 962,
+   "top_size": [
+    5491309798361,
+    14
+   ],
+   "first_sell": "2024-12-16 10:58:17",
+   "sell_span_s": 1,
+   "venue_buy": [
+    [
+     "raydium_v4",
+     30
+    ],
+    [
+     "pump",
+     15
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     15
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 45
+   }
+  },
+  {
+   "mint": "HYFwkjJbRaRuVg3V5PCFCH7YPq2YDFYRHChZ6dPSpump",
+   "n_wallets": 13,
+   "sol_out": 9.608559297,
+   "sol_in": 4.120603377,
+   "realised": -5.48795592,
+   "first_buy": "2024-12-16 11:54:08",
+   "buy_span_s": 6,
+   "slot_span": 13,
+   "top_size": [
+    9360936092673,
+    13
+   ],
+   "first_sell": "2024-12-16 11:56:57",
+   "sell_span_s": 1,
+   "venue_buy": [
+    [
+     "pump",
+     13
+    ]
+   ],
+   "venue_sell": [
+    [
+     "pump",
+     13
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 13
+   }
+  },
+  {
+   "mint": "DvHm5wvfGDmaJdbkg4s9UBdLZ2CuQbqxaXjsJTTJpump",
+   "n_wallets": 14,
+   "sol_out": 10.64630144,
+   "sol_in": 11.312473827,
+   "realised": 0.666172387,
+   "first_buy": "2024-12-16 14:22:04",
+   "buy_span_s": 18,
+   "slot_span": 44,
+   "top_size": [
+    2460078053533,
+    8
+   ],
+   "first_sell": "2024-12-16 14:27:19",
+   "sell_span_s": 54,
+   "venue_buy": [
+    [
+     "pump",
+     15
+    ]
+   ],
+   "venue_sell": [
+    [
+     "raydium_v4",
+     28
+    ]
+   ],
+   "open_trips": 0,
+   "own_signed": {
+    "True": 15
+   }
+  }
+ ],
+ "other_outflows_sol": {
+  "8eHy2h1AxzGpB5T686N9Y3MXfeSygFQcaeJGHbWcpVYm": 1.5,
+  "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM": 0.804179019,
+  "ERGbjcz9fs95YKvM6zXqvEaicK4VPPo2JwNV8beGKZM": 0.7,
+  "F34kcgMgCF7mYWkwLN3WN7KrFprr2NbwxuLvXx4fbztj": 0.668999998,
+  "BTQyUXhxiLrFPD5JUANCwg4ViibmNY39McmWk4bVNxLA": 0.594,
+  "neXtBLock1LeC67jYd1QdAa32kbVeubsfPNTJC1V5At": 0.2,
+  "nextBLoCkPMgmG8ZgJtABeScP35qLa2AMCNKntAP7Xc": 0.2,
+  "NEXTbLoCkB51HpLBLojQfpyVAMorm3zzKg7w9NFdqid": 0.2,
+  "nEXTBLockYgngeRmRrjDV31mGSekVPqZoMGhQEZtPVG": 0.2,
+  "NexTbLoCkWykbLuB1NkjXgFWkX9oAtcoagQegygXXA2": 0.2,
+  "NexTBLockJYZ7QD7p2byrUa6df8ndV2WSd8GkbWqfbb": 0.2,
+  "NeXTBLoCKs9F1y5PJS9CKrFNNLU1keHW71rfh7KgA1X": 0.2
+ },
+ "other_inflows_sol": {
+  "fLiPgg2yTvmgfhiPkKriAHkDmmXGP6CdeFX9UF5o7Zc": 2.34e-05,
+  "Habp5bncMSsBC3vkChyebepym5dcTNRYeg2LVG464E96": 2.25e-05,
+  "6s3qFETH7kfQupco4Df2owU8SUhmjz8c9HnKa9hRAzNo": 3e-06,
+  "9tYCMoS1LyzMQpmfKzMAMLn1G3BjeeXocwUjDTnXyTmq": 1.5e-07,
+  "5Hr7wZg7oBpVhH5nngRqzr5W7ZFUfCsfEhbziZJak7fr": 1.26e-07,
+  "H5ft7mjHYafZJCP9UPRu7yP66enrL9t8Hc9ohwyoC9bL": 4e-09,
+  "2Tq5W7ydAHFuHbSJ1KTcKAsRaHBAQzoCFiVuNwtagns2": 4e-09
+ },
+ "summary": {
+  "n": 15,
+  "first_credit": "2024-12-13 07:07:12",
+  "last_credit": "2024-12-13 07:13:32",
+  "total_credited_sol": 44.652234,
+  "swept_to_common_sol": 92.124121577,
+  "n_sweeps": 30,
+  "realised_all_tokens_sol": 49.814925742,
+  "other_outflows_total_sol": 5.767179017
+ }
+}
