@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "branches": {
+    "main": {
+      "baseline": "0d8c251cc724673c3df402f4b2dcb57635de6570"
+    },
+    "forensics-v2": {
+      "baseline": "f5b7f65359ad31ef5cc48e9fd7d8c97b18bd9228"
+    },
+    "ansem-network": {
+      "baseline": "f5191235d995d36759963ecdf648da9519b7ab79"
+    }
+  }
+}
