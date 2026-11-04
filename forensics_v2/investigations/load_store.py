@@ -25,9 +25,7 @@ def main() -> int:
             if d.signature not in seen:
                 seen.add(d.signature)
                 batch.append(d)
-    con.execute("BEGIN")
     new = ST.ingest(con, batch)
-    con.execute("COMMIT")
     again = ST.ingest(con, batch[:200])
     books = ST.reconcile(con)
     counts = ST.counts(con)

@@ -1,5 +1,6 @@
 """The volume guard, the store's replay safety, and the books it re-checks."""
 import os
+from dataclasses import replace
 
 import pytest
 
@@ -85,6 +86,24 @@ def test_replay_books_nothing_twice():
     assert st.ingest(con, [_tx(), _tx("OTHER")]) == 0
     assert st.counts(con) == first and first["transactions"] == 2 and first["funding_edges"] == 2
     assert set(st.TABLES) >= {"coverage", "rpc_provenance", "wallet_clusters", "realized_pnl"}
+
+
+def test_failed_ingest_can_be_retried_without_a_partial_transaction():
+    st = pytest.importorskip("forensics_v2.store")
+    con = st.connect()
+    st.ingest(con, [_tx("GOOD")])
+    before = st.counts(con)
+    broken = _tx("RETRY")
+    # A failure after the parent row is inserted must roll back the whole
+    # transaction. Otherwise a retry sees its signature and silently skips it.
+    broken.transfers[0] = replace(broken.transfers[0], amount=None)
+    with pytest.raises(st.duckdb.ConstraintException):
+        st.ingest(con, [_tx("UNCOMMITTED"), broken])
+    assert st.counts(con) == before
+    assert st.ingest(con, [_tx("RETRY")]) == 1
+    assert st.counts(con)["transactions"] == 2
+    assert st.counts(con)["funding_edges"] == 2
+    assert st.reconcile(con)["tx_owner_sum_plus_fee_nonzero"] == 0
 
 
 def test_books_balance_and_a_broken_row_is_caught():
